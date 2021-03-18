@@ -1,6 +1,6 @@
 <template>
     <div class="page-loader" v-if="!is_hidden">
-        <img src="/public/images/common/icons/general/content-loader.gif" alt="preloader">
+        <img src="/images/common/icons/general/content-loader.gif" alt="preloader">
     </div>
 </template>
 
@@ -9,7 +9,7 @@
         props: {
             time: {
                 type: Number,
-                default: 1000,
+                default: 10000,
             }
         },
         data() {

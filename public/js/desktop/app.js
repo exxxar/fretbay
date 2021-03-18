@@ -2008,7 +2008,7 @@ __webpack_require__.r(__webpack_exports__);
   props: {
     time: {
       type: Number,
-      "default": 1000
+      "default": 10000
     }
   },
   data: function data() {
@@ -38850,7 +38850,7 @@ var render = function() {
     ? _c("div", { staticClass: "page-loader" }, [
         _c("img", {
           attrs: {
-            src: "/public/images/common/icons/general/content-loader.gif",
+            src: "/images/common/icons/general/content-loader.gif",
             alt: "preloader"
           }
         })
