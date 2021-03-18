@@ -1,0 +1,77 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 180.4 209.8" style="enable-background:new 0 0 180.4 209.8;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#E6E6EB;}
+	.st1{opacity:0.25;fill:#E8F5FF;enable-background:new    ;}
+	.st2{fill:#FFFFFF;}
+	.st3{clip-path:url(#SVGID_2_);}
+	.st4{fill:#0091F7;}
+	.st5{opacity:0.46;}
+	.st6{clip-path:url(#SVGID_4_);}
+	.st7{opacity:0.39;fill:#CDD6DB;enable-background:new    ;}
+	.st8{font-family:'Lato-Regular';}
+	.st9{font-size:24.89px;}
+	.st10{letter-spacing:2;}
+	.st11{fill:#CDD6DB;}
+	.st12{fill:#0067B0;}
+	.st13{fill:#FFBE5E;}
+	.st14{fill:#FF9900;}
+	.st15{font-family:'Lato-Black';}
+	.st16{font-size:12.61px;}
+	.st17{letter-spacing:1;}
+</style>
+<g>
+	<g>
+		<circle class="st0" cx="90.2" cy="119.5" r="90.2"/>
+		<circle class="st1" cx="90.2" cy="119.5" r="71.7"/>
+		<circle class="st2" cx="90.6" cy="119.2" r="71.7"/>
+		<g id="Layer_2">
+			<defs>
+				<path id="SVGID_1_" d="M162.3,119.2c0,39.6-32.1,71.7-71.7,71.7c-39.6,0-71.7-32.1-71.7-71.7c0,0,0,0,0,0
+					C18.9,79.6,5.4,1.7,41.4,0.2C58.4-0.6,156,1,166.1,7.6C184.1,19.4,162.3,86.1,162.3,119.2z"/>
+			</defs>
+			<clipPath id="SVGID_2_">
+				<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+			</clipPath>
+			<g id="Icons" class="st3">
+				<path class="st4" d="M35.7,6.7h106.7c5.6,0,10.2,4.6,10.2,10.2v183.6c0,5.6-4.6,10.2-10.2,10.2H35.7c-5.6,0-10.2-4.6-10.2-10.2
+					V16.8C25.5,11.2,30.1,6.7,35.7,6.7z"/>
+				<rect x="39.7" y="30.3" class="st2" width="101.1" height="162.3"/>
+				<g>
+					<g class="st5">
+						<defs>
+							<polygon id="SVGID_3_" class="st5" points="140.8,192.7 39.7,192.7 39,30.3 140.8,30.3 							"/>
+						</defs>
+						<clipPath id="SVGID_4_">
+							<use xlink:href="#SVGID_3_"  style="overflow:visible;"/>
+						</clipPath>
+						<g class="st6">
+							<text transform="matrix(0.9194 -0.3933 0.3933 0.9194 -128.0901 71.6363)" class="st7 st8 st9 st10">010101010101010101010101</text>
+							<text transform="matrix(0.9194 -0.3933 0.3933 0.9194 -116.3462 99.0896)" class="st11 st8 st9 st10">101010101010101010101010</text>
+							<text transform="matrix(0.9194 -0.3933 0.3933 0.9194 -104.602 126.5433)" class="st11 st8 st9 st10">010101010101010101010101</text>
+							<text transform="matrix(0.9194 -0.3933 0.3933 0.9194 -92.8542 154.0061)" class="st11 st8 st9 st10">101010101010101010101010</text>
+							<text transform="matrix(0.9194 -0.3933 0.3933 0.9194 -81.1103 181.4597)" class="st11 st8 st9 st10">010101010101010101010101</text>
+							<text transform="matrix(0.9194 -0.3933 0.3933 0.9194 -69.3664 208.9134)" class="st11 st8 st9 st10">101010101010101010101010</text>
+							<text transform="matrix(0.9194 -0.3933 0.3933 0.9194 -57.6225 236.367)" class="st11 st8 st9 st10">010101010101010101010101</text>
+							<text transform="matrix(0.9194 -0.3933 0.3933 0.9194 -45.8745 263.8296)" class="st11 st8 st9 st10">101010101010101010101010</text>
+							<text transform="matrix(0.9194 -0.3933 0.3933 0.9194 -34.1306 291.2832)" class="st11 st8 st9 st10">010101010101010101010101</text>
+							<text transform="matrix(0.9194 -0.3933 0.3933 0.9194 -22.3867 318.7368)" class="st11 st8 st9 st10">101010101010101010101010</text>
+						</g>
+					</g>
+					<path class="st0" d="M56.8,88.4H122c2.3,0,4.1,1.9,4.1,4.1l0,0c0,2.3-1.9,4.1-4.1,4.1H56.8c-2.3,0-4.1-1.9-4.1-4.1l0,0
+						C52.6,90.3,54.5,88.4,56.8,88.4z"/>
+					<path class="st0" d="M56.8,103.3H122c2.3,0,4.1,1.9,4.1,4.1l0,0c0,2.3-1.9,4.1-4.1,4.1H56.8c-2.3,0-4.1-1.9-4.1-4.1l0,0
+						C52.6,105.1,54.5,103.3,56.8,103.3z"/>
+					<path class="st0" d="M65.9,120.6h47c2,0,3.6,1.6,3.6,3.6v1.2c0,2-1.6,3.6-3.6,3.6h-47c-2,0-3.6-1.6-3.6-3.6v-1.2
+						C62.3,122.2,63.9,120.6,65.9,120.6z"/>
+					<path class="st12" d="M76.7,18.7h24.7c1.1,0,2,0.9,2,2v0c0,1.1-0.9,2-2,2H76.7c-1.1,0-2-0.9-2-2v0
+						C74.7,19.5,75.6,18.7,76.7,18.7z"/>
+					<path class="st13" d="M138.7,30.7c-15.4,0-27.9,11.6-27.9,25.8c0.1,8,3.9,15.4,10.4,20.1l-2.9,7.1l12.4-2.4
+						c2.6,0.7,5.3,1.1,8,1.1c15.4,0,27.9-11.6,27.9-25.8S154.1,30.7,138.7,30.7z"/>
+					<text transform="matrix(1 0 0 1 120.38 62.1762)" class="st14 st15 st16 st17">123??</text>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>

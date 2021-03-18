@@ -21,6 +21,7 @@ import Notifications from 'vue-notification'
 Vue.use(Notifications)
 
 
+Vue.component('preloader-component', require('../desktop/components/Preloader.vue').default);
 Vue.component('footer-component', require('../desktop/components/Footer.vue').default);
 Vue.component('header-content-component', require('../desktop/components/HeaderContent.vue').default);
 Vue.component('header-simple-component', require('../desktop/components/HeaderSimple.vue').default);
