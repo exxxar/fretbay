@@ -2205,6 +2205,726 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -39191,9 +39911,2023 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("div", { attrs: { id: "seekHeader" } }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row text-center" }, [
+            _c("div", { staticClass: "col-md-3 col-sm-6" }, [
+              _c("i", { staticClass: "icon seek1" }),
+              _vm._v(" "),
+              _c("div", { staticClass: "headingH2" }, [_vm._v("18 millions")]),
+              _vm._v(" "),
+              _c("p", { staticClass: "bold" }, [
+                _vm._v("kg reduction in CO"),
+                _c("span", { staticClass: "sub" }, [_vm._v("2")]),
+                _vm._v(" emissions")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-3 col-sm-6" }, [
+              _c("i", { staticClass: "icon seek2" }),
+              _vm._v(" "),
+              _c("div", { staticClass: "headingH2" }, [
+                _vm._v("A network of +8000")
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "bold" }, [_vm._v("authorized movers")])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-3 col-sm-6" }, [
+              _c("i", { staticClass: "icon seek3" }),
+              _vm._v(" "),
+              _c("div", { staticClass: "headingH2" }, [
+                _vm._v("1 943 364 users")
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "bold" }, [
+                _vm._v("have used our services")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-3 col-sm-6" }, [
+              _c("i", { staticClass: "icon seek4" }),
+              _vm._v(" "),
+              _c("div", { staticClass: "headingH2" }, [
+                _vm._v("an unbeatable price")
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "bold" }, [_vm._v("save up to 75%")])
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("section", { attrs: { id: "recentList" } }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-4" }, [
+              _c("h2", [_vm._v("Top movers")]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row margin-bottom-20" }, [
+                _c("div", { staticClass: "col-lg-12" }, [
+                  _c("div", { staticClass: "postBlock" }, [
+                    _c("div", { staticClass: "col-md-3 col-sm-4 no-padding" }, [
+                      _c("div", { staticClass: "postImg" }, [
+                        _c("img", {
+                          attrs: {
+                            src:
+                              "https://fretbay.com/global/media/transporter/profil/thumbs/1599758184eCzX_0.png"
+                          }
+                        })
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-9 col-sm-8" }, [
+                      _c("h6", { staticClass: "bold" }, [_vm._v("Wojtek92")]),
+                      _vm._v(" "),
+                      _c("p", [
+                        _vm._v(
+                          "Excellent service. Un seul bémol : le problème de la langue. Il y a .."
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "ratingBlock" }, [
+                        _c("img", {
+                          attrs: { src: "shipper/images/star-on.png" }
+                        }),
+                        _c("img", {
+                          attrs: { src: "shipper/images/star-on.png" }
+                        }),
+                        _c("img", {
+                          attrs: { src: "shipper/images/star-on.png" }
+                        }),
+                        _c("img", {
+                          attrs: { src: "shipper/images/star-on.png" }
+                        }),
+                        _c("img", {
+                          attrs: { src: "shipper/images/star-half.png" }
+                        })
+                      ])
+                    ])
+                  ])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-8" }, [
+              _c("h2", [_vm._v("Latest transactions")]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row margin-bottom-20" }, [
+                _c("div", { staticClass: "col-lg-12 recenListingSlider" }, [
+                  _c("ul", { staticClass: "list-unstyled recenListing" }, [
+                    _c("li", [
+                      _c("div", { staticClass: "categoryInfo" }, [
+                        _c("div", { staticClass: "circleImg id-408196" }, [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "transporter/images/catMedium/demenagement.png"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "marginImg" }, [
+                          _vm._v(
+                            "\n                                            Déménagement 30 m3 "
+                          ),
+                          _c("span", { staticClass: "catgry" }, [
+                            _c("b", [_vm._v("Category")]),
+                            _vm._v(": Movings")
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "locationInfo" }, [
+                        _c("p", [_vm._v("Luxembourg - Luxembourg")]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v("2.7km")])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "trasporterIfo" }, [
+                        _c("div", { staticClass: "circleImg" }, [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "https://fretbay.com/fr/images/photoTransporteur/validation-173x173.png?ver=1.2"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "marginImg" }, [
+                          _c("p", [
+                            _vm._v(
+                              "\n                                                Ld26 "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "ratingBlock" }, [
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            })
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "price" }, [
+                        _c("p", [_vm._v("4999€")])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("div", { staticClass: "categoryInfo" }, [
+                        _c("div", { staticClass: "circleImg id-395664" }, [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "transporter/images/catMedium/demenagement.png"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "marginImg" }, [
+                          _vm._v(
+                            "\n                                            Déménagement 16m3 "
+                          ),
+                          _c("span", { staticClass: "catgry" }, [
+                            _c("b", [_vm._v("Category")]),
+                            _vm._v(": Movings")
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "locationInfo" }, [
+                        _c("p", [
+                          _vm._v(
+                            "Provence-Alpes-Cote d'Azur - Provence-Alpes-Cote d'Azur"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v("3.39km")])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "trasporterIfo" }, [
+                        _c("div", { staticClass: "circleImg" }, [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "https://fretbay.com/global/media/transporter/profil/thumbs/1581749363_0.jpg"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "marginImg" }, [
+                          _c("p", [
+                            _vm._v(
+                              "\n                                                balan90 "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "ratingBlock" }, [
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-half.png" }
+                            })
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "price" }, [
+                        _c("p", [_vm._v("600€")])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("div", { staticClass: "categoryInfo" }, [
+                        _c("div", { staticClass: "circleImg id-391003" }, [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "transporter/images/catMedium/demenagement.png"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "marginImg" }, [
+                          _vm._v(
+                            "\n                                            Déménagement 10 m3 "
+                          ),
+                          _c("span", { staticClass: "catgry" }, [
+                            _c("b", [_vm._v("Category")]),
+                            _vm._v(": Movings")
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "locationInfo" }, [
+                        _c("p", [_vm._v("England - Vaud")]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v("957.63km")])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "trasporterIfo" }, [
+                        _c("div", { staticClass: "circleImg" }, [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "https://fretbay.com/fr/images/photoTransporteur/validation-173x173.png?ver=1.2"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "marginImg" }, [
+                          _c("p", [
+                            _vm._v(
+                              "\n                                                eurovans "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "ratingBlock" }, [
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            })
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "price" }, [
+                        _c("p", [_vm._v("989€")])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("div", { staticClass: "categoryInfo" }, [
+                        _c("div", { staticClass: "circleImg id-388225" }, [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "transporter/images/catMedium/demenagement.png"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "marginImg" }, [
+                          _vm._v(
+                            "\n                                            Déménagement 14m3 "
+                          ),
+                          _c("span", { staticClass: "catgry" }, [
+                            _c("b", [_vm._v("Category")]),
+                            _vm._v(": Movings")
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "locationInfo" }, [
+                        _c("p", [_vm._v("Zürich - IDF")]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v("650.63km")])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "trasporterIfo" }, [
+                        _c("div", { staticClass: "circleImg" }, [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "https://fretbay.com/global/media/transporter/profil/thumbs/1573550229_0.jpeg"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "marginImg" }, [
+                          _c("p", [
+                            _vm._v(
+                              "\n                                                Contact94 "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "ratingBlock" }, [
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-half.png" }
+                            })
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "price" }, [
+                        _c("p", [_vm._v("960€")])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("div", { staticClass: "categoryInfo" }, [
+                        _c("div", { staticClass: "circleImg id-386256" }, [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "transporter/images/catMedium/demenagement.png"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "marginImg" }, [
+                          _vm._v(
+                            "\n                                            Déménagement 33m3 "
+                          ),
+                          _c("span", { staticClass: "catgry" }, [
+                            _c("b", [_vm._v("Category")]),
+                            _vm._v(": Movings")
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "locationInfo" }, [
+                        _c("p", [_vm._v(" - IDF")]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v("953.96km")])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "trasporterIfo" }, [
+                        _c("div", { staticClass: "circleImg" }, [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "https://fretbay.com/global/media/transporter/profil/thumbs/1582117437_0.jpeg"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "marginImg" }, [
+                          _c("p", [
+                            _vm._v(
+                              "\n                                                Tipfret6 "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "ratingBlock" }, [
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-half.png" }
+                            })
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "price" }, [
+                        _c("p", [_vm._v("1920€")])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("div", { staticClass: "categoryInfo" }, [
+                        _c("div", { staticClass: "circleImg id-383670" }, [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "transporter/images/catMedium/demenagement.png"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "marginImg" }, [
+                          _vm._v(
+                            "\n                                            Déménagement 3.5m3 "
+                          ),
+                          _c("span", { staticClass: "catgry" }, [
+                            _c("b", [_vm._v("Category")]),
+                            _vm._v(": Movings")
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "locationInfo" }, [
+                        _c("p", [_vm._v("IDF - province de Verone")]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v("1013.26km")])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "trasporterIfo" }, [
+                        _c("div", { staticClass: "circleImg" }, [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "https://fretbay.com/global/media/transporter/profil/thumbs/1583851868_0.jpg"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "marginImg" }, [
+                          _c("p", [
+                            _vm._v(
+                              "\n                                                fretEU "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "ratingBlock" }, [
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-half.png" }
+                            })
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "price" }, [
+                        _c("p", [_vm._v("900€")])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("div", { staticClass: "categoryInfo" }, [
+                        _c("div", { staticClass: "circleImg id-377110" }, [
+                          _c("img", {
+                            attrs: {
+                              src: "transporter/images/catMedium/colis.png"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "marginImg" }, [
+                          _vm._v(
+                            "\n                                            Package/Fold "
+                          ),
+                          _c("span", { staticClass: "catgry" }, [
+                            _c("b", [_vm._v("Category")]),
+                            _vm._v(": Package")
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "locationInfo" }, [
+                        _c("p", [_vm._v("Bavaria - Canton of Geneva")]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v("689.16km")])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "trasporterIfo" }, [
+                        _c("div", { staticClass: "circleImg" }, [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "https://fretbay.com/fr/images/photoTransporteur/validation-173x173.png?ver=1.2"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "marginImg" }, [
+                          _c("p", [
+                            _vm._v(
+                              "\n                                                Nars24 "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "ratingBlock" }, [
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            })
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "price" }, [
+                        _c("p", [_vm._v("580€")])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("div", { staticClass: "categoryInfo" }, [
+                        _c("div", { staticClass: "circleImg id-375666" }, [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "transporter/images/catMedium/demenagement.png"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "marginImg" }, [
+                          _vm._v(
+                            "\n                                            Déménagement 47m3 "
+                          ),
+                          _c("span", { staticClass: "catgry" }, [
+                            _c("b", [_vm._v("Category")]),
+                            _vm._v(": Movings")
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "locationInfo" }, [
+                        _c("p", [_vm._v("IDF - Alpes-Maritimes")]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v("928.85km")])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "trasporterIfo" }, [
+                        _c("div", { staticClass: "circleImg" }, [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "https://fretbay.com/global/media/transporter/profil/thumbs/1582117437_0.jpeg"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "marginImg" }, [
+                          _c("p", [
+                            _vm._v(
+                              "\n                                                Tipfret6 "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "ratingBlock" }, [
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-half.png" }
+                            })
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "price" }, [
+                        _c("p", [_vm._v("2500€")])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("div", { staticClass: "categoryInfo" }, [
+                        _c("div", { staticClass: "circleImg id-374084" }, [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "transporter/images/catMedium/demenagement.png"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "marginImg" }, [
+                          _vm._v(
+                            "\n                                            Déménagement 47m3 "
+                          ),
+                          _c("span", { staticClass: "catgry" }, [
+                            _c("b", [_vm._v("Category")]),
+                            _vm._v(": Movings")
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "locationInfo" }, [
+                        _c("p", [_vm._v("IDF - Provence-Alpes-Cote d'Azur")]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v("930.63km")])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "trasporterIfo" }, [
+                        _c("div", { staticClass: "circleImg" }, [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "https://fretbay.com/global/media/transporter/profil/thumbs/1579084984_0.jpeg"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "marginImg" }, [
+                          _c("p", [
+                            _vm._v(
+                              "\n                                                transport280 "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "ratingBlock" }, [
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            })
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "price" }, [
+                        _c("p", [_vm._v("2630€")])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("div", { staticClass: "categoryInfo" }, [
+                        _c("div", { staticClass: "circleImg id-366865" }, [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "transporter/images/catMedium/demenagement.png"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "marginImg" }, [
+                          _vm._v(
+                            "\n                                            Moving 28.70m3 "
+                          ),
+                          _c("span", { staticClass: "catgry" }, [
+                            _c("b", [_vm._v("Category")]),
+                            _vm._v(": Movings")
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "locationInfo" }, [
+                        _c("p", [_vm._v("Gelderland - Berlin")]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v("609.21km")])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "trasporterIfo" }, [
+                        _c("div", { staticClass: "circleImg" }, [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "https://fretbay.com/global/media/transporter/profil/thumbs/1593949089FcaE_0.jpg"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "marginImg" }, [
+                          _c("p", [
+                            _vm._v(
+                              "\n                                                DLP 21 "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "ratingBlock" }, [
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            })
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "price" }, [
+                        _c("p", [_vm._v("1200€")])
+                      ])
+                    ])
+                  ])
+                ])
+              ])
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("section", { staticClass: "text-center", attrs: { id: "stepsNew" } }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-3 col-xs-6" }, [
+              _c("div", { staticClass: "oneToFour" }, [_vm._v("1")]),
+              _vm._v(" "),
+              _c("h3", [_vm._v("Publish your listing")]),
+              _vm._v(" "),
+              _c("img", { attrs: { src: "images/home/stepN-1.png" } })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-3 col-xs-6" }, [
+              _c("div", { staticClass: "oneToFour" }, [_vm._v("2")]),
+              _vm._v(" "),
+              _c("h3", [_vm._v("Get instant quotes")]),
+              _vm._v(" "),
+              _c("img", { attrs: { src: "images/home/stepN-2.png" } })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-3 col-xs-6" }, [
+              _c("div", { staticClass: "oneToFour" }, [_vm._v("3")]),
+              _vm._v(" "),
+              _c("h3", [_vm._v("Get delivered")]),
+              _vm._v(" "),
+              _c("img", { attrs: { src: "images/home/stepN-3.png" } })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-3 col-xs-6" }, [
+              _c("div", { staticClass: "oneToFour" }, [_vm._v("4")]),
+              _vm._v(" "),
+              _c("h3", [_vm._v("Rate the service")]),
+              _vm._v(" "),
+              _c("img", { attrs: { src: "images//home/stepN-4.png" } })
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "clearfix" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-12 margin-bottom-40 text-center" }, [
+            _c(
+              "a",
+              {
+                staticClass: "btn",
+                attrs: {
+                  href:
+                    "https://fretbay.com/en/shipper/find-a-transporter?idsess="
+                }
+              },
+              [_vm._v("REQUEST A QUOTE")]
+            )
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("section", { attrs: { id: "trevalNew" } }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-6 col-sm-6" }, [
+              _c("h2", [
+                _c(
+                  "a",
+                  {
+                    attrs: {
+                      href:
+                        "https://fretbay.com/en/shipper/find-a-transporter?idsess=",
+                      target: "_blank"
+                    }
+                  },
+                  [_vm._v("Find a\n                        mover")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "h5" }, [
+                _vm._v("Finding a cheap mover on FretBay is very easy!"),
+                _c("br"),
+                _vm._v(
+                  " Let's say you simply want to\n                        move for example, you only need to publish a listing for free to receive low-cost moving\n                        quotes or cheap mover rates."
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "h5" }, [
+                _vm._v(
+                  "A grouped transport guarantees you very low moving prices. Once this request has\n                        been made, each transporter can send you a moving quote and make you an offer for a\n                        transport price. Then, all you have to do is select the transportation service offer that\n                        best meets your needs!"
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "text-right" }, [
+                _c(
+                  "a",
+                  {
+                    attrs: {
+                      href:
+                        "https://fretbay.com/en/shipper/find-a-transporter?idsess="
+                    }
+                  },
+                  [_vm._v("Find out more")]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-6 col-sm-6" }, [
+              _c("h2", [
+                _c(
+                  "a",
+                  {
+                    attrs: {
+                      href:
+                        "https://fretbay.com/en/transporter/register-transporter?idsess="
+                    }
+                  },
+                  [_vm._v("I'm a\n                        transporter")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "h5" }, [
+                _vm._v("FretBay is very easy for transporters to use."),
+                _c("br"),
+                _vm._v(
+                  " Every day, hundreds of people\n                        publish a listing to request a cheap quote for a moving, private parcel, vehicle or animal\n                        transport."
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "h5" }, [
+                _vm._v(
+                  "All you have to do is consult the listings corresponding to your travel locations\n                        to find loads and deliveries. Then, all that remains is to offer an estimate to the\n                        client."
+                ),
+                _c("br"),
+                _vm._v(
+                  "Registration and publication of an ad on FretBay are free and without obligation,\n                        take advantage of it!"
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "text-right" }, [
+                _c(
+                  "a",
+                  {
+                    attrs: {
+                      href:
+                        "https://fretbay.com/en/transporter/register-transporter?idsess="
+                    }
+                  },
+                  [_vm._v("Find out more")]
+                )
+              ])
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("section", { attrs: { id: "testimonialNew" } }),
+      _vm._v(" "),
+      _c("div", { staticClass: "tabs-footer-section" }, [
+        _c("div", { staticClass: "footer-tabs" }, [
+          _c("div", { staticClass: "container" }, [
+            _c("ul", { staticClass: "tabs-footer-nav text-center" }, [
+              _c("li", { staticClass: "active" }, [
+                _c(
+                  "a",
+                  { attrs: { href: "#footertab1", "data-toggle": "tab" } },
+                  [_vm._v("Moves")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c(
+                  "a",
+                  { attrs: { href: "#footertab2", "data-toggle": "tab" } },
+                  [_vm._v("Moves by city")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c(
+                  "a",
+                  { attrs: { href: "#footertab3", "data-toggle": "tab" } },
+                  [_vm._v("Transport")]
+                )
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "tab-content" }, [
+            _c(
+              "div",
+              { staticClass: "tab-pane active", attrs: { id: "footertab1" } },
+              [
+                _c("div", { staticClass: "container" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-sm-5 full-width-xs" }, [
+                      _c("ul", [
+                        _c("li", [
+                          _c(
+                            "a",
+                            {
+                              attrs: {
+                                target: "_blank",
+                                href:
+                                  "https://fretbay.com/en/cheap-move-transport-carrier/"
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "Moving\n                                        cheaply"
+                              )
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _c(
+                            "a",
+                            {
+                              attrs: {
+                                target: "_blank",
+                                href: "https://fretbay.com/en/estimate-move/"
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "Estimating\n                                        your move with FretBay"
+                              )
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _c(
+                            "a",
+                            {
+                              attrs: {
+                                target: "_blank",
+                                href: "https://fretbay.com/en/move-on-your-own/"
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "Moving\n                                        when you're on your own"
+                              )
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _c(
+                            "a",
+                            {
+                              attrs: {
+                                target: "_blank",
+                                href: "https://fretbay.com/en/france-transport/"
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "An\n                                        optimized move in Europe"
+                              )
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _c(
+                            "a",
+                            {
+                              attrs: {
+                                target: "_blank",
+                                href:
+                                  "https://fretbay.com/en/grouped-move-transport-carrier/"
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "Grouped\n                                        moving, a system with many advantages"
+                              )
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _c(
+                            "a",
+                            {
+                              attrs: {
+                                target: "_blank",
+                                href:
+                                  "https://fretbay.com/en/move-transport-furniture/"
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "Moving\n                                        your furniture in complete serenity"
+                              )
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _c(
+                            "a",
+                            {
+                              attrs: {
+                                target: "_blank",
+                                href:
+                                  "https://fretbay.com/en/rent-truck-move-transport/"
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "Rent\n                                        the right truck for your move"
+                              )
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _c(
+                            "a",
+                            {
+                              attrs: {
+                                target: "_blank",
+                                href:
+                                  "https://fretbay.com/en/cheap-move-students/"
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "Moving\n                                        for students"
+                              )
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _c(
+                            "a",
+                            {
+                              attrs: {
+                                target: "_blank",
+                                href: "https://fretbay.com/en/one-way-move/"
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "One-way\n                                        move"
+                              )
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _c(
+                            "a",
+                            {
+                              attrs: {
+                                target: "_blank",
+                                href:
+                                  "https://fretbay.com/en/individuals-move/home.php"
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "Moving\n                                        for individuals"
+                              )
+                            ]
+                          )
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "combine-col clearfix",
+                        staticStyle: { display: "none" }
+                      },
+                      [
+                        _c("p", [
+                          _vm._v("You are moving to a new city ?"),
+                          _c("br"),
+                          _vm._v("Discover our tips:")
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "col-md-3 col-sm-3 col-xs-6" },
+                          [
+                            _c("ul", [
+                              _c("li", [
+                                _c("a", {
+                                  attrs: {
+                                    title: "Paris",
+                                    target: "_blank",
+                                    href:
+                                      "https://fretbay.com/en/Ile-de-France/"
+                                  }
+                                })
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _c("a", {
+                                  attrs: {
+                                    title: "Tours",
+                                    target: "_blank",
+                                    href:
+                                      "https://fretbay.com/en/demenagement-tours/"
+                                  }
+                                })
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _c("a", {
+                                  attrs: {
+                                    title: "Bordeaux",
+                                    target: "_blank",
+                                    href:
+                                      "https://fretbay.com/en/demenagement-bordeaux/"
+                                  }
+                                })
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _c("a", {
+                                  attrs: {
+                                    title: "Montpellier",
+                                    target: "_blank",
+                                    href:
+                                      "https://fretbay.com/en/demenagement-montpellier/"
+                                  }
+                                })
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _c("a", {
+                                  attrs: {
+                                    title: "Toulouse",
+                                    target: "_blank",
+                                    href:
+                                      "https://fretbay.com/en/demenagement-toulouse/"
+                                  }
+                                })
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _c("a", {
+                                  attrs: {
+                                    title: "Lille",
+                                    target: "_blank",
+                                    href:
+                                      "https://fretbay.com/en/demenagement-lille/"
+                                  }
+                                })
+                              ])
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "col-md-3 col-sm-3 col-xs-6" },
+                          [
+                            _c("ul", [
+                              _c("li", [
+                                _c("a", {
+                                  attrs: {
+                                    title: "Cannes",
+                                    target: "_blank",
+                                    href:
+                                      "https://fretbay.com/en/demenagement-cannes/"
+                                  }
+                                })
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _c("a", {
+                                  attrs: {
+                                    title: "Marseille",
+                                    target: "_blank",
+                                    href:
+                                      "https://fretbay.com/en/demenagement-marseille/"
+                                  }
+                                })
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _c("a", {
+                                  attrs: {
+                                    title: "Lyon",
+                                    target: "_blank",
+                                    href:
+                                      "https://fretbay.com/en/demenagement-lyon/"
+                                  }
+                                })
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _c("a", {
+                                  attrs: {
+                                    title: "Nantes",
+                                    target: "_blank",
+                                    href:
+                                      "https://fretbay.com/en/demenagement-nantes/"
+                                  }
+                                })
+                              ])
+                            ])
+                          ]
+                        )
+                      ]
+                    )
+                  ])
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "tab-pane", attrs: { id: "footertab2" } },
+              [
+                _c("div", { staticClass: "container" }, [
+                  _c("ul", { staticClass: "clearfix" }, [
+                    _c("li", [
+                      _c(
+                        "a",
+                        {
+                          attrs: {
+                            target: "_blank",
+                            href:
+                              "https://fretbay.com/en/movimiento-Stoke Bishop-Sandhoe.html"
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "Move from\n                                Stoke Bishop to Sandhoe"
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c(
+                        "a",
+                        {
+                          attrs: {
+                            target: "_blank",
+                            href:
+                              "https://fretbay.com/en/movimiento-Wroxton-Morecambe.html"
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "Move\n                                from Wroxton to Morecambe"
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c(
+                        "a",
+                        {
+                          attrs: {
+                            target: "_blank",
+                            href:
+                              "https://fretbay.com/en/movimiento-Lavant-Pwllcrochan.html"
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "Move\n                                from Lavant to Pwllcrochan"
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c(
+                        "a",
+                        {
+                          attrs: {
+                            target: "_blank",
+                            href:
+                              "https://fretbay.com/en/movimiento-Stilton-Galloon.html"
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "Move\n                                from Stilton to Galloon"
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c(
+                        "a",
+                        {
+                          attrs: {
+                            target: "_blank",
+                            href:
+                              "https://fretbay.com/en/movimiento-Kemsley-Bigby.html"
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "Move\n                                from Kemsley to Bigby"
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c(
+                        "a",
+                        {
+                          attrs: {
+                            target: "_blank",
+                            href:
+                              "https://fretbay.com/en/movimiento-Hawkwell-Carn Entral.html"
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "Move from\n                                Hawkwell to Carn Entral"
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c(
+                        "a",
+                        {
+                          attrs: {
+                            target: "_blank",
+                            href:
+                              "https://fretbay.com/en/movimiento-Cullatagh-West Dean Park.html"
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "Move from\n                                Cullatagh to West Dean Park"
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c(
+                        "a",
+                        {
+                          attrs: {
+                            target: "_blank",
+                            href:
+                              "https://fretbay.com/en/movimiento-Nympsfield-Milton on Stour.html"
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "Move\n                                from Nympsfield to Milton on Stour"
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c(
+                        "a",
+                        {
+                          attrs: {
+                            target: "_blank",
+                            href:
+                              "https://fretbay.com/en/movimiento-Moneen-Tarvin Sands.html"
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "Move from\n                                Moneen to Tarvin Sands"
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c(
+                        "a",
+                        {
+                          attrs: {
+                            target: "_blank",
+                            href:
+                              "https://fretbay.com/en/movimiento-Stockerston-Hammoon.html"
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "Move from\n                                Stockerston to Hammoon"
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c(
+                        "a",
+                        {
+                          attrs: {
+                            target: "_blank",
+                            href:
+                              "https://fretbay.com/en/movimiento-Tresaddern-Luccombe.html"
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "Move from\n                                Tresaddern to Luccombe"
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c(
+                        "a",
+                        {
+                          attrs: {
+                            target: "_blank",
+                            href:
+                              "https://fretbay.com/en/movimiento-Eastern Docks-Eynesbury.html"
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "Move from\n                                Eastern Docks to Eynesbury"
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c(
+                        "a",
+                        {
+                          attrs: {
+                            target: "_blank",
+                            href:
+                              "https://fretbay.com/en/movimiento-Low Stott Park-Grange Moor.html"
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "Move\n                                from Low Stott Park to Grange Moor"
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c(
+                        "a",
+                        {
+                          attrs: {
+                            target: "_blank",
+                            href:
+                              "https://fretbay.com/en/movimiento-Uphall-Lower Maescoed.html"
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "Move from\n                                Uphall to Lower Maescoed"
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c(
+                        "a",
+                        {
+                          attrs: {
+                            target: "_blank",
+                            href:
+                              "https://fretbay.com/en/movimiento-Trefeitha-Craig-Cefn-Parc.html"
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "Move from\n                                Trefeitha to Craig-Cefn-Parc"
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c(
+                        "a",
+                        {
+                          attrs: {
+                            target: "_blank",
+                            href:
+                              "https://fretbay.com/en/movimiento-New Hedges-Llandygwydd.html"
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "Move from\n                                New Hedges to Llandygwydd"
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c(
+                        "a",
+                        {
+                          attrs: {
+                            target: "_blank",
+                            href:
+                              "https://fretbay.com/en/movimiento-Glanwydden-Blairforge.html"
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "Move from\n                                Glanwydden to Blairforge"
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c(
+                        "a",
+                        {
+                          attrs: {
+                            target: "_blank",
+                            href:
+                              "https://fretbay.com/en/movimiento-Heckfordbridge-Bircher.html"
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "Move from\n                                Heckfordbridge to Bircher"
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c(
+                        "a",
+                        {
+                          attrs: {
+                            target: "_blank",
+                            href:
+                              "https://fretbay.com/en/movimiento-Hatfield Heath-Old Rhosrobin.html"
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "Move\n                                from Hatfield Heath to Old Rhosrobin"
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c(
+                        "a",
+                        {
+                          attrs: {
+                            target: "_blank",
+                            href:
+                              "https://fretbay.com/en/movimiento-Stirchley-Blakedown.html"
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "Move from\n                                Stirchley to Blakedown"
+                          )
+                        ]
+                      )
+                    ])
+                  ])
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "tab-pane", attrs: { id: "footertab3" } },
+              [
+                _c("div", { staticClass: "container" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "col-md-3 col-sm-5 col-xs-6 full-width-xs"
+                      },
+                      [
+                        _c("ul", [
+                          _c("li", [
+                            _c(
+                              "a",
+                              {
+                                attrs: {
+                                  target: "_blank",
+                                  href:
+                                    "https://fretbay.com/en/cheap-horse-transport/"
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "Horse\n                                        transport"
+                                )
+                              ]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c(
+                              "a",
+                              {
+                                attrs: {
+                                  target: "_blank",
+                                  href: "https://fretbay.com/en/animals/"
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "Animal\n                                        transport"
+                                )
+                              ]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c(
+                              "a",
+                              {
+                                attrs: {
+                                  target: "_blank",
+                                  href:
+                                    "https://fretbay.com/en/cheap-vehicle-transport/"
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "low\n                                        cost car transport"
+                                )
+                              ]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c(
+                              "a",
+                              {
+                                attrs: {
+                                  target: "_blank",
+                                  href:
+                                    "https://fretbay.com/en/cheap-motorcycle-transport/"
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "Low cost\n                                        motorcycle transport"
+                                )
+                              ]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c(
+                              "a",
+                              {
+                                attrs: {
+                                  target: "_blank",
+                                  href:
+                                    "https://fretbay.com/en/cheap-piano-transport/"
+                                }
+                              },
+                              [_vm._v("Piano")]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c(
+                              "a",
+                              {
+                                attrs: {
+                                  target: "_blank",
+                                  href:
+                                    "https://fretbay.com/en/furniture-transport/index.php"
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "Furniture\n                                        transport"
+                                )
+                              ]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c(
+                              "a",
+                              {
+                                attrs: {
+                                  target: "_blank",
+                                  title: "Paris",
+                                  href:
+                                    "https://fretbay.com/en/cheap-goods-transport/"
+                                }
+                              },
+                              [_vm._v("Commercial goods")]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c(
+                              "a",
+                              {
+                                attrs: {
+                                  target: "_blank",
+                                  title: "Paris",
+                                  href: "https://fretbay.com/en/bulky-packages/"
+                                }
+                              },
+                              [_vm._v("Bulky parcel")]
+                            )
+                          ])
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "col-md-3 col-sm-5 col-xs-6 full-width-xs"
+                      },
+                      [
+                        _c("ul", [
+                          _c("li", [
+                            _c(
+                              "a",
+                              {
+                                attrs: {
+                                  target: "_blank",
+                                  title: "Brest",
+                                  href:
+                                    "https://fretbay.com/en/cheap-appliances-transport/"
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "Household\n                                        appliances"
+                                )
+                              ]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c(
+                              "a",
+                              {
+                                attrs: {
+                                  target: "_blank",
+                                  title: "Dijon",
+                                  href:
+                                    "https://fretbay.com/en/package-transport/"
+                                }
+                              },
+                              [_vm._v("Parcel transport")]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c(
+                              "a",
+                              {
+                                attrs: {
+                                  target: "_blank",
+                                  title: "Clermont-Ferrand",
+                                  href:
+                                    "https://fretbay.com/en/container-transport/"
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "Container\n                                        transport"
+                                )
+                              ]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c(
+                              "a",
+                              {
+                                attrs: {
+                                  target: "_blank",
+                                  title: "Grenoble",
+                                  href:
+                                    "https://fretbay.com/en/fragile-objects-transport/"
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "Fragile\n                                        objects"
+                                )
+                              ]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c(
+                              "a",
+                              {
+                                attrs: {
+                                  target: "_blank",
+                                  title: "Bateaux",
+                                  href:
+                                    "https://fretbay.com/en/boat-transport-carrier/index.php"
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "Boat\n                                        transport"
+                                )
+                              ]
+                            )
+                          ])
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "col-md-4 col-sm-5 col-xs-6 full-width-xs"
+                      },
+                      [
+                        _c("ul", [
+                          _c("li", [
+                            _c(
+                              "a",
+                              {
+                                staticStyle: { color: "#209afd" },
+                                attrs: {
+                                  target: "_blank",
+                                  title: "Bordeaux",
+                                  href:
+                                    "https://fretbay.com/en/freight-transport/"
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "FretBay, the online\n                                        freight platform"
+                                )
+                              ]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c(
+                              "a",
+                              {
+                                staticStyle: { color: "#209afd" },
+                                attrs: {
+                                  target: "_blank",
+                                  title: "Nice",
+                                  href:
+                                    "https://fretbay.com/en/mover-transporter-carrier-network/"
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "Join our\n                                        network of movers"
+                                )
+                              ]
+                            )
+                          ])
+                        ])
+                      ]
+                    )
+                  ])
+                ])
+              ]
+            )
+          ])
+        ])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
