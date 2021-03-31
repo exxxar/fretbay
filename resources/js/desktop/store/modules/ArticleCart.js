@@ -52,6 +52,7 @@ const state = {
 
                 ]
             },
+            //todo: вынести из item
         }
     ],
 }

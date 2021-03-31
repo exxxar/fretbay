@@ -33,16 +33,21 @@ Vue.component('system-notification-component', require('../desktop/components/Sy
 //pages
 Vue.component('index-page', require('../desktop/pages/Index.vue').default);
 Vue.component('register-page', require('../desktop/pages/Register.vue').default);
+
 Vue.component('register-transporter-page', require('../desktop/pages/RegisterTransporter.vue').default);
+Vue.component('register-user-page', require('../desktop/pages/RegisterUser.vue').default);
 Vue.component('login-page', require('../desktop/pages/Login.vue').default);
 Vue.component('contact-us-page', require('../desktop/pages/ContactUs.vue').default);
 Vue.component('company-move-page', require('../desktop/pages/CompanyMove.vue').default);
 Vue.component('find-loads-page', require('../desktop/pages/FindLoads.vue').default);
 Vue.component('find-transporter-page', require('../desktop/pages/FindTransporter.vue').default);
 Vue.component('how-it-work-page', require('../desktop/pages/HowItWork.vue').default);
+Vue.component('recruitment-page', require('../desktop/pages/Recruitment.vue').default);
+Vue.component('fight-the-black-market-page', require('../desktop/pages/FightTheBlackMarket.vue').default);
 Vue.component('reviews-page', require('../desktop/pages/Reviews.vue').default);
 Vue.component('search-transporter-mover-carrier-page', require('../desktop/pages/SearchTransporterMoverCarrier.vue').default);
 Vue.component('benefits-transporter-mover-carrier-page', require('../desktop/pages/BenefitsTransporterMoverCarrier.vue').default);
+Vue.component('search-transporter-mover-carrier-page', require('../desktop/pages/SearchTransporterMoverCarrier.vue').default);
 Vue.component('fequently-asked-questions-page', require('../desktop/pages/FrequentlyAskedQuestions.vue').default);
 Vue.component('privacy-policy-page', require('../desktop/pages/PrivacyPolicy.vue').default);
 Vue.component('who-we-are-page', require('../desktop/pages/WhoWeAre.vue').default);

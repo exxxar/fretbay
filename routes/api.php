@@ -25,6 +25,8 @@ Route::group(["prefix" => "desktop"], function () {
         Route::get("/get-type-of-object", DictionaryController::class . "@typeOfObject");
         Route::get("/get-type-of-object/{category_id}", DictionaryController::class . "@typeOfObjectByCategory");
         Route::get("/get-vehicles", DictionaryController::class . "@vehicles");
+        Route::get("/get-latest-transactions", DictionaryController::class . "@latestTransactions");
+        Route::get("/get-top-movers", DictionaryController::class . "@topMovers");
     });
 });
 

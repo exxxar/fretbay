@@ -17,6 +17,8 @@ class CreateTypeOfTransportsTable extends Migration
             $table->id();
             $table->string("title", 2000);
             $table->string("img", 1000);
+            //todo:check this
+           // $table->double("min_bid_price")->default(0);
             $table->integer("position")->default(0);
             $table->boolean("is_active")->default(true);
             $table->softDeletes();

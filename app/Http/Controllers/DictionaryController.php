@@ -44,4 +44,12 @@ class DictionaryController extends Controller
             ->get()
         );
     }
+
+    public function latestTransactions(){
+
+    }
+
+    public function topMovers(){
+
+    }
 }

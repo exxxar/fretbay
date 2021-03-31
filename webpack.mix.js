@@ -47,7 +47,6 @@ mix.webpackConfig({
 mix.copyDirectory('resources/assets/js', 'public/js');
 
 mix
-
     .js('resources/js/desktop/app.js', 'public/js/desktop')
     .sass('resources/sass/desktop/app.scss', 'public/css/desktop/app.css')
     .options({
@@ -55,12 +54,55 @@ mix
     });
 
 
+//**************** CSS ********************
+//css
+//mix.copy('resources/vendors/pace-progress/css/pace.min.css', 'public/css');
+mix.copy('node_modules/@coreui/chartjs/dist/css/coreui-chartjs.css', 'public/css/admin');
+mix.copy('node_modules/cropperjs/dist/cropper.css', 'public/css/admin');
+//main cs
+
+//************** SCRIPTS ******************
+// general scripts
+mix.copy('node_modules/@coreui/utils/dist/coreui-utils.js', 'public/js/admin');
+mix.copy('node_modules/axios/dist/axios.min.js', 'public/js/admin');
+//mix.copy('node_modules/pace-progress/pace.min.js', 'public/js');
+mix.copy('node_modules/@coreui/coreui/dist/js/coreui.bundle.min.js', 'public/js/admin');
+// views scripts
+mix.copy('node_modules/chart.js/dist/Chart.min.js', 'public/js/admin');
+mix.copy('node_modules/@coreui/chartjs/dist/js/coreui-chartjs.bundle.js', 'public/js/admin');
+
+mix.copy('node_modules/cropperjs/dist/cropper.js', 'public/js/admin');
+// details scripts
+mix.copy('resources/js/admin/coreui/main.js', 'public/js/admin');
+mix.copy('resources/js/admin/coreui/colors.js', 'public/js/admin');
+mix.copy('resources/js/admin/coreui/charts.js', 'public/js/admin');
+mix.copy('resources/js/admin/coreui/widgets.js', 'public/js/admin');
+mix.copy('resources/js/admin/coreui/popovers.js', 'public/js/admin');
+mix.copy('resources/js/admin/coreui/tooltips.js', 'public/js/admin');
+// details scripts admin-panel
+mix.js('resources/js/admin/coreui/menu-create.js', 'public/js/admin');
+mix.js('resources/js/admin/coreui/menu-edit.js', 'public/js/admin');
+mix.js('resources/js/admin/coreui/media.js', 'public/js/admin');
+mix.js('resources/js/admin/coreui/media-cropp.js', 'public/js/admin');
+//*************** OTHER ******************
+//fonts
+mix.copy('node_modules/@coreui/icons/fonts', 'public/fonts/admin');
+//icons
+mix.copy('node_modules/@coreui/icons/css/free.min.css', 'public/css/admin');
+mix.copy('node_modules/@coreui/icons/css/brand.min.css', 'public/css/admin');
+mix.copy('node_modules/@coreui/icons/css/flag.min.css', 'public/css/admin');
+mix.copy('node_modules/@coreui/icons/svg/flag', 'public/images/svg/flag');
+
+mix.copy('node_modules/@coreui/icons/sprites/', 'public/images/icons/sprites');
+
+
 mix
     .js('resources/js/admin/app.js', 'public/js/admin')
-    .sass('resources/sass/admin/app.scss', 'public/css/admin/app.css')
+    .sass('resources/sass/admin/style.scss', 'public/css/admin/app.css')
     .options({
         processCssUrls: false
     });
+
 
 mix.copyDirectory('resources/assets/images', 'public/images');
 mix.copyDirectory('resources/assets/css', 'public/css');

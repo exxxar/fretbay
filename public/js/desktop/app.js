@@ -1899,6 +1899,248 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/FindTransporter/Steps.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/components/FindTransporter/Steps.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    step: {
+      type: Number,
+      "default": 0
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/FindTransporter/TypeSelector.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/components/FindTransporter/TypeSelector.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      need_more: false,
+      selected: 0
+    };
+  },
+  methods: {
+    selectType: function selectType(type) {
+      this.selected = type;
+      this.$emit("select-type", this.selected);
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/Footer.vue?vue&type=script&lang=js&":
 /*!*************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/components/Footer.vue?vue&type=script&lang=js& ***!
@@ -1908,6 +2150,149 @@ module.exports = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -1926,12 +2311,39 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _MainMenu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MainMenu */ "./resources/js/desktop/components/MainMenu.vue");
 //
 //
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ["background"],
+  components: {
+    MainMenu: _MainMenu__WEBPACK_IMPORTED_MODULE_0__["default"]
+  }
+});
 
 /***/ }),
 
@@ -1944,12 +2356,18 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _MainMenu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MainMenu */ "./resources/js/desktop/components/MainMenu.vue");
 //
 //
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    MainMenu: _MainMenu__WEBPACK_IMPORTED_MODULE_0__["default"]
+  }
+});
 
 /***/ }),
 
@@ -1962,6 +2380,263 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/MainMenu.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/components/MainMenu.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2008,7 +2683,7 @@ __webpack_require__.r(__webpack_exports__);
   props: {
     time: {
       type: Number,
-      "default": 10000
+      "default": 1000
     }
   },
   data: function data() {
@@ -2043,6 +2718,34 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -2056,6 +2759,406 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2128,12 +3231,247 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components_FindTransporter_Steps__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/FindTransporter/Steps */ "./resources/js/desktop/components/FindTransporter/Steps.vue");
+/* harmony import */ var _components_FindTransporter_TypeSelector__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/FindTransporter/TypeSelector */ "./resources/js/desktop/components/FindTransporter/TypeSelector.vue");
 //
 //
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    Steps: _components_FindTransporter_Steps__WEBPACK_IMPORTED_MODULE_0__["default"],
+    TypeSelector: _components_FindTransporter_TypeSelector__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
+  data: function data() {
+    return {
+      type: null
+    };
+  },
+  methods: {
+    selectType: function selectType(type) {
+      this.type = type;
+    },
+    submit: function submit() {}
+  }
+});
 
 /***/ }),
 
@@ -2169,6 +3507,558 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -2182,6 +4072,127 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2739,192 +4750,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -2938,6 +4763,54 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2983,6 +4856,450 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/Recruitment.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/pages/Recruitment.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/Register.vue?vue&type=script&lang=js&":
 /*!**********************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/pages/Register.vue?vue&type=script&lang=js& ***!
@@ -2992,6 +5309,98 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -3010,6 +5419,366 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/RegisterUser.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/pages/RegisterUser.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -3051,6 +5820,407 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -3082,6 +6252,64 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -7533,6 +10761,63 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/FindTransporter/Steps.vue?vue&type=style&index=0&lang=scss&":
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/components/FindTransporter/Steps.vue?vue&type=style&index=0&lang=scss& ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".top-wrap {\n  margin-top: 80px;\n  background: #3D4E60;\n}\n.top-wrap .done {\n  color: lightgrey;\n}\n.top-wrap .done.active {\n  color: white;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/FindTransporter/TypeSelector.vue?vue&type=style&index=0&lang=scss&":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/components/FindTransporter/TypeSelector.vue?vue&type=style&index=0&lang=scss& ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".btn-custom-white {\n  min-width: 200px;\n  color: #737480;\n  background-color: #f8f8fa;\n  transition: all 0.3s;\n  border-radius: 50px;\n  padding-left: 20px;\n  padding-right: 20px;\n  padding-top: 7px;\n  padding-bottom: 7px;\n  line-height: 1.42857;\n  border-bottom: 4px solid rgba(0, 0, 0, 0.09);\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/HeaderSimple.vue?vue&type=style&index=0&lang=scss&":
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/components/HeaderSimple.vue?vue&type=style&index=0&lang=scss& ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".simple-nav {\n  background-color: rgba(73, 89, 115, 0.9) !important;\n  position: fixed;\n  top: 0;\n  left: 0;\n  height: 80px;\n  z-index: 9999;\n  width: 100%;\n}\n.simple-nav #logo {\n  background: none;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/Preloader.vue?vue&type=style&index=0&lang=scss&":
 /*!***************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/components/Preloader.vue?vue&type=style&index=0&lang=scss& ***!
@@ -7565,6 +10850,25 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 // module
 exports.push([module.i, ".vue-notification-group {\n  width: 100% !important;\n  z-index: 9999999999;\n}\n.notification-dialog.ios-style {\n  margin: 5px 10px 0px 10px !important;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/FindTransporter.vue?vue&type=style&index=0&lang=scss&":
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/pages/FindTransporter.vue?vue&type=style&index=0&lang=scss& ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".articles-list li {\n  padding: 10px;\n  background: #f3f4f8;\n  border-radius: 10px;\n  display: flex;\n  flex-wrap: wrap;\n}\n.articles-list li .article-header {\n  width: 100%;\n  display: flex;\n}\n.articles-list li .list-group {\n  width: 100%;\n  display: flex;\n  flex-wrap: wrap;\n  flex-direction: row;\n}\n.articles-list li .list-group .list-group-item {\n  position: relative;\n  background-color: #fff;\n  border: 1px solid rgba(0, 0, 0, 0.125);\n  display: inline;\n  padding: 5px;\n  font-size: 10px;\n  border-radius: 10px;\n  margin-left: 5px;\n  margin-top: 5px;\n}\n.panel-left {\n  padding: 20px;\n  background: white;\n  box-sizing: border-box;\n  border-radius: 10px;\n  box-shadow: 0 3px 1px 0 rgba(0, 0, 0, 0.06);\n}\n.panel-right {\n  padding: 20px;\n  background: lightgray;\n  box-sizing: border-box;\n  border-radius: 10px;\n}\n.transport-category {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 5px;\n}\n.transport-category.active:after {\n  content: \"\";\n  background: url(/images/common/icons/general/circle-check.svg) no-repeat center center;\n  width: 30px;\n  height: 30px;\n  position: absolute;\n  left: 15px;\n  top: 15px;\n}\n.transport-category.active label {\n  border: 2px #0083fe solid;\n  background-color: #008bdb17;\n}\n.transport-category label {\n  min-height: 170px;\n  width: 100%;\n  padding: 14px 20px;\n  cursor: pointer;\n  border-radius: 10px;\n  transition: 0.3s;\n  text-align: center;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  border: 2px transparent solid;\n}\n.transport-category label:hover {\n  background-color: #008bdb17;\n  border: 2px #0083fe solid;\n}\n.transport-category label span.category-label-inner {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap;\n  flex-direction: column;\n}\n.content-box-gray {\n  background: #f3f4f8;\n  border-radius: 12px;\n  padding: 10px;\n  box-sizing: border-box;\n}\n.content-box-gray .input-has-icon-right {\n  position: relative;\n}\n.content-box-gray .input-has-icon-right input {\n  font-size: 12px;\n}\n.content-box-gray .input-has-icon-right .rel-icon {\n  position: absolute;\n  right: 0px;\n  top: 0px;\n}\n.content-box-gray .input-has-icon-right .rel-icon img {\n  width: 30px;\n  height: 30px;\n}", ""]);
 
 // exports
 
@@ -38787,6 +42091,96 @@ process.umask = function() { return 0; };
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/FindTransporter/Steps.vue?vue&type=style&index=0&lang=scss&":
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/components/FindTransporter/Steps.vue?vue&type=style&index=0&lang=scss& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src??ref--8-2!../../../../../node_modules/sass-loader/dist/cjs.js??ref--8-3!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Steps.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/FindTransporter/Steps.vue?vue&type=style&index=0&lang=scss&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/FindTransporter/TypeSelector.vue?vue&type=style&index=0&lang=scss&":
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/components/FindTransporter/TypeSelector.vue?vue&type=style&index=0&lang=scss& ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src??ref--8-2!../../../../../node_modules/sass-loader/dist/cjs.js??ref--8-3!../../../../../node_modules/vue-loader/lib??vue-loader-options!./TypeSelector.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/FindTransporter/TypeSelector.vue?vue&type=style&index=0&lang=scss&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/HeaderSimple.vue?vue&type=style&index=0&lang=scss&":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/components/HeaderSimple.vue?vue&type=style&index=0&lang=scss& ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--8-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--8-3!../../../../node_modules/vue-loader/lib??vue-loader-options!./HeaderSimple.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/HeaderSimple.vue?vue&type=style&index=0&lang=scss&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/Preloader.vue?vue&type=style&index=0&lang=scss&":
 /*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/components/Preloader.vue?vue&type=style&index=0&lang=scss& ***!
@@ -38826,6 +42220,36 @@ if(false) {}
 
 
 var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--8-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--8-3!../../../../node_modules/vue-loader/lib??vue-loader-options!./SystemNotification.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/SystemNotification.vue?vue&type=style&index=0&lang=scss&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/FindTransporter.vue?vue&type=style&index=0&lang=scss&":
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/pages/FindTransporter.vue?vue&type=style&index=0&lang=scss& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--8-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--8-3!../../../../node_modules/vue-loader/lib??vue-loader-options!./FindTransporter.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/FindTransporter.vue?vue&type=style&index=0&lang=scss&");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -39431,6 +42855,611 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/FindTransporter/Steps.vue?vue&type=template&id=d5e74666&":
+/*!********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/components/FindTransporter/Steps.vue?vue&type=template&id=d5e74666& ***!
+  \********************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container-fluid mb-2 top-wrap" }, [
+    _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "steps-box" }, [
+          _c("ul", { staticClass: "steps d-flex" }, [
+            _c(
+              "li",
+              { staticClass: "done p-2", class: { active: _vm.step === 0 } },
+              [
+                _c("span", { staticClass: "step-num" }),
+                _vm._v(" "),
+                _c("span", { staticClass: "step-text" }, [
+                  _vm._v("Choice of Category")
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "li",
+              { staticClass: "done p-2", class: { active: _vm.step === 1 } },
+              [
+                _c("span", { staticClass: "step-num" }),
+                _vm._v(" "),
+                _c("span", { staticClass: "step-text" }, [
+                  _vm._v("Add item / volume")
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "li",
+              { staticClass: "done p-2", class: { active: _vm.step === 2 } },
+              [
+                _c("span", { staticClass: "step-num" }),
+                _vm._v(" "),
+                _c("span", { staticClass: "step-text" }, [
+                  _vm._v("Address, Information / Photo")
+                ])
+              ]
+            )
+          ])
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/FindTransporter/TypeSelector.vue?vue&type=template&id=3cc65d03&":
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/components/FindTransporter/TypeSelector.vue?vue&type=template&id=3cc65d03& ***!
+  \***************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c(
+      "h3",
+      { staticClass: "mt-0 text-uppercase text-black content-box-title" },
+      [_vm._v("Type of transport")]
+    ),
+    _vm._v(" "),
+    _c("ul", { staticClass: "row" }, [
+      _c(
+        "li",
+        {
+          staticClass: "col-md-3 col-6 transport-category",
+          class: { active: _vm.selected === 0 },
+          on: {
+            click: function($event) {
+              return _vm.selectType(0)
+            }
+          }
+        },
+        [_vm._m(0)]
+      ),
+      _vm._v(" "),
+      _c(
+        "li",
+        {
+          staticClass: "col-md-3 col-6 transport-category",
+          class: { active: _vm.selected === 1 },
+          on: {
+            click: function($event) {
+              return _vm.selectType(1)
+            }
+          }
+        },
+        [_vm._m(1)]
+      ),
+      _vm._v(" "),
+      _c(
+        "li",
+        {
+          staticClass: "col-md-3 col-6 transport-category",
+          class: { active: _vm.selected === 2 },
+          on: {
+            click: function($event) {
+              return _vm.selectType(2)
+            }
+          }
+        },
+        [_vm._m(2)]
+      ),
+      _vm._v(" "),
+      _c(
+        "li",
+        {
+          staticClass: "col-md-3 col-6 transport-category",
+          class: { active: _vm.selected === 3 },
+          on: {
+            click: function($event) {
+              return _vm.selectType(3)
+            }
+          }
+        },
+        [_vm._m(3)]
+      ),
+      _vm._v(" "),
+      _c(
+        "li",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.need_more,
+              expression: "need_more"
+            }
+          ],
+          staticClass: "col-md-3 col-6 transport-category",
+          class: { active: _vm.selected === 4 },
+          on: {
+            click: function($event) {
+              return _vm.selectType(4)
+            }
+          }
+        },
+        [_vm._m(4)]
+      ),
+      _vm._v(" "),
+      _c(
+        "li",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.need_more,
+              expression: "need_more"
+            }
+          ],
+          staticClass: "col-md-3 col-6 transport-category",
+          class: { active: _vm.selected === 5 },
+          on: {
+            click: function($event) {
+              return _vm.selectType(5)
+            }
+          }
+        },
+        [_vm._m(5)]
+      ),
+      _vm._v(" "),
+      _c(
+        "li",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.need_more,
+              expression: "need_more"
+            }
+          ],
+          staticClass: "col-md-3 col-6 transport-category",
+          class: { active: _vm.selected === 6 },
+          on: {
+            click: function($event) {
+              return _vm.selectType(6)
+            }
+          }
+        },
+        [_vm._m(6)]
+      ),
+      _vm._v(" "),
+      _c(
+        "li",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.need_more,
+              expression: "need_more"
+            }
+          ],
+          staticClass: "col-md-3 col-6 transport-category",
+          class: { active: _vm.selected === 7 },
+          on: {
+            click: function($event) {
+              return _vm.selectType(7)
+            }
+          }
+        },
+        [_vm._m(7)]
+      ),
+      _vm._v(" "),
+      _c(
+        "li",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.need_more,
+              expression: "need_more"
+            }
+          ],
+          staticClass: "col-md-3 col-6 transport-category",
+          class: { active: _vm.selected === 8 },
+          on: {
+            click: function($event) {
+              return _vm.selectType(8)
+            }
+          }
+        },
+        [_vm._m(8)]
+      ),
+      _vm._v(" "),
+      _c(
+        "li",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.need_more,
+              expression: "need_more"
+            }
+          ],
+          staticClass: "col-md-3 col-6 transport-category",
+          class: { active: _vm.selected === 9 },
+          on: {
+            click: function($event) {
+              return _vm.selectType(9)
+            }
+          }
+        },
+        [_vm._m(9)]
+      ),
+      _vm._v(" "),
+      _c(
+        "li",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.need_more,
+              expression: "need_more"
+            }
+          ],
+          staticClass: "col-md-3 col-6 transport-category",
+          class: { active: _vm.selected === 10 },
+          on: {
+            click: function($event) {
+              return _vm.selectType(10)
+            }
+          }
+        },
+        [_vm._m(10)]
+      ),
+      _vm._v(" "),
+      _c(
+        "li",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.need_more,
+              expression: "need_more"
+            }
+          ],
+          staticClass: "col-md-3 col-6 transport-category",
+          class: { active: _vm.selected === 11 },
+          on: {
+            click: function($event) {
+              return _vm.selectType(11)
+            }
+          }
+        },
+        [_vm._m(11)]
+      )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "text-center" }, [
+      _c(
+        "a",
+        {
+          staticClass: "btn btn-custom-white",
+          attrs: { href: "#" },
+          on: {
+            click: function($event) {
+              _vm.need_more = !_vm.need_more
+            }
+          }
+        },
+        [
+          !_vm.need_more
+            ? _c("span", [_vm._v("Show all")])
+            : _c("span", [_vm._v("Hide other")])
+        ]
+      )
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", [
+      _c("span", { staticClass: "category-label-inner" }, [
+        _c("span", { staticClass: "animated-icon" }, [
+          _c("img", {
+            attrs: {
+              src: "/images/common/icons/category/default/1.svg",
+              width: "75px",
+              height: "75px",
+              alt: ""
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("span", [_vm._v("Household equipment")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", [
+      _c("span", { staticClass: "category-label-inner" }, [
+        _c("span", { staticClass: "animated-icon" }, [
+          _c("img", {
+            attrs: {
+              src: "/images/common/icons/category/default/2.svg?v=0.0.4",
+              width: "75px",
+              height: "75px",
+              alt: ""
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("span", [_vm._v("Moving")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { n: "" } }, [
+      _c("span", { staticClass: "category-label-inner" }, [
+        _c("span", { staticClass: "animated-icon" }, [
+          _c("img", {
+            attrs: {
+              src: "/images/common/icons/category/default/3.svg?v=0.0.4",
+              width: "75px",
+              height: "75px",
+              alt: ""
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("span", [_vm._v("Vehicle")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", [
+      _c("span", { staticClass: "category-label-inner" }, [
+        _c("span", { staticClass: "animated-icon" }, [
+          _c("img", {
+            attrs: {
+              src: "/images/common/icons/category/default/17.svg?v=0.0.4",
+              width: "75px",
+              height: "75px",
+              alt: ""
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("span", [_vm._v("Motorcycles and sports vehicles")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", [
+      _c("span", { staticClass: "category-label-inner" }, [
+        _c("span", { staticClass: "animated-icon" }, [
+          _c("img", {
+            attrs: {
+              src: "/images/common/icons/category/default/5.svg?v=0.0.4",
+              width: "75px",
+              height: "75px",
+              alt: ""
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("span", [_vm._v("Boats & voluminous")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", [
+      _c("span", { staticClass: "category-label-inner" }, [
+        _c("span", { staticClass: "animated-icon" }, [
+          _c("img", {
+            attrs: {
+              src: "/images/common/icons/category/default/13.svg?v=0.0.4",
+              width: "75px",
+              height: "75px",
+              alt: ""
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("span", [_vm._v("Fragile goods")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", [
+      _c("span", { staticClass: "category-label-inner" }, [
+        _c("span", { staticClass: "animated-icon" }, [
+          _c("img", {
+            attrs: {
+              src: "/images/common/icons/category/default/18.svg?v=0.0.4",
+              width: "75px",
+              height: "75px",
+              alt: ""
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("span", [_vm._v("Package/Fold")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", [
+      _c("span", { staticClass: "category-label-inner" }, [
+        _c("span", { staticClass: "animated-icon" }, [
+          _c("img", {
+            attrs: {
+              src: "/images/common/icons/category/default/19.svg?v=0.0.4",
+              width: "75px",
+              height: "75px",
+              alt: ""
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("span", [_vm._v(" Pallet ")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", [
+      _c("span", { staticClass: "category-label-inner" }, [
+        _c("span", { staticClass: "animated-icon" }, [
+          _c("img", {
+            attrs: {
+              src: "/images/common/icons/category/default/11.svg?v=0.0.4",
+              width: "75px",
+              height: "75px",
+              alt: ""
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("span", [_vm._v("Animals")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", [
+      _c("span", { staticClass: "category-label-inner" }, [
+        _c("span", { staticClass: "animated-icon" }, [
+          _c("img", {
+            attrs: {
+              src: "/images/common/icons/category/default/14.svg?v=0.0.4",
+              width: "75px",
+              height: "75px",
+              alt: ""
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("span", [_vm._v("Agri-food")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", [
+      _c("span", { staticClass: "category-label-inner" }, [
+        _c("span", { staticClass: "animated-icon" }, [
+          _c("img", {
+            attrs: {
+              src: "/images/common/icons/category/default/9.svg?v=0.0.4",
+              width: "75px",
+              height: "75px",
+              alt: ""
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("span", [_vm._v("Commercial goods")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", [
+      _c("span", { staticClass: "category-label-inner" }, [
+        _c("span", { staticClass: "animated-icon" }, [
+          _c("img", {
+            attrs: {
+              src: "/images/common/icons/category/default/6.svg?v=0.0.4",
+              width: "75px",
+              height: "75px",
+              alt: ""
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("span", [_vm._v("Miscellaneous")])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/Footer.vue?vue&type=template&id=4bd38ada&":
 /*!*****************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/components/Footer.vue?vue&type=template&id=4bd38ada& ***!
@@ -39446,9 +43475,264 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("footer", { attrs: { id: "fretbayfooter" } }, [
+      _c("div", { staticClass: "footer-main" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-2" }, [
+              _c(
+                "a",
+                { staticClass: "footer-main__logotip", attrs: { href: "#" } },
+                [
+                  _c("img", {
+                    attrs: {
+                      src: "/images/footer-logo.svg",
+                      width: "143",
+                      height: "165",
+                      alt: "Logo"
+                    }
+                  })
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-10 top-right-footersection" }, [
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-md-3" }, [
+                  _c("h2", { staticClass: "trfs__title" }, [
+                    _vm._v(
+                      "\n                                FretBay helps you\n                            "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("ul", { staticClass: "list-unstyled" }, [
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _vm._v("Search for a transporter")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c(
+                        "a",
+                        {
+                          attrs: { href: "/benefits-transporter-mover-carrier" }
+                        },
+                        [_vm._v("I am a transporter")]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "/how-it-works" } }, [
+                        _vm._v("How does it work?")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _vm._v("Frequently asked questions")
+                      ])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-md-3" }, [
+                  _c("h2", { staticClass: "trfs__title" }, [
+                    _vm._v(
+                      "\n                                The company\n                            "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("ul", { staticClass: "list-unstyled" }, [
+                    _c("li", [
+                      _c("a", { attrs: { href: "/who-we-are" } }, [
+                        _vm._v("Who are we?")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c(
+                        "a",
+                        { attrs: { href: "/fequently-asked-questions" } },
+                        [_vm._v("Fight the black market")]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "/recruitment" } }, [
+                        _vm._v("Recruitment")
+                      ])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-md-3" }, [
+                  _c("h2", { staticClass: "trfs__title" }, [
+                    _vm._v(
+                      "\n                                Our tips\n                            "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("ul", { staticClass: "list-unstyled" }, [
+                    _c("li", [
+                      _c("a", { attrs: { href: "/tips-moving" } }, [
+                        _vm._v("Moving advices")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _vm._v("Company move")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [_vm._v("Movers")])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _vm._v("eBay Sellers")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _vm._v("Scam Prevention")
+                      ])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-md-3" }, [
+                  _c("h2", { staticClass: "trfs__title" }, [
+                    _vm._v(
+                      "\n                                Customer Service\n                            "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("ul", { staticClass: "list-unstyled" }, [
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _vm._v("Customer testimonials")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _vm._v("Quality charter")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [_vm._v("Privacy")])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [_vm._v("Contact us")])
+                    ])
+                  ])
+                ])
+              ])
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "footer-middle" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "footer-middle-inner" }, [
+            _c("p", { staticClass: "fmi__title" }, [
+              _vm._v(
+                "\n                    Other FretBay services\n                "
+              )
+            ]),
+            _vm._v(" "),
+            _c("a", { staticClass: "fretbay-pro-link", attrs: { href: "#" } }, [
+              _c("img", {
+                attrs: { src: "/images/fretbaypro-logo.svg", alt: "" }
+              })
+            ]),
+            _vm._v(" "),
+            _c("a", { staticClass: "fretbay-now-link", attrs: { href: "#" } }, [
+              _c("img", {
+                attrs: { src: "/images/fretbaynow-logo-w.svg", alt: "" }
+              })
+            ]),
+            _vm._v(" "),
+            _c(
+              "a",
+              { staticClass: "fretbay-now-blank", attrs: { href: "#" } },
+              [_c("img", { attrs: { src: "/images/mbm-logo-w.svg", alt: "" } })]
+            )
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "footer-copyright" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-6" }, [
+              _c("div", { staticClass: "footer-copyright__txt" }, [
+                _c("a", { attrs: { href: "#" } }, [_vm._v("FretBay")]),
+                _vm._v(
+                  "\n                        SAS with a capital of 431,546€ © 2021 All rights reserved\n                        "
+                ),
+                _c("br"),
+                _vm._v(
+                  "\n                        The use of this website constitutes acceptance of the\n                        "
+                ),
+                _c("a", { attrs: { href: "#" } }, [
+                  _vm._v("General Terms and Conditions")
+                ]),
+                _vm._v(" "),
+                _c("br"),
+                _vm._v(
+                  "\n                        31 rue de Reuilly 75012 Paris, France\n                        "
+                ),
+                _c("br"),
+                _vm._v(
+                  "\n                        Company registration: 502.134.208.00037 | VAT Number: FR08502134208 | N° Orias : 20000116\n                    "
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-lg-6 no-padding fretbaysocial-ico" },
+              [
+                _c("ul", { staticClass: "list-unstyled list-inline row" }, [
+                  _c("li", { staticClass: "li" }, [
+                    _c("a", { attrs: { href: "#" } })
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "tw" }, [
+                    _c("a", { attrs: { href: "#" } })
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "fb" }, [
+                    _c("a", { attrs: { href: "#" } })
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "yt" }, [
+                    _c("a", { attrs: { href: "#" } })
+                  ])
+                ])
+              ]
+            )
+          ])
+        ])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -39470,9 +43754,44 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _c(
+    "header",
+    { style: { background: "url(" + _vm.background + ")" } },
+    [_c("main-menu"), _vm._v(" "), _vm._m(0)],
+    1
+  )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { attrs: { id: "first" } }, [
+      _c("div", { staticClass: "container" }, [
+        _c("h1", [
+          _vm._v("\n                    Find your mover\n                    "),
+          _c("span", [
+            _vm._v(
+              "\n\t\t\t\t\t\tThe leading marketplace for cheap transport and moving services\n\t\t\t\t\t"
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("button", { staticClass: "first__btn" }, [
+          _vm._v("\n                    REQUEST A QUOTE\n                ")
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 go-down" }, [
+            _c("a", { attrs: { id: "goDown" } }, [
+              _c("i", { staticClass: "fa fa-caret-down" })
+            ])
+          ])
+        ])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -39494,7 +43813,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _c("header", { staticClass: "simple-nav" }, [_c("main-menu")], 1)
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -39518,9 +43837,443 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("h2", [_vm._v("\n            Latest transactions\n        ")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-lg-12 recenListingSlider" }, [
+          _c("ul", { staticClass: "list-unstyled recenListing" }, [
+            _c("li", { staticClass: "recen__item row" }, [
+              _c("div", { staticClass: "categoryInfo" }, [
+                _c("div", { staticClass: "circleImg id-377110" }, [
+                  _c("img", { attrs: { src: "/images/catMedium/colis.png" } })
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "recen__title" }, [
+                  _vm._v(
+                    "\n                                Package/Fold\n                                "
+                  ),
+                  _c("span", [
+                    _c("b", [
+                      _vm._v(
+                        "\n\t\t\t\t\t\t\t\t\t\t\t\t\tCategory\n\t\t\t\t\t\t\t\t\t\t\t\t"
+                      )
+                    ]),
+                    _vm._v(
+                      "\n\t\t\t\t\t\t\t\t\t\t\t\t: Package\n\t\t\t\t\t\t\t\t\t\t\t"
+                    )
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "locationInfo" }, [
+                _c("p", [
+                  _vm._v(
+                    "\n                                Bavaria - Canton of Geneva\n                            "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "\n                                689.16km\n                            "
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "trasporterInfo" }, [
+                _c("div", { staticClass: "circleImg" }, [
+                  _c("img", {
+                    staticClass: "about__img img-responsive mx-auto d-block",
+                    attrs: {
+                      src:
+                        "/images/photoTransporteur/validation-173x173.png?ver=1.2",
+                      alt: "about"
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "marginImg" }, [
+                  _c("p", [
+                    _vm._v(
+                      "\n                                    Nars24\n                                "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "ratingBlock" }, [
+                    _c("img", { attrs: { src: "/images/star-on.png" } }),
+                    _vm._v(" "),
+                    _c("img", { attrs: { src: "/images/star-on.png" } }),
+                    _vm._v(" "),
+                    _c("img", { attrs: { src: "/images/star-on.png" } }),
+                    _vm._v(" "),
+                    _c("img", { attrs: { src: "/images/star-on.png" } }),
+                    _vm._v(" "),
+                    _c("img", { attrs: { src: "/images/star-half.png" } })
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "priceInfo" }, [
+                _c("p", [
+                  _vm._v(
+                    "\n                                580€\n                            "
+                  )
+                ])
+              ])
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-lg-12 recenListingSlider" }, [
+          _c("ul", { staticClass: "list-unstyled recenListing" }, [
+            _c("li", { staticClass: "recen__item row" }, [
+              _c("div", { staticClass: "categoryInfo" }, [
+                _c("div", { staticClass: "circleImg id-377110" }, [
+                  _c("img", { attrs: { src: "/images/catMedium/colis.png" } })
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "recen__title" }, [
+                  _vm._v(
+                    "\n                                Package/Fold\n                                "
+                  ),
+                  _c("span", [
+                    _c("b", [
+                      _vm._v(
+                        "\n\t\t\t\t\t\t\t\t\t\t\t\t\tCategory\n\t\t\t\t\t\t\t\t\t\t\t\t"
+                      )
+                    ]),
+                    _vm._v(
+                      "\n\t\t\t\t\t\t\t\t\t\t\t\t: Package\n\t\t\t\t\t\t\t\t\t\t\t"
+                    )
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "locationInfo" }, [
+                _c("p", [
+                  _vm._v(
+                    "\n                                Bavaria - Canton of Geneva\n                            "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "\n                                689.16km\n                            "
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "trasporterInfo" }, [
+                _c("div", { staticClass: "circleImg" }, [
+                  _c("img", {
+                    staticClass: "about__img img-responsive mx-auto d-block",
+                    attrs: {
+                      src:
+                        "/images/photoTransporteur/validation-173x173.png?ver=1.2",
+                      alt: "about"
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "marginImg" }, [
+                  _c("p", [
+                    _vm._v(
+                      "\n                                    Nars24\n                                "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "ratingBlock" }, [
+                    _c("img", { attrs: { src: "/images/star-on.png" } }),
+                    _vm._v(" "),
+                    _c("img", { attrs: { src: "/images/star-on.png" } }),
+                    _vm._v(" "),
+                    _c("img", { attrs: { src: "/images/star-on.png" } }),
+                    _vm._v(" "),
+                    _c("img", { attrs: { src: "/images/star-on.png" } }),
+                    _vm._v(" "),
+                    _c("img", { attrs: { src: "/images/star-half.png" } })
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "priceInfo" }, [
+                _c("p", [
+                  _vm._v(
+                    "\n                                580€\n                            "
+                  )
+                ])
+              ])
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-lg-12 recenListingSlider" }, [
+          _c("ul", { staticClass: "list-unstyled recenListing" }, [
+            _c("li", { staticClass: "recen__item row" }, [
+              _c("div", { staticClass: "categoryInfo" }, [
+                _c("div", { staticClass: "circleImg id-377110" }, [
+                  _c("img", { attrs: { src: "/images/catMedium/colis.png" } })
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "recen__title" }, [
+                  _vm._v(
+                    "\n                                Package/Fold\n                                "
+                  ),
+                  _c("span", [
+                    _c("b", [
+                      _vm._v(
+                        "\n\t\t\t\t\t\t\t\t\t\t\t\t\tCategory\n\t\t\t\t\t\t\t\t\t\t\t\t"
+                      )
+                    ]),
+                    _vm._v(
+                      "\n\t\t\t\t\t\t\t\t\t\t\t\t: Package\n\t\t\t\t\t\t\t\t\t\t\t"
+                    )
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "locationInfo" }, [
+                _c("p", [
+                  _vm._v(
+                    "\n                                Bavaria - Canton of Geneva\n                            "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "\n                                689.16km\n                            "
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "trasporterInfo" }, [
+                _c("div", { staticClass: "circleImg" }, [
+                  _c("img", {
+                    staticClass: "about__img img-responsive mx-auto d-block",
+                    attrs: {
+                      src:
+                        "/images/photoTransporteur/validation-173x173.png?ver=1.2",
+                      alt: "about"
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "marginImg" }, [
+                  _c("p", [
+                    _vm._v(
+                      "\n                                    Nars24\n                                "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "ratingBlock" }, [
+                    _c("img", { attrs: { src: "/images/star-on.png" } }),
+                    _vm._v(" "),
+                    _c("img", { attrs: { src: "/images/star-on.png" } }),
+                    _vm._v(" "),
+                    _c("img", { attrs: { src: "/images/star-on.png" } }),
+                    _vm._v(" "),
+                    _c("img", { attrs: { src: "/images/star-on.png" } }),
+                    _vm._v(" "),
+                    _c("img", { attrs: { src: "/images/star-half.png" } })
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "priceInfo" }, [
+                _c("p", [
+                  _vm._v(
+                    "\n                                580€\n                            "
+                  )
+                ])
+              ])
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-lg-12 recenListingSlider" }, [
+          _c("ul", { staticClass: "list-unstyled recenListing" }, [
+            _c("li", { staticClass: "recen__item row" }, [
+              _c("div", { staticClass: "categoryInfo" }, [
+                _c("div", { staticClass: "circleImg id-377110" }, [
+                  _c("img", { attrs: { src: "/images/catMedium/colis.png" } })
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "recen__title" }, [
+                  _vm._v(
+                    "\n                                Package/Fold\n                                "
+                  ),
+                  _c("span", [
+                    _c("b", [
+                      _vm._v(
+                        "\n\t\t\t\t\t\t\t\t\t\t\t\t\tCategory\n\t\t\t\t\t\t\t\t\t\t\t\t"
+                      )
+                    ]),
+                    _vm._v(
+                      "\n\t\t\t\t\t\t\t\t\t\t\t\t: Package\n\t\t\t\t\t\t\t\t\t\t\t"
+                    )
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "locationInfo" }, [
+                _c("p", [
+                  _vm._v(
+                    "\n                                Bavaria - Canton of Geneva\n                            "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "\n                                689.16km\n                            "
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "trasporterInfo" }, [
+                _c("div", { staticClass: "circleImg" }, [
+                  _c("img", {
+                    staticClass: "about__img img-responsive mx-auto d-block",
+                    attrs: {
+                      src:
+                        "/images/photoTransporteur/validation-173x173.png?ver=1.2",
+                      alt: "about"
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "marginImg" }, [
+                  _c("p", [
+                    _vm._v(
+                      "\n                                    Nars24\n                                "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "ratingBlock" }, [
+                    _c("img", { attrs: { src: "/images/star-on.png" } }),
+                    _vm._v(" "),
+                    _c("img", { attrs: { src: "/images/star-on.png" } }),
+                    _vm._v(" "),
+                    _c("img", { attrs: { src: "/images/star-on.png" } }),
+                    _vm._v(" "),
+                    _c("img", { attrs: { src: "/images/star-on.png" } }),
+                    _vm._v(" "),
+                    _c("img", { attrs: { src: "/images/star-half.png" } })
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "priceInfo" }, [
+                _c("p", [
+                  _vm._v(
+                    "\n                                580€\n                            "
+                  )
+                ])
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/MainMenu.vue?vue&type=template&id=e8997da0&":
+/*!*******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/components/MainMenu.vue?vue&type=template&id=e8997da0& ***!
+  \*******************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { attrs: { id: "logo" } }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "logo__body" }, [
+          _c("nav", { staticClass: "logo__menu" }, [
+            _c("ul", { staticClass: "logo__list row" }, [
+              _c("div", { staticClass: "col-md-9 col-sm-11" }, [
+                _c("li", [
+                  _c("a", { attrs: { href: "/" } }, [
+                    _c("img", {
+                      staticClass: "main-logo",
+                      attrs: { src: "/images/logo.svg", alt: "Logo" }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "first-btn" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "first-link",
+                      attrs: { href: "/find-transporter" }
+                    },
+                    [_vm._v("Request a quote")]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "/find-loads" } }, [
+                    _vm._v("Find loads")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "/how-it-works" } }, [
+                    _vm._v("How it works")
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-3  logo__list-aut" }, [
+                _c("li", [
+                  _c("a", { attrs: { href: "/register" } }, [
+                    _vm._v("Register")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "/login" } }, [_vm._v("Log in")])
+                ])
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -39695,9 +44448,63 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("h2", [_vm._v("\n        Top movers\n    ")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-lg-12" }, [
+          _c("div", { staticClass: "postBlock row" }, [
+            _c("div", { staticClass: "col-md-3 col-sm-4 no-padding" }, [
+              _c("div", { staticClass: "postImg" }, [
+                _c("img", {
+                  staticClass: "about__img img-responsive mx-auto d-block",
+                  attrs: {
+                    src:
+                      "/images/global/media/transporter/profil/thumbs/1599758184eCzX_0.png",
+                    alt: "about"
+                  }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-9 col-sm-8" }, [
+              _c("p", { staticClass: "postblock__title" }, [
+                _vm._v(
+                  "\n                        Wojtek92\n                    "
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "postblock__prg" }, [
+                _vm._v(
+                  "\n                        Excellent service. Un seul bémol : le problème de la langue. Il y a ..\n                    "
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "ratingBlock" }, [
+                _c("img", { attrs: { src: "/images/star-on.png" } }),
+                _vm._v(" "),
+                _c("img", { attrs: { src: "/images/star-on.png" } }),
+                _vm._v(" "),
+                _c("img", { attrs: { src: "/images/star-on.png" } }),
+                _vm._v(" "),
+                _c("img", { attrs: { src: "/images/star-on.png" } }),
+                _vm._v(" "),
+                _c("img", { attrs: { src: "/images/star-half.png" } })
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -39719,9 +44526,1717 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", { staticClass: "content" }, [
+      _c("div", { staticClass: "default-banner" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "default-banner-details" }, [
+            _c("div", { staticClass: "default-banner-text" }, [
+              _c("h1", [_vm._v("I'm looking for a carrier")]),
+              _vm._v(" "),
+              _c("p", [_vm._v("Economic, Reliable, Secure")]),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "btn",
+                  attrs: {
+                    title: "",
+                    href: "https://fretbay.com/en/shipper/find-a-transporter"
+                  }
+                },
+                [_vm._v("REQUEST FOR QUOTATION")]
+              )
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "default-section" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "text-center" }, [
+            _c("div", { staticClass: "section-header row" }, [
+              _c("div", { staticClass: "col-sm-8 col-sm-offset-2" }, [
+                _c("h3", [_vm._v("THE FRETBAY PROCESS")]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "Receive instant and cheap quotes for your furniture, two-wheelers, cars, cardboard boxes, parcels, animals, bulky objects or even for a total move from your home."
+                  )
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "shipperRecrutiStep hidden-xs" }, [
+              _c("div", { staticClass: "text-center" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "ImgWrkSlides active",
+                    attrs: { id: "slide01" }
+                  },
+                  [
+                    _c("img", {
+                      staticClass: "img-responsive",
+                      attrs: {
+                        src: "images/shipperRecrutiStep01_EN.png",
+                        alt: "Slide 01"
+                      }
+                    })
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "ImgWrkSlides", attrs: { id: "slide02" } },
+                  [
+                    _c("img", {
+                      staticClass: "img-responsive",
+                      attrs: {
+                        src: "images/shipperRecrutiStep02_EN.png",
+                        alt: "Slide 02"
+                      }
+                    })
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "ImgWrkSlides", attrs: { id: "slide03" } },
+                  [
+                    _c("img", {
+                      staticClass: "img-responsive",
+                      attrs: {
+                        src: "images/shipperRecrutiStep03_EN.png",
+                        alt: "Slide 03"
+                      }
+                    })
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "ImgWrkSlides", attrs: { id: "slide04" } },
+                  [
+                    _c("img", {
+                      staticClass: "img-responsive",
+                      attrs: {
+                        src: "images/shipperRecrutiStep04_EN.png",
+                        alt: "Slide 04"
+                      }
+                    })
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "ImgWrkSlides", attrs: { id: "slide05" } },
+                  [
+                    _c("img", {
+                      staticClass: "img-responsive",
+                      attrs: {
+                        src: "images/shipperRecrutiStep05_EN.png",
+                        alt: "Slide 05"
+                      }
+                    })
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("ol", { staticClass: "shipperRecrutiSlider" }, [
+                _c("li", { staticClass: "active" }, [
+                  _c(
+                    "a",
+                    {
+                      attrs: {
+                        href: "javascript:void(0);",
+                        "data-title": "slide01"
+                      }
+                    },
+                    [
+                      _c("i", { staticClass: "iconSlides alFreting" }),
+                      _vm._v(
+                        "\n                                Publish your listing                    "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", {}, [
+                  _c(
+                    "a",
+                    {
+                      attrs: {
+                        href: "javascript:void(0);",
+                        "data-title": "slide02"
+                      }
+                    },
+                    [
+                      _c("i", { staticClass: "iconSlides chobiOfer" }),
+                      _vm._v(
+                        "\n                                Choose the best quote                    "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", {}, [
+                  _c(
+                    "a",
+                    {
+                      attrs: {
+                        href: "javascript:void(0);",
+                        "data-title": "slide03"
+                      }
+                    },
+                    [
+                      _c("i", { staticClass: "iconSlides trCarGood" }),
+                      _vm._v(
+                        "\n                                Have yourself delivered                    "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", {}, [
+                  _c(
+                    "a",
+                    {
+                      attrs: {
+                        href: "javascript:void(0);",
+                        "data-title": "slide04"
+                      }
+                    },
+                    [
+                      _c("i", { staticClass: "iconSlides gdDelConf" }),
+                      _vm._v(
+                        "\n                                Confirm receipt of your goods                    "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", {}, [
+                  _c(
+                    "a",
+                    {
+                      attrs: {
+                        href: "javascript:void(0);",
+                        "data-title": "slide05"
+                      }
+                    },
+                    [
+                      _c("i", { staticClass: "iconSlides ratThServo" }),
+                      _vm._v(
+                        "\n                                Evaluate the carrier's performance                    "
+                      )
+                    ]
+                  )
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass: "btn btn-theme",
+                attrs: {
+                  title: "",
+                  href: "https://fretbay.com/en/shipper/find-a-transporter"
+                }
+              },
+              [_vm._v("Post your listing now")]
+            )
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "section",
+        {
+          staticClass: "default-section alter-section hidden-xs",
+          attrs: { id: "recentList" }
+        },
+        [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-8" }, [
+                _c("h4", [_vm._v("Last transactions")]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "recenListingSlider",
+                    staticStyle: {
+                      position: "relative",
+                      height: "356px",
+                      overflow: "hidden"
+                    }
+                  },
+                  [
+                    _c(
+                      "ul",
+                      {
+                        staticStyle: {
+                          margin: "0px",
+                          position: "absolute",
+                          top: "0px"
+                        }
+                      },
+                      [
+                        _c(
+                          "li",
+                          {
+                            staticStyle: { margin: "0px", display: "list-item" }
+                          },
+                          [
+                            _c("div", { staticClass: "categoryInfo" }, [
+                              _c("div", { staticClass: "circleImg" }, [
+                                _c("img", {
+                                  attrs: {
+                                    alt: "",
+                                    src:
+                                      "transporter/images/catMedium/demenagement.png"
+                                  }
+                                })
+                              ]),
+                              _vm._v(" "),
+                              _c("p", { staticClass: "marginImg" }, [
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: {
+                                      title: "",
+                                      href:
+                                        "Déménagements/Moving-28.70m3-366865-.html"
+                                    }
+                                  },
+                                  [_vm._v("Moving 28.70m3")]
+                                ),
+                                _vm._v(" "),
+                                _c("span", { staticClass: "catgry" }, [
+                                  _c("b", [_vm._v("Category")]),
+                                  _vm._v(": Déménagements")
+                                ])
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "locationInfo" }, [
+                              _c("p", [_vm._v("Gelderland - Berlin")]),
+                              _vm._v(" "),
+                              _c("p", [_vm._v("609.21km")])
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "trasporterIfo" }, [
+                              _c("div", { staticClass: "circleImg" }, [
+                                _c("img", {
+                                  attrs: {
+                                    alt: "",
+                                    src:
+                                      "https://fretbay.com/global/media/transporter/profil/thumbs/1593949089FcaE_0.jpg"
+                                  }
+                                })
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "marginImg" }, [
+                                _c("p", [
+                                  _c(
+                                    "a",
+                                    {
+                                      attrs: {
+                                        title: "",
+                                        href:
+                                          "https://fretbay.com/en/profil-des-transporteurs/DLP 21/"
+                                      }
+                                    },
+                                    [_vm._v("DLP 21")]
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "ratingBlock" }, [
+                                  _c("img", {
+                                    attrs: { src: "shipper/images/star-on.png" }
+                                  }),
+                                  _c("img", {
+                                    attrs: { src: "shipper/images/star-on.png" }
+                                  }),
+                                  _c("img", {
+                                    attrs: { src: "shipper/images/star-on.png" }
+                                  }),
+                                  _c("img", {
+                                    attrs: { src: "shipper/images/star-on.png" }
+                                  }),
+                                  _c("img", {
+                                    attrs: { src: "shipper/images/star-on.png" }
+                                  })
+                                ])
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "price" }, [
+                              _c("p", [_vm._v("1200€")])
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("li", { staticStyle: { margin: "0px" } }, [
+                          _c("div", { staticClass: "categoryInfo" }, [
+                            _c("div", { staticClass: "circleImg" }, [
+                              _c("img", {
+                                attrs: {
+                                  alt: "",
+                                  src:
+                                    "transporter/images/catMedium/demenagement.png"
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("p", { staticClass: "marginImg" }, [
+                              _c(
+                                "a",
+                                {
+                                  attrs: {
+                                    title: "",
+                                    href:
+                                      "Déménagements/Déménagement-30-m3-408196-.html"
+                                  }
+                                },
+                                [_vm._v("Déménagement 30 m3")]
+                              ),
+                              _vm._v(" "),
+                              _c("span", { staticClass: "catgry" }, [
+                                _c("b", [_vm._v("Category")]),
+                                _vm._v(": Déménagements")
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "locationInfo" }, [
+                            _c("p", [_vm._v("Luxembourg - Luxembourg")]),
+                            _vm._v(" "),
+                            _c("p", [_vm._v("2.7km")])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "trasporterIfo" }, [
+                            _c("div", { staticClass: "circleImg" }, [
+                              _c("img", {
+                                attrs: {
+                                  alt: "",
+                                  src:
+                                    "https://fretbay.com/fr/images/photoTransporteur/validation-173x173.png?ver=1.2"
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "marginImg" }, [
+                              _c("p", [
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: {
+                                      title: "",
+                                      href:
+                                        "https://fretbay.com/en/profil-des-transporteurs/Ld26/"
+                                    }
+                                  },
+                                  [_vm._v("Ld26")]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "ratingBlock" }, [
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                })
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "price" }, [
+                            _c("p", [_vm._v("4999€")])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticStyle: { margin: "0px" } }, [
+                          _c("div", { staticClass: "categoryInfo" }, [
+                            _c("div", { staticClass: "circleImg" }, [
+                              _c("img", {
+                                attrs: {
+                                  alt: "",
+                                  src:
+                                    "transporter/images/catMedium/demenagement.png"
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("p", { staticClass: "marginImg" }, [
+                              _c(
+                                "a",
+                                {
+                                  attrs: {
+                                    title: "",
+                                    href:
+                                      "Déménagements/Déménagement-16m3-395664-.html"
+                                  }
+                                },
+                                [_vm._v("Déménagement 16m3")]
+                              ),
+                              _vm._v(" "),
+                              _c("span", { staticClass: "catgry" }, [
+                                _c("b", [_vm._v("Category")]),
+                                _vm._v(": Déménagements")
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "locationInfo" }, [
+                            _c("p", [
+                              _vm._v(
+                                "Provence-Alpes-Cote d'Azur - Provence-Alpes-Cote d'Azur"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [_vm._v("3.39km")])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "trasporterIfo" }, [
+                            _c("div", { staticClass: "circleImg" }, [
+                              _c("img", {
+                                attrs: {
+                                  alt: "",
+                                  src:
+                                    "https://fretbay.com/global/media/transporter/profil/thumbs/1581749363_0.jpg"
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "marginImg" }, [
+                              _c("p", [
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: {
+                                      title: "",
+                                      href:
+                                        "https://fretbay.com/en/profil-des-transporteurs/balan90/"
+                                    }
+                                  },
+                                  [_vm._v("balan90")]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "ratingBlock" }, [
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-half.png" }
+                                })
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "price" }, [
+                            _c("p", [_vm._v("600€")])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticStyle: { margin: "0px" } }, [
+                          _c("div", { staticClass: "categoryInfo" }, [
+                            _c("div", { staticClass: "circleImg" }, [
+                              _c("img", {
+                                attrs: {
+                                  alt: "",
+                                  src:
+                                    "transporter/images/catMedium/demenagement.png"
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("p", { staticClass: "marginImg" }, [
+                              _c(
+                                "a",
+                                {
+                                  attrs: {
+                                    title: "",
+                                    href:
+                                      "Déménagements/Déménagement-10-m3-391003-.html"
+                                  }
+                                },
+                                [_vm._v("Déménagement 10 m3")]
+                              ),
+                              _vm._v(" "),
+                              _c("span", { staticClass: "catgry" }, [
+                                _c("b", [_vm._v("Category")]),
+                                _vm._v(": Déménagements")
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "locationInfo" }, [
+                            _c("p", [_vm._v("England - Vaud")]),
+                            _vm._v(" "),
+                            _c("p", [_vm._v("957.63km")])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "trasporterIfo" }, [
+                            _c("div", { staticClass: "circleImg" }, [
+                              _c("img", {
+                                attrs: {
+                                  alt: "",
+                                  src:
+                                    "https://fretbay.com/fr/images/photoTransporteur/validation-173x173.png?ver=1.2"
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "marginImg" }, [
+                              _c("p", [
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: {
+                                      title: "",
+                                      href:
+                                        "https://fretbay.com/en/profil-des-transporteurs/eurovans/"
+                                    }
+                                  },
+                                  [_vm._v("eurovans")]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "ratingBlock" }, [
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                })
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "price" }, [
+                            _c("p", [_vm._v("989€")])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticStyle: { margin: "0px" } }, [
+                          _c("div", { staticClass: "categoryInfo" }, [
+                            _c("div", { staticClass: "circleImg" }, [
+                              _c("img", {
+                                attrs: {
+                                  alt: "",
+                                  src:
+                                    "transporter/images/catMedium/demenagement.png"
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("p", { staticClass: "marginImg" }, [
+                              _c(
+                                "a",
+                                {
+                                  attrs: {
+                                    title: "",
+                                    href:
+                                      "Déménagements/Déménagement-14m3-388225-.html"
+                                  }
+                                },
+                                [_vm._v("Déménagement 14m3")]
+                              ),
+                              _vm._v(" "),
+                              _c("span", { staticClass: "catgry" }, [
+                                _c("b", [_vm._v("Category")]),
+                                _vm._v(": Déménagements")
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "locationInfo" }, [
+                            _c("p", [_vm._v("Zürich - IDF")]),
+                            _vm._v(" "),
+                            _c("p", [_vm._v("650.63km")])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "trasporterIfo" }, [
+                            _c("div", { staticClass: "circleImg" }, [
+                              _c("img", {
+                                attrs: {
+                                  alt: "",
+                                  src:
+                                    "https://fretbay.com/global/media/transporter/profil/thumbs/1573550229_0.jpeg"
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "marginImg" }, [
+                              _c("p", [
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: {
+                                      title: "",
+                                      href:
+                                        "https://fretbay.com/en/profil-des-transporteurs/Contact94/"
+                                    }
+                                  },
+                                  [_vm._v("Contact94")]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "ratingBlock" }, [
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-half.png" }
+                                })
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "price" }, [
+                            _c("p", [_vm._v("960€")])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticStyle: { margin: "0px" } }, [
+                          _c("div", { staticClass: "categoryInfo" }, [
+                            _c("div", { staticClass: "circleImg" }, [
+                              _c("img", {
+                                attrs: {
+                                  alt: "",
+                                  src:
+                                    "transporter/images/catMedium/demenagement.png"
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("p", { staticClass: "marginImg" }, [
+                              _c(
+                                "a",
+                                {
+                                  attrs: {
+                                    title: "",
+                                    href:
+                                      "Déménagements/Déménagement-33m3-386256-.html"
+                                  }
+                                },
+                                [_vm._v("Déménagement 33m3")]
+                              ),
+                              _vm._v(" "),
+                              _c("span", { staticClass: "catgry" }, [
+                                _c("b", [_vm._v("Category")]),
+                                _vm._v(": Déménagements")
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "locationInfo" }, [
+                            _c("p", [_vm._v(" - IDF")]),
+                            _vm._v(" "),
+                            _c("p", [_vm._v("953.96km")])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "trasporterIfo" }, [
+                            _c("div", { staticClass: "circleImg" }, [
+                              _c("img", {
+                                attrs: {
+                                  alt: "",
+                                  src:
+                                    "https://fretbay.com/global/media/transporter/profil/thumbs/1582117437_0.jpeg"
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "marginImg" }, [
+                              _c("p", [
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: {
+                                      title: "",
+                                      href:
+                                        "https://fretbay.com/en/profil-des-transporteurs/Tipfret6/"
+                                    }
+                                  },
+                                  [_vm._v("Tipfret6")]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "ratingBlock" }, [
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-half.png" }
+                                })
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "price" }, [
+                            _c("p", [_vm._v("1920€")])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticStyle: { margin: "0px" } }, [
+                          _c("div", { staticClass: "categoryInfo" }, [
+                            _c("div", { staticClass: "circleImg" }, [
+                              _c("img", {
+                                attrs: {
+                                  alt: "",
+                                  src:
+                                    "transporter/images/catMedium/demenagement.png"
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("p", { staticClass: "marginImg" }, [
+                              _c(
+                                "a",
+                                {
+                                  attrs: {
+                                    title: "",
+                                    href:
+                                      "Déménagements/Déménagement-3.5m3-383670-.html"
+                                  }
+                                },
+                                [_vm._v("Déménagement 3.5m3")]
+                              ),
+                              _vm._v(" "),
+                              _c("span", { staticClass: "catgry" }, [
+                                _c("b", [_vm._v("Category")]),
+                                _vm._v(": Déménagements")
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "locationInfo" }, [
+                            _c("p", [_vm._v("IDF - province de Verone")]),
+                            _vm._v(" "),
+                            _c("p", [_vm._v("1013.26km")])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "trasporterIfo" }, [
+                            _c("div", { staticClass: "circleImg" }, [
+                              _c("img", {
+                                attrs: {
+                                  alt: "",
+                                  src:
+                                    "https://fretbay.com/global/media/transporter/profil/thumbs/1583851868_0.jpg"
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "marginImg" }, [
+                              _c("p", [
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: {
+                                      title: "",
+                                      href:
+                                        "https://fretbay.com/en/profil-des-transporteurs/fretEU/"
+                                    }
+                                  },
+                                  [_vm._v("fretEU")]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "ratingBlock" }, [
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-half.png" }
+                                })
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "price" }, [
+                            _c("p", [_vm._v("900€")])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticStyle: { margin: "0px" } }, [
+                          _c("div", { staticClass: "categoryInfo" }, [
+                            _c("div", { staticClass: "circleImg" }, [
+                              _c("img", {
+                                attrs: {
+                                  alt: "",
+                                  src: "transporter/images/catMedium/colis.png"
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("p", { staticClass: "marginImg" }, [
+                              _c(
+                                "a",
+                                {
+                                  attrs: {
+                                    title: "",
+                                    href: "Colis/Package/Fold-377110-.html"
+                                  }
+                                },
+                                [_vm._v("Package/Fold")]
+                              ),
+                              _vm._v(" "),
+                              _c("span", { staticClass: "catgry" }, [
+                                _c("b", [_vm._v("Category")]),
+                                _vm._v(": Colis")
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "locationInfo" }, [
+                            _c("p", [_vm._v("Bavaria - Canton of Geneva")]),
+                            _vm._v(" "),
+                            _c("p", [_vm._v("689.16km")])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "trasporterIfo" }, [
+                            _c("div", { staticClass: "circleImg" }, [
+                              _c("img", {
+                                attrs: {
+                                  alt: "",
+                                  src:
+                                    "https://fretbay.com/fr/images/photoTransporteur/validation-173x173.png?ver=1.2"
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "marginImg" }, [
+                              _c("p", [
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: {
+                                      title: "",
+                                      href:
+                                        "https://fretbay.com/en/profil-des-transporteurs/Nars24/"
+                                    }
+                                  },
+                                  [_vm._v("Nars24")]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "ratingBlock" }, [
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                })
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "price" }, [
+                            _c("p", [_vm._v("580€")])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticStyle: { margin: "0px" } }, [
+                          _c("div", { staticClass: "categoryInfo" }, [
+                            _c("div", { staticClass: "circleImg" }, [
+                              _c("img", {
+                                attrs: {
+                                  alt: "",
+                                  src:
+                                    "transporter/images/catMedium/demenagement.png"
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("p", { staticClass: "marginImg" }, [
+                              _c(
+                                "a",
+                                {
+                                  attrs: {
+                                    title: "",
+                                    href:
+                                      "Déménagements/Déménagement-47m3-375666-.html"
+                                  }
+                                },
+                                [_vm._v("Déménagement 47m3")]
+                              ),
+                              _vm._v(" "),
+                              _c("span", { staticClass: "catgry" }, [
+                                _c("b", [_vm._v("Category")]),
+                                _vm._v(": Déménagements")
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "locationInfo" }, [
+                            _c("p", [_vm._v("IDF - Alpes-Maritimes")]),
+                            _vm._v(" "),
+                            _c("p", [_vm._v("928.85km")])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "trasporterIfo" }, [
+                            _c("div", { staticClass: "circleImg" }, [
+                              _c("img", {
+                                attrs: {
+                                  alt: "",
+                                  src:
+                                    "https://fretbay.com/global/media/transporter/profil/thumbs/1582117437_0.jpeg"
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "marginImg" }, [
+                              _c("p", [
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: {
+                                      title: "",
+                                      href:
+                                        "https://fretbay.com/en/profil-des-transporteurs/Tipfret6/"
+                                    }
+                                  },
+                                  [_vm._v("Tipfret6")]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "ratingBlock" }, [
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-half.png" }
+                                })
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "price" }, [
+                            _c("p", [_vm._v("2500€")])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticStyle: { margin: "0px" } }, [
+                          _c("div", { staticClass: "categoryInfo" }, [
+                            _c("div", { staticClass: "circleImg" }, [
+                              _c("img", {
+                                attrs: {
+                                  alt: "",
+                                  src:
+                                    "transporter/images/catMedium/demenagement.png"
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("p", { staticClass: "marginImg" }, [
+                              _c(
+                                "a",
+                                {
+                                  attrs: {
+                                    title: "",
+                                    href:
+                                      "Déménagements/Déménagement-47m3-374084-.html"
+                                  }
+                                },
+                                [_vm._v("Déménagement 47m3")]
+                              ),
+                              _vm._v(" "),
+                              _c("span", { staticClass: "catgry" }, [
+                                _c("b", [_vm._v("Category")]),
+                                _vm._v(": Déménagements")
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "locationInfo" }, [
+                            _c("p", [
+                              _vm._v("IDF - Provence-Alpes-Cote d'Azur")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [_vm._v("930.63km")])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "trasporterIfo" }, [
+                            _c("div", { staticClass: "circleImg" }, [
+                              _c("img", {
+                                attrs: {
+                                  alt: "",
+                                  src:
+                                    "https://fretbay.com/global/media/transporter/profil/thumbs/1579084984_0.jpeg"
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "marginImg" }, [
+                              _c("p", [
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: {
+                                      title: "",
+                                      href:
+                                        "https://fretbay.com/en/profil-des-transporteurs/transport280/"
+                                    }
+                                  },
+                                  [_vm._v("transport280")]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "ratingBlock" }, [
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                })
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "price" }, [
+                            _c("p", [_vm._v("2630€")])
+                          ])
+                        ])
+                      ]
+                    )
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4" }, [
+                _c("h4", [_vm._v("Top carriers")]),
+                _vm._v(" "),
+                _c("div", { staticClass: "margin-bottom-20" }, [
+                  _c(
+                    "a",
+                    {
+                      attrs: {
+                        title: "",
+                        href: "profil-des-transporteurs/Wojtek92/"
+                      }
+                    },
+                    [
+                      _c("div", { staticClass: "postBlock" }, [
+                        _c(
+                          "div",
+                          { staticClass: "col-md-3 col-sm-2 no-padding" },
+                          [
+                            _c("div", { staticClass: "postImg" }, [
+                              _c("img", {
+                                attrs: {
+                                  alt: "",
+                                  src:
+                                    "https://fretbay.com/global/media/transporter/profil/thumbs/1599758184eCzX_0.png"
+                                }
+                              })
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-9 col-sm-10" }, [
+                          _c("h6", { staticClass: "bold" }, [
+                            _vm._v("Wojtek92")
+                          ]),
+                          _vm._v(" "),
+                          _c("p", [
+                            _vm._v("Le chauffeur était très gentil!..")
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "ratingBlock" }, [
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-half.png" }
+                            })
+                          ])
+                        ])
+                      ])
+                    ]
+                  )
+                ])
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "default-section" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row section-header" }, [
+            _c("div", { staticClass: "col-md-8 col-md-offset-2 text-center" }, [
+              _c("h3", { staticClass: "text-grey" }, [
+                _vm._v("Cheaper legal transport with FretBay")
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "post-default post-leftimg vh-posts-section" },
+            [
+              _c("img", {
+                staticClass: "post-img",
+                attrs: { alt: "", src: "images/shipperRecrutiMimg01.png" }
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "post-content" }, [
+                _c("p", [
+                  _vm._v(
+                    "FretBay sets up an underbidding auction system for its customers, encouraging each carrier to offer you the lowest prices on the market. In addition, you benefit from the groupage and empty returns encouraged by the site and save up to 75% on your transport or relocation..."
+                  )
+                ])
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "post-default post-rightimg vh-posts-section" },
+            [
+              _c("img", {
+                staticClass: "post-img",
+                attrs: { alt: "", src: "images/shipperRecrutiMimg02.png" }
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "post-content" }, [
+                _c("p", [
+                  _vm._v(
+                    "We offer you reliable carriers and movers. Members of our community test and evaluate transport providers to ensure that your goods can be transported with confidence."
+                  )
+                ])
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "post-default post-leftimg vh-posts-section" },
+            [
+              _c("img", {
+                staticClass: "post-img",
+                attrs: { alt: "", src: "images/shipperRecrutiMimg03.png" }
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "post-content" }, [
+                _c("p", [
+                  _vm._v(
+                    "All carriers in the FretBay community are professionals with official documents allowing them to carry out this activity and requiring them to take out insurance for each of their customers. In addition, your payment via the FretBay platform is systematically secured by the online payment system PayPal."
+                  )
+                ])
+              ])
+            ]
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "default-section alter-section" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "text-center section-header" }, [
+            _c("h3", [_vm._v("Transport: The risks of the black market")])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-sm-6" }, [
+              _c("div", { staticClass: "text-center margin-bottom-30" }, [
+                _c("img", { attrs: { alt: "", src: "images/truckImg1.png" } })
+              ]),
+              _vm._v(" "),
+              _c("ul", { staticClass: "arrowLi" }, [
+                _c("li", [_vm._v("Deadlines not met")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("Damage not repaid")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("No after-sales service")]),
+                _vm._v(" "),
+                _c("li", [
+                  _vm._v("Theft and disappearance of your merchandise")
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-sm-6" }, [
+              _c("div", { staticClass: "text-center margin-bottom-30" }, [
+                _c("img", { attrs: { alt: "", src: "images/truckImg2.png" } })
+              ]),
+              _vm._v(" "),
+              _c("ul", { staticClass: "arrowLi" }, [
+                _c("li", [_vm._v("Co-responsibility for tax payment")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("Unpaid taxes and social contributions")]),
+                _vm._v(" "),
+                _c("li", [
+                  _vm._v("Up to 3 years in prison and a fine of 45,000 euros")
+                ]),
+                _vm._v(" "),
+                _c("li", [_vm._v("Stress, a lot of stress")])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("hr", { staticClass: "margin-bottom-30" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "text-center margin-bottom-30" }, [
+            _c("p", [
+              _vm._v(
+                "The black market has many more disadvantages than advantages. Most of the time, you will be dealing with individuals who pretend to be movers when they do not respect the law and have no official documents. In these cases, you have no guarantee for your furniture and belongings, which can be stolen at any time by these fake carriers without you being able to trace them or file a complaint. First and foremost, the black market means stress, lots of it."
+              )
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "default-section" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "section-header text-center" }, [
+            _c("h3", [_vm._v("THE ADVANTAGES OF FRETBAY")])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-sm-6 text-center" }, [
+              _c("img", {
+                attrs: { alt: "", src: "images/shipperRecrutiMimg04.png" }
+              }),
+              _vm._v(" "),
+              _c("h4", { staticClass: "text-uppercase text-blue" }, [
+                _vm._v("Ecological")
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "By encouraging shared transports and empty returns, FretBay allows its carriers and movers to limit the empty kilometres of trucks, and therefore the emission of polluting gases. By participating in the optimization of journeys and the maximum filling of transport vehicles, you contribute to the protection of our planet."
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-sm-6 text-center" }, [
+              _c("img", {
+                attrs: { alt: "", src: "images/shipperRecrutiMimg05.png" }
+              }),
+              _vm._v(" "),
+              _c("h4", { staticClass: "text-uppercase text-blue" }, [
+                _vm._v("Fast")
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "As soon as your ad is published, it is visible to all carriers in the FretBay community. If your transport falls within their capacities and availability, they respond directly to your ad by offering you their prices."
+                )
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-sm-6 text-center" }, [
+              _c("img", {
+                attrs: { alt: "", src: "images/shipperRecrutiMimg06.png" }
+              }),
+              _vm._v(" "),
+              _c("h4", { staticClass: "text-uppercase text-blue" }, [
+                _vm._v("No unsolicited calls")
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "As your contact details are not visible to the carriers until you find the service that suits you, you are sure not to receive unwanted calls."
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-sm-6 text-center" }, [
+              _c("img", {
+                attrs: { alt: "", src: "images/shipperRecrutiMimg07.png" }
+              }),
+              _vm._v(" "),
+              _c("h4", { staticClass: "text-uppercase text-blue" }, [
+                _vm._v("Free")
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v("All users of "),
+                _c(
+                  "a",
+                  { attrs: { title: "", href: "https://fretbay.com/fr" } },
+                  [_vm._v("FretBay")]
+                ),
+                _vm._v(
+                  " have the possibility to post their ad on the site for free and without obligation. There are therefore no fees to be expected for FretBay customers until they have found the service that suits them."
+                )
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "text-center" }, [
+            _c(
+              "a",
+              {
+                staticClass: "btn btn-theme",
+                attrs: {
+                  title: "",
+                  href: "https://fretbay.com/en/shipper/find-a-transporter"
+                }
+              },
+              [_vm._v("Post your listing now")]
+            )
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "section",
+        { staticClass: "default-section", attrs: { id: "ourPartners" } },
+        [
+          _c("div", { staticClass: "container" }, [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "slider partners-logos slick-initialized slick-slider",
+                attrs: { id: "clientLogos" }
+              },
+              [
+                _c(
+                  "div",
+                  {
+                    staticClass: "slick-list draggable",
+                    attrs: { "aria-live": "polite", tabindex: "0" }
+                  },
+                  [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "slick-track",
+                        staticStyle: {
+                          opacity: "1",
+                          width: "752px",
+                          transform: "translate3d(0px, 0px, 0px)"
+                        }
+                      },
+                      [
+                        _c(
+                          "div",
+                          {
+                            staticClass: "slick-slide slick-active",
+                            staticStyle: { width: "188px" },
+                            attrs: {
+                              "aria-hidden": "false",
+                              "data-slick-index": "0"
+                            }
+                          },
+                          [
+                            _c(
+                              "a",
+                              {
+                                attrs: {
+                                  title: "",
+                                  href:
+                                    "https://fretbay.com/en/presse.php?idsess=",
+                                  target: "_blank"
+                                }
+                              },
+                              [
+                                _c("img", {
+                                  attrs: {
+                                    alt: "",
+                                    src: "images/home/partners/Le-FigaroN.png"
+                                  }
+                                }),
+                                _vm._v(" "),
+                                _c("img", {
+                                  staticClass: "hover",
+                                  attrs: {
+                                    alt: "",
+                                    src:
+                                      "images/home/partners/Le-FigaroN-hover.png"
+                                  }
+                                })
+                              ]
+                            )
+                          ]
+                        ),
+                        _c(
+                          "div",
+                          {
+                            staticClass: "slick-slide slick-active",
+                            staticStyle: { width: "188px" },
+                            attrs: {
+                              "aria-hidden": "false",
+                              "data-slick-index": "1"
+                            }
+                          },
+                          [
+                            _c(
+                              "a",
+                              {
+                                attrs: {
+                                  title: "",
+                                  href:
+                                    "https://fretbay.com/en/presse.php?idsess=",
+                                  target: "_blank"
+                                }
+                              },
+                              [
+                                _c("img", {
+                                  attrs: {
+                                    alt: "",
+                                    src:
+                                      "images/home/partners/marie-ClaireN.png"
+                                  }
+                                }),
+                                _vm._v(" "),
+                                _c("img", {
+                                  staticClass: "hover",
+                                  attrs: {
+                                    alt: "",
+                                    src:
+                                      "images/home/partners/marie-ClaireN-hover.png"
+                                  }
+                                })
+                              ]
+                            )
+                          ]
+                        ),
+                        _c(
+                          "div",
+                          {
+                            staticClass: "slick-slide slick-active",
+                            staticStyle: { width: "188px" },
+                            attrs: {
+                              "aria-hidden": "false",
+                              "data-slick-index": "2"
+                            }
+                          },
+                          [
+                            _c(
+                              "a",
+                              {
+                                attrs: {
+                                  title: "",
+                                  href:
+                                    "https://fretbay.com/en/presse.php?idsess=",
+                                  target: "_blank"
+                                }
+                              },
+                              [
+                                _c("img", {
+                                  attrs: {
+                                    alt: "",
+                                    src: "images/home/partners/leParisienN.png"
+                                  }
+                                }),
+                                _vm._v(" "),
+                                _c("img", {
+                                  staticClass: "hover",
+                                  attrs: {
+                                    alt: "",
+                                    src:
+                                      "images/home/partners/leParisienN-hover.png"
+                                  }
+                                })
+                              ]
+                            )
+                          ]
+                        ),
+                        _c(
+                          "div",
+                          {
+                            staticClass: "slick-slide slick-active",
+                            staticStyle: { width: "188px" },
+                            attrs: {
+                              "aria-hidden": "false",
+                              "data-slick-index": "3"
+                            }
+                          },
+                          [
+                            _c(
+                              "a",
+                              {
+                                attrs: {
+                                  title: "",
+                                  href:
+                                    "https://fretbay.com/en/presse.php?idsess=",
+                                  target: "_blank"
+                                }
+                              },
+                              [
+                                _c("img", {
+                                  attrs: {
+                                    alt: "",
+                                    src: "images/home/partners/l'officielN.png"
+                                  }
+                                }),
+                                _vm._v(" "),
+                                _c("img", {
+                                  staticClass: "hover",
+                                  attrs: {
+                                    alt: "",
+                                    src:
+                                      "images/home/partners/l'officielN-hover.png"
+                                  }
+                                })
+                              ]
+                            )
+                          ]
+                        )
+                      ]
+                    )
+                  ]
+                )
+              ]
+            )
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "default-section alter-section escape-whitespace" },
+        [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "text-center" }, [
+              _c("p", [
+                _vm._v("The platform "),
+                _c(
+                  "a",
+                  { attrs: { title: "", href: "https://fretbay.com/fr/" } },
+                  [_vm._v("FretBay")]
+                ),
+                _vm._v(
+                  " brings together legal transport companies to fight against the black market by promoting groupage and minimizing empty returns. All this is possible thanks to the system developed by "
+                ),
+                _c(
+                  "a",
+                  { attrs: { title: "", href: "https://fretbay.com/fr/" } },
+                  [_vm._v("FretBay")]
+                ),
+                _vm._v(".")
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "This system offers carriers the possibility to offer attractive prices to shippers in real time."
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "Our prices are not higher than the prices offered on the black market. However, transport at this price ensures quality of service and professionalism, which is not the case in the illegal market. The black market, although attractive because of its very low prices, exposes the individual to many risks of scams, poor quality service and offers no insurance in the event of an accident"
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "Ship your items via FretBay and enjoy an economical, reliable, quality service and support legal transport."
+                )
+              ])
+            ])
+          ])
+        ]
+      )
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -39776,6 +46291,24 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/FightTheBlackMarket.vue?vue&type=template&id=1cc0606e&":
+/*!*************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/pages/FightTheBlackMarket.vue?vue&type=template&id=1cc0606e& ***!
+  \*************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function () {}
+var staticRenderFns = []
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/FindLoads.vue?vue&type=template&id=763a9868&":
 /*!***************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/pages/FindLoads.vue?vue&type=template&id=763a9868& ***!
@@ -39815,9 +46348,366 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _c(
+    "div",
+    [
+      _c("steps", { attrs: { step: 0 } }),
+      _vm._v(" "),
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-lg-9 col-md-6 col-12 mt-2" }, [
+            _c(
+              "div",
+              { staticClass: "panel-left" },
+              [
+                _c("type-selector", { on: { "select-type": _vm.selectType } }),
+                _vm._v(" "),
+                _c("div", { staticClass: "row mt-2" }, [
+                  _c("div", { staticClass: "col-sm-6" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "form-fields-wrap content-box-gray content-box-padding"
+                      },
+                      [
+                        _vm._m(0),
+                        _vm._v(" "),
+                        _c(
+                          "form",
+                          {
+                            staticClass: "content-box-gray",
+                            on: {
+                              submit: function($event) {
+                                $event.preventDefault()
+                                return _vm.submit($event)
+                              }
+                            }
+                          },
+                          [
+                            _vm._m(1),
+                            _vm._v(" "),
+                            _vm._m(2),
+                            _vm._v(" "),
+                            _vm._m(3),
+                            _vm._v(" "),
+                            _vm._m(4),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "article-overlay-btns" }, [
+                              _c(
+                                "button",
+                                {
+                                  staticClass: "btn btn-primary",
+                                  attrs: { type: "submit", disabled: true }
+                                },
+                                [
+                                  _vm._v(
+                                    "Add article\n                                        "
+                                  )
+                                ]
+                              )
+                            ])
+                          ]
+                        )
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(5)
+                ])
+              ],
+              1
+            )
+          ]),
+          _vm._v(" "),
+          _vm._m(6)
+        ])
+      ])
+    ],
+    1
+  )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group " }, [
+      _c("input", {
+        staticClass: "form-control",
+        attrs: { type: "text", placeholder: "3-seater Sofa, chairs, desks..." }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h6", [
+      _vm._v("Information about your equipment "),
+      _c("span", { staticClass: "text-primary d-inline" }, [
+        _vm._v("(required)")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row row-narrow" }, [
+      _c("div", { staticClass: "col-sm-12 form-group " }, [
+        _c("input", {
+          staticClass: "form-control ",
+          attrs: { type: "text", required: "", placeholder: "Article name" }
+        })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row row-narrow" }, [
+      _c("div", { staticClass: "col-sm-4" }, [
+        _c("div", { staticClass: "form-group " }, [
+          _c("div", { staticClass: "input-has-icon-right" }, [
+            _c("input", {
+              staticClass: "form-control",
+              attrs: { type: "hidden", placeholder: "", autocomplete: "off" }
+            }),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: { type: "text", placeholder: "Length (cm)", required: "" }
+            }),
+            _vm._v(" "),
+            _c("span", { staticClass: "rel-icon rel-icon-square" }, [
+              _c("img", {
+                attrs: {
+                  src: "/images/common/icons/units/longeur.svg",
+                  alt: ""
+                }
+              })
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-sm-4" }, [
+        _c("div", { staticClass: "form-group " }, [
+          _c("div", { staticClass: "input-has-icon-right" }, [
+            _c("input", {
+              staticClass: "form-control",
+              attrs: { type: "text", placeholder: "Width (cm)", required: "" }
+            }),
+            _vm._v(" "),
+            _c("span", { staticClass: "rel-icon rel-icon-square" }, [
+              _c("img", {
+                attrs: {
+                  src: "/images/common/icons/units/largeur.svg",
+                  alt: ""
+                }
+              })
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-sm-4" }, [
+        _c("div", { staticClass: "form-group " }, [
+          _c("div", { staticClass: "input-has-icon-right" }, [
+            _c("input", {
+              staticClass: "form-control",
+              attrs: { type: "text", placeholder: "Height (cm)", required: "" }
+            }),
+            _vm._v(" "),
+            _c("span", { staticClass: "rel-icon rel-icon-square" }, [
+              _c("img", {
+                attrs: {
+                  src: "/images/common/icons/units/hauteur.svg",
+                  alt: ""
+                }
+              })
+            ])
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row row-narrow" }, [
+      _c("div", { staticClass: "col-sm-6" }, [
+        _c("div", { staticClass: "form-group " }, [
+          _c("div", { staticClass: "input-has-icon-right" }, [
+            _c("input", {
+              staticClass: "form-control",
+              attrs: { type: "text", placeholder: "Weight", required: "" }
+            }),
+            _vm._v(" "),
+            _c("span", { staticClass: "rel-icon rel-icon-square" }, [
+              _c("img", {
+                attrs: { src: "/images/common/icons/units/poids.svg", alt: "" }
+              })
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-sm-6" }, [
+        _c("div", { staticClass: "form-group" }, [
+          _c("div", { staticClass: "input-has-icon-right" }, [
+            _c("input", {
+              staticClass: "form-control",
+              attrs: { type: "text", placeholder: "Quantity", required: "" }
+            }),
+            _vm._v(" "),
+            _c("span", { staticClass: "rel-icon rel-icon-square" }, [
+              _c("img", {
+                attrs: {
+                  src: "/images/common/icons/units/quantity.svg",
+                  alt: ""
+                }
+              })
+            ])
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-sm-6 bg-gray-xs" }, [
+      _c("div", { staticClass: "article-section" }, [
+        _c("div", { staticClass: "articles-list-scroll" }, [
+          _c("ul", { staticClass: "articles-list" }, [
+            _c("li", [
+              _c("div", { staticClass: "article-header" }, [
+                _c("div", { staticClass: "article-controls" }, [
+                  _c("a", { staticClass: "article-edit" }, [
+                    _vm._v(
+                      "\n                                                            edit-icon\n                                                        "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("a", { staticClass: "article-delete" }, [
+                    _vm._v(
+                      "\n                                                            delete-icon\n                                                        "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("h4", { staticClass: "article-title" }, [_vm._v("asdasd")])
+              ]),
+              _vm._v(" "),
+              _c("ul", { staticClass: "list-group" }, [
+                _c("li", { staticClass: "list-group-item" }, [
+                  _c("span", { staticClass: "article-unit-text" }, [
+                    _vm._v("Height (cm)")
+                  ]),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "badge" }, [_vm._v("123232")])
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "list-group-item" }, [
+                  _c("span", { staticClass: "article-unit-text" }, [
+                    _vm._v("Height (cm)")
+                  ]),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "badge" }, [_vm._v("123232")])
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "list-group-item" }, [
+                  _c("span", { staticClass: "article-unit-text" }, [
+                    _vm._v("Height (cm)")
+                  ]),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "badge" }, [_vm._v("123232")])
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "list-group-item" }, [
+                  _c("span", { staticClass: "article-unit-text" }, [
+                    _vm._v("Height (cm)")
+                  ]),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "badge" }, [_vm._v("123232")])
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "list-group-item" }, [
+                  _c("span", { staticClass: "article-unit-text" }, [
+                    _vm._v("Height (cm)")
+                  ]),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "badge" }, [_vm._v("123232")])
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "list-group-item" }, [
+                  _c("span", { staticClass: "article-unit-text" }, [
+                    _vm._v("Height (cm)")
+                  ]),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "badge" }, [_vm._v("123232")])
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "list-group-item" }, [
+                  _c("span", { staticClass: "article-unit-text" }, [
+                    _vm._v("Height (cm)")
+                  ]),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "badge" }, [_vm._v("123232")])
+                ])
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-lg-3 col-md-6 col-12 mt-2" }, [
+      _c("div", { staticClass: "panel-right " }, [
+        _c("h4", [_vm._v(" Publish your listing")]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            " Our system matches your move with those of our other Fretbay users."
+          )
+        ]),
+        _vm._v(" "),
+        _c("h4", [_vm._v("Compare the quotes")]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            " Grouped quotes at low prices are offered by our network of professional carriers.\n                    "
+          )
+        ]),
+        _vm._v(" "),
+        _c("h4", [_vm._v(" Select a quote")]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            " Establish your transportation terms by contacting the carrier of your choice.\n                    "
+          )
+        ]),
+        _vm._v(" "),
+        _c("h4", [_vm._v(" Evaluate the service")]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            " Following the move, give your opinion on the mover's service and the quality of the\n                        grouped\n                        transport of your goods."
+          )
+        ])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -39859,14 +46749,8 @@ render._withStripped = true
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div")
-}
+var render = function () {}
 var staticRenderFns = []
-render._withStripped = true
 
 
 
@@ -39887,9 +46771,531 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _c("div", [
+    _c(
+      "section",
+      {
+        staticClass:
+          "commentcamarche-section-default commentcamarche-section-offwhite"
+      },
+      [
+        _c("div", { staticClass: "container" }, [
+          _c(
+            "div",
+            {
+              staticClass: "custom-slider-section clearfix",
+              attrs: { role: "tabpanel" }
+            },
+            [
+              _vm._m(0),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "visible-xs mob-custom-slider-nav" },
+                [
+                  _vm._m(1),
+                  _vm._v(" "),
+                  _c("spna", { staticClass: "texthtml" }, [
+                    _c("strong", [_vm._v("1")]),
+                    _vm._v(
+                      "\n                        Publish a listing                    "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(2)
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _vm._m(3)
+            ]
+          )
+        ])
+      ]
+    ),
+    _vm._v(" "),
+    _vm._m(4),
+    _vm._v(" "),
+    _vm._m(5)
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "tab-content" }, [
+      _c(
+        "div",
+        { staticClass: "tab-pane fade in active", attrs: { id: "tab1" } },
+        [
+          _c("div", { staticClass: "slide-thumb" }, [
+            _c("img", {
+              attrs: { src: "images/commentcamarche-img1.png", alt: "" }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "slide-content" }, [
+            _c("h2", [_vm._v("Publish a listing")]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v(
+                "Post your listing for free. It is only a few clicks away from being published and visible by all our professional carriers."
+              )
+            ]),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass: "btn btn-theme",
+                attrs: {
+                  href: "https://fretbay.com/en/shipper/find-a-transporter"
+                }
+              },
+              [_vm._v("REQUEST FOR QUOTATION")]
+            )
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "tab-pane fade", attrs: { id: "tab2" } }, [
+        _c("div", { staticClass: "slide-thumb" }, [
+          _c("img", {
+            attrs: { src: "images/commentcamarche-img2.png", alt: "" }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "slide-content" }, [
+          _c("h2", [_vm._v("Receive quotes")]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "Once your listing is posted, our professional carriers will have access to your request and will offer you their quote. You will have the opportunity to choose the quote that suits you best and cheapest thanks to our reverse auction system."
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              staticClass: "btn btn-theme",
+              attrs: {
+                href: "https://fretbay.com/en/shipper/find-a-transporter"
+              }
+            },
+            [_vm._v("REQUEST FOR QUOTATION")]
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "tab-pane fade", attrs: { id: "tab3" } }, [
+        _c("div", { staticClass: "slide-thumb" }, [
+          _c("img", {
+            attrs: { src: "images/commentcamarche-img3.png", alt: "" }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "slide-content" }, [
+          _c("h2", [_vm._v("Get delivered")]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "Once your quotation has been selected, the carrier will take care of your furniture and belongings at the address and on the date you have chosen until the destination of your choice. Your belongings are handled safely by professionals equipped with equipment adapted to your needs in order to avoid any damage."
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              staticClass: "btn btn-theme",
+              attrs: {
+                href: "https://fretbay.com/en/shipper/find-a-transporter"
+              }
+            },
+            [_vm._v("REQUEST FOR QUOTATION")]
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "tab-pane fade", attrs: { id: "tab4" } }, [
+        _c("div", { staticClass: "slide-thumb" }, [
+          _c("img", {
+            attrs: { src: "en/images/commentcamarche-img4.png", alt: "" }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "slide-content" }, [
+          _c("h2", [_vm._v("Evaluate the service")]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "When your move is completed, you have the opportunity to evaluate your carrier on our site. All our carriers are evaluated in order to allow you to choose your service as well as possible. So, thanks to the contribution of our customers, you are guaranteed to find the carrier that suits you."
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              staticClass: "btn btn-theme",
+              attrs: {
+                href: "https://fretbay.com/en/shipper/find-a-transporter"
+              }
+            },
+            [_vm._v("REQUEST FOR QUOTATION")]
+          )
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "custom-next", attrs: { href: "#" } }, [
+      _c("span", { staticClass: "fa fa-caret-right" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "custom-prev", attrs: { href: "#" } }, [
+      _c("span", { staticClass: "fa fa-caret-left" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "ul",
+      { staticClass: "slider-nav hidden-xs", attrs: { role: "tablist" } },
+      [
+        _c("li", { staticClass: "active" }, [
+          _c("a", { attrs: { href: "#tab1", "data-toggle": "tab" } }, [
+            _c("strong", [_vm._v("1")]),
+            _vm._v("Publish a listing                        ")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("a", { attrs: { href: "#tab2", "data-toggle": "tab" } }, [
+            _c("strong", [_vm._v("2")]),
+            _vm._v("Receive quotes                        ")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("a", { attrs: { href: "#tab3", "data-toggle": "tab" } }, [
+            _c("strong", [_vm._v("3")]),
+            _vm._v("Get delivered                        ")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("a", { attrs: { href: "#tab4", "data-toggle": "tab" } }, [
+            _c("strong", [_vm._v("4")]),
+            _vm._v("Evaluate the service                        ")
+          ])
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", { staticClass: "commentcamarche-section-default" }, [
+      _c("div", { staticClass: "container text-center" }, [
+        _c("div", { staticClass: "virtual-table" }, [
+          _c("div", [
+            _c("h3", [
+              _vm._v("Shared transport and empty returns for a cheap service")
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v("Take advantage of empty returns and grouping with "),
+              _c(
+                "a",
+                {
+                  attrs: {
+                    href:
+                      "https://fretbay.com/en/mover-carrier-definition.html",
+                    title: ""
+                  }
+                },
+                [_vm._v("professional transporters")]
+              ),
+              _vm._v(
+                " for your furniture, your cars, your pets or for a move at an unbeatable price. Benefit from ever more competitive bids thanks to the reverse auction system of "
+              ),
+              _c(
+                "a",
+                { attrs: { href: "https://fretbay.com/en", title: "" } },
+                [_vm._v("FretBay.com")]
+              ),
+              _vm._v(
+                ", the reliable, economical and ecological solution for all your transport needs."
+              )
+            ]),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                attrs: {
+                  href: "https://fretbay.com/en/shipper/find-a-transporter",
+                  title: ""
+                }
+              },
+              [_vm._v("Discover our unbeatable rates")]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", [
+            _c("h3", [_vm._v("Movers evaluated by our customers")]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v("All our carriers are "),
+              _c(
+                "a",
+                {
+                  attrs: {
+                    href: "https://fretbay.com/en/quality-charter.php",
+                    title: ""
+                  }
+                },
+                [_vm._v("verified")]
+              ),
+              _vm._v(" and "),
+              _c(
+                "a",
+                {
+                  attrs: {
+                    href: "https://fretbay.com/en/quality-charter.php",
+                    title: ""
+                  }
+                },
+                [_vm._v("evaluated")]
+              ),
+              _vm._v(" with each transaction. This is the guarantee of a "),
+              _c(
+                "a",
+                {
+                  attrs: {
+                    href: "https://fretbay.com/en/quality-charter.php",
+                    title: ""
+                  }
+                },
+                [_vm._v("quality")]
+              ),
+              _vm._v(
+                " transport performed by a reliable service provider. You can consult the "
+              ),
+              _c(
+                "a",
+                {
+                  attrs: {
+                    href:
+                      "https://fretbay.com/en/benefits-transporter-mover-carrier",
+                    title: ""
+                  }
+                },
+                [_vm._v("carrier profiles")]
+              ),
+              _vm._v(" to get more information.")
+            ]),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                attrs: {
+                  href:
+                    "https://fretbay.com/en/benefits-transporter-mover-carrier",
+                  title: ""
+                }
+              },
+              [_vm._v("The ranking of the best carriers")]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "virtual-table" }, [
+          _c("div", [
+            _c("h3", [_vm._v("Certified Trustpilot reviews")]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v("We pay special attention to your "),
+              _c(
+                "a",
+                {
+                  attrs: {
+                    href:
+                      "https://fretbay.com/en/reviews-shippers-FretBay.html",
+                    title: ""
+                  }
+                },
+                [_vm._v("satisfaction")]
+              ),
+              _vm._v(". That's why we regularly solicit our "),
+              _c(
+                "a",
+                {
+                  attrs: {
+                    href: "https://fretbay.com/en/quality-charter.php",
+                    title: ""
+                  }
+                },
+                [_vm._v("users")]
+              ),
+              _vm._v(
+                " so they can give us their impressions. For maximum reliability we do "
+              ),
+              _c(
+                "a",
+                {
+                  attrs: {
+                    href: "https://fretbay.com/en/connect.php",
+                    title: ""
+                  }
+                },
+                [_vm._v("authenticate")]
+              ),
+              _vm._v(" these reviews with "),
+              _c(
+                "a",
+                {
+                  attrs: {
+                    href: "https://trustpilot.com/review/www.fretbay.com",
+                    title: ""
+                  }
+                },
+                [_vm._v("Truspilot")]
+              ),
+              _vm._v(".")
+            ])
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "section",
+      {
+        staticClass:
+          "commentcamarche-section-default commentcamarche-section-offwhite"
+      },
+      [
+        _c("div", { staticClass: "container" }, [
+          _c("h2", { staticClass: "text-center" }, [
+            _vm._v("Benefits designed for you")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "clearfix row" }, [
+            _c("div", { staticClass: "col-md-6" }, [
+              _c("ul", { staticClass: "ccm-listing" }, [
+                _c("li", [
+                  _c("img", {
+                    attrs: { src: "images/listicon1.png", alt: "" }
+                  }),
+                  _vm._v(" "),
+                  _c("span", [
+                    _vm._v(
+                      "Competitive prices thanks to grouped transport and empty returns"
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("img", {
+                    attrs: { src: "images/listicon2.png", alt: "" }
+                  }),
+                  _vm._v(" "),
+                  _c("span", [
+                    _vm._v(
+                      "The implementation of systematic evaluations of carriers"
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("img", {
+                    attrs: { src: "images/listicon3.png", alt: "" }
+                  }),
+                  _vm._v(" "),
+                  _c("span", [
+                    _vm._v(
+                      "The refund of the deposit if the carrier cancels the service"
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("img", {
+                    attrs: { src: "images/listicon4.png", alt: "" }
+                  }),
+                  _vm._v(" "),
+                  _c("span", [
+                    _vm._v(
+                      "No unsolicited calls: your contact details remain invisible"
+                    )
+                  ])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-6" }, [
+              _c("ul", { staticClass: "ccm-listing" }, [
+                _c("li", [
+                  _c("img", {
+                    attrs: { src: "images/listicon5.png", alt: "" }
+                  }),
+                  _vm._v(" "),
+                  _c("span", [
+                    _vm._v(
+                      "Safeguarding the environment with the eco-shared use of trucks"
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("img", {
+                    attrs: { src: "images/listicon6.png", alt: "" }
+                  }),
+                  _vm._v(" "),
+                  _c("span", [
+                    _vm._v("A quality of service certified by "),
+                    _c(
+                      "a",
+                      {
+                        staticClass: "h3 bold",
+                        attrs: {
+                          target: "_blank",
+                          href: "https://trustpilot.com/review/www.fretbay.com"
+                        }
+                      },
+                      [_vm._v("Truspilot")]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("img", {
+                    attrs: { src: "images/listicon7.png", alt: "" }
+                  }),
+                  _vm._v(" "),
+                  _c("span", [_vm._v("Available throughout Europe")])
+                ])
+              ])
+            ])
+          ])
+        ])
+      ]
+    )
+  }
+]
 render._withStripped = true
 
 
@@ -39911,2019 +47317,874 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("section", { attrs: { id: "recentList" } }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c(
+            "div",
+            { staticClass: "col-md-4" },
+            [_c("top-movers-component")],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "col-md-8" },
+            [_c("latest-transactions-component")],
+            1
+          )
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _vm._m(1),
+    _vm._v(" "),
+    _vm._m(2),
+    _vm._v(" "),
+    _vm._m(3)
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("div", { attrs: { id: "seekHeader" } }, [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row text-center" }, [
-            _c("div", { staticClass: "col-md-3 col-sm-6" }, [
-              _c("i", { staticClass: "icon seek1" }),
-              _vm._v(" "),
-              _c("div", { staticClass: "headingH2" }, [_vm._v("18 millions")]),
-              _vm._v(" "),
-              _c("p", { staticClass: "bold" }, [
-                _vm._v("kg reduction in CO"),
-                _c("span", { staticClass: "sub" }, [_vm._v("2")]),
-                _vm._v(" emissions")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-3 col-sm-6" }, [
+    return _c("section", { attrs: { id: "seekHeader" } }, [
+      _c("div", { staticClass: "container" }, [
+        _c("ul", { staticClass: "row seekheader__list" }, [
+          _c("div", { staticClass: "col-md-3 col-sm-6" }, [
+            _c(
+              "li",
+              { staticClass: "seekheader__item seekheader__item-first" },
+              [
+                _c("i", { staticClass: "icon seek1" }),
+                _vm._v(" "),
+                _c("p", { staticClass: "seekheader__title" }, [
+                  _vm._v(
+                    "\n                            18 millions\n                        "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "seekheader__txt" }, [
+                  _vm._v(
+                    "\n                            kg reduction in CO2 emissions\n                        "
+                  )
+                ])
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-3 col-sm-6" }, [
+            _c("li", { staticClass: "seekheader__item" }, [
               _c("i", { staticClass: "icon seek2" }),
               _vm._v(" "),
-              _c("div", { staticClass: "headingH2" }, [
-                _vm._v("A network of +8000")
+              _c("p", { staticClass: "seekheader__title" }, [
+                _vm._v(
+                  "\n                            A network of +8000\n                        "
+                )
               ]),
               _vm._v(" "),
-              _c("p", { staticClass: "bold" }, [_vm._v("authorized movers")])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-3 col-sm-6" }, [
-              _c("i", { staticClass: "icon seek3" }),
-              _vm._v(" "),
-              _c("div", { staticClass: "headingH2" }, [
-                _vm._v("1 943 364 users")
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "bold" }, [
-                _vm._v("have used our services")
+              _c("div", { staticClass: "seekheader__txt" }, [
+                _vm._v(
+                  "\n                            authorized movers\n                        "
+                )
               ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-3 col-sm-6" }, [
-              _c("i", { staticClass: "icon seek4" }),
-              _vm._v(" "),
-              _c("div", { staticClass: "headingH2" }, [
-                _vm._v("an unbeatable price")
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "bold" }, [_vm._v("save up to 75%")])
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("section", { attrs: { id: "recentList" } }, [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-4" }, [
-              _c("h2", [_vm._v("Top movers")]),
-              _vm._v(" "),
-              _c("div", { staticClass: "row margin-bottom-20" }, [
-                _c("div", { staticClass: "col-lg-12" }, [
-                  _c("div", { staticClass: "postBlock" }, [
-                    _c("div", { staticClass: "col-md-3 col-sm-4 no-padding" }, [
-                      _c("div", { staticClass: "postImg" }, [
-                        _c("img", {
-                          attrs: {
-                            src:
-                              "https://fretbay.com/global/media/transporter/profil/thumbs/1599758184eCzX_0.png"
-                          }
-                        })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-9 col-sm-8" }, [
-                      _c("h6", { staticClass: "bold" }, [_vm._v("Wojtek92")]),
-                      _vm._v(" "),
-                      _c("p", [
-                        _vm._v(
-                          "Excellent service. Un seul bémol : le problème de la langue. Il y a .."
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "ratingBlock" }, [
-                        _c("img", {
-                          attrs: { src: "shipper/images/star-on.png" }
-                        }),
-                        _c("img", {
-                          attrs: { src: "shipper/images/star-on.png" }
-                        }),
-                        _c("img", {
-                          attrs: { src: "shipper/images/star-on.png" }
-                        }),
-                        _c("img", {
-                          attrs: { src: "shipper/images/star-on.png" }
-                        }),
-                        _c("img", {
-                          attrs: { src: "shipper/images/star-half.png" }
-                        })
-                      ])
-                    ])
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-8" }, [
-              _c("h2", [_vm._v("Latest transactions")]),
-              _vm._v(" "),
-              _c("div", { staticClass: "row margin-bottom-20" }, [
-                _c("div", { staticClass: "col-lg-12 recenListingSlider" }, [
-                  _c("ul", { staticClass: "list-unstyled recenListing" }, [
-                    _c("li", [
-                      _c("div", { staticClass: "categoryInfo" }, [
-                        _c("div", { staticClass: "circleImg id-408196" }, [
-                          _c("img", {
-                            attrs: {
-                              src:
-                                "transporter/images/catMedium/demenagement.png"
-                            }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "marginImg" }, [
-                          _vm._v(
-                            "\n                                            Déménagement 30 m3 "
-                          ),
-                          _c("span", { staticClass: "catgry" }, [
-                            _c("b", [_vm._v("Category")]),
-                            _vm._v(": Movings")
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "locationInfo" }, [
-                        _c("p", [_vm._v("Luxembourg - Luxembourg")]),
-                        _vm._v(" "),
-                        _c("p", [_vm._v("2.7km")])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "trasporterIfo" }, [
-                        _c("div", { staticClass: "circleImg" }, [
-                          _c("img", {
-                            attrs: {
-                              src:
-                                "https://fretbay.com/fr/images/photoTransporteur/validation-173x173.png?ver=1.2"
-                            }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "marginImg" }, [
-                          _c("p", [
-                            _vm._v(
-                              "\n                                                Ld26 "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "ratingBlock" }, [
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-on.png" }
-                            }),
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-on.png" }
-                            }),
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-on.png" }
-                            }),
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-on.png" }
-                            }),
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-on.png" }
-                            })
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "price" }, [
-                        _c("p", [_vm._v("4999€")])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("div", { staticClass: "categoryInfo" }, [
-                        _c("div", { staticClass: "circleImg id-395664" }, [
-                          _c("img", {
-                            attrs: {
-                              src:
-                                "transporter/images/catMedium/demenagement.png"
-                            }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "marginImg" }, [
-                          _vm._v(
-                            "\n                                            Déménagement 16m3 "
-                          ),
-                          _c("span", { staticClass: "catgry" }, [
-                            _c("b", [_vm._v("Category")]),
-                            _vm._v(": Movings")
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "locationInfo" }, [
-                        _c("p", [
-                          _vm._v(
-                            "Provence-Alpes-Cote d'Azur - Provence-Alpes-Cote d'Azur"
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("p", [_vm._v("3.39km")])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "trasporterIfo" }, [
-                        _c("div", { staticClass: "circleImg" }, [
-                          _c("img", {
-                            attrs: {
-                              src:
-                                "https://fretbay.com/global/media/transporter/profil/thumbs/1581749363_0.jpg"
-                            }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "marginImg" }, [
-                          _c("p", [
-                            _vm._v(
-                              "\n                                                balan90 "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "ratingBlock" }, [
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-on.png" }
-                            }),
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-on.png" }
-                            }),
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-on.png" }
-                            }),
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-on.png" }
-                            }),
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-half.png" }
-                            })
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "price" }, [
-                        _c("p", [_vm._v("600€")])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("div", { staticClass: "categoryInfo" }, [
-                        _c("div", { staticClass: "circleImg id-391003" }, [
-                          _c("img", {
-                            attrs: {
-                              src:
-                                "transporter/images/catMedium/demenagement.png"
-                            }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "marginImg" }, [
-                          _vm._v(
-                            "\n                                            Déménagement 10 m3 "
-                          ),
-                          _c("span", { staticClass: "catgry" }, [
-                            _c("b", [_vm._v("Category")]),
-                            _vm._v(": Movings")
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "locationInfo" }, [
-                        _c("p", [_vm._v("England - Vaud")]),
-                        _vm._v(" "),
-                        _c("p", [_vm._v("957.63km")])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "trasporterIfo" }, [
-                        _c("div", { staticClass: "circleImg" }, [
-                          _c("img", {
-                            attrs: {
-                              src:
-                                "https://fretbay.com/fr/images/photoTransporteur/validation-173x173.png?ver=1.2"
-                            }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "marginImg" }, [
-                          _c("p", [
-                            _vm._v(
-                              "\n                                                eurovans "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "ratingBlock" }, [
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-on.png" }
-                            }),
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-on.png" }
-                            }),
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-on.png" }
-                            }),
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-on.png" }
-                            }),
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-on.png" }
-                            })
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "price" }, [
-                        _c("p", [_vm._v("989€")])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("div", { staticClass: "categoryInfo" }, [
-                        _c("div", { staticClass: "circleImg id-388225" }, [
-                          _c("img", {
-                            attrs: {
-                              src:
-                                "transporter/images/catMedium/demenagement.png"
-                            }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "marginImg" }, [
-                          _vm._v(
-                            "\n                                            Déménagement 14m3 "
-                          ),
-                          _c("span", { staticClass: "catgry" }, [
-                            _c("b", [_vm._v("Category")]),
-                            _vm._v(": Movings")
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "locationInfo" }, [
-                        _c("p", [_vm._v("Zürich - IDF")]),
-                        _vm._v(" "),
-                        _c("p", [_vm._v("650.63km")])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "trasporterIfo" }, [
-                        _c("div", { staticClass: "circleImg" }, [
-                          _c("img", {
-                            attrs: {
-                              src:
-                                "https://fretbay.com/global/media/transporter/profil/thumbs/1573550229_0.jpeg"
-                            }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "marginImg" }, [
-                          _c("p", [
-                            _vm._v(
-                              "\n                                                Contact94 "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "ratingBlock" }, [
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-on.png" }
-                            }),
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-on.png" }
-                            }),
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-on.png" }
-                            }),
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-on.png" }
-                            }),
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-half.png" }
-                            })
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "price" }, [
-                        _c("p", [_vm._v("960€")])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("div", { staticClass: "categoryInfo" }, [
-                        _c("div", { staticClass: "circleImg id-386256" }, [
-                          _c("img", {
-                            attrs: {
-                              src:
-                                "transporter/images/catMedium/demenagement.png"
-                            }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "marginImg" }, [
-                          _vm._v(
-                            "\n                                            Déménagement 33m3 "
-                          ),
-                          _c("span", { staticClass: "catgry" }, [
-                            _c("b", [_vm._v("Category")]),
-                            _vm._v(": Movings")
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "locationInfo" }, [
-                        _c("p", [_vm._v(" - IDF")]),
-                        _vm._v(" "),
-                        _c("p", [_vm._v("953.96km")])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "trasporterIfo" }, [
-                        _c("div", { staticClass: "circleImg" }, [
-                          _c("img", {
-                            attrs: {
-                              src:
-                                "https://fretbay.com/global/media/transporter/profil/thumbs/1582117437_0.jpeg"
-                            }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "marginImg" }, [
-                          _c("p", [
-                            _vm._v(
-                              "\n                                                Tipfret6 "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "ratingBlock" }, [
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-on.png" }
-                            }),
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-on.png" }
-                            }),
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-on.png" }
-                            }),
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-on.png" }
-                            }),
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-half.png" }
-                            })
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "price" }, [
-                        _c("p", [_vm._v("1920€")])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("div", { staticClass: "categoryInfo" }, [
-                        _c("div", { staticClass: "circleImg id-383670" }, [
-                          _c("img", {
-                            attrs: {
-                              src:
-                                "transporter/images/catMedium/demenagement.png"
-                            }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "marginImg" }, [
-                          _vm._v(
-                            "\n                                            Déménagement 3.5m3 "
-                          ),
-                          _c("span", { staticClass: "catgry" }, [
-                            _c("b", [_vm._v("Category")]),
-                            _vm._v(": Movings")
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "locationInfo" }, [
-                        _c("p", [_vm._v("IDF - province de Verone")]),
-                        _vm._v(" "),
-                        _c("p", [_vm._v("1013.26km")])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "trasporterIfo" }, [
-                        _c("div", { staticClass: "circleImg" }, [
-                          _c("img", {
-                            attrs: {
-                              src:
-                                "https://fretbay.com/global/media/transporter/profil/thumbs/1583851868_0.jpg"
-                            }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "marginImg" }, [
-                          _c("p", [
-                            _vm._v(
-                              "\n                                                fretEU "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "ratingBlock" }, [
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-on.png" }
-                            }),
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-on.png" }
-                            }),
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-on.png" }
-                            }),
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-on.png" }
-                            }),
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-half.png" }
-                            })
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "price" }, [
-                        _c("p", [_vm._v("900€")])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("div", { staticClass: "categoryInfo" }, [
-                        _c("div", { staticClass: "circleImg id-377110" }, [
-                          _c("img", {
-                            attrs: {
-                              src: "transporter/images/catMedium/colis.png"
-                            }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "marginImg" }, [
-                          _vm._v(
-                            "\n                                            Package/Fold "
-                          ),
-                          _c("span", { staticClass: "catgry" }, [
-                            _c("b", [_vm._v("Category")]),
-                            _vm._v(": Package")
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "locationInfo" }, [
-                        _c("p", [_vm._v("Bavaria - Canton of Geneva")]),
-                        _vm._v(" "),
-                        _c("p", [_vm._v("689.16km")])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "trasporterIfo" }, [
-                        _c("div", { staticClass: "circleImg" }, [
-                          _c("img", {
-                            attrs: {
-                              src:
-                                "https://fretbay.com/fr/images/photoTransporteur/validation-173x173.png?ver=1.2"
-                            }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "marginImg" }, [
-                          _c("p", [
-                            _vm._v(
-                              "\n                                                Nars24 "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "ratingBlock" }, [
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-on.png" }
-                            }),
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-on.png" }
-                            }),
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-on.png" }
-                            }),
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-on.png" }
-                            }),
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-on.png" }
-                            })
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "price" }, [
-                        _c("p", [_vm._v("580€")])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("div", { staticClass: "categoryInfo" }, [
-                        _c("div", { staticClass: "circleImg id-375666" }, [
-                          _c("img", {
-                            attrs: {
-                              src:
-                                "transporter/images/catMedium/demenagement.png"
-                            }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "marginImg" }, [
-                          _vm._v(
-                            "\n                                            Déménagement 47m3 "
-                          ),
-                          _c("span", { staticClass: "catgry" }, [
-                            _c("b", [_vm._v("Category")]),
-                            _vm._v(": Movings")
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "locationInfo" }, [
-                        _c("p", [_vm._v("IDF - Alpes-Maritimes")]),
-                        _vm._v(" "),
-                        _c("p", [_vm._v("928.85km")])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "trasporterIfo" }, [
-                        _c("div", { staticClass: "circleImg" }, [
-                          _c("img", {
-                            attrs: {
-                              src:
-                                "https://fretbay.com/global/media/transporter/profil/thumbs/1582117437_0.jpeg"
-                            }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "marginImg" }, [
-                          _c("p", [
-                            _vm._v(
-                              "\n                                                Tipfret6 "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "ratingBlock" }, [
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-on.png" }
-                            }),
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-on.png" }
-                            }),
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-on.png" }
-                            }),
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-on.png" }
-                            }),
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-half.png" }
-                            })
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "price" }, [
-                        _c("p", [_vm._v("2500€")])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("div", { staticClass: "categoryInfo" }, [
-                        _c("div", { staticClass: "circleImg id-374084" }, [
-                          _c("img", {
-                            attrs: {
-                              src:
-                                "transporter/images/catMedium/demenagement.png"
-                            }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "marginImg" }, [
-                          _vm._v(
-                            "\n                                            Déménagement 47m3 "
-                          ),
-                          _c("span", { staticClass: "catgry" }, [
-                            _c("b", [_vm._v("Category")]),
-                            _vm._v(": Movings")
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "locationInfo" }, [
-                        _c("p", [_vm._v("IDF - Provence-Alpes-Cote d'Azur")]),
-                        _vm._v(" "),
-                        _c("p", [_vm._v("930.63km")])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "trasporterIfo" }, [
-                        _c("div", { staticClass: "circleImg" }, [
-                          _c("img", {
-                            attrs: {
-                              src:
-                                "https://fretbay.com/global/media/transporter/profil/thumbs/1579084984_0.jpeg"
-                            }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "marginImg" }, [
-                          _c("p", [
-                            _vm._v(
-                              "\n                                                transport280 "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "ratingBlock" }, [
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-on.png" }
-                            }),
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-on.png" }
-                            }),
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-on.png" }
-                            }),
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-on.png" }
-                            }),
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-on.png" }
-                            })
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "price" }, [
-                        _c("p", [_vm._v("2630€")])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("div", { staticClass: "categoryInfo" }, [
-                        _c("div", { staticClass: "circleImg id-366865" }, [
-                          _c("img", {
-                            attrs: {
-                              src:
-                                "transporter/images/catMedium/demenagement.png"
-                            }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "marginImg" }, [
-                          _vm._v(
-                            "\n                                            Moving 28.70m3 "
-                          ),
-                          _c("span", { staticClass: "catgry" }, [
-                            _c("b", [_vm._v("Category")]),
-                            _vm._v(": Movings")
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "locationInfo" }, [
-                        _c("p", [_vm._v("Gelderland - Berlin")]),
-                        _vm._v(" "),
-                        _c("p", [_vm._v("609.21km")])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "trasporterIfo" }, [
-                        _c("div", { staticClass: "circleImg" }, [
-                          _c("img", {
-                            attrs: {
-                              src:
-                                "https://fretbay.com/global/media/transporter/profil/thumbs/1593949089FcaE_0.jpg"
-                            }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "marginImg" }, [
-                          _c("p", [
-                            _vm._v(
-                              "\n                                                DLP 21 "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "ratingBlock" }, [
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-on.png" }
-                            }),
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-on.png" }
-                            }),
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-on.png" }
-                            }),
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-on.png" }
-                            }),
-                            _c("img", {
-                              attrs: { src: "shipper/images/star-on.png" }
-                            })
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "price" }, [
-                        _c("p", [_vm._v("1200€")])
-                      ])
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("section", { staticClass: "text-center", attrs: { id: "stepsNew" } }, [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-3 col-xs-6" }, [
-              _c("div", { staticClass: "oneToFour" }, [_vm._v("1")]),
-              _vm._v(" "),
-              _c("h3", [_vm._v("Publish your listing")]),
-              _vm._v(" "),
-              _c("img", { attrs: { src: "images/home/stepN-1.png" } })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-3 col-xs-6" }, [
-              _c("div", { staticClass: "oneToFour" }, [_vm._v("2")]),
-              _vm._v(" "),
-              _c("h3", [_vm._v("Get instant quotes")]),
-              _vm._v(" "),
-              _c("img", { attrs: { src: "images/home/stepN-2.png" } })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-3 col-xs-6" }, [
-              _c("div", { staticClass: "oneToFour" }, [_vm._v("3")]),
-              _vm._v(" "),
-              _c("h3", [_vm._v("Get delivered")]),
-              _vm._v(" "),
-              _c("img", { attrs: { src: "images/home/stepN-3.png" } })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-3 col-xs-6" }, [
-              _c("div", { staticClass: "oneToFour" }, [_vm._v("4")]),
-              _vm._v(" "),
-              _c("h3", [_vm._v("Rate the service")]),
-              _vm._v(" "),
-              _c("img", { attrs: { src: "images//home/stepN-4.png" } })
             ])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "clearfix" }),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-12 margin-bottom-40 text-center" }, [
-            _c(
-              "a",
-              {
-                staticClass: "btn",
-                attrs: {
-                  href:
-                    "https://fretbay.com/en/shipper/find-a-transporter?idsess="
-                }
-              },
-              [_vm._v("REQUEST A QUOTE")]
-            )
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("section", { attrs: { id: "trevalNew" } }, [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-6 col-sm-6" }, [
-              _c("h2", [
-                _c(
-                  "a",
-                  {
-                    attrs: {
-                      href:
-                        "https://fretbay.com/en/shipper/find-a-transporter?idsess=",
-                      target: "_blank"
-                    }
-                  },
-                  [_vm._v("Find a\n                        mover")]
-                )
-              ]),
+          _c("div", { staticClass: "col-md-3 col-sm-6" }, [
+            _c("li", { staticClass: "seekheader__item" }, [
+              _c("i", { staticClass: "icon seek3" }),
               _vm._v(" "),
-              _c("p", { staticClass: "h5" }, [
-                _vm._v("Finding a cheap mover on FretBay is very easy!"),
-                _c("br"),
+              _c("p", { staticClass: "seekheader__title" }, [
                 _vm._v(
-                  " Let's say you simply want to\n                        move for example, you only need to publish a listing for free to receive low-cost moving\n                        quotes or cheap mover rates."
+                  "\n                            1 943 364 users\n                        "
                 )
               ]),
               _vm._v(" "),
-              _c("p", { staticClass: "h5" }, [
+              _c("div", { staticClass: "seekheader__txt" }, [
                 _vm._v(
-                  "A grouped transport guarantees you very low moving prices. Once this request has\n                        been made, each transporter can send you a moving quote and make you an offer for a\n                        transport price. Then, all you have to do is select the transportation service offer that\n                        best meets your needs!"
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "text-right" }, [
-                _c(
-                  "a",
-                  {
-                    attrs: {
-                      href:
-                        "https://fretbay.com/en/shipper/find-a-transporter?idsess="
-                    }
-                  },
-                  [_vm._v("Find out more")]
+                  "\n                            have used our services\n                        "
                 )
               ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-6 col-sm-6" }, [
-              _c("h2", [
-                _c(
-                  "a",
-                  {
-                    attrs: {
-                      href:
-                        "https://fretbay.com/en/transporter/register-transporter?idsess="
-                    }
-                  },
-                  [_vm._v("I'm a\n                        transporter")]
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-3 col-sm-6" }, [
+            _c("li", { staticClass: "seekheader__item" }, [
+              _c("i", { staticClass: "icon seek4" }),
+              _vm._v(" "),
+              _c("p", { staticClass: "seekheader__title" }, [
+                _vm._v(
+                  "\n                            an unbeatable price\n                        "
                 )
               ]),
               _vm._v(" "),
-              _c("p", { staticClass: "h5" }, [
-                _vm._v("FretBay is very easy for transporters to use."),
-                _c("br"),
+              _c("div", { staticClass: "seekheader__txt" }, [
                 _vm._v(
-                  " Every day, hundreds of people\n                        publish a listing to request a cheap quote for a moving, private parcel, vehicle or animal\n                        transport."
+                  "\n                            save up to 75%\n                        "
+                )
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", { attrs: { id: "stepsNew" } }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-3 col-xs-6" }, [
+            _c("div", { staticClass: "stepsnew__item" }, [
+              _c("h3", { staticClass: "stepsnew__title" }, [
+                _c("span", [_vm._v("\n\t\t\t\t\t\t\t\t1\n\t\t\t\t\t\t\t")]),
+                _vm._v(
+                  "\n                            Publish your listing\n                        "
                 )
               ]),
               _vm._v(" "),
-              _c("p", { staticClass: "h5" }, [
+              _c("img", {
+                staticClass: "about__img img-responsive mx-auto d-block",
+                attrs: { src: "/images/home/stepN-1.png", alt: "about" }
+              })
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-3 col-xs-6" }, [
+            _c("div", { staticClass: "stepsnew__item" }, [
+              _c("h3", { staticClass: "stepsnew__title" }, [
+                _c("span", [_vm._v("\n\t\t\t\t\t\t\t\t2\n\t\t\t\t\t\t\t")]),
                 _vm._v(
-                  "All you have to do is consult the listings corresponding to your travel locations\n                        to find loads and deliveries. Then, all that remains is to offer an estimate to the\n                        client."
+                  "\n                            Get instant quotes\n                        "
+                )
+              ]),
+              _vm._v(" "),
+              _c("img", {
+                staticClass: "about__img img-responsive mx-auto d-block",
+                attrs: { src: "/images/home/stepN-2.png", alt: "about" }
+              })
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-3 col-xs-6" }, [
+            _c("div", { staticClass: "stepsnew__item" }, [
+              _c("h3", { staticClass: "stepsnew__title" }, [
+                _c("span", [_vm._v("\n\t\t\t\t\t\t\t\t3\n\t\t\t\t\t\t\t")]),
+                _vm._v(
+                  "\n                            Get delivered\n                        "
+                )
+              ]),
+              _vm._v(" "),
+              _c("img", {
+                staticClass: "about__img img-responsive mx-auto d-block",
+                attrs: { src: "/images/home/stepN-3.png", alt: "about" }
+              })
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-3 col-xs-6" }, [
+            _c("div", { staticClass: "stepsnew__item" }, [
+              _c("h3", { staticClass: "stepsnew__title" }, [
+                _c("span", [_vm._v("\n\t\t\t\t\t\t\t\t4\n\t\t\t\t\t\t\t")]),
+                _vm._v(
+                  "\n                            Rate the service\n                        "
+                )
+              ]),
+              _vm._v(" "),
+              _c("img", {
+                staticClass: "about__img img-responsive mx-auto d-block",
+                attrs: { src: "/images/home/stepN-4.png", alt: "about" }
+              })
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("button", { staticClass: "first__btn" }, [
+          _vm._v("\n                REQUEST A QUOTE\n            ")
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", { attrs: { id: "trevalNew" } }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-6 col-sm-6" }, [
+            _c("div", { staticClass: "trevalnew__item trevalnew__item-left" }, [
+              _c("a", { staticClass: "trevalnew__title" }, [
+                _vm._v(
+                  "\n                            Find a mover\n                        "
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "trevalnew__txt" }, [
+                _vm._v(
+                  "\n                            Finding a cheap mover on FretBay is very easy!\n                            "
                 ),
                 _c("br"),
                 _vm._v(
-                  "Registration and publication of an ad on FretBay are free and without obligation,\n                        take advantage of it!"
+                  "\n                            Let's say you simply want to move for example, you only need to publish a listing for free to receive low-cost moving quotes or cheap mover rates.\n                        "
                 )
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "text-right" }, [
-                _c(
-                  "a",
-                  {
-                    attrs: {
-                      href:
-                        "https://fretbay.com/en/transporter/register-transporter?idsess="
-                    }
-                  },
-                  [_vm._v("Find out more")]
-                )
-              ])
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("section", { attrs: { id: "testimonialNew" } }),
-      _vm._v(" "),
-      _c("div", { staticClass: "tabs-footer-section" }, [
-        _c("div", { staticClass: "footer-tabs" }, [
-          _c("div", { staticClass: "container" }, [
-            _c("ul", { staticClass: "tabs-footer-nav text-center" }, [
-              _c("li", { staticClass: "active" }, [
-                _c(
-                  "a",
-                  { attrs: { href: "#footertab1", "data-toggle": "tab" } },
-                  [_vm._v("Moves")]
+              _c("p", { staticClass: "trevalnew__txt" }, [
+                _vm._v(
+                  "\n                            A grouped transport guarantees you very low moving prices. Once this request has been made, each transporter can send you a moving quote and make you an offer for a transport price. Then, all you have to do is select the transportation service offer that best meets your needs!\n                        "
                 )
               ]),
               _vm._v(" "),
-              _c("li", [
-                _c(
-                  "a",
-                  { attrs: { href: "#footertab2", "data-toggle": "tab" } },
-                  [_vm._v("Moves by city")]
-                )
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c(
-                  "a",
-                  { attrs: { href: "#footertab3", "data-toggle": "tab" } },
-                  [_vm._v("Transport")]
+              _c("a", { staticClass: "trevalnew__btn" }, [
+                _vm._v(
+                  "\n                            Find out more\n                        "
                 )
               ])
             ])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "tab-content" }, [
+          _c("div", { staticClass: "col-md-6 col-sm-6" }, [
             _c(
               "div",
-              { staticClass: "tab-pane active", attrs: { id: "footertab1" } },
+              { staticClass: "trevalnew__item trevalnew__item-right" },
               [
-                _c("div", { staticClass: "container" }, [
-                  _c("div", { staticClass: "row" }, [
-                    _c("div", { staticClass: "col-sm-5 full-width-xs" }, [
-                      _c("ul", [
-                        _c("li", [
-                          _c(
-                            "a",
-                            {
-                              attrs: {
-                                target: "_blank",
-                                href:
-                                  "https://fretbay.com/en/cheap-move-transport-carrier/"
-                              }
-                            },
-                            [
-                              _vm._v(
-                                "Moving\n                                        cheaply"
-                              )
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("li", [
-                          _c(
-                            "a",
-                            {
-                              attrs: {
-                                target: "_blank",
-                                href: "https://fretbay.com/en/estimate-move/"
-                              }
-                            },
-                            [
-                              _vm._v(
-                                "Estimating\n                                        your move with FretBay"
-                              )
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("li", [
-                          _c(
-                            "a",
-                            {
-                              attrs: {
-                                target: "_blank",
-                                href: "https://fretbay.com/en/move-on-your-own/"
-                              }
-                            },
-                            [
-                              _vm._v(
-                                "Moving\n                                        when you're on your own"
-                              )
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("li", [
-                          _c(
-                            "a",
-                            {
-                              attrs: {
-                                target: "_blank",
-                                href: "https://fretbay.com/en/france-transport/"
-                              }
-                            },
-                            [
-                              _vm._v(
-                                "An\n                                        optimized move in Europe"
-                              )
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("li", [
-                          _c(
-                            "a",
-                            {
-                              attrs: {
-                                target: "_blank",
-                                href:
-                                  "https://fretbay.com/en/grouped-move-transport-carrier/"
-                              }
-                            },
-                            [
-                              _vm._v(
-                                "Grouped\n                                        moving, a system with many advantages"
-                              )
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("li", [
-                          _c(
-                            "a",
-                            {
-                              attrs: {
-                                target: "_blank",
-                                href:
-                                  "https://fretbay.com/en/move-transport-furniture/"
-                              }
-                            },
-                            [
-                              _vm._v(
-                                "Moving\n                                        your furniture in complete serenity"
-                              )
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("li", [
-                          _c(
-                            "a",
-                            {
-                              attrs: {
-                                target: "_blank",
-                                href:
-                                  "https://fretbay.com/en/rent-truck-move-transport/"
-                              }
-                            },
-                            [
-                              _vm._v(
-                                "Rent\n                                        the right truck for your move"
-                              )
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("li", [
-                          _c(
-                            "a",
-                            {
-                              attrs: {
-                                target: "_blank",
-                                href:
-                                  "https://fretbay.com/en/cheap-move-students/"
-                              }
-                            },
-                            [
-                              _vm._v(
-                                "Moving\n                                        for students"
-                              )
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("li", [
-                          _c(
-                            "a",
-                            {
-                              attrs: {
-                                target: "_blank",
-                                href: "https://fretbay.com/en/one-way-move/"
-                              }
-                            },
-                            [
-                              _vm._v(
-                                "One-way\n                                        move"
-                              )
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("li", [
-                          _c(
-                            "a",
-                            {
-                              attrs: {
-                                target: "_blank",
-                                href:
-                                  "https://fretbay.com/en/individuals-move/home.php"
-                              }
-                            },
-                            [
-                              _vm._v(
-                                "Moving\n                                        for individuals"
-                              )
-                            ]
-                          )
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass: "combine-col clearfix",
-                        staticStyle: { display: "none" }
-                      },
-                      [
-                        _c("p", [
-                          _vm._v("You are moving to a new city ?"),
-                          _c("br"),
-                          _vm._v("Discover our tips:")
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "col-md-3 col-sm-3 col-xs-6" },
-                          [
-                            _c("ul", [
-                              _c("li", [
-                                _c("a", {
-                                  attrs: {
-                                    title: "Paris",
-                                    target: "_blank",
-                                    href:
-                                      "https://fretbay.com/en/Ile-de-France/"
-                                  }
-                                })
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("a", {
-                                  attrs: {
-                                    title: "Tours",
-                                    target: "_blank",
-                                    href:
-                                      "https://fretbay.com/en/demenagement-tours/"
-                                  }
-                                })
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("a", {
-                                  attrs: {
-                                    title: "Bordeaux",
-                                    target: "_blank",
-                                    href:
-                                      "https://fretbay.com/en/demenagement-bordeaux/"
-                                  }
-                                })
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("a", {
-                                  attrs: {
-                                    title: "Montpellier",
-                                    target: "_blank",
-                                    href:
-                                      "https://fretbay.com/en/demenagement-montpellier/"
-                                  }
-                                })
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("a", {
-                                  attrs: {
-                                    title: "Toulouse",
-                                    target: "_blank",
-                                    href:
-                                      "https://fretbay.com/en/demenagement-toulouse/"
-                                  }
-                                })
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("a", {
-                                  attrs: {
-                                    title: "Lille",
-                                    target: "_blank",
-                                    href:
-                                      "https://fretbay.com/en/demenagement-lille/"
-                                  }
-                                })
-                              ])
-                            ])
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "col-md-3 col-sm-3 col-xs-6" },
-                          [
-                            _c("ul", [
-                              _c("li", [
-                                _c("a", {
-                                  attrs: {
-                                    title: "Cannes",
-                                    target: "_blank",
-                                    href:
-                                      "https://fretbay.com/en/demenagement-cannes/"
-                                  }
-                                })
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("a", {
-                                  attrs: {
-                                    title: "Marseille",
-                                    target: "_blank",
-                                    href:
-                                      "https://fretbay.com/en/demenagement-marseille/"
-                                  }
-                                })
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("a", {
-                                  attrs: {
-                                    title: "Lyon",
-                                    target: "_blank",
-                                    href:
-                                      "https://fretbay.com/en/demenagement-lyon/"
-                                  }
-                                })
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("a", {
-                                  attrs: {
-                                    title: "Nantes",
-                                    target: "_blank",
-                                    href:
-                                      "https://fretbay.com/en/demenagement-nantes/"
-                                  }
-                                })
-                              ])
-                            ])
-                          ]
-                        )
-                      ]
-                    )
-                  ])
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "tab-pane", attrs: { id: "footertab2" } },
-              [
-                _c("div", { staticClass: "container" }, [
-                  _c("ul", { staticClass: "clearfix" }, [
-                    _c("li", [
-                      _c(
-                        "a",
-                        {
-                          attrs: {
-                            target: "_blank",
-                            href:
-                              "https://fretbay.com/en/movimiento-Stoke Bishop-Sandhoe.html"
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "Move from\n                                Stoke Bishop to Sandhoe"
-                          )
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c(
-                        "a",
-                        {
-                          attrs: {
-                            target: "_blank",
-                            href:
-                              "https://fretbay.com/en/movimiento-Wroxton-Morecambe.html"
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "Move\n                                from Wroxton to Morecambe"
-                          )
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c(
-                        "a",
-                        {
-                          attrs: {
-                            target: "_blank",
-                            href:
-                              "https://fretbay.com/en/movimiento-Lavant-Pwllcrochan.html"
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "Move\n                                from Lavant to Pwllcrochan"
-                          )
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c(
-                        "a",
-                        {
-                          attrs: {
-                            target: "_blank",
-                            href:
-                              "https://fretbay.com/en/movimiento-Stilton-Galloon.html"
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "Move\n                                from Stilton to Galloon"
-                          )
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c(
-                        "a",
-                        {
-                          attrs: {
-                            target: "_blank",
-                            href:
-                              "https://fretbay.com/en/movimiento-Kemsley-Bigby.html"
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "Move\n                                from Kemsley to Bigby"
-                          )
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c(
-                        "a",
-                        {
-                          attrs: {
-                            target: "_blank",
-                            href:
-                              "https://fretbay.com/en/movimiento-Hawkwell-Carn Entral.html"
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "Move from\n                                Hawkwell to Carn Entral"
-                          )
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c(
-                        "a",
-                        {
-                          attrs: {
-                            target: "_blank",
-                            href:
-                              "https://fretbay.com/en/movimiento-Cullatagh-West Dean Park.html"
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "Move from\n                                Cullatagh to West Dean Park"
-                          )
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c(
-                        "a",
-                        {
-                          attrs: {
-                            target: "_blank",
-                            href:
-                              "https://fretbay.com/en/movimiento-Nympsfield-Milton on Stour.html"
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "Move\n                                from Nympsfield to Milton on Stour"
-                          )
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c(
-                        "a",
-                        {
-                          attrs: {
-                            target: "_blank",
-                            href:
-                              "https://fretbay.com/en/movimiento-Moneen-Tarvin Sands.html"
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "Move from\n                                Moneen to Tarvin Sands"
-                          )
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c(
-                        "a",
-                        {
-                          attrs: {
-                            target: "_blank",
-                            href:
-                              "https://fretbay.com/en/movimiento-Stockerston-Hammoon.html"
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "Move from\n                                Stockerston to Hammoon"
-                          )
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c(
-                        "a",
-                        {
-                          attrs: {
-                            target: "_blank",
-                            href:
-                              "https://fretbay.com/en/movimiento-Tresaddern-Luccombe.html"
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "Move from\n                                Tresaddern to Luccombe"
-                          )
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c(
-                        "a",
-                        {
-                          attrs: {
-                            target: "_blank",
-                            href:
-                              "https://fretbay.com/en/movimiento-Eastern Docks-Eynesbury.html"
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "Move from\n                                Eastern Docks to Eynesbury"
-                          )
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c(
-                        "a",
-                        {
-                          attrs: {
-                            target: "_blank",
-                            href:
-                              "https://fretbay.com/en/movimiento-Low Stott Park-Grange Moor.html"
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "Move\n                                from Low Stott Park to Grange Moor"
-                          )
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c(
-                        "a",
-                        {
-                          attrs: {
-                            target: "_blank",
-                            href:
-                              "https://fretbay.com/en/movimiento-Uphall-Lower Maescoed.html"
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "Move from\n                                Uphall to Lower Maescoed"
-                          )
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c(
-                        "a",
-                        {
-                          attrs: {
-                            target: "_blank",
-                            href:
-                              "https://fretbay.com/en/movimiento-Trefeitha-Craig-Cefn-Parc.html"
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "Move from\n                                Trefeitha to Craig-Cefn-Parc"
-                          )
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c(
-                        "a",
-                        {
-                          attrs: {
-                            target: "_blank",
-                            href:
-                              "https://fretbay.com/en/movimiento-New Hedges-Llandygwydd.html"
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "Move from\n                                New Hedges to Llandygwydd"
-                          )
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c(
-                        "a",
-                        {
-                          attrs: {
-                            target: "_blank",
-                            href:
-                              "https://fretbay.com/en/movimiento-Glanwydden-Blairforge.html"
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "Move from\n                                Glanwydden to Blairforge"
-                          )
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c(
-                        "a",
-                        {
-                          attrs: {
-                            target: "_blank",
-                            href:
-                              "https://fretbay.com/en/movimiento-Heckfordbridge-Bircher.html"
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "Move from\n                                Heckfordbridge to Bircher"
-                          )
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c(
-                        "a",
-                        {
-                          attrs: {
-                            target: "_blank",
-                            href:
-                              "https://fretbay.com/en/movimiento-Hatfield Heath-Old Rhosrobin.html"
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "Move\n                                from Hatfield Heath to Old Rhosrobin"
-                          )
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c(
-                        "a",
-                        {
-                          attrs: {
-                            target: "_blank",
-                            href:
-                              "https://fretbay.com/en/movimiento-Stirchley-Blakedown.html"
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "Move from\n                                Stirchley to Blakedown"
-                          )
-                        ]
-                      )
-                    ])
-                  ])
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "tab-pane", attrs: { id: "footertab3" } },
-              [
-                _c("div", { staticClass: "container" }, [
-                  _c("div", { staticClass: "row" }, [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "col-md-3 col-sm-5 col-xs-6 full-width-xs"
-                      },
-                      [
-                        _c("ul", [
-                          _c("li", [
-                            _c(
-                              "a",
-                              {
-                                attrs: {
-                                  target: "_blank",
-                                  href:
-                                    "https://fretbay.com/en/cheap-horse-transport/"
-                                }
-                              },
-                              [
-                                _vm._v(
-                                  "Horse\n                                        transport"
-                                )
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("li", [
-                            _c(
-                              "a",
-                              {
-                                attrs: {
-                                  target: "_blank",
-                                  href: "https://fretbay.com/en/animals/"
-                                }
-                              },
-                              [
-                                _vm._v(
-                                  "Animal\n                                        transport"
-                                )
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("li", [
-                            _c(
-                              "a",
-                              {
-                                attrs: {
-                                  target: "_blank",
-                                  href:
-                                    "https://fretbay.com/en/cheap-vehicle-transport/"
-                                }
-                              },
-                              [
-                                _vm._v(
-                                  "low\n                                        cost car transport"
-                                )
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("li", [
-                            _c(
-                              "a",
-                              {
-                                attrs: {
-                                  target: "_blank",
-                                  href:
-                                    "https://fretbay.com/en/cheap-motorcycle-transport/"
-                                }
-                              },
-                              [
-                                _vm._v(
-                                  "Low cost\n                                        motorcycle transport"
-                                )
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("li", [
-                            _c(
-                              "a",
-                              {
-                                attrs: {
-                                  target: "_blank",
-                                  href:
-                                    "https://fretbay.com/en/cheap-piano-transport/"
-                                }
-                              },
-                              [_vm._v("Piano")]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("li", [
-                            _c(
-                              "a",
-                              {
-                                attrs: {
-                                  target: "_blank",
-                                  href:
-                                    "https://fretbay.com/en/furniture-transport/index.php"
-                                }
-                              },
-                              [
-                                _vm._v(
-                                  "Furniture\n                                        transport"
-                                )
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("li", [
-                            _c(
-                              "a",
-                              {
-                                attrs: {
-                                  target: "_blank",
-                                  title: "Paris",
-                                  href:
-                                    "https://fretbay.com/en/cheap-goods-transport/"
-                                }
-                              },
-                              [_vm._v("Commercial goods")]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("li", [
-                            _c(
-                              "a",
-                              {
-                                attrs: {
-                                  target: "_blank",
-                                  title: "Paris",
-                                  href: "https://fretbay.com/en/bulky-packages/"
-                                }
-                              },
-                              [_vm._v("Bulky parcel")]
-                            )
-                          ])
-                        ])
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass: "col-md-3 col-sm-5 col-xs-6 full-width-xs"
-                      },
-                      [
-                        _c("ul", [
-                          _c("li", [
-                            _c(
-                              "a",
-                              {
-                                attrs: {
-                                  target: "_blank",
-                                  title: "Brest",
-                                  href:
-                                    "https://fretbay.com/en/cheap-appliances-transport/"
-                                }
-                              },
-                              [
-                                _vm._v(
-                                  "Household\n                                        appliances"
-                                )
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("li", [
-                            _c(
-                              "a",
-                              {
-                                attrs: {
-                                  target: "_blank",
-                                  title: "Dijon",
-                                  href:
-                                    "https://fretbay.com/en/package-transport/"
-                                }
-                              },
-                              [_vm._v("Parcel transport")]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("li", [
-                            _c(
-                              "a",
-                              {
-                                attrs: {
-                                  target: "_blank",
-                                  title: "Clermont-Ferrand",
-                                  href:
-                                    "https://fretbay.com/en/container-transport/"
-                                }
-                              },
-                              [
-                                _vm._v(
-                                  "Container\n                                        transport"
-                                )
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("li", [
-                            _c(
-                              "a",
-                              {
-                                attrs: {
-                                  target: "_blank",
-                                  title: "Grenoble",
-                                  href:
-                                    "https://fretbay.com/en/fragile-objects-transport/"
-                                }
-                              },
-                              [
-                                _vm._v(
-                                  "Fragile\n                                        objects"
-                                )
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("li", [
-                            _c(
-                              "a",
-                              {
-                                attrs: {
-                                  target: "_blank",
-                                  title: "Bateaux",
-                                  href:
-                                    "https://fretbay.com/en/boat-transport-carrier/index.php"
-                                }
-                              },
-                              [
-                                _vm._v(
-                                  "Boat\n                                        transport"
-                                )
-                              ]
-                            )
-                          ])
-                        ])
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass: "col-md-4 col-sm-5 col-xs-6 full-width-xs"
-                      },
-                      [
-                        _c("ul", [
-                          _c("li", [
-                            _c(
-                              "a",
-                              {
-                                staticStyle: { color: "#209afd" },
-                                attrs: {
-                                  target: "_blank",
-                                  title: "Bordeaux",
-                                  href:
-                                    "https://fretbay.com/en/freight-transport/"
-                                }
-                              },
-                              [
-                                _vm._v(
-                                  "FretBay, the online\n                                        freight platform"
-                                )
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("li", [
-                            _c(
-                              "a",
-                              {
-                                staticStyle: { color: "#209afd" },
-                                attrs: {
-                                  target: "_blank",
-                                  title: "Nice",
-                                  href:
-                                    "https://fretbay.com/en/mover-transporter-carrier-network/"
-                                }
-                              },
-                              [
-                                _vm._v(
-                                  "Join our\n                                        network of movers"
-                                )
-                              ]
-                            )
-                          ])
-                        ])
-                      ]
-                    )
-                  ])
+                _c("a", { staticClass: "trevalnew__title" }, [
+                  _vm._v(
+                    "\n                            I'm a transporter\n                        "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "trevalnew__txt" }, [
+                  _vm._v(
+                    "\n                            FretBay is very easy for transporters to use.\n                            "
+                  ),
+                  _c("br"),
+                  _vm._v(
+                    "\n                            Every day, hundreds of people publish a listing to request a cheap quote for a moving, private parcel, vehicle or animal transport.\n                        "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "trevalnew__txt" }, [
+                  _vm._v(
+                    "\n                            All you have to do is consult the listings corresponding to your travel locations to find loads and deliveries. Then, all that remains is to offer an estimate to the client.\n                            "
+                  ),
+                  _c("br"),
+                  _vm._v(
+                    "\n                            Registration and publication of an ad on FretBay are free and without obligation, take advantage of it!\n                        "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("a", { staticClass: "trevalnew__btn" }, [
+                  _vm._v(
+                    "\n                            Find out more\n                        "
+                  )
                 ])
               ]
             )
           ])
         ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", { attrs: { id: "testimonialNew" } }, [
+      _c("div", { staticClass: "container" }, [
+        _c("a", { staticClass: "trustLogo" }, [
+          _c("img", {
+            attrs: { src: "/images/home/trustpilot-logoN.png", alt: "" }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "slider testimonialnew__list slick-initialized slick-slider row"
+            },
+            [
+              _c("div", { staticClass: "col-md-4" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "testimonialnew__item slick-slide slick-active"
+                  },
+                  [
+                    _c("div", { staticClass: "testimonialText" }, [
+                      _c("p", { staticClass: "testimonialtext__txt" }, [
+                        _c("i", { staticClass: "fa fa-quote-left" }),
+                        _vm._v(
+                          "\n                                    On a utiliser les services de fretbay pour demenager de paris au vaucluse. On a choisi tripfret comme ils avais un tarf tres interessant. Le chaffeur ...\n                                    "
+                        ),
+                        _c("i", { staticClass: "fa fa-quote-right" })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "commenterName" }, [
+                        _c("span", { staticClass: "date" }, [
+                          _vm._v(
+                            "\n\t\t\t\t\t\t\t\t\t\t\tDate: 07/02/2021\n\t\t\t\t\t\t\t\t\t\t"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "reviewer" }, [
+                          _vm._v(
+                            "\n                                        Ghassan\n                                    "
+                          )
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "rating" }, [
+                      _c("p", [
+                        _c("strong", [_vm._v("100")]),
+                        _vm._v("%\n                                ")
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "ratingBlock" }, [
+                        _c("img", { attrs: { src: "/images/star-on.png" } }),
+                        _vm._v(" "),
+                        _c("img", { attrs: { src: "/images/star-on.png" } }),
+                        _vm._v(" "),
+                        _c("img", { attrs: { src: "/images/star-on.png" } }),
+                        _vm._v(" "),
+                        _c("img", { attrs: { src: "/images/star-on.png" } }),
+                        _vm._v(" "),
+                        _c("img", { attrs: { src: "/images/star-half.png" } })
+                      ])
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "testimonialnew__item slick-slide slick-active"
+                  },
+                  [
+                    _c("div", { staticClass: "testimonialText" }, [
+                      _c("p", { staticClass: "testimonialtext__txt" }, [
+                        _c("i", { staticClass: "fa fa-quote-left" }),
+                        _vm._v(
+                          "\n                                    On a utiliser les services de fretbay pour demenager de paris au vaucluse. On a choisi tripfret comme ils avais un tarf tres interessant. Le chaffeur ...\n                                    "
+                        ),
+                        _c("i", { staticClass: "fa fa-quote-right" })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "commenterName" }, [
+                        _c("span", { staticClass: "date" }, [
+                          _vm._v(
+                            "\n\t\t\t\t\t\t\t\t\t\t\tDate: 07/02/2021\n\t\t\t\t\t\t\t\t\t\t"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "reviewer" }, [
+                          _vm._v(
+                            "\n                                        Ghassan\n                                    "
+                          )
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "rating" }, [
+                      _c("p", [
+                        _c("strong", [_vm._v("100")]),
+                        _vm._v("%\n                                ")
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "ratingBlock" }, [
+                        _c("img", { attrs: { src: "/images/star-on.png" } }),
+                        _vm._v(" "),
+                        _c("img", { attrs: { src: "/images/star-on.png" } }),
+                        _vm._v(" "),
+                        _c("img", { attrs: { src: "/images/star-on.png" } }),
+                        _vm._v(" "),
+                        _c("img", { attrs: { src: "/images/star-on.png" } }),
+                        _vm._v(" "),
+                        _c("img", { attrs: { src: "/images/star-half.png" } })
+                      ])
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "testimonialnew__item slick-slide slick-active"
+                  },
+                  [
+                    _c("div", { staticClass: "testimonialText" }, [
+                      _c("p", { staticClass: "testimonialtext__txt" }, [
+                        _c("i", { staticClass: "fa fa-quote-left" }),
+                        _vm._v(
+                          "\n                                    On a utiliser les services de fretbay pour demenager de paris au vaucluse. On a choisi tripfret comme ils avais un tarf tres interessant. Le chaffeur ...\n                                    "
+                        ),
+                        _c("i", { staticClass: "fa fa-quote-right" })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "commenterName" }, [
+                        _c("span", { staticClass: "date" }, [
+                          _vm._v(
+                            "\n\t\t\t\t\t\t\t\t\t\t\tDate: 07/02/2021\n\t\t\t\t\t\t\t\t\t\t"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "reviewer" }, [
+                          _vm._v(
+                            "\n                                        Ghassan\n                                    "
+                          )
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "rating" }, [
+                      _c("p", [
+                        _c("strong", [_vm._v("100")]),
+                        _vm._v("%\n                                ")
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "ratingBlock" }, [
+                        _c("img", { attrs: { src: "/images/star-on.png" } }),
+                        _vm._v(" "),
+                        _c("img", { attrs: { src: "/images/star-on.png" } }),
+                        _vm._v(" "),
+                        _c("img", { attrs: { src: "/images/star-on.png" } }),
+                        _vm._v(" "),
+                        _c("img", { attrs: { src: "/images/star-on.png" } }),
+                        _vm._v(" "),
+                        _c("img", { attrs: { src: "/images/star-half.png" } })
+                      ])
+                    ])
+                  ]
+                )
+              ])
+            ]
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "tabs-footer-section" }, [
+        _c("input", {
+          attrs: { type: "radio", name: "tab", id: "tab-1", checked: "" }
+        }),
+        _vm._v(" "),
+        _c("label", { attrs: { for: "tab-1" } }, [_vm._v("Moves")]),
+        _vm._v(" "),
+        _c("input", { attrs: { type: "radio", name: "tab", id: "tab-2" } }),
+        _vm._v(" "),
+        _c("label", { attrs: { for: "tab-2" } }, [_vm._v("Moves by city")]),
+        _vm._v(" "),
+        _c("input", { attrs: { type: "radio", name: "tab", id: "tab-3" } }),
+        _vm._v(" "),
+        _c("label", { attrs: { for: "tab-3" } }, [_vm._v("Transport")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "content" }, [
+          _c("article", { staticClass: "tab-1" }, [
+            _c("div", { staticClass: "container" }, [
+              _c("ul", { staticClass: "col-md-4" }, [
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v(
+                      "\n                                    Moving cheaply\n                                "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v(
+                      "\n                                    Estimating your move with FretBay\n                                "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v(
+                      "\n                                    Moving when you're on your own\n                                "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v(
+                      "\n                                    An optimized move in Europe\n                                "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v(
+                      "\n                                    Grouped moving, a system with many advantages\n                                "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v(
+                      "\n                                    Moving your furniture in complete serenity\n                                "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v(
+                      "\n                                    Rent the right truck for your move\n                                "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v(
+                      "\n                                    Moving for students\n                                "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v(
+                      "\n                                    One-way move\n                                "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v(
+                      "\n                                    Moving for individuals\n                                "
+                    )
+                  ])
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("article", { staticClass: "tab-2" }, [
+            _c("div", { staticClass: "container" }, [
+              _c("div", { staticClass: "row" }, [
+                _c("ul", { staticClass: "col-md-4" }, [
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v(
+                        "\n                                        Move from Hamptworth to Codnor\n                                    "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v(
+                        "\n                                        Move from Foscott to Heacham\n                                    "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v(
+                        "\n                                        Move from Goldthorn Park to Troway\n                                    "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v(
+                        "\n                                        Move from Chislet to Wackerfield\n                                    "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v(
+                        "\n                                        Move from Asserby to Marton\n                                    "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v(
+                        "\n                                        Move from Invergowrie to Sellafirth\n                                    "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v(
+                        "\n                                        Move from Ruddington to Creeting St Peter\n                                    "
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("ul", { staticClass: "col-md-4" }, [
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v(
+                        "\n                                        Move from Lower Stanton St Quintin to Wareham\n                                    "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v(
+                        "\n                                        Move from Longborough to Rossbrick Glebe\n                                    "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v(
+                        "\n                                        Move from Oving to Hadstock\n                                    "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v(
+                        "\n                                        Move from Duggleby to Craigstrome\n                                    "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v(
+                        "\n                                        Move from Ballyronan to Bredbury\n                                    "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v(
+                        "\n                                        Move from Swineshead to Oxborough\n                                    "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v(
+                        "\n                                        Move from Hillfield to Gayle\n                                    "
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("ul", { staticClass: "col-md-4" }, [
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v(
+                        "\n                                        Move from Dogsthorpe to Laverton\n                                    "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v(
+                        "\n                                        Move from Townsend Fold to Beeby\n                                    "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v(
+                        "\n                                        Move from Purslow to Maker\n                                    "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v(
+                        "\n                                        Move from Great Bricett to Clawthorpe\n                                    "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v(
+                        "\n                                        Move from Shirley to London Gatwick Airport\n                                    "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v(
+                        "\n                                        Move from Appleton to Hengrave\n                                    "
+                      )
+                    ])
+                  ])
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("article", { staticClass: "tab-3" }, [
+            _c("div", { staticClass: "container" }, [
+              _c("div", { staticClass: "row" }, [
+                _c("ul", { staticClass: "col-md-4" }, [
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v(
+                        "\n                                        Horse transport\n                                    "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v(
+                        "\n                                        Animal transport\n                                    "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v(
+                        "\n                                        low cost car transport\n                                    "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v(
+                        "\n                                        Low cost motorcycle transport\n                                    "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v(
+                        "\n                                        Piano\n                                    "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v(
+                        "\n                                        Furniture transport\n                                    "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v(
+                        "\n                                        Commercial goods\n                                    "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v(
+                        "\n                                        Bulky parcel\n                                    "
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("ul", { staticClass: "col-md-4" }, [
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v(
+                        "\n                                        Household appliances\n                                    "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v(
+                        "\n                                        Parcel transport\n                                    "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v(
+                        "\n                                        Container transport\n                                    "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v(
+                        "\n                                        Fragile objects\n                                    "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v(
+                        "\n                                        Boat transport\n                                    "
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("ul", { staticClass: "col-md-4 blue" }, [
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v(
+                        "\n                                        FretBay, the online freight platform\n                                    "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v(
+                        "\n                                        Join our network of movers\n                                    "
+                      )
+                    ])
+                  ])
+                ])
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("br", { staticClass: "clear:both" })
       ])
     ])
   }
@@ -41949,9 +48210,167 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col-md-6" },
+        [
+          _c("section", { staticClass: "login-section login-section2" }, [
+            _c("h2", { staticClass: "fretBH" }, [
+              _vm._v("FretBay Identification")
+            ]),
+            _vm._v(" "),
+            _c(
+              "form",
+              {
+                attrs: {
+                  id: "login_frm",
+                  name: "login",
+                  action: "",
+                  method: "POST",
+                  autocomplete: "off"
+                }
+              },
+              [
+                _c("input", {
+                  attrs: {
+                    type: "hidden",
+                    name: "HRS",
+                    value:
+                      "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoic2FxaWJqIiwicGFzcyI6InBha2lzdGFuMSEiLCJrZXkiOiJhYmNkIiwid2ViIjoieWVzIn0.59gwftKkCpif4RhHYf3HJauo2AyV669YUVr499spmmE"
+                  }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  attrs: { type: "hidden", name: "ambassador", value: "" }
+                }),
+                _vm._v(" "),
+                _c("div", {
+                  staticStyle: { color: "red" },
+                  attrs: { id: "msg" }
+                }),
+                _vm._v(" "),
+                _c("br"),
+                _vm._v(" "),
+                _c("div", { staticClass: "clearfix" }),
+                _vm._v(" "),
+                _vm._m(1),
+                _vm._v(" "),
+                _vm._m(2),
+                _vm._v(" "),
+                _vm._m(3),
+                _vm._v(" "),
+                _c("center", [
+                  _vm._v("\n                        Forgotten password? "),
+                  _c(
+                    "a",
+                    { staticClass: "forgot", attrs: { href: "oublie.php" } },
+                    [_vm._v("Sign up here")]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "clearfix" })
+              ],
+              1
+            )
+          ]),
+          _vm._v(" "),
+          _c("center", { staticClass: "no-mem" }, [
+            _vm._v("\n                Not yet registered on FretBay? "),
+            _c("a", { attrs: { href: "etape.php" } }, [_vm._v("Sign up here")])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "clearfix" })
+        ],
+        1
+      )
+    ])
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-6" }, [
+      _c(
+        "section",
+        { staticClass: "login-section login-section2 conlumnLeft" },
+        [
+          _c("h1", [_vm._v("Log into your FretBay account.")]),
+          _vm._v(" "),
+          _c("p", { staticClass: "h1" }, [
+            _vm._v(
+              "Enter your email address or username and password to access all FretBay services."
+            )
+          ]),
+          _vm._v(" "),
+          _c("img", {
+            staticClass: "img-responsive",
+            attrs: { src: "https://fretbay.com/fr/images/conecLogImg.png" }
+          })
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "log-row" }, [
+      _c("i", { staticClass: "glyphicon glyphicon-user" }),
+      _vm._v(" "),
+      _c("span", { attrs: { id: "wp-pseudo2" } }, [
+        _c("input", {
+          staticClass: "lis form-control",
+          attrs: {
+            type: "text",
+            name: "username",
+            id: "pseudo2",
+            placeholder: "Login or Email",
+            autocomplete: "off"
+          }
+        })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "log-row" }, [
+      _c("i", { staticClass: "glyphicon glyphicon-lock" }),
+      _vm._v(" "),
+      _c("span", { attrs: { id: "wp-password" } }, [
+        _c("input", {
+          staticClass: "form-control",
+          attrs: {
+            type: "password",
+            name: "passwd",
+            id: "password",
+            placeholder: "Password",
+            autocomplete: "off"
+          }
+        })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "log-row log-hm" }, [
+      _c(
+        "button",
+        { staticClass: "btn", attrs: { name: "btn", id: "loginsubmit" } },
+        [_vm._v("Sign in")]
+      )
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -42006,6 +48425,24 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/Recruitment.vue?vue&type=template&id=07b17620&":
+/*!*****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/pages/Recruitment.vue?vue&type=template&id=07b17620& ***!
+  \*****************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function () {}
+var staticRenderFns = []
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/Register.vue?vue&type=template&id=693d3e7f&":
 /*!**************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/pages/Register.vue?vue&type=template&id=693d3e7f& ***!
@@ -42021,9 +48458,212 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _c("section", { staticClass: "content fix-etape" }, [
+    _c("div", { staticClass: "row fix-etape-box" }, [
+      _c("div", { staticClass: "container" }, [
+        _c(
+          "section",
+          { staticClass: "etape-box" },
+          [
+            _vm._m(0),
+            _vm._v(" "),
+            _vm._m(1),
+            _vm._v(" "),
+            _c("div", { staticClass: "clearfix" }),
+            _vm._v(" "),
+            _c("center", [
+              _c(
+                "a",
+                {
+                  staticClass: "btn btn1 btn-etape",
+                  attrs: {
+                    href: "https://fretbay.com/en/shipper/register-user",
+                    title: "",
+                    name: "btn"
+                  }
+                },
+                [_vm._v("Click here to receive free and non-binding quotes")]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "clearfix" })
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "clearfix" })
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row fix-etape-box" }, [
+      _c("div", { staticClass: "container" }, [
+        _c(
+          "section",
+          { staticClass: "etape-box" },
+          [
+            _vm._m(2),
+            _vm._v(" "),
+            _vm._m(3),
+            _vm._v(" "),
+            _c("div", { staticClass: "clearfix" }),
+            _vm._v(" "),
+            _c("center", [
+              _c(
+                "a",
+                {
+                  staticClass: "btn btn1 btn-etape btn-dangers",
+                  attrs: {
+                    href:
+                      "https://fretbay.com/en/transporter/register-transporter",
+                    title: "",
+                    name: "btn"
+                  }
+                },
+                [_vm._v("Register and offer your quotes for free")]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "clearfix" })
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "clearfix" })
+      ])
+    ]),
+    _vm._v(" "),
+    _vm._m(4)
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-10 col-sm-10 mr-l" }, [
+      _c("h1", { staticClass: "para-heading" }, [
+        _vm._v("I'm looking for a carrier")
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "On FretBay, you receive in a few clicks cheap quotes for all your transport and moving\n                        requests."
+        ),
+        _c("br"),
+        _vm._v(
+          '\n                        All you have to do is publish a listing with a clear and precise title. For example\n                        "Searching carrier for 3 packages", "Moving 20m2 Paris-London", or "Searching '
+        ),
+        _c(
+          "a",
+          {
+            attrs: {
+              href: "https://fretbay.com/en/france-transport/",
+              title: ""
+            }
+          },
+          [_vm._v("carrier UK-")]
+        ),
+        _vm._v(' Mover in Spain\n                        for piano" '),
+        _c("br"),
+        _vm._v(
+          "\n                        The interested carriers then make you offers, and it is up to you to choose the one that\n                        best suits your needs. And this without any management fees!"
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-2 col-sm-2 mr-l" }, [
+      _c("img", {
+        staticClass: "img-responsive fix-img",
+        attrs: { src: "images/etape-charecter1.png", alt: "Image" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-9 col-sm-9 mr-l" }, [
+      _c("h2", { staticClass: "para-heading" }, [_vm._v("Are you a carrier?")]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v("The process is simple."),
+        _c("br"),
+        _vm._v(
+          "\n                        Every day, hundreds of people post a listing to request a move, "
+        ),
+        _c(
+          "a",
+          { attrs: { href: "https://fretbay.com/en/package-transport/" } },
+          [_vm._v("special parcel transport")]
+        ),
+        _vm._v(
+          'or a\n                        vehicle or animal move. For example, "Looking for an independent carrier for an economical\n                        move" or "Looking for a cheap move in Wales" '
+        ),
+        _c("br"),
+        _vm._v(
+          "All you have to do is look at the ads that\n                        correspond to your travel locations to find loads and deliveries that will prevent you from\n                        returning empty. Then, you just have to propose a quote to the advertiser who will accept,\n                        or refuse, your offer. And all this for free!"
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-3 col-sm-3 mr-r" }, [
+      _c("img", {
+        staticClass: "img-responsive pull-right fix-img",
+        attrs: { src: "images/etape-charecter2.png", alt: "Image" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row fix-etape-box" }, [
+      _c("div", { staticClass: "container " }, [
+        _c("section", { staticClass: "etape-box ims" }, [
+          _c("div", { staticClass: "col-md-10 col-sm-10 mr-l" }, [
+            _c("h2", { staticClass: "para-heading" }, [
+              _vm._v("A Win-Win System")
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v(
+                "On the FretBay free freight exchange, it's a win-win situation: "
+              ),
+              _c("br"),
+              _vm._v(
+                "\n                        Carriers find new customers who fit perfectly into their mandatory truck routes, so as not\n                        to have to drive empty, and private individuals and professionals can thus enjoy a cheap\n                        freight transport or move, carried out by a professional. "
+              ),
+              _c("br"),
+              _vm._v(
+                "\n                        At FretBay, we are convinced that a better truck load factor and a better distribution of\n                        road freight offer economic advantages for everyone but also for the environment! "
+              ),
+              _c("br"),
+              _vm._v(
+                "\n                        FretBay registration is free and without obligation, enjoy it! "
+              ),
+              _c("br")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-2 col-sm-2 mr-l fix-img" }, [
+            _c("img", {
+              staticClass: "img-responsive",
+              attrs: { src: "images/etape-charecter3.png", alt: "Image" }
+            })
+          ])
+        ])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -42045,9 +48685,1548 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container" }, [
+      _c("section", { staticClass: "etape-box ims2 etape1-box" }, [
+        _c("div", { staticClass: "col-md-6 col-sm-6" }, [
+          _c("section", { staticClass: "port-img-sec" }, [
+            _c("h1", { staticClass: "hidden-xs" }, [
+              _vm._v(
+                "Join the largest network of professional transporters in Europe!"
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row " }, [
+              _c(
+                "div",
+                { staticClass: "col-sm-4 hidden-xs mr-l mr-r port-imgs" },
+                [
+                  _c("img", {
+                    staticClass: "img-responsive",
+                    attrs: {
+                      src:
+                        "https://fretbay.com/fr/transporter/images/port-img1.png",
+                      alt: "Image"
+                    }
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "col-sm-4 hidden-xs mr-l mr-r port-imgs" },
+                [
+                  _c("img", {
+                    staticClass: "img-responsive",
+                    attrs: {
+                      src:
+                        "https://fretbay.com/fr/transporter/images/port-img2.png",
+                      alt: "Image"
+                    }
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "col-sm-4 hidden-xs mr-l mr-r port-imgs" },
+                [
+                  _c("img", {
+                    staticClass: "img-responsive",
+                    attrs: {
+                      src:
+                        "https://fretbay.com/fr/transporter/images/port-img3.png",
+                      alt: "Image"
+                    }
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "clearfix" }),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "col-sm-4 hidden-xs mr-l mr-r port-imgs" },
+                [
+                  _c("img", {
+                    staticClass: "img-responsive",
+                    attrs: {
+                      src:
+                        "https://fretbay.com/fr/transporter/images/port-img4.png",
+                      alt: "Image"
+                    }
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "col-sm-4 hidden-xs mr-l mr-r port-imgs" },
+                [
+                  _c("img", {
+                    staticClass: "img-responsive",
+                    attrs: {
+                      src:
+                        "https://fretbay.com/fr/transporter/images/port-img5.png",
+                      alt: "Image"
+                    }
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "col-sm-4 hidden-xs mr-l mr-r port-imgs" },
+                [
+                  _c("img", {
+                    staticClass: "img-responsive",
+                    attrs: {
+                      src:
+                        "https://fretbay.com/fr/transporter/images/port-img6.png",
+                      alt: "Image"
+                    }
+                  })
+                ]
+              )
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-6 col-sm-6 etape1-box-col" }, [
+          _c("section", { staticClass: "shipper-pro etaps etape1" }, [
+            _c("h3", [
+              _vm._v(
+                "\n                    Get started - it's free.              "
+              ),
+              _c("small", [
+                _vm._v("The registration process takes no more than a minute.")
+              ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "form",
+              {
+                staticClass: "feature",
+                attrs: {
+                  id: "signUpForm",
+                  name: "signUpForm",
+                  action:
+                    "https://fretbay.com/fr/transporter/joinnowProcess.php?lang=en",
+                  method: "POST",
+                  onsubmit: "alert('done');return false;"
+                }
+              },
+              [
+                _c("input", {
+                  attrs: { type: "hidden", id: "emailFlag", value: "0" }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  attrs: { type: "hidden", id: "loginFlag", value: "0" }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  attrs: { type: "hidden", id: "formError", value: "1" }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  attrs: { type: "hidden", name: "referal", value: "" }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  attrs: { type: "hidden", name: "fzr123", value: "0" }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  attrs: { type: "hidden", name: "userLang", value: "en" }
+                }),
+                _vm._v(" "),
+                _c("div", { staticClass: "log-row fix-spacing " }, [
+                  _c("input", {
+                    staticClass: "lis form-control ",
+                    attrs: {
+                      type: "text",
+                      id: "companyName",
+                      name: "companyName",
+                      placeholder: "Name of your company",
+                      value: ""
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("span", {
+                    staticClass: "e-msg-etap",
+                    attrs: { id: "companyName-error" }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "clearfix" }),
+                _vm._v(" "),
+                _c("div", { staticClass: "log-row fix-spacing " }, [
+                  _c("input", {
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "text",
+                      id: "firstName",
+                      name: "firstName",
+                      placeholder: "First name",
+                      value: ""
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("span", {
+                    staticClass: "e-msg-etap",
+                    attrs: { id: "firstName-error" }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "clearfix" }),
+                _vm._v(" "),
+                _c("div", { staticClass: "log-row fix-spacing" }, [
+                  _c("input", {
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "text",
+                      id: "lastName",
+                      name: "lastName",
+                      placeholder: "Name",
+                      value: ""
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("span", {
+                    staticClass: "e-msg-etap",
+                    attrs: { id: "lastName-error" }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "clearfix" }),
+                _vm._v(" "),
+                _c("div", { staticClass: "log-row fix-spacing" }, [
+                  _c("input", {
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "text",
+                      id: "email",
+                      name: "email",
+                      placeholder: "Email",
+                      value: ""
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("span", {
+                    staticClass: "e-msg-etap",
+                    attrs: { id: "email-error" }
+                  }),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "emailHint e-msg-etap" })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "clearfix" }),
+                _vm._v(" "),
+                _c("div", { staticClass: "log-row fix-spacing" }, [
+                  _c("input", {
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "text",
+                      id: "phone",
+                      name: "phone",
+                      placeholder: "Telephone number",
+                      value: ""
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("span", {
+                    staticClass: "e-msg-etap",
+                    attrs: { id: "phone-error" }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "clearfix" }),
+                _vm._v(" "),
+                _c("div", { staticClass: "log-row fix-spacing" }, [
+                  _c("input", {
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "text",
+                      id: "mobile",
+                      name: "mobile",
+                      placeholder: "Mobile number",
+                      value: ""
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("span", {
+                    staticClass: "e-msg-etap",
+                    attrs: { id: "mobile-error" }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "clearfix" }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "log-row etap-select biger-sel fix-select fix-country"
+                  },
+                  [
+                    _c("div", { staticClass: "search-box " }, [
+                      _c("div", { staticClass: "size-container " }, [
+                        _c(
+                          "select",
+                          { attrs: { id: "country", name: "country" } },
+                          [
+                            _c("option", { attrs: { value: "AT" } }, [
+                              _vm._v("Austria")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "BE" } }, [
+                              _vm._v("Belgium")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "BG" } }, [
+                              _vm._v("Bulgaria")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "CA" } }, [
+                              _vm._v("Canada")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "CY" } }, [
+                              _vm._v("Cyprus")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "CZ" } }, [
+                              _vm._v("Czech Republic")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "DE" } }, [
+                              _vm._v("Germany")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "DK" } }, [
+                              _vm._v("Denmark")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "EE" } }, [
+                              _vm._v("Estonia")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "UK" } }, [
+                              _vm._v("England")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "US" } }, [
+                              _vm._v("United States")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "ES" } }, [
+                              _vm._v("Spain")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "FI" } }, [
+                              _vm._v("Finland")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "FR" } }, [
+                              _vm._v("France")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "GB" } }, [
+                              _vm._v("United Kingdom")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "GR" } }, [
+                              _vm._v("Greece")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "HU" } }, [
+                              _vm._v("Hungary")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "IE" } }, [
+                              _vm._v("Ireland")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "IT" } }, [
+                              _vm._v("Italy")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "LT" } }, [
+                              _vm._v("Lithuania")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "LU" } }, [
+                              _vm._v("Luxembourg")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "LV" } }, [
+                              _vm._v("Latvia")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "MT" } }, [
+                              _vm._v("Malta")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "NL" } }, [
+                              _vm._v("Netherlands")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "PL" } }, [
+                              _vm._v("Poland")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "PT" } }, [
+                              _vm._v("Portugal")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "RO" } }, [
+                              _vm._v("Romania")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "SE" } }, [
+                              _vm._v("Sweden")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "CH" } }, [
+                              _vm._v("Switzerland")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "SI" } }, [
+                              _vm._v("Slovenia")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "SK" } }, [
+                              _vm._v("Slovakia")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "AUT" } }, [
+                              _vm._v("Other")
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "clearfix" })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "clearfix" }),
+                      _vm._v(" "),
+                      _c("span", {
+                        staticClass: "e-msg-etap",
+                        attrs: { id: "country-error" }
+                      }),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "clearfix" })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "clearfix" })
+                  ]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "clearfix" }),
+                _vm._v(" "),
+                _c("div", { staticClass: "log-row fix-spacing" }, [
+                  _c("input", {
+                    staticClass: "form-control ui-autocomplete-input",
+                    attrs: {
+                      type: "text",
+                      id: "cp",
+                      name: "cp",
+                      placeholder: "Postal Code or City",
+                      value: "",
+                      autocomplete: "off"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("span", {
+                    staticClass: "e-msg-etap",
+                    attrs: { id: "cp-error" }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "clearfix" }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "log-row etap-select biger-sel2 fix-select" },
+                  [
+                    _c("div", { staticClass: "search-box" }, [
+                      _c("div", { staticClass: "size-container" }, [
+                        _c("input", {
+                          attrs: { type: "hidden", id: "regionVal", value: "" }
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "select",
+                          { attrs: { id: "region", name: "region" } },
+                          [
+                            _c("option", { attrs: { value: "" } }, [
+                              _vm._v("Region")
+                            ]),
+                            _c("option", { attrs: { value: "Burgenland" } }, [
+                              _vm._v("Burgenland")
+                            ]),
+                            _c("option", { attrs: { value: "Kärnten" } }, [
+                              _vm._v("Kärnten")
+                            ]),
+                            _c(
+                              "option",
+                              { attrs: { value: "Niederösterreich" } },
+                              [_vm._v("Niederösterreich")]
+                            ),
+                            _c(
+                              "option",
+                              { attrs: { value: "Oberösterreich" } },
+                              [_vm._v("Oberösterreich")]
+                            ),
+                            _c("option", { attrs: { value: "Salzburg" } }, [
+                              _vm._v("Salzburg")
+                            ]),
+                            _c("option", { attrs: { value: "Steiermark" } }, [
+                              _vm._v("Steiermark")
+                            ]),
+                            _c("option", { attrs: { value: "Tirol" } }, [
+                              _vm._v("Tirol")
+                            ]),
+                            _c("option", { attrs: { value: "Vorarlberg" } }, [
+                              _vm._v("Vorarlberg")
+                            ]),
+                            _c("option", { attrs: { value: "Wien" } }, [
+                              _vm._v("Wien")
+                            ])
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "clearfix" })
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c("span", {
+                  staticClass: "e-msg-etap",
+                  attrs: { id: "region-error" }
+                }),
+                _vm._v(" "),
+                _c("div", { staticClass: "clearfix" }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "log-row etap-select biger-sel cat-box fix-select border-bottom-sm"
+                  },
+                  [
+                    _c(
+                      "select",
+                      {
+                        staticClass:
+                          "selectpicker show-menu-arrow form-control ",
+                        staticStyle: { display: "none" },
+                        attrs: {
+                          id: "cat",
+                          name: "cat[]",
+                          multiple: "multiple"
+                        }
+                      },
+                      [
+                        _c(
+                          "option",
+                          { attrs: { value: "1", "data-icon": "equipment" } },
+                          [_vm._v("Home equipment")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "option",
+                          {
+                            attrs: { value: "2", "data-icon": "demenagement" }
+                          },
+                          [_vm._v("Moving")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "option",
+                          { attrs: { value: "3", "data-icon": "vehicle" } },
+                          [_vm._v("Vehicle")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "option",
+                          { attrs: { value: "5", "data-icon": "bateaux" } },
+                          [_vm._v("Boats & Voluminous")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "option",
+                          { attrs: { value: "6", "data-icon": "divers" } },
+                          [_vm._v("Miscellaneous")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "option",
+                          { attrs: { value: "9", "data-icon": "commerciaux" } },
+                          [_vm._v("Commercial goods")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "option",
+                          { attrs: { value: "17", "data-icon": "motos" } },
+                          [_vm._v("Motorcycles and sports vehicles")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "option",
+                          { attrs: { value: "11", "data-icon": "animaux" } },
+                          [_vm._v("Animals")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "option",
+                          { attrs: { value: "13", "data-icon": "fragiles" } },
+                          [_vm._v("Fragile assets")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "option",
+                          {
+                            attrs: {
+                              value: "14",
+                              "data-icon": "agroalimentaire"
+                            }
+                          },
+                          [_vm._v("Agri-food")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "option",
+                          { attrs: { value: "18", "data-icon": "colis" } },
+                          [_vm._v("Packages")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "option",
+                          { attrs: { value: "19", "data-icon": "palette" } },
+                          [_vm._v("Pallets")]
+                        )
+                      ]
+                    ),
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "btn-group bootstrap-select show-tick  show-menu-arrow form-control"
+                      },
+                      [
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "btn dropdown-toggle selectpicker cat-button btn-default",
+                            attrs: {
+                              type: "button",
+                              "data-toggle": "dropdown",
+                              "data-id": "cat",
+                              title: "Your areas of expertise"
+                            }
+                          },
+                          [
+                            _c(
+                              "span",
+                              {
+                                staticClass:
+                                  "filter-option pull-left cat-span-text"
+                              },
+                              [_vm._v("Your areas of expertise")]
+                            ),
+                            _vm._v(" "),
+                            _c("span", {
+                              staticClass: "sel-aar cat-span-button"
+                            })
+                          ]
+                        ),
+                        _c("div", { staticClass: "dropdown-menu open" }, [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "close-ddrop",
+                              attrs: { href: "javascript:void(0);" }
+                            },
+                            [_vm._v("x")]
+                          ),
+                          _c(
+                            "ul",
+                            {
+                              staticClass: "dropdown-menu inner selectpicker",
+                              attrs: { role: "menu" }
+                            },
+                            [
+                              _c(
+                                "li",
+                                { attrs: { "data-original-index": "0" } },
+                                [
+                                  _c(
+                                    "a",
+                                    {
+                                      attrs: {
+                                        tabindex: "0",
+                                        "data-normalized-text":
+                                          '<span class="glyphicon equipment"></span> <span class="text">Home equipment</span>'
+                                      }
+                                    },
+                                    [
+                                      _c("span", {
+                                        staticClass: "glyphicon equipment"
+                                      }),
+                                      _vm._v(" "),
+                                      _c("span", { staticClass: "text" }, [
+                                        _vm._v("Home equipment")
+                                      ]),
+                                      _c("span", {
+                                        staticClass:
+                                          "glyphicon glyphicon-ok check-mark"
+                                      })
+                                    ]
+                                  )
+                                ]
+                              ),
+                              _c(
+                                "li",
+                                { attrs: { "data-original-index": "1" } },
+                                [
+                                  _c(
+                                    "a",
+                                    {
+                                      attrs: {
+                                        tabindex: "0",
+                                        "data-normalized-text":
+                                          '<span class="glyphicon demenagement"></span> <span class="text">Moving</span>'
+                                      }
+                                    },
+                                    [
+                                      _c("span", {
+                                        staticClass: "glyphicon demenagement"
+                                      }),
+                                      _vm._v(" "),
+                                      _c("span", { staticClass: "text" }, [
+                                        _vm._v("Moving")
+                                      ]),
+                                      _c("span", {
+                                        staticClass:
+                                          "glyphicon glyphicon-ok check-mark"
+                                      })
+                                    ]
+                                  )
+                                ]
+                              ),
+                              _c(
+                                "li",
+                                { attrs: { "data-original-index": "2" } },
+                                [
+                                  _c(
+                                    "a",
+                                    {
+                                      attrs: {
+                                        tabindex: "0",
+                                        "data-normalized-text":
+                                          '<span class="glyphicon vehicle"></span> <span class="text">Vehicle</span>'
+                                      }
+                                    },
+                                    [
+                                      _c("span", {
+                                        staticClass: "glyphicon vehicle"
+                                      }),
+                                      _vm._v(" "),
+                                      _c("span", { staticClass: "text" }, [
+                                        _vm._v("Vehicle")
+                                      ]),
+                                      _c("span", {
+                                        staticClass:
+                                          "glyphicon glyphicon-ok check-mark"
+                                      })
+                                    ]
+                                  )
+                                ]
+                              ),
+                              _c(
+                                "li",
+                                { attrs: { "data-original-index": "3" } },
+                                [
+                                  _c(
+                                    "a",
+                                    {
+                                      attrs: {
+                                        tabindex: "0",
+                                        "data-normalized-text":
+                                          '<span class="glyphicon bateaux"></span> <span class="text">Boats &amp; Voluminous</span>'
+                                      }
+                                    },
+                                    [
+                                      _c("span", {
+                                        staticClass: "glyphicon bateaux"
+                                      }),
+                                      _vm._v(" "),
+                                      _c("span", { staticClass: "text" }, [
+                                        _vm._v("Boats & Voluminous")
+                                      ]),
+                                      _c("span", {
+                                        staticClass:
+                                          "glyphicon glyphicon-ok check-mark"
+                                      })
+                                    ]
+                                  )
+                                ]
+                              ),
+                              _c(
+                                "li",
+                                { attrs: { "data-original-index": "4" } },
+                                [
+                                  _c(
+                                    "a",
+                                    {
+                                      attrs: {
+                                        tabindex: "0",
+                                        "data-normalized-text":
+                                          '<span class="glyphicon divers"></span> <span class="text">Miscellaneous</span>'
+                                      }
+                                    },
+                                    [
+                                      _c("span", {
+                                        staticClass: "glyphicon divers"
+                                      }),
+                                      _vm._v(" "),
+                                      _c("span", { staticClass: "text" }, [
+                                        _vm._v("Miscellaneous")
+                                      ]),
+                                      _c("span", {
+                                        staticClass:
+                                          "glyphicon glyphicon-ok check-mark"
+                                      })
+                                    ]
+                                  )
+                                ]
+                              ),
+                              _c(
+                                "li",
+                                { attrs: { "data-original-index": "5" } },
+                                [
+                                  _c(
+                                    "a",
+                                    {
+                                      attrs: {
+                                        tabindex: "0",
+                                        "data-normalized-text":
+                                          '<span class="glyphicon commerciaux"></span> <span class="text">Commercial goods</span>'
+                                      }
+                                    },
+                                    [
+                                      _c("span", {
+                                        staticClass: "glyphicon commerciaux"
+                                      }),
+                                      _vm._v(" "),
+                                      _c("span", { staticClass: "text" }, [
+                                        _vm._v("Commercial goods")
+                                      ]),
+                                      _c("span", {
+                                        staticClass:
+                                          "glyphicon glyphicon-ok check-mark"
+                                      })
+                                    ]
+                                  )
+                                ]
+                              ),
+                              _c(
+                                "li",
+                                { attrs: { "data-original-index": "6" } },
+                                [
+                                  _c(
+                                    "a",
+                                    {
+                                      attrs: {
+                                        tabindex: "0",
+                                        "data-normalized-text":
+                                          '<span class="glyphicon motos"></span> <span class="text">Motorcycles and sports vehicles</span>'
+                                      }
+                                    },
+                                    [
+                                      _c("span", {
+                                        staticClass: "glyphicon motos"
+                                      }),
+                                      _vm._v(" "),
+                                      _c("span", { staticClass: "text" }, [
+                                        _vm._v(
+                                          "Motorcycles and sports vehicles"
+                                        )
+                                      ]),
+                                      _c("span", {
+                                        staticClass:
+                                          "glyphicon glyphicon-ok check-mark"
+                                      })
+                                    ]
+                                  )
+                                ]
+                              ),
+                              _c(
+                                "li",
+                                { attrs: { "data-original-index": "7" } },
+                                [
+                                  _c(
+                                    "a",
+                                    {
+                                      attrs: {
+                                        tabindex: "0",
+                                        "data-normalized-text":
+                                          '<span class="glyphicon animaux"></span> <span class="text">Animals</span>'
+                                      }
+                                    },
+                                    [
+                                      _c("span", {
+                                        staticClass: "glyphicon animaux"
+                                      }),
+                                      _vm._v(" "),
+                                      _c("span", { staticClass: "text" }, [
+                                        _vm._v("Animals")
+                                      ]),
+                                      _c("span", {
+                                        staticClass:
+                                          "glyphicon glyphicon-ok check-mark"
+                                      })
+                                    ]
+                                  )
+                                ]
+                              ),
+                              _c(
+                                "li",
+                                { attrs: { "data-original-index": "8" } },
+                                [
+                                  _c(
+                                    "a",
+                                    {
+                                      attrs: {
+                                        tabindex: "0",
+                                        "data-normalized-text":
+                                          '<span class="glyphicon fragiles"></span> <span class="text">Fragile assets</span>'
+                                      }
+                                    },
+                                    [
+                                      _c("span", {
+                                        staticClass: "glyphicon fragiles"
+                                      }),
+                                      _vm._v(" "),
+                                      _c("span", { staticClass: "text" }, [
+                                        _vm._v("Fragile assets")
+                                      ]),
+                                      _c("span", {
+                                        staticClass:
+                                          "glyphicon glyphicon-ok check-mark"
+                                      })
+                                    ]
+                                  )
+                                ]
+                              ),
+                              _c(
+                                "li",
+                                { attrs: { "data-original-index": "9" } },
+                                [
+                                  _c(
+                                    "a",
+                                    {
+                                      attrs: {
+                                        tabindex: "0",
+                                        "data-normalized-text":
+                                          '<span class="glyphicon agroalimentaire"></span> <span class="text">Agri-food</span>'
+                                      }
+                                    },
+                                    [
+                                      _c("span", {
+                                        staticClass: "glyphicon agroalimentaire"
+                                      }),
+                                      _vm._v(" "),
+                                      _c("span", { staticClass: "text" }, [
+                                        _vm._v("Agri-food")
+                                      ]),
+                                      _c("span", {
+                                        staticClass:
+                                          "glyphicon glyphicon-ok check-mark"
+                                      })
+                                    ]
+                                  )
+                                ]
+                              ),
+                              _c(
+                                "li",
+                                { attrs: { "data-original-index": "10" } },
+                                [
+                                  _c(
+                                    "a",
+                                    {
+                                      attrs: {
+                                        tabindex: "0",
+                                        "data-normalized-text":
+                                          '<span class="glyphicon colis"></span> <span class="text">Packages</span>'
+                                      }
+                                    },
+                                    [
+                                      _c("span", {
+                                        staticClass: "glyphicon colis"
+                                      }),
+                                      _vm._v(" "),
+                                      _c("span", { staticClass: "text" }, [
+                                        _vm._v("Packages")
+                                      ]),
+                                      _c("span", {
+                                        staticClass:
+                                          "glyphicon glyphicon-ok check-mark"
+                                      })
+                                    ]
+                                  )
+                                ]
+                              ),
+                              _c(
+                                "li",
+                                { attrs: { "data-original-index": "11" } },
+                                [
+                                  _c(
+                                    "a",
+                                    {
+                                      attrs: {
+                                        tabindex: "0",
+                                        "data-normalized-text":
+                                          '<span class="glyphicon palette"></span> <span class="text">Pallets</span>'
+                                      }
+                                    },
+                                    [
+                                      _c("span", {
+                                        staticClass: "glyphicon palette"
+                                      }),
+                                      _vm._v(" "),
+                                      _c("span", { staticClass: "text" }, [
+                                        _vm._v("Pallets")
+                                      ]),
+                                      _c("span", {
+                                        staticClass:
+                                          "glyphicon glyphicon-ok check-mark"
+                                      })
+                                    ]
+                                  )
+                                ]
+                              )
+                            ]
+                          )
+                        ])
+                      ]
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "clearfix" }),
+                _vm._v(" "),
+                _c("span", {
+                  staticClass: "e-msg-etap",
+                  attrs: { id: "cat-error" }
+                }),
+                _vm._v(" "),
+                _c("div", { staticClass: "log-row fix-spacing" }, [
+                  _c("input", {
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "text",
+                      id: "userName",
+                      name: "userName",
+                      value: "",
+                      placeholder: "Username"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("span", {
+                    staticClass: "e-msg-etap",
+                    attrs: { id: "userName-error" }
+                  }),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "userHint e-msg-etap" })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "clearfix" }),
+                _vm._v(" "),
+                _c("div", { staticClass: "log-row fix-spacing" }, [
+                  _c("input", {
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "password",
+                      id: "password",
+                      name: "password",
+                      placeholder: "Password",
+                      value: ""
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("span", {
+                    staticClass: "e-msg-etap",
+                    attrs: { id: "password-error" }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "clearfix" }),
+                _vm._v(" "),
+                _c("div", { staticClass: "log-row fix-spacing" }, [
+                  _c("input", {
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "password",
+                      id: "cpassword",
+                      name: "cpassword",
+                      placeholder: "Confirm password",
+                      value: ""
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("span", {
+                    staticClass: "e-msg-etap",
+                    attrs: { id: "cpassword-error" }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "clearfix" }),
+                _vm._v(" "),
+                _c("div", { staticClass: "log-row fix-spacing" }, [
+                  _c("small", { staticClass: "bot-con" }, [
+                    _vm._v("By clicking on register, I accept the "),
+                    _c(
+                      "a",
+                      {
+                        attrs: {
+                          title: "",
+                          href: "https://fretbay.com/en/conditions.php"
+                        }
+                      },
+                      [_vm._v("General conditions")]
+                    ),
+                    _vm._v(" of FretBay.com.  ")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "clearfix" }),
+                _vm._v(" "),
+                _c("div", { staticClass: "log-row fix-spacing" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn bb",
+                      attrs: {
+                        name: "join",
+                        value: "S'inscrire",
+                        id: "submitSignup",
+                        type: "button"
+                      }
+                    },
+                    [_vm._v("Register")]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "clearfix" })
+              ]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "clearfix" })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "clearfix" })
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/RegisterUser.vue?vue&type=template&id=0d87656a&":
+/*!******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/pages/RegisterUser.vue?vue&type=template&id=0d87656a& ***!
+  \******************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container" }, [
+      _c("section", { staticClass: "etape-box ims2" }, [
+        _c("div", { staticClass: "col-md-6 col-sm-6 hidden-xs" }, [
+          _c("section", { staticClass: "port-img-sec" }, [
+            _c("h1", [_vm._v("Looking for professional carriers?")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-sm-12 mr-l mr-r port-imgs" }, [
+              _c("img", {
+                staticClass: "img-responsive",
+                attrs: { src: "images/shipperSignPimage.png", alt: "Image" }
+              })
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-6 col-sm-6" }, [
+          _c("section", { staticClass: "etaps shipperSignUpPro" }, [
+            _c("h1", [_vm._v("Get started - it's free.")]),
+            _vm._v(" "),
+            _c("small", [
+              _vm._v("The registration takes no more than a minute...")
+            ]),
+            _vm._v(" "),
+            _c(
+              "form",
+              {
+                staticClass: "feature",
+                attrs: {
+                  id: "signUpForm1",
+                  name: "signUpForm",
+                  action:
+                    "https://fretbay.com/fr/shipper/shipperSignupProcess.php",
+                  method: "POST",
+                  onsubmit: "return false;"
+                }
+              },
+              [
+                _c("input", {
+                  attrs: { type: "hidden", id: "emailFlag", value: "1" }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  attrs: { type: "hidden", id: "pseudoFlag", value: "1" }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  attrs: { type: "hidden", id: "formError", value: "1" }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  attrs: { type: "hidden", name: "langUser", value: "en" }
+                }),
+                _vm._v(" "),
+                _c("div", { staticClass: "margin-bottom-30" }, [
+                  _c("input", {
+                    attrs: {
+                      type: "radio",
+                      name: "pro",
+                      value: "0",
+                      id: "radioBox01",
+                      checked: "",
+                      onclick: "showHideUsertype('1');"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("label", { attrs: { for: "radioBox01" } }, [
+                    _vm._v("You are an individual")
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    attrs: {
+                      type: "radio",
+                      name: "pro",
+                      value: "1",
+                      id: "radioBox02",
+                      onclick: "showHideUsertype('2');"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("label", { attrs: { for: "radioBox02" } }, [
+                    _vm._v("You are a professional")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "log-row margin-bottom-10 professional-fields",
+                    staticStyle: { display: "none" }
+                  },
+                  [
+                    _c("input", {
+                      staticClass: "lis form-control",
+                      attrs: {
+                        type: "text",
+                        id: "companyName",
+                        name: "companyName",
+                        placeholder: "Name of your company"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("span", {
+                      staticClass: "error-class",
+                      attrs: { id: "companyName-error" }
+                    })
+                  ]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "clearfix" }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "log-row margin-bottom-20 professional-fields",
+                    staticStyle: { display: "none" }
+                  },
+                  [
+                    _c("input", {
+                      staticClass: "form-control ui-autocomplete-input",
+                      attrs: {
+                        type: "text",
+                        id: "tva",
+                        name: "tva",
+                        placeholder: "City",
+                        autocomplete: "off"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      attrs: {
+                        type: "hidden",
+                        id: "postalCode",
+                        name: "postalCode"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      attrs: { type: "hidden", id: "region", name: "region" }
+                    }),
+                    _vm._v(" "),
+                    _c("span", {
+                      staticClass: "error-class",
+                      attrs: { id: "tva-error" }
+                    })
+                  ]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "clearfix" }),
+                _vm._v(" "),
+                _c("div", { staticClass: "log-row margin-bottom-20" }, [
+                  _c("input", {
+                    staticClass: "lis form-control",
+                    attrs: {
+                      type: "text",
+                      id: "email",
+                      name: "email",
+                      placeholder: "Your email"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("span", {
+                    staticClass: "error-class",
+                    attrs: { id: "email-error" }
+                  }),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "emailHint e-msg-etap" })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "clearfix" }),
+                _vm._v(" "),
+                _c("div", { staticClass: "log-row margin-bottom-20" }, [
+                  _c("input", {
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "text",
+                      id: "cemail",
+                      name: "cemail",
+                      placeholder: "Confirm your email"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("span", {
+                    staticClass: "error-class",
+                    attrs: { id: "cemail-error" }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "clearfix" }),
+                _vm._v(" "),
+                _c("div", { staticClass: "log-row margin-bottom-20" }, [
+                  _c("input", {
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "password",
+                      name: "password",
+                      id: "password",
+                      placeholder: "Your password"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("span", {
+                    staticClass: "error-class",
+                    attrs: { id: "password-error" }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "clearfix" }),
+                _vm._v(" "),
+                _c("div", { staticClass: "log-row margin-bottom-20" }, [
+                  _c("input", {
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "password",
+                      name: "cpassword",
+                      id: "cpassword",
+                      placeholder: "Confirm your password"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("span", {
+                    staticClass: "error-class",
+                    attrs: { id: "cpassword-error" }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "clearfix" }),
+                _vm._v(" "),
+                _c("div", { staticClass: "log-row margin-bottom-20" }, [
+                  _c("input", {
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "text",
+                      name: "userName",
+                      id: "userName",
+                      placeholder: "Your Username"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("span", {
+                    staticClass: "error-class",
+                    attrs: { id: "userName-error" }
+                  }),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "userHint error-class" })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "clearfix" }),
+                _vm._v(" "),
+                _c("div", { staticClass: "log-row margin-bottom-20" }, [
+                  _c("input", {
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "text",
+                      name: "phone",
+                      id: "phone",
+                      placeholder: "Your phone"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("span", {
+                    staticClass: "error-class",
+                    attrs: { id: "phone-error" }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "clearfix" }),
+                _vm._v(" "),
+                _c("div", { staticClass: "log-row margin-bottom-20" }, [
+                  _c("input", {
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "text",
+                      name: "mobile",
+                      id: "mobile",
+                      placeholder: "Your mobile number"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("span", {
+                    staticClass: "error-class",
+                    attrs: { id: "mobile-error" }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "clearfix" }),
+                _vm._v(" "),
+                _c("div", { staticClass: "log-row margin-bottom-10" }, [
+                  _c("input", {
+                    staticClass: "signup-checkbox",
+                    attrs: {
+                      type: "checkbox",
+                      id: "checkBox01",
+                      name: "checkBox01"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("label", { attrs: { for: "checkBox01" } }, [
+                    _c(
+                      "small",
+                      {
+                        staticClass: "bot-con",
+                        attrs: { id: "checkBox01-error" }
+                      },
+                      [
+                        _vm._v(
+                          "I agree to receive commercial offers from FretBay and its partners."
+                        )
+                      ]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "clearfix" }),
+                _vm._v(" "),
+                _c("div", { staticClass: "clearfix" }),
+                _vm._v(" "),
+                _c("div", { staticClass: "log-row" }, [
+                  _c("small", { staticClass: "bot-con" }, [
+                    _vm._v("By clicking on register, I accept the "),
+                    _c(
+                      "a",
+                      {
+                        attrs: { href: "https://fretbay.com/en/conditions.php" }
+                      },
+                      [_vm._v("General Terms and Conditions")]
+                    ),
+                    _vm._v(" of FretBay.com.  ")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "clearfix" }),
+                _vm._v(" "),
+                _c("div", { staticClass: "log-row" }),
+                _vm._v(" "),
+                _c("div", { staticClass: "clearfix" }),
+                _vm._v(" "),
+                _c("div", { staticClass: "log-row" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn bb",
+                      attrs: { type: "submit", id: "submitSignup" }
+                    },
+                    [_vm._v("Sign Up")]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "clearfix" })
+              ]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "clearfix" })
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -42093,9 +50272,1705 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", { staticClass: "content" }, [
+      _c("div", { staticClass: "default-banner" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "default-banner-details" }, [
+            _c("div", { staticClass: "default-banner-text" }, [
+              _c("h1", [_vm._v("I'm looking for a carrier")]),
+              _vm._v(" "),
+              _c("p", [_vm._v("Economic, Reliable, Secure")]),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "btn",
+                  attrs: {
+                    title: "",
+                    href: "https://fretbay.com/en/shipper/find-a-transporter"
+                  }
+                },
+                [_vm._v("REQUEST FOR QUOTATION")]
+              )
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "default-section" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "text-center" }, [
+            _c("div", { staticClass: "section-header row" }, [
+              _c("div", { staticClass: "col-sm-8 col-sm-offset-2" }, [
+                _c("h3", [_vm._v("THE FRETBAY PROCESS")]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "Receive instant and cheap quotes for your furniture, two-wheelers, cars, cardboard boxes, parcels, animals, bulky objects or even for a total move from your home."
+                  )
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "shipperRecrutiStep hidden-xs" }, [
+              _c("div", { staticClass: "text-center" }, [
+                _c(
+                  "div",
+                  { staticClass: "ImgWrkSlides", attrs: { id: "slide01" } },
+                  [
+                    _c("img", {
+                      staticClass: "img-responsive",
+                      attrs: {
+                        src: "images/shipperRecrutiStep01_EN.png",
+                        alt: "Slide 01"
+                      }
+                    })
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "ImgWrkSlides", attrs: { id: "slide02" } },
+                  [
+                    _c("img", {
+                      staticClass: "img-responsive",
+                      attrs: {
+                        src: "images/shipperRecrutiStep02_EN.png",
+                        alt: "Slide 02"
+                      }
+                    })
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "ImgWrkSlides active",
+                    attrs: { id: "slide03" }
+                  },
+                  [
+                    _c("img", {
+                      staticClass: "img-responsive",
+                      attrs: {
+                        src: "images/shipperRecrutiStep03_EN.png",
+                        alt: "Slide 03"
+                      }
+                    })
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "ImgWrkSlides", attrs: { id: "slide04" } },
+                  [
+                    _c("img", {
+                      staticClass: "img-responsive",
+                      attrs: {
+                        src: "images/shipperRecrutiStep04_EN.png",
+                        alt: "Slide 04"
+                      }
+                    })
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "ImgWrkSlides", attrs: { id: "slide05" } },
+                  [
+                    _c("img", {
+                      staticClass: "img-responsive",
+                      attrs: {
+                        src: "images/shipperRecrutiStep05_EN.png",
+                        alt: "Slide 05"
+                      }
+                    })
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("ol", { staticClass: "shipperRecrutiSlider" }, [
+                _c("li", {}, [
+                  _c(
+                    "a",
+                    {
+                      attrs: {
+                        href: "javascript:void(0);",
+                        "data-title": "slide01"
+                      }
+                    },
+                    [
+                      _c("i", { staticClass: "iconSlides alFreting" }),
+                      _vm._v(
+                        "\n                                Publish your listing                    "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", {}, [
+                  _c(
+                    "a",
+                    {
+                      attrs: {
+                        href: "javascript:void(0);",
+                        "data-title": "slide02"
+                      }
+                    },
+                    [
+                      _c("i", { staticClass: "iconSlides chobiOfer" }),
+                      _vm._v(
+                        "\n                                Choose the best quote                    "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "active" }, [
+                  _c(
+                    "a",
+                    {
+                      attrs: {
+                        href: "javascript:void(0);",
+                        "data-title": "slide03"
+                      }
+                    },
+                    [
+                      _c("i", { staticClass: "iconSlides trCarGood" }),
+                      _vm._v(
+                        "\n                                Have yourself delivered                    "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", {}, [
+                  _c(
+                    "a",
+                    {
+                      attrs: {
+                        href: "javascript:void(0);",
+                        "data-title": "slide04"
+                      }
+                    },
+                    [
+                      _c("i", { staticClass: "iconSlides gdDelConf" }),
+                      _vm._v(
+                        "\n                                Confirm receipt of your goods                    "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", {}, [
+                  _c(
+                    "a",
+                    {
+                      attrs: {
+                        href: "javascript:void(0);",
+                        "data-title": "slide05"
+                      }
+                    },
+                    [
+                      _c("i", { staticClass: "iconSlides ratThServo" }),
+                      _vm._v(
+                        "\n                                Evaluate the carrier's performance                    "
+                      )
+                    ]
+                  )
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass: "btn btn-theme",
+                attrs: {
+                  title: "",
+                  href: "https://fretbay.com/en/shipper/find-a-transporter"
+                }
+              },
+              [_vm._v("Post your listing now")]
+            )
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "section",
+        {
+          staticClass: "default-section alter-section hidden-xs",
+          attrs: { id: "recentList" }
+        },
+        [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-8" }, [
+                _c("h4", [_vm._v("Last transactions")]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "recenListingSlider",
+                    staticStyle: {
+                      position: "relative",
+                      height: "356px",
+                      overflow: "hidden"
+                    }
+                  },
+                  [
+                    _c(
+                      "ul",
+                      { staticStyle: { margin: "0px", position: "absolute" } },
+                      [
+                        _c("li", { staticStyle: { margin: "0px" } }, [
+                          _c("div", { staticClass: "categoryInfo" }, [
+                            _c("div", { staticClass: "circleImg" }, [
+                              _c("img", {
+                                attrs: {
+                                  alt: "",
+                                  src:
+                                    "transporter/images/catMedium/demenagement.png"
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("p", { staticClass: "marginImg" }, [
+                              _c(
+                                "a",
+                                {
+                                  attrs: {
+                                    title: "",
+                                    href:
+                                      "Déménagements/Déménagement-30-m3-408196-.html"
+                                  }
+                                },
+                                [_vm._v("Déménagement 30 m3")]
+                              ),
+                              _vm._v(" "),
+                              _c("span", { staticClass: "catgry" }, [
+                                _c("b", [_vm._v("Category")]),
+                                _vm._v(": Déménagements")
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "locationInfo" }, [
+                            _c("p", [_vm._v("Luxembourg - Luxembourg")]),
+                            _vm._v(" "),
+                            _c("p", [_vm._v("2.7km")])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "trasporterIfo" }, [
+                            _c("div", { staticClass: "circleImg" }, [
+                              _c("img", {
+                                attrs: {
+                                  alt: "",
+                                  src:
+                                    "https://fretbay.com/fr/images/photoTransporteur/validation-173x173.png?ver=1.2"
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "marginImg" }, [
+                              _c("p", [
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: {
+                                      title: "",
+                                      href:
+                                        "https://fretbay.com/en/profil-des-transporteurs/Ld26/"
+                                    }
+                                  },
+                                  [_vm._v("Ld26")]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "ratingBlock" }, [
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                })
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "price" }, [
+                            _c("p", [_vm._v("4999€")])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticStyle: { margin: "0px" } }, [
+                          _c("div", { staticClass: "categoryInfo" }, [
+                            _c("div", { staticClass: "circleImg" }, [
+                              _c("img", {
+                                attrs: {
+                                  alt: "",
+                                  src:
+                                    "transporter/images/catMedium/demenagement.png"
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("p", { staticClass: "marginImg" }, [
+                              _c(
+                                "a",
+                                {
+                                  attrs: {
+                                    title: "",
+                                    href:
+                                      "Déménagements/Déménagement-16m3-395664-.html"
+                                  }
+                                },
+                                [_vm._v("Déménagement 16m3")]
+                              ),
+                              _vm._v(" "),
+                              _c("span", { staticClass: "catgry" }, [
+                                _c("b", [_vm._v("Category")]),
+                                _vm._v(": Déménagements")
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "locationInfo" }, [
+                            _c("p", [
+                              _vm._v(
+                                "Provence-Alpes-Cote d'Azur - Provence-Alpes-Cote d'Azur"
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [_vm._v("3.39km")])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "trasporterIfo" }, [
+                            _c("div", { staticClass: "circleImg" }, [
+                              _c("img", {
+                                attrs: {
+                                  alt: "",
+                                  src:
+                                    "https://fretbay.com/global/media/transporter/profil/thumbs/1581749363_0.jpg"
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "marginImg" }, [
+                              _c("p", [
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: {
+                                      title: "",
+                                      href:
+                                        "https://fretbay.com/en/profil-des-transporteurs/balan90/"
+                                    }
+                                  },
+                                  [_vm._v("balan90")]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "ratingBlock" }, [
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-half.png" }
+                                })
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "price" }, [
+                            _c("p", [_vm._v("600€")])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticStyle: { margin: "0px" } }, [
+                          _c("div", { staticClass: "categoryInfo" }, [
+                            _c("div", { staticClass: "circleImg" }, [
+                              _c("img", {
+                                attrs: {
+                                  alt: "",
+                                  src:
+                                    "transporter/images/catMedium/demenagement.png"
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("p", { staticClass: "marginImg" }, [
+                              _c(
+                                "a",
+                                {
+                                  attrs: {
+                                    title: "",
+                                    href:
+                                      "Déménagements/Déménagement-10-m3-391003-.html"
+                                  }
+                                },
+                                [_vm._v("Déménagement 10 m3")]
+                              ),
+                              _vm._v(" "),
+                              _c("span", { staticClass: "catgry" }, [
+                                _c("b", [_vm._v("Category")]),
+                                _vm._v(": Déménagements")
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "locationInfo" }, [
+                            _c("p", [_vm._v("England - Vaud")]),
+                            _vm._v(" "),
+                            _c("p", [_vm._v("957.63km")])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "trasporterIfo" }, [
+                            _c("div", { staticClass: "circleImg" }, [
+                              _c("img", {
+                                attrs: {
+                                  alt: "",
+                                  src:
+                                    "https://fretbay.com/fr/images/photoTransporteur/validation-173x173.png?ver=1.2"
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "marginImg" }, [
+                              _c("p", [
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: {
+                                      title: "",
+                                      href:
+                                        "https://fretbay.com/en/profil-des-transporteurs/eurovans/"
+                                    }
+                                  },
+                                  [_vm._v("eurovans")]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "ratingBlock" }, [
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                })
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "price" }, [
+                            _c("p", [_vm._v("989€")])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticStyle: { margin: "0px" } }, [
+                          _c("div", { staticClass: "categoryInfo" }, [
+                            _c("div", { staticClass: "circleImg" }, [
+                              _c("img", {
+                                attrs: {
+                                  alt: "",
+                                  src:
+                                    "transporter/images/catMedium/demenagement.png"
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("p", { staticClass: "marginImg" }, [
+                              _c(
+                                "a",
+                                {
+                                  attrs: {
+                                    title: "",
+                                    href:
+                                      "Déménagements/Déménagement-14m3-388225-.html"
+                                  }
+                                },
+                                [_vm._v("Déménagement 14m3")]
+                              ),
+                              _vm._v(" "),
+                              _c("span", { staticClass: "catgry" }, [
+                                _c("b", [_vm._v("Category")]),
+                                _vm._v(": Déménagements")
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "locationInfo" }, [
+                            _c("p", [_vm._v("Zürich - IDF")]),
+                            _vm._v(" "),
+                            _c("p", [_vm._v("650.63km")])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "trasporterIfo" }, [
+                            _c("div", { staticClass: "circleImg" }, [
+                              _c("img", {
+                                attrs: {
+                                  alt: "",
+                                  src:
+                                    "https://fretbay.com/global/media/transporter/profil/thumbs/1573550229_0.jpeg"
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "marginImg" }, [
+                              _c("p", [
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: {
+                                      title: "",
+                                      href:
+                                        "https://fretbay.com/en/profil-des-transporteurs/Contact94/"
+                                    }
+                                  },
+                                  [_vm._v("Contact94")]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "ratingBlock" }, [
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-half.png" }
+                                })
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "price" }, [
+                            _c("p", [_vm._v("960€")])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticStyle: { margin: "0px" } }, [
+                          _c("div", { staticClass: "categoryInfo" }, [
+                            _c("div", { staticClass: "circleImg" }, [
+                              _c("img", {
+                                attrs: {
+                                  alt: "",
+                                  src:
+                                    "transporter/images/catMedium/demenagement.png"
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("p", { staticClass: "marginImg" }, [
+                              _c(
+                                "a",
+                                {
+                                  attrs: {
+                                    title: "",
+                                    href:
+                                      "Déménagements/Déménagement-33m3-386256-.html"
+                                  }
+                                },
+                                [_vm._v("Déménagement 33m3")]
+                              ),
+                              _vm._v(" "),
+                              _c("span", { staticClass: "catgry" }, [
+                                _c("b", [_vm._v("Category")]),
+                                _vm._v(": Déménagements")
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "locationInfo" }, [
+                            _c("p", [_vm._v(" - IDF")]),
+                            _vm._v(" "),
+                            _c("p", [_vm._v("953.96km")])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "trasporterIfo" }, [
+                            _c("div", { staticClass: "circleImg" }, [
+                              _c("img", {
+                                attrs: {
+                                  alt: "",
+                                  src:
+                                    "https://fretbay.com/global/media/transporter/profil/thumbs/1582117437_0.jpeg"
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "marginImg" }, [
+                              _c("p", [
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: {
+                                      title: "",
+                                      href:
+                                        "https://fretbay.com/en/profil-des-transporteurs/Tipfret6/"
+                                    }
+                                  },
+                                  [_vm._v("Tipfret6")]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "ratingBlock" }, [
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-half.png" }
+                                })
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "price" }, [
+                            _c("p", [_vm._v("1920€")])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticStyle: { margin: "0px" } }, [
+                          _c("div", { staticClass: "categoryInfo" }, [
+                            _c("div", { staticClass: "circleImg" }, [
+                              _c("img", {
+                                attrs: {
+                                  alt: "",
+                                  src:
+                                    "transporter/images/catMedium/demenagement.png"
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("p", { staticClass: "marginImg" }, [
+                              _c(
+                                "a",
+                                {
+                                  attrs: {
+                                    title: "",
+                                    href:
+                                      "Déménagements/Déménagement-3.5m3-383670-.html"
+                                  }
+                                },
+                                [_vm._v("Déménagement 3.5m3")]
+                              ),
+                              _vm._v(" "),
+                              _c("span", { staticClass: "catgry" }, [
+                                _c("b", [_vm._v("Category")]),
+                                _vm._v(": Déménagements")
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "locationInfo" }, [
+                            _c("p", [_vm._v("IDF - province de Verone")]),
+                            _vm._v(" "),
+                            _c("p", [_vm._v("1013.26km")])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "trasporterIfo" }, [
+                            _c("div", { staticClass: "circleImg" }, [
+                              _c("img", {
+                                attrs: {
+                                  alt: "",
+                                  src:
+                                    "https://fretbay.com/global/media/transporter/profil/thumbs/1583851868_0.jpg"
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "marginImg" }, [
+                              _c("p", [
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: {
+                                      title: "",
+                                      href:
+                                        "https://fretbay.com/en/profil-des-transporteurs/fretEU/"
+                                    }
+                                  },
+                                  [_vm._v("fretEU")]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "ratingBlock" }, [
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-half.png" }
+                                })
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "price" }, [
+                            _c("p", [_vm._v("900€")])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticStyle: { margin: "0px" } }, [
+                          _c("div", { staticClass: "categoryInfo" }, [
+                            _c("div", { staticClass: "circleImg" }, [
+                              _c("img", {
+                                attrs: {
+                                  alt: "",
+                                  src: "transporter/images/catMedium/colis.png"
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("p", { staticClass: "marginImg" }, [
+                              _c(
+                                "a",
+                                {
+                                  attrs: {
+                                    title: "",
+                                    href: "Colis/Package/Fold-377110-.html"
+                                  }
+                                },
+                                [_vm._v("Package/Fold")]
+                              ),
+                              _vm._v(" "),
+                              _c("span", { staticClass: "catgry" }, [
+                                _c("b", [_vm._v("Category")]),
+                                _vm._v(": Colis")
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "locationInfo" }, [
+                            _c("p", [_vm._v("Bavaria - Canton of Geneva")]),
+                            _vm._v(" "),
+                            _c("p", [_vm._v("689.16km")])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "trasporterIfo" }, [
+                            _c("div", { staticClass: "circleImg" }, [
+                              _c("img", {
+                                attrs: {
+                                  alt: "",
+                                  src:
+                                    "https://fretbay.com/fr/images/photoTransporteur/validation-173x173.png?ver=1.2"
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "marginImg" }, [
+                              _c("p", [
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: {
+                                      title: "",
+                                      href:
+                                        "https://fretbay.com/en/profil-des-transporteurs/Nars24/"
+                                    }
+                                  },
+                                  [_vm._v("Nars24")]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "ratingBlock" }, [
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                })
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "price" }, [
+                            _c("p", [_vm._v("580€")])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticStyle: { margin: "0px" } }, [
+                          _c("div", { staticClass: "categoryInfo" }, [
+                            _c("div", { staticClass: "circleImg" }, [
+                              _c("img", {
+                                attrs: {
+                                  alt: "",
+                                  src:
+                                    "transporter/images/catMedium/demenagement.png"
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("p", { staticClass: "marginImg" }, [
+                              _c(
+                                "a",
+                                {
+                                  attrs: {
+                                    title: "",
+                                    href:
+                                      "Déménagements/Déménagement-47m3-375666-.html"
+                                  }
+                                },
+                                [_vm._v("Déménagement 47m3")]
+                              ),
+                              _vm._v(" "),
+                              _c("span", { staticClass: "catgry" }, [
+                                _c("b", [_vm._v("Category")]),
+                                _vm._v(": Déménagements")
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "locationInfo" }, [
+                            _c("p", [_vm._v("IDF - Alpes-Maritimes")]),
+                            _vm._v(" "),
+                            _c("p", [_vm._v("928.85km")])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "trasporterIfo" }, [
+                            _c("div", { staticClass: "circleImg" }, [
+                              _c("img", {
+                                attrs: {
+                                  alt: "",
+                                  src:
+                                    "https://fretbay.com/global/media/transporter/profil/thumbs/1582117437_0.jpeg"
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "marginImg" }, [
+                              _c("p", [
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: {
+                                      title: "",
+                                      href:
+                                        "https://fretbay.com/en/profil-des-transporteurs/Tipfret6/"
+                                    }
+                                  },
+                                  [_vm._v("Tipfret6")]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "ratingBlock" }, [
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-half.png" }
+                                })
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "price" }, [
+                            _c("p", [_vm._v("2500€")])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticStyle: { margin: "0px" } }, [
+                          _c("div", { staticClass: "categoryInfo" }, [
+                            _c("div", { staticClass: "circleImg" }, [
+                              _c("img", {
+                                attrs: {
+                                  alt: "",
+                                  src:
+                                    "transporter/images/catMedium/demenagement.png"
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("p", { staticClass: "marginImg" }, [
+                              _c(
+                                "a",
+                                {
+                                  attrs: {
+                                    title: "",
+                                    href:
+                                      "Déménagements/Déménagement-47m3-374084-.html"
+                                  }
+                                },
+                                [_vm._v("Déménagement 47m3")]
+                              ),
+                              _vm._v(" "),
+                              _c("span", { staticClass: "catgry" }, [
+                                _c("b", [_vm._v("Category")]),
+                                _vm._v(": Déménagements")
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "locationInfo" }, [
+                            _c("p", [
+                              _vm._v("IDF - Provence-Alpes-Cote d'Azur")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [_vm._v("930.63km")])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "trasporterIfo" }, [
+                            _c("div", { staticClass: "circleImg" }, [
+                              _c("img", {
+                                attrs: {
+                                  alt: "",
+                                  src:
+                                    "https://fretbay.com/global/media/transporter/profil/thumbs/1579084984_0.jpeg"
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "marginImg" }, [
+                              _c("p", [
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: {
+                                      title: "",
+                                      href:
+                                        "https://fretbay.com/en/profil-des-transporteurs/transport280/"
+                                    }
+                                  },
+                                  [_vm._v("transport280")]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "ratingBlock" }, [
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                })
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "price" }, [
+                            _c("p", [_vm._v("2630€")])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticStyle: { margin: "0px" } }, [
+                          _c("div", { staticClass: "categoryInfo" }, [
+                            _c("div", { staticClass: "circleImg" }, [
+                              _c("img", {
+                                attrs: {
+                                  alt: "",
+                                  src:
+                                    "transporter/images/catMedium/demenagement.png"
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("p", { staticClass: "marginImg" }, [
+                              _c(
+                                "a",
+                                {
+                                  attrs: {
+                                    title: "",
+                                    href:
+                                      "Déménagements/Moving-28.70m3-366865-.html"
+                                  }
+                                },
+                                [_vm._v("Moving 28.70m3")]
+                              ),
+                              _vm._v(" "),
+                              _c("span", { staticClass: "catgry" }, [
+                                _c("b", [_vm._v("Category")]),
+                                _vm._v(": Déménagements")
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "locationInfo" }, [
+                            _c("p", [_vm._v("Gelderland - Berlin")]),
+                            _vm._v(" "),
+                            _c("p", [_vm._v("609.21km")])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "trasporterIfo" }, [
+                            _c("div", { staticClass: "circleImg" }, [
+                              _c("img", {
+                                attrs: {
+                                  alt: "",
+                                  src:
+                                    "https://fretbay.com/global/media/transporter/profil/thumbs/1593949089FcaE_0.jpg"
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "marginImg" }, [
+                              _c("p", [
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: {
+                                      title: "",
+                                      href:
+                                        "https://fretbay.com/en/profil-des-transporteurs/DLP 21/"
+                                    }
+                                  },
+                                  [_vm._v("DLP 21")]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "ratingBlock" }, [
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                }),
+                                _c("img", {
+                                  attrs: { src: "shipper/images/star-on.png" }
+                                })
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "price" }, [
+                            _c("p", [_vm._v("1200€")])
+                          ])
+                        ])
+                      ]
+                    )
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4" }, [
+                _c("h4", [_vm._v("Top carriers")]),
+                _vm._v(" "),
+                _c("div", { staticClass: "margin-bottom-20" }, [
+                  _c(
+                    "a",
+                    {
+                      attrs: {
+                        title: "",
+                        href: "profil-des-transporteurs/Wojtek92/"
+                      }
+                    },
+                    [
+                      _c("div", { staticClass: "postBlock" }, [
+                        _c(
+                          "div",
+                          { staticClass: "col-md-3 col-sm-2 no-padding" },
+                          [
+                            _c("div", { staticClass: "postImg" }, [
+                              _c("img", {
+                                attrs: {
+                                  alt: "",
+                                  src:
+                                    "https://fretbay.com/global/media/transporter/profil/thumbs/1599758184eCzX_0.png"
+                                }
+                              })
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-9 col-sm-10" }, [
+                          _c("h6", { staticClass: "bold" }, [
+                            _vm._v("Wojtek92")
+                          ]),
+                          _vm._v(" "),
+                          _c("p", [
+                            _vm._v("Le chauffeur était très gentil!..")
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "ratingBlock" }, [
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-on.png" }
+                            }),
+                            _c("img", {
+                              attrs: { src: "shipper/images/star-half.png" }
+                            })
+                          ])
+                        ])
+                      ])
+                    ]
+                  )
+                ])
+              ])
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "default-section" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row section-header" }, [
+            _c("div", { staticClass: "col-md-8 col-md-offset-2 text-center" }, [
+              _c("h3", { staticClass: "text-grey" }, [
+                _vm._v("Cheaper legal transport with FretBay")
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "post-default post-leftimg vh-posts-section" },
+            [
+              _c("img", {
+                staticClass: "post-img",
+                attrs: { alt: "", src: "images/shipperRecrutiMimg01.png" }
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "post-content" }, [
+                _c("p", [
+                  _vm._v(
+                    "FretBay sets up an underbidding auction system for its customers, encouraging each carrier to offer you the lowest prices on the market. In addition, you benefit from the groupage and empty returns encouraged by the site and save up to 75% on your transport or relocation..."
+                  )
+                ])
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "post-default post-rightimg vh-posts-section" },
+            [
+              _c("img", {
+                staticClass: "post-img",
+                attrs: { alt: "", src: "images/shipperRecrutiMimg02.png" }
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "post-content" }, [
+                _c("p", [
+                  _vm._v(
+                    "We offer you reliable carriers and movers. Members of our community test and evaluate transport providers to ensure that your goods can be transported with confidence."
+                  )
+                ])
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "post-default post-leftimg vh-posts-section" },
+            [
+              _c("img", {
+                staticClass: "post-img",
+                attrs: { alt: "", src: "images/shipperRecrutiMimg03.png" }
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "post-content" }, [
+                _c("p", [
+                  _vm._v(
+                    "All carriers in the FretBay community are professionals with official documents allowing them to carry out this activity and requiring them to take out insurance for each of their customers. In addition, your payment via the FretBay platform is systematically secured by the online payment system PayPal."
+                  )
+                ])
+              ])
+            ]
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "default-section alter-section" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "text-center section-header" }, [
+            _c("h3", [_vm._v("Transport: The risks of the black market")])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-sm-6" }, [
+              _c("div", { staticClass: "text-center margin-bottom-30" }, [
+                _c("img", { attrs: { alt: "", src: "images/truckImg1.png" } })
+              ]),
+              _vm._v(" "),
+              _c("ul", { staticClass: "arrowLi" }, [
+                _c("li", [_vm._v("Deadlines not met")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("Damage not repaid")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("No after-sales service")]),
+                _vm._v(" "),
+                _c("li", [
+                  _vm._v("Theft and disappearance of your merchandise")
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-sm-6" }, [
+              _c("div", { staticClass: "text-center margin-bottom-30" }, [
+                _c("img", { attrs: { alt: "", src: "images/truckImg2.png" } })
+              ]),
+              _vm._v(" "),
+              _c("ul", { staticClass: "arrowLi" }, [
+                _c("li", [_vm._v("Co-responsibility for tax payment")]),
+                _vm._v(" "),
+                _c("li", [_vm._v("Unpaid taxes and social contributions")]),
+                _vm._v(" "),
+                _c("li", [
+                  _vm._v("Up to 3 years in prison and a fine of 45,000 euros")
+                ]),
+                _vm._v(" "),
+                _c("li", [_vm._v("Stress, a lot of stress")])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("hr", { staticClass: "margin-bottom-30" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "text-center margin-bottom-30" }, [
+            _c("p", [
+              _vm._v(
+                "The black market has many more disadvantages than advantages. Most of the time, you will be dealing with individuals who pretend to be movers when they do not respect the law and have no official documents. In these cases, you have no guarantee for your furniture and belongings, which can be stolen at any time by these fake carriers without you being able to trace them or file a complaint. First and foremost, the black market means stress, lots of it."
+              )
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "default-section" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "section-header text-center" }, [
+            _c("h3", [_vm._v("THE ADVANTAGES OF FRETBAY")])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-sm-6 text-center" }, [
+              _c("img", {
+                attrs: { alt: "", src: "images/shipperRecrutiMimg04.png" }
+              }),
+              _vm._v(" "),
+              _c("h4", { staticClass: "text-uppercase text-blue" }, [
+                _vm._v("Ecological")
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "By encouraging shared transports and empty returns, FretBay allows its carriers and movers to limit the empty kilometres of trucks, and therefore the emission of polluting gases. By participating in the optimization of journeys and the maximum filling of transport vehicles, you contribute to the protection of our planet."
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-sm-6 text-center" }, [
+              _c("img", {
+                attrs: { alt: "", src: "images/shipperRecrutiMimg05.png" }
+              }),
+              _vm._v(" "),
+              _c("h4", { staticClass: "text-uppercase text-blue" }, [
+                _vm._v("Fast")
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "As soon as your ad is published, it is visible to all carriers in the FretBay community. If your transport falls within their capacities and availability, they respond directly to your ad by offering you their prices."
+                )
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-sm-6 text-center" }, [
+              _c("img", {
+                attrs: { alt: "", src: "images/shipperRecrutiMimg06.png" }
+              }),
+              _vm._v(" "),
+              _c("h4", { staticClass: "text-uppercase text-blue" }, [
+                _vm._v("No unsolicited calls")
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "As your contact details are not visible to the carriers until you find the service that suits you, you are sure not to receive unwanted calls."
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-sm-6 text-center" }, [
+              _c("img", {
+                attrs: { alt: "", src: "images/shipperRecrutiMimg07.png" }
+              }),
+              _vm._v(" "),
+              _c("h4", { staticClass: "text-uppercase text-blue" }, [
+                _vm._v("Free")
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v("All users of "),
+                _c(
+                  "a",
+                  { attrs: { title: "", href: "https://fretbay.com/fr" } },
+                  [_vm._v("FretBay")]
+                ),
+                _vm._v(
+                  " have the possibility to post their ad on the site for free and without obligation. There are therefore no fees to be expected for FretBay customers until they have found the service that suits them."
+                )
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "text-center" }, [
+            _c(
+              "a",
+              {
+                staticClass: "btn btn-theme",
+                attrs: {
+                  title: "",
+                  href: "https://fretbay.com/en/shipper/find-a-transporter"
+                }
+              },
+              [_vm._v("Post your listing now")]
+            )
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "section",
+        { staticClass: "default-section", attrs: { id: "ourPartners" } },
+        [
+          _c("div", { staticClass: "container" }, [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "slider partners-logos slick-initialized slick-slider",
+                attrs: { id: "clientLogos" }
+              },
+              [
+                _c(
+                  "div",
+                  {
+                    staticClass: "slick-list draggable",
+                    attrs: { "aria-live": "polite", tabindex: "0" }
+                  },
+                  [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "slick-track",
+                        staticStyle: {
+                          opacity: "1",
+                          width: "752px",
+                          transform: "translate3d(0px, 0px, 0px)"
+                        }
+                      },
+                      [
+                        _c(
+                          "div",
+                          {
+                            staticClass: "slick-slide slick-active",
+                            staticStyle: { width: "188px" },
+                            attrs: {
+                              "aria-hidden": "false",
+                              "data-slick-index": "0"
+                            }
+                          },
+                          [
+                            _c(
+                              "a",
+                              {
+                                attrs: {
+                                  title: "",
+                                  href:
+                                    "https://fretbay.com/en/presse.php?idsess=",
+                                  target: "_blank"
+                                }
+                              },
+                              [
+                                _c("img", {
+                                  attrs: {
+                                    alt: "",
+                                    src: "images/home/partners/Le-FigaroN.png"
+                                  }
+                                }),
+                                _vm._v(" "),
+                                _c("img", {
+                                  staticClass: "hover",
+                                  attrs: {
+                                    alt: "",
+                                    src:
+                                      "images/home/partners/Le-FigaroN-hover.png"
+                                  }
+                                })
+                              ]
+                            )
+                          ]
+                        ),
+                        _c(
+                          "div",
+                          {
+                            staticClass: "slick-slide slick-active",
+                            staticStyle: { width: "188px" },
+                            attrs: {
+                              "aria-hidden": "false",
+                              "data-slick-index": "1"
+                            }
+                          },
+                          [
+                            _c(
+                              "a",
+                              {
+                                attrs: {
+                                  title: "",
+                                  href:
+                                    "https://fretbay.com/en/presse.php?idsess=",
+                                  target: "_blank"
+                                }
+                              },
+                              [
+                                _c("img", {
+                                  attrs: {
+                                    alt: "",
+                                    src:
+                                      "images/home/partners/marie-ClaireN.png"
+                                  }
+                                }),
+                                _vm._v(" "),
+                                _c("img", {
+                                  staticClass: "hover",
+                                  attrs: {
+                                    alt: "",
+                                    src:
+                                      "images/home/partners/marie-ClaireN-hover.png"
+                                  }
+                                })
+                              ]
+                            )
+                          ]
+                        ),
+                        _c(
+                          "div",
+                          {
+                            staticClass: "slick-slide slick-active",
+                            staticStyle: { width: "188px" },
+                            attrs: {
+                              "aria-hidden": "false",
+                              "data-slick-index": "2"
+                            }
+                          },
+                          [
+                            _c(
+                              "a",
+                              {
+                                attrs: {
+                                  title: "",
+                                  href:
+                                    "https://fretbay.com/en/presse.php?idsess=",
+                                  target: "_blank"
+                                }
+                              },
+                              [
+                                _c("img", {
+                                  attrs: {
+                                    alt: "",
+                                    src: "images/home/partners/leParisienN.png"
+                                  }
+                                }),
+                                _vm._v(" "),
+                                _c("img", {
+                                  staticClass: "hover",
+                                  attrs: {
+                                    alt: "",
+                                    src:
+                                      "images/home/partners/leParisienN-hover.png"
+                                  }
+                                })
+                              ]
+                            )
+                          ]
+                        ),
+                        _c(
+                          "div",
+                          {
+                            staticClass: "slick-slide slick-active",
+                            staticStyle: { width: "188px" },
+                            attrs: {
+                              "aria-hidden": "false",
+                              "data-slick-index": "3"
+                            }
+                          },
+                          [
+                            _c(
+                              "a",
+                              {
+                                attrs: {
+                                  title: "",
+                                  href:
+                                    "https://fretbay.com/en/presse.php?idsess=",
+                                  target: "_blank"
+                                }
+                              },
+                              [
+                                _c("img", {
+                                  attrs: {
+                                    alt: "",
+                                    src: "images/home/partners/l'officielN.png"
+                                  }
+                                }),
+                                _vm._v(" "),
+                                _c("img", {
+                                  staticClass: "hover",
+                                  attrs: {
+                                    alt: "",
+                                    src:
+                                      "images/home/partners/l'officielN-hover.png"
+                                  }
+                                })
+                              ]
+                            )
+                          ]
+                        )
+                      ]
+                    )
+                  ]
+                )
+              ]
+            )
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "default-section alter-section escape-whitespace" },
+        [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "text-center" }, [
+              _c("p", [
+                _vm._v("The platform "),
+                _c(
+                  "a",
+                  { attrs: { title: "", href: "https://fretbay.com/fr/" } },
+                  [_vm._v("FretBay")]
+                ),
+                _vm._v(
+                  " brings together legal transport companies to fight against the black market by promoting groupage and minimizing empty returns. All this is possible thanks to the system developed by "
+                ),
+                _c(
+                  "a",
+                  { attrs: { title: "", href: "https://fretbay.com/fr/" } },
+                  [_vm._v("FretBay")]
+                ),
+                _vm._v(".")
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "This system offers carriers the possibility to offer attractive prices to shippers in real time."
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "Our prices are not higher than the prices offered on the black market. However, transport at this price ensures quality of service and professionalism, which is not the case in the illegal market. The black market, although attractive because of its very low prices, exposes the individual to many risks of scams, poor quality service and offers no insurance in the event of an accident"
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "Ship your items via FretBay and enjoy an economical, reliable, quality service and support legal transport."
+                )
+              ])
+            ])
+          ])
+        ]
+      )
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -42141,9 +52016,104 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "left-column" }, [
+        _c("div", { staticClass: "inner-left text-center-xs" }, [
+          _c("h2", [_vm._v("The FretBay platform")]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "FretBay.com's neutral platform is an online, real-time service that connects a shipper with a moving\n                or transportation company, allowing them to buy and sell transportation services with\n                confidence."
+            )
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "Shippers (those who need a transport or delivery service) whether individuals, associations or\n                companies, publish their requests online FREE OF CHARGE in the form of announcements."
+            )
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "Carriers (those who offer the transport service) whether they are craft drivers, moving companies or\n                transport companies, offer their offers directly online on the ads that interest them."
+            )
+          ]),
+          _vm._v(" "),
+          _c("h2", [_vm._v("The company")]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "FretBay was created to meet the objective of its designers: to create an innovative market platform\n                for individuals, providing an economical and ecological response to the occasional transport needs\n                of bulky goods, for example for a private move, the transport of motorcycles, cars, furniture,\n                household appliances, animals and many other things"
+            )
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "FretBay is convinced that a better vehicle load factor and a better distribution of road freight not\n                only provides economic but also environmental benefits!"
+            )
+          ]),
+          _vm._v(" "),
+          _c("p", [_vm._v("FretBay, because we all have a common road...")]),
+          _vm._v(" "),
+          _c("h2", [_vm._v("Need help? Contact us at:")]),
+          _vm._v(" "),
+          _c("ul", { staticClass: "list-unstyled addresse-list" }, [
+            _c("li", [_vm._v("FretBay")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("Head office")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("31 rue de Reuilly")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("75012 Paris")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("France")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("Company registration: 502.134.208.00037")])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "inner-grey" }, [
+            _c("p", [
+              _vm._v(
+                "In accordance with the provisions of the French Data Protection Act of 6 January 1978, the\n                    automated processing of personal data from the Site has been declared n°127796 to the Commission\n                    Nationale de l'Informatique et des Libertés (CNIL)"
+              )
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v(
+                "The Internet user is informed that he/she has the right to access and rectify his/her personal\n                    data by either updating his/her personal space online, writing to FretBay, 31 rue de reuilly, -\n                    75012 Paris, or sending an e-mail to support@fretbay.com"
+              )
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v(
+                "The service provider providing the hosting of the site, as well as the storage of information, is\n                    the company OVH, located 140 Quai du Sartel - 59100 Roubaix - France"
+              )
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "right-column hidden-sm hidden-xs" }, [
+        _c("div", { staticClass: "col-lg-12" }),
+        _vm._v(" "),
+        _c("div", { staticClass: "clear" }),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-12" }, [
+          _c("div", {
+            staticClass: "inner-right col-lg-12 inner-right-fb-widget"
+          })
+        ])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -56784,15 +66754,19 @@ Vue.component('system-notification-component', __webpack_require__(/*! ../deskto
 Vue.component('index-page', __webpack_require__(/*! ../desktop/pages/Index.vue */ "./resources/js/desktop/pages/Index.vue")["default"]);
 Vue.component('register-page', __webpack_require__(/*! ../desktop/pages/Register.vue */ "./resources/js/desktop/pages/Register.vue")["default"]);
 Vue.component('register-transporter-page', __webpack_require__(/*! ../desktop/pages/RegisterTransporter.vue */ "./resources/js/desktop/pages/RegisterTransporter.vue")["default"]);
+Vue.component('register-user-page', __webpack_require__(/*! ../desktop/pages/RegisterUser.vue */ "./resources/js/desktop/pages/RegisterUser.vue")["default"]);
 Vue.component('login-page', __webpack_require__(/*! ../desktop/pages/Login.vue */ "./resources/js/desktop/pages/Login.vue")["default"]);
 Vue.component('contact-us-page', __webpack_require__(/*! ../desktop/pages/ContactUs.vue */ "./resources/js/desktop/pages/ContactUs.vue")["default"]);
 Vue.component('company-move-page', __webpack_require__(/*! ../desktop/pages/CompanyMove.vue */ "./resources/js/desktop/pages/CompanyMove.vue")["default"]);
 Vue.component('find-loads-page', __webpack_require__(/*! ../desktop/pages/FindLoads.vue */ "./resources/js/desktop/pages/FindLoads.vue")["default"]);
 Vue.component('find-transporter-page', __webpack_require__(/*! ../desktop/pages/FindTransporter.vue */ "./resources/js/desktop/pages/FindTransporter.vue")["default"]);
 Vue.component('how-it-work-page', __webpack_require__(/*! ../desktop/pages/HowItWork.vue */ "./resources/js/desktop/pages/HowItWork.vue")["default"]);
+Vue.component('recruitment-page', __webpack_require__(/*! ../desktop/pages/Recruitment.vue */ "./resources/js/desktop/pages/Recruitment.vue")["default"]);
+Vue.component('fight-the-black-market-page', __webpack_require__(/*! ../desktop/pages/FightTheBlackMarket.vue */ "./resources/js/desktop/pages/FightTheBlackMarket.vue")["default"]);
 Vue.component('reviews-page', __webpack_require__(/*! ../desktop/pages/Reviews.vue */ "./resources/js/desktop/pages/Reviews.vue")["default"]);
 Vue.component('search-transporter-mover-carrier-page', __webpack_require__(/*! ../desktop/pages/SearchTransporterMoverCarrier.vue */ "./resources/js/desktop/pages/SearchTransporterMoverCarrier.vue")["default"]);
 Vue.component('benefits-transporter-mover-carrier-page', __webpack_require__(/*! ../desktop/pages/BenefitsTransporterMoverCarrier.vue */ "./resources/js/desktop/pages/BenefitsTransporterMoverCarrier.vue")["default"]);
+Vue.component('search-transporter-mover-carrier-page', __webpack_require__(/*! ../desktop/pages/SearchTransporterMoverCarrier.vue */ "./resources/js/desktop/pages/SearchTransporterMoverCarrier.vue")["default"]);
 Vue.component('fequently-asked-questions-page', __webpack_require__(/*! ../desktop/pages/FrequentlyAskedQuestions.vue */ "./resources/js/desktop/pages/FrequentlyAskedQuestions.vue")["default"]);
 Vue.component('privacy-policy-page', __webpack_require__(/*! ../desktop/pages/PrivacyPolicy.vue */ "./resources/js/desktop/pages/PrivacyPolicy.vue")["default"]);
 Vue.component('who-we-are-page', __webpack_require__(/*! ../desktop/pages/WhoWeAre.vue */ "./resources/js/desktop/pages/WhoWeAre.vue")["default"]);
@@ -56849,6 +66823,180 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/desktop/components/FindTransporter/Steps.vue":
+/*!*******************************************************************!*\
+  !*** ./resources/js/desktop/components/FindTransporter/Steps.vue ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Steps_vue_vue_type_template_id_d5e74666___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Steps.vue?vue&type=template&id=d5e74666& */ "./resources/js/desktop/components/FindTransporter/Steps.vue?vue&type=template&id=d5e74666&");
+/* harmony import */ var _Steps_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Steps.vue?vue&type=script&lang=js& */ "./resources/js/desktop/components/FindTransporter/Steps.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _Steps_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Steps.vue?vue&type=style&index=0&lang=scss& */ "./resources/js/desktop/components/FindTransporter/Steps.vue?vue&type=style&index=0&lang=scss&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _Steps_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Steps_vue_vue_type_template_id_d5e74666___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Steps_vue_vue_type_template_id_d5e74666___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/desktop/components/FindTransporter/Steps.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/desktop/components/FindTransporter/Steps.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************!*\
+  !*** ./resources/js/desktop/components/FindTransporter/Steps.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Steps_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Steps.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/FindTransporter/Steps.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Steps_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/desktop/components/FindTransporter/Steps.vue?vue&type=style&index=0&lang=scss&":
+/*!*****************************************************************************************************!*\
+  !*** ./resources/js/desktop/components/FindTransporter/Steps.vue?vue&type=style&index=0&lang=scss& ***!
+  \*****************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Steps_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/style-loader!../../../../../node_modules/css-loader!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src??ref--8-2!../../../../../node_modules/sass-loader/dist/cjs.js??ref--8-3!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Steps.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/FindTransporter/Steps.vue?vue&type=style&index=0&lang=scss&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Steps_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Steps_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Steps_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Steps_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+
+
+/***/ }),
+
+/***/ "./resources/js/desktop/components/FindTransporter/Steps.vue?vue&type=template&id=d5e74666&":
+/*!**************************************************************************************************!*\
+  !*** ./resources/js/desktop/components/FindTransporter/Steps.vue?vue&type=template&id=d5e74666& ***!
+  \**************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Steps_vue_vue_type_template_id_d5e74666___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Steps.vue?vue&type=template&id=d5e74666& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/FindTransporter/Steps.vue?vue&type=template&id=d5e74666&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Steps_vue_vue_type_template_id_d5e74666___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Steps_vue_vue_type_template_id_d5e74666___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/desktop/components/FindTransporter/TypeSelector.vue":
+/*!**************************************************************************!*\
+  !*** ./resources/js/desktop/components/FindTransporter/TypeSelector.vue ***!
+  \**************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _TypeSelector_vue_vue_type_template_id_3cc65d03___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TypeSelector.vue?vue&type=template&id=3cc65d03& */ "./resources/js/desktop/components/FindTransporter/TypeSelector.vue?vue&type=template&id=3cc65d03&");
+/* harmony import */ var _TypeSelector_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TypeSelector.vue?vue&type=script&lang=js& */ "./resources/js/desktop/components/FindTransporter/TypeSelector.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _TypeSelector_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TypeSelector.vue?vue&type=style&index=0&lang=scss& */ "./resources/js/desktop/components/FindTransporter/TypeSelector.vue?vue&type=style&index=0&lang=scss&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _TypeSelector_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _TypeSelector_vue_vue_type_template_id_3cc65d03___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _TypeSelector_vue_vue_type_template_id_3cc65d03___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/desktop/components/FindTransporter/TypeSelector.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/desktop/components/FindTransporter/TypeSelector.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************!*\
+  !*** ./resources/js/desktop/components/FindTransporter/TypeSelector.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TypeSelector_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./TypeSelector.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/FindTransporter/TypeSelector.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TypeSelector_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/desktop/components/FindTransporter/TypeSelector.vue?vue&type=style&index=0&lang=scss&":
+/*!************************************************************************************************************!*\
+  !*** ./resources/js/desktop/components/FindTransporter/TypeSelector.vue?vue&type=style&index=0&lang=scss& ***!
+  \************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_TypeSelector_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/style-loader!../../../../../node_modules/css-loader!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src??ref--8-2!../../../../../node_modules/sass-loader/dist/cjs.js??ref--8-3!../../../../../node_modules/vue-loader/lib??vue-loader-options!./TypeSelector.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/FindTransporter/TypeSelector.vue?vue&type=style&index=0&lang=scss&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_TypeSelector_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_TypeSelector_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_TypeSelector_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_TypeSelector_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+
+
+/***/ }),
+
+/***/ "./resources/js/desktop/components/FindTransporter/TypeSelector.vue?vue&type=template&id=3cc65d03&":
+/*!*********************************************************************************************************!*\
+  !*** ./resources/js/desktop/components/FindTransporter/TypeSelector.vue?vue&type=template&id=3cc65d03& ***!
+  \*********************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TypeSelector_vue_vue_type_template_id_3cc65d03___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./TypeSelector.vue?vue&type=template&id=3cc65d03& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/FindTransporter/TypeSelector.vue?vue&type=template&id=3cc65d03&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TypeSelector_vue_vue_type_template_id_3cc65d03___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TypeSelector_vue_vue_type_template_id_3cc65d03___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
 
 /***/ }),
 
@@ -57001,7 +67149,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _HeaderSimple_vue_vue_type_template_id_f531c4d2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./HeaderSimple.vue?vue&type=template&id=f531c4d2& */ "./resources/js/desktop/components/HeaderSimple.vue?vue&type=template&id=f531c4d2&");
 /* harmony import */ var _HeaderSimple_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./HeaderSimple.vue?vue&type=script&lang=js& */ "./resources/js/desktop/components/HeaderSimple.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _HeaderSimple_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./HeaderSimple.vue?vue&type=style&index=0&lang=scss& */ "./resources/js/desktop/components/HeaderSimple.vue?vue&type=style&index=0&lang=scss&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
 
 
 
@@ -57009,7 +67159,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
   _HeaderSimple_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _HeaderSimple_vue_vue_type_template_id_f531c4d2___WEBPACK_IMPORTED_MODULE_0__["render"],
   _HeaderSimple_vue_vue_type_template_id_f531c4d2___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
@@ -57038,6 +67188,22 @@ component.options.__file = "resources/js/desktop/components/HeaderSimple.vue"
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_HeaderSimple_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./HeaderSimple.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/HeaderSimple.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_HeaderSimple_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/desktop/components/HeaderSimple.vue?vue&type=style&index=0&lang=scss&":
+/*!********************************************************************************************!*\
+  !*** ./resources/js/desktop/components/HeaderSimple.vue?vue&type=style&index=0&lang=scss& ***!
+  \********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_HeaderSimple_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--8-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--8-3!../../../../node_modules/vue-loader/lib??vue-loader-options!./HeaderSimple.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/HeaderSimple.vue?vue&type=style&index=0&lang=scss&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_HeaderSimple_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_HeaderSimple_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_HeaderSimple_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_HeaderSimple_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+
 
 /***/ }),
 
@@ -57123,6 +67289,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_LatestTransactions_vue_vue_type_template_id_04bab6f4___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_LatestTransactions_vue_vue_type_template_id_04bab6f4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/desktop/components/MainMenu.vue":
+/*!******************************************************!*\
+  !*** ./resources/js/desktop/components/MainMenu.vue ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _MainMenu_vue_vue_type_template_id_e8997da0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MainMenu.vue?vue&type=template&id=e8997da0& */ "./resources/js/desktop/components/MainMenu.vue?vue&type=template&id=e8997da0&");
+/* harmony import */ var _MainMenu_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./MainMenu.vue?vue&type=script&lang=js& */ "./resources/js/desktop/components/MainMenu.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _MainMenu_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _MainMenu_vue_vue_type_template_id_e8997da0___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _MainMenu_vue_vue_type_template_id_e8997da0___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/desktop/components/MainMenu.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/desktop/components/MainMenu.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/desktop/components/MainMenu.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_MainMenu_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./MainMenu.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/MainMenu.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_MainMenu_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/desktop/components/MainMenu.vue?vue&type=template&id=e8997da0&":
+/*!*************************************************************************************!*\
+  !*** ./resources/js/desktop/components/MainMenu.vue?vue&type=template&id=e8997da0& ***!
+  \*************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MainMenu_vue_vue_type_template_id_e8997da0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./MainMenu.vue?vue&type=template&id=e8997da0& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/MainMenu.vue?vue&type=template&id=e8997da0&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MainMenu_vue_vue_type_template_id_e8997da0___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MainMenu_vue_vue_type_template_id_e8997da0___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -57631,6 +67866,59 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/desktop/pages/FightTheBlackMarket.vue":
+/*!************************************************************!*\
+  !*** ./resources/js/desktop/pages/FightTheBlackMarket.vue ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _FightTheBlackMarket_vue_vue_type_template_id_1cc0606e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FightTheBlackMarket.vue?vue&type=template&id=1cc0606e& */ "./resources/js/desktop/pages/FightTheBlackMarket.vue?vue&type=template&id=1cc0606e&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _FightTheBlackMarket_vue_vue_type_template_id_1cc0606e___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _FightTheBlackMarket_vue_vue_type_template_id_1cc0606e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/desktop/pages/FightTheBlackMarket.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/desktop/pages/FightTheBlackMarket.vue?vue&type=template&id=1cc0606e&":
+/*!*******************************************************************************************!*\
+  !*** ./resources/js/desktop/pages/FightTheBlackMarket.vue?vue&type=template&id=1cc0606e& ***!
+  \*******************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FightTheBlackMarket_vue_vue_type_template_id_1cc0606e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./FightTheBlackMarket.vue?vue&type=template&id=1cc0606e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/FightTheBlackMarket.vue?vue&type=template&id=1cc0606e&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FightTheBlackMarket_vue_vue_type_template_id_1cc0606e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FightTheBlackMarket_vue_vue_type_template_id_1cc0606e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/desktop/pages/FindLoads.vue":
 /*!**************************************************!*\
   !*** ./resources/js/desktop/pages/FindLoads.vue ***!
@@ -57711,7 +67999,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _FindTransporter_vue_vue_type_template_id_5312fa1e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FindTransporter.vue?vue&type=template&id=5312fa1e& */ "./resources/js/desktop/pages/FindTransporter.vue?vue&type=template&id=5312fa1e&");
 /* harmony import */ var _FindTransporter_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FindTransporter.vue?vue&type=script&lang=js& */ "./resources/js/desktop/pages/FindTransporter.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _FindTransporter_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./FindTransporter.vue?vue&type=style&index=0&lang=scss& */ "./resources/js/desktop/pages/FindTransporter.vue?vue&type=style&index=0&lang=scss&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
 
 
 
@@ -57719,7 +68009,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
   _FindTransporter_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _FindTransporter_vue_vue_type_template_id_5312fa1e___WEBPACK_IMPORTED_MODULE_0__["render"],
   _FindTransporter_vue_vue_type_template_id_5312fa1e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
@@ -57748,6 +68038,22 @@ component.options.__file = "resources/js/desktop/pages/FindTransporter.vue"
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FindTransporter_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./FindTransporter.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/FindTransporter.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FindTransporter_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/desktop/pages/FindTransporter.vue?vue&type=style&index=0&lang=scss&":
+/*!******************************************************************************************!*\
+  !*** ./resources/js/desktop/pages/FindTransporter.vue?vue&type=style&index=0&lang=scss& ***!
+  \******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_FindTransporter_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--8-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--8-3!../../../../node_modules/vue-loader/lib??vue-loader-options!./FindTransporter.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/FindTransporter.vue?vue&type=style&index=0&lang=scss&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_FindTransporter_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_FindTransporter_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_FindTransporter_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_FindTransporter_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+
 
 /***/ }),
 
@@ -58252,6 +68558,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/desktop/pages/Recruitment.vue":
+/*!****************************************************!*\
+  !*** ./resources/js/desktop/pages/Recruitment.vue ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Recruitment_vue_vue_type_template_id_07b17620___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Recruitment.vue?vue&type=template&id=07b17620& */ "./resources/js/desktop/pages/Recruitment.vue?vue&type=template&id=07b17620&");
+/* harmony import */ var _Recruitment_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Recruitment.vue?vue&type=script&lang=js& */ "./resources/js/desktop/pages/Recruitment.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Recruitment_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Recruitment_vue_vue_type_template_id_07b17620___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Recruitment_vue_vue_type_template_id_07b17620___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/desktop/pages/Recruitment.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/desktop/pages/Recruitment.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/desktop/pages/Recruitment.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Recruitment_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./Recruitment.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/Recruitment.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Recruitment_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/desktop/pages/Recruitment.vue?vue&type=template&id=07b17620&":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/desktop/pages/Recruitment.vue?vue&type=template&id=07b17620& ***!
+  \***********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Recruitment_vue_vue_type_template_id_07b17620___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./Recruitment.vue?vue&type=template&id=07b17620& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/Recruitment.vue?vue&type=template&id=07b17620&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Recruitment_vue_vue_type_template_id_07b17620___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Recruitment_vue_vue_type_template_id_07b17620___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/desktop/pages/Register.vue":
 /*!*************************************************!*\
   !*** ./resources/js/desktop/pages/Register.vue ***!
@@ -58385,6 +68760,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RegisterTransporter_vue_vue_type_template_id_bc714a72___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RegisterTransporter_vue_vue_type_template_id_bc714a72___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/desktop/pages/RegisterUser.vue":
+/*!*****************************************************!*\
+  !*** ./resources/js/desktop/pages/RegisterUser.vue ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _RegisterUser_vue_vue_type_template_id_0d87656a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./RegisterUser.vue?vue&type=template&id=0d87656a& */ "./resources/js/desktop/pages/RegisterUser.vue?vue&type=template&id=0d87656a&");
+/* harmony import */ var _RegisterUser_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./RegisterUser.vue?vue&type=script&lang=js& */ "./resources/js/desktop/pages/RegisterUser.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _RegisterUser_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _RegisterUser_vue_vue_type_template_id_0d87656a___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _RegisterUser_vue_vue_type_template_id_0d87656a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/desktop/pages/RegisterUser.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/desktop/pages/RegisterUser.vue?vue&type=script&lang=js&":
+/*!******************************************************************************!*\
+  !*** ./resources/js/desktop/pages/RegisterUser.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RegisterUser_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./RegisterUser.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/RegisterUser.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RegisterUser_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/desktop/pages/RegisterUser.vue?vue&type=template&id=0d87656a&":
+/*!************************************************************************************!*\
+  !*** ./resources/js/desktop/pages/RegisterUser.vue?vue&type=template&id=0d87656a& ***!
+  \************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RegisterUser_vue_vue_type_template_id_0d87656a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./RegisterUser.vue?vue&type=template&id=0d87656a& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/pages/RegisterUser.vue?vue&type=template&id=0d87656a&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RegisterUser_vue_vue_type_template_id_0d87656a___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RegisterUser_vue_vue_type_template_id_0d87656a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -58678,6 +69122,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _modules_TypeOfTransportModule__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/TypeOfTransportModule */ "./resources/js/desktop/store/modules/TypeOfTransportModule.js");
+/* harmony import */ var _modules_TypeOfObjectModule__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/TypeOfObjectModule */ "./resources/js/desktop/store/modules/TypeOfObjectModule.js");
+/* harmony import */ var _modules_ArticleCart__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/ArticleCart */ "./resources/js/desktop/store/modules/ArticleCart.js");
+/* harmony import */ var _modules_VolumeCart__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/VolumeCart */ "./resources/js/desktop/store/modules/VolumeCart.js");
+/* harmony import */ var _modules_VehicleModule__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/VehicleModule */ "./resources/js/desktop/store/modules/VehicleModule.js");
+
+
+
+
+
 
 
 /*
@@ -58690,16 +69144,393 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
 /* harmony default export */ __webpack_exports__["default"] = (new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
   namespaced: true,
   modules: {
-    /*tourModule, aviaModule, storiesModule*/
+    TypeOfTransportModule: _modules_TypeOfTransportModule__WEBPACK_IMPORTED_MODULE_2__["default"],
+    TypeOfObjectModule: _modules_TypeOfObjectModule__WEBPACK_IMPORTED_MODULE_3__["default"],
+    ArticleCart: _modules_ArticleCart__WEBPACK_IMPORTED_MODULE_4__["default"],
+    VolumeCart: _modules_VolumeCart__WEBPACK_IMPORTED_MODULE_5__["default"],
+    VehicleModule: _modules_VehicleModule__WEBPACK_IMPORTED_MODULE_6__["default"]
   }
 }));
 
 /***/ }),
 
-/***/ "./resources/sass/admin/app.scss":
-/*!***************************************!*\
-  !*** ./resources/sass/admin/app.scss ***!
-  \***************************************/
+/***/ "./resources/js/desktop/store/modules/ArticleCart.js":
+/*!***********************************************************!*\
+  !*** ./resources/js/desktop/store/modules/ArticleCart.js ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var state = {
+  article_items: JSON.parse(localStorage.getItem('ArticleCart')) || [{
+    item: {
+      id: 1,
+      //uuid
+      category_title: "",
+      title: "",
+      can_moving: null,
+      accept_conveyors: null,
+      is_fragile_goods: false,
+      properties: [{
+        key: 'estimated value',
+        value: 0,
+        units: '$'
+      }, {
+        key: 'make',
+        value: 'Test'
+      }, {
+        key: 'model',
+        value: 'Test'
+      }, {
+        key: 'length',
+        value: 0,
+        units: 'cm'
+      }, {
+        key: 'width',
+        value: 0,
+        units: 'cm'
+      }, {
+        key: 'height',
+        value: 0,
+        units: 'cm'
+      }, {
+        key: 'weight',
+        value: 0,
+        units: 'kg'
+      }, {
+        key: 'quantity',
+        value: 0
+      }]
+    } //todo: вынести из item
+
+  }]
+}; // getters
+
+var getters = {
+  articleCart: function articleCart(state, getters, rootState) {
+    return state.article_items;
+  },
+  articleCartTotalCount: function articleCartTotalCount(state, getters) {
+    return state.article_items.length;
+  }
+}; // actions
+
+var actions = {
+  addArticleItemToCart: function addArticleItemToCart(_ref, item) {
+    var state = _ref.state,
+        commit = _ref.commit;
+    commit('pushArticleItemToCart', item);
+  },
+  setArticleItemInCart: function setArticleItemInCart(_ref2, item) {
+    var state = _ref2.state,
+        commit = _ref2.commit;
+    commit('changeArticleItemInCart', item);
+  },
+  removeArticleItem: function removeArticleItem(_ref3, id) {
+    var state = _ref3.state,
+        commit = _ref3.commit;
+    commit('removeArticleItem', id);
+  },
+  clearArticleCart: function clearArticleCart(_ref4) {
+    var state = _ref4.state,
+        commit = _ref4.commit;
+    commit('clearAllArticleItems');
+  }
+}; // mutations
+
+var mutations = {
+  pushArticleItemToCart: function pushArticleItemToCart(state, item) {
+    state.article_items.push({
+      item: item
+    });
+    localStorage.setItem('ArticleCart', JSON.stringify(state.article_items));
+  },
+  changeArticleItemInCart: function changeArticleItemInCart(state, item) {
+    var cartItem = state.article_items.find(function (item) {
+      return item.item.id === item.id;
+    });
+    cartItem.item = item;
+    localStorage.setItem('ArticleCart', JSON.stringify(state.article_items));
+  },
+  removeArticleItem: function removeArticleItem(state, id) {
+    var tmp = state.article_items.filter(function (item) {
+      return item.item.id !== id;
+    });
+    state.article_items = tmp;
+    localStorage.setItem('ArticleCart', JSON.stringify(state.article_items));
+  },
+  clearAllArticleItems: function clearAllArticleItems(state) {
+    state.article_items = [];
+    localStorage.setItem('ArticleCart', JSON.stringify(state.article_items));
+  }
+};
+/* harmony default export */ __webpack_exports__["default"] = ({
+  state: state,
+  getters: getters,
+  actions: actions,
+  mutations: mutations
+});
+
+/***/ }),
+
+/***/ "./resources/js/desktop/store/modules/TypeOfObjectModule.js":
+/*!******************************************************************!*\
+  !*** ./resources/js/desktop/store/modules/TypeOfObjectModule.js ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  state: {
+    typeOfObjectModule: JSON.parse(localStorage.getItem("TypeOfObjectModule")) || [{
+      id: 1,
+      title: "Example",
+      img: "",
+      position: 0 //позиция сортировки
+
+    }]
+  },
+  getters: {
+    typeOfObjectModule: function typeOfObjectModule(state) {
+      return state.typeOfObjectModule;
+    }
+  },
+  actions: {
+    getTypeOfObjectAction: function getTypeOfObjectAction(_ref, payload) {
+      var commit = _ref.commit;
+      axios.get('get-type-of-object').then(function (response) {
+        commit('getTypeOfObject', response.data);
+      });
+    }
+  },
+  mutations: {
+    getTypeOfObject: function getTypeOfObject(state, payload) {
+      state.typeOfObjectModule = payload;
+      localStorage.setItem("TypeOfObjectModule", JSON.stringify(state.typeOfObjectModule));
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/desktop/store/modules/TypeOfTransportModule.js":
+/*!*********************************************************************!*\
+  !*** ./resources/js/desktop/store/modules/TypeOfTransportModule.js ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  state: {
+    typeOfTransportModule: JSON.parse(localStorage.getItem("TypeOfTransportModule")) || [{
+      id: 1,
+      title: "Example",
+      img: "",
+      position: 0 //позиция сортировки
+
+    }]
+  },
+  getters: {
+    typeOfTransportModule: function typeOfTransportModule(state) {
+      return state.typeOfTransportModule;
+    }
+  },
+  actions: {
+    getTypeOfTransportAction: function getTypeOfTransportAction(_ref, payload) {
+      var commit = _ref.commit;
+      axios.get('get-type-of-transport').then(function (response) {
+        commit('getTypeOfTransport', response.data);
+      });
+    }
+  },
+  mutations: {
+    getTypeOfTransport: function getTypeOfTransport(state, payload) {
+      state.typeOfTransportModule = payload;
+      localStorage.setItem("TypeOfTransportModule", JSON.stringify(state.typeOfTransportModule));
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/desktop/store/modules/VehicleModule.js":
+/*!*************************************************************!*\
+  !*** ./resources/js/desktop/store/modules/VehicleModule.js ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  state: {
+    vehicleModule: JSON.parse(localStorage.getItem("VehicleModule")) || [{
+      id: 1,
+      title: "Example"
+    }]
+  },
+  getters: {
+    vehicleModule: function vehicleModule(state) {
+      return state.vehicleModule;
+    }
+  },
+  actions: {
+    getVehiclesAction: function getVehiclesAction(_ref, payload) {
+      var commit = _ref.commit;
+      axios.get('get-vehicles').then(function (response) {
+        commit('getVehicles', response.data);
+      });
+    }
+  },
+  mutations: {
+    getVehicles: function getVehicles(state, payload) {
+      state.typeOfObjectModule = payload;
+      localStorage.setItem("VehicleModule", JSON.stringify(state.vehicleModule));
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/desktop/store/modules/VolumeCart.js":
+/*!**********************************************************!*\
+  !*** ./resources/js/desktop/store/modules/VolumeCart.js ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var state = {
+  volume_items: JSON.parse(localStorage.getItem('VolumeCart')) || [{
+    item: {
+      id: 1,
+      title: "",
+      img: "",
+      volume: 0,
+      weight: 0,
+      object_category_id: null,
+      position: 0,
+      is_active: 0
+    },
+    quantity: 1
+  }]
+}; // getters
+
+var getters = {
+  volumeCart: function volumeCart(state, getters, rootState) {
+    return state.volume_items;
+  },
+  volumeCartTotalCount: function volumeCartTotalCount(state, getters) {
+    if (state.volume_items.length === 0) return 0;
+    var sum = 0;
+    state.volume_items.forEach(function (item) {
+      sum += item.quantity;
+    });
+    return sum;
+  },
+  volumeCartTotalVolume: function volumeCartTotalVolume(state, getters) {
+    if (state.volume_items.length === 0) return 0;
+    var sum = 0;
+    state.volume_items.forEach(function (item) {
+      sum += item.item.volume;
+    });
+    return sum;
+  },
+  volumeCartTotalWeight: function volumeCartTotalWeight(state, getters) {
+    if (state.volume_items.length === 0) return 0;
+    var sum = 0;
+    state.volume_items.forEach(function (item) {
+      sum += item.item.weight;
+    });
+    return sum;
+  }
+}; // actions
+
+var actions = {
+  addVolumeItemToCart: function addVolumeItemToCart(_ref, item) {
+    var state = _ref.state,
+        commit = _ref.commit;
+    commit('pushVolumeItemToCart', item); //localStorage.setItem('vuejs__store_go', JSON.stringify(state.go_items));
+  },
+  incVolumeItemQuantity: function incVolumeItemQuantity(_ref2, id) {
+    var state = _ref2.state,
+        commit = _ref2.commit;
+    commit('incrementVolumeItemQuantity', id); // localStorage.setItem('vuejs__store_go', JSON.stringify(state.go_items));
+  },
+  decVolumeItemQuantity: function decVolumeItemQuantity(_ref3, id) {
+    var state = _ref3.state,
+        commit = _ref3.commit;
+    commit('decrementVolumeItemQuantity', id); // localStorage.setItem('vuejs__store_go', JSON.stringify(state.go_items));
+  },
+  removeVolumeItem: function removeVolumeItem(_ref4, id) {
+    var state = _ref4.state,
+        commit = _ref4.commit;
+    commit('removeVolumeItem', id); // localStorage.setItem('vuejs__store_go', JSON.stringify(state.go_items));
+  },
+  clearVolumeCart: function clearVolumeCart(_ref5) {
+    var state = _ref5.state,
+        commit = _ref5.commit;
+    commit('clearAllVolumeItems'); /// localStorage.setItem('vuejs__store_go', JSON.stringify(state.go_items));
+  }
+}; // mutations
+
+var mutations = {
+  pushVolumeItemToCart: function pushVolumeItemToCart(state, item) {
+    var cartItem = state.volume_items.find(function (item) {
+      return item.item.id === item.id;
+    });
+    if (!cartItem) state.volume_items.push({
+      item: item,
+      quantity: 1
+    });else cartItem.quantity++;
+    localStorage.setItem('VolumeCart', JSON.stringify(state.volume_items));
+  },
+  incrementVolumeItemQuantity: function incrementVolumeItemQuantity(state, id) {
+    var cartItem = state.volume_items.find(function (item) {
+      return item.item.id === id;
+    });
+    cartItem.quantity++;
+    localStorage.setItem('VolumeCart', JSON.stringify(state.volume_items));
+  },
+  decrementVolumeItemQuantity: function decrementVolumeItemQuantity(state, id) {
+    var cartItem = state.volume_items.find(function (item) {
+      return item.item.id === id;
+    });
+    if (cartItem.quantity > 1) cartItem.quantity--;
+    localStorage.setItem('VolumeCart', JSON.stringify(state.volume_items));
+  },
+  removeVolumeItem: function removeVolumeItem(state, id) {
+    var tmp = state.volume_items.filter(function (item) {
+      return item.item.id !== id;
+    });
+    state.volume_items = tmp;
+    localStorage.setItem('VolumeCart', JSON.stringify(state.volume_items));
+  },
+  clearAllVolumeItems: function clearAllVolumeItems(state) {
+    state.volume_items = [];
+    localStorage.setItem('VolumeCart', JSON.stringify(state.volume_items)); //commit('setCartItems',tmp)
+  }
+};
+/* harmony default export */ __webpack_exports__["default"] = ({
+  state: state,
+  getters: getters,
+  actions: actions,
+  mutations: mutations
+});
+
+/***/ }),
+
+/***/ "./resources/sass/admin/style.scss":
+/*!*****************************************!*\
+  !*** ./resources/sass/admin/style.scss ***!
+  \*****************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -58719,15 +69550,15 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
 /***/ }),
 
 /***/ 0:
-/*!*************************************************************************************************************!*\
-  !*** multi ./resources/js/desktop/app.js ./resources/sass/desktop/app.scss ./resources/sass/admin/app.scss ***!
-  \*************************************************************************************************************/
+/*!***************************************************************************************************************!*\
+  !*** multi ./resources/js/desktop/app.js ./resources/sass/desktop/app.scss ./resources/sass/admin/style.scss ***!
+  \***************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! D:\projects\fretbay\resources\js\desktop\app.js */"./resources/js/desktop/app.js");
 __webpack_require__(/*! D:\projects\fretbay\resources\sass\desktop\app.scss */"./resources/sass/desktop/app.scss");
-module.exports = __webpack_require__(/*! D:\projects\fretbay\resources\sass\admin\app.scss */"./resources/sass/admin/app.scss");
+module.exports = __webpack_require__(/*! D:\projects\fretbay\resources\sass\admin\style.scss */"./resources/sass/admin/style.scss");
 
 
 /***/ })

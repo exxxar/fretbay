@@ -1,0 +1,66 @@
+// USER VARIABLES SECTION
+
+$accent: orange; // Accent Color
+$fontsize: 16px; // Body Font Size
+$textcolor: #3C3D42; // Text Color
+$system: -apple-system, BlinkMacSystemFont, Arial, sans-serif; // System Font Family
+$mont: Mont, sans-serif; // Mont Font Family
+
+// Bootstrap compatible gutter variable => $gutter
+$grid-gutter-width: 20px;
+$gutter: $grid-gutter-width;
+
+// IMPORT SECTION
+
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss'; // Bootstrap Reboot collection
+@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss'; // Bootstrap Breakpoints mixin
+@import 'node_modules/bootstrap/scss/bootstrap-grid.scss'; // Optional Bootstrap Grid
+@import 'node_modules/bootstrap/scss/utilities/_sizing.scss'; // Optional Bootstrap Utilites
+
+// FONTS LOAD SECTION
+
+@mixin font($fname, $fstyle, $fweight, $furl) {
+	@font-face {
+		font-family: $fname;
+		font-style: $fstyle;
+		font-weight: $fweight;
+		// font-display: swap; // Uncomment to initially display system fonts
+		src: local($fname), url($furl) format('woff2');
+	}
+}
+
+// @include font('Mont', normal, 500, '../fonts/Mont-Medium.woff2');
+// @include font('Mont', normal, 400, '../fonts/Mont-Light.woff2');
+// @include font('Mont', normal, 800, '../fonts/Mont-ExtraBold.woff2');
+// @include font('FoundrySterling', normal, 600, '../fonts/FoundrySterlingOT3-Demi.woff2');
+// @include font('FoundrySterling', normal, 700, '../fonts/FoundrySterlingOT3-Bold.woff2');
+// @include font('FoundrySterling', normal, 800, '../fonts/FoundrySterlingOT3-ExtraBold.woff2');
+
+
+// GENERAL DOCUMENT STYLES
+
+::placeholder {
+	color: #666;
+}
+
+::selection {
+	background-color: $accent;
+	color: #fff;
+}
+
+input, textarea {
+	outline: none;
+	&:focus:required:invalid { border-color: red }
+	&:required:valid { border-color: green }
+}
+
+body {
+	font-family: $mont;
+	font-size: $fontsize;
+	min-width: 320px;
+	position: relative;
+	line-height: 1.65;
+	overflow-x: hidden;
+	color: $textcolor;
+	background: #E5E5E5;
+}
