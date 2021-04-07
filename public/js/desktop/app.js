@@ -3218,6 +3218,361 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -3502,34 +3857,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -5274,28 +5601,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -5309,30 +5614,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -5680,53 +5961,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -46302,8 +46536,139 @@ render._withStripped = true
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function () {}
-var staticRenderFns = []
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("section", { staticClass: "container clearfix" }, [
+    _c("div", { staticClass: "left-column" }, [
+      _c("div", { staticClass: "inner-left" }, [
+        _c("div", { staticClass: "grey-border-section" }, [
+          _c("div", { staticClass: "text-center" }, [
+            _c("h2", [
+              _vm._v("Promoting legality and trust in the transport industry")
+            ]),
+            _vm._v(" "),
+            _c(
+              "svg",
+              {
+                staticClass: "lockicon-svg",
+                attrs: {
+                  version: "1.1",
+                  xmlns: "http://www.w3.org/2000/svg",
+                  "xmlns:xlink": "http://www.w3.org/1999/xlink",
+                  x: "0px",
+                  y: "0px",
+                  width: "140px",
+                  height: "195px",
+                  viewBox: "0 0 140 195",
+                  "enable-background": "new 0 0 140 195",
+                  "xml:space": "preserve"
+                }
+              },
+              [
+                _c("g", [
+                  _c("g", [
+                    _c("path", {
+                      attrs: {
+                        d:
+                          "M38.251,42.355c0-15.075,12.291-27.409,27.313-27.409S92.876,27.28,92.876,42.355v12.256\n\t\t\tc5.462,2.776,10.444,6.365,14.788,10.615V42.461C107.664,19.107,88.625,0,65.354,0C42.083,0,23.042,19.107,23.042,42.461v24.011\n\t\t\tc4.415-4.578,9.543-8.453,15.209-11.443V42.355z M45.447,141.914L0.5,167.957L45.447,194v-16.078h40.925v-18.413H45.447V141.914z\n\t\t\t M39.792,138.527c-8.488-7.376-13.874-18.256-13.874-30.382c0-22.163,17.967-40.194,40.052-40.194\n\t\t\tc22.084,0,40.051,18.031,40.051,40.194c0,3.215-0.388,6.339-1.103,9.338l12.488,7.235c1.67-5.225,2.581-10.791,2.581-16.573\n\t\t\tc0-29.939-24.185-54.21-54.018-54.21c-29.833,0-54.019,24.271-54.019,54.21c0,14.653,5.804,27.939,15.217,37.696L39.792,138.527z\n\t\t\t M65.97,73.62c-19,0-34.403,15.457-34.403,34.525c0,11.146,5.268,21.051,13.435,27.363l2.875-1.666v-3.878h40.924v-21.819\n\t\t\tl10.979,6.36c0.384-2.063,0.594-4.186,0.594-6.36C100.373,89.077,84.97,73.62,65.97,73.62z M69.708,111.066v10.038\n\t\t\tc0,1.98-1.615,3.601-3.588,3.601c-1.973,0-3.587-1.62-3.587-3.601v-10.038c-2.621-1.321-4.423-4.036-4.423-7.18\n\t\t\tc0-4.439,3.586-8.039,8.01-8.039s8.011,3.599,8.011,8.039C74.131,107.03,72.328,109.745,69.708,111.066z M139.5,144.185\n\t\t\tl-44.947-26.043v17.595H53.628v18.413h40.925v16.078L139.5,144.185z"
+                      }
+                    })
+                  ])
+                ])
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "The development of the Internet has encouraged the multiplication of transport and moving\n                        services via classified ad sites. 80% of the transport services offered are organised by illegal\n                        carriers*"
+            )
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "Indeed, black market transport tariffs are so competitive that duly declared transport companies\n                        cannot compete with them. All this gives rise to unfair competition."
+            )
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "FretBay is not only an effort to draw everyone's attention to this issue but also proposes a\n                        solution to fight against the expansion of the black market in this sector of activity."
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _vm._m(0)
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "right-column hidden-sm hidden-xs" })
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mrg" }, [
+      _c("h2", [_vm._v("Safety: FretBay's 4 commitments:")]),
+      _vm._v(" "),
+      _c("ul", { staticClass: "fancyList" }, [
+        _c("li", [
+          _vm._v(
+            "You fill out a form with information about yourself and your company."
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", [_vm._v("You send us the legal documents of your company.")]),
+        _vm._v(" "),
+        _c("li", [
+          _vm._v(
+            "The documents prove the real existence of your company, we validate your registration"
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _vm._v(
+            "You can immediately start submitting free and unlimited moving quotes on our platform."
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "Telephone assistants are at your disposal from Monday to Friday from 9am to 6.30pm. If you have\n                        other suggestions or would like to support our cause and save your business, join us, it's free\n                        and without obligation!"
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "text-center" }, [
+        _c(
+          "a",
+          {
+            staticClass: "btn btn-theme",
+            attrs: {
+              href:
+                "https://fretbay.com/en/transporter/register-transporter?idsess=",
+              title: ""
+            }
+          },
+          [_vm._v("Registration")]
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "inner-grey" }, [
+        _c("p", [
+          _vm._v(
+            "*Figure calculated by FretBay based on a survey conducted on a large sample of classified ad\n                            sites."
+          )
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
 
 
 
@@ -46324,9 +46689,839 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("section", { attrs: { id: "steps-wrap" } }, [
+        _c("div", { staticClass: "container" }, [
+          _c("ul", { staticClass: "steps__list row" }, [
+            _c("div", { staticClass: "col-md-4" }, [
+              _c("li", [
+                _c("span", { staticClass: "step-num" }, [
+                  _vm._v("\n                 1\n              ")
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _c("span", [
+                    _vm._v(
+                      "\n                    FIND CUSTOMERS\n                 "
+                    )
+                  ]),
+                  _vm._v(
+                    "\n                            To optimize your tours.\n                        "
+                  )
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-4" }, [
+              _c("li", [
+                _c("span", { staticClass: "step-num" }, [
+                  _vm._v("\n                 2\n              ")
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _c("span", [
+                    _vm._v(
+                      "\n                    SUBMIT YOUR QUOTE\n                 "
+                    )
+                  ]),
+                  _vm._v(
+                    "\n                            To optimize your tours.\n                        "
+                  )
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-4" }, [
+              _c("li", [
+                _c("span", { staticClass: "step-num" }, [
+                  _vm._v("\n                 3\n              ")
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _c("span", [
+                    _vm._v(
+                      "\n                    INCREASE YOUR SALES REVENUE\n                 "
+                    )
+                  ]),
+                  _vm._v(
+                    "\n                            To optimize your tours.\n                        "
+                  )
+                ])
+              ])
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("section", { attrs: { id: "contents" } }, [
+        _c("div", { staticClass: "clearfix" }, [
+          _c("div", { staticClass: "content" }, [
+            _c("div", { staticClass: "sliding-filter" }, [
+              _c("div", { staticClass: "sliding-filter-inner" }, [
+                _c(
+                  "form",
+                  {
+                    staticClass: "sliding-filter-inner__form",
+                    attrs: { action: "#" }
+                  },
+                  [
+                    _c("div", { staticClass: "sfi-inputs" }, [
+                      _c("div", { staticClass: "input-has-icon-left" }, [
+                        _c("span", { staticClass: "rel-icon-square" }, [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "https://fretbay.com/fr/frv2/assets/images/common/icons/general/marker-loading.svg"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass: "form-control form-sfi-control",
+                          attrs: {
+                            type: "text",
+                            placeholder: "City, Postal code, Region, Country"
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "input-has-icon-left" }, [
+                        _c("span", { staticClass: "rel-icon-square" }, [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "https://fretbay.com/fr/frv2/assets/images/common/icons/general/marker-delivery.svg"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass: "form-control form-sfi-control",
+                          attrs: {
+                            type: "text",
+                            placeholder: "City, Postal code, Region, Country"
+                          }
+                        })
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "sfi-img" }, [
+                      _c("img", {
+                        attrs: {
+                          src:
+                            "https://fretbay.com/fr/frv2/assets/images/common/icons/general/shuffle.svg",
+                          widht: "20",
+                          height: "20"
+                        }
+                      })
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row-narrow" }, [
+                _c("div", { staticClass: "date-field" }, [
+                  _c("input", {
+                    staticClass: "date-input",
+                    attrs: {
+                      type: "text",
+                      placeholder: "Dates",
+                      id: "loadingDatePicker"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("label", { attrs: { for: "loadingDatePicker" } }, [
+                    _c("img", {
+                      attrs: {
+                        src:
+                          "https://fretbay.com/fr/frv2/assets/images/common/icons/general/calendar-transparent.svg"
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("ul", { staticClass: "list-unstyled" }, [
+                  _c("li", { staticClass: "category-item" }, [
+                    _c(
+                      "label",
+                      {
+                        staticClass: "vcheck on-right",
+                        attrs: { for: "inp1" }
+                      },
+                      [
+                        _c("img", {
+                          attrs: {
+                            src:
+                              "https://fretbay.com/fr/frv2/assets/images/common/icons/category/dark/1.svg?v=0.0.4"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("input", {
+                          attrs: {
+                            type: "checkbox",
+                            id: "inp1",
+                            name: "categories[]"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "ng-binding" }, [
+                          _c("em"),
+                          _vm._v(
+                            "\n                          Household equipment\n                       "
+                          )
+                        ])
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "category-item" }, [
+                    _c(
+                      "label",
+                      {
+                        staticClass: "vcheck on-right",
+                        attrs: { for: "inp2" }
+                      },
+                      [
+                        _c("img", {
+                          attrs: {
+                            src:
+                              "https://fretbay.com/fr/frv2/assets/images/common/icons/category/dark/2.svg?v=0.0.4"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("input", {
+                          attrs: {
+                            type: "checkbox",
+                            id: "inp2",
+                            name: "categories[]"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "ng-binding" }, [
+                          _c("em"),
+                          _vm._v(
+                            "\n                          Moving\n                       "
+                          )
+                        ])
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "category-item" }, [
+                    _c(
+                      "label",
+                      {
+                        staticClass: "vcheck on-right",
+                        attrs: { for: "inp3" }
+                      },
+                      [
+                        _c("img", {
+                          attrs: {
+                            src:
+                              "https://fretbay.com/fr/frv2/assets/images/common/icons/category/dark/3.svg?v=0.0.4"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("input", {
+                          attrs: {
+                            type: "checkbox",
+                            id: "inp3",
+                            name: "categories[]"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "ng-binding" }, [
+                          _c("em"),
+                          _vm._v(
+                            "\n                          Vehicle\n                       "
+                          )
+                        ])
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "category-item" }, [
+                    _c(
+                      "label",
+                      {
+                        staticClass: "vcheck on-right",
+                        attrs: { for: "inp4" }
+                      },
+                      [
+                        _c("img", {
+                          attrs: {
+                            src:
+                              "https://fretbay.com/fr/frv2/assets/images/common/icons/category/dark/5.svg?v=0.0.4"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("input", {
+                          attrs: {
+                            type: "checkbox",
+                            id: "inp4",
+                            name: "categories[]"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "ng-binding" }, [
+                          _c("em"),
+                          _vm._v(
+                            "\n                          Boats & voluminous\n                       "
+                          )
+                        ])
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "category-item" }, [
+                    _c(
+                      "label",
+                      {
+                        staticClass: "vcheck on-right",
+                        attrs: { for: "inp5" }
+                      },
+                      [
+                        _c("img", {
+                          attrs: {
+                            src:
+                              "https://fretbay.com/fr/frv2/assets/images/common/icons/category/dark/6.svg?v=0.0.4"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("input", {
+                          attrs: {
+                            type: "checkbox",
+                            id: "inp5",
+                            name: "categories[]"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "ng-binding" }, [
+                          _c("em"),
+                          _vm._v(
+                            "\n                          Miscellaneous\n                       "
+                          )
+                        ])
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "category-item" }, [
+                    _c(
+                      "label",
+                      {
+                        staticClass: "vcheck on-right",
+                        attrs: { for: "inp6" }
+                      },
+                      [
+                        _c("img", {
+                          attrs: {
+                            src:
+                              "https://fretbay.com/fr/frv2/assets/images/common/icons/category/dark/9.svg?v=0.0.4"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("input", {
+                          attrs: {
+                            type: "checkbox",
+                            id: "inp6",
+                            name: "categories[]"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "ng-binding" }, [
+                          _c("em"),
+                          _vm._v(
+                            "\n                          Commercial goods\n                       "
+                          )
+                        ])
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "category-item" }, [
+                    _c(
+                      "label",
+                      {
+                        staticClass: "vcheck on-right",
+                        attrs: { for: "inp7" }
+                      },
+                      [
+                        _c("img", {
+                          attrs: {
+                            src:
+                              "https://fretbay.com/fr/frv2/assets/images/common/icons/category/dark/11.svg?v=0.0.4"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("input", {
+                          attrs: {
+                            type: "checkbox",
+                            id: "inp7",
+                            name: "categories[]"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "ng-binding" }, [
+                          _c("em"),
+                          _vm._v(
+                            "\n                          Animals\n                       "
+                          )
+                        ])
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "category-item" }, [
+                    _c(
+                      "label",
+                      {
+                        staticClass: "vcheck on-right",
+                        attrs: { for: "inp8" }
+                      },
+                      [
+                        _c("img", {
+                          attrs: {
+                            src:
+                              "https://fretbay.com/fr/frv2/assets/images/common/icons/category/dark/13.svg?v=0.0.4"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("input", {
+                          attrs: {
+                            type: "checkbox",
+                            id: "inp8",
+                            name: "categories[]"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "ng-binding" }, [
+                          _c("em"),
+                          _vm._v(
+                            "\n                          Fragile goods\n                       "
+                          )
+                        ])
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "category-item" }, [
+                    _c(
+                      "label",
+                      {
+                        staticClass: "vcheck on-right",
+                        attrs: { for: "inp9" }
+                      },
+                      [
+                        _c("img", {
+                          attrs: {
+                            src:
+                              "https://fretbay.com/fr/frv2/assets/images/common/icons/category/dark/14.svg?v=0.0.4"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("input", {
+                          attrs: {
+                            type: "checkbox",
+                            id: "inp9",
+                            name: "categories[]"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "ng-binding" }, [
+                          _c("em"),
+                          _vm._v(
+                            "\n                          Agri-food\n                       "
+                          )
+                        ])
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "category-item" }, [
+                    _c(
+                      "label",
+                      {
+                        staticClass: "vcheck on-right",
+                        attrs: { for: "inp10" }
+                      },
+                      [
+                        _c("img", {
+                          attrs: {
+                            src:
+                              "https://fretbay.com/fr/frv2/assets/images/common/icons/category/dark/17.svg?v=0.0.4"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("input", {
+                          attrs: {
+                            type: "checkbox",
+                            id: "inp10",
+                            name: "categories[]"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "ng-binding" }, [
+                          _c("em"),
+                          _vm._v(
+                            "\n                          Motorcycles and sports vehicles\n                       "
+                          )
+                        ])
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "category-item" }, [
+                    _c(
+                      "label",
+                      {
+                        staticClass: "vcheck on-right",
+                        attrs: { for: "inp11" }
+                      },
+                      [
+                        _c("img", {
+                          attrs: {
+                            src:
+                              "https://fretbay.com/fr/frv2/assets/images/common/icons/category/dark/18.svg?v=0.0.4"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("input", {
+                          attrs: {
+                            type: "checkbox",
+                            id: "inp11",
+                            name: "categories[]"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "ng-binding" }, [
+                          _c("em"),
+                          _vm._v(
+                            "\n                          Package/Fold\n                       "
+                          )
+                        ])
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "category-item" }, [
+                    _c(
+                      "label",
+                      {
+                        staticClass: "vcheck on-right",
+                        attrs: { for: "inp12" }
+                      },
+                      [
+                        _c("img", {
+                          attrs: {
+                            src:
+                              "https://fretbay.com/fr/frv2/assets/images/common/icons/category/dark/19.svg?v=0.0.4"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("input", {
+                          attrs: {
+                            type: "checkbox",
+                            id: "inp12",
+                            name: "categories[]"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "ng-binding" }, [
+                          _c("em"),
+                          _vm._v(
+                            "\n                          Pallet\n                       "
+                          )
+                        ])
+                      ]
+                    )
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "reference-block" }, [
+                _c("h5", [
+                  _vm._v(
+                    "\n                            Reference\n                        "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("input", {
+                  staticClass: "form-control",
+                  attrs: { type: "text", placeholder: "Ex : 345765" }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "main-content" }, [
+              _c("ul", { staticClass: "listing-header" }, [
+                _c("li", [
+                  _vm._v(
+                    "\n                            Name\n                        "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _vm._v(
+                    "\n                            Activity\n                        "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _vm._v(
+                    "\n                            Loading\n                        "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _vm._v(
+                    "\n                            Delivery\n                        "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _vm._v(
+                    "\n                            Distance\n                        "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _vm._v(
+                    "\n                            Expiration\n                        "
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "promoted-listings" }, [
+                _c("div", { staticClass: "promoted-listings-item" }, [
+                  _c("div", { staticClass: "td-publication" }, [
+                    _c("span", [
+                      _vm._v(
+                        "\n                       Since\n                    "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("strong", [
+                      _vm._v(
+                        "\n                                    17 days\n                                "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "td-nom" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "category category-2",
+                        attrs: { href: "#" }
+                      },
+                      [
+                        _c("span", [
+                          _vm._v(
+                            "\n                          Déménagement 17.35m\n                       "
+                          )
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "listing-status" }, [
+                      _vm._v(
+                        "\n                       Priority listing\n                    "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "tags-wrapper" }, [
+                      _c("span", [
+                        _vm._v(
+                          "\n                          Economique\n                       "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", [
+                        _vm._v(
+                          "\n                          12 m\n                          "
+                        ),
+                        _c("sup", [_vm._v("3")])
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "td-activity" }, [
+                    _c("div", { staticClass: "bid-info" }, [
+                      _c("strong", [
+                        _vm._v(
+                          "\n                                        2\n                                    "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("em", [
+                        _vm._v(
+                          "\n                                        (\n                                    "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("strong", [
+                        _vm._v(
+                          "\n                                        4\n                                    "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", [
+                        _vm._v(
+                          "\n                          in progress\n                       "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("em", [
+                        _vm._v(
+                          "\n                                        )\n                                    "
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "msg-info" }, [
+                      _c("strong", [
+                        _vm._v(
+                          "\n                                        1\n                                    "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("em", [
+                        _vm._v(
+                          "\n                                        message\n                                    "
+                        )
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "td-loading" }, [
+                    _c("strong", [
+                      _vm._v(
+                        "\n                                    Auvergne-Rhone-Alpes (63000)\n                                "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("br"),
+                    _vm._v(" "),
+                    _c("small", [
+                      _c("span", [
+                        _vm._v(
+                          "\n                          Between\n                       "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("strong", [
+                        _vm._v(
+                          "\n                                        26/04\n                                    "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", [
+                        _vm._v(
+                          "\n                          and\n                       "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("strong", [
+                        _vm._v(
+                          "\n                                        01/05\n                                    "
+                        )
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "td-delivery td-loading" }, [
+                    _c("strong", [
+                      _vm._v(
+                        "\n                                    Auvergne-Rhone-Alpes (63000)\n                                "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("br"),
+                    _vm._v(" "),
+                    _c("small", [
+                      _c("span", [
+                        _vm._v(
+                          "\n                          Between\n                       "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("strong", [
+                        _vm._v(
+                          "\n                                        26/04\n                                    "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", [
+                        _vm._v(
+                          "\n                          and\n                       "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("strong", [
+                        _vm._v(
+                          "\n                                        01/05\n                                    "
+                        )
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "td-distance" }, [
+                    _c("div", { staticClass: "title" }, [
+                      _c("strong", [
+                        _vm._v(
+                          "\n                                        1,35\n                                    "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", [
+                        _vm._v(
+                          "\n                          km\n                       "
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "ng-binding" }, [
+                      _vm._v(
+                        "\n                                    0h6\n                                "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "td-expiration" }, [
+                    _c("span", [
+                      _vm._v(
+                        "\n                       in\n                    "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", [
+                      _c("strong", [
+                        _vm._v(
+                          "\n                                        1\n                                    "
+                        )
+                      ]),
+                      _vm._v(
+                        "\n                                    month\n                                "
+                      )
+                    ])
+                  ])
+                ])
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -46749,8 +47944,1133 @@ render._withStripped = true
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function () {}
-var staticRenderFns = []
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", { staticClass: "content term-cond-whitebg" }, [
+      _c("div", { staticClass: "container term-cond-bodycontainer" }, [
+        _c(
+          "div",
+          {
+            staticClass: "right-column hidden-sm hidden-xs",
+            staticStyle: { "margin-top": "30px" }
+          },
+          [_c("div", { staticClass: "col-lg-12" })]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "left-column", staticStyle: { "margin-top": "30px" } },
+          [
+            _c("div", { staticClass: "inner-left" }, [
+              _c("h2", { staticClass: "section-title" }, [
+                _vm._v("Questions and Answers from senders")
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "addresses-popup-main-row" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "addresses-popup-row accord-title-bar addresses-blue-bg"
+                  },
+                  [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-xs-10" }, [
+                        _vm._v(
+                          "I am a private individual, can I use the services of the site www.fretbay.com?"
+                        )
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "addresses-popup-row-content" }, [
+                  _c("div", { staticClass: "addresses-popup-inner" }, [
+                    _c("p", [
+                      _vm._v(
+                        "R: Of course. FretBay is aimed primarily at individuals but also at professionals."
+                      )
+                    ])
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "addresses-popup-main-row" }, [
+                _c(
+                  "div",
+                  { staticClass: "addresses-popup-row accord-title-bar" },
+                  [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-md-10 col-xs-10" }, [
+                        _vm._v(
+                          "I'm looking for a carrier, how to use the site www.fretbay.com?"
+                        )
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "addresses-popup-row-content",
+                    staticStyle: { display: "none" }
+                  },
+                  [
+                    _c("div", { staticClass: "addresses-popup-inner" }, [
+                      _c("p", [
+                        _vm._v(
+                          "A: Nothing could be easier, I register for free and publish my request for a transport quote online following the instructions. I only need 3 clicks to publish my request."
+                        )
+                      ])
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "addresses-popup-main-row" }, [
+                _c(
+                  "div",
+                  { staticClass: "addresses-popup-row accord-title-bar" },
+                  [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-md-10 col-xs-10" }, [
+                        _vm._v(
+                          "What type of goods/objects can I advertise on FretBay?"
+                        )
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "addresses-popup-row-content",
+                    staticStyle: { display: "none" }
+                  },
+                  [
+                    _c("div", { staticClass: "addresses-popup-inner" }, [
+                      _c("p", [
+                        _vm._v(
+                          "R: Whether it is movable goods for a move, the transport of fragile goods (piano), vehicles (motorcycle, boat, car), specific (animals, plants...), household appliances, FretBay is the ideal tool for all those who have transport needs whether in terms of place, goods or time!"
+                        )
+                      ])
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "addresses-popup-main-row" }, [
+                _c(
+                  "div",
+                  { staticClass: "addresses-popup-row accord-title-bar" },
+                  [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-md-10 col-xs-10" }, [
+                        _vm._v("Is FretBay a free service?")
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "addresses-popup-row-content",
+                    staticStyle: { display: "none" }
+                  },
+                  [
+                    _c("div", { staticClass: "addresses-popup-inner" }, [
+                      _c("p", [
+                        _vm._v(
+                          "A: Yes, just register to create your username and start publishing your ads and receiving offers for free online. Of course, you only pay the amount of the offer you have chosen."
+                        )
+                      ])
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "addresses-popup-main-row" }, [
+                _c(
+                  "div",
+                  { staticClass: "addresses-popup-row accord-title-bar" },
+                  [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-md-10 col-xs-10" }, [
+                        _vm._v("What is the role of the site www.fretbay.com?")
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "addresses-popup-row-content",
+                    staticStyle: { display: "none" }
+                  },
+                  [
+                    _c("div", { staticClass: "addresses-popup-inner" }, [
+                      _c("p", [
+                        _vm._v(
+                          "R: FretBay's role is to offer you a secure platform to connect with carriers. FretBay does not intervene in any way in the negotiation of offers. It positions itself as a trusted intermediary."
+                        )
+                      ])
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "addresses-popup-main-row",
+                  staticStyle: { display: "none" }
+                },
+                [
+                  _c(
+                    "div",
+                    { staticClass: "addresses-popup-row accord-title-bar" },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-10 col-xs-10" }, [
+                          _vm._v("Article 6: REGISTRATION TERMS AND CONDITIONS")
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "addresses-popup-row-content",
+                      staticStyle: { display: "none" }
+                    },
+                    [
+                      _c("div", { staticClass: "addresses-popup-inner" }, [
+                        _c("p", [
+                          _vm._v(
+                            "R: E-mail solutions (Yahoo, MSN, Hotmail, etc.) have spam filters that can restrict the receipt and display of certain e-mails. As a result, you may not receive some of the emails we send you. To ensure that our messages are received correctly, add Fretbay.com to your list of reliable senders."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _c("b", [
+                            _vm._v(
+                              "Here are some guidelines on how to proceed depending on your e-mail solution used:"
+                            )
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [_c("b", [_vm._v("For MSN Hotmail")])]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v('Click on the "Options" button. '),
+                          _c("br"),
+                          _vm._v(
+                            ' Click on "Mail" in the left menu, then on "Spam Protection". '
+                          ),
+                          _c("br"),
+                          _vm._v(' Select "Green List". '),
+                          _c("br"),
+                          _vm._v(' Type "fretbay.com" and click on "Add"')
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v("For Gmail"),
+                          _c("br"),
+                          _vm._v(" Open the email. "),
+                          _c("br"),
+                          _vm._v(
+                            ' Click on "Other options" in the email header.'
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v('Select "Add sender to contact list".')
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [_c("b", [_vm._v("For Yahoo! Mail")])]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            'Mark as "Not spam" the messages received in your spam folder that you want to forward to your inbox.'
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _c("b", [
+                            _vm._v(
+                              "Finally for those who use Outlook 2003 and Outlook Express"
+                            )
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            'Right-click on the message, then select "Add sender\'s domain (@example.com) to the list of trusted senders". '
+                          ),
+                          _c("br"),
+                          _vm._v(' Click on "Tools" in the menu bar. '),
+                          _c("br"),
+                          _vm._v(' Select "Options" from the drop-down menu.'),
+                          _vm._v(
+                            ' "preferences"="" tab,="" select="" "junk="" mail".="" '
+                          ),
+                          _vm._v(
+                            '=""> Then click on the "Approved senders" tab, then on the "Add" button. '
+                          ),
+                          _c("br"),
+                          _vm._v(' Type "@fretbay.com" in the text box.')
+                        ])
+                      ])
+                    ]
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "addresses-popup-main-row" }, [
+                _c(
+                  "div",
+                  { staticClass: "addresses-popup-row accord-title-bar" },
+                  [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-md-10 col-xs-10" }, [
+                        _vm._v(
+                          "When I accept an offer from a carrier, do I pay the carrier directly?"
+                        )
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "addresses-popup-row-content",
+                    staticStyle: { display: "none" }
+                  },
+                  [
+                    _c("div", { staticClass: "addresses-popup-inner" }, [
+                      _c("p", [
+                        _vm._v(
+                          "You pay the rest of the amount due directly to the carrier at the time of loading or delivery (according to the terms agreed with the carrier)."
+                        )
+                      ])
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "addresses-popup-main-row" }, [
+                _c(
+                  "div",
+                  { staticClass: "addresses-popup-row accord-title-bar" },
+                  [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-md-10 col-xs-10" }, [
+                        _vm._v(
+                          "I need more information about the proposed offer, how do I contact the carrier?"
+                        )
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "addresses-popup-row-content",
+                    staticStyle: { display: "none" }
+                  },
+                  [
+                    _c("div", { staticClass: "addresses-popup-inner" }, [
+                      _c("p", [
+                        _vm._v(
+                          "R: FretBay offers you the possibility to exchange with carriers via its Question and Answer system. This system allows you to ask your questions to help you make your choice."
+                        )
+                      ])
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "addresses-popup-main-row" }, [
+                _c(
+                  "div",
+                  { staticClass: "addresses-popup-row accord-title-bar" },
+                  [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-md-10 col-xs-10" }, [
+                        _vm._v("Is the payment secure on www.fretbay.com?")
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "addresses-popup-row-content",
+                    staticStyle: { display: "none" }
+                  },
+                  [
+                    _c("div", { staticClass: "addresses-popup-inner" }, [
+                      _c("p", [
+                        _vm._v(
+                          "R: Payment is made via the system of one of the leaders in secure Internet payment. Fretbay is a Paypal certified partner."
+                        )
+                      ])
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "addresses-popup-main-row" }, [
+                _c(
+                  "div",
+                  { staticClass: "addresses-popup-row accord-title-bar" },
+                  [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-md-10 col-xs-10" }, [
+                        _vm._v(
+                          "How is www.fretbay.com different from other sites?"
+                        )
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "addresses-popup-row-content",
+                    staticStyle: { display: "none" }
+                  },
+                  [
+                    _c("div", { staticClass: "addresses-popup-inner" }, [
+                      _c("p", [
+                        _vm._v(
+                          "R: FretBay positions itself as a trusted intermediary and offers you a unique and innovative service by:"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("p", [
+                        _vm._v(
+                          "1- An open online competition system between carriers. This allows you to obtain the best offers on the market. "
+                        ),
+                        _c("br"),
+                        _vm._v(
+                          " 2- A system for the evaluation of carriers by shippers. This ensures that you get the best possible offers from reliable carriers."
+                        )
+                      ])
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "addresses-popup-main-row" }, [
+                _c(
+                  "div",
+                  { staticClass: "addresses-popup-row accord-title-bar" },
+                  [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-md-10 col-xs-10" }, [
+                        _vm._v(
+                          "In which geographical territory(ies) does FretBay operate?"
+                        )
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "addresses-popup-row-content",
+                    staticStyle: { display: "none" }
+                  },
+                  [
+                    _c("div", { staticClass: "addresses-popup-inner" }, [
+                      _c("p", [
+                        _vm._v(
+                          "R: FretBay currently operates on French national territory. Some requests concern journeys to European countries, FretBay is studying an opening of its services at European level."
+                        )
+                      ])
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "addresses-popup-main-row" }, [
+                _c(
+                  "div",
+                  { staticClass: "addresses-popup-row accord-title-bar" },
+                  [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-md-10 col-xs-10" }, [
+                        _vm._v(
+                          "How do I ensure the reliability of carriers registered on FretBay?"
+                        )
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "addresses-popup-row-content",
+                    staticStyle: { display: "none" }
+                  },
+                  [
+                    _c("div", { staticClass: "addresses-popup-inner" }, [
+                      _c("p", [
+                        _vm._v(
+                          "R: FretBay allows you to access the SIRET number of carriers in their profiles and encourages you to check the accuracy of the information. FretBay requires carriers to provide administrative documents proving their ability as carriers. (Registration of your company in the register of carriers and lessors at the D.R.E.)"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("p", [
+                        _vm._v(
+                          "In addition, each Shipper member has the possibility to indicate to the rest of the members how a transaction with a Carrier member took place to contribute to the security of the site. This makes carriers responsible for their services and rewards those who provide good services."
+                        )
+                      ])
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "addresses-popup-main-row" }, [
+                _c("div", { staticClass: "addresses-popup-inner" }, [
+                  _c(
+                    "div",
+                    { staticClass: "addresses-popup-row accord-title-bar" },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-10 col-xs-10" }, [
+                          _vm._v(
+                            "Following a delivery, in case of dispute, is FretBay liable?"
+                          )
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "addresses-popup-row-content",
+                      staticStyle: { display: "none" }
+                    },
+                    [
+                      _c("div", { staticClass: "addresses-popup-inner" }, [
+                        _c("p", [
+                          _vm._v(
+                            "R: No. FretBay's main mission is to provide you with a service that facilitates the relationship between shippers and carriers. FretBay cannot be held responsible for any damage, loss of goods or delays in delivery. We encourage you to contact the carrier directly to settle this amicably."
+                          )
+                        ])
+                      ])
+                    ]
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("h2", { staticClass: "section-title second-title" }, [
+                _vm._v("Questions and Answers from carriers")
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "addresses-popup-main-row" }, [
+                _c(
+                  "div",
+                  { staticClass: "addresses-popup-row accord-title-bar" },
+                  [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-md-10 col-xs-10" }, [
+                        _vm._v("Who is FretBay for?")
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "addresses-popup-row-content",
+                    staticStyle: { display: "none" }
+                  },
+                  [
+                    _c("div", { staticClass: "addresses-popup-inner" }, [
+                      _c("p", [
+                        _vm._v(
+                          "R: Whether you are a craftsman carrier, owner of transport vehicles, a transport SME, FretBay is aimed at Professionals who offer transport services, generalists as well as specialists"
+                        )
+                      ])
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "addresses-popup-main-row" }, [
+                _c(
+                  "div",
+                  { staticClass: "addresses-popup-row accord-title-bar" },
+                  [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-md-10 col-xs-10" }, [
+                        _vm._v(
+                          "What types of transport requests are published on www.fretbay.com?"
+                        )
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "addresses-popup-row-content",
+                    staticStyle: { display: "none" }
+                  },
+                  [
+                    _c("div", { staticClass: "addresses-popup-inner" }, [
+                      _c("p", [
+                        _vm._v(
+                          "R: You will find occasional transport requests concerning a move, the transport of a 2-wheel drive, fragile objects, live animals, furniture, household appliances and any bulky/bulky object in general."
+                        )
+                      ])
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "addresses-popup-main-row" }, [
+                _c(
+                  "div",
+                  { staticClass: "addresses-popup-row accord-title-bar" },
+                  [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-md-10 col-xs-10" }, [
+                        _vm._v(
+                          "I am a carrier specialized in motorcycle transport. I would like to receive only requests for the transport of 2 wheels. How do I use the www.fretbay.com website?"
+                        )
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "addresses-popup-row-content",
+                    staticStyle: { display: "none" }
+                  },
+                  [
+                    _c("div", { staticClass: "addresses-popup-inner" }, [
+                      _c("p", [
+                        _vm._v(
+                          "R: Nothing could be easier. Configure in your Profile the email alerts that concern the transport categories that interest you. Choose the category 2-wheel transport..."
+                        )
+                      ])
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "addresses-popup-main-row" }, [
+                _c(
+                  "div",
+                  { staticClass: "addresses-popup-row accord-title-bar" },
+                  [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-md-10 col-xs-10" }, [
+                        _vm._v(
+                          "I am a carrier. How to use the website www.fretbay.com?"
+                        )
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "addresses-popup-row-content",
+                    staticStyle: { display: "none" }
+                  },
+                  [
+                    _c("div", { staticClass: "addresses-popup-inner" }, [
+                      _c("p", [
+                        _vm._v(
+                          "R: Nothing could be easier. I register for free and answer any transport requests that interest me. For this, I propose on the site my best offer..."
+                        )
+                      ])
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "addresses-popup-main-row" }, [
+                _c(
+                  "div",
+                  { staticClass: "addresses-popup-row accord-title-bar" },
+                  [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-md-10 col-xs-10" }, [
+                        _vm._v(
+                          "I offered the best offer, am I sure I'll win the freight?"
+                        )
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "addresses-popup-row-content",
+                    staticStyle: { display: "none" }
+                  },
+                  [
+                    _c("div", { staticClass: "addresses-popup-inner" }, [
+                      _c("p", [
+                        _vm._v(
+                          "R: No. Even if price is an important factor, shippers take into account your experience, your services (packaging, loading assistance...) and your guarantees (merchandise insurance, certifications...). This information can be viewed in your profile."
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("p", [
+                        _vm._v(
+                          "In addition, you are evaluated by the shippers following the deliveries you make. This gives you the opportunity to capitalize on your good performance and improve your brand image to stand out from the competition. Evaluations are indicated by a star icon."
+                        )
+                      ])
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "addresses-popup-main-row" }, [
+                _c(
+                  "div",
+                  { staticClass: "addresses-popup-row accord-title-bar" },
+                  [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-md-10 col-xs-10" }, [
+                        _vm._v(
+                          "What is the role of the website www.fretbay.com?"
+                        )
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "addresses-popup-row-content",
+                    staticStyle: { display: "none" }
+                  },
+                  [
+                    _c("div", { staticClass: "addresses-popup-inner" }, [
+                      _c("p", [
+                        _vm._v(
+                          "R: FretBay's role is to offer you a secure platform for connecting shippers and carriers. FretBay does not intervene in any way in the negotiation of offers. FretBay is positioning itself as a trusted intermediary."
+                        )
+                      ])
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "addresses-popup-main-row" }, [
+                _c(
+                  "div",
+                  { staticClass: "addresses-popup-row accord-title-bar" },
+                  [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-md-10 col-xs-10" }, [
+                        _vm._v("Is FretBay a free service?")
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "addresses-popup-row-content",
+                    staticStyle: { display: "none" }
+                  },
+                  [
+                    _c("div", { staticClass: "addresses-popup-inner" }, [
+                      _c("p", [
+                        _vm._v(
+                          "A: Registration, access to requests and participation in auctions are completely free of charge. FretBay charges a small percentage of the transaction fee on your sales. You only pay if you make sales!"
+                        )
+                      ])
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "addresses-popup-main-row" }, [
+                _c(
+                  "div",
+                  { staticClass: "addresses-popup-row accord-title-bar" },
+                  [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-md-10 col-xs-10" }, [
+                        _vm._v("Why did you choose to charge the carriers?")
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "addresses-popup-row-content",
+                    staticStyle: { display: "none" }
+                  },
+                  [
+                    _c("div", { staticClass: "addresses-popup-inner" }, [
+                      _c("p", [
+                        _vm._v(
+                          "R: Free shipping for shippers allows you to obtain a large number of requests and therefore more business opportunities for carriers. Moreover, on FretBay, you only pay transaction fees if you make sales!"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("p", [
+                        _vm._v(
+                          "This system also allows ALL carriers, large and small, to use the site's services without having to pay an entrance fee."
+                        )
+                      ])
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "addresses-popup-main-row" }, [
+                _c(
+                  "div",
+                  { staticClass: "addresses-popup-row accord-title-bar" },
+                  [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-md-10 col-xs-10" }, [
+                        _vm._v(
+                          "Why did you choose an anonymous (pseudonymous) bid submission?"
+                        )
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "addresses-popup-row-content",
+                    staticStyle: { display: "none" }
+                  },
+                  [
+                    _c("div", { staticClass: "addresses-popup-inner" }, [
+                      _c("p", [
+                        _vm._v(
+                          "R: The anonymous submission of bids (under pseudonym) allows for healthy and fair competition between all carriers. The purpose of this system is not to break prices but to offer the best offer on the market."
+                        )
+                      ])
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "addresses-popup-main-row " }, [
+                _c(
+                  "div",
+                  { staticClass: "addresses-popup-row accord-title-bar" },
+                  [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-md-10 col-xs-10" }, [
+                        _vm._v("What prices to offer?")
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "addresses-popup-row-content",
+                    staticStyle: { display: "none" }
+                  },
+                  [
+                    _c("div", { staticClass: "addresses-popup-inner" }, [
+                      _c("p", [
+                        _vm._v(
+                          "R: FretBay does not intervene in price negotiations. As professionals, you are in the best position to do that. Prices are often attractive when you do groupage or empty return trips. You are free to offer the prices you want."
+                        )
+                      ])
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "addresses-popup-main-row" }, [
+                _c(
+                  "div",
+                  { staticClass: "addresses-popup-row accord-title-bar" },
+                  [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-md-10 col-xs-10" }, [
+                        _vm._v(
+                          "I need more information about the transport request, how do I contact the sender?"
+                        )
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "addresses-popup-row-content",
+                    staticStyle: { display: "none" }
+                  },
+                  [
+                    _c("div", { staticClass: "addresses-popup-inner" }, [
+                      _c("p", [
+                        _vm._v(
+                          "R: FretBay offers you the possibility to exchange with senders via its Question and Answer system. This system allows you to have additional information on transport demand in order to better adjust your offer. Under no circumstances should it be used to seek direct contact with shippers."
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("p", [
+                        _vm._v(
+                          "This is contrary to the rules of use of the site and constitutes fraud that may lead to your removal from the site."
+                        )
+                      ])
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "addresses-popup-main-row" }, [
+                _c(
+                  "div",
+                  { staticClass: "addresses-popup-row accord-title-bar" },
+                  [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-md-10 col-xs-10" }, [
+                        _vm._v(
+                          "In which geographical territory(ies) does FretBay operate?"
+                        )
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "addresses-popup-row-content",
+                    staticStyle: { display: "none" }
+                  },
+                  [
+                    _c("div", { staticClass: "addresses-popup-inner" }, [
+                      _c("p", [
+                        _vm._v(
+                          "R: FretBay currently operates on French national territory. As some carriers can provide transport in Europe, FretBay is considering opening up its services to European countries"
+                        )
+                      ])
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "addresses-popup-main-row" }, [
+                _c(
+                  "div",
+                  { staticClass: "addresses-popup-row accord-title-bar" },
+                  [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-md-10 col-xs-10" }, [
+                        _vm._v("In case of dispute, is FretBay liable?")
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "addresses-popup-row-content",
+                    staticStyle: { display: "none" }
+                  },
+                  [
+                    _c("div", { staticClass: "addresses-popup-inner" }, [
+                      _c("p", [
+                        _vm._v(
+                          "R: No. FretBay's main mission is to provide you with a service that facilitates the relationship between shippers and carriers. FretBay cannot be held responsible for any damage, loss of goods or delays in delivery. As a transport professional, you are responsible for your service."
+                        )
+                      ])
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "addresses-popup-main-row" }, [
+                _c(
+                  "div",
+                  { staticClass: "addresses-popup-row accord-title-bar" },
+                  [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-md-10 col-xs-10" }, [
+                        _vm._v(
+                          "How can I ensure that I receive the emails sent by Fretbay.com?"
+                        )
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "addresses-popup-row-content",
+                    staticStyle: { display: "none" }
+                  },
+                  [
+                    _c("div", { staticClass: "addresses-popup-inner" }, [
+                      _c("p", [
+                        _vm._v(
+                          "R: E-mail solutions (Yahoo, MSN, Hotmail, etc.) have spam filters that can restrict the receipt and display of certain e-mails. As a result, you may not receive some of the emails we send you. To ensure that our messages are received correctly, add Fretbay.com to your list of reliable senders."
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("p", [
+                        _c("b", [
+                          _vm._v(
+                            "Here are some guidelines on how to proceed depending on your e-mail solution used:"
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("p", [_c("b", [_vm._v("For MSN Hotmail")])]),
+                      _vm._v(" "),
+                      _c("p", [
+                        _vm._v('Click on the "Options" button. '),
+                        _c("br"),
+                        _vm._v(
+                          ' Click on "Mail" in the left menu, then on "Spam Protection". '
+                        ),
+                        _c("br"),
+                        _vm._v(" "),
+                        _c("br"),
+                        _vm._v(' Select "Green List". '),
+                        _c("br"),
+                        _vm._v(' Type "fretbay.com" and click on "Add"')
+                      ]),
+                      _vm._v(" "),
+                      _c("p", [_c("b", [_vm._v("For Gmail")])]),
+                      _vm._v(" "),
+                      _c("p", [
+                        _vm._v("Open the e-mail. "),
+                        _c("br"),
+                        _vm._v(
+                          ' Click on "Other options" in the e-mail header. '
+                        ),
+                        _c("br"),
+                        _vm._v(' Select "Add sender to contact list".')
+                      ]),
+                      _vm._v(" "),
+                      _c("p", [_c("b", [_vm._v("For Yahoo ! Mail")])]),
+                      _vm._v(" "),
+                      _c("p", [
+                        _vm._v(
+                          'Mark as "Not spam" the messages received in your spam folder that you want to forward to your inbox.'
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("p", [
+                        _c("b", [
+                          _vm._v(
+                            "Finally for those who use Outlook 2003 and Outlook Express"
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("p", [
+                        _vm._v(
+                          'Right-click on the message, then select "Add the sender\'s domain (@example.com) to the list of trusted senders". '
+                        ),
+                        _c("br"),
+                        _vm._v(' Click on "Tools" in the menu bar. '),
+                        _c("br"),
+                        _vm._v(' Select "Options" from the drop-down menu. '),
+                        _c("br"),
+                        _vm._v(
+                          ' In the "Preferences" tab, select "Junk Mail". '
+                        ),
+                        _c("br"),
+                        _vm._v(
+                          ' Then click on the "Approved Senders" tab, then click on the "Add" button. '
+                        ),
+                        _c("br"),
+                        _vm._v(' Type "@fretbay.com" in the text box.')
+                      ])
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "addresses-popup-main-row" }, [
+                _c(
+                  "div",
+                  { staticClass: "addresses-popup-row accord-title-bar" },
+                  [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-md-10 col-xs-10" }, [
+                        _vm._v("Do you have any further questions?")
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "addresses-popup-row-content",
+                    staticStyle: { display: "none" }
+                  },
+                  [
+                    _c("div", { staticClass: "addresses-popup-inner" }, [
+                      _c("p", [
+                        _vm._v(
+                          "R: Thank you for all your questions, it allowed us to complete this page and help our beloved community."
+                        )
+                      ])
+                    ])
+                  ]
+                )
+              ])
+            ])
+          ]
+        )
+      ])
+    ])
+  }
+]
+render._withStripped = true
 
 
 
@@ -48436,8 +50756,252 @@ render._withStripped = true
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function () {}
-var staticRenderFns = []
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-9 no-padding-xs" }, [
+          _c("h3", [_vm._v("Administrative")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "inner-left" }, [
+            _c("ul", { staticClass: "recrutement-listing list-unstyled" }, [
+              _c("li", [
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-sm-8" }, [
+                    _vm._v(
+                      "\n                                Assistant(e) Administrative "
+                    ),
+                    _c("span", { staticClass: "time" }, [
+                      _vm._v("15 juillet 2019")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-sm-4" }, [
+                    _c("span", { staticClass: "location" }, [
+                      _vm._v("Paris, France")
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "text-success" }, [
+                      _vm._v("Le poste a été pourvu")
+                    ])
+                  ])
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("h3", [_vm._v("Data")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "inner-left" }, [
+            _c("ul", { staticClass: "recrutement-listing list-unstyled" }, [
+              _c("li", [
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-sm-8" }, [
+                    _vm._v(
+                      "\n                                Community Manager "
+                    ),
+                    _c("span", { staticClass: "time" }, [
+                      _vm._v("05 août 2019")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-sm-4" }, [
+                    _c("span", { staticClass: "location" }, [
+                      _vm._v("Paris, France")
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "text-success" }, [
+                      _vm._v("Le poste a été pourvu")
+                    ])
+                  ])
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("h3", [_vm._v("IT")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "inner-left" }, [
+            _c("ul", { staticClass: "recrutement-listing list-unstyled" }, [
+              _c("li", [
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-sm-8" }, [
+                    _vm._v(
+                      "\n                                Community Manager "
+                    ),
+                    _c("span", { staticClass: "time" }, [
+                      _vm._v("20 août 2019")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-sm-4" }, [
+                    _c("span", { staticClass: "location" }, [
+                      _vm._v("Paris, France")
+                    ])
+                  ])
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("h3", [_vm._v("Marketing")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "inner-left" }, [
+            _c("ul", { staticClass: "recrutement-listing list-unstyled" }, [
+              _c("li", [
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-sm-8" }, [
+                    _vm._v(
+                      "\n                                Community Manager "
+                    ),
+                    _c("span", { staticClass: "time" }, [
+                      _vm._v("28 septembre 2020")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-sm-4" }, [
+                    _c("span", { staticClass: "location" }, [
+                      _vm._v("Paris, France")
+                    ])
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-sm-8" }, [
+                    _vm._v(
+                      "\n                                Community Manager "
+                    ),
+                    _c("span", { staticClass: "time" }, [
+                      _vm._v("20 août 2019")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-sm-4" }, [
+                    _c("span", { staticClass: "location" }, [
+                      _vm._v("Paris, France")
+                    ])
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-sm-8" }, [
+                    _vm._v(
+                      "\n                                Community Manager "
+                    ),
+                    _c("span", { staticClass: "time" }, [
+                      _vm._v("15 juillet 2019")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-sm-4" }, [
+                    _c("span", { staticClass: "location" }, [
+                      _vm._v("Paris, France")
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "text-success" }, [
+                      _vm._v("Le poste a été pourvu")
+                    ])
+                  ])
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("h3", [_vm._v("Opérations")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "inner-left" }, [
+            _c("ul", { staticClass: "recrutement-listing list-unstyled" }, [
+              _c("li", [
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-sm-8" }, [
+                    _vm._v(
+                      "\n                                Télé-conseiller(e) technico-commercial "
+                    ),
+                    _c("span", { staticClass: "time" }, [
+                      _vm._v("31 Janvier 2020")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-sm-4" }, [
+                    _c("span", { staticClass: "location" }, [
+                      _vm._v("Paris, France")
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "text-success" }, [
+                      _vm._v("Le poste a été pourvu")
+                    ])
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-sm-8" }, [
+                    _vm._v(
+                      "\n                                Responsable commercial(e) "
+                    ),
+                    _c("span", { staticClass: "time" }, [
+                      _vm._v("18 juillet 2019")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-sm-4" }, [
+                    _c("span", { staticClass: "location" }, [
+                      _vm._v("Paris, France")
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "text-success" }, [
+                      _vm._v("Le poste a été pourvu")
+                    ])
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-sm-8" }, [
+                    _vm._v(
+                      "\n                                Assistant(e) partenariat transporteurs "
+                    ),
+                    _c("span", { staticClass: "time" }, [
+                      _vm._v("15 juillet 2019")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-sm-4" }, [
+                    _c("span", { staticClass: "location" }, [
+                      _vm._v("Paris, France")
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "text-success" }, [
+                      _vm._v("Le poste a été pourvu")
+                    ])
+                  ])
+                ])
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-3 hidden-sm hidden-xs no-padding" })
+      ])
+    ])
+  }
+]
+render._withStripped = true
 
 
 
@@ -48458,206 +51022,149 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("section", { staticClass: "content fix-etape" }, [
-    _c("div", { staticClass: "row fix-etape-box" }, [
-      _c("div", { staticClass: "container" }, [
-        _c(
-          "section",
-          { staticClass: "etape-box" },
-          [
-            _vm._m(0),
-            _vm._v(" "),
-            _vm._m(1),
-            _vm._v(" "),
-            _c("div", { staticClass: "clearfix" }),
-            _vm._v(" "),
-            _c("center", [
-              _c(
-                "a",
-                {
-                  staticClass: "btn btn1 btn-etape",
-                  attrs: {
-                    href: "https://fretbay.com/en/shipper/register-user",
-                    title: "",
-                    name: "btn"
-                  }
-                },
-                [_vm._v("Click here to receive free and non-binding quotes")]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "clearfix" })
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c("div", { staticClass: "clearfix" })
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "row fix-etape-box" }, [
-      _c("div", { staticClass: "container" }, [
-        _c(
-          "section",
-          { staticClass: "etape-box" },
-          [
-            _vm._m(2),
-            _vm._v(" "),
-            _vm._m(3),
-            _vm._v(" "),
-            _c("div", { staticClass: "clearfix" }),
-            _vm._v(" "),
-            _c("center", [
-              _c(
-                "a",
-                {
-                  staticClass: "btn btn1 btn-etape btn-dangers",
-                  attrs: {
-                    href:
-                      "https://fretbay.com/en/transporter/register-transporter",
-                    title: "",
-                    name: "btn"
-                  }
-                },
-                [_vm._v("Register and offer your quotes for free")]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "clearfix" })
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c("div", { staticClass: "clearfix" })
-      ])
-    ]),
-    _vm._v(" "),
-    _vm._m(4)
-  ])
+  return _vm._m(0)
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-10 col-sm-10 mr-l" }, [
-      _c("h1", { staticClass: "para-heading" }, [
-        _vm._v("I'm looking for a carrier")
-      ]),
-      _vm._v(" "),
-      _c("p", [
-        _vm._v(
-          "On FretBay, you receive in a few clicks cheap quotes for all your transport and moving\n                        requests."
-        ),
-        _c("br"),
-        _vm._v(
-          '\n                        All you have to do is publish a listing with a clear and precise title. For example\n                        "Searching carrier for 3 packages", "Moving 20m2 Paris-London", or "Searching '
-        ),
-        _c(
-          "a",
-          {
-            attrs: {
-              href: "https://fretbay.com/en/france-transport/",
-              title: ""
-            }
-          },
-          [_vm._v("carrier UK-")]
-        ),
-        _vm._v(' Mover in Spain\n                        for piano" '),
-        _c("br"),
-        _vm._v(
-          "\n                        The interested carriers then make you offers, and it is up to you to choose the one that\n                        best suits your needs. And this without any management fees!"
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-2 col-sm-2 mr-l" }, [
-      _c("img", {
-        staticClass: "img-responsive fix-img",
-        attrs: { src: "images/etape-charecter1.png", alt: "Image" }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-9 col-sm-9 mr-l" }, [
-      _c("h2", { staticClass: "para-heading" }, [_vm._v("Are you a carrier?")]),
-      _vm._v(" "),
-      _c("p", [
-        _vm._v("The process is simple."),
-        _c("br"),
-        _vm._v(
-          "\n                        Every day, hundreds of people post a listing to request a move, "
-        ),
-        _c(
-          "a",
-          { attrs: { href: "https://fretbay.com/en/package-transport/" } },
-          [_vm._v("special parcel transport")]
-        ),
-        _vm._v(
-          'or a\n                        vehicle or animal move. For example, "Looking for an independent carrier for an economical\n                        move" or "Looking for a cheap move in Wales" '
-        ),
-        _c("br"),
-        _vm._v(
-          "All you have to do is look at the ads that\n                        correspond to your travel locations to find loads and deliveries that will prevent you from\n                        returning empty. Then, you just have to propose a quote to the advertiser who will accept,\n                        or refuse, your offer. And all this for free!"
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-3 col-sm-3 mr-r" }, [
-      _c("img", {
-        staticClass: "img-responsive pull-right fix-img",
-        attrs: { src: "images/etape-charecter2.png", alt: "Image" }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row fix-etape-box" }, [
-      _c("div", { staticClass: "container " }, [
-        _c("section", { staticClass: "etape-box ims" }, [
-          _c("div", { staticClass: "col-md-10 col-sm-10 mr-l" }, [
-            _c("h2", { staticClass: "para-heading" }, [
-              _vm._v("A Win-Win System")
+    return _c("section", { attrs: { id: "fix-etape" } }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "fix-etape-box" }, [
+          _c("div", { staticClass: "etape-box" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-10 col-sm-10" }, [
+                _c("h2", { staticClass: "etape-box__title" }, [
+                  _vm._v(
+                    "\n                            I'm looking for a carrier\n                        "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "etape-box__txt" }, [
+                  _vm._v(
+                    "\n                            On FretBay, you receive in a few clicks cheap quotes for all your transport and moving requests.\n                            "
+                  ),
+                  _c("br"),
+                  _vm._v(
+                    '\n                            All you have to do is publish a listing with a clear and precise title. For example "Searching carrier for 3 packages", "Moving 20m2 Paris-London", or "Searching '
+                  ),
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("carrier UK-")]),
+                  _vm._v(
+                    ' Mover in Spain for piano"\n                            '
+                  ),
+                  _c("br"),
+                  _vm._v(
+                    "\n                            The interested carriers then make you offers, and it is up to you to choose the one that best suits your needs. And this without any management fees!\n                        "
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-2 col-sm-2" }, [
+                _c("img", {
+                  staticClass: "img-responsive fix-img",
+                  attrs: { src: "images/dest/etape-charecter1.png" }
+                })
+              ])
             ]),
             _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "On the FretBay free freight exchange, it's a win-win situation: "
-              ),
-              _c("br"),
-              _vm._v(
-                "\n                        Carriers find new customers who fit perfectly into their mandatory truck routes, so as not\n                        to have to drive empty, and private individuals and professionals can thus enjoy a cheap\n                        freight transport or move, carried out by a professional. "
-              ),
-              _c("br"),
-              _vm._v(
-                "\n                        At FretBay, we are convinced that a better truck load factor and a better distribution of\n                        road freight offer economic advantages for everyone but also for the environment! "
-              ),
-              _c("br"),
-              _vm._v(
-                "\n                        FretBay registration is free and without obligation, enjoy it! "
-              ),
-              _c("br")
+            _c("div", { staticClass: "etape-box-btn" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "btn-etape btn-etape-red",
+                  attrs: { href: "#" }
+                },
+                [_vm._v("Click here to receive free and non-binding quotes")]
+              )
             ])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "col-md-2 col-sm-2 mr-l fix-img" }, [
-            _c("img", {
-              staticClass: "img-responsive",
-              attrs: { src: "images/etape-charecter3.png", alt: "Image" }
-            })
+          _c("div", { staticClass: "etape-box" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-9 col-sm-9" }, [
+                _c("h2", { staticClass: "etape-box__title" }, [
+                  _vm._v(
+                    "\n                            Are you a carrier?\n                        "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "etape-box__txt" }, [
+                  _vm._v(
+                    "\n                            The process is simple.\n                            "
+                  ),
+                  _c("br"),
+                  _vm._v(
+                    "\n                            Every day, hundreds of people post a listing to request a move, "
+                  ),
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v("special parcel transport")
+                  ]),
+                  _vm._v(
+                    'or a vehicle or animal move. For example, "Looking for an independent carrier for an economical move" or "Looking for a cheap move in Wales"\n                            '
+                  ),
+                  _c("br"),
+                  _vm._v(
+                    "\n                            All you have to do is look at the ads that correspond to your travel locations to find loads and deliveries that will prevent you from returning empty. Then, you just have to propose a quote to the advertiser who will accept, or refuse, your offer. And all this for free!\n                        "
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-3 col-sm-3" }, [
+                _c("img", {
+                  staticClass: "img-responsive fix-img",
+                  attrs: { src: "images/dest/etape-charecter2.png" }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "etape-box-btn" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "btn-etape btn-etape-blue",
+                  attrs: { href: "#" }
+                },
+                [_vm._v("Register and offer your quotes for free")]
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "etape-box" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-10 col-sm-10" }, [
+                _c("h2", { staticClass: "etape-box__title" }, [
+                  _vm._v(
+                    "\n                            A Win-Win System\n                        "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "etape-box__txt" }, [
+                  _vm._v(
+                    "\n                            On the FretBay free freight exchange, it's a win-win situation:\n                            "
+                  ),
+                  _c("br"),
+                  _vm._v(
+                    "\n                            Carriers find new customers who fit perfectly into their mandatory truck routes, so as not to have to drive empty, and private individuals and professionals can thus enjoy a cheap freight transport or move, carried out by a professional.\n                            "
+                  ),
+                  _c("br"),
+                  _vm._v(
+                    "\n                            At FretBay, we are convinced that a better truck load factor and a better distribution of road freight offer economic advantages for everyone but also for the environment!\n                            "
+                  ),
+                  _c("br"),
+                  _vm._v(
+                    "\n                            FretBay registration is free and without obligation, enjoy it!\n                        "
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-2 col-sm-2" }, [
+                _c("img", {
+                  staticClass: "img-responsive fix-img fix-img-last",
+                  attrs: { src: "images/dest/etape-charecter3.png" }
+                })
+              ])
+            ])
           ])
         ])
       ])
@@ -49869,360 +52376,149 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("section", { staticClass: "etape-box ims2" }, [
-        _c("div", { staticClass: "col-md-6 col-sm-6 hidden-xs" }, [
-          _c("section", { staticClass: "port-img-sec" }, [
-            _c("h1", [_vm._v("Looking for professional carriers?")]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-sm-12 mr-l mr-r port-imgs" }, [
-              _c("img", {
-                staticClass: "img-responsive",
-                attrs: { src: "images/shipperSignPimage.png", alt: "Image" }
-              })
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-6 col-sm-6" }, [
-          _c("section", { staticClass: "etaps shipperSignUpPro" }, [
-            _c("h1", [_vm._v("Get started - it's free.")]),
-            _vm._v(" "),
-            _c("small", [
-              _vm._v("The registration takes no more than a minute...")
-            ]),
-            _vm._v(" "),
-            _c(
-              "form",
-              {
-                staticClass: "feature",
-                attrs: {
-                  id: "signUpForm1",
-                  name: "signUpForm",
-                  action:
-                    "https://fretbay.com/fr/shipper/shipperSignupProcess.php",
-                  method: "POST",
-                  onsubmit: "return false;"
-                }
-              },
-              [
-                _c("input", {
-                  attrs: { type: "hidden", id: "emailFlag", value: "1" }
-                }),
-                _vm._v(" "),
-                _c("input", {
-                  attrs: { type: "hidden", id: "pseudoFlag", value: "1" }
-                }),
-                _vm._v(" "),
-                _c("input", {
-                  attrs: { type: "hidden", id: "formError", value: "1" }
-                }),
-                _vm._v(" "),
-                _c("input", {
-                  attrs: { type: "hidden", name: "langUser", value: "en" }
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "margin-bottom-30" }, [
-                  _c("input", {
-                    attrs: {
-                      type: "radio",
-                      name: "pro",
-                      value: "0",
-                      id: "radioBox01",
-                      checked: "",
-                      onclick: "showHideUsertype('1');"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("label", { attrs: { for: "radioBox01" } }, [
-                    _vm._v("You are an individual")
-                  ]),
-                  _vm._v(" "),
-                  _c("input", {
-                    attrs: {
-                      type: "radio",
-                      name: "pro",
-                      value: "1",
-                      id: "radioBox02",
-                      onclick: "showHideUsertype('2');"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("label", { attrs: { for: "radioBox02" } }, [
-                    _vm._v("You are a professional")
-                  ])
+    return _c("section", { attrs: { id: "form-user" } }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "form-user" }, [
+          _c("div", { staticClass: "etape-box-user" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-6 col-sm-6" }, [
+                _c("h2", { staticClass: "ebu__title" }, [
+                  _vm._v(
+                    "\n                            Looking for professional carriers?\n                        "
+                  )
                 ]),
                 _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "log-row margin-bottom-10 professional-fields",
-                    staticStyle: { display: "none" }
-                  },
-                  [
-                    _c("input", {
-                      staticClass: "lis form-control",
-                      attrs: {
-                        type: "text",
-                        id: "companyName",
-                        name: "companyName",
-                        placeholder: "Name of your company"
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("span", {
-                      staticClass: "error-class",
-                      attrs: { id: "companyName-error" }
-                    })
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "clearfix" }),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "log-row margin-bottom-20 professional-fields",
-                    staticStyle: { display: "none" }
-                  },
-                  [
-                    _c("input", {
-                      staticClass: "form-control ui-autocomplete-input",
-                      attrs: {
-                        type: "text",
-                        id: "tva",
-                        name: "tva",
-                        placeholder: "City",
-                        autocomplete: "off"
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("input", {
-                      attrs: {
-                        type: "hidden",
-                        id: "postalCode",
-                        name: "postalCode"
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("input", {
-                      attrs: { type: "hidden", id: "region", name: "region" }
-                    }),
-                    _vm._v(" "),
-                    _c("span", {
-                      staticClass: "error-class",
-                      attrs: { id: "tva-error" }
-                    })
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "clearfix" }),
-                _vm._v(" "),
-                _c("div", { staticClass: "log-row margin-bottom-20" }, [
-                  _c("input", {
-                    staticClass: "lis form-control",
-                    attrs: {
-                      type: "text",
-                      id: "email",
-                      name: "email",
-                      placeholder: "Your email"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("span", {
-                    staticClass: "error-class",
-                    attrs: { id: "email-error" }
-                  }),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "emailHint e-msg-etap" })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "clearfix" }),
-                _vm._v(" "),
-                _c("div", { staticClass: "log-row margin-bottom-20" }, [
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "text",
-                      id: "cemail",
-                      name: "cemail",
-                      placeholder: "Confirm your email"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("span", {
-                    staticClass: "error-class",
-                    attrs: { id: "cemail-error" }
+                _c("div", { staticClass: "col-sm-12" }, [
+                  _c("img", {
+                    staticClass: "img-responsive fix-img",
+                    attrs: { src: "images/dest/shipperSignPimage.png" }
                   })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "clearfix" }),
-                _vm._v(" "),
-                _c("div", { staticClass: "log-row margin-bottom-20" }, [
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "password",
-                      name: "password",
-                      id: "password",
-                      placeholder: "Your password"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("span", {
-                    staticClass: "error-class",
-                    attrs: { id: "password-error" }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "clearfix" }),
-                _vm._v(" "),
-                _c("div", { staticClass: "log-row margin-bottom-20" }, [
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "password",
-                      name: "cpassword",
-                      id: "cpassword",
-                      placeholder: "Confirm your password"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("span", {
-                    staticClass: "error-class",
-                    attrs: { id: "cpassword-error" }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "clearfix" }),
-                _vm._v(" "),
-                _c("div", { staticClass: "log-row margin-bottom-20" }, [
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "text",
-                      name: "userName",
-                      id: "userName",
-                      placeholder: "Your Username"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("span", {
-                    staticClass: "error-class",
-                    attrs: { id: "userName-error" }
-                  }),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "userHint error-class" })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "clearfix" }),
-                _vm._v(" "),
-                _c("div", { staticClass: "log-row margin-bottom-20" }, [
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "text",
-                      name: "phone",
-                      id: "phone",
-                      placeholder: "Your phone"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("span", {
-                    staticClass: "error-class",
-                    attrs: { id: "phone-error" }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "clearfix" }),
-                _vm._v(" "),
-                _c("div", { staticClass: "log-row margin-bottom-20" }, [
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "text",
-                      name: "mobile",
-                      id: "mobile",
-                      placeholder: "Your mobile number"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("span", {
-                    staticClass: "error-class",
-                    attrs: { id: "mobile-error" }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "clearfix" }),
-                _vm._v(" "),
-                _c("div", { staticClass: "log-row margin-bottom-10" }, [
-                  _c("input", {
-                    staticClass: "signup-checkbox",
-                    attrs: {
-                      type: "checkbox",
-                      id: "checkBox01",
-                      name: "checkBox01"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("label", { attrs: { for: "checkBox01" } }, [
-                    _c(
-                      "small",
-                      {
-                        staticClass: "bot-con",
-                        attrs: { id: "checkBox01-error" }
-                      },
-                      [
-                        _vm._v(
-                          "I agree to receive commercial offers from FretBay and its partners."
-                        )
-                      ]
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-6 col-sm-6" }, [
+                _c("h2", { staticClass: "ebu__title" }, [
+                  _vm._v(
+                    "\n                            Get started - it's free.\n                            "
+                  ),
+                  _c("span", [
+                    _vm._v(
+                      "\n                       The registration takes no more than a minute...\n                    "
                     )
                   ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "clearfix" }),
-                _vm._v(" "),
-                _c("div", { staticClass: "clearfix" }),
-                _vm._v(" "),
-                _c("div", { staticClass: "log-row" }, [
-                  _c("small", { staticClass: "bot-con" }, [
-                    _vm._v("By clicking on register, I accept the "),
-                    _c(
-                      "a",
-                      {
-                        attrs: { href: "https://fretbay.com/en/conditions.php" }
-                      },
-                      [_vm._v("General Terms and Conditions")]
+                _c("form", { attrs: { action: "#", id: "signUpForm1" } }, [
+                  _c("div", { staticClass: "signUpForm1-radio" }, [
+                    _c("input", {
+                      staticClass: "suf1-radio",
+                      attrs: { type: "radio", id: "radioBox01" }
+                    }),
+                    _vm._v(" "),
+                    _c("label", { attrs: { for: "radioBox01" } }, [
+                      _vm._v("You are an individual")
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass: "suf1-radio",
+                      attrs: { type: "radio", id: "radioBox02" }
+                    }),
+                    _vm._v(" "),
+                    _c("label", { attrs: { for: "radioBox02" } }, [
+                      _vm._v("You are a professional")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "signUpForm1-inputs" }, [
+                    _c("input", {
+                      staticClass:
+                        "signUpForm1__input signUpForm1__input-first",
+                      attrs: {
+                        type: "text",
+                        placeholder: "Name of your company"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass:
+                        "signUpForm1__input signUpForm1__input-first",
+                      attrs: { type: "text", placeholder: "Your email" }
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass: "signUpForm1__input",
+                      attrs: { type: "text", placeholder: "Confirm your email" }
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass: "signUpForm1__input",
+                      attrs: { type: "text", placeholder: "Your password" }
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass: "signUpForm1__input",
+                      attrs: {
+                        type: "text",
+                        placeholder: "Confirm your password"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass: "signUpForm1__input",
+                      attrs: { type: "text", placeholder: "Your Username" }
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass: "signUpForm1__input",
+                      attrs: { type: "text", placeholder: "Your phone" }
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass: "signUpForm1__input",
+                      attrs: { type: "text", placeholder: "Your mobile number" }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "signUpForm1-checkbox" }, [
+                    _c("input", {
+                      staticClass: "suf1-checkbox",
+                      attrs: { type: "checkbox", id: "checkBox01" }
+                    }),
+                    _vm._v(" "),
+                    _c("label", { attrs: { for: "checkBox01" } }, [
+                      _vm._v(
+                        "I agree to receive commercial offers from FretBay and its partners."
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-text" }, [
+                    _vm._v(
+                      "\n                                By clicking on register, I accept the "
                     ),
-                    _vm._v(" of FretBay.com.  ")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "clearfix" }),
-                _vm._v(" "),
-                _c("div", { staticClass: "log-row" }),
-                _vm._v(" "),
-                _c("div", { staticClass: "clearfix" }),
-                _vm._v(" "),
-                _c("div", { staticClass: "log-row" }, [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v("General Terms and Conditions")
+                    ]),
+                    _vm._v("  of FretBay.com.\n                            ")
+                  ]),
+                  _vm._v(" "),
                   _c(
                     "button",
                     {
-                      staticClass: "btn bb",
-                      attrs: { type: "submit", id: "submitSignup" }
+                      staticClass: "signUpForm1-button",
+                      attrs: { type: "submit" }
                     },
-                    [_vm._v("Sign Up")]
+                    [
+                      _vm._v(
+                        "\n                                Sign Up\n                            "
+                      )
+                    ]
                   )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "clearfix" })
-              ]
-            )
+                ])
+              ])
+            ])
           ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "clearfix" })
+        ])
       ])
     ])
   }

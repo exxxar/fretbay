@@ -66,29 +66,6 @@
         </div>
         <div class="right-column hidden-sm hidden-xs">
 
-            <!-- facebook -->
-            <div class="clearfix"></div>
-            <div class="col-lg-12">
-                <div class="inner-right col-lg-12 inner-right-fb-widget">
-                    <iframe id="fb_iframe"
-                            src="https://www.facebook.com/plugins/likebox.php?href=https://www.facebook.com/168472786500639&amp;amp;connections=10&amp;amp;stream=false&amp;amp;header=false&amp;amp;width=243&amp;amp;height=414"
-                            scrolling="none" frameborder="0" style="width:243px;height:210px;"
-                            allowtransparency="true"></iframe>
-                    <script type="text/javascript">
-                        function ApplyGPlus() {
-                            if ($(window).width() > 767) {
-
-                                var fbSrc = "https://www.facebook.com/plugins/likebox.php?href=https://www.facebook.com/168472786500639&amp;connections=10&amp;stream=false&amp;header=false&amp;width=243&amp;height=414";
-                                $('#fb_iframe').attr('src', fbSrc);
-                            }
-                        }
-
-                        $(window).on('load', function () {
-                            window.setTimeout(ApplyGPlus, 2000);
-                        })
-                    </script>
-                </div>
-            </div>
         </div>
     </section>
 </template>

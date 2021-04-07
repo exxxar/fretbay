@@ -1,12 +1,5 @@
 <template>
-    <section class="content">
-        <div class="page-topheader">
-            <div class="text-center container">
-                <h1>Frequently asked questions</h1>
-                <p>Consult the frequently asked questions</p>
-            </div>
-        </div>
-        <div class="clearfix"></div><!--clearfix-->
+
 
         <section class="content term-cond-whitebg">
             <div class="container term-cond-bodycontainer">
@@ -16,28 +9,7 @@
                     </div>
                     <!-- fretbat share -->
 
-                    <!-- facebook -->
-                    <div class="clear"></div>
-                    <div class="col-lg-12">
-                        <div class="inner-right col-lg-12 inner-right-fb-widget">
-                            <iframe id="fb_iframe" src="https://www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FFretBaycom-Le-transport-a-votre-facon%2F168472786500639&amp;amp;connections=10&amp;amp;stream=false&amp;amp;header=false&amp;amp;width=243&amp;amp;height=414" scrolling="none" frameborder="0" style="width:243px;height:210px;" allowtransparency="true"></iframe>
 
-                            <script type="text/javascript">
-                                function ApplyGPlus() {
-                                    if($(window).width() > 767){
-
-                                        var fbSrc = "https://www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FFretBaycom-Le-transport-a-votre-facon%2F168472786500639&amp;connections=10&amp;stream=false&amp;header=false&amp;width=243&amp;height=414";
-                                        $('#fb_iframe').attr('src', fbSrc);
-                                    }
-                                }
-                                $(window).on('load', function(){
-                                    window.setTimeout(ApplyGPlus, 1000);
-                                })
-
-                            </script>
-                        </div>
-
-                    </div>
                 </div>
                 <div class="left-column" style="margin-top:30px;">
                     <div class="inner-left">
@@ -553,7 +525,7 @@
             </div>
         </section>
 
-    </section>
+
 </template>
 <script>
     export default {
