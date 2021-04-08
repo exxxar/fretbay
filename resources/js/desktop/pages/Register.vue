@@ -17,11 +17,11 @@
                             </p>
                         </div>
                         <div class="col-md-2 col-sm-2">
-                            <img src="images/dest/etape-charecter1.png" class="img-responsive fix-img">
+                            <img src="images/etape-charecter1.png" class="img-responsive fix-img">
                         </div>
                     </div>
                     <div class="etape-box-btn">
-                        <a href="#" class="btn-etape btn-etape-red">Click here to receive free and non-binding quotes</a>
+                        <a href="/register-user" class="btn-etape btn-etape-red">Click here to receive free and non-binding quotes</a>
                     </div>
                 </div>
                 <div class="etape-box">
@@ -39,11 +39,11 @@
                             </p>
                         </div>
                         <div class="col-md-3 col-sm-3">
-                            <img src="images/dest/etape-charecter2.png" class="img-responsive fix-img">
+                            <img src="images/etape-charecter2.png" class="img-responsive fix-img">
                         </div>
                     </div>
                     <div class="etape-box-btn">
-                        <a href="#" class="btn-etape btn-etape-blue">Register and offer your quotes for free</a>
+                        <a href="/register-transporter" class="btn-etape btn-etape-blue">Register and offer your quotes for free</a>
                     </div>
                 </div>
                 <div class="etape-box">
@@ -63,7 +63,7 @@
                             </p>
                         </div>
                         <div class="col-md-2 col-sm-2">
-                            <img src="images/dest/etape-charecter3.png" class="img-responsive fix-img fix-img-last">
+                            <img src="images/etape-charecter3.png" class="img-responsive fix-img fix-img-last">
                         </div>
                     </div>
                 </div>
@@ -74,3 +74,8 @@
 <script>
     export default {}
 </script>
+<style lang="scss">
+    #fix-etape {
+        padding-top: 100px;
+    }
+</style>

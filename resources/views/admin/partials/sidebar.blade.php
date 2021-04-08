@@ -16,6 +16,7 @@
                 <i class="fab fa-amazon c-sidebar-nav-icon"></i>
                 Объекты</a>
             <ul class="c-sidebar-nav-dropdown-items">
+
                 <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="base/breadcrumb.html"><span
                             class="c-sidebar-nav-icon"></span>Категории объектов</a></li>
                 <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="base/collapse.html"><span
@@ -39,7 +40,7 @@
                 <i class="fab fa-amazon c-sidebar-nav-icon"></i>
                 Пользователи</a>
             <ul class="c-sidebar-nav-dropdown-items">
-                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="base/breadcrumb.html"><span
+                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{{route("admin.users")}}"><span
                             class="c-sidebar-nav-icon"></span>Пользователи</a></li>
                 <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="base/collapse.html"><span
                             class="c-sidebar-nav-icon"></span>Профайлы</a></li>

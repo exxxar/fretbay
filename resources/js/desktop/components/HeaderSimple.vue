@@ -28,4 +28,13 @@
             background: none;
         }
     }
+
+    .main-logo {
+        width: 50px;
+        height: 70px;
+    }
+
+    .logo__list li a {
+        padding:0px 20px;
+    }
 </style>

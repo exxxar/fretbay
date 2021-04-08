@@ -14,7 +14,10 @@
                                 </h2>
                                 <ul class="list-unstyled">
                                     <li>
-                                        <a href="#">Search for a transporter</a>
+                                        <a href="/find-transporter">Search for a transporter</a>
+                                    </li>
+                                    <li>
+                                        <a href="/find-loads">Search for a loads</a>
                                     </li>
                                     <li>
                                         <a href="/benefits-transporter-mover-carrier">I am a transporter</a>
@@ -22,8 +25,9 @@
                                     <li>
                                         <a href="/how-it-works">How does it work?</a>
                                     </li>
+
                                     <li>
-                                        <a href="#">Frequently asked questions</a>
+                                        <a href="/fequently-asked-questions">Frequently asked questions</a>
                                     </li>
                                 </ul>
                             </div>
@@ -41,6 +45,9 @@
                                     <li>
                                         <a href="/recruitment">Recruitment</a>
                                     </li>
+                                    <li>
+                                        <a href="/reviews">Reviews</a>
+                                    </li>
                                 </ul>
                             </div>
                             <div class="col-md-3">
@@ -52,16 +59,16 @@
                                         <a href="/tips-moving">Moving advices</a>
                                     </li>
                                     <li>
-                                        <a href="#">Company move</a>
+                                        <a href="/company-move">Company move</a>
                                     </li>
                                     <li>
-                                        <a href="#">Movers</a>
+                                        <a href="/movers">Movers</a>
                                     </li>
                                     <li>
-                                        <a href="#">eBay Sellers</a>
+                                        <a href="/ebay-sellers">eBay Sellers</a>
                                     </li>
                                     <li>
-                                        <a href="#">Scam Prevention</a>
+                                        <a href="/fraud-prevention">Scam Prevention</a>
                                     </li>
                                 </ul>
                             </div>
@@ -71,16 +78,16 @@
                                 </h2>
                                 <ul class="list-unstyled">
                                     <li>
-                                        <a href="#">Customer testimonials</a>
+                                        <a href="/reviews">Customer testimonials</a>
                                     </li>
                                     <li>
-                                        <a href="#">Quality charter</a>
+                                        <a href="/quality-charter">Quality charter</a>
                                     </li>
                                     <li>
-                                        <a href="#">Privacy</a>
+                                        <a href="/privacy">Privacy</a>
                                     </li>
                                     <li>
-                                        <a href="#">Contact us</a>
+                                        <a href="/contact-us">Contact us</a>
                                     </li>
                                 </ul>
                             </div>

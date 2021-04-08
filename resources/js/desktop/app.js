@@ -20,6 +20,15 @@ import Notifications from 'vue-notification'
 
 Vue.use(Notifications)
 
+import VueLazyload from 'vue-lazyload'
+
+Vue.use(VueLazyload, {
+    preLoad: 1.3,
+    error: "/images/common/icons/general/content-loader.gif",
+    loading: "/images/common/icons/general/content-loader.gif" ,
+    attempt: 1
+})
+
 
 Vue.component('preloader-component', require('../desktop/components/Preloader.vue').default);
 Vue.component('footer-component', require('../desktop/components/Footer.vue').default);
@@ -30,7 +39,7 @@ Vue.component('top-movers-component', require('../desktop/components/TopMovers.v
 Vue.component('modals-component', require('../desktop/components/Modals.vue').default);
 Vue.component('system-notification-component', require('../desktop/components/SystemNotification.vue').default);
 
-//pages
+//pages for users
 Vue.component('index-page', require('../desktop/pages/Index.vue').default);
 Vue.component('register-page', require('../desktop/pages/Register.vue').default);
 
@@ -54,6 +63,8 @@ Vue.component('who-we-are-page', require('../desktop/pages/WhoWeAre.vue').defaul
 Vue.component('quality-charter-page', require('../desktop/pages/QualityCharter.vue').default);
 Vue.component('fraud-prevention-page', require('../desktop/pages/FraudPrevention.vue').default);
 Vue.component('tips-moving-page', require('../desktop/pages/TipsMoving.vue').default);
+Vue.component('ebay-sellers-page', require('../desktop/pages/EbaySellers.vue').default);
+
 
 
 

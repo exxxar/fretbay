@@ -9,7 +9,7 @@
                                 Looking for professional carriers?
                             </h2>
                             <div class="col-sm-12">
-                                <img src="images/dest/shipperSignPimage.png" class="img-responsive fix-img">
+                                <img src="images/shipperSignPimage.png" class="img-responsive fix-img">
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-6">

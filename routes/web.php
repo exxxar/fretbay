@@ -28,6 +28,13 @@ Route::view("/benefits-transporter-mover-carrier", "desktop.pages.benefits-trans
 Route::view("/recruitment", "desktop.pages.recruitment")->name("desktop.recruitment");
 Route::view("/tips-moving", "desktop.pages.tips-moving")->name("desktop.tips-moving");
 Route::view("/search-transporter-mover-carrier", "desktop.pages.search-transporter-mover-carrier")->name("desktop.search-transporter-mover-carrier");
+Route::view("/company-move", "desktop.pages.company-move")->name("desktop.company-move");
+Route::view("/reviews", "desktop.pages.reviews")->name("desktop.reviews");
+Route::view("/ebay-sellers", "desktop.pages.ebay-sellers")->name("desktop.ebay-sellers");
+Route::view("/quality-charter", "desktop.pages.quality-charter")->name("desktop.quality-charter");
+Route::view("/privacy", "desktop.pages.privacy")->name("desktop.privacy");
+Route::view("/contact-us", "desktop.pages.contact-us")->name("desktop.contact-us");
+Route::view("/fraud-prevention", "desktop.pages.fraud-prevention")->name("desktop.fraud-prevention");
 
 Route::view("/register", "desktop.pages.register")->name("desktop.register");
 Route::view("/register-transporter", "desktop.pages.register-transporter")->name("desktop.register-transporter");
@@ -45,6 +52,7 @@ Route::group(['middleware' => 'role:web-developer'], function () {
 Route::group(["prefix" => "admin"], function () {
     Route::view("/", "admin.pages.index")->name("admin.index");
     Route::view("/login", "admin.pages.login")->name("admin.login");
+    Route::view("/users", "admin.pages.users")->name("admin.users");
 });
 //Auth::routes();
 

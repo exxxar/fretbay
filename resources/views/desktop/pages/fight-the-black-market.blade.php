@@ -2,6 +2,6 @@
 
 @section("content")
     <header-content-component></header-content-component>
-    <fequently-asked-questions-page></fequently-asked-questions-page>
+    <fight-the-black-market-page></fight-the-black-market-page>
     <footer-component></footer-component>
 @endsection
