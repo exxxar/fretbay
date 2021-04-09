@@ -10,181 +10,11 @@
                         <type-selector v-on:select-type="selectType"/>
 
 
-                        <div class="row mt-2">
-                            <div class="col-sm-6">
-                                <div class="form-fields-wrap content-box-gray content-box-padding">
-                                    <div class="form-group ">
-                                        <input type="text" class="form-control"
-                                               placeholder="3-seater Sofa, chairs, desks...">
-                                    </div>
+                        <article-form/>
 
-                                    <form v-on:submit.prevent="submit" class="content-box-gray">
+                        <volume-form/>
 
-
-                                        <h6>Information about your equipment <span
-                                            class="text-primary d-inline">(required)</span></h6>
-
-                                        <div class="row row-narrow">
-                                            <div class="col-sm-12 form-group ">
-                                                <input type="text" required="" class="form-control "
-                                                       placeholder="Article name">
-                                            </div>
-                                        </div>
-                                        <div class="row row-narrow">
-                                            <div class="col-sm-4">
-                                                <div class="form-group ">
-                                                    <div class="input-has-icon-right">
-                                                        <input type="hidden" class="form-control" placeholder=""
-                                                               autocomplete="off">
-                                                        <input type="text" class="form-control"
-                                                               placeholder="Length (cm)" required="">
-                                                        <span class="rel-icon rel-icon-square"><img
-                                                            src="/images/common/icons/units/longeur.svg"
-                                                            alt=""></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-4">
-                                                <div class="form-group ">
-                                                    <div class="input-has-icon-right">
-                                                        <input type="text" class="form-control" placeholder="Width (cm)"
-                                                               required="">
-                                                        <span class="rel-icon rel-icon-square"><img
-                                                            src="/images/common/icons/units/largeur.svg"
-                                                            alt=""></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-4">
-                                                <div class="form-group ">
-                                                    <div class="input-has-icon-right">
-                                                        <input type="text" class="form-control"
-                                                               placeholder="Height (cm)" required="">
-                                                        <span class="rel-icon rel-icon-square"><img
-                                                            src="/images/common/icons/units/hauteur.svg"
-                                                            alt=""></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row row-narrow">
-                                            <div class="col-sm-6">
-                                                <div class="form-group ">
-                                                    <div class="input-has-icon-right">
-                                                        <input type="text" class="form-control" placeholder="Weight"
-                                                               required="">
-                                                        <span class="rel-icon rel-icon-square"><img
-                                                            src="/images/common/icons/units/poids.svg"
-                                                            alt=""></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <div class="form-group">
-                                                    <div class="input-has-icon-right">
-                                                        <input type="text"
-                                                               class="form-control"
-                                                               placeholder="Quantity" required="">
-                                                        <span class="rel-icon rel-icon-square"><img
-                                                            src="/images/common/icons/units/quantity.svg"
-                                                            alt=""></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="article-overlay-btns">
-                                            <button type="submit" class="btn btn-primary" :disabled="true">Add article
-                                            </button>
-
-                                        </div>
-                                    </form>
-
-                                </div>
-                            </div>
-                            <div class="col-sm-6 bg-gray-xs">
-                                <div class="article-section">
-
-                                    <div class="articles-list-scroll">
-
-                                            <ul class="articles-list">
-                                                <li>
-                                                    <div class="article-header">
-                                                        <div class="article-controls">
-                                                            <a class="article-edit">
-                                                                edit-icon
-                                                            </a>
-                                                            <a  class="article-delete">
-                                                                delete-icon
-                                                            </a>
-                                                        </div>
-                                                        <h4 class="article-title">asdasd</h4>
-                                                    </div>
-                                                    <ul class="list-group">
-                                                        <li class="list-group-item">
-                                                            <span class="article-unit-text">Height (cm)</span>
-
-
-                                                            <span class="badge">123232</span>
-                                                        </li>
-
-                                                        <li class="list-group-item">
-                                                            <span class="article-unit-text">Height (cm)</span>
-
-
-                                                            <span class="badge">123232</span>
-                                                        </li>
-
-                                                        <li class="list-group-item">
-                                                            <span class="article-unit-text">Height (cm)</span>
-
-
-                                                            <span class="badge">123232</span>
-                                                        </li>
-
-
-                                                        <li class="list-group-item">
-                                                            <span class="article-unit-text">Height (cm)</span>
-
-
-                                                            <span class="badge">123232</span>
-                                                        </li>
-
-
-                                                        <li class="list-group-item">
-                                                            <span class="article-unit-text">Height (cm)</span>
-
-
-                                                            <span class="badge">123232</span>
-                                                        </li>
-
-
-                                                        <li class="list-group-item">
-                                                            <span class="article-unit-text">Height (cm)</span>
-
-
-                                                            <span class="badge">123232</span>
-                                                        </li>
-
-
-                                                        <li class="list-group-item">
-                                                            <span class="article-unit-text">Height (cm)</span>
-
-
-                                                            <span class="badge">123232</span>
-                                                        </li>
-
-
-                                                    </ul>
-                                                </li>
-                                            </ul>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </div>
+                        <inventory-form/>
 
                     </div>
 
@@ -221,10 +51,13 @@
 <script>
     import Steps from '../components/FindTransporter/Steps'
     import TypeSelector from '../components/FindTransporter/TypeSelector'
+    import ArticleForm from '../components/FindTransporter/ArticleForm'
+    import VolumeForm from '../components/FindTransporter/VolumeForm'
+    import InventoryForm from '../components/FindTransporter/InventoryForm'
 
     export default {
         components: {
-            Steps, TypeSelector
+            Steps, TypeSelector, ArticleForm, VolumeForm, InventoryForm
         },
         data() {
             return {
@@ -351,30 +184,6 @@
     }
 
 
-    .content-box-gray {
-        background: #f3f4f8;
-        border-radius: 12px;
-        padding: 10px;
-        box-sizing: border-box;
 
-        .input-has-icon-right {
-            position: relative;
-
-            input {
-                font-size: 12px;
-            }
-
-            .rel-icon {
-                position: absolute;
-                right: 0px;
-                top: 0px;
-
-                img {
-                    width: 30px;
-                    height: 30px;
-                }
-            }
-        }
-    }
 </style>
 

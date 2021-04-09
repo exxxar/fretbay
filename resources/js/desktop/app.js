@@ -39,6 +39,7 @@ Vue.component('top-movers-component', require('../desktop/components/TopMovers.v
 Vue.component('modals-component', require('../desktop/components/Modals.vue').default);
 Vue.component('system-notification-component', require('../desktop/components/SystemNotification.vue').default);
 
+
 //pages for users
 Vue.component('index-page', require('../desktop/pages/Index.vue').default);
 Vue.component('register-page', require('../desktop/pages/Register.vue').default);
