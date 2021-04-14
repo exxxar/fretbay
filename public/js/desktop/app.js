@@ -2283,6 +2283,94 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/FindTransporter/TypeOfTransport.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/components/FindTransporter/TypeOfTransport.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue_custom_scrollbar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-custom-scrollbar */ "./node_modules/vue-custom-scrollbar/dist/vueScrollbar.umd.min.js");
+/* harmony import */ var vue_custom_scrollbar__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_custom_scrollbar__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vue_custom_scrollbar_dist_vueScrollbar_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-custom-scrollbar/dist/vueScrollbar.css */ "./node_modules/vue-custom-scrollbar/dist/vueScrollbar.css");
+/* harmony import */ var vue_custom_scrollbar_dist_vueScrollbar_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_custom_scrollbar_dist_vueScrollbar_css__WEBPACK_IMPORTED_MODULE_1__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    vueCustomScrollbar: vue_custom_scrollbar__WEBPACK_IMPORTED_MODULE_0___default.a
+  },
+  data: function data() {
+    return {
+      settings: {
+        suppressScrollY: false,
+        suppressScrollX: false,
+        wheelPropagation: false
+      },
+      list: [{
+        id: 1,
+        title: "Caravans"
+      }, {
+        id: 2,
+        title: "Vehicle spare parts"
+      }, {
+        id: 3,
+        title: "Cars and vans"
+      }, {
+        id: 4,
+        title: "Recreational vehicles (RVs)"
+      }, {
+        id: 5,
+        title: "Trailers"
+      }, {
+        id: 6,
+        title: "Aircrafts"
+      }, {
+        id: 7,
+        title: "Vintage vehicles"
+      }, {
+        id: 8,
+        title: "HGVs and construction vehicles"
+      }, {
+        id: 9,
+        title: "Tractors and agricultural equipment"
+      }, {
+        id: 10,
+        title: "Other vehicles"
+      }, {
+        id: 11,
+        title: "Vehicules (what’s this one for ?)"
+      }]
+    };
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/FindTransporter/TypeSelector.vue?vue&type=script&lang=js&":
 /*!***********************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/components/FindTransporter/TypeSelector.vue?vue&type=script&lang=js& ***!
@@ -4259,6 +4347,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_FindTransporter_ArticleForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/FindTransporter/ArticleForm */ "./resources/js/desktop/components/FindTransporter/ArticleForm.vue");
 /* harmony import */ var _components_FindTransporter_VolumeForm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/FindTransporter/VolumeForm */ "./resources/js/desktop/components/FindTransporter/VolumeForm.vue");
 /* harmony import */ var _components_FindTransporter_InventoryForm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/FindTransporter/InventoryForm */ "./resources/js/desktop/components/FindTransporter/InventoryForm.vue");
+/* harmony import */ var _components_FindTransporter_TypeOfTransport__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/FindTransporter/TypeOfTransport */ "./resources/js/desktop/components/FindTransporter/TypeOfTransport.vue");
+/* harmony import */ var _components_FindTransporter_MovingPackageForm__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/FindTransporter/MovingPackageForm */ "./resources/js/desktop/components/FindTransporter/MovingPackageForm.vue");
 //
 //
 //
@@ -4309,6 +4399,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+
+
 
 
 
@@ -4320,7 +4416,9 @@ __webpack_require__.r(__webpack_exports__);
     TypeSelector: _components_FindTransporter_TypeSelector__WEBPACK_IMPORTED_MODULE_1__["default"],
     ArticleForm: _components_FindTransporter_ArticleForm__WEBPACK_IMPORTED_MODULE_2__["default"],
     VolumeForm: _components_FindTransporter_VolumeForm__WEBPACK_IMPORTED_MODULE_3__["default"],
-    InventoryForm: _components_FindTransporter_InventoryForm__WEBPACK_IMPORTED_MODULE_4__["default"]
+    InventoryForm: _components_FindTransporter_InventoryForm__WEBPACK_IMPORTED_MODULE_4__["default"],
+    TypeOfTransport: _components_FindTransporter_TypeOfTransport__WEBPACK_IMPORTED_MODULE_5__["default"],
+    MovingPackageForm: _components_FindTransporter_MovingPackageForm__WEBPACK_IMPORTED_MODULE_6__["default"]
   },
   data: function data() {
     return {
@@ -5126,6 +5224,25 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -5691,14 +5808,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -11900,6 +12009,25 @@ exports.push([module.i, ".volume-field-wrap.blue-field input {\n  background: #d
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/FindTransporter/MovingPackageForm.vue?vue&type=style&index=0&lang=scss&":
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/components/FindTransporter/MovingPackageForm.vue?vue&type=style&index=0&lang=scss& ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".item-moving-container {\n  background-color: white;\n  border-radius: 10px;\n  padding: 10px;\n}\n.item-moving-container .col-3 {\n  margin: 0;\n  padding: 0;\n}\n.item-moving-package {\n  padding: 10px;\n  position: relative;\n}\n.item-moving-package:hover {\n  cursor: pointer;\n}\n.item-moving-package:hover .package-header .circle {\n  background-color: #35c86f;\n}\n.item-moving-package:hover .package-body {\n  background-color: #f4f4f4;\n}\n.item-moving-package:hover .package-body ul li:after {\n  content: \"\";\n  background: url(https://fretbay.com/en/assets/images/common/icons/general/circle-check-success.svg) no-repeat;\n}\n.item-moving-package:hover .package-body .btn-custom-gray {\n  background: #e3342f;\n}\n.item-moving-package .package-header {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  position: relative;\n  height: 80px;\n}\n.item-moving-package .package-header .circle {\n  width: 100px;\n  height: 100px;\n  border-radius: 50%;\n  background: #3D4E60;\n  position: absolute;\n  bottom: -35px;\n  border: 10px white solid;\n  padding: 10px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.item-moving-package .package-body {\n  background-color: #ededed;\n  border-radius: 10px;\n  padding: 60px 15px 10px 15px;\n}\n.item-moving-package .package-body h3 {\n  color: #3D4E60;\n}\n.item-moving-package .package-body p {\n  line-height: 150%;\n  font-size: 12px;\n  padding: 20px;\n  text-align: center;\n}\n.item-moving-package .package-body ul li {\n  width: 100%;\n  line-height: 150%;\n  margin-bottom: 15px;\n  font-size: 14px;\n  padding: 0px 0px 0px 28px;\n  position: relative;\n}\n.item-moving-package .package-body ul li:after {\n  content: \"\";\n  background: url(https://fretbay.com/en/assets/images/common/icons/general/circle-check-gray.svg) no-repeat;\n  /* left: -27px; */\n  left: -3px;\n  width: 20px;\n  height: 20px;\n  /* background-color: red; */\n  top: 4px;\n  position: absolute;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/FindTransporter/Steps.vue?vue&type=style&index=0&lang=scss&":
 /*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/components/FindTransporter/Steps.vue?vue&type=style&index=0&lang=scss& ***!
@@ -11913,6 +12041,25 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 // module
 exports.push([module.i, ".top-wrap {\n  margin-top: 80px;\n  background: #3D4E60;\n}\n.top-wrap .done {\n  color: lightgrey;\n}\n.top-wrap .done.active {\n  color: white;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/FindTransporter/TypeOfTransport.vue?vue&type=style&index=0&lang=scss&":
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/components/FindTransporter/TypeOfTransport.vue?vue&type=style&index=0&lang=scss& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".scroll-area {\n  position: relative;\n  margin: auto;\n  width: 100%;\n  height: 400px;\n}\n.scroll-area ul {\n  width: 100%;\n  height: 100%;\n}\n.scroll-area ul li.item {\n  width: 100%;\n  padding: 10px;\n  cursor: pointer;\n}\n.scroll-area ul li.item:nth-of-type(2n) {\n  background: #f6f6f6;\n}\n.scroll-area ul li.item:hover {\n  background: green;\n  color: white;\n}", ""]);
 
 // exports
 
@@ -12122,6 +12269,25 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 // module
 exports.push([module.i, "#fix-etape {\n  padding-top: 100px;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-custom-scrollbar/dist/vueScrollbar.css":
+/*!*************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/vue-custom-scrollbar/dist/vueScrollbar.css ***!
+  \*************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".ps{overflow:hidden!important;overflow-anchor:none;-ms-overflow-style:none;touch-action:auto;-ms-touch-action:auto}.ps__rail-x{height:15px;bottom:0}.ps__rail-x,.ps__rail-y{display:none;opacity:0;transition:background-color .2s linear,opacity .2s linear;-webkit-transition:background-color .2s linear,opacity .2s linear;position:absolute}.ps__rail-y{width:15px;right:0}.ps--active-x>.ps__rail-x,.ps--active-y>.ps__rail-y{display:block;background-color:transparent}.ps--focus>.ps__rail-x,.ps--focus>.ps__rail-y,.ps--scrolling-x>.ps__rail-x,.ps--scrolling-y>.ps__rail-y,.ps:hover>.ps__rail-x,.ps:hover>.ps__rail-y{opacity:.6}.ps .ps__rail-x.ps--clicking,.ps .ps__rail-x:focus,.ps .ps__rail-x:hover,.ps .ps__rail-y.ps--clicking,.ps .ps__rail-y:focus,.ps .ps__rail-y:hover{background-color:#eee;opacity:.9}.ps__thumb-x{transition:background-color .2s linear,height .2s ease-in-out;-webkit-transition:background-color .2s linear,height .2s ease-in-out;height:6px;bottom:2px}.ps__thumb-x,.ps__thumb-y{background-color:#aaa;border-radius:6px;position:absolute}.ps__thumb-y{transition:background-color .2s linear,width .2s ease-in-out;-webkit-transition:background-color .2s linear,width .2s ease-in-out;width:6px;right:2px}.ps__rail-x.ps--clicking .ps__thumb-x,.ps__rail-x:focus>.ps__thumb-x,.ps__rail-x:hover>.ps__thumb-x{background-color:#999;height:11px}.ps__rail-y.ps--clicking .ps__thumb-y,.ps__rail-y:focus>.ps__thumb-y,.ps__rail-y:hover>.ps__thumb-y{background-color:#999;width:11px}@supports (-ms-overflow-style:none){.ps{overflow:auto!important}}@media (-ms-high-contrast:none),screen and (-ms-high-contrast:active){.ps{overflow:auto!important}}.ps-container{position:relative}", ""]);
 
 // exports
 
@@ -43404,6 +43570,36 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/FindTransporter/MovingPackageForm.vue?vue&type=style&index=0&lang=scss&":
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/components/FindTransporter/MovingPackageForm.vue?vue&type=style&index=0&lang=scss& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src??ref--8-2!../../../../../node_modules/sass-loader/dist/cjs.js??ref--8-3!../../../../../node_modules/vue-loader/lib??vue-loader-options!./MovingPackageForm.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/FindTransporter/MovingPackageForm.vue?vue&type=style&index=0&lang=scss&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/FindTransporter/Steps.vue?vue&type=style&index=0&lang=scss&":
 /*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/components/FindTransporter/Steps.vue?vue&type=style&index=0&lang=scss& ***!
@@ -43413,6 +43609,36 @@ if(false) {}
 
 
 var content = __webpack_require__(/*! !../../../../../node_modules/css-loader!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src??ref--8-2!../../../../../node_modules/sass-loader/dist/cjs.js??ref--8-3!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Steps.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/FindTransporter/Steps.vue?vue&type=style&index=0&lang=scss&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/FindTransporter/TypeOfTransport.vue?vue&type=style&index=0&lang=scss&":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/components/FindTransporter/TypeOfTransport.vue?vue&type=style&index=0&lang=scss& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src??ref--8-2!../../../../../node_modules/sass-loader/dist/cjs.js??ref--8-3!../../../../../node_modules/vue-loader/lib??vue-loader-options!./TypeOfTransport.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/FindTransporter/TypeOfTransport.vue?vue&type=style&index=0&lang=scss&");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -44345,6 +44571,54 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
                          (this && this.clearImmediate);
 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
+
+/***/ }),
+
+/***/ "./node_modules/vue-custom-scrollbar/dist/vueScrollbar.css":
+/*!*****************************************************************!*\
+  !*** ./node_modules/vue-custom-scrollbar/dist/vueScrollbar.css ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../css-loader??ref--7-1!../../postcss-loader/src??ref--7-2!./vueScrollbar.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-custom-scrollbar/dist/vueScrollbar.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/vue-custom-scrollbar/dist/vueScrollbar.umd.min.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/vue-custom-scrollbar/dist/vueScrollbar.umd.min.js ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+(function(t,e){ true?module.exports=e():undefined})("undefined"!==typeof self?self:this,(function(){return function(t){var e={};function n(i){if(e[i])return e[i].exports;var r=e[i]={i:i,l:!1,exports:{}};return t[i].call(r.exports,r,r.exports,n),r.l=!0,r.exports}return n.m=t,n.c=e,n.d=function(t,e,i){n.o(t,e)||Object.defineProperty(t,e,{enumerable:!0,get:i})},n.r=function(t){"undefined"!==typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})},n.t=function(t,e){if(1&e&&(t=n(t)),8&e)return t;if(4&e&&"object"===typeof t&&t&&t.__esModule)return t;var i=Object.create(null);if(n.r(i),Object.defineProperty(i,"default",{enumerable:!0,value:t}),2&e&&"string"!=typeof t)for(var r in t)n.d(i,r,function(e){return t[e]}.bind(null,r));return i},n.n=function(t){var e=t&&t.__esModule?function(){return t["default"]}:function(){return t};return n.d(e,"a",e),e},n.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},n.p="",n(n.s="fa7c")}({"3ae1":function(t,e,n){"use strict";var i=n("b843"),r=n.n(i);r.a},"79e4":function(t,e,n){var i,r,l;(function(n,o){r=[],i=o,l="function"===typeof i?i.apply(e,r):i,void 0===l||(t.exports=l)})("undefined"!==typeof self&&self,(function(){function t(){var e=Object.getOwnPropertyDescriptor(document,"currentScript");if(!e&&"currentScript"in document&&document.currentScript)return document.currentScript;if(e&&e.get!==t&&document.currentScript)return document.currentScript;try{throw new Error}catch(f){var n,i,r,l=/.*at [^(]*\((.*):(.+):(.+)\)$/gi,o=/@([^@]*):(\d+):(\d+)\s*$/gi,s=l.exec(f.stack)||o.exec(f.stack),a=s&&s[1]||!1,c=s&&s[2]||!1,h=document.location.href.replace(document.location.hash,""),u=document.getElementsByTagName("script");a===h&&(n=document.documentElement.outerHTML,i=new RegExp("(?:[^\\n]+?\\n){0,"+(c-2)+"}[^<]*<script>([\\d\\D]*?)<\\/script>[\\d\\D]*","i"),r=n.replace(i,"$1").trim());for(var d=0;d<u.length;d++){if("interactive"===u[d].readyState)return u[d];if(u[d].src===a)return u[d];if(a===h&&u[d].innerHTML&&u[d].innerHTML.trim()===r)return u[d]}return null}}return t}))},b843:function(t,e,n){},fa7c:function(t,e,n){"use strict";if(n.r(e),"undefined"!==typeof window){var i=window.document.currentScript,r=n("79e4");i=r(),"currentScript"in document||Object.defineProperty(document,"currentScript",{get:r});var l=i&&i.src.match(/(.+\/)[^/]+\.js(\?.*)?$/);l&&(n.p=l[1])}var o=function(){var t=this,e=t.$createElement,n=t._self._c||e;return n(t.$props.tagname,{tag:"section",staticClass:"ps-container",on:{"ps-scroll-y":t.scrollHandle,"ps-scroll-x":t.scrollHandle,"ps-scroll-up":t.scrollHandle,"ps-scroll-down":t.scrollHandle,"ps-scroll-left":t.scrollHandle,"ps-scroll-right":t.scrollHandle,"ps-y-reach-start":t.scrollHandle,"ps-y-reach-end":t.scrollHandle,"ps-x-reach-start":t.scrollHandle,"ps-x-reach-end":t.scrollHandle}},[t._t("default")],2)},s=[];
+/*!
+ * perfect-scrollbar v1.5.0
+ * Copyright 2020 Hyunje Jun, MDBootstrap and Contributors
+ * Licensed under MIT
+ */
+function a(t){return getComputedStyle(t)}function c(t,e){for(var n in e){var i=e[n];"number"===typeof i&&(i+="px"),t.style[n]=i}return t}function h(t){var e=document.createElement("div");return e.className=t,e}var u="undefined"!==typeof Element&&(Element.prototype.matches||Element.prototype.webkitMatchesSelector||Element.prototype.mozMatchesSelector||Element.prototype.msMatchesSelector);function d(t,e){if(!u)throw new Error("No element matching method supported");return u.call(t,e)}function f(t){t.remove?t.remove():t.parentNode&&t.parentNode.removeChild(t)}function p(t,e){return Array.prototype.filter.call(t.children,(function(t){return d(t,e)}))}var b={main:"ps",rtl:"ps__rtl",element:{thumb:function(t){return"ps__thumb-"+t},rail:function(t){return"ps__rail-"+t},consuming:"ps__child--consume"},state:{focus:"ps--focus",clicking:"ps--clicking",active:function(t){return"ps--active-"+t},scrolling:function(t){return"ps--scrolling-"+t}}},g={x:null,y:null};function v(t,e){var n=t.element.classList,i=b.state.scrolling(e);n.contains(i)?clearTimeout(g[e]):n.add(i)}function m(t,e){g[e]=setTimeout((function(){return t.isAlive&&t.element.classList.remove(b.state.scrolling(e))}),t.settings.scrollingThreshold)}function y(t,e){v(t,e),m(t,e)}var w=function(t){this.element=t,this.handlers={}},Y={isEmpty:{configurable:!0}};w.prototype.bind=function(t,e){"undefined"===typeof this.handlers[t]&&(this.handlers[t]=[]),this.handlers[t].push(e),this.element.addEventListener(t,e,!1)},w.prototype.unbind=function(t,e){var n=this;this.handlers[t]=this.handlers[t].filter((function(i){return!(!e||i===e)||(n.element.removeEventListener(t,i,!1),!1)}))},w.prototype.unbindAll=function(){for(var t in this.handlers)this.unbind(t)},Y.isEmpty.get=function(){var t=this;return Object.keys(this.handlers).every((function(e){return 0===t.handlers[e].length}))},Object.defineProperties(w.prototype,Y);var X=function(){this.eventElements=[]};function W(t){if("function"===typeof window.CustomEvent)return new CustomEvent(t);var e=document.createEvent("CustomEvent");return e.initCustomEvent(t,!1,!1,void 0),e}function S(t,e,n,i,r){var l;if(void 0===i&&(i=!0),void 0===r&&(r=!1),"top"===e)l=["contentHeight","containerHeight","scrollTop","y","up","down"];else{if("left"!==e)throw new Error("A proper axis should be provided");l=["contentWidth","containerWidth","scrollLeft","x","left","right"]}L(t,n,l,i,r)}function L(t,e,n,i,r){var l=n[0],o=n[1],s=n[2],a=n[3],c=n[4],h=n[5];void 0===i&&(i=!0),void 0===r&&(r=!1);var u=t.element;t.reach[a]=null,u[s]<1&&(t.reach[a]="start"),u[s]>t[l]-t[o]-1&&(t.reach[a]="end"),e&&(u.dispatchEvent(W("ps-scroll-"+a)),e<0?u.dispatchEvent(W("ps-scroll-"+c)):e>0&&u.dispatchEvent(W("ps-scroll-"+h)),i&&y(t,a)),t.reach[a]&&(e||r)&&u.dispatchEvent(W("ps-"+a+"-reach-"+t.reach[a]))}function T(t){return parseInt(t,10)||0}function H(t){return d(t,"input,[contenteditable]")||d(t,"select,[contenteditable]")||d(t,"textarea,[contenteditable]")||d(t,"button,[contenteditable]")}function R(t){var e=a(t);return T(e.width)+T(e.paddingLeft)+T(e.paddingRight)+T(e.borderLeftWidth)+T(e.borderRightWidth)}X.prototype.eventElement=function(t){var e=this.eventElements.filter((function(e){return e.element===t}))[0];return e||(e=new w(t),this.eventElements.push(e)),e},X.prototype.bind=function(t,e,n){this.eventElement(t).bind(e,n)},X.prototype.unbind=function(t,e,n){var i=this.eventElement(t);i.unbind(e,n),i.isEmpty&&this.eventElements.splice(this.eventElements.indexOf(i),1)},X.prototype.unbindAll=function(){this.eventElements.forEach((function(t){return t.unbindAll()})),this.eventElements=[]},X.prototype.once=function(t,e,n){var i=this.eventElement(t),r=function(t){i.unbind(e,r),n(t)};i.bind(e,r)};var _={isWebKit:"undefined"!==typeof document&&"WebkitAppearance"in document.documentElement.style,supportsTouch:"undefined"!==typeof window&&("ontouchstart"in window||"maxTouchPoints"in window.navigator&&window.navigator.maxTouchPoints>0||window.DocumentTouch&&document instanceof window.DocumentTouch),supportsIePointer:"undefined"!==typeof navigator&&navigator.msMaxTouchPoints,isChrome:"undefined"!==typeof navigator&&/Chrome/i.test(navigator&&navigator.userAgent)};function E(t){var e=t.element,n=Math.floor(e.scrollTop),i=e.getBoundingClientRect();t.containerWidth=Math.ceil(i.width),t.containerHeight=Math.ceil(i.height),t.contentWidth=e.scrollWidth,t.contentHeight=e.scrollHeight,e.contains(t.scrollbarXRail)||(p(e,b.element.rail("x")).forEach((function(t){return f(t)})),e.appendChild(t.scrollbarXRail)),e.contains(t.scrollbarYRail)||(p(e,b.element.rail("y")).forEach((function(t){return f(t)})),e.appendChild(t.scrollbarYRail)),!t.settings.suppressScrollX&&t.containerWidth+t.settings.scrollXMarginOffset<t.contentWidth?(t.scrollbarXActive=!0,t.railXWidth=t.containerWidth-t.railXMarginWidth,t.railXRatio=t.containerWidth/t.railXWidth,t.scrollbarXWidth=x(t,T(t.railXWidth*t.containerWidth/t.contentWidth)),t.scrollbarXLeft=T((t.negativeScrollAdjustment+e.scrollLeft)*(t.railXWidth-t.scrollbarXWidth)/(t.contentWidth-t.containerWidth))):t.scrollbarXActive=!1,!t.settings.suppressScrollY&&t.containerHeight+t.settings.scrollYMarginOffset<t.contentHeight?(t.scrollbarYActive=!0,t.railYHeight=t.containerHeight-t.railYMarginHeight,t.railYRatio=t.containerHeight/t.railYHeight,t.scrollbarYHeight=x(t,T(t.railYHeight*t.containerHeight/t.contentHeight)),t.scrollbarYTop=T(n*(t.railYHeight-t.scrollbarYHeight)/(t.contentHeight-t.containerHeight))):t.scrollbarYActive=!1,t.scrollbarXLeft>=t.railXWidth-t.scrollbarXWidth&&(t.scrollbarXLeft=t.railXWidth-t.scrollbarXWidth),t.scrollbarYTop>=t.railYHeight-t.scrollbarYHeight&&(t.scrollbarYTop=t.railYHeight-t.scrollbarYHeight),M(e,t),t.scrollbarXActive?e.classList.add(b.state.active("x")):(e.classList.remove(b.state.active("x")),t.scrollbarXWidth=0,t.scrollbarXLeft=0,e.scrollLeft=!0===t.isRtl?t.contentWidth:0),t.scrollbarYActive?e.classList.add(b.state.active("y")):(e.classList.remove(b.state.active("y")),t.scrollbarYHeight=0,t.scrollbarYTop=0,e.scrollTop=0)}function x(t,e){return t.settings.minScrollbarLength&&(e=Math.max(e,t.settings.minScrollbarLength)),t.settings.maxScrollbarLength&&(e=Math.min(e,t.settings.maxScrollbarLength)),e}function M(t,e){var n={width:e.railXWidth},i=Math.floor(t.scrollTop);e.isRtl?n.left=e.negativeScrollAdjustment+t.scrollLeft+e.containerWidth-e.contentWidth:n.left=t.scrollLeft,e.isScrollbarXUsingBottom?n.bottom=e.scrollbarXBottom-i:n.top=e.scrollbarXTop+i,c(e.scrollbarXRail,n);var r={top:i,height:e.railYHeight};e.isScrollbarYUsingRight?e.isRtl?r.right=e.contentWidth-(e.negativeScrollAdjustment+t.scrollLeft)-e.scrollbarYRight-e.scrollbarYOuterWidth-9:r.right=e.scrollbarYRight-t.scrollLeft:e.isRtl?r.left=e.negativeScrollAdjustment+t.scrollLeft+2*e.containerWidth-e.contentWidth-e.scrollbarYLeft-e.scrollbarYOuterWidth:r.left=e.scrollbarYLeft+t.scrollLeft,c(e.scrollbarYRail,r),c(e.scrollbarX,{left:e.scrollbarXLeft,width:e.scrollbarXWidth-e.railBorderXWidth}),c(e.scrollbarY,{top:e.scrollbarYTop,height:e.scrollbarYHeight-e.railBorderYWidth})}function A(t){t.element;t.event.bind(t.scrollbarY,"mousedown",(function(t){return t.stopPropagation()})),t.event.bind(t.scrollbarYRail,"mousedown",(function(e){var n=e.pageY-window.pageYOffset-t.scrollbarYRail.getBoundingClientRect().top,i=n>t.scrollbarYTop?1:-1;t.element.scrollTop+=i*t.containerHeight,E(t),e.stopPropagation()})),t.event.bind(t.scrollbarX,"mousedown",(function(t){return t.stopPropagation()})),t.event.bind(t.scrollbarXRail,"mousedown",(function(e){var n=e.pageX-window.pageXOffset-t.scrollbarXRail.getBoundingClientRect().left,i=n>t.scrollbarXLeft?1:-1;t.element.scrollLeft+=i*t.containerWidth,E(t),e.stopPropagation()}))}function P(t){C(t,["containerWidth","contentWidth","pageX","railXWidth","scrollbarX","scrollbarXWidth","scrollLeft","x","scrollbarXRail"]),C(t,["containerHeight","contentHeight","pageY","railYHeight","scrollbarY","scrollbarYHeight","scrollTop","y","scrollbarYRail"])}function C(t,e){var n=e[0],i=e[1],r=e[2],l=e[3],o=e[4],s=e[5],a=e[6],c=e[7],h=e[8],u=t.element,d=null,f=null,p=null;function g(e){e.touches&&e.touches[0]&&(e[r]=e.touches[0].pageY),u[a]=d+p*(e[r]-f),v(t,c),E(t),e.stopPropagation(),e.preventDefault()}function y(){m(t,c),t[h].classList.remove(b.state.clicking),t.event.unbind(t.ownerDocument,"mousemove",g)}function w(e,o){d=u[a],o&&e.touches&&(e[r]=e.touches[0].pageY),f=e[r],p=(t[i]-t[n])/(t[l]-t[s]),o?t.event.bind(t.ownerDocument,"touchmove",g):(t.event.bind(t.ownerDocument,"mousemove",g),t.event.once(t.ownerDocument,"mouseup",y),e.preventDefault()),t[h].classList.add(b.state.clicking),e.stopPropagation()}t.event.bind(t[o],"mousedown",(function(t){w(t)})),t.event.bind(t[o],"touchstart",(function(t){w(t,!0)}))}function k(t){var e=t.element,n=function(){return d(e,":hover")},i=function(){return d(t.scrollbarX,":focus")||d(t.scrollbarY,":focus")};function r(n,i){var r=Math.floor(e.scrollTop);if(0===n){if(!t.scrollbarYActive)return!1;if(0===r&&i>0||r>=t.contentHeight-t.containerHeight&&i<0)return!t.settings.wheelPropagation}var l=e.scrollLeft;if(0===i){if(!t.scrollbarXActive)return!1;if(0===l&&n<0||l>=t.contentWidth-t.containerWidth&&n>0)return!t.settings.wheelPropagation}return!0}t.event.bind(t.ownerDocument,"keydown",(function(l){if(!(l.isDefaultPrevented&&l.isDefaultPrevented()||l.defaultPrevented)&&(n()||i())){var o=document.activeElement?document.activeElement:t.ownerDocument.activeElement;if(o){if("IFRAME"===o.tagName)o=o.contentDocument.activeElement;else while(o.shadowRoot)o=o.shadowRoot.activeElement;if(H(o))return}var s=0,a=0;switch(l.which){case 37:s=l.metaKey?-t.contentWidth:l.altKey?-t.containerWidth:-30;break;case 38:a=l.metaKey?t.contentHeight:l.altKey?t.containerHeight:30;break;case 39:s=l.metaKey?t.contentWidth:l.altKey?t.containerWidth:30;break;case 40:a=l.metaKey?-t.contentHeight:l.altKey?-t.containerHeight:-30;break;case 32:a=l.shiftKey?t.containerHeight:-t.containerHeight;break;case 33:a=t.containerHeight;break;case 34:a=-t.containerHeight;break;case 36:a=t.contentHeight;break;case 35:a=-t.contentHeight;break;default:return}t.settings.suppressScrollX&&0!==s||t.settings.suppressScrollY&&0!==a||(e.scrollTop-=a,e.scrollLeft+=s,E(t),r(s,a)&&l.preventDefault())}}))}function D(t){var e=t.element;function n(n,i){var r,l=Math.floor(e.scrollTop),o=0===e.scrollTop,s=l+e.offsetHeight===e.scrollHeight,a=0===e.scrollLeft,c=e.scrollLeft+e.offsetWidth===e.scrollWidth;return r=Math.abs(i)>Math.abs(n)?o||s:a||c,!r||!t.settings.wheelPropagation}function i(t){var e=t.deltaX,n=-1*t.deltaY;return"undefined"!==typeof e&&"undefined"!==typeof n||(e=-1*t.wheelDeltaX/6,n=t.wheelDeltaY/6),t.deltaMode&&1===t.deltaMode&&(e*=10,n*=10),e!==e&&n!==n&&(e=0,n=t.wheelDelta),t.shiftKey?[-n,-e]:[e,n]}function r(t,n,i){if(!_.isWebKit&&e.querySelector("select:focus"))return!0;if(!e.contains(t))return!1;var r=t;while(r&&r!==e){if(r.classList.contains(b.element.consuming))return!0;var l=a(r);if(i&&l.overflowY.match(/(scroll|auto)/)){var o=r.scrollHeight-r.clientHeight;if(o>0&&(r.scrollTop>0&&i<0||r.scrollTop<o&&i>0))return!0}if(n&&l.overflowX.match(/(scroll|auto)/)){var s=r.scrollWidth-r.clientWidth;if(s>0&&(r.scrollLeft>0&&n<0||r.scrollLeft<s&&n>0))return!0}r=r.parentNode}return!1}function l(l){var o=i(l),s=o[0],a=o[1];if(!r(l.target,s,a)){var c=!1;t.settings.useBothWheelAxes?t.scrollbarYActive&&!t.scrollbarXActive?(a?e.scrollTop-=a*t.settings.wheelSpeed:e.scrollTop+=s*t.settings.wheelSpeed,c=!0):t.scrollbarXActive&&!t.scrollbarYActive&&(s?e.scrollLeft+=s*t.settings.wheelSpeed:e.scrollLeft-=a*t.settings.wheelSpeed,c=!0):(e.scrollTop-=a*t.settings.wheelSpeed,e.scrollLeft+=s*t.settings.wheelSpeed),E(t),c=c||n(s,a),c&&!l.ctrlKey&&(l.stopPropagation(),l.preventDefault())}}"undefined"!==typeof window.onwheel?t.event.bind(e,"wheel",l):"undefined"!==typeof window.onmousewheel&&t.event.bind(e,"mousewheel",l)}function O(t){if(_.supportsTouch||_.supportsIePointer){var e=t.element,n={},i=0,r={},l=null;_.supportsTouch?(t.event.bind(e,"touchstart",u),t.event.bind(e,"touchmove",f),t.event.bind(e,"touchend",p)):_.supportsIePointer&&(window.PointerEvent?(t.event.bind(e,"pointerdown",u),t.event.bind(e,"pointermove",f),t.event.bind(e,"pointerup",p)):window.MSPointerEvent&&(t.event.bind(e,"MSPointerDown",u),t.event.bind(e,"MSPointerMove",f),t.event.bind(e,"MSPointerUp",p)))}function o(n,i){var r=Math.floor(e.scrollTop),l=e.scrollLeft,o=Math.abs(n),s=Math.abs(i);if(s>o){if(i<0&&r===t.contentHeight-t.containerHeight||i>0&&0===r)return 0===window.scrollY&&i>0&&_.isChrome}else if(o>s&&(n<0&&l===t.contentWidth-t.containerWidth||n>0&&0===l))return!0;return!0}function s(n,i){e.scrollTop-=i,e.scrollLeft-=n,E(t)}function c(t){return t.targetTouches?t.targetTouches[0]:t}function h(t){return(!t.pointerType||"pen"!==t.pointerType||0!==t.buttons)&&(!(!t.targetTouches||1!==t.targetTouches.length)||!(!t.pointerType||"mouse"===t.pointerType||t.pointerType===t.MSPOINTER_TYPE_MOUSE))}function u(t){if(h(t)){var e=c(t);n.pageX=e.pageX,n.pageY=e.pageY,i=(new Date).getTime(),null!==l&&clearInterval(l)}}function d(t,n,i){if(!e.contains(t))return!1;var r=t;while(r&&r!==e){if(r.classList.contains(b.element.consuming))return!0;var l=a(r);if(i&&l.overflowY.match(/(scroll|auto)/)){var o=r.scrollHeight-r.clientHeight;if(o>0&&(r.scrollTop>0&&i<0||r.scrollTop<o&&i>0))return!0}if(n&&l.overflowX.match(/(scroll|auto)/)){var s=r.scrollWidth-r.clientWidth;if(s>0&&(r.scrollLeft>0&&n<0||r.scrollLeft<s&&n>0))return!0}r=r.parentNode}return!1}function f(t){if(h(t)){var e=c(t),l={pageX:e.pageX,pageY:e.pageY},a=l.pageX-n.pageX,u=l.pageY-n.pageY;if(d(t.target,a,u))return;s(a,u),n=l;var f=(new Date).getTime(),p=f-i;p>0&&(r.x=a/p,r.y=u/p,i=f),o(a,u)&&t.preventDefault()}}function p(){t.settings.swipeEasing&&(clearInterval(l),l=setInterval((function(){t.isInitialized?clearInterval(l):r.x||r.y?Math.abs(r.x)<.01&&Math.abs(r.y)<.01?clearInterval(l):(s(30*r.x,30*r.y),r.x*=.8,r.y*=.8):clearInterval(l)}),10))}}var j=function(){return{handlers:["click-rail","drag-thumb","keyboard","wheel","touch"],maxScrollbarLength:null,minScrollbarLength:null,scrollingThreshold:1e3,scrollXMarginOffset:0,scrollYMarginOffset:0,suppressScrollX:!1,suppressScrollY:!1,swipeEasing:!0,useBothWheelAxes:!1,wheelPropagation:!0,wheelSpeed:1}},N={"click-rail":A,"drag-thumb":P,keyboard:k,wheel:D,touch:O},B=function(t,e){var n=this;if(void 0===e&&(e={}),"string"===typeof t&&(t=document.querySelector(t)),!t||!t.nodeName)throw new Error("no element is specified to initialize PerfectScrollbar");for(var i in this.element=t,t.classList.add(b.main),this.settings=j(),e)this.settings[i]=e[i];this.containerWidth=null,this.containerHeight=null,this.contentWidth=null,this.contentHeight=null;var r=function(){return t.classList.add(b.state.focus)},l=function(){return t.classList.remove(b.state.focus)};this.isRtl="rtl"===a(t).direction,!0===this.isRtl&&t.classList.add(b.rtl),this.isNegativeScroll=function(){var e=t.scrollLeft,n=null;return t.scrollLeft=-1,n=t.scrollLeft<0,t.scrollLeft=e,n}(),this.negativeScrollAdjustment=this.isNegativeScroll?t.scrollWidth-t.clientWidth:0,this.event=new X,this.ownerDocument=t.ownerDocument||document,this.scrollbarXRail=h(b.element.rail("x")),t.appendChild(this.scrollbarXRail),this.scrollbarX=h(b.element.thumb("x")),this.scrollbarXRail.appendChild(this.scrollbarX),this.scrollbarX.setAttribute("tabindex",0),this.event.bind(this.scrollbarX,"focus",r),this.event.bind(this.scrollbarX,"blur",l),this.scrollbarXActive=null,this.scrollbarXWidth=null,this.scrollbarXLeft=null;var o=a(this.scrollbarXRail);this.scrollbarXBottom=parseInt(o.bottom,10),isNaN(this.scrollbarXBottom)?(this.isScrollbarXUsingBottom=!1,this.scrollbarXTop=T(o.top)):this.isScrollbarXUsingBottom=!0,this.railBorderXWidth=T(o.borderLeftWidth)+T(o.borderRightWidth),c(this.scrollbarXRail,{display:"block"}),this.railXMarginWidth=T(o.marginLeft)+T(o.marginRight),c(this.scrollbarXRail,{display:""}),this.railXWidth=null,this.railXRatio=null,this.scrollbarYRail=h(b.element.rail("y")),t.appendChild(this.scrollbarYRail),this.scrollbarY=h(b.element.thumb("y")),this.scrollbarYRail.appendChild(this.scrollbarY),this.scrollbarY.setAttribute("tabindex",0),this.event.bind(this.scrollbarY,"focus",r),this.event.bind(this.scrollbarY,"blur",l),this.scrollbarYActive=null,this.scrollbarYHeight=null,this.scrollbarYTop=null;var s=a(this.scrollbarYRail);this.scrollbarYRight=parseInt(s.right,10),isNaN(this.scrollbarYRight)?(this.isScrollbarYUsingRight=!1,this.scrollbarYLeft=T(s.left)):this.isScrollbarYUsingRight=!0,this.scrollbarYOuterWidth=this.isRtl?R(this.scrollbarY):null,this.railBorderYWidth=T(s.borderTopWidth)+T(s.borderBottomWidth),c(this.scrollbarYRail,{display:"block"}),this.railYMarginHeight=T(s.marginTop)+T(s.marginBottom),c(this.scrollbarYRail,{display:""}),this.railYHeight=null,this.railYRatio=null,this.reach={x:t.scrollLeft<=0?"start":t.scrollLeft>=this.contentWidth-this.containerWidth?"end":null,y:t.scrollTop<=0?"start":t.scrollTop>=this.contentHeight-this.containerHeight?"end":null},this.isAlive=!0,this.settings.handlers.forEach((function(t){return N[t](n)})),this.lastScrollTop=Math.floor(t.scrollTop),this.lastScrollLeft=t.scrollLeft,this.event.bind(this.element,"scroll",(function(t){return n.onScroll(t)})),E(this)};B.prototype.update=function(){this.isAlive&&(this.negativeScrollAdjustment=this.isNegativeScroll?this.element.scrollWidth-this.element.clientWidth:0,c(this.scrollbarXRail,{display:"block"}),c(this.scrollbarYRail,{display:"block"}),this.railXMarginWidth=T(a(this.scrollbarXRail).marginLeft)+T(a(this.scrollbarXRail).marginRight),this.railYMarginHeight=T(a(this.scrollbarYRail).marginTop)+T(a(this.scrollbarYRail).marginBottom),c(this.scrollbarXRail,{display:"none"}),c(this.scrollbarYRail,{display:"none"}),E(this),S(this,"top",0,!1,!0),S(this,"left",0,!1,!0),c(this.scrollbarXRail,{display:""}),c(this.scrollbarYRail,{display:""}))},B.prototype.onScroll=function(t){this.isAlive&&(E(this),S(this,"top",this.element.scrollTop-this.lastScrollTop),S(this,"left",this.element.scrollLeft-this.lastScrollLeft),this.lastScrollTop=Math.floor(this.element.scrollTop),this.lastScrollLeft=this.element.scrollLeft)},B.prototype.destroy=function(){this.isAlive&&(this.event.unbindAll(),f(this.scrollbarX),f(this.scrollbarY),f(this.scrollbarXRail),f(this.scrollbarYRail),this.removePsClasses(),this.element=null,this.scrollbarX=null,this.scrollbarY=null,this.scrollbarXRail=null,this.scrollbarYRail=null,this.isAlive=!1)},B.prototype.removePsClasses=function(){this.element.className=this.element.className.split(" ").filter((function(t){return!t.match(/^ps([-_].+|)$/)})).join(" ")};var $=B,I={name:"vue-custom-scrollbar",props:{settings:{default:null},swicher:{type:Boolean,default:!0},tagname:{type:String,default:"section"}},data:function(){return{ps:null}},methods:{scrollHandle:function(t){this.$emit(t.type,t)},update:function(){this.ps&&this.ps.update()},__init:function(){this.swicher&&(this._ps_inited?this.ps.update():(this._ps_inited=!0,this.ps=new $(this.$el,this.settings)))},__uninit:function(){this.ps&&(this.ps.destroy(),this.ps=null,this._ps_inited=!1)}},watch:{swicher:function(t){t&&!this._ps_inited&&this.__init(),!t&&this._ps_inited&&this.__uninit()},settings:{deep:!0,handler:function(){this.__uninit(),this.__init()}},$route:function(){this.update()}},mounted:function(){this.$isServer||this.__init()},updated:function(){this.$nextTick(this.update)},activated:function(){this.__init()},deactivated:function(){this.__uninit()},beforeDestroy:function(){this.__uninit()}},K=I;n("3ae1");function U(t,e,n,i,r,l,o,s){var a,c="function"===typeof t?t.options:t;if(e&&(c.render=e,c.staticRenderFns=n,c._compiled=!0),i&&(c.functional=!0),l&&(c._scopeId="data-v-"+l),o?(a=function(t){t=t||this.$vnode&&this.$vnode.ssrContext||this.parent&&this.parent.$vnode&&this.parent.$vnode.ssrContext,t||"undefined"===typeof __VUE_SSR_CONTEXT__||(t=__VUE_SSR_CONTEXT__),r&&r.call(this,t),t&&t._registeredComponents&&t._registeredComponents.add(o)},c._ssrRegister=a):r&&(a=s?function(){r.call(this,(c.functional?this.parent:this).$root.$options.shadowRoot)}:r),a)if(c.functional){c._injectStyles=a;var h=c.render;c.render=function(t,e){return a.call(e),h(t,e)}}else{var u=c.beforeCreate;c.beforeCreate=u?[].concat(u,a):[a]}return{exports:t,options:c}}var z=U(K,o,s,!1,null,null,null),q=z.exports;e["default"]=q}})["default"]}));
+//# sourceMappingURL=vueScrollbar.umd.min.js.map
 
 /***/ }),
 
@@ -47112,6 +47386,275 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/FindTransporter/MovingPackageForm.vue?vue&type=template&id=4699b722&":
+/*!********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/components/FindTransporter/MovingPackageForm.vue?vue&type=template&id=4699b722& ***!
+  \********************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mt-2 item-moving-container" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-3" }, [
+          _c("div", { staticClass: "item-moving-package" }, [
+            _c("div", { staticClass: "package-header" }, [
+              _c("div", { staticClass: "circle" }, [
+                _c("img", {
+                  attrs: {
+                    src:
+                      "https://fretbay.com/en/assets/images/shipper/postJob/formula-icon1-w.svg",
+                    alt: ""
+                  }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "package-body" }, [
+              _c("h3", [_vm._v("Truck with Driver package")]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "\n                        No deposit to pay, no schedule to change for the trip, the driver drives for you!\n                    "
+                )
+              ]),
+              _vm._v(" "),
+              _c("ul", [
+                _c("li", [_vm._v(" A truck adapted to your volume")]),
+                _vm._v(" "),
+                _c("li", [
+                  _vm._v(" A professional driver who helps to secure the truck")
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _vm._v(
+                    " The protection of goods by special equipment (blankets, straps...)"
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _vm._v(
+                    " All road-related costs (fuel, possible tolls, insurance)"
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "w-100 d-flex justify-content-center" },
+                [
+                  _c("button", { staticClass: "btn btn-custom-gray" }, [
+                    _vm._v("Choose")
+                  ])
+                ]
+              )
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-3" }, [
+          _c("div", { staticClass: "item-moving-package" }, [
+            _c("div", { staticClass: "package-header" }, [
+              _c("div", { staticClass: "circle" }, [
+                _c("img", {
+                  attrs: {
+                    src:
+                      "https://fretbay.com/en/assets/images/shipper/postJob/formula-icon1-w.svg",
+                    alt: ""
+                  }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "package-body" }, [
+              _c("h3", [_vm._v("Truck with Driver package")]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "\n                        No deposit to pay, no schedule to change for the trip, the driver drives for you!\n                    "
+                )
+              ]),
+              _vm._v(" "),
+              _c("ul", [
+                _c("li", [_vm._v(" A truck adapted to your volume")]),
+                _vm._v(" "),
+                _c("li", [
+                  _vm._v(" A professional driver who helps to secure the truck")
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _vm._v(
+                    " The protection of goods by special equipment (blankets, straps...)"
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _vm._v(
+                    " All road-related costs (fuel, possible tolls, insurance)"
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "w-100 d-flex justify-content-center" },
+                [
+                  _c("button", { staticClass: "btn btn-custom-gray" }, [
+                    _vm._v("Choose")
+                  ])
+                ]
+              )
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-3" }, [
+          _c("div", { staticClass: "item-moving-package" }, [
+            _c("div", { staticClass: "package-header" }, [
+              _c("div", { staticClass: "circle" }, [
+                _c("img", {
+                  attrs: {
+                    src:
+                      "https://fretbay.com/en/assets/images/shipper/postJob/formula-icon1-w.svg",
+                    alt: ""
+                  }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "package-body" }, [
+              _c("h3", [_vm._v("Truck with Driver package")]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "\n                        No deposit to pay, no schedule to change for the trip, the driver drives for you!\n                    "
+                )
+              ]),
+              _vm._v(" "),
+              _c("ul", [
+                _c("li", [_vm._v(" A truck adapted to your volume")]),
+                _vm._v(" "),
+                _c("li", [
+                  _vm._v(" A professional driver who helps to secure the truck")
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _vm._v(
+                    " The protection of goods by special equipment (blankets, straps...)"
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _vm._v(
+                    " All road-related costs (fuel, possible tolls, insurance)"
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "w-100 d-flex justify-content-center" },
+                [
+                  _c("button", { staticClass: "btn btn-custom-gray" }, [
+                    _vm._v("Choose")
+                  ])
+                ]
+              )
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-3" }, [
+          _c("div", { staticClass: "item-moving-package" }, [
+            _c("div", { staticClass: "package-header" }, [
+              _c("div", { staticClass: "circle" }, [
+                _c("img", {
+                  attrs: {
+                    src:
+                      "https://fretbay.com/en/assets/images/shipper/postJob/formula-icon1-w.svg",
+                    alt: ""
+                  }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "package-body" }, [
+              _c("h3", [_vm._v("Truck with Driver package")]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "\n                        No deposit to pay, no schedule to change for the trip, the driver drives for you!\n                    "
+                )
+              ]),
+              _vm._v(" "),
+              _c("ul", [
+                _c("li", [_vm._v(" A truck adapted to your volume")]),
+                _vm._v(" "),
+                _c("li", [
+                  _vm._v(" A professional driver who helps to secure the truck")
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _vm._v(
+                    " The protection of goods by special equipment (blankets, straps...)"
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _vm._v(
+                    " All road-related costs (fuel, possible tolls, insurance)"
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "w-100 d-flex justify-content-center" },
+                [
+                  _c("button", { staticClass: "btn btn-custom-gray" }, [
+                    _vm._v("Choose")
+                  ])
+                ]
+              )
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "row d-flex justify-content-center mt-2 w-100" },
+        [
+          _c("div", { staticClass: "col-2" }, [
+            _c("button", { staticClass: "btn btn-custom-danger" }, [
+              _vm._v("Back")
+            ])
+          ])
+        ]
+      )
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/FindTransporter/Steps.vue?vue&type=template&id=d5e74666&":
 /*!********************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/components/FindTransporter/Steps.vue?vue&type=template&id=d5e74666& ***!
@@ -47174,6 +47717,94 @@ var render = function() {
   ])
 }
 var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/FindTransporter/TypeOfTransport.vue?vue&type=template&id=118f09c4&":
+/*!******************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/components/FindTransporter/TypeOfTransport.vue?vue&type=template&id=118f09c4& ***!
+  \******************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "mt-5" },
+    [
+      _c("h3", { staticClass: "text-dark" }, [_vm._v("TYPE OF TRANSPORT")]),
+      _vm._v(" "),
+      _c(
+        "vue-custom-scrollbar",
+        {
+          staticClass: "scroll-area list-types-of-transport",
+          attrs: { tagname: "div" }
+        },
+        [
+          _c(
+            "ul",
+            _vm._l(_vm.list, function(item, index) {
+              return _c(
+                "li",
+                {
+                  staticClass: "item",
+                  on: {
+                    click: function($event) {
+                      return _vm.openItem(item.id)
+                    }
+                  }
+                },
+                [
+                  _vm._v(
+                    "\n                " + _vm._s(item.title) + "\n            "
+                  )
+                ]
+              )
+            }),
+            0
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _vm._m(0)
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "row d-flex justify-content-end mt-2 w-100" },
+      [
+        _c("div", { staticClass: "col-2" }, [
+          _c("button", { staticClass: "btn btn-custom-danger" }, [
+            _vm._v("Back")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-3" }, [
+          _c("button", { staticClass: "btn btn-custom-white" }, [
+            _vm._v("Next")
+          ])
+        ])
+      ]
+    )
+  }
+]
 render._withStripped = true
 
 
@@ -51638,28 +52269,39 @@ var render = function() {
     [
       _c("steps", { attrs: { step: 0 } }),
       _vm._v(" "),
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-lg-9 col-md-6 col-12 mt-2" }, [
-            _c(
-              "div",
-              { staticClass: "panel-left" },
-              [
-                _c("type-selector", { on: { "select-type": _vm.selectType } }),
-                _vm._v(" "),
-                _c("article-form"),
-                _vm._v(" "),
-                _c("volume-form"),
-                _vm._v(" "),
-                _c("inventory-form")
-              ],
-              1
-            )
+      _c(
+        "div",
+        { staticClass: "container" },
+        [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-lg-9 col-md-6 col-12 mt-2" }, [
+              _c(
+                "div",
+                { staticClass: "panel-left" },
+                [
+                  _c("type-selector", {
+                    on: { "select-type": _vm.selectType }
+                  }),
+                  _vm._v(" "),
+                  _c("article-form"),
+                  _vm._v(" "),
+                  _c("volume-form"),
+                  _vm._v(" "),
+                  _c("inventory-form"),
+                  _vm._v(" "),
+                  _c("type-of-transport")
+                ],
+                1
+              )
+            ]),
+            _vm._v(" "),
+            _vm._m(0)
           ]),
           _vm._v(" "),
-          _vm._m(0)
-        ])
-      ])
+          _c("moving-package-form")
+        ],
+        1
+      )
     ],
     1
   )
@@ -53104,423 +53746,297 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c(
-      "section",
-      {
-        staticClass:
-          "commentcamarche-section-default commentcamarche-section-offwhite"
-      },
-      [
-        _c("div", { staticClass: "container" }, [
-          _c(
-            "div",
-            {
-              staticClass: "custom-slider-section clearfix",
-              attrs: { role: "tabpanel" }
-            },
-            [
-              _vm._m(0),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "visible-xs mob-custom-slider-nav" },
-                [
-                  _vm._m(1),
-                  _vm._v(" "),
-                  _c("spna", { staticClass: "texthtml" }, [
-                    _c("strong", [_vm._v("1")]),
-                    _vm._v(
-                      "\n                        Publish a listing                    "
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _vm._m(2)
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _vm._m(3)
-            ]
-          )
-        ])
-      ]
-    ),
-    _vm._v(" "),
-    _vm._m(4),
-    _vm._v(" "),
-    _vm._m(5)
-  ])
+  return _vm._m(0)
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "tab-content" }, [
-      _c(
-        "div",
-        { staticClass: "tab-pane fade in active", attrs: { id: "tab1" } },
-        [
-          _c("div", { staticClass: "slide-thumb" }, [
-            _c("img", {
-              attrs: { src: "images/commentcamarche-img1.png", alt: "" }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "slide-content" }, [
-            _c("h2", [_vm._v("Publish a listing")]),
-            _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "Post your listing for free. It is only a few clicks away from being published and visible by all our professional carriers."
-              )
+    return _c("div", [
+      _c("section", { attrs: { id: "commentcamarche-section-tabs" } }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "tabs" }, [
+            _c("div", { staticClass: "tab-pane tabs__content active" }, [
+              _c("div", { staticClass: "slide-thumb" }, [
+                _c("img", {
+                  attrs: { src: "images/commentcamarche-img1.png", alt: "" }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "slide-content" }, [
+                _c("h2", [_vm._v("Publish a listing")]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "Post your listing for free. It is only a few clicks away from being published and visible\n                            by all our professional carriers."
+                  )
+                ]),
+                _vm._v(" "),
+                _c("a", { staticClass: "btn-theme", attrs: { href: "#" } }, [
+                  _vm._v("REQUEST FOR QUOTATION")
+                ])
+              ])
             ]),
             _vm._v(" "),
-            _c(
-              "a",
-              {
-                staticClass: "btn btn-theme",
-                attrs: {
-                  href: "https://fretbay.com/en/shipper/find-a-transporter"
-                }
-              },
-              [_vm._v("REQUEST FOR QUOTATION")]
-            )
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "tab-pane fade", attrs: { id: "tab2" } }, [
-        _c("div", { staticClass: "slide-thumb" }, [
-          _c("img", {
-            attrs: { src: "images/commentcamarche-img2.png", alt: "" }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "slide-content" }, [
-          _c("h2", [_vm._v("Receive quotes")]),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v(
-              "Once your listing is posted, our professional carriers will have access to your request and will offer you their quote. You will have the opportunity to choose the quote that suits you best and cheapest thanks to our reverse auction system."
-            )
-          ]),
-          _vm._v(" "),
-          _c(
-            "a",
-            {
-              staticClass: "btn btn-theme",
-              attrs: {
-                href: "https://fretbay.com/en/shipper/find-a-transporter"
-              }
-            },
-            [_vm._v("REQUEST FOR QUOTATION")]
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "tab-pane fade", attrs: { id: "tab3" } }, [
-        _c("div", { staticClass: "slide-thumb" }, [
-          _c("img", {
-            attrs: { src: "images/commentcamarche-img3.png", alt: "" }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "slide-content" }, [
-          _c("h2", [_vm._v("Get delivered")]),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v(
-              "Once your quotation has been selected, the carrier will take care of your furniture and belongings at the address and on the date you have chosen until the destination of your choice. Your belongings are handled safely by professionals equipped with equipment adapted to your needs in order to avoid any damage."
-            )
-          ]),
-          _vm._v(" "),
-          _c(
-            "a",
-            {
-              staticClass: "btn btn-theme",
-              attrs: {
-                href: "https://fretbay.com/en/shipper/find-a-transporter"
-              }
-            },
-            [_vm._v("REQUEST FOR QUOTATION")]
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "tab-pane fade", attrs: { id: "tab4" } }, [
-        _c("div", { staticClass: "slide-thumb" }, [
-          _c("img", {
-            attrs: { src: "en/images/commentcamarche-img4.png", alt: "" }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "slide-content" }, [
-          _c("h2", [_vm._v("Evaluate the service")]),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v(
-              "When your move is completed, you have the opportunity to evaluate your carrier on our site. All our carriers are evaluated in order to allow you to choose your service as well as possible. So, thanks to the contribution of our customers, you are guaranteed to find the carrier that suits you."
-            )
-          ]),
-          _vm._v(" "),
-          _c(
-            "a",
-            {
-              staticClass: "btn btn-theme",
-              attrs: {
-                href: "https://fretbay.com/en/shipper/find-a-transporter"
-              }
-            },
-            [_vm._v("REQUEST FOR QUOTATION")]
-          )
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "custom-next", attrs: { href: "#" } }, [
-      _c("span", { staticClass: "fa fa-caret-right" })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "custom-prev", attrs: { href: "#" } }, [
-      _c("span", { staticClass: "fa fa-caret-left" })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "ul",
-      { staticClass: "slider-nav hidden-xs", attrs: { role: "tablist" } },
-      [
-        _c("li", { staticClass: "active" }, [
-          _c("a", { attrs: { href: "#tab1", "data-toggle": "tab" } }, [
-            _c("strong", [_vm._v("1")]),
-            _vm._v("Publish a listing                        ")
-          ])
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c("a", { attrs: { href: "#tab2", "data-toggle": "tab" } }, [
-            _c("strong", [_vm._v("2")]),
-            _vm._v("Receive quotes                        ")
-          ])
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c("a", { attrs: { href: "#tab3", "data-toggle": "tab" } }, [
-            _c("strong", [_vm._v("3")]),
-            _vm._v("Get delivered                        ")
-          ])
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c("a", { attrs: { href: "#tab4", "data-toggle": "tab" } }, [
-            _c("strong", [_vm._v("4")]),
-            _vm._v("Evaluate the service                        ")
-          ])
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("section", { staticClass: "commentcamarche-section-default" }, [
-      _c("div", { staticClass: "container text-center" }, [
-        _c("div", { staticClass: "virtual-table" }, [
-          _c("div", [
-            _c("h3", [
-              _vm._v("Shared transport and empty returns for a cheap service")
+            _c("div", { staticClass: "tab-pane tabs__content" }, [
+              _c("div", { staticClass: "slide-thumb" }, [
+                _c("img", {
+                  attrs: { src: "images/commentcamarche-img2.png", alt: "" }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "slide-content" }, [
+                _c("h2", [_vm._v("Receive quotes")]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "Once your listing is posted, our professional carriers will have access to your request\n                            and will offer you their quote. You will have the opportunity to choose the quote that\n                            suits you best and cheapest thanks to our reverse auction system."
+                  )
+                ]),
+                _vm._v(" "),
+                _c("a", { staticClass: "btn-theme", attrs: { href: "#" } }, [
+                  _vm._v("REQUEST FOR QUOTATION")
+                ])
+              ])
             ]),
             _vm._v(" "),
-            _c("p", [
-              _vm._v("Take advantage of empty returns and grouping with "),
-              _c(
-                "a",
-                {
-                  attrs: {
-                    href:
-                      "https://fretbay.com/en/mover-carrier-definition.html",
-                    title: ""
-                  }
-                },
-                [_vm._v("professional transporters")]
-              ),
-              _vm._v(
-                " for your furniture, your cars, your pets or for a move at an unbeatable price. Benefit from ever more competitive bids thanks to the reverse auction system of "
-              ),
-              _c(
-                "a",
-                { attrs: { href: "https://fretbay.com/en", title: "" } },
-                [_vm._v("FretBay.com")]
-              ),
-              _vm._v(
-                ", the reliable, economical and ecological solution for all your transport needs."
-              )
+            _c("div", { staticClass: "tab-pane tabs__content" }, [
+              _c("div", { staticClass: "slide-thumb" }, [
+                _c("img", {
+                  attrs: { src: "images/commentcamarche-img3.png", alt: "" }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "slide-content" }, [
+                _c("h2", [_vm._v("Get delivered")]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "Once your quotation has been selected, the carrier will take care of your furniture and\n                            belongings at the address and on the date you have chosen until the destination of your\n                            choice. Your belongings are handled safely by professionals equipped with equipment\n                            adapted to your needs in order to avoid any damage."
+                  )
+                ]),
+                _vm._v(" "),
+                _c("a", { staticClass: "btn-theme", attrs: { href: "#" } }, [
+                  _vm._v("REQUEST FOR QUOTATION")
+                ])
+              ])
             ]),
             _vm._v(" "),
-            _c(
-              "a",
-              {
-                attrs: {
-                  href: "https://fretbay.com/en/shipper/find-a-transporter",
-                  title: ""
-                }
-              },
-              [_vm._v("Discover our unbeatable rates")]
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", [
-            _c("h3", [_vm._v("Movers evaluated by our customers")]),
-            _vm._v(" "),
-            _c("p", [
-              _vm._v("All our carriers are "),
-              _c(
-                "a",
-                {
-                  attrs: {
-                    href: "https://fretbay.com/en/quality-charter.php",
-                    title: ""
-                  }
-                },
-                [_vm._v("verified")]
-              ),
-              _vm._v(" and "),
-              _c(
-                "a",
-                {
-                  attrs: {
-                    href: "https://fretbay.com/en/quality-charter.php",
-                    title: ""
-                  }
-                },
-                [_vm._v("evaluated")]
-              ),
-              _vm._v(" with each transaction. This is the guarantee of a "),
-              _c(
-                "a",
-                {
-                  attrs: {
-                    href: "https://fretbay.com/en/quality-charter.php",
-                    title: ""
-                  }
-                },
-                [_vm._v("quality")]
-              ),
-              _vm._v(
-                " transport performed by a reliable service provider. You can consult the "
-              ),
-              _c(
-                "a",
-                {
-                  attrs: {
-                    href:
-                      "https://fretbay.com/en/benefits-transporter-mover-carrier",
-                    title: ""
-                  }
-                },
-                [_vm._v("carrier profiles")]
-              ),
-              _vm._v(" to get more information.")
+            _c("div", { staticClass: "tab-pane tabs__content" }, [
+              _c("div", { staticClass: "slide-thumb" }, [
+                _c("img", {
+                  attrs: { src: "images/commentcamarche-img4.png", alt: "" }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "slide-content" }, [
+                _c("h2", [_vm._v("Evaluate the service")]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "When your move is completed, you have the opportunity to evaluate your carrier on our\n                            site. All our carriers are evaluated in order to allow you to choose your service as\n                            well as possible. So, thanks to the contribution of our customers, you are guaranteed to\n                            find the carrier that suits you."
+                  )
+                ]),
+                _vm._v(" "),
+                _c(
+                  "a",
+                  { staticClass: "btn btn-theme", attrs: { href: "#" } },
+                  [_vm._v("REQUEST FOR QUOTATION")]
+                )
+              ])
             ]),
             _vm._v(" "),
-            _c(
-              "a",
-              {
-                attrs: {
-                  href:
-                    "https://fretbay.com/en/benefits-transporter-mover-carrier",
-                  title: ""
-                }
-              },
-              [_vm._v("The ranking of the best carriers")]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "virtual-table" }, [
-          _c("div", [
-            _c("h3", [_vm._v("Certified Trustpilot reviews")]),
-            _vm._v(" "),
-            _c("p", [
-              _vm._v("We pay special attention to your "),
-              _c(
-                "a",
-                {
-                  attrs: {
-                    href:
-                      "https://fretbay.com/en/reviews-shippers-FretBay.html",
-                    title: ""
-                  }
-                },
-                [_vm._v("satisfaction")]
-              ),
-              _vm._v(". That's why we regularly solicit our "),
-              _c(
-                "a",
-                {
-                  attrs: {
-                    href: "https://fretbay.com/en/quality-charter.php",
-                    title: ""
-                  }
-                },
-                [_vm._v("users")]
-              ),
-              _vm._v(
-                " so they can give us their impressions. For maximum reliability we do "
-              ),
-              _c(
-                "a",
-                {
-                  attrs: {
-                    href: "https://fretbay.com/en/connect.php",
-                    title: ""
-                  }
-                },
-                [_vm._v("authenticate")]
-              ),
-              _vm._v(" these reviews with "),
-              _c(
-                "a",
-                {
-                  attrs: {
-                    href: "https://trustpilot.com/review/www.fretbay.com",
-                    title: ""
-                  }
-                },
-                [_vm._v("Truspilot")]
-              ),
-              _vm._v(".")
+            _c("ul", { staticClass: "tabs__caption" }, [
+              _c("li", { staticClass: "active" }, [
+                _c("strong", [_vm._v("1")]),
+                _vm._v("Publish a listing\n                    ")
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("strong", [_vm._v("2")]),
+                _vm._v("Receive quotes\n                    ")
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("strong", [_vm._v("3")]),
+                _vm._v("Get delivered\n                    ")
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("strong", [_vm._v("4")]),
+                _vm._v("Evaluate the service\n                    ")
+              ])
             ])
           ])
         ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "section",
-      {
-        staticClass:
-          "commentcamarche-section-default commentcamarche-section-offwhite"
-      },
-      [
+      ]),
+      _vm._v(" "),
+      _c("section", { attrs: { id: "commentcamarche-section-default" } }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "virtual-block" }, [
+            _c("div", { staticClass: "virtual-table" }, [
+              _c("div", [
+                _c("h3", [
+                  _vm._v(
+                    "Shared transport and empty returns for a cheap service"
+                  )
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v("Take advantage of empty returns and grouping with "),
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v(
+                      "professional\n                            transporters"
+                    )
+                  ]),
+                  _vm._v(
+                    " for your furniture, your cars, your pets or for a move at an unbeatable\n                            price. Benefit from ever more competitive bids thanks to the reverse auction system of\n                            "
+                  ),
+                  _c(
+                    "a",
+                    { attrs: { href: "https://fretbay.com/en", title: "" } },
+                    [_vm._v("FretBay.com")]
+                  ),
+                  _vm._v(
+                    ", the reliable, economical and\n                            ecological solution for all your transport needs."
+                  )
+                ]),
+                _vm._v(" "),
+                _c("a", { attrs: { href: "#" } }, [
+                  _vm._v("Discover our unbeatable rates")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", [
+                _c("h3", [_vm._v("Movers evaluated by our customers")]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v("All our carriers are "),
+                  _c(
+                    "a",
+                    {
+                      attrs: {
+                        href: "https://fretbay.com/en/quality-charter.php",
+                        title: ""
+                      }
+                    },
+                    [_vm._v("verified")]
+                  ),
+                  _vm._v("\n                            and "),
+                  _c(
+                    "a",
+                    {
+                      attrs: {
+                        href: "https://fretbay.com/en/quality-charter.php",
+                        title: ""
+                      }
+                    },
+                    [_vm._v("evaluated")]
+                  ),
+                  _vm._v(
+                    " with\n                            each transaction. This is the guarantee of a "
+                  ),
+                  _c(
+                    "a",
+                    {
+                      attrs: {
+                        href: "https://fretbay.com/en/quality-charter.php",
+                        title: ""
+                      }
+                    },
+                    [_vm._v("quality")]
+                  ),
+                  _vm._v(
+                    " transport\n                            performed by a reliable service provider. You can consult the "
+                  ),
+                  _c(
+                    "a",
+                    {
+                      attrs: {
+                        href:
+                          "https://fretbay.com/en/benefits-transporter-mover-carrier",
+                        title: ""
+                      }
+                    },
+                    [
+                      _vm._v(
+                        "carrier\n                                profiles"
+                      )
+                    ]
+                  ),
+                  _vm._v(" to get more information.")
+                ]),
+                _vm._v(" "),
+                _c("a", { staticClass: "virtual-btn", attrs: { href: "#" } }, [
+                  _vm._v("The ranking of the best carriers")
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "virtual-table" }, [
+              _c("div", [
+                _c("h3", [_vm._v("Certified Trustpilot reviews")]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v("We pay special attention to your "),
+                  _c(
+                    "a",
+                    {
+                      attrs: {
+                        href:
+                          "https://fretbay.com/en/reviews-shippers-FretBay.html",
+                        title: ""
+                      }
+                    },
+                    [_vm._v("satisfaction")]
+                  ),
+                  _vm._v(
+                    ".\n                            That's why we regularly solicit our "
+                  ),
+                  _c(
+                    "a",
+                    {
+                      attrs: {
+                        href: "https://fretbay.com/en/quality-charter.php",
+                        title: ""
+                      }
+                    },
+                    [_vm._v("users")]
+                  ),
+                  _vm._v(
+                    " so they can give us their\n                            impressions. For maximum reliability we do "
+                  ),
+                  _c(
+                    "a",
+                    {
+                      attrs: {
+                        href: "https://fretbay.com/en/connect.php",
+                        title: ""
+                      }
+                    },
+                    [_vm._v("authenticate")]
+                  ),
+                  _vm._v(" these reviews\n                            with "),
+                  _c(
+                    "a",
+                    {
+                      attrs: {
+                        href: "https://trustpilot.com/review/www.fretbay.com",
+                        title: ""
+                      }
+                    },
+                    [_vm._v("Truspilot")]
+                  ),
+                  _vm._v(".")
+                ])
+              ])
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("section", { attrs: { id: "commentcamarche-section-offwhite" } }, [
         _c("div", { staticClass: "container" }, [
           _c("h2", { staticClass: "text-center" }, [
             _vm._v("Benefits designed for you")
@@ -53528,7 +54044,7 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("div", { staticClass: "clearfix row" }, [
             _c("div", { staticClass: "col-md-6" }, [
-              _c("ul", { staticClass: "ccm-listing" }, [
+              _c("ul", { staticClass: "listing" }, [
                 _c("li", [
                   _c("img", {
                     attrs: { src: "images/listicon1.png", alt: "" }
@@ -53580,7 +54096,7 @@ var staticRenderFns = [
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "col-md-6" }, [
-              _c("ul", { staticClass: "ccm-listing" }, [
+              _c("ul", { staticClass: "listing" }, [
                 _c("li", [
                   _c("img", {
                     attrs: { src: "images/listicon5.png", alt: "" }
@@ -53604,10 +54120,7 @@ var staticRenderFns = [
                       "a",
                       {
                         staticClass: "h3 bold",
-                        attrs: {
-                          target: "_blank",
-                          href: "https://trustpilot.com/review/www.fretbay.com"
-                        }
+                        attrs: { target: "_blank", href: "#" }
                       },
                       [_vm._v("Truspilot")]
                     )
@@ -53625,8 +54138,8 @@ var staticRenderFns = [
             ])
           ])
         ])
-      ]
-    )
+      ])
+    ])
   }
 ]
 render._withStripped = true
@@ -54543,166 +55056,109 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("section", { attrs: { id: "login" } }, [
-    _vm._m(0),
-    _vm._v(" "),
-    _c("div", { staticClass: "container mt-5" }, [
-      _c("div", { staticClass: "row" }, [
-        _vm._m(1),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-6" }, [
-          _c("div", { staticClass: "login-section login-section2" }, [
-            _c("h2", { staticClass: "fretBH" }, [
-              _vm._v("FretBay Identification")
-            ]),
-            _vm._v(" "),
-            _c(
-              "form",
-              {
-                attrs: {
-                  id: "login_frm",
-                  name: "login",
-                  action: "",
-                  method: "POST",
-                  autocomplete: "off"
-                }
-              },
-              [
-                _c("input", {
-                  attrs: {
-                    type: "hidden",
-                    name: "HRS",
-                    value:
-                      "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoic2FxaWJqIiwicGFzcyI6InBha2lzdGFuMSEiLCJrZXkiOiJhYmNkIiwid2ViIjoieWVzIn0.59gwftKkCpif4RhHYf3HJauo2AyV669YUVr499spmmE"
-                  }
-                }),
-                _vm._v(" "),
-                _c("input", {
-                  attrs: { type: "hidden", name: "ambassador", value: "" }
-                }),
-                _vm._v(" "),
-                _c("div", {
-                  staticStyle: { color: "red" },
-                  attrs: { id: "msg" }
-                }),
-                _vm._v(" "),
-                _c("br"),
-                _vm._v(" "),
-                _c("div", { staticClass: "clearfix" }),
-                _vm._v(" "),
-                _vm._m(2),
-                _vm._v(" "),
-                _vm._m(3),
-                _vm._v(" "),
-                _vm._m(4),
-                _vm._v(" "),
-                _c("center", [
-                  _vm._v("\n                            Forgotten password? "),
-                  _c("a", { staticClass: "forgot", attrs: { href: "#" } }, [
-                    _vm._v("Sign up here")
-                  ])
-                ])
-              ],
-              1
-            )
-          ]),
-          _vm._v(" "),
-          _vm._m(5)
-        ])
-      ])
-    ])
-  ])
+  return _vm._m(0)
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "banner-main" }, [
-      _c("h1", [_vm._v("\n            Login page\n        ")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-6" }, [
-      _c("div", { staticClass: "login-section login-section2 conlumnLeft" }, [
-        _c("h1", [_vm._v("Log into your FretBay account.")]),
-        _vm._v(" "),
-        _c("p", { staticClass: "h1" }, [
-          _vm._v(
-            "Enter your email address or username and password to access all FretBay services."
-          )
-        ]),
-        _vm._v(" "),
-        _c("img", {
-          staticClass: "img-responsive",
-          attrs: { src: "images/conecLogImg.png" }
-        })
+    return _c("section", { attrs: { id: "login" } }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "form-login" }, [
+          _c("div", { staticClass: "etape-box-user" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-6 col-sm-6" }, [
+                _c("h2", { staticClass: "ebu__title" }, [
+                  _vm._v(
+                    "\n                            Log into your FretBay account.\n                        "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "ebu__subtitle" }, [
+                  _vm._v(
+                    "\n                            Enter your email address or username and password to access all FretBay services.\n                        "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("img", {
+                  staticClass: "img-responsive fix-img",
+                  attrs: { src: "images/conecLogImg.png" }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-6 col-sm-6" }, [
+                _c("div", { staticClass: "login__form" }, [
+                  _c("h2", { staticClass: "ebu__title" }, [
+                    _vm._v(
+                      "\n                                FretBay Identification\n                            "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("form", { attrs: { action: "#", id: "signUpForm1" } }, [
+                    _c("div", { staticClass: "signUpForm1-inputs" }, [
+                      _c("div", { staticClass: "log-row input-row" }, [
+                        _c("i", { staticClass: "glyphicon glyphicon-user" }),
+                        _vm._v(" "),
+                        _c("span", { attrs: { id: "wp-pseudo2" } }, [
+                          _c("input", {
+                            staticClass:
+                              "signUpForm1__input signUpForm1__input-first",
+                            attrs: {
+                              type: "text",
+                              placeholder: "Login or Email"
+                            }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "pass-row input-row" }, [
+                        _c("i", { staticClass: "glyphicon glyphicon-user" }),
+                        _vm._v(" "),
+                        _c("span", { attrs: { id: "wp-pseudo2" } }, [
+                          _c("input", {
+                            staticClass: "signUpForm1__input",
+                            attrs: { type: "text", placeholder: "Password" }
+                          })
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "signUpForm1-button",
+                        attrs: { type: "submit" }
+                      },
+                      [
+                        _vm._v(
+                          "\n                                    Sign in\n                                "
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-text" }, [
+                      _vm._v(
+                        "\n                                    Forgotten password? "
+                      ),
+                      _c("a", { attrs: { href: "#" } }, [
+                        _vm._v("Sign up here")
+                      ])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "ebu__txt" }, [
+                  _vm._v(
+                    "\n                            Not yet registered on FretBay? "
+                  ),
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Sign up here")])
+                ])
+              ])
+            ])
+          ])
+        ])
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "log-row" }, [
-      _c("span", { attrs: { id: "wp-pseudo2" } }, [
-        _c("input", {
-          staticClass: "lis form-control",
-          attrs: {
-            type: "text",
-            name: "username",
-            id: "pseudo2",
-            placeholder: "Login or Email",
-            autocomplete: "off"
-          }
-        })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "log-row" }, [
-      _c("span", { attrs: { id: "wp-password" } }, [
-        _c("input", {
-          staticClass: "form-control",
-          attrs: {
-            type: "password",
-            name: "passwd",
-            id: "password",
-            placeholder: "Password",
-            autocomplete: "off"
-          }
-        })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "log-row log-hm" }, [
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-primary",
-          attrs: { name: "btn", id: "loginsubmit" }
-        },
-        [_vm._v("Sign in")]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("p", [
-      _vm._v("Not yet registered on FretBay? "),
-      _c("a", { attrs: { href: "#" } }, [_vm._v("Sign up here")])
     ])
   }
 ]
@@ -73711,6 +74167,77 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/desktop/components/FindTransporter/MovingPackageForm.vue":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/desktop/components/FindTransporter/MovingPackageForm.vue ***!
+  \*******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _MovingPackageForm_vue_vue_type_template_id_4699b722___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MovingPackageForm.vue?vue&type=template&id=4699b722& */ "./resources/js/desktop/components/FindTransporter/MovingPackageForm.vue?vue&type=template&id=4699b722&");
+/* harmony import */ var _MovingPackageForm_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./MovingPackageForm.vue?vue&type=style&index=0&lang=scss& */ "./resources/js/desktop/components/FindTransporter/MovingPackageForm.vue?vue&type=style&index=0&lang=scss&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  script,
+  _MovingPackageForm_vue_vue_type_template_id_4699b722___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _MovingPackageForm_vue_vue_type_template_id_4699b722___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/desktop/components/FindTransporter/MovingPackageForm.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/desktop/components/FindTransporter/MovingPackageForm.vue?vue&type=style&index=0&lang=scss&":
+/*!*****************************************************************************************************************!*\
+  !*** ./resources/js/desktop/components/FindTransporter/MovingPackageForm.vue?vue&type=style&index=0&lang=scss& ***!
+  \*****************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_MovingPackageForm_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/style-loader!../../../../../node_modules/css-loader!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src??ref--8-2!../../../../../node_modules/sass-loader/dist/cjs.js??ref--8-3!../../../../../node_modules/vue-loader/lib??vue-loader-options!./MovingPackageForm.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/FindTransporter/MovingPackageForm.vue?vue&type=style&index=0&lang=scss&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_MovingPackageForm_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_MovingPackageForm_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_MovingPackageForm_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_MovingPackageForm_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+
+
+/***/ }),
+
+/***/ "./resources/js/desktop/components/FindTransporter/MovingPackageForm.vue?vue&type=template&id=4699b722&":
+/*!**************************************************************************************************************!*\
+  !*** ./resources/js/desktop/components/FindTransporter/MovingPackageForm.vue?vue&type=template&id=4699b722& ***!
+  \**************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MovingPackageForm_vue_vue_type_template_id_4699b722___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./MovingPackageForm.vue?vue&type=template&id=4699b722& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/FindTransporter/MovingPackageForm.vue?vue&type=template&id=4699b722&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MovingPackageForm_vue_vue_type_template_id_4699b722___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MovingPackageForm_vue_vue_type_template_id_4699b722___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/desktop/components/FindTransporter/Steps.vue":
 /*!*******************************************************************!*\
   !*** ./resources/js/desktop/components/FindTransporter/Steps.vue ***!
@@ -73793,6 +74320,93 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Steps_vue_vue_type_template_id_d5e74666___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Steps_vue_vue_type_template_id_d5e74666___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/desktop/components/FindTransporter/TypeOfTransport.vue":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/desktop/components/FindTransporter/TypeOfTransport.vue ***!
+  \*****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _TypeOfTransport_vue_vue_type_template_id_118f09c4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TypeOfTransport.vue?vue&type=template&id=118f09c4& */ "./resources/js/desktop/components/FindTransporter/TypeOfTransport.vue?vue&type=template&id=118f09c4&");
+/* harmony import */ var _TypeOfTransport_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TypeOfTransport.vue?vue&type=script&lang=js& */ "./resources/js/desktop/components/FindTransporter/TypeOfTransport.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _TypeOfTransport_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TypeOfTransport.vue?vue&type=style&index=0&lang=scss& */ "./resources/js/desktop/components/FindTransporter/TypeOfTransport.vue?vue&type=style&index=0&lang=scss&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _TypeOfTransport_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _TypeOfTransport_vue_vue_type_template_id_118f09c4___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _TypeOfTransport_vue_vue_type_template_id_118f09c4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/desktop/components/FindTransporter/TypeOfTransport.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/desktop/components/FindTransporter/TypeOfTransport.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************!*\
+  !*** ./resources/js/desktop/components/FindTransporter/TypeOfTransport.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TypeOfTransport_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./TypeOfTransport.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/FindTransporter/TypeOfTransport.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TypeOfTransport_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/desktop/components/FindTransporter/TypeOfTransport.vue?vue&type=style&index=0&lang=scss&":
+/*!***************************************************************************************************************!*\
+  !*** ./resources/js/desktop/components/FindTransporter/TypeOfTransport.vue?vue&type=style&index=0&lang=scss& ***!
+  \***************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_TypeOfTransport_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/style-loader!../../../../../node_modules/css-loader!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src??ref--8-2!../../../../../node_modules/sass-loader/dist/cjs.js??ref--8-3!../../../../../node_modules/vue-loader/lib??vue-loader-options!./TypeOfTransport.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/FindTransporter/TypeOfTransport.vue?vue&type=style&index=0&lang=scss&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_TypeOfTransport_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_TypeOfTransport_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_TypeOfTransport_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_TypeOfTransport_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+
+
+/***/ }),
+
+/***/ "./resources/js/desktop/components/FindTransporter/TypeOfTransport.vue?vue&type=template&id=118f09c4&":
+/*!************************************************************************************************************!*\
+  !*** ./resources/js/desktop/components/FindTransporter/TypeOfTransport.vue?vue&type=template&id=118f09c4& ***!
+  \************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TypeOfTransport_vue_vue_type_template_id_118f09c4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./TypeOfTransport.vue?vue&type=template&id=118f09c4& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/FindTransporter/TypeOfTransport.vue?vue&type=template&id=118f09c4&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TypeOfTransport_vue_vue_type_template_id_118f09c4___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TypeOfTransport_vue_vue_type_template_id_118f09c4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

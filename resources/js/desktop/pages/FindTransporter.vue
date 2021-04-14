@@ -16,6 +16,8 @@
 
                         <inventory-form/>
 
+                        <type-of-transport/>
+
                     </div>
 
 
@@ -45,6 +47,8 @@
 
                 </div>
             </div>
+
+            <moving-package-form/>
         </div>
     </div>
 </template>
@@ -54,10 +58,12 @@
     import ArticleForm from '../components/FindTransporter/ArticleForm'
     import VolumeForm from '../components/FindTransporter/VolumeForm'
     import InventoryForm from '../components/FindTransporter/InventoryForm'
+    import TypeOfTransport from '../components/FindTransporter/TypeOfTransport'
+    import MovingPackageForm from '../components/FindTransporter/MovingPackageForm'
 
     export default {
         components: {
-            Steps, TypeSelector, ArticleForm, VolumeForm, InventoryForm
+            Steps, TypeSelector, ArticleForm, VolumeForm, InventoryForm, TypeOfTransport,MovingPackageForm
         },
         data() {
             return {
