@@ -2,6 +2,6 @@
 
 @section("content")
     <header-simple-component></header-simple-component>
-    <register-user-page></register-user-page>
+    <register-customer-page></register-customer-page>
     <footer-component></footer-component>
 @endsection

@@ -49,6 +49,8 @@
             </div>
 
             <moving-package-form/>
+
+            <adress-info-form/>
         </div>
     </div>
 </template>
@@ -60,10 +62,11 @@
     import InventoryForm from '../components/FindTransporter/InventoryForm'
     import TypeOfTransport from '../components/FindTransporter/TypeOfTransport'
     import MovingPackageForm from '../components/FindTransporter/MovingPackageForm'
+    import AdressInfoForm from '../components/FindTransporter/AdressInfoForm'
 
     export default {
         components: {
-            Steps, TypeSelector, ArticleForm, VolumeForm, InventoryForm, TypeOfTransport,MovingPackageForm
+            Steps, TypeSelector, ArticleForm, VolumeForm, InventoryForm, TypeOfTransport,MovingPackageForm, AdressInfoForm
         },
         data() {
             return {

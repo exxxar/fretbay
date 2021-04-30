@@ -13,11 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
 Route::view("/", "desktop.pages.index")->name("desktop.index");
 Route::view("/find-loads", "desktop.pages.find-loads")->name("desktop.find-loads");
 Route::view("/find-transporter", "desktop.pages.find-transporter")->name("desktop.find-transporter");
@@ -38,7 +33,17 @@ Route::view("/fraud-prevention", "desktop.pages.fraud-prevention")->name("deskto
 
 Route::view("/register", "desktop.pages.register")->name("desktop.register");
 Route::view("/register-transporter", "desktop.pages.register-transporter")->name("desktop.register-transporter");
-Route::view("/register-user", "desktop.pages.register-user")->name("desktop.register-user");
+Route::view("/register-customer", "desktop.pages.register-user")->name("desktop.register-user");
+Route::view("/profile-personal-info", "desktop.pages.profile.profile-personal-info")->name("desktop.profile-personal-info");
+Route::view("/activity-listing", "desktop.pages.profile.customer.activity-listing")->name("desktop.activity-listing");
+Route::view("/listings", "desktop.pages.profile.customer.listings")->name("desktop.listings");
+
+Route::view("/profile-transporter-wizard-start", "desktop.pages.profile.transporter.profile-transporter-wizard-start")->name("desktop.profile-transporter-wizard-start");
+Route::view("/profile-transporter-wizard-step-1", "desktop.pages.profile.transporter.profile-transporter-wizard-step-1")->name("desktop.profile-transporter-wizard-step-1");
+Route::view("/profile-transporter-wizard-step-2", "desktop.pages.profile.transporter.profile-transporter-wizard-step-2")->name("desktop.profile-transporter-wizard-step-2");
+Route::view("/profile-transporter-wizard-step-3", "desktop.pages.profile.transporter.profile-transporter-wizard-step-3")->name("desktop.profile-transporter-wizard-step-3");
+Route::view("/profile-transporter-wizard-step-4", "desktop.pages.profile.transporter.profile-transporter-wizard-step-4")->name("desktop.profile-transporter-wizard-step-4");
+Route::view("/profile-transporter-wizard-step-5", "desktop.pages.profile.transporter.profile-transporter-wizard-step-5")->name("desktop.profile-transporter-wizard-step-5");
 
 Route::view("/login", "desktop.pages.login")->name("desktop.login");
 
