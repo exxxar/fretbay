@@ -13927,7 +13927,7 @@ h1 span {
   width: 80px;
   height: 80px;
   display: inline-block;
-  background: url(../images/seek-icons-en.png) no-repeat;
+  background: url("/images/seek-icons-en.png") no-repeat;
 }
 
 #seekHeader .icon.seek2 {
@@ -13944,7 +13944,7 @@ h1 span {
 
 #recentList {
   background: #f6f5f0;
-  padding: 32px 0 12px;
+  padding: 32px 0 32px;
 }
 
 .postBlock {
@@ -14179,7 +14179,7 @@ h1 span {
 }
 
 #trevalNew {
-  background: #2db2d1 url(../images/home/tagBackgrounds.png) repeat;
+  background: #2db2d1 url("/images/home/tagBackgrounds.png") repeat;
   position: relative;
   padding: 45px 0;
   color: #fff;
@@ -14209,6 +14209,7 @@ h1 span {
 .trevalnew__title {
   text-transform: uppercase;
   font-weight: 600;
+  font-family: 'Lato',sans-serif;
   font-size: 20px;
   color: #fff;
   margin-bottom: 6px;
@@ -14222,6 +14223,8 @@ h1 span {
 .trevalnew__txt {
   color: #fff;
   font-weight: 300;
+  font-style: normal;
+  font-family: 'Lato',sans-serif;
   line-height: 24px;
   margin-bottom: 18px;
   font-size: 15px;
@@ -14232,6 +14235,7 @@ h1 span {
   position: absolute;
   right: 25px;
   bottom: 0;
+  font-family: 'Lato',sans-serif;
   font-size: 20px;
   color: #fff;
   text-decoration: underline;
@@ -14275,9 +14279,10 @@ h1 span {
   max-height: 115px;
   line-height: 1.3;
   font-size: 15px;
+  font-family: 'Lato',sans-serif;
 }
 
-.testimonialtext__txt i {
+.testimonialtext__txt svg {
   color: #e2e1d9;
 }
 
@@ -14310,7 +14315,7 @@ h1 span {
 }
 
 .tabs-footer-section {
-  margin: 100px auto;
+  margin: 25px auto;
 }
 
 .tabs-footer-section label {
@@ -14328,7 +14333,7 @@ h1 span {
   height: 53px;
   margin-right: 12px;
   position: relative;
-  left: 20%;
+  left: 26.5%;
   text-align: center;
 }
 
@@ -14351,12 +14356,13 @@ h1 span {
 }
 
 .tabs-footer-section .content {
+  height: 150px;
   clear: both;
   position: relative;
 }
 
 .tabs-footer-section .content li:hover {
-  background: url(../images/list-arrow-blue.png) no-repeat left center;
+  background: url("/images/list-arrow.png") no-repeat left center;
   color: #333;
   font-family: "Lato";
   font-weight: bold;
@@ -14366,7 +14372,7 @@ h1 span {
 .tabs-footer-section .content li {
   margin-bottom: 7px;
   padding-left: 20px;
-  background: url(../images/list-arrow.png) no-repeat left center;
+  background: url("/images/list-arrow.png") no-repeat left center;
 }
 
 .tabs-footer-section article {
@@ -14516,7 +14522,7 @@ h1 span {
   height: 65px;
   float: left;
   text-indent: -99999px;
-  background: url(../images/social-iconz.png) no-repeat;
+  background: url("/images/social-iconz.png") no-repeat;
 }
 
 .list-unstyled {
@@ -17136,6 +17142,16 @@ h3 {
   background: #ff334b;
   border-color: #ff334b;
   color: #fff;
+}
+
+#mm_logo {
+  content: '';
+  width: 100%;
+  height: 150px;
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+  background: url("/images/video-head.png") repeat-x scroll center bottom;
 }
 
 #body-transporter .container {

@@ -263,7 +263,7 @@
             </div>
         </div>
 
-        <div class="tabs-footer-section">
+        <div class="tabs-footer-section ">
 
             <input type="radio" name="tab" id="tab-1" checked>
             <label for="tab-1">Moves</label>

@@ -1,5 +1,5 @@
 <template>
-    <div id="logo">
+    <div id="mm_logo">
         <div class="container">
             <div class="logo__body">
                 <nav class="logo__menu">
