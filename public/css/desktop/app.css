@@ -17648,7 +17648,7 @@ h3 {
 }
 
 .sfi-img {
-  width: 15%;
+  width: 13%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -17801,12 +17801,11 @@ input[type="radio"] {
 }
 
 .reference-block h5 {
-  background: url(../images/dest/reference.svg) no-repeat 2px center;
+  background: url("/images/reference.svg") no-repeat 2px center;
   padding: 0px 15px 0 42px;
   font-size: 16px;
   font-weight: 700;
   color: #3d4e60;
-  margin-top: 10px;
 }
 
 .form-control {
@@ -17862,7 +17861,7 @@ input[type="radio"] {
 }
 
 .listing-header li:nth-child(6) {
-  padding-left: 0;
+  padding-left: 50px;
 }
 
 .promoted-listings-item {
@@ -17874,7 +17873,7 @@ input[type="radio"] {
   margin-bottom: 6px;
   display: flex;
   height: 148px;
-  max-width: 1114px;
+  max-width: 90%;
   align-items: center;
   transition: box-shadow 0.5s;
   padding: 35px 0 25px 15px;
@@ -17900,7 +17899,7 @@ input[type="radio"] {
 }
 
 .td-nom {
-  width: 23%;
+  width: 25.5%;
   position: relative;
   line-height: 1.2;
   transition: color 0.3s;
@@ -17930,12 +17929,12 @@ input[type="radio"] {
 }
 
 .td-nom .category-2:before {
-  background-image: url(../images/dest/02.svg);
+  background-image: url("/images/02.svg");
 }
 
 .td-nom .listing-status {
   display: inline-block;
-  background: url(../images/dest/star-success.svg) no-repeat left center;
+  background: url("/images/star-success.svg") no-repeat left center;
   background-size: auto 15px;
   font-size: 12px;
   margin-bottom: 8px;
@@ -17974,7 +17973,7 @@ input[type="radio"] {
   width: 11%;
   line-height: 2;
   vertical-align: top;
-  padding: 0px 15px 25px;
+  padding: 0px 0px 25px;
 }
 
 .td-activity .bid-info {
@@ -18016,7 +18015,7 @@ input[type="radio"] {
   line-height: 2;
   vertical-align: top;
   padding: 0px 0px 25px 10px;
-  width: 22%;
+  width: 16.5%;
 }
 
 .td-loading strong {
@@ -18045,7 +18044,18 @@ input[type="radio"] {
   line-height: 2;
 }
 
+.td-delivery {
+  line-height: 2;
+  vertical-align: top;
+  padding: 0px 0px 25px 17px;
+  width: 21.5%;
+}
+
 .td-delivery strong {
+  font-weight: 400;
+  line-height: 2;
+  font-size: 14px;
+  color: #3d4e60;
   float: left;
 }
 
@@ -18068,7 +18078,7 @@ input[type="radio"] {
 }
 
 .td-distance {
-  width: 7%;
+  width: 4.5%;
   padding: 0px 0px 25px;
 }
 
@@ -18105,9 +18115,9 @@ input[type="radio"] {
 .td-expiration {
   line-height: 2;
   vertical-align: top;
-  padding: 0px 0px 25px;
+  padding: 0px 0px 25px 50px;
   font-size: 12px;
-  width: 11%;
+  width: 12%;
   text-align: center;
 }
 
@@ -20185,7 +20195,7 @@ h3 {
   background-color: #fff;
   color: #1f2b33;
   border: 1px solid #e7e9f0;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
 }
 
 .form-control:focus {

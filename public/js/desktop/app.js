@@ -7585,11 +7585,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["background"],
   components: {
     MainMenu: _MainMenu__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  methods: {
+    goDown: function goDown() {
+      window.scrollTo({
+        top: 650,
+        behavior: 'smooth'
+      });
+    }
   }
 });
 
@@ -9283,6 +9292,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -54341,7 +54351,27 @@ var render = function() {
   return _c(
     "header",
     { style: { background: "url(" + _vm.background + ")" } },
-    [_c("main-menu"), _vm._v(" "), _vm._m(0)],
+    [
+      _c("main-menu"),
+      _vm._v(" "),
+      _c("div", { attrs: { id: "first" } }, [
+        _c("div", { staticClass: "container" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("button", { staticClass: "first__btn" }, [
+            _vm._v("\r\n                REQUEST A QUOTE\r\n            ")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-12 go-down" }, [
+              _c("a", { attrs: { id: "goDown" }, on: { click: _vm.goDown } }, [
+                _c("i", { staticClass: "fa fa-caret-down" })
+              ])
+            ])
+          ])
+        ])
+      ])
+    ],
     1
   )
 }
@@ -54350,28 +54380,12 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { attrs: { id: "first" } }, [
-      _c("div", { staticClass: "container" }, [
-        _c("h1", [
-          _vm._v("\n                    Find your mover\n                    "),
-          _c("span", [
-            _vm._v(
-              "\n\t\t\t\t\t\tThe leading marketplace for cheap transport and moving services\n\t\t\t\t\t"
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("button", { staticClass: "first__btn" }, [
-          _vm._v("\n                    REQUEST A QUOTE\n                ")
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-12 go-down" }, [
-            _c("a", { attrs: { id: "goDown" } }, [
-              _c("i", { staticClass: "fa fa-caret-down" })
-            ])
-          ])
-        ])
+    return _c("h1", [
+      _vm._v("\r\n                Find your mover\r\n                "),
+      _c("span", [
+        _vm._v(
+          "\r\n                    The leading marketplace for cheap transport and moving services\r\n                "
+        )
       ])
     ])
   }
@@ -57980,17 +57994,19 @@ var staticRenderFns = [
             _c("div", { staticClass: "col-md-4" }, [
               _c("li", [
                 _c("span", { staticClass: "step-num" }, [
-                  _vm._v("\n                 1\n              ")
+                  _vm._v(
+                    "\r\n                            1\r\n                        "
+                  )
                 ]),
                 _vm._v(" "),
                 _c("p", [
                   _c("span", [
                     _vm._v(
-                      "\n                    FIND CUSTOMERS\n                 "
+                      "\r\n                                FIND CUSTOMERS\r\n                            "
                     )
                   ]),
                   _vm._v(
-                    "\n                            To optimize your tours.\n                        "
+                    "\r\n                            To optimize your tours.\r\n                        "
                   )
                 ])
               ])
@@ -57999,17 +58015,19 @@ var staticRenderFns = [
             _c("div", { staticClass: "col-md-4" }, [
               _c("li", [
                 _c("span", { staticClass: "step-num" }, [
-                  _vm._v("\n                 2\n              ")
+                  _vm._v(
+                    "\r\n                            2\r\n                        "
+                  )
                 ]),
                 _vm._v(" "),
                 _c("p", [
                   _c("span", [
                     _vm._v(
-                      "\n                    SUBMIT YOUR QUOTE\n                 "
+                      "\r\n                                SUBMIT YOUR QUOTE\r\n                            "
                     )
                   ]),
                   _vm._v(
-                    "\n                            To optimize your tours.\n                        "
+                    "\r\n                            To optimize your tours.\r\n                        "
                   )
                 ])
               ])
@@ -58018,17 +58036,19 @@ var staticRenderFns = [
             _c("div", { staticClass: "col-md-4" }, [
               _c("li", [
                 _c("span", { staticClass: "step-num" }, [
-                  _vm._v("\n                 3\n              ")
+                  _vm._v(
+                    "\r\n                            3\r\n                        "
+                  )
                 ]),
                 _vm._v(" "),
                 _c("p", [
                   _c("span", [
                     _vm._v(
-                      "\n                    INCREASE YOUR SALES REVENUE\n                 "
+                      "\r\n                                INCREASE YOUR SALES REVENUE\r\n                            "
                     )
                   ]),
                   _vm._v(
-                    "\n                            To optimize your tours.\n                        "
+                    "\r\n                            To optimize your tours.\r\n                        "
                   )
                 ])
               ])
@@ -58151,7 +58171,7 @@ var staticRenderFns = [
                         _c("span", { staticClass: "ng-binding" }, [
                           _c("em"),
                           _vm._v(
-                            "\n                          Household equipment\n                       "
+                            "\r\n                                        Household equipment\r\n                                    "
                           )
                         ])
                       ]
@@ -58184,7 +58204,7 @@ var staticRenderFns = [
                         _c("span", { staticClass: "ng-binding" }, [
                           _c("em"),
                           _vm._v(
-                            "\n                          Moving\n                       "
+                            "\r\n                                        Moving\r\n                                    "
                           )
                         ])
                       ]
@@ -58217,7 +58237,7 @@ var staticRenderFns = [
                         _c("span", { staticClass: "ng-binding" }, [
                           _c("em"),
                           _vm._v(
-                            "\n                          Vehicle\n                       "
+                            "\r\n                                        Vehicle\r\n                                    "
                           )
                         ])
                       ]
@@ -58250,7 +58270,7 @@ var staticRenderFns = [
                         _c("span", { staticClass: "ng-binding" }, [
                           _c("em"),
                           _vm._v(
-                            "\n                          Boats & voluminous\n                       "
+                            "\r\n                                        Boats & voluminous\r\n                                    "
                           )
                         ])
                       ]
@@ -58283,7 +58303,7 @@ var staticRenderFns = [
                         _c("span", { staticClass: "ng-binding" }, [
                           _c("em"),
                           _vm._v(
-                            "\n                          Miscellaneous\n                       "
+                            "\r\n                                        Miscellaneous\r\n                                    "
                           )
                         ])
                       ]
@@ -58316,7 +58336,7 @@ var staticRenderFns = [
                         _c("span", { staticClass: "ng-binding" }, [
                           _c("em"),
                           _vm._v(
-                            "\n                          Commercial goods\n                       "
+                            "\r\n                                        Commercial goods\r\n                                    "
                           )
                         ])
                       ]
@@ -58349,7 +58369,7 @@ var staticRenderFns = [
                         _c("span", { staticClass: "ng-binding" }, [
                           _c("em"),
                           _vm._v(
-                            "\n                          Animals\n                       "
+                            "\r\n                                        Animals\r\n                                    "
                           )
                         ])
                       ]
@@ -58382,7 +58402,7 @@ var staticRenderFns = [
                         _c("span", { staticClass: "ng-binding" }, [
                           _c("em"),
                           _vm._v(
-                            "\n                          Fragile goods\n                       "
+                            "\r\n                                        Fragile goods\r\n                                    "
                           )
                         ])
                       ]
@@ -58415,7 +58435,7 @@ var staticRenderFns = [
                         _c("span", { staticClass: "ng-binding" }, [
                           _c("em"),
                           _vm._v(
-                            "\n                          Agri-food\n                       "
+                            "\r\n                                        Agri-food\r\n                                    "
                           )
                         ])
                       ]
@@ -58448,7 +58468,7 @@ var staticRenderFns = [
                         _c("span", { staticClass: "ng-binding" }, [
                           _c("em"),
                           _vm._v(
-                            "\n                          Motorcycles and sports vehicles\n                       "
+                            "\r\n                                        Motorcycles and sports vehicles\r\n                                    "
                           )
                         ])
                       ]
@@ -58481,7 +58501,7 @@ var staticRenderFns = [
                         _c("span", { staticClass: "ng-binding" }, [
                           _c("em"),
                           _vm._v(
-                            "\n                          Package/Fold\n                       "
+                            "\r\n                                        Package/Fold\r\n                                    "
                           )
                         ])
                       ]
@@ -58514,7 +58534,7 @@ var staticRenderFns = [
                         _c("span", { staticClass: "ng-binding" }, [
                           _c("em"),
                           _vm._v(
-                            "\n                          Pallet\n                       "
+                            "\r\n                                        Pallet\r\n                                    "
                           )
                         ])
                       ]
@@ -58524,14 +58544,14 @@ var staticRenderFns = [
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "reference-block" }, [
-                _c("h5", [
+                _c("h5", { staticClass: "align-middle" }, [
                   _vm._v(
-                    "\n                            Reference\n                        "
+                    "\r\n                            Reference\r\n                        "
                   )
                 ]),
                 _vm._v(" "),
                 _c("input", {
-                  staticClass: "form-control",
+                  staticClass: "form-control ref",
                   attrs: { type: "text", placeholder: "Ex : 345765" }
                 })
               ])
@@ -58541,37 +58561,37 @@ var staticRenderFns = [
               _c("ul", { staticClass: "listing-header" }, [
                 _c("li", [
                   _vm._v(
-                    "\n                            Name\n                        "
+                    "\r\n                            Name\r\n                        "
                   )
                 ]),
                 _vm._v(" "),
                 _c("li", [
                   _vm._v(
-                    "\n                            Activity\n                        "
+                    "\r\n                            Activity\r\n                        "
                   )
                 ]),
                 _vm._v(" "),
                 _c("li", [
                   _vm._v(
-                    "\n                            Loading\n                        "
+                    "\r\n                            Loading\r\n                        "
                   )
                 ]),
                 _vm._v(" "),
                 _c("li", [
                   _vm._v(
-                    "\n                            Delivery\n                        "
+                    "\r\n                            Delivery\r\n                        "
                   )
                 ]),
                 _vm._v(" "),
                 _c("li", [
                   _vm._v(
-                    "\n                            Distance\n                        "
+                    "\r\n                            Distance\r\n                        "
                   )
                 ]),
                 _vm._v(" "),
                 _c("li", [
                   _vm._v(
-                    "\n                            Expiration\n                        "
+                    "\r\n                            Expiration\r\n                        "
                   )
                 ])
               ]),
@@ -58581,13 +58601,13 @@ var staticRenderFns = [
                   _c("div", { staticClass: "td-publication" }, [
                     _c("span", [
                       _vm._v(
-                        "\n                       Since\n                    "
+                        "\r\n                                    Since\r\n                                "
                       )
                     ]),
                     _vm._v(" "),
                     _c("strong", [
                       _vm._v(
-                        "\n                                    17 days\n                                "
+                        "\r\n                                    17 days\r\n                                "
                       )
                     ])
                   ]),
@@ -58602,7 +58622,7 @@ var staticRenderFns = [
                       [
                         _c("span", [
                           _vm._v(
-                            "\n                          Déménagement 17.35m\n                       "
+                            "\r\n                                        Déménagement 17.35m\r\n                                    "
                           )
                         ])
                       ]
@@ -58610,20 +58630,20 @@ var staticRenderFns = [
                     _vm._v(" "),
                     _c("span", { staticClass: "listing-status" }, [
                       _vm._v(
-                        "\n                       Priority listing\n                    "
+                        "\r\n                                    Priority listing\r\n                                "
                       )
                     ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "tags-wrapper" }, [
                       _c("span", [
                         _vm._v(
-                          "\n                          Economique\n                       "
+                          "\r\n                                        Economique\r\n                                    "
                         )
                       ]),
                       _vm._v(" "),
                       _c("span", [
                         _vm._v(
-                          "\n                          12 m\n                          "
+                          "\r\n                                        12 m\r\n                                        "
                         ),
                         _c("sup", [_vm._v("3")])
                       ])
@@ -58634,31 +58654,31 @@ var staticRenderFns = [
                     _c("div", { staticClass: "bid-info" }, [
                       _c("strong", [
                         _vm._v(
-                          "\n                                        2\n                                    "
+                          "\r\n                                        2\r\n                                    "
                         )
                       ]),
                       _vm._v(" "),
                       _c("em", [
                         _vm._v(
-                          "\n                                        (\n                                    "
+                          "\r\n                                        (\r\n                                    "
                         )
                       ]),
                       _vm._v(" "),
                       _c("strong", [
                         _vm._v(
-                          "\n                                        4\n                                    "
+                          "\r\n                                        4\r\n                                    "
                         )
                       ]),
                       _vm._v(" "),
                       _c("span", [
                         _vm._v(
-                          "\n                          in progress\n                       "
+                          "\r\n                                        in progress\r\n                                    "
                         )
                       ]),
                       _vm._v(" "),
                       _c("em", [
                         _vm._v(
-                          "\n                                        )\n                                    "
+                          "\r\n                                        )\r\n                                    "
                         )
                       ])
                     ]),
@@ -58666,13 +58686,13 @@ var staticRenderFns = [
                     _c("div", { staticClass: "msg-info" }, [
                       _c("strong", [
                         _vm._v(
-                          "\n                                        1\n                                    "
+                          "\r\n                                        1\r\n                                    "
                         )
                       ]),
                       _vm._v(" "),
                       _c("em", [
                         _vm._v(
-                          "\n                                        message\n                                    "
+                          "\r\n                                        message\r\n                                    "
                         )
                       ])
                     ])
@@ -58681,7 +58701,7 @@ var staticRenderFns = [
                   _c("div", { staticClass: "td-loading" }, [
                     _c("strong", [
                       _vm._v(
-                        "\n                                    Auvergne-Rhone-Alpes (63000)\n                                "
+                        "\r\n                                    Auvergne-Rhone-Alpes (63000)\r\n                                "
                       )
                     ]),
                     _vm._v(" "),
@@ -58690,34 +58710,34 @@ var staticRenderFns = [
                     _c("small", [
                       _c("span", [
                         _vm._v(
-                          "\n                          Between\n                       "
+                          "\r\n                                        Between\r\n                                    "
                         )
                       ]),
                       _vm._v(" "),
                       _c("strong", [
                         _vm._v(
-                          "\n                                        26/04\n                                    "
+                          "\r\n                                        26/04\r\n                                    "
                         )
                       ]),
                       _vm._v(" "),
                       _c("span", [
                         _vm._v(
-                          "\n                          and\n                       "
+                          "\r\n                                        and\r\n                                    "
                         )
                       ]),
                       _vm._v(" "),
                       _c("strong", [
                         _vm._v(
-                          "\n                                        01/05\n                                    "
+                          "\r\n                                        01/05\r\n                                    "
                         )
                       ])
                     ])
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "td-delivery td-loading" }, [
+                  _c("div", { staticClass: "td-delivery" }, [
                     _c("strong", [
                       _vm._v(
-                        "\n                                    Auvergne-Rhone-Alpes (63000)\n                                "
+                        "\r\n                                    Auvergne-Rhone-Alpes (63000)\r\n                                "
                       )
                     ]),
                     _vm._v(" "),
@@ -58726,25 +58746,25 @@ var staticRenderFns = [
                     _c("small", [
                       _c("span", [
                         _vm._v(
-                          "\n                          Between\n                       "
+                          "\r\n                                        Between\r\n                                    "
                         )
                       ]),
                       _vm._v(" "),
                       _c("strong", [
                         _vm._v(
-                          "\n                                        26/04\n                                    "
+                          "\r\n                                        26/04\r\n                                    "
                         )
                       ]),
                       _vm._v(" "),
                       _c("span", [
                         _vm._v(
-                          "\n                          and\n                       "
+                          "\r\n                                        and\r\n                                    "
                         )
                       ]),
                       _vm._v(" "),
                       _c("strong", [
                         _vm._v(
-                          "\n                                        01/05\n                                    "
+                          "\r\n                                        01/05\r\n                                    "
                         )
                       ])
                     ])
@@ -58754,20 +58774,20 @@ var staticRenderFns = [
                     _c("div", { staticClass: "title" }, [
                       _c("strong", [
                         _vm._v(
-                          "\n                                        1,35\n                                    "
+                          "\r\n                                        1,35\r\n                                    "
                         )
                       ]),
                       _vm._v(" "),
                       _c("span", [
                         _vm._v(
-                          "\n                          km\n                       "
+                          "\r\n                                        km\r\n                                    "
                         )
                       ])
                     ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "ng-binding" }, [
                       _vm._v(
-                        "\n                                    0h6\n                                "
+                        "\r\n                                    0h6\r\n                                "
                       )
                     ])
                   ]),
@@ -58775,18 +58795,18 @@ var staticRenderFns = [
                   _c("div", { staticClass: "td-expiration" }, [
                     _c("span", [
                       _vm._v(
-                        "\n                       in\n                    "
+                        "\r\n                                    in\r\n                                "
                       )
                     ]),
                     _vm._v(" "),
                     _c("div", [
                       _c("strong", [
                         _vm._v(
-                          "\n                                        1\n                                    "
+                          "\r\n                                        1\r\n                                    "
                         )
                       ]),
                       _vm._v(
-                        "\n                                    month\n                                "
+                        "\r\n                                    month\r\n                                "
                       )
                     ])
                   ])
