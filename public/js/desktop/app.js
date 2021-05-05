@@ -7588,7 +7588,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["background"],
+  props: {
+    background: {
+      type: String,
+      "default": "/images/home/video-bg.png"
+    }
+  },
   components: {
     MainMenu: _MainMenu__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
@@ -9653,7 +9658,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {};
+  }
+});
 
 /***/ }),
 
@@ -54350,7 +54359,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "header",
-    { style: { background: "url(" + _vm.background + ")" } },
+    { style: { background: "url(" + _vm.background + ") no-repeat" } },
     [
       _c("main-menu"),
       _vm._v(" "),

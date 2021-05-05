@@ -1398,7 +1398,7 @@ input[type="radio"] {
     width: 100%;
 }
 .form-sfi-control {
-    padding: 10px 16px 10px 42px;
+    padding: 10px 16px 10px 42px!important;
 }
 .listing-header {
     display: flex;
@@ -3810,7 +3810,7 @@ input[type="radio"] {
     }
 }
 .td-nom {
-    width: 25.5%;
+    width: 25%;
     position: relative;
     line-height: 1.2;
     transition: color 0.3s;
@@ -3912,7 +3912,7 @@ input[type="radio"] {
     line-height: 2;
     vertical-align: top;
     padding: 0px 0px 25px 10px;
-    width: 16.5%;
+    width: 17%;
     strong {
         font-weight: 400;
         line-height: 2;

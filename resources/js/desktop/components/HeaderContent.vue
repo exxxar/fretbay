@@ -1,5 +1,5 @@
 <template>
-<header v-bind:style="{background:'url('+background+')'}">
+<header v-bind:style="{background:'url('+background+') no-repeat'}">
     <main-menu />
     <div id="first">
         <div class="container">
@@ -28,9 +28,12 @@
 import MainMenu from "./MainMenu";
 
 export default {
-    props: [
-        "background"
-    ],
+    props: {
+        background: {
+            type: String,
+            default: "/images/home/video-bg.png",
+        }
+    },
     components: {
         MainMenu
     },
@@ -41,6 +44,7 @@ export default {
                 behavior: 'smooth'
             });
         }
+
     },
 }
 </script>
