@@ -6,7 +6,7 @@
                 <div class="tabs">
                     <div class="tab-pane tabs__content active">
                         <div class="slide-thumb">
-                            <img src="images/commentcamarche-img1.png" alt="">
+                            <img src="/images/commentcamarche-img1.png" alt="">
                         </div>
                         <div class="slide-content">
                             <h2>Publish a listing</h2>
@@ -17,7 +17,7 @@
                     </div>
                     <div class="tab-pane tabs__content">
                         <div class="slide-thumb">
-                            <img src="images/commentcamarche-img2.png" alt="">
+                            <img src="/images/commentcamarche-img2.png" alt="">
                         </div>
                         <div class="slide-content">
                             <h2>Receive quotes</h2>
@@ -29,7 +29,7 @@
                     </div>
                     <div class="tab-pane tabs__content">
                         <div class="slide-thumb">
-                            <img src="images/commentcamarche-img3.png" alt="">
+                            <img src="/images/commentcamarche-img3.png" alt="">
                         </div>
                         <div class="slide-content">
                             <h2>Get delivered</h2>
@@ -42,7 +42,7 @@
                     </div>
                     <div class="tab-pane tabs__content">
                         <div class="slide-thumb">
-                            <img src="images/commentcamarche-img4.png" alt="">
+                            <img src="/images/commentcamarche-img4.png" alt="">
                         </div>
                         <div class="slide-content">
                             <h2>Evaluate the service</h2>
@@ -54,7 +54,7 @@
                         </div>
                     </div>
                     <ul class="tabs__caption">
-                        <li class="active">
+                        <li class="active" >
                             <strong>1</strong>Publish a listing
                         </li>
                         <li>
@@ -116,23 +116,23 @@
                 <div class="clearfix row">
                     <div class="col-md-6">
                         <ul class="listing">
-                            <li><img src="images/listicon1.png" alt=""> <span>Competitive prices thanks to grouped transport and empty returns</span>
+                            <li><img src="/images/listicon1.png" alt=""> <span>Competitive prices thanks to grouped transport and empty returns</span>
                             </li>
-                            <li><img src="images/listicon2.png" alt=""> <span>The implementation of systematic evaluations of carriers</span>
+                            <li><img src="/images/listicon2.png" alt=""> <span>The implementation of systematic evaluations of carriers</span>
                             </li>
-                            <li><img src="images/listicon3.png" alt=""> <span>The refund of the deposit if the carrier cancels the service</span>
+                            <li><img src="/images/listicon3.png" alt=""> <span>The refund of the deposit if the carrier cancels the service</span>
                             </li>
-                            <li><img src="images/listicon4.png" alt=""> <span>No unsolicited calls: your contact details remain invisible</span>
+                            <li><img src="/images/listicon4.png" alt=""> <span>No unsolicited calls: your contact details remain invisible</span>
                             </li>
                         </ul>
                     </div>
                     <div class="col-md-6">
                         <ul class="listing">
-                            <li><img src="images/listicon5.png" alt=""> <span>Safeguarding the environment with the eco-shared use of trucks</span>
+                            <li><img src="/images/listicon5.png" alt=""> <span>Safeguarding the environment with the eco-shared use of trucks</span>
                             </li>
-                            <li><img src="images/listicon6.png" alt=""> <span>A quality of service certified by <a
+                            <li><img src="/images/listicon6.png" alt=""> <span>A quality of service certified by <a
                                 target="_blank" href="#" class="h3 bold">Truspilot</a></span></li>
-                            <li><img src="images/listicon7.png" alt=""> <span>Available throughout Europe</span>
+                            <li><img src="/images/listicon7.png" alt=""> <span>Available throughout Europe</span>
                             </li>
                         </ul>
                     </div>

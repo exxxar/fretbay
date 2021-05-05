@@ -54359,7 +54359,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "header",
-    { style: { background: "url(" + _vm.background + ") no-repeat" } },
+    { style: { background: "url(" + _vm.background + ") repeat-x" } },
     [
       _c("main-menu"),
       _vm._v(" "),
@@ -60347,7 +60347,7 @@ var staticRenderFns = [
             _c("div", { staticClass: "tab-pane tabs__content active" }, [
               _c("div", { staticClass: "slide-thumb" }, [
                 _c("img", {
-                  attrs: { src: "images/commentcamarche-img1.png", alt: "" }
+                  attrs: { src: "/images/commentcamarche-img1.png", alt: "" }
                 })
               ]),
               _vm._v(" "),
@@ -60369,7 +60369,7 @@ var staticRenderFns = [
             _c("div", { staticClass: "tab-pane tabs__content" }, [
               _c("div", { staticClass: "slide-thumb" }, [
                 _c("img", {
-                  attrs: { src: "images/commentcamarche-img2.png", alt: "" }
+                  attrs: { src: "/images/commentcamarche-img2.png", alt: "" }
                 })
               ]),
               _vm._v(" "),
@@ -60391,7 +60391,7 @@ var staticRenderFns = [
             _c("div", { staticClass: "tab-pane tabs__content" }, [
               _c("div", { staticClass: "slide-thumb" }, [
                 _c("img", {
-                  attrs: { src: "images/commentcamarche-img3.png", alt: "" }
+                  attrs: { src: "/images/commentcamarche-img3.png", alt: "" }
                 })
               ]),
               _vm._v(" "),
@@ -60413,7 +60413,7 @@ var staticRenderFns = [
             _c("div", { staticClass: "tab-pane tabs__content" }, [
               _c("div", { staticClass: "slide-thumb" }, [
                 _c("img", {
-                  attrs: { src: "images/commentcamarche-img4.png", alt: "" }
+                  attrs: { src: "/images/commentcamarche-img4.png", alt: "" }
                 })
               ]),
               _vm._v(" "),
@@ -60634,7 +60634,7 @@ var staticRenderFns = [
               _c("ul", { staticClass: "listing" }, [
                 _c("li", [
                   _c("img", {
-                    attrs: { src: "images/listicon1.png", alt: "" }
+                    attrs: { src: "/images/listicon1.png", alt: "" }
                   }),
                   _vm._v(" "),
                   _c("span", [
@@ -60646,7 +60646,7 @@ var staticRenderFns = [
                 _vm._v(" "),
                 _c("li", [
                   _c("img", {
-                    attrs: { src: "images/listicon2.png", alt: "" }
+                    attrs: { src: "/images/listicon2.png", alt: "" }
                   }),
                   _vm._v(" "),
                   _c("span", [
@@ -60658,7 +60658,7 @@ var staticRenderFns = [
                 _vm._v(" "),
                 _c("li", [
                   _c("img", {
-                    attrs: { src: "images/listicon3.png", alt: "" }
+                    attrs: { src: "/images/listicon3.png", alt: "" }
                   }),
                   _vm._v(" "),
                   _c("span", [
@@ -60670,7 +60670,7 @@ var staticRenderFns = [
                 _vm._v(" "),
                 _c("li", [
                   _c("img", {
-                    attrs: { src: "images/listicon4.png", alt: "" }
+                    attrs: { src: "/images/listicon4.png", alt: "" }
                   }),
                   _vm._v(" "),
                   _c("span", [
@@ -60686,7 +60686,7 @@ var staticRenderFns = [
               _c("ul", { staticClass: "listing" }, [
                 _c("li", [
                   _c("img", {
-                    attrs: { src: "images/listicon5.png", alt: "" }
+                    attrs: { src: "/images/listicon5.png", alt: "" }
                   }),
                   _vm._v(" "),
                   _c("span", [
@@ -60698,7 +60698,7 @@ var staticRenderFns = [
                 _vm._v(" "),
                 _c("li", [
                   _c("img", {
-                    attrs: { src: "images/listicon6.png", alt: "" }
+                    attrs: { src: "/images/listicon6.png", alt: "" }
                   }),
                   _vm._v(" "),
                   _c("span", [
@@ -60716,7 +60716,7 @@ var staticRenderFns = [
                 _vm._v(" "),
                 _c("li", [
                   _c("img", {
-                    attrs: { src: "images/listicon7.png", alt: "" }
+                    attrs: { src: "/images/listicon7.png", alt: "" }
                   }),
                   _vm._v(" "),
                   _c("span", [_vm._v("Available throughout Europe")])

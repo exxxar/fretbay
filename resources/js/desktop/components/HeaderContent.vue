@@ -1,5 +1,5 @@
 <template>
-<header v-bind:style="{background:'url('+background+') no-repeat'}">
+<header v-bind:style="{background:'url('+background+') repeat-x'}">
     <main-menu />
     <div id="first">
         <div class="container">
