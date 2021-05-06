@@ -57,9 +57,9 @@
                             <h6 class="text-center">Parasol</h6>
                         </div>
                         <div class="inventory-controls">
-                            <button class="btn btn-primary">-</button>
+                            <button class="btn btn-primary input-group-btn">-</button>
                             <span>1</span>
-                            <button class="btn btn-primary">+</button>
+                            <button class="btn btn-primary input-group-btn">+</button>
                         </div>
                     </li>
 

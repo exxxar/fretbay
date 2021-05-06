@@ -41,20 +41,20 @@ section {
 }
 
 #header {
-    background: none;
+    background: url("/images/color-line.png");
     position: relative;
     z-index: 1000;
-    position: fixed;
-    top: 0;
+    top: 80px;
     right: 0;
     left: 0;
     overflow: visible !important;
     padding: 0 !important;
+    height: 2px;
 }
 .logo {
     width: 100%;
     height: 100px;
-    background: url(../images/video-head.png) repeat center top/contain;
+    background: url("/images/video-head.png") repeat center top/contain;
 }
 .logo__body {
     display: flex;
@@ -385,6 +385,9 @@ h1 {
         color: #717780;
         font-size: 15px;
     }
+}
+.steps{
+    width: 60%;
 }
 #stepsNew {
     padding: 35px 0;
@@ -1023,7 +1026,7 @@ h1 {
     border-bottom: 4px solid rgba(0, 0, 0, 0.09);
 }
 #bannerListings {
-    background: url(../images/banner.jpg) no-repeat top;
+    background: url("/images/banner.jpg") no-repeat top;
     background-size: cover;
     border-bottom: 1px solid lightgray;
     padding: 20px 0;
@@ -1072,7 +1075,7 @@ h1 {
     border-radius: 2px;
     padding: 26px 26px 8px;
     li {
-        background: url(../images/tick-success.svg) no-repeat left 3px;
+        background: url("/images/tick-success.svg") no-repeat left 3px;
         background-size: 18px auto;
         font-size: 14px;
         font-weight: 700;
@@ -1377,7 +1380,7 @@ input[type="radio"] {
     justify-content: space-between;
     align-items: center;
     h5 {
-        background: url(../images/reference.svg) no-repeat 2px center;
+        background: url("/images/reference.svg") no-repeat 2px center;
         padding: 0px 15px 0 42px;
         font-size: 16px;
         font-weight: 700;
@@ -1467,6 +1470,9 @@ input[type="radio"] {
         color: #3d4e60;
     }
 }
+#fretbayfooter{
+    font-family: "Lato", sans-serif;
+}
 .td-nom {
     width: 23%;
     position: relative;
@@ -1494,11 +1500,11 @@ input[type="radio"] {
         }
     }
     .category-2:before {
-        background-image: url(../images/02.svg);
+        background-image: url("/images/02.svg");
     }
     .listing-status {
         display: inline-block;
-        background: url(../images/star-success.svg) no-repeat left center;
+        background: url("/images/star-success.svg") no-repeat left center;
         background-size: auto 15px;
         font-size: 12px;
         margin-bottom: 8px;
@@ -1866,7 +1872,7 @@ input[type="radio"] {
     margin-bottom: 20px;
 }
 .signUpForm1__input-first {
-    background: url(../images/color-line.png) repeat-x center top #fff;
+    background: url("/images/color-line.png") repeat-x center top #fff;
 }
 .signUpForm1-checkbox {
     margin-bottom: 10px;
@@ -1897,7 +1903,7 @@ input[type="radio"] {
         width: 37px;
         height: 37px;
         display: inline-block;
-        background: url(../images/checkBox.png) no-repeat;
+        background: url("/images/checkBox.png") no-repeat;
         vertical-align: middle;
         margin-right: 18px;
         float: left;
@@ -1998,7 +2004,7 @@ input[type="radio"] {
 }
 .size-container {
     width: 100%;
-    background: url(../images/port-arrow.png) no-repeat right center #fff;
+    background: url("/images/port-arrow.png") no-repeat right center #fff;
     height: 64px;
     border: none;
     box-shadow: 1px 2px 3px #ccc;
@@ -2092,7 +2098,7 @@ input[type="radio"] {
             color: #333;
         }
         .equipment {
-            background: url(../images/equipment.png) no-repeat center left;
+            background: url("/images/equipment.png") no-repeat center left;
             width: 35px;
             height: 29px;
             display: block;
@@ -2101,7 +2107,7 @@ input[type="radio"] {
             top: -4px;
         }
         .demenagement {
-            background: url(../images/demenagement.png) no-repeat center left;
+            background: url("/images/demenagement.png") no-repeat center left;
             width: 35px;
             height: 29px;
             display: block;
@@ -2110,7 +2116,7 @@ input[type="radio"] {
             top: -4px;
         }
         .vehicle {
-            background: url(../images/catSmallIco/vehicule.png) no-repeat center left;
+            background: url("/images/catSmallIco/vehicule.png") no-repeat center left;
             width: 35px;
             height: 29px;
             display: block;
@@ -2318,7 +2324,7 @@ input[type="radio"] {
     }
 }
 .vcheck-wrap input[type="checkbox"]:checked + .vcheck {
-    background: url(../images/vcheck.jpg) no-repeat;
+    background: url("/images/vcheck.jpg") no-repeat;
 }
 .vcheck-wrap input[type="checkbox"] + .vcheck {
     background: #949492;
@@ -2486,7 +2492,7 @@ input[type="radio"] {
 
                 i {
                     &:after {
-                        background: url(../images/plus.png) no-repeat;
+                        background: url("/images/plus.png") no-repeat;
                     }
                 }
             }
@@ -2518,7 +2524,7 @@ input[type="radio"] {
                     transition: transform 250ms ease;
                 }
                 &:after {
-                    background: url(../images/minus.png) no-repeat;
+                    background: url("/images/minus.png") no-repeat;
                 }
             }
         }
@@ -2661,6 +2667,7 @@ input[type="radio"] {
     font-family: "Lato", sans-serif;
 }
 .left-column {
+    font-family: "Lato", sans-serif;
     width: 852px;
     float: left;
     background: #fff;
@@ -2689,10 +2696,12 @@ input[type="radio"] {
     }
 }
 .addresse-list {
+
     font-size: 16.8px;
     line-height: 1.428571429;
     margin-bottom: 10px;
 }
+
 
 //BENEFITS-TRANSPORTER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -2700,7 +2709,7 @@ input[type="radio"] {
     color: #fff;
     font-size: 23px;
     font-style: normal;
-    background: url(../images/shipperRecrutiMentBanner.png) no-repeat center top;
+    background: url("/images/shipperRecrutiMentBanner.png") no-repeat center top;
     -webkit-background-size: cover;
     background-size: cover;
     padding-bottom: 170px;
@@ -2809,7 +2818,7 @@ h3 {
         // list-style-position: inside;
         margin-bottom: 20px;
         padding-left: 20px;
-        background: url(../images/arrow_Li.png) no-repeat left center;
+        background: url("/images/arrow_Li.png") no-repeat left center;
     }
 }
 .risks-txt {
@@ -2906,7 +2915,7 @@ h3 {
 //moving-move-fretbay!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 #moving-move-fretbay__header {
-    background: url(../images/dest/commentcamarche-banner.png) no-repeat scroll center top/cover;
+    background: url("/images/dest/commentcamarche-banner.png") no-repeat scroll center top/cover;
     padding-top: 90px;
     h1 {
         font-family: "Lato",sans-serif;
@@ -3364,7 +3373,7 @@ h3 {
     border-bottom: 4px solid rgba(0, 0, 0, 0.09);
 }
 #bannerListings {
-    background: url(../images/dest/banner.jpg) no-repeat top;
+    background: url("/images/dest/banner.jpg") no-repeat top;
     background-size: cover;
     border-bottom: 1px solid lightgray;
     padding: 20px 0;
@@ -3413,7 +3422,7 @@ h3 {
     border-radius: 2px;
     padding: 26px 26px 8px;
     li {
-        background: url(../images/dest/tick-success.svg) no-repeat left 3px;
+        background: url("/images/dest/tick-success.svg") no-repeat left 3px;
         background-size: 18px auto;
         font-size: 14px;
         font-weight: 700;
@@ -3445,13 +3454,13 @@ h3 {
 }
 .step-num {
     background: #30a0be;
-    font-size: 34px;
+    font-size: 14px;
     color: #fff;
     line-height: 1;
     font-weight: 700;
-    padding: 5px 12px;
-    width: 43px;
-    height: 43px;
+    padding: 5px 5px 5px 8px;
+    width: 24px;
+    height: 24px;
     border-radius: 100%;
     margin-right: 20px;
 }
@@ -4216,7 +4225,7 @@ input[type="radio"] {
     margin-bottom: 20px;
 }
 .signUpForm1__input-first {
-    background: url(../images/dest/color-line.png) repeat-x center top #fff;
+    background: url("/images/dest/color-line.png") repeat-x center top #fff;
 }
 .signUpForm1-checkbox {
     margin-bottom: 10px;
@@ -4247,7 +4256,7 @@ input[type="radio"] {
         width: 37px;
         height: 37px;
         display: inline-block;
-        background: url(../images/dest/checkBox.png) no-repeat;
+        background: url("/images/dest/checkBox.png") no-repeat;
         vertical-align: middle;
         margin-right: 18px;
         float: left;
@@ -4348,7 +4357,7 @@ input[type="radio"] {
 }
 .size-container {
     width: 100%;
-    background: url(../images/dest/port-arrow.png) no-repeat right center #fff;
+    background: url("/images/dest/port-arrow.png") no-repeat right center #fff;
     height: 64px;
     border: none;
     box-shadow: 1px 2px 3px #ccc;
@@ -4444,7 +4453,7 @@ input[type="radio"] {
             color: #333;
         }
         .equipment {
-            background: url(../images/dest/equipment.png) no-repeat center left;
+            background: url("/images/dest/equipment.png") no-repeat center left;
             width: 35px;
             height: 29px;
             display: block;
@@ -4453,7 +4462,7 @@ input[type="radio"] {
             top: -4px;
         }
         .demenagement {
-            background: url(../images/dest/demenagement.png) no-repeat center left;
+            background: url("/images/dest/demenagement.png") no-repeat center left;
             width: 35px;
             height: 29px;
             display: block;
@@ -4462,7 +4471,7 @@ input[type="radio"] {
             top: -4px;
         }
         .vehicle {
-            background: url(../images/catSmallIco/vehicule.png) no-repeat center left;
+            background: url("/images/catSmallIco/vehicule.png") no-repeat center left;
             width: 35px;
             height: 29px;
             display: block;
@@ -4671,7 +4680,7 @@ input[type="radio"] {
     }
 }
 .vcheck-wrap input[type="checkbox"]:checked + .vcheck {
-    background: url(../images/dest/vcheck.jpg) no-repeat;
+    background: url("/images/dest/vcheck.jpg") no-repeat;
 }
 .vcheck-wrap input[type="checkbox"] + .vcheck {
     background: #949492;
@@ -4839,7 +4848,7 @@ input[type="radio"] {
 
                 i {
                     &:after {
-                        background: url(../images/dest/plus.png) no-repeat;
+                        background: url("/images/dest/plus.png") no-repeat;
                     }
                 }
             }
@@ -4871,7 +4880,7 @@ input[type="radio"] {
                     transition: transform 250ms ease;
                 }
                 &:after {
-                    background: url(../images/dest/minus.png) no-repeat;
+                    background: url("/images/dest/minus.png") no-repeat;
                 }
             }
         }
@@ -4931,7 +4940,7 @@ input[type="radio"] {
 }
 .conseilDemenagementBanner {
     min-height: 160px;
-    background: url(../images/dest/conseilDemenagementBanner.png) no-repeat;
+    background: url("/images/dest/conseilDemenagementBanner.png") no-repeat;
     background-position: center bottom;
     background-size: cover;
     text-align: center;
@@ -4973,7 +4982,7 @@ input[type="radio"] {
 
 .page-topheader {
     background: #fff;
-    padding: 17px 0 20px;
+    padding: 100px 0 20px;
     margin-bottom: 30px;
     text-align: center;
     h1 {
@@ -5031,7 +5040,7 @@ input[type="radio"] {
     color: #fff;
     font-size: 23px;
     font-style: normal;
-    background: url(../images/dest/shipperRecrutiMentBanner.png) no-repeat center top;
+    background: url("/images/dest/shipperRecrutiMentBanner.png") no-repeat center top;
     -webkit-background-size: cover;
     background-size: cover;
     padding-bottom: 170px;
@@ -5110,7 +5119,7 @@ input[type="radio"] {
                 display: inline-block;
                 vertical-align: top;
                 margin-right: 6px;
-                background: url(../images/dest/shipperRecSlideIcons.png) no-repeat;
+                background: url("/images/dest/shipperRecSlideIcons.png") no-repeat;
                 -webkit-transition: background-position .3s ease;
                 -o-transition: background-position .3s ease;
                 transition: background-position .3s ease;
@@ -5213,7 +5222,7 @@ h3 {
         // list-style-position: inside;
         margin-bottom: 20px;
         padding-left: 20px;
-        background: url(../images/dest/arrow_Li.png) no-repeat left center;
+        background: url("/images/dest/arrow_Li.png") no-repeat left center;
     }
 }
 .risks-txt {
@@ -5310,7 +5319,7 @@ h3 {
 //moving-move-fretbay!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 #moving-move-fretbay__header {
-    background: url(../images/dest/commentcamarche-banner.png) no-repeat scroll center top/cover;
+    background: url("/images/dest/commentcamarche-banner.png") no-repeat scroll center top/cover;
     padding-top: 90px;
     h1 {
         font-family: "Lato",sans-serif;
@@ -5611,7 +5620,7 @@ h3 {
 }
 .notification-icon {
     display: inline-block;
-    background-image: url(../images/dest/bell.svg);
+    background-image: url("/images/dest/bell.svg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: auto 100%;
@@ -5619,7 +5628,7 @@ h3 {
     height: 28px;
     margin: 0 0 8px 20px;
     &:hover {
-        background-image: url(../images/dest/bell-h.svg);
+        background-image: url("/images/dest/bell-h.svg");
     }
 }
 #profile-page-content {
@@ -5642,7 +5651,7 @@ h3 {
     background: #fff;
 }
 .content-overlay-outer {
-    background: url(../images/dest/bg-profile.jpg) no-repeat center top;
+    background: url("/images/dest/bg-profile.jpg") no-repeat center top;
     padding: 0 36px 20px;
     text-align: center;
     position: relative;
@@ -5676,7 +5685,7 @@ h3 {
         display: inline-block;
         border-radius: 50%;
         overflow: hidden;
-        background: #ccc url(../images/dest/shipper.svg);
+        background: #ccc url("/images/dest/shipper.svg");
         cursor: pointer;
     }
     input[type=file] {
@@ -5952,7 +5961,7 @@ h3 {
     .flag {
         font-size: 14px;
         line-height: 1.5;
-        background-image: url(../images/dest/fr.svg);
+        background-image: url("/images/dest/fr.svg");
         margin-right: 10px;
         width: 20px;
         background-size: contain;
@@ -6606,16 +6615,21 @@ body.lock {
         height: 1em;
     }
     .flag-fr {
-        background-image: url(../images/dest/fr.svg);
+        background-image: url("/images/dest/fr.svg");
     }
     .flag-uk {
-        background-image: url(../images/dest/uk.svg);
+        background-image: url("/images/dest/uk.svg");
     }.flag-es {
-         background-image: url(../images/dest/es.svg);
+         background-image: url("/images/dest/es.svg");
      }
     .flag-de {
-        background-image: url(../images/dest/de.svg);
+        background-image: url("/images/dest/de.svg");
     }
+}
+
+.input-group-btn{
+    width: 24px;
+    height: 24px;
 }
 
 ///transporterProfile8!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
