@@ -56,10 +56,12 @@
                             <img src="https://fretbay.com/en/assets/images/common/icons/volume/96h.svg?v=0.0.0" class="img-fluid" alt="">
                             <h6 class="text-center">Parasol</h6>
                         </div>
-                        <div class="inventory-controls">
-                            <button class="btn btn-primary input-group-btn">-</button>
+                        <div class="inventory-controls " >
+                            <!--<button class="btn btn-primary rounded">-</button>-->
+                            <a class="add-remove-count d-flex justify-content-center">-</a>
                             <span>1</span>
-                            <button class="btn btn-primary input-group-btn">+</button>
+                            <a class="add-remove-count d-flex justify-content-center">+</a>
+                            <!--<button class="btn btn-primary rounded">+</button>-->
                         </div>
                     </li>
 

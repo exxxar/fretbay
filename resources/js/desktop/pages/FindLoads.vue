@@ -5,7 +5,7 @@
             <ul class="steps__list row">
                 <div class="col-md-4">
                     <li>
-                        <span class="step-num">
+                        <span class="step-num-find">
                             1
                         </span>
                         <p>
@@ -18,7 +18,7 @@
                 </div>
                 <div class="col-md-4">
                     <li>
-                        <span class="step-num">
+                        <span class="step-num-find">
                             2
                         </span>
                         <p>
@@ -31,7 +31,7 @@
                 </div>
                 <div class="col-md-4">
                     <li>
-                        <span class="step-num">
+                        <span class="step-num-find">
                             3
                         </span>
                         <p>

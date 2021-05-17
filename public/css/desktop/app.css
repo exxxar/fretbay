@@ -17516,6 +17516,32 @@ h3 {
   margin-right: 20px;
 }
 
+.step-num-find {
+  background: #30a0be;
+  font-size: 32px;
+  color: #fff;
+  line-height: 1;
+  font-weight: 700;
+  padding: 8px 5px 5px 15px;
+  width: 48px;
+  height: 48px;
+  border-radius: 100%;
+  margin-right: 20px;
+}
+
+.add-remove-count {
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  font-size: 25px;
+  border-radius: 5px;
+}
+
+.add-remove-count:hover {
+  color: #fff;
+  background: #23527c;
+}
+
 #listings-footer .footer-main {
   color: #406780;
   background: #f5fbff;

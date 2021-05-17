@@ -52736,16 +52736,26 @@ var staticRenderFns = [
                 _c("h6", { staticClass: "text-center" }, [_vm._v("Parasol")])
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "inventory-controls" }, [
-                _c("a", { staticClass: "btn btn-primary input-group-btn" }, [
-                  _vm._v("-")
-                ]),
+              _c("div", { staticClass: "inventory-controls " }, [
+                _c(
+                  "a",
+                  {
+                    staticClass:
+                      "add-remove-count d-flex justify-content-center"
+                  },
+                  [_vm._v("-")]
+                ),
                 _vm._v(" "),
                 _c("span", [_vm._v("1")]),
                 _vm._v(" "),
-                _c("a", { staticClass: "btn btn-primary input-group-btn" }, [
-                  _vm._v("+")
-                ])
+                _c(
+                  "a",
+                  {
+                    staticClass:
+                      "add-remove-count d-flex justify-content-center"
+                  },
+                  [_vm._v("+")]
+                )
               ])
             ]),
             _vm._v(" "),
@@ -58022,7 +58032,7 @@ var staticRenderFns = [
           _c("ul", { staticClass: "steps__list row" }, [
             _c("div", { staticClass: "col-md-4" }, [
               _c("li", [
-                _c("span", { staticClass: "step-num" }, [
+                _c("span", { staticClass: "step-num-find" }, [
                   _vm._v(
                     "\r\n                            1\r\n                        "
                   )
@@ -58043,7 +58053,7 @@ var staticRenderFns = [
             _vm._v(" "),
             _c("div", { staticClass: "col-md-4" }, [
               _c("li", [
-                _c("span", { staticClass: "step-num" }, [
+                _c("span", { staticClass: "step-num-find" }, [
                   _vm._v(
                     "\r\n                            2\r\n                        "
                   )
@@ -58064,7 +58074,7 @@ var staticRenderFns = [
             _vm._v(" "),
             _c("div", { staticClass: "col-md-4" }, [
               _c("li", [
-                _c("span", { staticClass: "step-num" }, [
+                _c("span", { staticClass: "step-num-find" }, [
                   _vm._v(
                     "\r\n                            3\r\n                        "
                   )
