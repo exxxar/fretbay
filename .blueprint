@@ -1,0 +1,36 @@
+created:
+    - database/factories/VerificationApplicationFactory.php
+    - database/factories/ListingFactory.php
+    - database/factories/QuoteFactory.php
+    - database/factories/CategoryFactory.php
+    - database/factories/SubcategoryFactory.php
+    - database/factories/ObjectFactory.php
+    - database/factories/CategoryPropertyFactory.php
+    - database/migrations/2021_05_05_001023_create_verification_applications_table.php
+    - database/migrations/2021_05_05_001024_create_listings_table.php
+    - database/migrations/2021_05_05_001025_create_quotes_table.php
+    - database/migrations/2021_05_05_001026_create_categories_table.php
+    - database/migrations/2021_05_05_001027_create_subcategories_table.php
+    - database/migrations/2021_05_05_001028_create_objects_table.php
+    - database/migrations/2021_05_05_001029_create_category_properties_table.php
+    - app/VerificationApplication.php
+    - app/Listing.php
+    - app/Quote.php
+    - app/Category.php
+    - app/Subcategory.php
+    - app/Object.php
+    - app/CategoryProperty.php
+    - database/seeds/VerificationApplicationSeeder.php
+    - database/seeds/ListingSeeder.php
+    - database/seeds/QuoteSeeder.php
+    - database/seeds/CategorySeeder.php
+    - database/seeds/SubcategorySeeder.php
+    - database/seeds/ObjectSeeder.php
+models:
+    VerificationApplication: { documents: json, images: json, status: 'string:2000', comment: longtext, additional_properties: json, softdeletes: softDeletes }
+    Listing: { title: longtext, articles: json, place_of_loading: json, place_of_delivery: json, shipping_date_from: datetime, shipping_date_to: datetime, unshipping_date_from: datetime, unshipping_date_to: datetime, messages: json, additional_info: longtext, images: json, status: string, softdeletes: softDeletes, relationships: { hasOne: Category, hasMany: Quote, belongsTo: User } }
+    Quote: { price: double, valid_until_date: datetime, additional_info: longtext, status: 'string:2000', softdeletes: softDeletes, relationships: { belongsTo: 'Listing, User' } }
+    Category: { title: longtext, min_price: double, image: string, position: integer, is_active: boolean, softdeletes: softDeletes, relationships: { hasMany: 'Subcategory, Object, CategoryProperty' } }
+    Subcategory: { title: longtext, image: string, position: integer, is_active: boolean, softdeletes: softDeletes, relationships: { hasMany: Object, belongsTo: Category } }
+    Object: { title: longtext, volume: double, image: string, position: integer, is_active: boolean, softdeletes: softDeletes, relationships: { belongsTo: 'Category, Subcategory' } }
+    CategoryProperty: { title: longtext, type: 'string:500', relationships: { belongsTo: Category } }

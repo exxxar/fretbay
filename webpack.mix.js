@@ -12,6 +12,15 @@ const mix = require('laravel-mix');
  |
  */
 
+const WebpackShellPlugin = require('webpack-shell-plugin');
+// Add shell command plugin configured to create JavaScript language file
+mix.webpackConfig({
+    plugins:
+        [
+            new WebpackShellPlugin({onBuildStart:['php artisan lang:js resources/js/vue-translations.js --no-lib --quiet'], onBuildEnd:[]})
+        ]
+});
+
 if (mix.inProduction()) {
     const CompressionPlugin = require('compression-webpack-plugin');
 
@@ -44,7 +53,7 @@ mix.webpackConfig({
     }
 });
 
-mix.copyDirectory('resources/assets/js', 'public/js');
+// mix.copyDirectory('resources/assets/js', 'public/js');
 
 mix
     .js('resources/js/desktop/app.js', 'public/js/desktop')
@@ -98,15 +107,15 @@ mix.copy('node_modules/@coreui/icons/sprites/', 'public/images/icons/sprites');
 
 mix
     .js('resources/js/admin/app.js', 'public/js/admin')
-    .sass('resources/sass/admin/style.scss', 'public/css/admin/app.css')
+    .sass('resources/sass/admin/app.scss', 'public/css/admin/app.css')
     .options({
         processCssUrls: false
     });
 
 
-mix.copyDirectory('resources/assets/images', 'public/images');
-mix.copyDirectory('resources/assets/css', 'public/css');
-mix.copyDirectory('resources/assets/fonts', 'public/fonts');
+// mix.copyDirectory('resources/assets/images', 'public/images');
+// mix.copyDirectory('resources/assets/css', 'public/css');
+// mix.copyDirectory('resources/assets/fonts', 'public/fonts');
 
 
 if (mix.inProduction()) {

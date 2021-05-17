@@ -83,6 +83,22 @@ Vue.component('fraud-prevention-page', require('../desktop/pages/FraudPrevention
 Vue.component('tips-moving-page', require('../desktop/pages/TipsMoving.vue').default);
 Vue.component('ebay-sellers-page', require('../desktop/pages/EbaySellers.vue').default);
 
+require('lang.js');
+import VueLang from '@eli5/vue-lang-js'
+// get the data source
+import translations from '../vue-translations.js';
+
+Vue.use(VueLang, {
+    messages: translations, // Provide locale file
+    // locale: 'en', // Set locale
+    fallback: 'en' // Set fallback locale
+});
+
+if (localStorage.getItem('locale')) {
+    this.$lang.setLocale(localStorage.getItem('locale'));
+} else {
+    this.$lang.setLocale('en');
+}
 
 const app = new Vue({
     store,
