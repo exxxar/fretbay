@@ -58,6 +58,37 @@ Route::group(["prefix" => "admin"], function () {
     Route::view("/", "admin.pages.index")->name("admin.index");
     Route::view("/login", "admin.pages.login")->name("admin.login");
     Route::view("/users", "admin.pages.users")->name("admin.users");
+    Route::group(["prefix" => "languages"], function () {
+        //GET /languages
+        //GET /languages/create
+        //POST /languages
+        //GET /languages/{language}/translations
+        //GET /languages/{language}/translations/create
+        //POST /languages/{language}/translations
+        //PUT /languages/{language}/translations
+        Route::get('/', 'LanguageController@index')
+            ->name('languages.index');
+
+        Route::get('/create', 'LanguageController@create')
+            ->name('languages.create');
+
+        Route::post('/', 'LanguageController@store')
+            ->name('languages.store');
+
+        Route::get('/{language}/translations', 'LanguageTranslationController@index')
+            ->name('languages.translations.index');
+
+        Route::post('/{language}', 'LanguageTranslationController@update')
+            ->name('languages.translations.update');
+
+        Route::get('/{language}/translations/create', 'LanguageTranslationController@create')
+            ->name('languages.translations.create');
+
+        Route::post('/{language}/translations', 'LanguageTranslationController@store')
+            ->name('languages.translations.store');
+
+        Route::get('/translations', 'LanguageTranslationController@index');
+    });
 });
 //Auth::routes();
 

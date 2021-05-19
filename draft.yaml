@@ -1,0 +1,78 @@
+models:
+  VerificationApplication:
+    documents: json
+    images: json
+    status: string:2000
+    comment: longtext
+    additional_properties: json
+    softDeletes
+
+  Listing:
+    title: longtext
+#    category_id: id foreign:categories.id
+#    subcategory_id: id foreign:subcategories.id
+#    user_id: id foreign:users.id
+    articles: json
+    place_of_loading: json
+    place_of_delivery: json
+#    place_of_loading_properties: json
+#    place_of_delivery_properties: json
+    shipping_date_from: datetime
+    shipping_date_to: datetime
+    unshipping_date_from: datetime
+    unshipping_date_to: datetime
+    messages: json
+    additional_info: longtext
+    images: json
+    status: string
+    softDeletes
+    relationships:
+      hasOne: Category
+      hasMany: Quote
+      belongsTo: User
+  Quote:
+#    user_id: id foreign:users.id
+    price: double
+    valid_until_date: datetime
+    additional_info: longtext
+#    nb_of_vehicles: integer
+    status: string:2000
+    softDeletes
+    relationships:
+      belongsTo: Listing, User
+  Category:
+    title: longtext
+    min_price: double
+    image: string
+    position: integer
+    is_active: boolean
+    softDeletes
+    relationships:
+      hasMany: Subcategory, Object, CategoryProperty
+  Subcategory:
+    title: longtext
+    image: string
+    position: integer
+    is_active: boolean
+    softDeletes
+    relationships:
+      hasMany: Object
+      belongsTo: Category
+  Object:
+    title: longtext
+    volume: double
+    image: string
+    position: integer
+    is_active: boolean
+    softDeletes
+    relationships:
+      belongsTo: Category, Subcategory
+
+  CategoryProperty:
+    title: longtext
+    type: string:500
+#    is_requiered: boolean
+    relationships:
+      belongsTo: Category
+
+seeders: VerificationApplication, Listing, Quote, Category, Subcategory, Object

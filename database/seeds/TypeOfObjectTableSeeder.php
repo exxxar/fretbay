@@ -9,7 +9,8 @@ class TypeOfObjectTableSeeder extends Seeder
 
     public function getCategoryIdByTitle($title)
     {
-        return ObjectCategory::where("title", $title)->first()->id;
+        //todo: CHECK change because 'title' is array
+        return ObjectCategory::where("title->en", $title)->first()->id;
     }
 
     /**

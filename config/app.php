@@ -165,7 +165,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+        Mariuzzo\LaravelJsLocalization\LaravelJsLocalizationServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -177,6 +177,7 @@ return [
 
         App\Providers\RolesServiceProvider::class,
         App\Providers\PermissionServiceProvider::class,
+        App\Providers\TranslationServiceProvider::class,
 
     ],
 

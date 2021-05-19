@@ -12,7 +12,7 @@ class PermissionSeeder extends Seeder
      */
     public function run()
     {
-        Permission::truncate();
+//        Permission::truncate();
 
         $manageUser = new Permission();
         $manageUser->name = 'Manage users';
