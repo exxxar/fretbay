@@ -5172,6 +5172,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -7713,12 +7714,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -62144,19 +62139,19 @@ var staticRenderFns = [
                               _vm._v(" "),
                               _c("div", { staticClass: "ratingBlock" }, [
                                 _c("img", {
-                                  attrs: { src: "/images/star-on.png" }
+                                  attrs: { src: "shipper/images/star-on.png" }
                                 }),
                                 _c("img", {
-                                  attrs: { src: "/images/star-on.png" }
+                                  attrs: { src: "shipper/images/star-on.png" }
                                 }),
                                 _c("img", {
-                                  attrs: { src: "/images/star-on.png" }
+                                  attrs: { src: "shipper/images/star-on.png" }
                                 }),
                                 _c("img", {
-                                  attrs: { src: "/images/star-on.png" }
+                                  attrs: { src: "shipper/images/star-on.png" }
                                 }),
                                 _c("img", {
-                                  attrs: { src: "/images/star-on.png" }
+                                  attrs: { src: "shipper/images/star-on.png" }
                                 })
                               ])
                             ])
@@ -62237,23 +62232,19 @@ var staticRenderFns = [
                               _vm._v(" "),
                               _c("div", { staticClass: "ratingBlock" }, [
                                 _c("img", {
-                                  attrs: { src: "/images/star-on.png" }
+                                  attrs: { src: "shipper/images/star-on.png" }
                                 }),
-                                _vm._v(" "),
                                 _c("img", {
-                                  attrs: { src: "/images/star-on.png" }
+                                  attrs: { src: "shipper/images/star-on.png" }
                                 }),
-                                _vm._v(" "),
                                 _c("img", {
-                                  attrs: { src: "/images/star-on.png" }
+                                  attrs: { src: "shipper/images/star-on.png" }
                                 }),
-                                _vm._v(" "),
                                 _c("img", {
-                                  attrs: { src: "/images/star-on.png" }
+                                  attrs: { src: "shipper/images/star-on.png" }
                                 }),
-                                _vm._v(" "),
                                 _c("img", {
-                                  attrs: { src: "/images/star-half.png" }
+                                  attrs: { src: "shipper/images/star-half.png" }
                                 })
                               ])
                             ])
@@ -62270,7 +62261,8 @@ var staticRenderFns = [
                               _c("img", {
                                 attrs: {
                                   alt: "",
-                                  src: "/images/catMedium/demenagement.png"
+                                  src:
+                                    "transporter/images/catMedium/demenagement.png"
                                 }
                               })
                             ]),
@@ -62329,19 +62321,19 @@ var staticRenderFns = [
                               _vm._v(" "),
                               _c("div", { staticClass: "ratingBlock" }, [
                                 _c("img", {
-                                  attrs: { src: "images/star-on.png" }
+                                  attrs: { src: "shipper/images/star-on.png" }
                                 }),
                                 _c("img", {
-                                  attrs: { src: "/images/star-on.png" }
+                                  attrs: { src: "shipper/images/star-on.png" }
                                 }),
                                 _c("img", {
-                                  attrs: { src: "/images/star-on.png" }
+                                  attrs: { src: "shipper/images/star-on.png" }
                                 }),
                                 _c("img", {
-                                  attrs: { src: "/images/star-on.png" }
+                                  attrs: { src: "shipper/images/star-on.png" }
                                 }),
                                 _c("img", {
-                                  attrs: { src: "/images/star-on.png" }
+                                  attrs: { src: "shipper/images/star-on.png" }
                                 })
                               ])
                             ])
@@ -62358,7 +62350,8 @@ var staticRenderFns = [
                               _c("img", {
                                 attrs: {
                                   alt: "",
-                                  src: "images/catMedium/demenagement.png"
+                                  src:
+                                    "transporter/images/catMedium/demenagement.png"
                                 }
                               })
                             ]),
@@ -62417,19 +62410,19 @@ var staticRenderFns = [
                               _vm._v(" "),
                               _c("div", { staticClass: "ratingBlock" }, [
                                 _c("img", {
-                                  attrs: { src: "images/star-on.png" }
+                                  attrs: { src: "shipper/images/star-on.png" }
                                 }),
                                 _c("img", {
-                                  attrs: { src: "/images/star-on.png" }
+                                  attrs: { src: "shipper/images/star-on.png" }
                                 }),
                                 _c("img", {
-                                  attrs: { src: "/images/star-on.png" }
+                                  attrs: { src: "shipper/images/star-on.png" }
                                 }),
                                 _c("img", {
-                                  attrs: { src: "/images/star-on.png" }
+                                  attrs: { src: "shipper/images/star-on.png" }
                                 }),
                                 _c("img", {
-                                  attrs: { src: "/images/star-half.png" }
+                                  attrs: { src: "shipper/images/star-half.png" }
                                 })
                               ])
                             ])
@@ -62446,7 +62439,8 @@ var staticRenderFns = [
                               _c("img", {
                                 attrs: {
                                   alt: "",
-                                  src: "images/catMedium/demenagement.png"
+                                  src:
+                                    "transporter/images/catMedium/demenagement.png"
                                 }
                               })
                             ]),
@@ -62505,19 +62499,19 @@ var staticRenderFns = [
                               _vm._v(" "),
                               _c("div", { staticClass: "ratingBlock" }, [
                                 _c("img", {
-                                  attrs: { src: "images/star-on.png" }
+                                  attrs: { src: "shipper/images/star-on.png" }
                                 }),
                                 _c("img", {
-                                  attrs: { src: "images/star-on.png" }
+                                  attrs: { src: "shipper/images/star-on.png" }
                                 }),
                                 _c("img", {
-                                  attrs: { src: "images/star-on.png" }
+                                  attrs: { src: "shipper/images/star-on.png" }
                                 }),
                                 _c("img", {
-                                  attrs: { src: "/images/star-on.png" }
+                                  attrs: { src: "shipper/images/star-on.png" }
                                 }),
                                 _c("img", {
-                                  attrs: { src: "/images/star-half.png" }
+                                  attrs: { src: "shipper/images/star-half.png" }
                                 })
                               ])
                             ])
@@ -62534,7 +62528,8 @@ var staticRenderFns = [
                               _c("img", {
                                 attrs: {
                                   alt: "",
-                                  src: "images/catMedium/demenagement.png"
+                                  src:
+                                    "transporter/images/catMedium/demenagement.png"
                                 }
                               })
                             ]),
@@ -62593,19 +62588,19 @@ var staticRenderFns = [
                               _vm._v(" "),
                               _c("div", { staticClass: "ratingBlock" }, [
                                 _c("img", {
-                                  attrs: { src: "/images/star-on.png" }
+                                  attrs: { src: "shipper/images/star-on.png" }
                                 }),
                                 _c("img", {
-                                  attrs: { src: "/images/star-on.png" }
+                                  attrs: { src: "shipper/images/star-on.png" }
                                 }),
                                 _c("img", {
-                                  attrs: { src: "/images/star-on.png" }
+                                  attrs: { src: "shipper/images/star-on.png" }
                                 }),
                                 _c("img", {
-                                  attrs: { src: "/images/star-on.png" }
+                                  attrs: { src: "shipper/images/star-on.png" }
                                 }),
                                 _c("img", {
-                                  attrs: { src: "/images/star-half.png" }
+                                  attrs: { src: "shipper/images/star-half.png" }
                                 })
                               ])
                             ])
@@ -62622,7 +62617,7 @@ var staticRenderFns = [
                               _c("img", {
                                 attrs: {
                                   alt: "",
-                                  src: "/images/catMedium/colis.png"
+                                  src: "transporter/images/catMedium/colis.png"
                                 }
                               })
                             ]),
@@ -62680,19 +62675,19 @@ var staticRenderFns = [
                               _vm._v(" "),
                               _c("div", { staticClass: "ratingBlock" }, [
                                 _c("img", {
-                                  attrs: { src: "/images/star-on.png" }
+                                  attrs: { src: "shipper/images/star-on.png" }
                                 }),
                                 _c("img", {
-                                  attrs: { src: "/images/star-on.png" }
+                                  attrs: { src: "shipper/images/star-on.png" }
                                 }),
                                 _c("img", {
-                                  attrs: { src: "/images/star-on.png" }
+                                  attrs: { src: "shipper/images/star-on.png" }
                                 }),
                                 _c("img", {
-                                  attrs: { src: "/images/star-on.png" }
+                                  attrs: { src: "shipper/images/star-on.png" }
                                 }),
                                 _c("img", {
-                                  attrs: { src: "/images/star-on.png" }
+                                  attrs: { src: "shipper/images/star-on.png" }
                                 })
                               ])
                             ])
@@ -62709,7 +62704,8 @@ var staticRenderFns = [
                               _c("img", {
                                 attrs: {
                                   alt: "",
-                                  src: "/images/catMedium/demenagement.png"
+                                  src:
+                                    "transporter/images/catMedium/demenagement.png"
                                 }
                               })
                             ]),
@@ -62768,19 +62764,19 @@ var staticRenderFns = [
                               _vm._v(" "),
                               _c("div", { staticClass: "ratingBlock" }, [
                                 _c("img", {
-                                  attrs: { src: "/images/star-on.png" }
+                                  attrs: { src: "shipper/images/star-on.png" }
                                 }),
                                 _c("img", {
-                                  attrs: { src: "/images/star-on.png" }
+                                  attrs: { src: "shipper/images/star-on.png" }
                                 }),
                                 _c("img", {
-                                  attrs: { src: "/images/star-on.png" }
+                                  attrs: { src: "shipper/images/star-on.png" }
                                 }),
                                 _c("img", {
-                                  attrs: { src: "/images/star-on.png" }
+                                  attrs: { src: "shipper/images/star-on.png" }
                                 }),
                                 _c("img", {
-                                  attrs: { src: "/images/star-half.png" }
+                                  attrs: { src: "shipper/images/star-half.png" }
                                 })
                               ])
                             ])
@@ -62797,7 +62793,8 @@ var staticRenderFns = [
                               _c("img", {
                                 attrs: {
                                   alt: "",
-                                  src: "/images/catMedium/demenagement.png"
+                                  src:
+                                    "transporter/images/catMedium/demenagement.png"
                                 }
                               })
                             ]),
@@ -62858,19 +62855,19 @@ var staticRenderFns = [
                               _vm._v(" "),
                               _c("div", { staticClass: "ratingBlock" }, [
                                 _c("img", {
-                                  attrs: { src: "/images/star-on.png" }
+                                  attrs: { src: "shipper/images/star-on.png" }
                                 }),
                                 _c("img", {
-                                  attrs: { src: "/images/star-on.png" }
+                                  attrs: { src: "shipper/images/star-on.png" }
                                 }),
                                 _c("img", {
-                                  attrs: { src: "/images/star-on.png" }
+                                  attrs: { src: "shipper/images/star-on.png" }
                                 }),
                                 _c("img", {
-                                  attrs: { src: "/images/star-on.png" }
+                                  attrs: { src: "shipper/images/star-on.png" }
                                 }),
                                 _c("img", {
-                                  attrs: { src: "/images/star-on.png" }
+                                  attrs: { src: "shipper/images/star-on.png" }
                                 })
                               ])
                             ])
@@ -62947,19 +62944,19 @@ var staticRenderFns = [
                               _vm._v(" "),
                               _c("div", { staticClass: "ratingBlock" }, [
                                 _c("img", {
-                                  attrs: { src: "/images/star-on.png" }
+                                  attrs: { src: "shipper/images/star-on.png" }
                                 }),
                                 _c("img", {
-                                  attrs: { src: "/images/star-on.png" }
+                                  attrs: { src: "shipper/images/star-on.png" }
                                 }),
                                 _c("img", {
-                                  attrs: { src: "/images/star-on.png" }
+                                  attrs: { src: "shipper/images/star-on.png" }
                                 }),
                                 _c("img", {
-                                  attrs: { src: "/images/star-on.png" }
+                                  attrs: { src: "shipper/images/star-on.png" }
                                 }),
                                 _c("img", {
-                                  attrs: { src: "/images/star-on.png" }
+                                  attrs: { src: "shipper/images/star-on.png" }
                                 })
                               ])
                             ])
@@ -63016,19 +63013,19 @@ var staticRenderFns = [
                           _vm._v(" "),
                           _c("div", { staticClass: "ratingBlock" }, [
                             _c("img", {
-                              attrs: { src: "/images/star-on.png" }
+                              attrs: { src: "shipper/images/star-on.png" }
                             }),
                             _c("img", {
-                              attrs: { src: "/images/star-on.png" }
+                              attrs: { src: "shipper/images/star-on.png" }
                             }),
                             _c("img", {
-                              attrs: { src: "/images/star-on.png" }
+                              attrs: { src: "shipper/images/star-on.png" }
                             }),
                             _c("img", {
-                              attrs: { src: "/images/star-on.png" }
+                              attrs: { src: "shipper/images/star-on.png" }
                             }),
                             _c("img", {
-                              attrs: { src: "/images/star-half.png" }
+                              attrs: { src: "shipper/images/star-half.png" }
                             })
                           ])
                         ])
@@ -63058,7 +63055,7 @@ var staticRenderFns = [
             [
               _c("img", {
                 staticClass: "post-img",
-                attrs: { alt: "", src: "/images/shipperRecrutiMimg01.png" }
+                attrs: { alt: "", src: "images/shipperRecrutiMimg01.png" }
               }),
               _vm._v(" "),
               _c("div", { staticClass: "post-content" }, [
@@ -63077,7 +63074,7 @@ var staticRenderFns = [
             [
               _c("img", {
                 staticClass: "post-img",
-                attrs: { alt: "", src: "/images/shipperRecrutiMimg02.png" }
+                attrs: { alt: "", src: "images/shipperRecrutiMimg02.png" }
               }),
               _vm._v(" "),
               _c("div", { staticClass: "post-content" }, [
@@ -63096,7 +63093,7 @@ var staticRenderFns = [
             [
               _c("img", {
                 staticClass: "post-img",
-                attrs: { alt: "", src: "/images/shipperRecrutiMimg03.png" }
+                attrs: { alt: "", src: "images/shipperRecrutiMimg03.png" }
               }),
               _vm._v(" "),
               _c("div", { staticClass: "post-content" }, [
@@ -63120,7 +63117,7 @@ var staticRenderFns = [
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-sm-6" }, [
               _c("div", { staticClass: "text-center margin-bottom-30" }, [
-                _c("img", { attrs: { alt: "", src: "/images/truckImg1.png" } })
+                _c("img", { attrs: { alt: "", src: "images/truckImg1.png" } })
               ]),
               _vm._v(" "),
               _c("ul", { staticClass: "arrowLi" }, [
@@ -63319,7 +63316,7 @@ var staticRenderFns = [
                                 _c("img", {
                                   attrs: {
                                     alt: "",
-                                    src: "images/Le-FigaroN.png"
+                                    src: "images/home/partners/Le-FigaroN.png"
                                   }
                                 }),
                                 _vm._v(" "),
@@ -63327,7 +63324,8 @@ var staticRenderFns = [
                                   staticClass: "hover",
                                   attrs: {
                                     alt: "",
-                                    src: "images/Le-FigaroN-hover.png"
+                                    src:
+                                      "images/home/partners/Le-FigaroN-hover.png"
                                   }
                                 })
                               ]
@@ -63359,7 +63357,8 @@ var staticRenderFns = [
                                 _c("img", {
                                   attrs: {
                                     alt: "",
-                                    src: "images/marie-ClaireN.png"
+                                    src:
+                                      "images/home/partners/marie-ClaireN.png"
                                   }
                                 }),
                                 _vm._v(" "),
@@ -63367,7 +63366,8 @@ var staticRenderFns = [
                                   staticClass: "hover",
                                   attrs: {
                                     alt: "",
-                                    src: "images/marie-ClaireN-hover.png"
+                                    src:
+                                      "images/home/partners/marie-ClaireN-hover.png"
                                   }
                                 })
                               ]
@@ -63399,7 +63399,7 @@ var staticRenderFns = [
                                 _c("img", {
                                   attrs: {
                                     alt: "",
-                                    src: "images/leParisienN.png"
+                                    src: "images/home/partners/leParisienN.png"
                                   }
                                 }),
                                 _vm._v(" "),
@@ -63407,7 +63407,8 @@ var staticRenderFns = [
                                   staticClass: "hover",
                                   attrs: {
                                     alt: "",
-                                    src: "images/leParisienN-hover.png"
+                                    src:
+                                      "images/home/partners/leParisienN-hover.png"
                                   }
                                 })
                               ]
@@ -63439,7 +63440,7 @@ var staticRenderFns = [
                                 _c("img", {
                                   attrs: {
                                     alt: "",
-                                    src: "images/lofficielN.png"
+                                    src: "images/home/partners/l'officielN.png"
                                   }
                                 }),
                                 _vm._v(" "),
@@ -63447,7 +63448,8 @@ var staticRenderFns = [
                                   staticClass: "hover",
                                   attrs: {
                                     alt: "",
-                                    src: "images/lofficielN-hover.png"
+                                    src:
+                                      "images/home/partners/l'officielN-hover.png"
                                   }
                                 })
                               ]
@@ -78348,17 +78350,16 @@ Vue.use(_eli5_vue_lang_js__WEBPACK_IMPORTED_MODULE_4___default.a, {
   fallback: 'en' // Set fallback locale
 
 });
-
-if (localStorage.getItem('locale')) {
-  undefined.$lang.setLocale(localStorage.getItem('locale'));
-} else {
-  undefined.$lang.setLocale('en');
-}
-
 var app = new Vue({
   store: _store__WEBPACK_IMPORTED_MODULE_1__["default"],
   el: '#app'
 });
+
+if (localStorage.getItem('locale')) {
+  app.$lang.setLocale(localStorage.getItem('locale'));
+} else {
+  app.$lang.setLocale('en');
+}
 
 /***/ }),
 
@@ -82787,9 +82788,9 @@ module.exports = {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! E:\OpenServer\OSPanel\domains\fretbay\resources\js\desktop\app.js */"./resources/js/desktop/app.js");
-__webpack_require__(/*! E:\OpenServer\OSPanel\domains\fretbay\resources\sass\desktop\app.scss */"./resources/sass/desktop/app.scss");
-module.exports = __webpack_require__(/*! E:\OpenServer\OSPanel\domains\fretbay\resources\sass\admin\app.scss */"./resources/sass/admin/app.scss");
+__webpack_require__(/*! D:\projects\fretbay\resources\js\desktop\app.js */"./resources/js/desktop/app.js");
+__webpack_require__(/*! D:\projects\fretbay\resources\sass\desktop\app.scss */"./resources/sass/desktop/app.scss");
+module.exports = __webpack_require__(/*! D:\projects\fretbay\resources\sass\admin\app.scss */"./resources/sass/admin/app.scss");
 
 
 /***/ })

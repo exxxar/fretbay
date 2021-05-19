@@ -94,13 +94,16 @@ Vue.use(VueLang, {
     fallback: 'en' // Set fallback locale
 });
 
-if (localStorage.getItem('locale')) {
-    this.$lang.setLocale(localStorage.getItem('locale'));
-} else {
-    this.$lang.setLocale('en');
-}
+
 
 const app = new Vue({
     store,
     el: '#app',
 });
+
+
+if (localStorage.getItem('locale')) {
+    app.$lang.setLocale(localStorage.getItem('locale'));
+} else {
+    app.$lang.setLocale('en');
+}
