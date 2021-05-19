@@ -8,7 +8,7 @@
                 <div class="postBlock row">
                     <div class="col-md-3 col-sm-4 no-padding">
                         <div class="postImg">
-                            <img src="/images/global/media/transporter/profil/thumbs/1599758184eCzX_0.png" alt="about" class="about__img img-responsive mx-auto d-block">
+                            <img src="/images/avatar.png" alt="about" class="about__img img-responsive mx-auto d-block">
                         </div>
                     </div>
                     <div class="col-md-9 col-sm-8">

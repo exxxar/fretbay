@@ -1,6 +1,7 @@
 <template>
 
     <section id="company-section">
+        <div id="header"></div>
         <div class="page-topheader">
             <h1>
                 What is FretBay.com?
