@@ -1,5 +1,6 @@
 @import "config";
-
+@import "colors";
+@import "fonts";
 // CUSTOM USER STYLES & IMPORTS
 ul,
 li,
@@ -73,7 +74,7 @@ section {
     }
     li {
         a {
-            color: #fff;
+            color: $white;
             display: inline-block;
             font-weight: 400;
             vertical-align: middle;
@@ -90,13 +91,13 @@ section {
     }
 }
 .first-btn {
-    border: 1px solid #fff;
+    border: 1px solid $white;
     margin-left: 15px;
     &:hover {
         background-color: rgba(44, 175, 208, 1);
         border-color: rgba(44, 175, 208, 1);
         .first-link {
-            color: #fff;
+            color: $white;
         }
     }
 }
@@ -104,7 +105,7 @@ section {
     justify-content: flex-end;
 }
 h1 {
-    color: #fff;
+    color: $white;
     margin: 0px 0px 15px 0px;
     text-shadow: 0 1px 1px #49515e;
     font-size: 50px;
@@ -114,7 +115,7 @@ h1 {
     text-align: center;
     margin-top: 180px;
     span {
-        border-color: #fff;
+        border-color: $white;
         background-color: transparent;
         margin: 25px 0 40px;
         border: none;
@@ -126,14 +127,14 @@ h1 {
     font-size: 20px;
     padding: 17px 36px;
     line-height: 1.2;
-    color: #fff;
-    background: #fe374f;
+    color: $white;
+    background: $red;
     border: 0;
     margin: 0 auto;
     display: block;
     &:hover {
         background-color: #33b2d2;
-        color: #fff;
+        color: $white;
     }
 }
 .go-down {
@@ -142,10 +143,10 @@ h1 {
 #goDown {
     width: 36px;
     height: 36px;
-    border: 1px solid #fff;
+    border: 1px solid $white;
     border-radius: 50%;
     background: hsla(212, 22%, 37%, 0.05);
-    color: #fff;
+    color: $white;
     line-height: 34px;
     box-shadow: 0 1px 1px #49515e;
     display: inline-block;
@@ -178,19 +179,19 @@ h1 {
     }
 }
 .seekheader__title {
-    color: #383a35;
+    color: $titleSmall;
     font-weight: normal;
     font-size: 20px;
     margin: 5px 0;
 }
 .seekheader__txt {
     font-size: 15px;
-    color: #84837c;
+    color: $txt;
     font-weight: 600;
 }
 #seekHeader {
     padding: 35px 0 25px;
-    background: #fff;
+    background: $white;
     .icon.seek1 {
         background-position: 0 0;
     }
@@ -211,22 +212,22 @@ h1 {
     }
 }
 #recentList {
-    background: #f6f5f0;
+    background: $recentList;
     padding: 32px 0 32px;
 }
 .postBlock {
     width: 100%;
-    background: #fff;
+    background: $white;
     border-bottom: #d7d5d0 solid 1px;
     padding: 12px 0;
     float: left;
     max-height: 127px;
 }
 #recentList {
-    background: #f6f5f0;
+    background: $recentList;
     padding: 32px 0 12px;
     h2 {
-        color: #859295;
+        color: $grey;
         font-size: 32px;
         font-weight: normal;
         font-family: "Lato", sans-serif;
@@ -235,7 +236,7 @@ h1 {
 }
 .postBlock {
     width: 100%;
-    background: #fff;
+    background: $white;
     border-bottom: #d7d5d0 solid 1px;
     padding: 12px 0;
     float: left;
@@ -253,11 +254,11 @@ h1 {
 }
 .postblock__title {
     font-size: 15px;
-    color: #383a35;
+    color: $titleSmall;
     margin: 0;
 }
 .postblock__prg {
-    color: #b5b3a8;
+    color: $post;
     font-size: 13px;
     margin: 0 0 6px;
 }
@@ -284,7 +285,7 @@ h1 {
     width: 100%;
     max-height: 80px;
     border-top: #d7d5d0 solid 1px;
-    background-color: #fff;
+    background-color: $white;
     padding: 10px;
     &:hover {
         background-color: #f9f9f6;
@@ -301,7 +302,7 @@ h1 {
     }
     .recen__title {
         margin-left: 54px;
-        color: #383a35;
+        color: $titleSmall;
         font-size: 14px;
         span {
             font-size: 13px;
@@ -336,7 +337,7 @@ h1 {
         right: 0;
     }
     p {
-        color: #383a35;
+        color: $titleSmall;
         font-size: 14px;
         margin: 0;
         line-height: 1.3;
@@ -360,7 +361,7 @@ h1 {
     .marginImg {
         margin-left: 54px;
         p {
-            color: #383a35;
+            color: $titleSmall;
             font-size: 14px;
             margin: 0;
         }
@@ -382,7 +383,7 @@ h1 {
         background: #eeedec;
     }
     p {
-        color: #717780;
+        color: $price;
         font-size: 15px;
     }
 }
@@ -391,7 +392,7 @@ h1 {
 }
 #stepsNew {
     padding: 35px 0;
-    background: #fff;
+    background: $white;
 }
 .stepsnew__item {
     display: flex;
@@ -405,20 +406,20 @@ h1 {
     align-items: center;
     flex-direction: column;
     font-size: 26px;
-    color: #636560;
+    color: $title;
     margin: 0 0 16px;
     span {
-        color: #2db2d1;
+        color: $blue;
         font-size: 64px;
         margin-bottom: 0;
         line-height: 80px;
     }
 }
 #trevalNew {
-    background: #2db2d1 url("/images/home/tagBackgrounds.png") repeat;
+    background: $blue url("/images/home/tagBackgrounds.png") repeat;
     position: relative;
     padding: 45px 0;
-    color: #fff;
+    color: $white;
 }
 .trevalnew__item {
     height: 422px;
@@ -495,16 +496,16 @@ h1 {
     font-weight: 600;
     font-family: 'Lato',sans-serif;
     font-size: 20px;
-    color: #fff;
+    color: $white;
     margin-bottom: 6px;
     &:hover,
     &:focus {
         text-decoration: underline;
-        color: #fff;
+        color: $white;
     }
 }
 .trevalnew__txt {
-    color: #fff;
+    color: $white;
     font-weight: 300;
     font-style: normal;
     font-family: 'Lato',sans-serif;
@@ -519,16 +520,16 @@ h1 {
     bottom: 0;
     font-family: 'Lato',sans-serif;
     font-size: 20px;
-    color: #fff;
+    color: $white;
     text-decoration: underline;
     &:hover,
     &:focus {
         text-decoration: none;
-        color: #fff;
+        color: $white;
     }
 }
 #testimonialNew {
-    background: #eae8df;
+    background: $quotesBackground;
     padding: 32px 0;
 }
 .trustLogo {
@@ -537,7 +538,7 @@ h1 {
 }
 .testimonialnew__item {
     cursor: pointer;
-    background: #fff;
+    background: $white;
     padding: 19px 20px 10px;
     font-size: 15px;
     height: 230px;
@@ -550,7 +551,7 @@ h1 {
     flex-direction: column;
 }
 .testimonialtext__txt {
-    color: #918e7e;
+    color: $quotesTxt;
     text-align: left;
     margin-bottom: 10px;
     max-height: 115px;
@@ -567,7 +568,7 @@ h1 {
     margin-bottom: -12px;
     display: flex;
     justify-content: space-between;
-    color: #859295;
+    color: $grey;
     margin-top: auto;
     .date {
         font-size: 11px;
@@ -581,7 +582,7 @@ h1 {
     justify-content: space-between;
     padding-top: 7px;
     p {
-        color: #209afd;
+        color: $rating;
         font-size: 18px;
     }
 }
@@ -596,7 +597,7 @@ h1 {
         float: left;
         display: block;
         padding: 15px;
-        color: #a3a3a3;
+        color: $unActiveTab_txt;
         background: #ededed;
         font-weight: 600;
         margin-bottom: -1px;
@@ -613,11 +614,11 @@ h1 {
     input {
         display: none;
         &:checked + label {
-            background-color: #f7f7f7;
-            color: #383a35;
-            border-left-color: #2cafd0;
+            background-color: $tabsBlock;
+            color: $titleSmall;
+            border-left-color: $tabsBorder;
             border-bottom-color: transparent;
-            border-left: 5px solid #2cafd0;
+            border-left: 5px solid $tabsBorder;
         }
     } //input
     input[id="tab-1"]:checked ~ .content .tab-1 {
@@ -652,12 +653,12 @@ h1 {
         position: absolute;
         top: 0;
         left: 0;
-        background-color: #f7f7f7;
+        background-color: $tabsBlock;
         display: none;
         height: 414px;
         li {
             a {
-                color: #666666;
+                color: $articleRef;
                 font-size: 15px;
                 font-weight: 400;
                 &:hover {
@@ -668,7 +669,7 @@ h1 {
         .blue {
             li {
                 a {
-                    color: #209afd;
+                    color: $rating;
                 }
             }
         }
@@ -683,7 +684,7 @@ h1 {
     margin-top: 160px;
     position: relative;
     .trfs__title {
-        color: #cfd3da;
+        color: $footerTxtColor;
         border-bottom: #808792 solid 1px;
         line-height: 38px;
         font-size: 18px;
@@ -694,9 +695,9 @@ h1 {
         font-size: 15px;
         line-height: 36px;
         font-weight: 300;
-        color: #cfd3da;
+        color: $footerTxtColor;
         &:hover {
-            color: #2db2d3;
+            color: $footerCopyright;
         }
     }
 }
@@ -717,7 +718,7 @@ h1 {
     .fmi__title {
         display: inline-block;
         vertical-align: middle;
-        color: #cfd3da;
+        color: $footerTxtColor;
         font-weight: 700;
         margin-right: 16px;
     }
@@ -747,12 +748,12 @@ h1 {
     .footer-copyright__txt {
         font-weight: 300;
         font-size: 12px;
-        color: #cfd3da;
+        color: $footerTxtColor;
         margin: 16px 0 0;
         line-height: 22px;
         a {
             display: inline-block;
-            color: #2db2d3;
+            color: $footerCopyright;
             &:hover {
                 text-decoration: underline;
             }
@@ -819,7 +820,7 @@ h1 {
 }
 
 #logo-transporter {
-    background: #fff;
+    background: $white;
     height: 70px;
     .logo-btn img {
         width: 170px;
@@ -837,7 +838,7 @@ h1 {
     background: #3d4e60;
     margin-bottom: 20px;
     padding: 10px 0;
-    color: #fff;
+    color: $white;
     li {
         padding: 0 10px;
         letter-spacing: 1px;
@@ -850,7 +851,7 @@ h1 {
             font-weight: 300;
             border-radius: 100%;
             padding: 0px 8px;
-            border: 1px solid #fff;
+            border: 1px solid $white;
         }
         &:active {
             opacity: 1;
@@ -865,7 +866,7 @@ h1 {
     padding: 0;
     margin-bottom: 20px;
     .content-box {
-        background: #fff;
+        background: $white;
         padding: 20px 23px 97px;
         border-radius: 12px;
         box-shadow: 0 3px 1px 0 lightgrey;
@@ -927,7 +928,7 @@ h1 {
     width: 20%;
 }
 .footer-main-white {
-    background: #fff;
+    background: $white;
     padding: 20px 0 5px;
     border-bottom: 1px solid #f3f4f8;
     .footer-menu {
@@ -956,7 +957,7 @@ h1 {
     padding: 0 15px;
 }
 .footer-copyright-white {
-    background: #fff;
+    background: $white;
     color: #789cb7;
     font-weight: 300;
     .footer-copyright__txt {
@@ -987,7 +988,7 @@ h1 {
         margin-left: auto;
     }
     .logo__list .request-quote a {
-        color: #fff;
+        color: $white;
         background-color: #f54949;
         border-bottom-color: rgba(0, 0, 0, 0.15);
         transition: all 0.3s;
@@ -1013,7 +1014,7 @@ h1 {
     margin-left: auto;
 }
 .request-quote a {
-    color: #fff;
+    color: $white;
     background-color: #f54949;
     border-bottom-color: rgba(0, 0, 0, 0.15);
     transition: all 0.3s;
@@ -1086,7 +1087,7 @@ h1 {
     }
 }
 #steps-wrap {
-    background: #fff;
+    background: $white;
     padding: 35px 0 26px;
 }
 .steps__list {
@@ -1108,7 +1109,7 @@ h1 {
 .step-num {
     background: #30a0be;
     font-size: 34px;
-    color: #fff;
+    color: $white;
     line-height: 1;
     font-weight: 700;
     padding: 5px 12px;
@@ -1373,7 +1374,7 @@ input[type="radio"] {
     margin-top: -5px;
 }
 .reference-block {
-    background: #fff;
+    background: $white;
     padding: 30px 20px;
     margin-top: 5px;
     display: flex;
@@ -1439,7 +1440,7 @@ input[type="radio"] {
     background: #f6fffa;
     border: none;
     position: relative;
-    background: #fff;
+    background: $white;
     margin-bottom: 6px;
     display: flex;
     height: 148px;
@@ -1708,7 +1709,7 @@ input[type="radio"] {
     color: #5d5d5d;
     line-height: 1.5;
     a {
-        color: #2db2d3;
+        color: $footerCopyright;
         font-size: 16px;
         line-height: 1.5;
         display: inline-block;
@@ -1738,9 +1739,9 @@ input[type="radio"] {
     white-space: pre-line;
     display: inline-block;
     width: auto;
-    color: #fff;
+    color: $white;
     &:hover {
-        color: #fff;
+        color: $white;
     }
 }
 .btn-etape-red {
@@ -1753,10 +1754,10 @@ input[type="radio"] {
 }
 .btn-etape-blue {
     background-color: #5cd0ed;
-    border-bottom: 4px solid #2db2d3;
+    border-bottom: 4px solid $footerCopyright;
     margin-top: 36px;
     &:hover {
-        background-color: #2db2d3;
+        background-color: $footerCopyright;
     }
 }
 
@@ -1836,7 +1837,7 @@ input[type="radio"] {
         top: 0;
         border-radius: 50%;
         margin-right: 4px;
-        background: none #fff;
+        background: none $white;
         box-shadow: 1px 3px 4px #00000024;
     }
     input[type="radio"] ~ label:after {
@@ -1872,7 +1873,7 @@ input[type="radio"] {
     margin-bottom: 20px;
 }
 .signUpForm1__input-first {
-    background: url("/images/color-line.png") repeat-x center top #fff;
+    background: url("/images/color-line.png") repeat-x center top $white;
 }
 .signUpForm1-checkbox {
     margin-bottom: 10px;
@@ -1937,7 +1938,7 @@ input[type="radio"] {
         font-size: 15px;
         font-weight: 300;
         &:hover {
-            color: #2db2d3;
+            color: $footerCopyright;
         }
     }
 }
@@ -1949,9 +1950,9 @@ input[type="radio"] {
     font-size: 32px;
     text-transform: uppercase;
     margin: 25px 0 0;
-    border: 2px solid #2db2d3;
+    border: 2px solid $footerCopyright;
     padding: 10px 50px;
-    color: #fff;
+    color: $white;
     justify-content: center;
     text-shadow: 0 1px 2px #888;
     -moz-text-shadow: 0 1px 2px #888;
@@ -2004,7 +2005,7 @@ input[type="radio"] {
 }
 .size-container {
     width: 100%;
-    background: url("/images/port-arrow.png") no-repeat right center #fff;
+    background: url("/images/port-arrow.png") no-repeat right center $white;
     height: 64px;
     border: none;
     box-shadow: 1px 2px 3px #ccc;
@@ -2054,7 +2055,7 @@ input[type="radio"] {
         margin: 2px 0 0;
         font-size: 14px;
         list-style: none;
-        background-color: #fff;
+        background-color: $white;
         border: 1px solid rgba(0, 0, 0, 0.15);
         -webkit-box-shadow: 0 6px 12px rgb(85, 85, 85);
         box-shadow: 0 6px 12px rgb(85, 85, 85);
@@ -2065,7 +2066,7 @@ input[type="radio"] {
         z-index: 1;
         font-size: 16px;
         position: absolute;
-        color: #2db2d3;
+        color: $footerCopyright;
     }
     .dropdown-list {
         max-height: 157px;
@@ -2166,7 +2167,7 @@ input[type="radio"] {
     }
     .signUpForm1-button {
         margin: 10px 0 15px;
-        color: #fff;
+        color: $white;
         background: #5cd0ed;
         text-transform: none;
         font-size: 20px;
@@ -2174,7 +2175,7 @@ input[type="radio"] {
         padding: 10px 50px;
         height: 51px;
         border: 1px solid #c7c7c7;
-        border-bottom: 2px solid #2db2d3;
+        border-bottom: 2px solid $footerCopyright;
         box-shadow: 0 0 3px #ccc;
         -moz-box-shadow: 0 0 3px #ccc;
         -ms-box-shadow: 0 0 3px #ccc;
@@ -2188,7 +2189,7 @@ input[type="radio"] {
             box-shadow: 0 3px 5px #000;
         }
         &:hover {
-            color: #fff;
+            color: $white;
             background: #2bb0d1;
         }
     }
@@ -2255,8 +2256,8 @@ input[type="radio"] {
 
 .reviews__item {
     border-top: 1px solid #ced2d9;
-    background: #fff;
-    color: #666;
+    background: $white;
+    color: $articleRef;
     font-family: inherit;
     padding: 19px;
 }
@@ -2265,7 +2266,7 @@ input[type="radio"] {
     h4 {
         margin: 0;
         a {
-            color: #2db2d3;
+            color: $footerCopyright;
             font-size: 20px;
             font-family: inherit;
             font-weight: 300;
@@ -2306,7 +2307,7 @@ input[type="radio"] {
         line-height: 1.1;
     }
     p {
-        color: #666;
+        color: $articleRef;
         font-family: inherit;
         font-size: 14px;
         line-height: 1.428571429;
@@ -2336,21 +2337,21 @@ input[type="radio"] {
     padding: 0;
 }
 .vcheck-txt {
-    color: #666;
+    color: $articleRef;
     font-family: inherit;
     font-size: 14px;
     line-height: 1.428571429;
 }
 .reviews__item-rating {
-    background: #fff;
-    color: #666;
+    background: $white;
+    color: $articleRef;
     font-family: inherit;
     padding: 19px;
     font-size: 14px;
     margin-bottom: 30px;
     border: 0;
     h2 {
-        color: #2db2d3;
+        color: $footerCopyright;
         font-size: 24px;
         font-family: inherit;
         font-weight: 600;
@@ -2375,7 +2376,7 @@ input[type="radio"] {
         h3 {
             margin: 10px 0;
             font-size: 30px;
-            color: #2db2d3;
+            color: $footerCopyright;
         }
         p {
             color: #aeafaf;
@@ -2407,14 +2408,14 @@ input[type="radio"] {
         }
         .estimation-btn {
             background: #ff334b;
-            color: #fff;
+            color: $white;
             font-size: 18px;
             border-radius: 0;
             padding: 8px 20px;
             height: 43px;
             &:hover {
                 background: #e32d43;
-                color: #fff;
+                color: $white;
             }
         }
     }
@@ -2432,7 +2433,7 @@ input[type="radio"] {
     height: 45px;
     &:hover {
         background: #ddd;
-        color: #fff;
+        color: $white;
     }
 }
 
@@ -2504,10 +2505,10 @@ input[type="radio"] {
             width: 100%;
             margin: 0;
             cursor: pointer;
-            background-color: #2db2d3;
+            background-color: $footerCopyright;
             padding: 9px 15px;
             font-size: 15px;
-            color: #FFF;
+            color: $white;
             transition:0.5s ease;
 
             i {
@@ -2537,7 +2538,7 @@ input[type="radio"] {
             font-size: 14px;
             line-height: 1.5;
             font-family: Lato;
-            background: #fff;
+            background: $white;
             transition: max-height 500ms ease-in-out;
             max-height: 350px;
             display: block;
@@ -2591,7 +2592,7 @@ input[type="radio"] {
     padding: 20px 15px;
     h1 {
         font-size: 45px;
-        color: #fff;
+        color: $white;
         padding-top: 17px;
         font-weight: 600;
         margin: 0;
@@ -2601,7 +2602,7 @@ input[type="radio"] {
     h2 {
         font-size: 22px;
         font-family: inherit;
-        color: #fff;
+        color: $white;
         margin: 0;
     }
 }
@@ -2647,7 +2648,7 @@ input[type="radio"] {
 //THE-COMPANY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 .page-topheader {
-    background: #fff;
+    background: $white;
     padding: 17px 0 20px;
     margin-bottom: 30px;
     text-align: center;
@@ -2670,13 +2671,13 @@ input[type="radio"] {
     font-family: "Lato", sans-serif;
     width: 852px;
     float: left;
-    background: #fff;
-    color: #666;
+    background: $white;
+    color: $articleRef;
     font-family: inherit;
     padding: 19px;
     margin-bottom: 30px;
     h2 {
-        color: #2db2d3;
+        color: $footerCopyright;
         font-size: 24px;
         font-family: inherit;
         font-weight: 600;
@@ -2706,7 +2707,7 @@ input[type="radio"] {
 //BENEFITS-TRANSPORTER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 .benefits-transporter-header {
-    color: #fff;
+    color: $white;
     font-size: 23px;
     font-style: normal;
     background: url("/images/shipperRecrutiMentBanner.png") no-repeat center top;
@@ -2720,7 +2721,7 @@ input[type="radio"] {
         line-height: 1.5;
         font-family: inherit;
         margin-top: 14px;
-        color: #fff;
+        color: $white;
         font-size: 23px;
         text-transform: initial;
     }
@@ -2729,13 +2730,13 @@ input[type="radio"] {
 .default-section,
 #default-section {
     padding: 30px 0;
-    background: #fff;
+    background: $white;
     .section-header {
         width: 66.66666666666666%;
         text-align: center;
         margin: 0 auto;
         h3 {
-            color: #2db2d3;
+            color: $footerCopyright;
             font-weight: 600;
             font-family: inherit;
             margin: 0 0 10px;
@@ -2747,11 +2748,11 @@ input[type="radio"] {
             margin-bottom: 20px;
             margin: 0 0 10px;
             font-size: 16px;
-            color: #84837c;
+            color: $txt;
         }
     }
     .title {
-        color: #636560;
+        color: $title;
         font-weight: 600;
         font-family: inherit;
         font-size: 26px;
@@ -2773,7 +2774,7 @@ input[type="radio"] {
             margin-bottom: 20px;
             margin: 0 0 10px;
             font-size: 16px;
-            color: #84837c;
+            color: $txt;
         }
     }
 }
@@ -2790,7 +2791,7 @@ input[type="radio"] {
     }
 }
 #risks-market {
-    background: #f6f5f0;
+    background: $recentList;
     padding: 30px 0;
 
 }
@@ -2799,7 +2800,7 @@ input[type="radio"] {
     margin-bottom: 30px;
 }
 h3 {
-    color: #2db2d3;
+    color: $footerCopyright;
     font-weight: 600;
     font-family: inherit;
     margin: 0 0 10px;
@@ -2810,7 +2811,7 @@ h3 {
     max-width: 100%;
     height: auto;
     li {
-        color: #84837c;
+        color: $txt;
         font-family: Lato,sans-serif;
         font-size: 18px;
         font-weight: 600;
@@ -2832,7 +2833,7 @@ h3 {
         margin-bottom: 20px;
         margin: 0 0 10px;
         font-size: 16px;
-        color: #84837c;
+        color: $txt;
     }
 }
 #advantages {
@@ -2857,19 +2858,19 @@ h3 {
     margin-bottom: 20px;
     margin: 0 0 10px;
     font-size: 16px;
-    color: #84837c;
+    color: $txt;
     a {
         display: inline-block;
-        color: #2db2d3;
+        color: $footerCopyright;
         &:hover {
-            color: #fe374f;
+            color: $red;
         }
     }
 }
 .partners-logos {
     display: flex;
     a {
-        background: #fff;
+        background: $white;
         display: inline-block;
         margin-right: 40px;
         &:hover {
@@ -2891,7 +2892,7 @@ h3 {
     padding: 18px 0 14px;
 }
 #gratitude {
-    background: #f6f5f0;
+    background: $recentList;
     padding: 30px 0;
     text-align: center;
     p {
@@ -2900,12 +2901,12 @@ h3 {
         margin-bottom: 20px;
         margin: 0 0 10px;
         font-size: 16px;
-        color: #84837c;
+        color: $txt;
         a {
             display: inline-block;
-            color: #2db2d3;
+            color: $footerCopyright;
             &:hover {
-                color: #fe374f;
+                color: $red;
             }
         }
     }
@@ -2923,7 +2924,7 @@ h3 {
         font-weight: bold;
         margin-bottom: 10px;
         text-transform: uppercase;
-        color: #666;
+        color: $articleRef;
         line-height: 25px;
         span {
             margin: 10px 0 30px;
@@ -2936,10 +2937,10 @@ h3 {
     #goDown {
         width: 36px;
         height: 36px;
-        border: 1px solid #fff;
+        border: 1px solid $white;
         border-radius: 50%;
         background: rgba(74,93,115,.05);
-        color: #fff;
+        color: $white;
         line-height: 34px;
         -webkit-box-shadow: 0 1px 1px #49515e;
         box-shadow: 0 1px 1px #49515e;
@@ -2962,20 +2963,20 @@ h3 {
         font-size: 18px;
         &:hover {
             outline: 0;
-            color: #fff;
+            color: $white;
             background: #e6001b;
 
         }
     }
 }
 #commentcamarche-section-default {
-    background: #fff;
+    background: $white;
     font-family: "Lato", sans-serif;
     font-size: 16px;
     line-height: 25px;
     padding: 50px 0;
     h3 {
-        color: #666;
+        color: $articleRef;
         font-family: "Lato",sans-serif;
         font-size: 18px;
         font-weight: bold;
@@ -2987,7 +2988,7 @@ h3 {
 }
 .virtual-table {
     border-collapse: collapse;
-    color: #918e7e;
+    color: $quotesTxt;
     display: table;
     font-size: 15px;
     line-height: 30px;
@@ -3003,7 +3004,7 @@ h3 {
     }
     a {
         font-weight: bold;
-        color: #2db2d3;
+        color: $footerCopyright;
         display: inline-block;
     }
 }
@@ -3012,10 +3013,10 @@ h3 {
     font-size: 16px;
     line-height: 25px;
     padding: 50px 0;
-    background: #f6f5f0;
+    background: $recentList;
     h2 {
         text-align: center;
-        color: #2db2d3;
+        color: $footerCopyright;
         font-family: "Lato",sans-serif;
         font-size: 28px;
         margin-bottom: 40px;
@@ -3028,7 +3029,7 @@ h3 {
         margin: 0;
         padding: 0;
         li {
-            color: #84837c;
+            color: $txt;
             margin-bottom: 26px;
             padding-right: 63px;
             display: flex;
@@ -3043,7 +3044,7 @@ h3 {
             }
             a {
                 font-size: 24px;
-                color: #2db2d3;
+                color: $footerCopyright;
                 font-weight: 600;
                 display: inline-block;
             }
@@ -3055,7 +3056,7 @@ h3 {
     font-size: 16px;
     line-height: 25px;
     padding: 50px 0;
-    background: #f6f5f0;
+    background: $recentList;
     .tabs {
         display: flex;
 
@@ -3065,7 +3066,7 @@ h3 {
         margin-right: 20px;
     }
     h2 {
-        color: #2db2d3;
+        color: $footerCopyright;
         font-family: "Lato", sans-serif;
         font-size: 40px;
         font-weight: normal;
@@ -3078,7 +3079,7 @@ h3 {
         background-color: #ff334b;
         border: medium none;
         border-radius: 0;
-        color: #fff;
+        color: $white;
         font-family: "Lato",sans-serif;
         font-size: 18px;
         line-height: 48px;
@@ -3088,15 +3089,15 @@ h3 {
         display: inline-block;
         &:hover {
             outline: 0;
-            color: #fff;
+            color: $white;
             background: #e6001b;
 
         }
     }
     .tabs__content {
         border: 1px solid #d7d5d0;
-        background: #fff none repeat scroll 0 0;
-        color: #918e7e;
+        background: $white none repeat scroll 0 0;
+        color: $quotesTxt;
         font-size: 18px;
         height: 580px;
         line-height: 1.3;
@@ -3115,7 +3116,7 @@ h3 {
         width: 100%;
         max-width: 263px;
         li {
-            color: #918e7e;
+            color: $quotesTxt;
             display: block;
             font-size: 20px;
             height: 145px;
@@ -3136,7 +3137,7 @@ h3 {
         li.active {
             background: #ff334b;
             border-color: #ff334b;
-            color: #fff;
+            color: $white;
         }
     }
 }
@@ -3166,7 +3167,7 @@ h3 {
 }
 
 #logo-transporter {
-    background: #fff;
+    background: $white;
     height: 70px;
     .logo-btn img {
         width: 170px;
@@ -3184,7 +3185,7 @@ h3 {
     background: #3d4e60;
     margin-bottom: 20px;
     padding: 10px 0;
-    color: #fff;
+    color: $white;
     li {
         padding: 0 10px;
         letter-spacing: 1px;
@@ -3197,7 +3198,7 @@ h3 {
             font-weight: 300;
             border-radius: 100%;
             padding: 0px 8px;
-            border: 1px solid #fff;
+            border: 1px solid $white;
         }
         &:active {
             opacity: 1;
@@ -3212,7 +3213,7 @@ h3 {
     padding: 0;
     margin-bottom: 20px;
     .content-box {
-        background: #fff;
+        background: $white;
         padding: 20px 23px 97px;
         border-radius: 12px;
         box-shadow: 0 3px 1px 0 lightgrey;
@@ -3274,7 +3275,7 @@ h3 {
     width: 20%;
 }
 .footer-main-white {
-    background: #fff;
+    background: $white;
     padding: 20px 0 5px;
     border-bottom: 1px solid #f3f4f8;
     .footer-menu {
@@ -3303,7 +3304,7 @@ h3 {
     padding: 0 15px;
 }
 .footer-copyright-white {
-    background: #fff;
+    background: $white;
     color: #789cb7;
     font-weight: 300;
     .footer-copyright__txt {
@@ -3334,7 +3335,7 @@ h3 {
         margin-left: auto;
     }
     .logo__list .request-quote a {
-        color: #fff;
+        color: $white;
         background-color: #f54949;
         border-bottom-color: rgba(0, 0, 0, 0.15);
         transition: all 0.3s;
@@ -3360,7 +3361,7 @@ h3 {
     margin-left: auto;
 }
 .request-quote a {
-    color: #fff;
+    color: $white;
     background-color: #f54949;
     border-bottom-color: rgba(0, 0, 0, 0.15);
     transition: all 0.3s;
@@ -3433,7 +3434,7 @@ h3 {
     }
 }
 #steps-wrap {
-    background: #fff;
+    background: $white;
     padding: 35px 0 26px;
 }
 .steps__list {
@@ -3455,7 +3456,7 @@ h3 {
 .step-num {
     background: #30a0be;
     font-size: 14px;
-    color: #fff;
+    color: $white;
     line-height: 1;
     font-weight: 700;
     padding: 5px 5px 5px 8px;
@@ -3467,7 +3468,7 @@ h3 {
 .step-num-find{
     background: #30a0be;
     font-size: 32px;
-    color: #fff;
+    color: $white;
     line-height: 1;
     font-weight: 700;
     padding: 8px 5px 5px 15px;
@@ -3480,13 +3481,13 @@ h3 {
 .add-remove-count{
     width: 40px;
     height: 40px;
-    color: #fff;
+    color: $white;
     font-size: 25px;
     border-radius: 5px;
 }
 
 .add-remove-count:hover{
-    color: #fff;
+    color: $white;
     background:  #23527c;
 }
 //////////////////////////////////////////////////////////////////@at-root
@@ -3627,7 +3628,7 @@ h3 {
     }
 }
 .row-narrow {
-    background: #fff;
+    background: $white;
     padding: 20px;
 }
 .date-field {
@@ -3746,7 +3747,7 @@ input[type="radio"] {
     margin-top: -5px;
 }
 .reference-block {
-    background: #fff;
+    background: $white;
     padding: 30px 20px;
     margin-top: 5px;
     display: flex;
@@ -3811,7 +3812,7 @@ input[type="radio"] {
     background: #f6fffa;
     border: none;
     position: relative;
-    background: #fff;
+    background: $white;
     margin-bottom: 6px;
     display: flex;
     height: 148px;
@@ -4085,7 +4086,7 @@ input[type="radio"] {
     color: #5d5d5d;
     line-height: 1.5;
     a {
-        color: #2db2d3;
+        color: $footerCopyright;
         font-size: 16px;
         line-height: 1.5;
         display: inline-block;
@@ -4115,9 +4116,9 @@ input[type="radio"] {
     white-space: pre-line;
     display: inline-block;
     width: auto;
-    color: #fff;
+    color: $white;
     &:hover {
-        color: #fff;
+        color: $white;
     }
 }
 .btn-etape-red {
@@ -4130,10 +4131,10 @@ input[type="radio"] {
 }
 .btn-etape-blue {
     background-color: #5cd0ed;
-    border-bottom: 4px solid #2db2d3;
+    border-bottom: 4px solid $footerCopyright;
     margin-top: 36px;
     &:hover {
-        background-color: #2db2d3;
+        background-color: $footerCopyright;
     }
 }
 
@@ -4213,7 +4214,7 @@ input[type="radio"] {
         top: 0;
         border-radius: 50%;
         margin-right: 4px;
-        background: none #fff;
+        background: none $white;
         box-shadow: 1px 3px 4px #00000024;
     }
     input[type="radio"] ~ label:after {
@@ -4249,7 +4250,7 @@ input[type="radio"] {
     margin-bottom: 20px;
 }
 .signUpForm1__input-first {
-    background: url("/images/dest/color-line.png") repeat-x center top #fff;
+    background: url("/images/dest/color-line.png") repeat-x center top $white;
 }
 .signUpForm1-checkbox {
     margin-bottom: 10px;
@@ -4314,7 +4315,7 @@ input[type="radio"] {
         font-size: 15px;
         font-weight: 300;
         &:hover {
-            color: #2db2d3;
+            color: $footerCopyright;
         }
     }
 }
@@ -4326,9 +4327,9 @@ input[type="radio"] {
     font-size: 32px;
     text-transform: uppercase;
     margin: 25px 0 0;
-    border: 2px solid #2db2d3;
+    border: 2px solid $footerCopyright;
     padding: 10px 50px;
-    color: #fff;
+    color: $white;
     justify-content: center;
     text-shadow: 0 1px 2px #888;
     -moz-text-shadow: 0 1px 2px #888;
@@ -4381,7 +4382,7 @@ input[type="radio"] {
 }
 .size-container {
     width: 100%;
-    background: url("/images/dest/port-arrow.png") no-repeat right center #fff;
+    background: url("/images/dest/port-arrow.png") no-repeat right center $white;
     height: 64px;
     border: none;
     box-shadow: 1px 2px 3px #ccc;
@@ -4433,7 +4434,7 @@ input[type="radio"] {
         margin: 2px 0 0;
         font-size: 14px;
         list-style: none;
-        background-color: #fff;
+        background-color: $white;
         border: 1px solid rgba(0, 0, 0, 0.15);
         -webkit-box-shadow: 0 6px 12px rgb(85, 85, 85);
         box-shadow: 0 6px 12px rgb(85, 85, 85);
@@ -4444,7 +4445,7 @@ input[type="radio"] {
         z-index: 1;
         font-size: 16px;
         position: absolute;
-        color: #2db2d3;
+        color: $footerCopyright;
     }
     .dropdown-list {
         max-height: 157px;
@@ -4545,7 +4546,7 @@ input[type="radio"] {
     }
     .signUpForm1-button {
         margin: 10px 0 15px;
-        color: #fff;
+        color: $white;
         background: #5cd0ed;
         text-transform: none;
         font-size: 20px;
@@ -4553,7 +4554,7 @@ input[type="radio"] {
         padding: 10px 50px;
         height: 51px;
         border: 1px solid #c7c7c7;
-        border-bottom: 2px solid #2db2d3;
+        border-bottom: 2px solid $footerCopyright;
         box-shadow: 0 0 3px #ccc;
         -moz-box-shadow: 0 0 3px #ccc;
         -ms-box-shadow: 0 0 3px #ccc;
@@ -4567,7 +4568,7 @@ input[type="radio"] {
             box-shadow: 0 3px 5px #000;
         }
         &:hover {
-            color: #fff;
+            color: $white;
             background: #2bb0d1;
         }
     }
@@ -4634,8 +4635,8 @@ input[type="radio"] {
 
 .reviews__item {
     border-top: 1px solid #ced2d9;
-    background: #fff;
-    color: #666;
+    background: $white;
+    color: $articleRef;
     font-family: inherit;
     padding: 19px;
     max-width: 877px;
@@ -4645,7 +4646,7 @@ input[type="radio"] {
     h4 {
         margin: 0;
         a {
-            color: #2db2d3;
+            color: $footerCopyright;
             font-size: 20px;
             font-family: inherit;
             font-weight: 300;
@@ -4686,7 +4687,7 @@ input[type="radio"] {
         line-height: 1.1;
     }
     p {
-        color: #666;
+        color: $articleRef;
         font-family: inherit;
         font-size: 14px;
         line-height: 1.428571429;
@@ -4716,21 +4717,21 @@ input[type="radio"] {
     padding: 0;
 }
 .vcheck-txt {
-    color: #666;
+    color: $articleRef;
     font-family: inherit;
     font-size: 14px;
     line-height: 1.428571429;
 }
 .reviews__item-rating {
-    background: #fff;
-    color: #666;
+    background: $white;
+    color: $articleRef;
     font-family: inherit;
     padding: 19px;
     font-size: 14px;
     margin-bottom: 30px;
     border: 0;
     h2 {
-        color: #2db2d3;
+        color: $footerCopyright;
         font-size: 24px;
         font-family: inherit;
         font-weight: 600;
@@ -4755,7 +4756,7 @@ input[type="radio"] {
         h3 {
             margin: 10px 0;
             font-size: 30px;
-            color: #2db2d3;
+            color: $footerCopyright;
         }
         p {
             color: #aeafaf;
@@ -4787,14 +4788,14 @@ input[type="radio"] {
         }
         .estimation-btn {
             background: #ff334b;
-            color: #fff;
+            color: $white;
             font-size: 18px;
             border-radius: 0;
             padding: 8px 20px;
             height: 43px;
             &:hover {
                 background: #e32d43;
-                color: #fff;
+                color: $white;
             }
         }
     }
@@ -4812,7 +4813,7 @@ input[type="radio"] {
     height: 45px;
     &:hover {
         background: #ddd;
-        color: #fff;
+        color: $white;
     }
 }
 
@@ -4884,10 +4885,10 @@ input[type="radio"] {
             width: 100%;
             margin: 0;
             cursor: pointer;
-            background-color: #2db2d3;
+            background-color: $footerCopyright;
             padding: 9px 15px;
             font-size: 15px;
-            color: #FFF;
+            color: $white;
             transition:0.5s ease;
 
             i {
@@ -4917,7 +4918,7 @@ input[type="radio"] {
             font-size: 14px;
             line-height: 1.5;
             font-family: Lato;
-            background: #fff;
+            background: $white;
             transition: max-height 500ms ease-in-out;
             max-height: 350px;
             display: block;
@@ -4971,7 +4972,7 @@ input[type="radio"] {
     padding: 20px 15px;
     h1 {
         font-size: 45px;
-        color: #fff;
+        color: $white;
         padding-top: 17px;
         font-weight: 600;
         margin: 0;
@@ -4981,7 +4982,7 @@ input[type="radio"] {
     h2 {
         font-size: 22px;
         font-family: inherit;
-        color: #fff;
+        color: $white;
         margin: 0;
         font-weight: 400;
     }
@@ -5005,7 +5006,7 @@ input[type="radio"] {
 //THE-COMPANY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 .page-topheader {
-    background: #fff;
+    background: $white;
     padding: 100px 0 20px;
     margin-bottom: 30px;
     text-align: center;
@@ -5027,13 +5028,13 @@ input[type="radio"] {
 .left-column {
     width: 852px;
     float: left;
-    background: #fff;
-    color: #666;
+    background: $white;
+    color: $articleRef;
     font-family: inherit;
     padding: 19px;
     margin-bottom: 30px;
     h2 {
-        color: #2db2d3;
+        color: $footerCopyright;
         font-size: 24px;
         font-family: inherit;
         font-weight: 600;
@@ -5061,7 +5062,7 @@ input[type="radio"] {
 //BENEFITS-TRANSPORTER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 .benefits-transporter-header {
-    color: #fff;
+    color: $white;
     font-size: 23px;
     font-style: normal;
     background: url("/images/dest/shipperRecrutiMentBanner.png") no-repeat center top;
@@ -5075,20 +5076,20 @@ input[type="radio"] {
         line-height: 1.5;
         font-family: inherit;
         margin-top: 14px;
-        color: #fff;
+        color: $white;
         font-size: 23px;
         text-transform: initial;
     }
 }
 #default-section {
     padding: 30px 0;
-    background: #fff;
+    background: $white;
     .section-header {
         width: 66.66666666666666%;
         text-align: center;
         margin: 0 auto;
         h3 {
-            color: #2db2d3;
+            color: $footerCopyright;
             font-weight: 600;
             font-family: inherit;
             margin: 0 0 10px;
@@ -5100,11 +5101,11 @@ input[type="radio"] {
             margin-bottom: 20px;
             margin: 0 0 10px;
             font-size: 16px;
-            color: #84837c;
+            color: $txt;
         }
     }
     .title {
-        color: #636560;
+        color: $title;
         font-weight: 600;
         font-family: inherit;
         font-size: 26px;
@@ -5201,7 +5202,7 @@ input[type="radio"] {
             margin-bottom: 20px;
             margin: 0 0 10px;
             font-size: 16px;
-            color: #84837c;
+            color: $txt;
         }
     }
 }
@@ -5218,7 +5219,7 @@ input[type="radio"] {
     }
 }
 #risks-market {
-    background: #f6f5f0;
+    background: $recentList;
     padding: 30px 0;
 
 }
@@ -5227,7 +5228,7 @@ input[type="radio"] {
     margin-bottom: 30px;
 }
 h3 {
-    color: #2db2d3;
+    color: $footerCopyright;
     font-weight: 600;
     font-family: inherit;
     margin: 0 0 10px;
@@ -5238,7 +5239,7 @@ h3 {
     max-width: 100%;
     height: auto;
     li {
-        color: #84837c;
+        color: $txt;
         font-family: Lato,sans-serif;
         font-size: 18px;
         font-weight: 600;
@@ -5260,7 +5261,7 @@ h3 {
         margin-bottom: 20px;
         margin: 0 0 10px;
         font-size: 16px;
-        color: #84837c;
+        color: $txt;
     }
 }
 #advantages {
@@ -5286,19 +5287,19 @@ h3 {
     margin-bottom: 20px;
     margin: 0 0 10px;
     font-size: 16px;
-    color: #84837c;
+    color: $txt;
     a {
         display: inline-block;
-        color: #2db2d3;
+        color: $footerCopyright;
         &:hover {
-            color: #fe374f;
+            color: $red;
         }
     }
 }
 .partners-logos {
     display: flex;
     a {
-        background: #fff;
+        background: $white;
         display: inline-block;
         margin-right: 40px;
         &:hover {
@@ -5320,7 +5321,7 @@ h3 {
     padding: 18px 0 14px;
 }
 #gratitude {
-    background: #f6f5f0;
+    background: $recentList;
     padding: 30px 0;
     text-align: center;
     p {
@@ -5329,12 +5330,12 @@ h3 {
         margin-bottom: 20px;
         margin: 0 0 10px;
         font-size: 16px;
-        color: #84837c;
+        color: $txt;
         a {
             display: inline-block;
-            color: #2db2d3;
+            color: $footerCopyright;
             &:hover {
-                color: #fe374f;
+                color: $red;
             }
         }
     }
@@ -5351,7 +5352,7 @@ h3 {
         font-weight: bold;
         margin-bottom: 10px;
         text-transform: uppercase;
-        color: #666;
+        color: $articleRef;
         line-height: 25px;
         span {
             margin: 10px 0 30px;
@@ -5364,10 +5365,10 @@ h3 {
     #goDown {
         width: 36px;
         height: 36px;
-        border: 1px solid #fff;
+        border: 1px solid $white;
         border-radius: 50%;
         background: rgba(74,93,115,.05);
-        color: #fff;
+        color: $white;
         line-height: 34px;
         -webkit-box-shadow: 0 1px 1px #49515e;
         box-shadow: 0 1px 1px #49515e;
@@ -5390,20 +5391,20 @@ h3 {
         font-size: 18px;
         &:hover {
             outline: 0;
-            color: #fff;
+            color: $white;
             background: #e6001b;
 
         }
     }
 }
 #commentcamarche-section-default {
-    background: #fff;
+    background: $white;
     font-family: "Lato", sans-serif;
     font-size: 16px;
     line-height: 25px;
     padding: 50px 0;
     h3 {
-        color: #666;
+        color: $articleRef;
         font-family: "Lato",sans-serif;
         font-size: 18px;
         font-weight: bold;
@@ -5415,7 +5416,7 @@ h3 {
 }
 .virtual-table {
     border-collapse: collapse;
-    color: #918e7e;
+    color: $quotesTxt;
     display: table;
     font-size: 15px;
     line-height: 30px;
@@ -5431,7 +5432,7 @@ h3 {
     }
     a {
         font-weight: bold;
-        color: #2db2d3;
+        color: $footerCopyright;
         display: inline-block;
     }
 }
@@ -5440,10 +5441,10 @@ h3 {
     font-size: 16px;
     line-height: 25px;
     padding: 50px 0;
-    background: #f6f5f0;
+    background: $recentList;
     h2 {
         text-align: center;
-        color: #2db2d3;
+        color: $footerCopyright;
         font-family: "Lato",sans-serif;
         font-size: 28px;
         margin-bottom: 40px;
@@ -5456,7 +5457,7 @@ h3 {
         margin: 0;
         padding: 0;
         li {
-            color: #84837c;
+            color: $txt;
             margin-bottom: 26px;
             padding-right: 63px;
             display: flex;
@@ -5471,7 +5472,7 @@ h3 {
             }
             a {
                 font-size: 24px;
-                color: #2db2d3;
+                color: $footerCopyright;
                 font-weight: 600;
                 display: inline-block;
             }
@@ -5483,7 +5484,7 @@ h3 {
     font-size: 16px;
     line-height: 25px;
     padding: 50px 0;
-    background: #f6f5f0;
+    background: $recentList;
     .tabs {
         display: flex;
 
@@ -5493,7 +5494,7 @@ h3 {
         margin-right: 20px;
     }
     h2 {
-        color: #2db2d3;
+        color: $footerCopyright;
         font-family: "Lato", sans-serif;
         font-size: 40px;
         font-weight: normal;
@@ -5506,7 +5507,7 @@ h3 {
         background-color: #ff334b;
         border: medium none;
         border-radius: 0;
-        color: #fff;
+        color: $white;
         font-family: "Lato",sans-serif;
         font-size: 18px;
         line-height: 48px;
@@ -5516,15 +5517,15 @@ h3 {
         display: inline-block;
         &:hover {
             outline: 0;
-            color: #fff;
+            color: $white;
             background: #e6001b;
 
         }
     }
     .tabs__content {
         border: 1px solid #d7d5d0;
-        background: #fff none repeat scroll 0 0;
-        color: #918e7e;
+        background: $white none repeat scroll 0 0;
+        color: $quotesTxt;
         font-size: 18px;
         height: 580px;
         line-height: 1.3;
@@ -5543,7 +5544,7 @@ h3 {
         width: 100%;
         max-width: 263px;
         li {
-            color: #918e7e;
+            color: $quotesTxt;
             display: block;
             font-size: 20px;
             height: 145px;
@@ -5564,7 +5565,7 @@ h3 {
         li.active {
             background: #ff334b;
             border-color: #ff334b;
-            color: #fff;
+            color: $white;
         }
     }
 }
@@ -5576,7 +5577,7 @@ h3 {
     border: none;
     margin: inherit;
     width: auto;
-    background: #fff;
+    background: $white;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.200);
     .container {
         max-width: 1800px;
@@ -5599,7 +5600,7 @@ h3 {
         }
     }
     .logo__list li.request-quote a {
-        color: #fff;
+        color: $white;
         background-color: #f54949;
         border-bottom-color: rgba(0, 0, 0, 0.15);
         transition: all 0.3s;
@@ -5672,7 +5673,7 @@ h3 {
 }
 .profile-block {
     padding: 20px 30px;
-    background: #fff;
+    background: $white;
 }
 .content-overlay-outer {
     background: url("/images/dest/bg-profile.jpg") no-repeat center top;
@@ -5741,7 +5742,7 @@ h3 {
     justify-content: center;
     li {
         min-width: 110px;
-        background: #fff;
+        background: $white;
         color: #828f99;
         font-size: 12px;
         margin: 0 5px;
@@ -5852,7 +5853,7 @@ h3 {
     }
     .btn-group .active {
         background: #0083fe;
-        color: #fff;
+        color: $white;
     }
 }
 .account-type-label {
@@ -5886,7 +5887,7 @@ h3 {
     font-size: 14px;
     line-height: 1.5;
     padding: 10px 16px;
-    background-color: #fff;
+    background-color: $white;
     color: #1f2b33;
     border: 1px solid #e7e9f0;
     margin-bottom: 0px;
@@ -5930,7 +5931,7 @@ h3 {
     }
 }
 .btn-primary {
-    color: #fff;
+    color: $white;
     background-color: #0083fe;
     border-bottom-color: rgba(0, 0, 0, 0.15);
     transition: all 0.3s;
@@ -5947,7 +5948,7 @@ h3 {
     border-color: #2e6da4;
     font-size: 18px;
     &:hover {
-        color: #fff;
+        color: $white;
         background-color: #005ccc;
         border-color: rgba(0, 0, 0, 0.15);
     }
@@ -6032,7 +6033,7 @@ h3 {
     text-align: left;
 }
 .confirmed-block {
-    background: #fff;
+    background: $white;
     padding: 10px 0;
 }
 .empty-case-inner {
@@ -6091,7 +6092,7 @@ h3 {
 .services-content {
     padding: 20px 23px;
     margin-bottom: 30px;
-    background: #fff;
+    background: $white;
     text-align: center;
     height: 90%;
 }
@@ -6103,7 +6104,7 @@ h3 {
     .btn-primary {
         min-width: 105px;
         height: 38px;
-        color: #fff;
+        color: $white;
         background-color: #0083fe;
         border-color: rgba(0, 0, 0, 0.15);
         font-size: 14px;
@@ -6155,7 +6156,7 @@ h3 {
     .content-box {
         padding: 35px 37px 40px;
         width: 100%;
-        background: #fff;
+        background: $white;
         box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.12);
         text-align: center;
         display: flex;
@@ -6178,7 +6179,7 @@ h3 {
     }
 }
 .btn-success {
-    color: #fff;
+    color: $white;
     background-color: #35c86f;
     border-color: rgba(0, 0, 0, 0.15);
     border-radius: 50px;
@@ -6242,7 +6243,7 @@ h3 {
 }
 .info-box {
     background: #1796e7;
-    color: #fff;
+    color: $white;
     margin: 0 0 20px !important;
     padding: 17px 10px 21px;
     width: 100%;
@@ -6289,7 +6290,7 @@ h3 {
 }
 .btn-darkgray {
     font-size: 16px;
-    color: #fff;
+    color: $white;
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 7px;
@@ -6370,7 +6371,7 @@ body.lock {
         padding: 30px 10px;
         .popup__content {
             z-index: 999;
-            background: #fff;
+            background: $white;
             max-width: 900px;
             //  margin: 80px auto 30px;
             padding: 120px 40px 40px;
@@ -6427,7 +6428,7 @@ body.lock {
                     background: #cedded;
                     padding: 20px;
                     border-radius: 15px;
-                    border: 1px solid  #fff;
+                    border: 1px solid  $white;
 
                 }
             }
@@ -6449,7 +6450,7 @@ body.lock {
 .btn-dlue {
     width: 120px;
     height: 47px;
-    color: #fff;
+    color: $white;
     background-color: #0083fe;
     transition: all 0.3s;
     border-radius: 50px;
@@ -6465,7 +6466,7 @@ body.lock {
     -o-transition: all 0.3s linear;
     transition: all 0.3s linear;
     &:hover {
-        color: #fff;
+        color: $white;
         background-color: #005ccc;
         border-color: rgba(0, 0, 0, 0.15);
     }
@@ -6507,7 +6508,7 @@ body.lock {
         display: flex;
         align-items: center;
         // justify-content: space-between;
-        background: #fff;
+        background: $white;
         max-height: 85px;
         margin-bottom: 10px;
         box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.12);
@@ -6614,7 +6615,7 @@ body.lock {
     }
     input ~ span em:before {
         content: '';
-        background: #fff;
+        background: $white;
         width: 22px;
         height: 22px;
         border-radius: 100px;
@@ -6742,7 +6743,7 @@ body.lock {
         }
     }
     #recentList h2 {
-        color: #383a35;
+        color: $titleSmall;
         margin-bottom: 12px;
         font-size: 20px;
     }
