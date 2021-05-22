@@ -107,7 +107,7 @@ section {
 h1 {
     color: $white;
     margin: 0px 0px 15px 0px;
-    text-shadow: 0 1px 1px #49515e;
+    text-shadow: 0 1px 1px $darkGreyBG;
     font-size: 50px;
     line-height: 1;
     text-transform: uppercase;
@@ -119,7 +119,7 @@ h1 {
         background-color: transparent;
         margin: 25px 0 40px;
         border: none;
-        text-shadow: 0 1px 1px #49515e;
+        text-shadow: 0 1px 1px $darkGreyBG;
         font-size: 23px;
     }
 }
@@ -148,7 +148,7 @@ h1 {
     background: hsla(212, 22%, 37%, 0.05);
     color: $white;
     line-height: 34px;
-    box-shadow: 0 1px 1px #49515e;
+    box-shadow: 0 1px 1px $darkGreyBG;
     display: inline-block;
     cursor: pointer;
     margin: 100px 0 30px;
@@ -179,14 +179,14 @@ h1 {
     }
 }
 .seekheader__title {
-    color: $titleSmall;
+    color: #383a35;
     font-weight: normal;
     font-size: 20px;
     margin: 5px 0;
 }
 .seekheader__txt {
     font-size: 15px;
-    color: $txt;
+    color: #84837c;
     font-weight: 600;
 }
 #seekHeader {
@@ -212,7 +212,7 @@ h1 {
     }
 }
 #recentList {
-    background: $recentList;
+    background: $lightYellow;
     padding: 32px 0 32px;
 }
 .postBlock {
@@ -224,10 +224,10 @@ h1 {
     max-height: 127px;
 }
 #recentList {
-    background: $recentList;
+    background: $lightYellow;
     padding: 32px 0 12px;
     h2 {
-        color: $grey;
+        color: #859295;
         font-size: 32px;
         font-weight: normal;
         font-family: "Lato", sans-serif;
@@ -254,11 +254,11 @@ h1 {
 }
 .postblock__title {
     font-size: 15px;
-    color: $titleSmall;
+    color: #383a35;
     margin: 0;
 }
 .postblock__prg {
-    color: $post;
+    color: #b5b3a8;
     font-size: 13px;
     margin: 0 0 6px;
 }
@@ -302,7 +302,7 @@ h1 {
     }
     .recen__title {
         margin-left: 54px;
-        color: $titleSmall;
+        color: #383a35;
         font-size: 14px;
         span {
             font-size: 13px;
@@ -337,7 +337,7 @@ h1 {
         right: 0;
     }
     p {
-        color: $titleSmall;
+        color: #383a35;
         font-size: 14px;
         margin: 0;
         line-height: 1.3;
@@ -361,7 +361,7 @@ h1 {
     .marginImg {
         margin-left: 54px;
         p {
-            color: $titleSmall;
+            color: #383a35;
             font-size: 14px;
             margin: 0;
         }
@@ -383,7 +383,7 @@ h1 {
         background: #eeedec;
     }
     p {
-        color: $price;
+        color: #717780;
         font-size: 15px;
     }
 }
@@ -406,7 +406,7 @@ h1 {
     align-items: center;
     flex-direction: column;
     font-size: 26px;
-    color: $title;
+    color: #636560;
     margin: 0 0 16px;
     span {
         color: $blue;
@@ -529,7 +529,7 @@ h1 {
     }
 }
 #testimonialNew {
-    background: $quotesBackground;
+    background: #eae8df;
     padding: 32px 0;
 }
 .trustLogo {
@@ -551,7 +551,7 @@ h1 {
     flex-direction: column;
 }
 .testimonialtext__txt {
-    color: $quotesTxt;
+    color: $textGrey;
     text-align: left;
     margin-bottom: 10px;
     max-height: 115px;
@@ -568,7 +568,7 @@ h1 {
     margin-bottom: -12px;
     display: flex;
     justify-content: space-between;
-    color: $grey;
+    color: #859295;
     margin-top: auto;
     .date {
         font-size: 11px;
@@ -582,7 +582,7 @@ h1 {
     justify-content: space-between;
     padding-top: 7px;
     p {
-        color: $rating;
+        color: #209afd;
         font-size: 18px;
     }
 }
@@ -597,7 +597,7 @@ h1 {
         float: left;
         display: block;
         padding: 15px;
-        color: $unActiveTab_txt;
+        color: #a3a3a3;
         background: #ededed;
         font-weight: 600;
         margin-bottom: -1px;
@@ -614,11 +614,11 @@ h1 {
     input {
         display: none;
         &:checked + label {
-            background-color: $tabsBlock;
-            color: $titleSmall;
-            border-left-color: $tabsBorder;
+            background-color: #f7f7f7;
+            color: #383a35;
+            border-left-color: #2cafd0;
             border-bottom-color: transparent;
-            border-left: 5px solid $tabsBorder;
+            border-left: 5px solid #2cafd0;
         }
     } //input
     input[id="tab-1"]:checked ~ .content .tab-1 {
@@ -653,12 +653,12 @@ h1 {
         position: absolute;
         top: 0;
         left: 0;
-        background-color: $tabsBlock;
+        background-color: #f7f7f7;
         display: none;
         height: 414px;
         li {
             a {
-                color: $articleRef;
+                color: $darkGrey;
                 font-size: 15px;
                 font-weight: 400;
                 &:hover {
@@ -669,7 +669,7 @@ h1 {
         .blue {
             li {
                 a {
-                    color: $rating;
+                    color: #209afd;
                 }
             }
         }
@@ -679,12 +679,12 @@ h1 {
 
 
 .footer-main {
-    background: #69717d;
+    background: $greyBG;
     padding: 25px 0;
     margin-top: 160px;
     position: relative;
     .trfs__title {
-        color: $footerTxtColor;
+        color: $lightGrey;
         border-bottom: #808792 solid 1px;
         line-height: 38px;
         font-size: 18px;
@@ -695,21 +695,21 @@ h1 {
         font-size: 15px;
         line-height: 36px;
         font-weight: 300;
-        color: $footerTxtColor;
+        color: $lightGrey;
         &:hover {
-            color: $footerCopyright;
+            color: #2db2d3;
         }
     }
 }
 .footer-middle {
-    background: #49515e;
+    background: $darkGreyBG;
     padding: 50px 0;
 }
 .footer-middle-inner {
     &:after {
         content: "";
         width: 340px;
-        border-bottom: 1px solid #69717d;
+        border-bottom: 1px solid $greyBG;
         position: absolute;
         top: 125%;
         margin-top: 20px;
@@ -718,7 +718,7 @@ h1 {
     .fmi__title {
         display: inline-block;
         vertical-align: middle;
-        color: $footerTxtColor;
+        color: $lightGrey;
         font-weight: 700;
         margin-right: 16px;
     }
@@ -744,16 +744,16 @@ h1 {
     }
 }
 .footer-copyright {
-    background: #49515e;
+    background: $darkGreyBG;
     .footer-copyright__txt {
         font-weight: 300;
         font-size: 12px;
-        color: $footerTxtColor;
+        color: $lightGrey;
         margin: 16px 0 0;
         line-height: 22px;
         a {
             display: inline-block;
-            color: $footerCopyright;
+            color: #2db2d3;
             &:hover {
                 text-decoration: underline;
             }
@@ -1709,7 +1709,7 @@ input[type="radio"] {
     color: #5d5d5d;
     line-height: 1.5;
     a {
-        color: $footerCopyright;
+        color: #2db2d3;
         font-size: 16px;
         line-height: 1.5;
         display: inline-block;
@@ -1754,10 +1754,10 @@ input[type="radio"] {
 }
 .btn-etape-blue {
     background-color: #5cd0ed;
-    border-bottom: 4px solid $footerCopyright;
+    border-bottom: 4px solid #2db2d3;
     margin-top: 36px;
     &:hover {
-        background-color: $footerCopyright;
+        background-color: #2db2d3;
     }
 }
 
@@ -1938,7 +1938,7 @@ input[type="radio"] {
         font-size: 15px;
         font-weight: 300;
         &:hover {
-            color: $footerCopyright;
+            color: #2db2d3;
         }
     }
 }
@@ -1950,7 +1950,7 @@ input[type="radio"] {
     font-size: 32px;
     text-transform: uppercase;
     margin: 25px 0 0;
-    border: 2px solid $footerCopyright;
+    border: 2px solid #2db2d3;
     padding: 10px 50px;
     color: $white;
     justify-content: center;
@@ -2066,7 +2066,7 @@ input[type="radio"] {
         z-index: 1;
         font-size: 16px;
         position: absolute;
-        color: $footerCopyright;
+        color: #2db2d3;
     }
     .dropdown-list {
         max-height: 157px;
@@ -2175,7 +2175,7 @@ input[type="radio"] {
         padding: 10px 50px;
         height: 51px;
         border: 1px solid #c7c7c7;
-        border-bottom: 2px solid $footerCopyright;
+        border-bottom: 2px solid #2db2d3;
         box-shadow: 0 0 3px #ccc;
         -moz-box-shadow: 0 0 3px #ccc;
         -ms-box-shadow: 0 0 3px #ccc;
@@ -2257,7 +2257,7 @@ input[type="radio"] {
 .reviews__item {
     border-top: 1px solid #ced2d9;
     background: $white;
-    color: $articleRef;
+    color: $darkGrey;
     font-family: inherit;
     padding: 19px;
 }
@@ -2266,7 +2266,7 @@ input[type="radio"] {
     h4 {
         margin: 0;
         a {
-            color: $footerCopyright;
+            color: #2db2d3;
             font-size: 20px;
             font-family: inherit;
             font-weight: 300;
@@ -2307,7 +2307,7 @@ input[type="radio"] {
         line-height: 1.1;
     }
     p {
-        color: $articleRef;
+        color: $darkGrey;
         font-family: inherit;
         font-size: 14px;
         line-height: 1.428571429;
@@ -2337,21 +2337,21 @@ input[type="radio"] {
     padding: 0;
 }
 .vcheck-txt {
-    color: $articleRef;
+    color: $darkGrey;
     font-family: inherit;
     font-size: 14px;
     line-height: 1.428571429;
 }
 .reviews__item-rating {
     background: $white;
-    color: $articleRef;
+    color: $darkGrey;
     font-family: inherit;
     padding: 19px;
     font-size: 14px;
     margin-bottom: 30px;
     border: 0;
     h2 {
-        color: $footerCopyright;
+        color: #2db2d3;
         font-size: 24px;
         font-family: inherit;
         font-weight: 600;
@@ -2376,7 +2376,7 @@ input[type="radio"] {
         h3 {
             margin: 10px 0;
             font-size: 30px;
-            color: $footerCopyright;
+            color: #2db2d3;
         }
         p {
             color: #aeafaf;
@@ -2505,7 +2505,7 @@ input[type="radio"] {
             width: 100%;
             margin: 0;
             cursor: pointer;
-            background-color: $footerCopyright;
+            background-color: #2db2d3;
             padding: 9px 15px;
             font-size: 15px;
             color: $white;
@@ -2672,12 +2672,12 @@ input[type="radio"] {
     width: 852px;
     float: left;
     background: $white;
-    color: $articleRef;
+    color: $darkGrey;
     font-family: inherit;
     padding: 19px;
     margin-bottom: 30px;
     h2 {
-        color: $footerCopyright;
+        color: #2db2d3;
         font-size: 24px;
         font-family: inherit;
         font-weight: 600;
@@ -2736,7 +2736,7 @@ input[type="radio"] {
         text-align: center;
         margin: 0 auto;
         h3 {
-            color: $footerCopyright;
+            color: #2db2d3;
             font-weight: 600;
             font-family: inherit;
             margin: 0 0 10px;
@@ -2748,11 +2748,11 @@ input[type="radio"] {
             margin-bottom: 20px;
             margin: 0 0 10px;
             font-size: 16px;
-            color: $txt;
+            color: #84837c;
         }
     }
     .title {
-        color: $title;
+        color: #636560;
         font-weight: 600;
         font-family: inherit;
         font-size: 26px;
@@ -2774,7 +2774,7 @@ input[type="radio"] {
             margin-bottom: 20px;
             margin: 0 0 10px;
             font-size: 16px;
-            color: $txt;
+            color: #84837c;
         }
     }
 }
@@ -2791,7 +2791,7 @@ input[type="radio"] {
     }
 }
 #risks-market {
-    background: $recentList;
+    background: $lightYellow;
     padding: 30px 0;
 
 }
@@ -2800,7 +2800,7 @@ input[type="radio"] {
     margin-bottom: 30px;
 }
 h3 {
-    color: $footerCopyright;
+    color: #2db2d3;
     font-weight: 600;
     font-family: inherit;
     margin: 0 0 10px;
@@ -2811,7 +2811,7 @@ h3 {
     max-width: 100%;
     height: auto;
     li {
-        color: $txt;
+        color: #84837c;
         font-family: Lato,sans-serif;
         font-size: 18px;
         font-weight: 600;
@@ -2833,7 +2833,7 @@ h3 {
         margin-bottom: 20px;
         margin: 0 0 10px;
         font-size: 16px;
-        color: $txt;
+        color: #84837c;
     }
 }
 #advantages {
@@ -2858,10 +2858,10 @@ h3 {
     margin-bottom: 20px;
     margin: 0 0 10px;
     font-size: 16px;
-    color: $txt;
+    color: #84837c;
     a {
         display: inline-block;
-        color: $footerCopyright;
+        color: #2db2d3;
         &:hover {
             color: $red;
         }
@@ -2892,7 +2892,7 @@ h3 {
     padding: 18px 0 14px;
 }
 #gratitude {
-    background: $recentList;
+    background: $lightYellow;
     padding: 30px 0;
     text-align: center;
     p {
@@ -2901,10 +2901,10 @@ h3 {
         margin-bottom: 20px;
         margin: 0 0 10px;
         font-size: 16px;
-        color: $txt;
+        color: #84837c;
         a {
             display: inline-block;
-            color: $footerCopyright;
+            color: #2db2d3;
             &:hover {
                 color: $red;
             }
@@ -2924,7 +2924,7 @@ h3 {
         font-weight: bold;
         margin-bottom: 10px;
         text-transform: uppercase;
-        color: $articleRef;
+        color: $darkGrey;
         line-height: 25px;
         span {
             margin: 10px 0 30px;
@@ -2942,8 +2942,8 @@ h3 {
         background: rgba(74,93,115,.05);
         color: $white;
         line-height: 34px;
-        -webkit-box-shadow: 0 1px 1px #49515e;
-        box-shadow: 0 1px 1px #49515e;
+        -webkit-box-shadow: 0 1px 1px $darkGreyBG;
+        box-shadow: 0 1px 1px $darkGreyBG;
         display: inline-block;
         cursor: pointer;
         margin: 100px 0 30px;
@@ -2976,7 +2976,7 @@ h3 {
     line-height: 25px;
     padding: 50px 0;
     h3 {
-        color: $articleRef;
+        color: $darkGrey;
         font-family: "Lato",sans-serif;
         font-size: 18px;
         font-weight: bold;
@@ -2988,7 +2988,7 @@ h3 {
 }
 .virtual-table {
     border-collapse: collapse;
-    color: $quotesTxt;
+    color: $textGrey;
     display: table;
     font-size: 15px;
     line-height: 30px;
@@ -3004,7 +3004,7 @@ h3 {
     }
     a {
         font-weight: bold;
-        color: $footerCopyright;
+        color: #2db2d3;
         display: inline-block;
     }
 }
@@ -3013,10 +3013,10 @@ h3 {
     font-size: 16px;
     line-height: 25px;
     padding: 50px 0;
-    background: $recentList;
+    background: $lightYellow;
     h2 {
         text-align: center;
-        color: $footerCopyright;
+        color: #2db2d3;
         font-family: "Lato",sans-serif;
         font-size: 28px;
         margin-bottom: 40px;
@@ -3029,7 +3029,7 @@ h3 {
         margin: 0;
         padding: 0;
         li {
-            color: $txt;
+            color: #84837c;
             margin-bottom: 26px;
             padding-right: 63px;
             display: flex;
@@ -3044,7 +3044,7 @@ h3 {
             }
             a {
                 font-size: 24px;
-                color: $footerCopyright;
+                color: #2db2d3;
                 font-weight: 600;
                 display: inline-block;
             }
@@ -3056,7 +3056,7 @@ h3 {
     font-size: 16px;
     line-height: 25px;
     padding: 50px 0;
-    background: $recentList;
+    background: $lightYellow;
     .tabs {
         display: flex;
 
@@ -3066,7 +3066,7 @@ h3 {
         margin-right: 20px;
     }
     h2 {
-        color: $footerCopyright;
+        color: #2db2d3;
         font-family: "Lato", sans-serif;
         font-size: 40px;
         font-weight: normal;
@@ -3097,7 +3097,7 @@ h3 {
     .tabs__content {
         border: 1px solid #d7d5d0;
         background: $white none repeat scroll 0 0;
-        color: $quotesTxt;
+        color: $textGrey;
         font-size: 18px;
         height: 580px;
         line-height: 1.3;
@@ -3116,7 +3116,7 @@ h3 {
         width: 100%;
         max-width: 263px;
         li {
-            color: $quotesTxt;
+            color: $textGrey;
             display: block;
             font-size: 20px;
             height: 145px;
@@ -4086,7 +4086,7 @@ input[type="radio"] {
     color: #5d5d5d;
     line-height: 1.5;
     a {
-        color: $footerCopyright;
+        color: #2db2d3;
         font-size: 16px;
         line-height: 1.5;
         display: inline-block;
@@ -4131,10 +4131,10 @@ input[type="radio"] {
 }
 .btn-etape-blue {
     background-color: #5cd0ed;
-    border-bottom: 4px solid $footerCopyright;
+    border-bottom: 4px solid #2db2d3;
     margin-top: 36px;
     &:hover {
-        background-color: $footerCopyright;
+        background-color: #2db2d3;
     }
 }
 
@@ -4315,7 +4315,7 @@ input[type="radio"] {
         font-size: 15px;
         font-weight: 300;
         &:hover {
-            color: $footerCopyright;
+            color: #2db2d3;
         }
     }
 }
@@ -4327,7 +4327,7 @@ input[type="radio"] {
     font-size: 32px;
     text-transform: uppercase;
     margin: 25px 0 0;
-    border: 2px solid $footerCopyright;
+    border: 2px solid #2db2d3;
     padding: 10px 50px;
     color: $white;
     justify-content: center;
@@ -4445,7 +4445,7 @@ input[type="radio"] {
         z-index: 1;
         font-size: 16px;
         position: absolute;
-        color: $footerCopyright;
+        color: #2db2d3;
     }
     .dropdown-list {
         max-height: 157px;
@@ -4554,7 +4554,7 @@ input[type="radio"] {
         padding: 10px 50px;
         height: 51px;
         border: 1px solid #c7c7c7;
-        border-bottom: 2px solid $footerCopyright;
+        border-bottom: 2px solid #2db2d3;
         box-shadow: 0 0 3px #ccc;
         -moz-box-shadow: 0 0 3px #ccc;
         -ms-box-shadow: 0 0 3px #ccc;
@@ -4636,7 +4636,7 @@ input[type="radio"] {
 .reviews__item {
     border-top: 1px solid #ced2d9;
     background: $white;
-    color: $articleRef;
+    color: $darkGrey;
     font-family: inherit;
     padding: 19px;
     max-width: 877px;
@@ -4646,7 +4646,7 @@ input[type="radio"] {
     h4 {
         margin: 0;
         a {
-            color: $footerCopyright;
+            color: #2db2d3;
             font-size: 20px;
             font-family: inherit;
             font-weight: 300;
@@ -4687,7 +4687,7 @@ input[type="radio"] {
         line-height: 1.1;
     }
     p {
-        color: $articleRef;
+        color: $darkGrey;
         font-family: inherit;
         font-size: 14px;
         line-height: 1.428571429;
@@ -4717,21 +4717,21 @@ input[type="radio"] {
     padding: 0;
 }
 .vcheck-txt {
-    color: $articleRef;
+    color: $darkGrey;
     font-family: inherit;
     font-size: 14px;
     line-height: 1.428571429;
 }
 .reviews__item-rating {
     background: $white;
-    color: $articleRef;
+    color: $darkGrey;
     font-family: inherit;
     padding: 19px;
     font-size: 14px;
     margin-bottom: 30px;
     border: 0;
     h2 {
-        color: $footerCopyright;
+        color: #2db2d3;
         font-size: 24px;
         font-family: inherit;
         font-weight: 600;
@@ -4756,7 +4756,7 @@ input[type="radio"] {
         h3 {
             margin: 10px 0;
             font-size: 30px;
-            color: $footerCopyright;
+            color: #2db2d3;
         }
         p {
             color: #aeafaf;
@@ -4885,7 +4885,7 @@ input[type="radio"] {
             width: 100%;
             margin: 0;
             cursor: pointer;
-            background-color: $footerCopyright;
+            background-color: #2db2d3;
             padding: 9px 15px;
             font-size: 15px;
             color: $white;
@@ -5029,12 +5029,12 @@ input[type="radio"] {
     width: 852px;
     float: left;
     background: $white;
-    color: $articleRef;
+    color: $darkGrey;
     font-family: inherit;
     padding: 19px;
     margin-bottom: 30px;
     h2 {
-        color: $footerCopyright;
+        color: #2db2d3;
         font-size: 24px;
         font-family: inherit;
         font-weight: 600;
@@ -5089,7 +5089,7 @@ input[type="radio"] {
         text-align: center;
         margin: 0 auto;
         h3 {
-            color: $footerCopyright;
+            color: #2db2d3;
             font-weight: 600;
             font-family: inherit;
             margin: 0 0 10px;
@@ -5101,11 +5101,11 @@ input[type="radio"] {
             margin-bottom: 20px;
             margin: 0 0 10px;
             font-size: 16px;
-            color: $txt;
+            color: #84837c;
         }
     }
     .title {
-        color: $title;
+        color: #636560;
         font-weight: 600;
         font-family: inherit;
         font-size: 26px;
@@ -5202,7 +5202,7 @@ input[type="radio"] {
             margin-bottom: 20px;
             margin: 0 0 10px;
             font-size: 16px;
-            color: $txt;
+            color: #84837c;
         }
     }
 }
@@ -5219,7 +5219,7 @@ input[type="radio"] {
     }
 }
 #risks-market {
-    background: $recentList;
+    background: $lightYellow;
     padding: 30px 0;
 
 }
@@ -5228,7 +5228,7 @@ input[type="radio"] {
     margin-bottom: 30px;
 }
 h3 {
-    color: $footerCopyright;
+    color: #2db2d3;
     font-weight: 600;
     font-family: inherit;
     margin: 0 0 10px;
@@ -5239,7 +5239,7 @@ h3 {
     max-width: 100%;
     height: auto;
     li {
-        color: $txt;
+        color: #84837c;
         font-family: Lato,sans-serif;
         font-size: 18px;
         font-weight: 600;
@@ -5261,7 +5261,7 @@ h3 {
         margin-bottom: 20px;
         margin: 0 0 10px;
         font-size: 16px;
-        color: $txt;
+        color: #84837c;
     }
 }
 #advantages {
@@ -5287,10 +5287,10 @@ h3 {
     margin-bottom: 20px;
     margin: 0 0 10px;
     font-size: 16px;
-    color: $txt;
+    color: #84837c;
     a {
         display: inline-block;
-        color: $footerCopyright;
+        color: #2db2d3;
         &:hover {
             color: $red;
         }
@@ -5321,7 +5321,7 @@ h3 {
     padding: 18px 0 14px;
 }
 #gratitude {
-    background: $recentList;
+    background: $lightYellow;
     padding: 30px 0;
     text-align: center;
     p {
@@ -5330,10 +5330,10 @@ h3 {
         margin-bottom: 20px;
         margin: 0 0 10px;
         font-size: 16px;
-        color: $txt;
+        color: #84837c;
         a {
             display: inline-block;
-            color: $footerCopyright;
+            color: #2db2d3;
             &:hover {
                 color: $red;
             }
@@ -5352,7 +5352,7 @@ h3 {
         font-weight: bold;
         margin-bottom: 10px;
         text-transform: uppercase;
-        color: $articleRef;
+        color: $darkGrey;
         line-height: 25px;
         span {
             margin: 10px 0 30px;
@@ -5370,8 +5370,8 @@ h3 {
         background: rgba(74,93,115,.05);
         color: $white;
         line-height: 34px;
-        -webkit-box-shadow: 0 1px 1px #49515e;
-        box-shadow: 0 1px 1px #49515e;
+        -webkit-box-shadow: 0 1px 1px $darkGreyBG;
+        box-shadow: 0 1px 1px $darkGreyBG;
         display: inline-block;
         cursor: pointer;
         margin: 100px 0 30px;
@@ -5404,7 +5404,7 @@ h3 {
     line-height: 25px;
     padding: 50px 0;
     h3 {
-        color: $articleRef;
+        color: $darkGrey;
         font-family: "Lato",sans-serif;
         font-size: 18px;
         font-weight: bold;
@@ -5416,7 +5416,7 @@ h3 {
 }
 .virtual-table {
     border-collapse: collapse;
-    color: $quotesTxt;
+    color: $textGrey;
     display: table;
     font-size: 15px;
     line-height: 30px;
@@ -5432,7 +5432,7 @@ h3 {
     }
     a {
         font-weight: bold;
-        color: $footerCopyright;
+        color: #2db2d3;
         display: inline-block;
     }
 }
@@ -5441,10 +5441,10 @@ h3 {
     font-size: 16px;
     line-height: 25px;
     padding: 50px 0;
-    background: $recentList;
+    background: $lightYellow;
     h2 {
         text-align: center;
-        color: $footerCopyright;
+        color: #2db2d3;
         font-family: "Lato",sans-serif;
         font-size: 28px;
         margin-bottom: 40px;
@@ -5457,7 +5457,7 @@ h3 {
         margin: 0;
         padding: 0;
         li {
-            color: $txt;
+            color: #84837c;
             margin-bottom: 26px;
             padding-right: 63px;
             display: flex;
@@ -5472,7 +5472,7 @@ h3 {
             }
             a {
                 font-size: 24px;
-                color: $footerCopyright;
+                color: #2db2d3;
                 font-weight: 600;
                 display: inline-block;
             }
@@ -5484,7 +5484,7 @@ h3 {
     font-size: 16px;
     line-height: 25px;
     padding: 50px 0;
-    background: $recentList;
+    background: $lightYellow;
     .tabs {
         display: flex;
 
@@ -5494,7 +5494,7 @@ h3 {
         margin-right: 20px;
     }
     h2 {
-        color: $footerCopyright;
+        color: #2db2d3;
         font-family: "Lato", sans-serif;
         font-size: 40px;
         font-weight: normal;
@@ -5525,7 +5525,7 @@ h3 {
     .tabs__content {
         border: 1px solid #d7d5d0;
         background: $white none repeat scroll 0 0;
-        color: $quotesTxt;
+        color: $textGrey;
         font-size: 18px;
         height: 580px;
         line-height: 1.3;
@@ -5544,7 +5544,7 @@ h3 {
         width: 100%;
         max-width: 263px;
         li {
-            color: $quotesTxt;
+            color: $textGrey;
             display: block;
             font-size: 20px;
             height: 145px;
@@ -6743,7 +6743,7 @@ body.lock {
         }
     }
     #recentList h2 {
-        color: $titleSmall;
+        color: #383a35;
         margin-bottom: 12px;
         font-size: 20px;
     }
