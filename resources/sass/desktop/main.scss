@@ -230,7 +230,7 @@ h1 {
         color: #859295;
         font-size: 32px;
         font-weight: normal;
-        font-family: "Lato", sans-serif;
+        font-family: $Lato;
         margin: 20px 0 10px;
     }
 }
@@ -494,7 +494,7 @@ h1 {
 .trevalnew__title {
     text-transform: uppercase;
     font-weight: 600;
-    font-family: 'Lato',sans-serif;
+    font-family: $Lato;
     font-size: 20px;
     color: $white;
     margin-bottom: 6px;
@@ -508,7 +508,7 @@ h1 {
     color: $white;
     font-weight: 300;
     font-style: normal;
-    font-family: 'Lato',sans-serif;
+    font-family: $Lato;
     line-height: 24px;
     margin-bottom: 18px;
     font-size: 15px;
@@ -518,7 +518,7 @@ h1 {
     position: absolute;
     right: 25px;
     bottom: 0;
-    font-family: 'Lato',sans-serif;
+    font-family: $Lato;
     font-size: 20px;
     color: $white;
     text-decoration: underline;
@@ -557,7 +557,7 @@ h1 {
     max-height: 115px;
     line-height: 1.3;
     font-size: 15px;
-    font-family: 'Lato',sans-serif;
+    font-family: $Lato;
     svg {
         color: #e2e1d9;
     }
@@ -636,7 +636,7 @@ h1 {
         li:hover {
             background: url("/images/list-arrow.png") no-repeat left center;
             color: #333;
-            font-family: "Lato";
+            font-family: $Lato;
             font-weight: bold;
             text-decoration: none;
         }
@@ -688,7 +688,7 @@ h1 {
         border-bottom: #808792 solid 1px;
         line-height: 38px;
         font-size: 18px;
-        font-family: "Lato", sans-serif;
+        font-family: $Lato;
         margin: 10px 0;
     }
     li a {
@@ -1472,7 +1472,7 @@ input[type="radio"] {
     }
 }
 #fretbayfooter{
-    font-family: "Lato", sans-serif;
+    font-family: $Lato;
 }
 .td-nom {
     width: 23%;
@@ -1696,7 +1696,7 @@ input[type="radio"] {
     -khtml-box-shadow: 0 0 7px #999;
 }
 .etape-box__title {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: $HelveticaNeue;
     color: rgb(100, 100, 100);
     font-size: 24px;
     line-height: 1.1;
@@ -1793,7 +1793,7 @@ input[type="radio"] {
     font-size: 30px;
     color: #5d5d5d;
     font-weight: normal;
-    font-family: "segoeuiRegular";
+    font-family: $segoeuiRegular;
     span {
         font-size: 15px;
         color: #767676;
@@ -1825,7 +1825,7 @@ input[type="radio"] {
         cursor: pointer;
     }
     label {
-        font-family: "Lato", sans-serif;
+        font-family: $Lato;
         font-weight: 400;
     }
     input[type="radio"] ~ label:before {
@@ -1866,7 +1866,7 @@ input[type="radio"] {
     box-shadow: 1px 2px 3px 1px #ccc;
     padding-left: 70px;
     font-size: 18px;
-    font: 18px "Lato", sans-serif;
+    font: 18px $Lato;
     border-color: #5e7292;
     padding: 6px 12px;
     color: #515966;
@@ -1897,7 +1897,7 @@ input[type="radio"] {
         font-weight: 400;
         cursor: pointer;
         margin: 0;
-        font-family: "Lato", sans-serif;
+        font-family: $Lato;
     }
     input[type="checkbox"] + label:before {
         content: "";
@@ -2016,7 +2016,7 @@ input[type="radio"] {
     -khtml-box-shadow: 1px 2px 3px #ccc;
     margin-bottom: 20px;
     select {
-        font-family: "segoe_uilight";
+        font-family: $segoe_uilight;
         width: 108%;
         border: 0;
         background-color: transparent;
@@ -2032,7 +2032,7 @@ input[type="radio"] {
 }
 .size-container-expertise {
     color: #999;
-    font-family: "segoe_uilight";
+    font-family: $segoe_uilight;
     .btn-default {
         border: 0;
         background: 0;
@@ -2138,7 +2138,7 @@ input[type="radio"] {
 }
 .ebu__subtitle {
     font-size: 16px;
-    font-family: "Lato", sans-serif;
+    font-family: $Lato;
     color: #5d5d5d;
     line-height: 20px;
     margin: 30px 0 12px;
@@ -2156,7 +2156,7 @@ input[type="radio"] {
     h2 {
         color: #5d5d5d;
         font-size: 30px;
-        font-family: "segoeuiRegular";
+        font-family: $segoeuiRegular;
         text-align: center;
         padding-bottom: 10px;
     }
@@ -2201,7 +2201,7 @@ input[type="radio"] {
             font-weight: bold;
             font-size: 20px;
             color: #5d5d5d;
-            font-family: "segoeuiRegular";
+            font-family: $segoeuiRegular;
         }
     }
     .signUpForm1__input-first {
@@ -2213,13 +2213,13 @@ input[type="radio"] {
     font-size: 20px;
     color: #5d5d5d;
     line-height: 1.428571429;
-    font-family: "segoeuiRegular";
+    font-family: $segoeuiRegular;
     text-align: center;
     a {
         font-size: 20px;
         display: inline-block;
         color: #f10a30;
-        font-family: "segoeuiRegular";
+        font-family: $segoeuiRegular;
     }
 }
 .input-row {
@@ -2302,7 +2302,7 @@ input[type="radio"] {
         font-size: 24px;
         margin: 10px 0;
         color: #534741;
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-family: $HelveticaNeue;
         font-weight: 500;
         line-height: 1.1;
     }
@@ -2537,7 +2537,7 @@ input[type="radio"] {
             overflow-y: hidden;
             font-size: 14px;
             line-height: 1.5;
-            font-family: Lato;
+            font-family: $Lato;
             background: $white;
             transition: max-height 500ms ease-in-out;
             max-height: 350px;
@@ -2548,7 +2548,7 @@ input[type="radio"] {
                 margin: 0;
                 color: #333;
                 font-size: 14px;
-                font-family: Lato;
+                font-family: $Lato;
                 &:nth-child(1) {
                     padding-top: 15px;
                 }
@@ -2665,10 +2665,10 @@ input[type="radio"] {
 #company-section {
     padding: 0;
     background: #f0f0f0;
-    font-family: "Lato", sans-serif;
+    font-family: $Lato;
 }
 .left-column {
-    font-family: "Lato", sans-serif;
+    font-family: $Lato;
     width: 852px;
     float: left;
     background: $white;
@@ -2812,7 +2812,7 @@ h3 {
     height: auto;
     li {
         color: #84837c;
-        font-family: Lato,sans-serif;
+        font-family: $Lato;
         font-size: 18px;
         font-weight: 600;
         // list-style-image: url(../images/arrow_Li.png);
@@ -2919,7 +2919,7 @@ h3 {
     background: url("/images/dest/commentcamarche-banner.png") no-repeat scroll center top/cover;
     padding-top: 90px;
     h1 {
-        font-family: "Lato",sans-serif;
+        font-family: $Lato;
         font-size: 26px;
         font-weight: bold;
         margin-bottom: 10px;
@@ -2971,13 +2971,13 @@ h3 {
 }
 #commentcamarche-section-default {
     background: $white;
-    font-family: "Lato", sans-serif;
+    font-family: $Lato;
     font-size: 16px;
     line-height: 25px;
     padding: 50px 0;
     h3 {
         color: $darkGrey;
-        font-family: "Lato",sans-serif;
+        font-family: $Lato;
         font-size: 18px;
         font-weight: bold;
         margin: 0 0 5px;
@@ -3009,7 +3009,7 @@ h3 {
     }
 }
 #commentcamarche-section-offwhite {
-    font-family: "Lato", sans-serif;
+    font-family: $Lato;
     font-size: 16px;
     line-height: 25px;
     padding: 50px 0;
@@ -3017,12 +3017,12 @@ h3 {
     h2 {
         text-align: center;
         color: #2db2d3;
-        font-family: "Lato",sans-serif;
+        font-family: $Lato;
         font-size: 28px;
         margin-bottom: 40px;
     }
     .listing {
-        font-family: "Lato",sans-serif;
+        font-family: $Lato;
         font-size: 18px;
         font-weight: bold;
         list-style: none;
@@ -3052,7 +3052,7 @@ h3 {
     }
 }
 #commentcamarche-section-tabs {
-    font-family: "Lato", sans-serif;
+    font-family: $Lato;
     font-size: 16px;
     line-height: 25px;
     padding: 50px 0;
@@ -3067,7 +3067,7 @@ h3 {
     }
     h2 {
         color: #2db2d3;
-        font-family: "Lato", sans-serif;
+        font-family: $Lato;
         font-size: 40px;
         font-weight: normal;
         margin-bottom: 10px;
@@ -3080,7 +3080,7 @@ h3 {
         border: medium none;
         border-radius: 0;
         color: $white;
-        font-family: "Lato",sans-serif;
+        font-family: $Lato;
         font-size: 18px;
         line-height: 48px;
         margin: 40px 0 20px;
@@ -4073,7 +4073,7 @@ input[type="radio"] {
     -khtml-box-shadow: 0 0 7px #999;
 }
 .etape-box__title {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: $HelveticaNeue;
     color: rgb(100, 100, 100);
     font-size: 24px;
     line-height: 1.1;
@@ -4170,7 +4170,7 @@ input[type="radio"] {
     font-size: 30px;
     color: #5d5d5d;
     font-weight: normal;
-    font-family: "segoeuiRegular";
+    font-family: $segoeuiRegular;
     span {
         font-size: 15px;
         color: #767676;
@@ -4202,7 +4202,7 @@ input[type="radio"] {
         cursor: pointer;
     }
     label {
-        font-family: "Lato", sans-serif;
+        font-family: $Lato;
         font-weight: 400;
     }
     input[type="radio"] ~ label:before {
@@ -4243,7 +4243,7 @@ input[type="radio"] {
     box-shadow: 1px 2px 3px 1px #ccc;
     padding-left: 70px;
     font-size: 18px;
-    font: 18px "Lato", sans-serif;
+    font: 18px $Lato;
     border-color: #5e7292;
     padding: 6px 12px;
     color: #515966;
@@ -4274,7 +4274,7 @@ input[type="radio"] {
         font-weight: 400;
         cursor: pointer;
         margin: 0;
-        font-family: "Lato", sans-serif;
+        font-family: $Lato;
     }
     input[type="checkbox"] + label:before {
         content: "";
@@ -4393,7 +4393,7 @@ input[type="radio"] {
     -khtml-box-shadow: 1px 2px 3px #ccc;
     margin-bottom: 20px;
     select {
-        font-family: "segoe_uilight";
+        font-family: $segoe_uilight;
         width: 108%;
         border: 0;
         background-color: transparent;
@@ -4410,7 +4410,7 @@ input[type="radio"] {
 
 .size-container-expertise {
     color: #999;
-    font-family: "segoe_uilight";
+    font-family: $segoe_uilight;
     position: relative;
     .btn-default {
         border: 0;
@@ -4517,7 +4517,7 @@ input[type="radio"] {
 }
 .ebu__subtitle {
     font-size: 16px;
-    font-family: "Lato", sans-serif;
+    font-family: $Lato;
     color: #5d5d5d;
     line-height: 20px;
     margin: 30px 0 12px;
@@ -4535,7 +4535,7 @@ input[type="radio"] {
     h2 {
         color: #5d5d5d;
         font-size: 30px;
-        font-family: "segoeuiRegular";
+        font-family: $segoeuiRegular;
         text-align: center;
         padding-bottom: 10px;
     }
@@ -4580,7 +4580,7 @@ input[type="radio"] {
             font-weight: bold;
             font-size: 20px;
             color: #5d5d5d;
-            font-family: "segoeuiRegular";
+            font-family: $segoeuiRegular;
         }
     }
     .signUpForm1__input-first {
@@ -4592,13 +4592,13 @@ input[type="radio"] {
     font-size: 20px;
     color: #5d5d5d;
     line-height: 1.428571429;
-    font-family: "segoeuiRegular";
+    font-family: $segoeuiRegular;
     text-align: center;
     a {
         font-size: 20px;
         display: inline-block;
         color: #f10a30;
-        font-family: "segoeuiRegular";
+        font-family: $segoeuiRegular;
     }
 }
 .input-row {
@@ -4682,7 +4682,7 @@ input[type="radio"] {
         font-size: 24px;
         margin: 10px 0;
         color: #534741;
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-family: $HelveticaNeue;
         font-weight: 500;
         line-height: 1.1;
     }
@@ -4917,7 +4917,7 @@ input[type="radio"] {
             overflow-y: hidden;
             font-size: 14px;
             line-height: 1.5;
-            font-family: Lato;
+            font-family: $Lato;
             background: $white;
             transition: max-height 500ms ease-in-out;
             max-height: 350px;
@@ -4928,7 +4928,7 @@ input[type="radio"] {
                 margin: 0;
                 color: #333;
                 font-size: 14px;
-                font-family: Lato;
+                font-family: $Lato;
                 &:nth-child(1) {
                     padding-top: 15px;
                 }
@@ -5023,7 +5023,7 @@ input[type="radio"] {
 #company-section {
     padding: 0;
     background: #f0f0f0;
-    font-family: "Lato", sans-serif;
+    font-family: $Lato;
 }
 .left-column {
     width: 852px;
@@ -5240,7 +5240,7 @@ h3 {
     height: auto;
     li {
         color: #84837c;
-        font-family: Lato,sans-serif;
+        font-family: $Lato;
         font-size: 18px;
         font-weight: 600;
         // list-style-image: url(../images/dest/arrow_Li.png);
@@ -5347,7 +5347,7 @@ h3 {
     background: url("/images/dest/commentcamarche-banner.png") no-repeat scroll center top/cover;
     padding-top: 90px;
     h1 {
-        font-family: "Lato",sans-serif;
+        font-family: $Lato;
         font-size: 26px;
         font-weight: bold;
         margin-bottom: 10px;
@@ -5399,13 +5399,13 @@ h3 {
 }
 #commentcamarche-section-default {
     background: $white;
-    font-family: "Lato", sans-serif;
+    font-family: $Lato;
     font-size: 16px;
     line-height: 25px;
     padding: 50px 0;
     h3 {
         color: $darkGrey;
-        font-family: "Lato",sans-serif;
+        font-family: $Lato;
         font-size: 18px;
         font-weight: bold;
         margin: 0 0 5px;
@@ -5437,7 +5437,7 @@ h3 {
     }
 }
 #commentcamarche-section-offwhite {
-    font-family: "Lato", sans-serif;
+    font-family: $Lato;
     font-size: 16px;
     line-height: 25px;
     padding: 50px 0;
@@ -5445,12 +5445,12 @@ h3 {
     h2 {
         text-align: center;
         color: #2db2d3;
-        font-family: "Lato",sans-serif;
+        font-family: $Lato;
         font-size: 28px;
         margin-bottom: 40px;
     }
     .listing {
-        font-family: "Lato",sans-serif;
+        font-family: $Lato;
         font-size: 18px;
         font-weight: bold;
         list-style: none;
@@ -5480,7 +5480,7 @@ h3 {
     }
 }
 #commentcamarche-section-tabs {
-    font-family: "Lato", sans-serif;
+    font-family: $Lato;
     font-size: 16px;
     line-height: 25px;
     padding: 50px 0;
@@ -5495,7 +5495,7 @@ h3 {
     }
     h2 {
         color: #2db2d3;
-        font-family: "Lato", sans-serif;
+        font-family: $Lato;
         font-size: 40px;
         font-weight: normal;
         margin-bottom: 10px;
@@ -5508,7 +5508,7 @@ h3 {
         border: medium none;
         border-radius: 0;
         color: $white;
-        font-family: "Lato",sans-serif;
+        font-family: $Lato;
         font-size: 18px;
         line-height: 48px;
         margin: 40px 0 20px;
@@ -5661,7 +5661,7 @@ h3 {
     min-height: 80vh;
     font-size: 14px;
     color: #3D4E60;
-    font-family: "Lato", sans-serif;
+    font-family: $Lato;
     background: #f3f3f3;
     .container {
         max-width: 1800px;
@@ -6011,7 +6011,7 @@ h3 {
 #page-confirmed {
     font-size: 14px;
     color: #3D4E60;
-    font-family: "Lato", sans-serif;
+    font-family: $Lato;
     background: #f3f3f3;
     padding: 20px 0;
     .container {
@@ -6066,7 +6066,7 @@ h3 {
 #services-associated {
     font-size: 14px;
     color: #3D4E60;
-    font-family: "Lato", sans-serif;
+    font-family: $Lato;
     background: #f3f3f3;
     padding: 20px 0;
     .container {
@@ -6171,7 +6171,7 @@ h3 {
 #profile-wizard {
     font-size: 14px;
     color: #3D4E60;
-    font-family: "Lato", sans-serif;
+    font-family: $Lato;
     background: #f3f3f3;
     padding: 20px 0;
     .content-box {
@@ -6215,7 +6215,7 @@ h3 {
 #profile-wizard2 {
     font-size: 14px;
     color: #3D4E60;
-    font-family: "Lato", sans-serif;
+    font-family: $Lato;
     background: #f3f3f3;
     padding: 20px 0;
     form {
@@ -6591,7 +6591,7 @@ body.lock {
         line-height: 1.2;
         color: #3D4E60;
         opacity: 0.6;
-        font-family: "Lato", sans-serif;
+        font-family: $Lato;
     }
     input ~ span em {
         content: '';
