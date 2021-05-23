@@ -40,6 +40,10 @@ Vue.component('languages-edit-page', require('./pages/Languages/Edit.vue').defau
 Vue.component('translations-page', require('./pages/Translations/Index.vue').default);
 Vue.component('translations-create-page', require('./pages/Translations/Create.vue').default);
 Vue.component('translations-edit-page', require('./pages/Translations/Edit.vue').default);
+Vue.component('objects-categories', require('./components/objects/Categories.vue').default);
+Vue.component('objects-types', require('./components/objects/Types.vue').default);
+Vue.component('objects-transport-types', require('./components/objects/TransportTypes.vue').default);
+Vue.component('objects-transport', require('./components/objects/Transport.vue').default);
 
 const app = new Vue({
     el: '#app'

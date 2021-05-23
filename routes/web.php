@@ -55,9 +55,17 @@ Route::group(['middleware' => 'role:web-developer'], function () {
 
 
 Route::group(["prefix" => "admin"], function () {
-    Route::view("/", "admin.pages.index")->name("admin.index");
+    Route::view("/", "admin.pages.index", ['display' => 'index'])->name("admin.index");
     Route::view("/login", "admin.pages.login")->name("admin.login");
     Route::view("/users", "admin.pages.users")->name("admin.users");
+
+    Route::group(["prefix" => "objects"], function () {
+        Route::view("/categories", "admin.pages.index", ['display' => 'objects-categories'])->name("objects.categories");
+        Route::view("/types", "admin.pages.index", ['display' => 'objects-types'])->name("objects.types");
+        Route::view("/transport_types", "admin.pages.index", ['display' => 'objects-transport-types'])->name("objects.transport_types");
+        Route::view("/transport", "admin.pages.index", ['display' => 'objects-transport'])->name("objects.transport");
+    });
+
     Route::group(["prefix" => "languages"], function () {
         //GET /languages
         //GET /languages/create
@@ -88,8 +96,11 @@ Route::group(["prefix" => "admin"], function () {
             ->name('languages.translations.store');
 
         Route::get('/translations', 'LanguageTranslationController@index');
+
+        Route::get('/', 'LanguageController@index')
+        ->name('languages.index');
     });
 });
-//Auth::routes();
+// Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

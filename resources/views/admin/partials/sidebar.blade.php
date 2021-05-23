@@ -6,7 +6,7 @@
     </div>
     <ul class="c-sidebar-nav">
         <li class="c-sidebar-nav-item">
-            <a class="c-sidebar-nav-link" href="home">
+            <a class="c-sidebar-nav-link" href="{{route('admin.index')}}">
                 <i class="fab fa-amazon c-sidebar-nav-icon"></i>
                 Главная страница
             </a>
@@ -18,13 +18,13 @@
                 Объекты</a>
             <ul class="c-sidebar-nav-dropdown-items">
 
-                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="base/breadcrumb.html"><span
+                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{{route("objects.categories")}}"><span
                             class="c-sidebar-nav-icon"></span>Категории объектов</a></li>
-                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="base/collapse.html"><span
+                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{{route("objects.types")}}"><span
                             class="c-sidebar-nav-icon"></span>Типы объектов</a></li>
-                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="base/cards.html"><span
+                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{{route("objects.transport_types")}}l"><span
                             class="c-sidebar-nav-icon"></span>Типы транспортировки</a></li>
-                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="base/carousel.html"><span
+                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{{route("objects.transport")}}"><span
                             class="c-sidebar-nav-icon"></span>Транспорт</a></li>
             </ul>
         </li>
