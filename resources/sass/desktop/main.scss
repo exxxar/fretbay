@@ -1,5 +1,6 @@
 @import "config";
-
+@import "colors";
+@import "fonts";
 // CUSTOM USER STYLES & IMPORTS
 ul,
 li,
@@ -73,7 +74,7 @@ section {
     }
     li {
         a {
-            color: #fff;
+            color: $white;
             display: inline-block;
             font-weight: 400;
             vertical-align: middle;
@@ -90,13 +91,13 @@ section {
     }
 }
 .first-btn {
-    border: 1px solid #fff;
+    border: 1px solid $white;
     margin-left: 15px;
     &:hover {
         background-color: rgba(44, 175, 208, 1);
         border-color: rgba(44, 175, 208, 1);
         .first-link {
-            color: #fff;
+            color: $white;
         }
     }
 }
@@ -104,9 +105,9 @@ section {
     justify-content: flex-end;
 }
 h1 {
-    color: #fff;
+    color: $white;
     margin: 0px 0px 15px 0px;
-    text-shadow: 0 1px 1px #49515e;
+    text-shadow: 0 1px 1px $darkGreyBG;
     font-size: 50px;
     line-height: 1;
     text-transform: uppercase;
@@ -114,11 +115,11 @@ h1 {
     text-align: center;
     margin-top: 180px;
     span {
-        border-color: #fff;
+        border-color: $white;
         background-color: transparent;
         margin: 25px 0 40px;
         border: none;
-        text-shadow: 0 1px 1px #49515e;
+        text-shadow: 0 1px 1px $darkGreyBG;
         font-size: 23px;
     }
 }
@@ -126,14 +127,14 @@ h1 {
     font-size: 20px;
     padding: 17px 36px;
     line-height: 1.2;
-    color: #fff;
-    background: #fe374f;
+    color: $white;
+    background: $red;
     border: 0;
     margin: 0 auto;
     display: block;
     &:hover {
         background-color: #33b2d2;
-        color: #fff;
+        color: $white;
     }
 }
 .go-down {
@@ -142,12 +143,12 @@ h1 {
 #goDown {
     width: 36px;
     height: 36px;
-    border: 1px solid #fff;
+    border: 1px solid $white;
     border-radius: 50%;
     background: hsla(212, 22%, 37%, 0.05);
-    color: #fff;
+    color: $white;
     line-height: 34px;
-    box-shadow: 0 1px 1px #49515e;
+    box-shadow: 0 1px 1px $darkGreyBG;
     display: inline-block;
     cursor: pointer;
     margin: 100px 0 30px;
@@ -190,7 +191,7 @@ h1 {
 }
 #seekHeader {
     padding: 35px 0 25px;
-    background: #fff;
+    background: $white;
     .icon.seek1 {
         background-position: 0 0;
     }
@@ -211,31 +212,31 @@ h1 {
     }
 }
 #recentList {
-    background: #f6f5f0;
+    background: $lightYellow;
     padding: 32px 0 32px;
 }
 .postBlock {
     width: 100%;
-    background: #fff;
+    background: $white;
     border-bottom: #d7d5d0 solid 1px;
     padding: 12px 0;
     float: left;
     max-height: 127px;
 }
 #recentList {
-    background: #f6f5f0;
+    background: $lightYellow;
     padding: 32px 0 12px;
     h2 {
         color: #859295;
         font-size: 32px;
         font-weight: normal;
-        font-family: "Lato", sans-serif;
+        font-family: $Lato;
         margin: 20px 0 10px;
     }
 }
 .postBlock {
     width: 100%;
-    background: #fff;
+    background: $white;
     border-bottom: #d7d5d0 solid 1px;
     padding: 12px 0;
     float: left;
@@ -284,7 +285,7 @@ h1 {
     width: 100%;
     max-height: 80px;
     border-top: #d7d5d0 solid 1px;
-    background-color: #fff;
+    background-color: $white;
     padding: 10px;
     &:hover {
         background-color: #f9f9f6;
@@ -391,7 +392,7 @@ h1 {
 }
 #stepsNew {
     padding: 35px 0;
-    background: #fff;
+    background: $white;
 }
 .stepsnew__item {
     display: flex;
@@ -408,17 +409,17 @@ h1 {
     color: #636560;
     margin: 0 0 16px;
     span {
-        color: #2db2d1;
+        color: $blue;
         font-size: 64px;
         margin-bottom: 0;
         line-height: 80px;
     }
 }
 #trevalNew {
-    background: #2db2d1 url("/images/home/tagBackgrounds.png") repeat;
+    background: $blue url("/images/home/tagBackgrounds.png") repeat;
     position: relative;
     padding: 45px 0;
-    color: #fff;
+    color: $white;
 }
 .trevalnew__item {
     height: 422px;
@@ -493,21 +494,21 @@ h1 {
 .trevalnew__title {
     text-transform: uppercase;
     font-weight: 600;
-    font-family: 'Lato',sans-serif;
+    font-family: $Lato;
     font-size: 20px;
-    color: #fff;
+    color: $white;
     margin-bottom: 6px;
     &:hover,
     &:focus {
         text-decoration: underline;
-        color: #fff;
+        color: $white;
     }
 }
 .trevalnew__txt {
-    color: #fff;
+    color: $white;
     font-weight: 300;
     font-style: normal;
-    font-family: 'Lato',sans-serif;
+    font-family: $Lato;
     line-height: 24px;
     margin-bottom: 18px;
     font-size: 15px;
@@ -517,14 +518,14 @@ h1 {
     position: absolute;
     right: 25px;
     bottom: 0;
-    font-family: 'Lato',sans-serif;
+    font-family: $Lato;
     font-size: 20px;
-    color: #fff;
+    color: $white;
     text-decoration: underline;
     &:hover,
     &:focus {
         text-decoration: none;
-        color: #fff;
+        color: $white;
     }
 }
 #testimonialNew {
@@ -537,7 +538,7 @@ h1 {
 }
 .testimonialnew__item {
     cursor: pointer;
-    background: #fff;
+    background: $white;
     padding: 19px 20px 10px;
     font-size: 15px;
     height: 230px;
@@ -550,13 +551,13 @@ h1 {
     flex-direction: column;
 }
 .testimonialtext__txt {
-    color: #918e7e;
+    color: $textGrey;
     text-align: left;
     margin-bottom: 10px;
     max-height: 115px;
     line-height: 1.3;
     font-size: 15px;
-    font-family: 'Lato',sans-serif;
+    font-family: $Lato;
     svg {
         color: #e2e1d9;
     }
@@ -635,7 +636,7 @@ h1 {
         li:hover {
             background: url("/images/list-arrow.png") no-repeat left center;
             color: #333;
-            font-family: "Lato";
+            font-family: $Lato;
             font-weight: bold;
             text-decoration: none;
         }
@@ -657,7 +658,7 @@ h1 {
         height: 414px;
         li {
             a {
-                color: #666666;
+                color: $darkGrey;
                 font-size: 15px;
                 font-weight: 400;
                 &:hover {
@@ -678,37 +679,37 @@ h1 {
 
 
 .footer-main {
-    background: #69717d;
+    background: $greyBG;
     padding: 25px 0;
     margin-top: 160px;
     position: relative;
     .trfs__title {
-        color: #cfd3da;
+        color: $lightGrey;
         border-bottom: #808792 solid 1px;
         line-height: 38px;
         font-size: 18px;
-        font-family: "Lato", sans-serif;
+        font-family: $Lato;
         margin: 10px 0;
     }
     li a {
         font-size: 15px;
         line-height: 36px;
         font-weight: 300;
-        color: #cfd3da;
+        color: $lightGrey;
         &:hover {
             color: #2db2d3;
         }
     }
 }
 .footer-middle {
-    background: #49515e;
+    background: $darkGreyBG;
     padding: 50px 0;
 }
 .footer-middle-inner {
     &:after {
         content: "";
         width: 340px;
-        border-bottom: 1px solid #69717d;
+        border-bottom: 1px solid $greyBG;
         position: absolute;
         top: 125%;
         margin-top: 20px;
@@ -717,7 +718,7 @@ h1 {
     .fmi__title {
         display: inline-block;
         vertical-align: middle;
-        color: #cfd3da;
+        color: $lightGrey;
         font-weight: 700;
         margin-right: 16px;
     }
@@ -743,11 +744,11 @@ h1 {
     }
 }
 .footer-copyright {
-    background: #49515e;
+    background: $darkGreyBG;
     .footer-copyright__txt {
         font-weight: 300;
         font-size: 12px;
-        color: #cfd3da;
+        color: $lightGrey;
         margin: 16px 0 0;
         line-height: 22px;
         a {
@@ -819,7 +820,7 @@ h1 {
 }
 
 #logo-transporter {
-    background: #fff;
+    background: $white;
     height: 70px;
     .logo-btn img {
         width: 170px;
@@ -837,7 +838,7 @@ h1 {
     background: #3d4e60;
     margin-bottom: 20px;
     padding: 10px 0;
-    color: #fff;
+    color: $white;
     li {
         padding: 0 10px;
         letter-spacing: 1px;
@@ -850,7 +851,7 @@ h1 {
             font-weight: 300;
             border-radius: 100%;
             padding: 0px 8px;
-            border: 1px solid #fff;
+            border: 1px solid $white;
         }
         &:active {
             opacity: 1;
@@ -865,7 +866,7 @@ h1 {
     padding: 0;
     margin-bottom: 20px;
     .content-box {
-        background: #fff;
+        background: $white;
         padding: 20px 23px 97px;
         border-radius: 12px;
         box-shadow: 0 3px 1px 0 lightgrey;
@@ -927,7 +928,7 @@ h1 {
     width: 20%;
 }
 .footer-main-white {
-    background: #fff;
+    background: $white;
     padding: 20px 0 5px;
     border-bottom: 1px solid #f3f4f8;
     .footer-menu {
@@ -956,7 +957,7 @@ h1 {
     padding: 0 15px;
 }
 .footer-copyright-white {
-    background: #fff;
+    background: $white;
     color: #789cb7;
     font-weight: 300;
     .footer-copyright__txt {
@@ -987,7 +988,7 @@ h1 {
         margin-left: auto;
     }
     .logo__list .request-quote a {
-        color: #fff;
+        color: $white;
         background-color: #f54949;
         border-bottom-color: rgba(0, 0, 0, 0.15);
         transition: all 0.3s;
@@ -1013,7 +1014,7 @@ h1 {
     margin-left: auto;
 }
 .request-quote a {
-    color: #fff;
+    color: $white;
     background-color: #f54949;
     border-bottom-color: rgba(0, 0, 0, 0.15);
     transition: all 0.3s;
@@ -1086,7 +1087,7 @@ h1 {
     }
 }
 #steps-wrap {
-    background: #fff;
+    background: $white;
     padding: 35px 0 26px;
 }
 .steps__list {
@@ -1108,7 +1109,7 @@ h1 {
 .step-num {
     background: #30a0be;
     font-size: 34px;
-    color: #fff;
+    color: $white;
     line-height: 1;
     font-weight: 700;
     padding: 5px 12px;
@@ -1373,7 +1374,7 @@ input[type="radio"] {
     margin-top: -5px;
 }
 .reference-block {
-    background: #fff;
+    background: $white;
     padding: 30px 20px;
     margin-top: 5px;
     display: flex;
@@ -1439,7 +1440,7 @@ input[type="radio"] {
     background: #f6fffa;
     border: none;
     position: relative;
-    background: #fff;
+    background: $white;
     margin-bottom: 6px;
     display: flex;
     height: 148px;
@@ -1471,7 +1472,7 @@ input[type="radio"] {
     }
 }
 #fretbayfooter{
-    font-family: "Lato", sans-serif;
+    font-family: $Lato;
 }
 .td-nom {
     width: 23%;
@@ -1695,7 +1696,7 @@ input[type="radio"] {
     -khtml-box-shadow: 0 0 7px #999;
 }
 .etape-box__title {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: $HelveticaNeue;
     color: rgb(100, 100, 100);
     font-size: 24px;
     line-height: 1.1;
@@ -1738,9 +1739,9 @@ input[type="radio"] {
     white-space: pre-line;
     display: inline-block;
     width: auto;
-    color: #fff;
+    color: $white;
     &:hover {
-        color: #fff;
+        color: $white;
     }
 }
 .btn-etape-red {
@@ -1792,7 +1793,7 @@ input[type="radio"] {
     font-size: 30px;
     color: #5d5d5d;
     font-weight: normal;
-    font-family: "segoeuiRegular";
+    font-family: $segoeuiRegular;
     span {
         font-size: 15px;
         color: #767676;
@@ -1824,7 +1825,7 @@ input[type="radio"] {
         cursor: pointer;
     }
     label {
-        font-family: "Lato", sans-serif;
+        font-family: $Lato;
         font-weight: 400;
     }
     input[type="radio"] ~ label:before {
@@ -1836,7 +1837,7 @@ input[type="radio"] {
         top: 0;
         border-radius: 50%;
         margin-right: 4px;
-        background: none #fff;
+        background: none $white;
         box-shadow: 1px 3px 4px #00000024;
     }
     input[type="radio"] ~ label:after {
@@ -1865,14 +1866,14 @@ input[type="radio"] {
     box-shadow: 1px 2px 3px 1px #ccc;
     padding-left: 70px;
     font-size: 18px;
-    font: 18px "Lato", sans-serif;
+    font: 18px $Lato;
     border-color: #5e7292;
     padding: 6px 12px;
     color: #515966;
     margin-bottom: 20px;
 }
 .signUpForm1__input-first {
-    background: url("/images/color-line.png") repeat-x center top #fff;
+    background: url("/images/color-line.png") repeat-x center top $white;
 }
 .signUpForm1-checkbox {
     margin-bottom: 10px;
@@ -1896,7 +1897,7 @@ input[type="radio"] {
         font-weight: 400;
         cursor: pointer;
         margin: 0;
-        font-family: "Lato", sans-serif;
+        font-family: $Lato;
     }
     input[type="checkbox"] + label:before {
         content: "";
@@ -1951,7 +1952,7 @@ input[type="radio"] {
     margin: 25px 0 0;
     border: 2px solid #2db2d3;
     padding: 10px 50px;
-    color: #fff;
+    color: $white;
     justify-content: center;
     text-shadow: 0 1px 2px #888;
     -moz-text-shadow: 0 1px 2px #888;
@@ -2004,7 +2005,7 @@ input[type="radio"] {
 }
 .size-container {
     width: 100%;
-    background: url("/images/port-arrow.png") no-repeat right center #fff;
+    background: url("/images/port-arrow.png") no-repeat right center $white;
     height: 64px;
     border: none;
     box-shadow: 1px 2px 3px #ccc;
@@ -2015,7 +2016,7 @@ input[type="radio"] {
     -khtml-box-shadow: 1px 2px 3px #ccc;
     margin-bottom: 20px;
     select {
-        font-family: "segoe_uilight";
+        font-family: $segoe_uilight;
         width: 108%;
         border: 0;
         background-color: transparent;
@@ -2031,7 +2032,7 @@ input[type="radio"] {
 }
 .size-container-expertise {
     color: #999;
-    font-family: "segoe_uilight";
+    font-family: $segoe_uilight;
     .btn-default {
         border: 0;
         background: 0;
@@ -2054,7 +2055,7 @@ input[type="radio"] {
         margin: 2px 0 0;
         font-size: 14px;
         list-style: none;
-        background-color: #fff;
+        background-color: $white;
         border: 1px solid rgba(0, 0, 0, 0.15);
         -webkit-box-shadow: 0 6px 12px rgb(85, 85, 85);
         box-shadow: 0 6px 12px rgb(85, 85, 85);
@@ -2137,7 +2138,7 @@ input[type="radio"] {
 }
 .ebu__subtitle {
     font-size: 16px;
-    font-family: "Lato", sans-serif;
+    font-family: $Lato;
     color: #5d5d5d;
     line-height: 20px;
     margin: 30px 0 12px;
@@ -2155,7 +2156,7 @@ input[type="radio"] {
     h2 {
         color: #5d5d5d;
         font-size: 30px;
-        font-family: "segoeuiRegular";
+        font-family: $segoeuiRegular;
         text-align: center;
         padding-bottom: 10px;
     }
@@ -2166,7 +2167,7 @@ input[type="radio"] {
     }
     .signUpForm1-button {
         margin: 10px 0 15px;
-        color: #fff;
+        color: $white;
         background: #5cd0ed;
         text-transform: none;
         font-size: 20px;
@@ -2188,7 +2189,7 @@ input[type="radio"] {
             box-shadow: 0 3px 5px #000;
         }
         &:hover {
-            color: #fff;
+            color: $white;
             background: #2bb0d1;
         }
     }
@@ -2200,7 +2201,7 @@ input[type="radio"] {
             font-weight: bold;
             font-size: 20px;
             color: #5d5d5d;
-            font-family: "segoeuiRegular";
+            font-family: $segoeuiRegular;
         }
     }
     .signUpForm1__input-first {
@@ -2212,13 +2213,13 @@ input[type="radio"] {
     font-size: 20px;
     color: #5d5d5d;
     line-height: 1.428571429;
-    font-family: "segoeuiRegular";
+    font-family: $segoeuiRegular;
     text-align: center;
     a {
         font-size: 20px;
         display: inline-block;
         color: #f10a30;
-        font-family: "segoeuiRegular";
+        font-family: $segoeuiRegular;
     }
 }
 .input-row {
@@ -2255,8 +2256,8 @@ input[type="radio"] {
 
 .reviews__item {
     border-top: 1px solid #ced2d9;
-    background: #fff;
-    color: #666;
+    background: $white;
+    color: $darkGrey;
     font-family: inherit;
     padding: 19px;
 }
@@ -2301,12 +2302,12 @@ input[type="radio"] {
         font-size: 24px;
         margin: 10px 0;
         color: #534741;
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-family: $HelveticaNeue;
         font-weight: 500;
         line-height: 1.1;
     }
     p {
-        color: #666;
+        color: $darkGrey;
         font-family: inherit;
         font-size: 14px;
         line-height: 1.428571429;
@@ -2336,14 +2337,14 @@ input[type="radio"] {
     padding: 0;
 }
 .vcheck-txt {
-    color: #666;
+    color: $darkGrey;
     font-family: inherit;
     font-size: 14px;
     line-height: 1.428571429;
 }
 .reviews__item-rating {
-    background: #fff;
-    color: #666;
+    background: $white;
+    color: $darkGrey;
     font-family: inherit;
     padding: 19px;
     font-size: 14px;
@@ -2407,14 +2408,14 @@ input[type="radio"] {
         }
         .estimation-btn {
             background: #ff334b;
-            color: #fff;
+            color: $white;
             font-size: 18px;
             border-radius: 0;
             padding: 8px 20px;
             height: 43px;
             &:hover {
                 background: #e32d43;
-                color: #fff;
+                color: $white;
             }
         }
     }
@@ -2432,7 +2433,7 @@ input[type="radio"] {
     height: 45px;
     &:hover {
         background: #ddd;
-        color: #fff;
+        color: $white;
     }
 }
 
@@ -2507,7 +2508,7 @@ input[type="radio"] {
             background-color: #2db2d3;
             padding: 9px 15px;
             font-size: 15px;
-            color: #FFF;
+            color: $white;
             transition:0.5s ease;
 
             i {
@@ -2536,8 +2537,8 @@ input[type="radio"] {
             overflow-y: hidden;
             font-size: 14px;
             line-height: 1.5;
-            font-family: Lato;
-            background: #fff;
+            font-family: $Lato;
+            background: $white;
             transition: max-height 500ms ease-in-out;
             max-height: 350px;
             display: block;
@@ -2547,7 +2548,7 @@ input[type="radio"] {
                 margin: 0;
                 color: #333;
                 font-size: 14px;
-                font-family: Lato;
+                font-family: $Lato;
                 &:nth-child(1) {
                     padding-top: 15px;
                 }
@@ -2591,7 +2592,7 @@ input[type="radio"] {
     padding: 20px 15px;
     h1 {
         font-size: 45px;
-        color: #fff;
+        color: $white;
         padding-top: 17px;
         font-weight: 600;
         margin: 0;
@@ -2601,7 +2602,7 @@ input[type="radio"] {
     h2 {
         font-size: 22px;
         font-family: inherit;
-        color: #fff;
+        color: $white;
         margin: 0;
     }
 }
@@ -2647,7 +2648,7 @@ input[type="radio"] {
 //THE-COMPANY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 .page-topheader {
-    background: #fff;
+    background: $white;
     padding: 17px 0 20px;
     margin-bottom: 30px;
     text-align: center;
@@ -2664,14 +2665,14 @@ input[type="radio"] {
 #company-section {
     padding: 0;
     background: #f0f0f0;
-    font-family: "Lato", sans-serif;
+    font-family: $Lato;
 }
 .left-column {
-    font-family: "Lato", sans-serif;
+    font-family: $Lato;
     width: 852px;
     float: left;
-    background: #fff;
-    color: #666;
+    background: $white;
+    color: $darkGrey;
     font-family: inherit;
     padding: 19px;
     margin-bottom: 30px;
@@ -2706,7 +2707,7 @@ input[type="radio"] {
 //BENEFITS-TRANSPORTER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 .benefits-transporter-header {
-    color: #fff;
+    color: $white;
     font-size: 23px;
     font-style: normal;
     background: url("/images/shipperRecrutiMentBanner.png") no-repeat center top;
@@ -2720,7 +2721,7 @@ input[type="radio"] {
         line-height: 1.5;
         font-family: inherit;
         margin-top: 14px;
-        color: #fff;
+        color: $white;
         font-size: 23px;
         text-transform: initial;
     }
@@ -2729,7 +2730,7 @@ input[type="radio"] {
 .default-section,
 #default-section {
     padding: 30px 0;
-    background: #fff;
+    background: $white;
     .section-header {
         width: 66.66666666666666%;
         text-align: center;
@@ -2790,7 +2791,7 @@ input[type="radio"] {
     }
 }
 #risks-market {
-    background: #f6f5f0;
+    background: $lightYellow;
     padding: 30px 0;
 
 }
@@ -2811,7 +2812,7 @@ h3 {
     height: auto;
     li {
         color: #84837c;
-        font-family: Lato,sans-serif;
+        font-family: $Lato;
         font-size: 18px;
         font-weight: 600;
         // list-style-image: url(../images/arrow_Li.png);
@@ -2862,14 +2863,14 @@ h3 {
         display: inline-block;
         color: #2db2d3;
         &:hover {
-            color: #fe374f;
+            color: $red;
         }
     }
 }
 .partners-logos {
     display: flex;
     a {
-        background: #fff;
+        background: $white;
         display: inline-block;
         margin-right: 40px;
         &:hover {
@@ -2891,7 +2892,7 @@ h3 {
     padding: 18px 0 14px;
 }
 #gratitude {
-    background: #f6f5f0;
+    background: $lightYellow;
     padding: 30px 0;
     text-align: center;
     p {
@@ -2905,7 +2906,7 @@ h3 {
             display: inline-block;
             color: #2db2d3;
             &:hover {
-                color: #fe374f;
+                color: $red;
             }
         }
     }
@@ -2918,12 +2919,12 @@ h3 {
     background: url("/images/dest/commentcamarche-banner.png") no-repeat scroll center top/cover;
     padding-top: 90px;
     h1 {
-        font-family: "Lato",sans-serif;
+        font-family: $Lato;
         font-size: 26px;
         font-weight: bold;
         margin-bottom: 10px;
         text-transform: uppercase;
-        color: #666;
+        color: $darkGrey;
         line-height: 25px;
         span {
             margin: 10px 0 30px;
@@ -2936,13 +2937,13 @@ h3 {
     #goDown {
         width: 36px;
         height: 36px;
-        border: 1px solid #fff;
+        border: 1px solid $white;
         border-radius: 50%;
         background: rgba(74,93,115,.05);
-        color: #fff;
+        color: $white;
         line-height: 34px;
-        -webkit-box-shadow: 0 1px 1px #49515e;
-        box-shadow: 0 1px 1px #49515e;
+        -webkit-box-shadow: 0 1px 1px $darkGreyBG;
+        box-shadow: 0 1px 1px $darkGreyBG;
         display: inline-block;
         cursor: pointer;
         margin: 100px 0 30px;
@@ -2962,21 +2963,21 @@ h3 {
         font-size: 18px;
         &:hover {
             outline: 0;
-            color: #fff;
+            color: $white;
             background: #e6001b;
 
         }
     }
 }
 #commentcamarche-section-default {
-    background: #fff;
-    font-family: "Lato", sans-serif;
+    background: $white;
+    font-family: $Lato;
     font-size: 16px;
     line-height: 25px;
     padding: 50px 0;
     h3 {
-        color: #666;
-        font-family: "Lato",sans-serif;
+        color: $darkGrey;
+        font-family: $Lato;
         font-size: 18px;
         font-weight: bold;
         margin: 0 0 5px;
@@ -2987,7 +2988,7 @@ h3 {
 }
 .virtual-table {
     border-collapse: collapse;
-    color: #918e7e;
+    color: $textGrey;
     display: table;
     font-size: 15px;
     line-height: 30px;
@@ -3008,20 +3009,20 @@ h3 {
     }
 }
 #commentcamarche-section-offwhite {
-    font-family: "Lato", sans-serif;
+    font-family: $Lato;
     font-size: 16px;
     line-height: 25px;
     padding: 50px 0;
-    background: #f6f5f0;
+    background: $lightYellow;
     h2 {
         text-align: center;
         color: #2db2d3;
-        font-family: "Lato",sans-serif;
+        font-family: $Lato;
         font-size: 28px;
         margin-bottom: 40px;
     }
     .listing {
-        font-family: "Lato",sans-serif;
+        font-family: $Lato;
         font-size: 18px;
         font-weight: bold;
         list-style: none;
@@ -3051,11 +3052,11 @@ h3 {
     }
 }
 #commentcamarche-section-tabs {
-    font-family: "Lato", sans-serif;
+    font-family: $Lato;
     font-size: 16px;
     line-height: 25px;
     padding: 50px 0;
-    background: #f6f5f0;
+    background: $lightYellow;
     .tabs {
         display: flex;
 
@@ -3066,7 +3067,7 @@ h3 {
     }
     h2 {
         color: #2db2d3;
-        font-family: "Lato", sans-serif;
+        font-family: $Lato;
         font-size: 40px;
         font-weight: normal;
         margin-bottom: 10px;
@@ -3078,8 +3079,8 @@ h3 {
         background-color: #ff334b;
         border: medium none;
         border-radius: 0;
-        color: #fff;
-        font-family: "Lato",sans-serif;
+        color: $white;
+        font-family: $Lato;
         font-size: 18px;
         line-height: 48px;
         margin: 40px 0 20px;
@@ -3088,15 +3089,15 @@ h3 {
         display: inline-block;
         &:hover {
             outline: 0;
-            color: #fff;
+            color: $white;
             background: #e6001b;
 
         }
     }
     .tabs__content {
         border: 1px solid #d7d5d0;
-        background: #fff none repeat scroll 0 0;
-        color: #918e7e;
+        background: $white none repeat scroll 0 0;
+        color: $textGrey;
         font-size: 18px;
         height: 580px;
         line-height: 1.3;
@@ -3115,7 +3116,7 @@ h3 {
         width: 100%;
         max-width: 263px;
         li {
-            color: #918e7e;
+            color: $textGrey;
             display: block;
             font-size: 20px;
             height: 145px;
@@ -3136,7 +3137,7 @@ h3 {
         li.active {
             background: #ff334b;
             border-color: #ff334b;
-            color: #fff;
+            color: $white;
         }
     }
 }
@@ -3166,7 +3167,7 @@ h3 {
 }
 
 #logo-transporter {
-    background: #fff;
+    background: $white;
     height: 70px;
     .logo-btn img {
         width: 170px;
@@ -3184,7 +3185,7 @@ h3 {
     background: #3d4e60;
     margin-bottom: 20px;
     padding: 10px 0;
-    color: #fff;
+    color: $white;
     li {
         padding: 0 10px;
         letter-spacing: 1px;
@@ -3197,7 +3198,7 @@ h3 {
             font-weight: 300;
             border-radius: 100%;
             padding: 0px 8px;
-            border: 1px solid #fff;
+            border: 1px solid $white;
         }
         &:active {
             opacity: 1;
@@ -3212,7 +3213,7 @@ h3 {
     padding: 0;
     margin-bottom: 20px;
     .content-box {
-        background: #fff;
+        background: $white;
         padding: 20px 23px 97px;
         border-radius: 12px;
         box-shadow: 0 3px 1px 0 lightgrey;
@@ -3274,7 +3275,7 @@ h3 {
     width: 20%;
 }
 .footer-main-white {
-    background: #fff;
+    background: $white;
     padding: 20px 0 5px;
     border-bottom: 1px solid #f3f4f8;
     .footer-menu {
@@ -3303,7 +3304,7 @@ h3 {
     padding: 0 15px;
 }
 .footer-copyright-white {
-    background: #fff;
+    background: $white;
     color: #789cb7;
     font-weight: 300;
     .footer-copyright__txt {
@@ -3334,7 +3335,7 @@ h3 {
         margin-left: auto;
     }
     .logo__list .request-quote a {
-        color: #fff;
+        color: $white;
         background-color: #f54949;
         border-bottom-color: rgba(0, 0, 0, 0.15);
         transition: all 0.3s;
@@ -3360,7 +3361,7 @@ h3 {
     margin-left: auto;
 }
 .request-quote a {
-    color: #fff;
+    color: $white;
     background-color: #f54949;
     border-bottom-color: rgba(0, 0, 0, 0.15);
     transition: all 0.3s;
@@ -3433,7 +3434,7 @@ h3 {
     }
 }
 #steps-wrap {
-    background: #fff;
+    background: $white;
     padding: 35px 0 26px;
 }
 .steps__list {
@@ -3455,7 +3456,7 @@ h3 {
 .step-num {
     background: #30a0be;
     font-size: 14px;
-    color: #fff;
+    color: $white;
     line-height: 1;
     font-weight: 700;
     padding: 5px 5px 5px 8px;
@@ -3467,7 +3468,7 @@ h3 {
 .step-num-find{
     background: #30a0be;
     font-size: 32px;
-    color: #fff;
+    color: $white;
     line-height: 1;
     font-weight: 700;
     padding: 8px 5px 5px 15px;
@@ -3480,13 +3481,13 @@ h3 {
 .add-remove-count{
     width: 40px;
     height: 40px;
-    color: #fff;
+    color: $white;
     font-size: 25px;
     border-radius: 5px;
 }
 
 .add-remove-count:hover{
-    color: #fff;
+    color: $white;
     background:  #23527c;
 }
 //////////////////////////////////////////////////////////////////@at-root
@@ -3627,7 +3628,7 @@ h3 {
     }
 }
 .row-narrow {
-    background: #fff;
+    background: $white;
     padding: 20px;
 }
 .date-field {
@@ -3746,7 +3747,7 @@ input[type="radio"] {
     margin-top: -5px;
 }
 .reference-block {
-    background: #fff;
+    background: $white;
     padding: 30px 20px;
     margin-top: 5px;
     display: flex;
@@ -3811,7 +3812,7 @@ input[type="radio"] {
     background: #f6fffa;
     border: none;
     position: relative;
-    background: #fff;
+    background: $white;
     margin-bottom: 6px;
     display: flex;
     height: 148px;
@@ -4072,7 +4073,7 @@ input[type="radio"] {
     -khtml-box-shadow: 0 0 7px #999;
 }
 .etape-box__title {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: $HelveticaNeue;
     color: rgb(100, 100, 100);
     font-size: 24px;
     line-height: 1.1;
@@ -4115,9 +4116,9 @@ input[type="radio"] {
     white-space: pre-line;
     display: inline-block;
     width: auto;
-    color: #fff;
+    color: $white;
     &:hover {
-        color: #fff;
+        color: $white;
     }
 }
 .btn-etape-red {
@@ -4169,7 +4170,7 @@ input[type="radio"] {
     font-size: 30px;
     color: #5d5d5d;
     font-weight: normal;
-    font-family: "segoeuiRegular";
+    font-family: $segoeuiRegular;
     span {
         font-size: 15px;
         color: #767676;
@@ -4201,7 +4202,7 @@ input[type="radio"] {
         cursor: pointer;
     }
     label {
-        font-family: "Lato", sans-serif;
+        font-family: $Lato;
         font-weight: 400;
     }
     input[type="radio"] ~ label:before {
@@ -4213,7 +4214,7 @@ input[type="radio"] {
         top: 0;
         border-radius: 50%;
         margin-right: 4px;
-        background: none #fff;
+        background: none $white;
         box-shadow: 1px 3px 4px #00000024;
     }
     input[type="radio"] ~ label:after {
@@ -4242,14 +4243,14 @@ input[type="radio"] {
     box-shadow: 1px 2px 3px 1px #ccc;
     padding-left: 70px;
     font-size: 18px;
-    font: 18px "Lato", sans-serif;
+    font: 18px $Lato;
     border-color: #5e7292;
     padding: 6px 12px;
     color: #515966;
     margin-bottom: 20px;
 }
 .signUpForm1__input-first {
-    background: url("/images/dest/color-line.png") repeat-x center top #fff;
+    background: url("/images/dest/color-line.png") repeat-x center top $white;
 }
 .signUpForm1-checkbox {
     margin-bottom: 10px;
@@ -4273,7 +4274,7 @@ input[type="radio"] {
         font-weight: 400;
         cursor: pointer;
         margin: 0;
-        font-family: "Lato", sans-serif;
+        font-family: $Lato;
     }
     input[type="checkbox"] + label:before {
         content: "";
@@ -4328,7 +4329,7 @@ input[type="radio"] {
     margin: 25px 0 0;
     border: 2px solid #2db2d3;
     padding: 10px 50px;
-    color: #fff;
+    color: $white;
     justify-content: center;
     text-shadow: 0 1px 2px #888;
     -moz-text-shadow: 0 1px 2px #888;
@@ -4381,7 +4382,7 @@ input[type="radio"] {
 }
 .size-container {
     width: 100%;
-    background: url("/images/dest/port-arrow.png") no-repeat right center #fff;
+    background: url("/images/dest/port-arrow.png") no-repeat right center $white;
     height: 64px;
     border: none;
     box-shadow: 1px 2px 3px #ccc;
@@ -4392,7 +4393,7 @@ input[type="radio"] {
     -khtml-box-shadow: 1px 2px 3px #ccc;
     margin-bottom: 20px;
     select {
-        font-family: "segoe_uilight";
+        font-family: $segoe_uilight;
         width: 108%;
         border: 0;
         background-color: transparent;
@@ -4409,7 +4410,7 @@ input[type="radio"] {
 
 .size-container-expertise {
     color: #999;
-    font-family: "segoe_uilight";
+    font-family: $segoe_uilight;
     position: relative;
     .btn-default {
         border: 0;
@@ -4433,7 +4434,7 @@ input[type="radio"] {
         margin: 2px 0 0;
         font-size: 14px;
         list-style: none;
-        background-color: #fff;
+        background-color: $white;
         border: 1px solid rgba(0, 0, 0, 0.15);
         -webkit-box-shadow: 0 6px 12px rgb(85, 85, 85);
         box-shadow: 0 6px 12px rgb(85, 85, 85);
@@ -4516,7 +4517,7 @@ input[type="radio"] {
 }
 .ebu__subtitle {
     font-size: 16px;
-    font-family: "Lato", sans-serif;
+    font-family: $Lato;
     color: #5d5d5d;
     line-height: 20px;
     margin: 30px 0 12px;
@@ -4534,7 +4535,7 @@ input[type="radio"] {
     h2 {
         color: #5d5d5d;
         font-size: 30px;
-        font-family: "segoeuiRegular";
+        font-family: $segoeuiRegular;
         text-align: center;
         padding-bottom: 10px;
     }
@@ -4545,7 +4546,7 @@ input[type="radio"] {
     }
     .signUpForm1-button {
         margin: 10px 0 15px;
-        color: #fff;
+        color: $white;
         background: #5cd0ed;
         text-transform: none;
         font-size: 20px;
@@ -4567,7 +4568,7 @@ input[type="radio"] {
             box-shadow: 0 3px 5px #000;
         }
         &:hover {
-            color: #fff;
+            color: $white;
             background: #2bb0d1;
         }
     }
@@ -4579,7 +4580,7 @@ input[type="radio"] {
             font-weight: bold;
             font-size: 20px;
             color: #5d5d5d;
-            font-family: "segoeuiRegular";
+            font-family: $segoeuiRegular;
         }
     }
     .signUpForm1__input-first {
@@ -4591,13 +4592,13 @@ input[type="radio"] {
     font-size: 20px;
     color: #5d5d5d;
     line-height: 1.428571429;
-    font-family: "segoeuiRegular";
+    font-family: $segoeuiRegular;
     text-align: center;
     a {
         font-size: 20px;
         display: inline-block;
         color: #f10a30;
-        font-family: "segoeuiRegular";
+        font-family: $segoeuiRegular;
     }
 }
 .input-row {
@@ -4634,8 +4635,8 @@ input[type="radio"] {
 
 .reviews__item {
     border-top: 1px solid #ced2d9;
-    background: #fff;
-    color: #666;
+    background: $white;
+    color: $darkGrey;
     font-family: inherit;
     padding: 19px;
     max-width: 877px;
@@ -4681,12 +4682,12 @@ input[type="radio"] {
         font-size: 24px;
         margin: 10px 0;
         color: #534741;
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-family: $HelveticaNeue;
         font-weight: 500;
         line-height: 1.1;
     }
     p {
-        color: #666;
+        color: $darkGrey;
         font-family: inherit;
         font-size: 14px;
         line-height: 1.428571429;
@@ -4716,14 +4717,14 @@ input[type="radio"] {
     padding: 0;
 }
 .vcheck-txt {
-    color: #666;
+    color: $darkGrey;
     font-family: inherit;
     font-size: 14px;
     line-height: 1.428571429;
 }
 .reviews__item-rating {
-    background: #fff;
-    color: #666;
+    background: $white;
+    color: $darkGrey;
     font-family: inherit;
     padding: 19px;
     font-size: 14px;
@@ -4787,14 +4788,14 @@ input[type="radio"] {
         }
         .estimation-btn {
             background: #ff334b;
-            color: #fff;
+            color: $white;
             font-size: 18px;
             border-radius: 0;
             padding: 8px 20px;
             height: 43px;
             &:hover {
                 background: #e32d43;
-                color: #fff;
+                color: $white;
             }
         }
     }
@@ -4812,7 +4813,7 @@ input[type="radio"] {
     height: 45px;
     &:hover {
         background: #ddd;
-        color: #fff;
+        color: $white;
     }
 }
 
@@ -4887,7 +4888,7 @@ input[type="radio"] {
             background-color: #2db2d3;
             padding: 9px 15px;
             font-size: 15px;
-            color: #FFF;
+            color: $white;
             transition:0.5s ease;
 
             i {
@@ -4916,8 +4917,8 @@ input[type="radio"] {
             overflow-y: hidden;
             font-size: 14px;
             line-height: 1.5;
-            font-family: Lato;
-            background: #fff;
+            font-family: $Lato;
+            background: $white;
             transition: max-height 500ms ease-in-out;
             max-height: 350px;
             display: block;
@@ -4927,7 +4928,7 @@ input[type="radio"] {
                 margin: 0;
                 color: #333;
                 font-size: 14px;
-                font-family: Lato;
+                font-family: $Lato;
                 &:nth-child(1) {
                     padding-top: 15px;
                 }
@@ -4971,7 +4972,7 @@ input[type="radio"] {
     padding: 20px 15px;
     h1 {
         font-size: 45px;
-        color: #fff;
+        color: $white;
         padding-top: 17px;
         font-weight: 600;
         margin: 0;
@@ -4981,7 +4982,7 @@ input[type="radio"] {
     h2 {
         font-size: 22px;
         font-family: inherit;
-        color: #fff;
+        color: $white;
         margin: 0;
         font-weight: 400;
     }
@@ -5005,7 +5006,7 @@ input[type="radio"] {
 //THE-COMPANY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 .page-topheader {
-    background: #fff;
+    background: $white;
     padding: 100px 0 20px;
     margin-bottom: 30px;
     text-align: center;
@@ -5022,13 +5023,13 @@ input[type="radio"] {
 #company-section {
     padding: 0;
     background: #f0f0f0;
-    font-family: "Lato", sans-serif;
+    font-family: $Lato;
 }
 .left-column {
     width: 852px;
     float: left;
-    background: #fff;
-    color: #666;
+    background: $white;
+    color: $darkGrey;
     font-family: inherit;
     padding: 19px;
     margin-bottom: 30px;
@@ -5061,7 +5062,7 @@ input[type="radio"] {
 //BENEFITS-TRANSPORTER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 .benefits-transporter-header {
-    color: #fff;
+    color: $white;
     font-size: 23px;
     font-style: normal;
     background: url("/images/dest/shipperRecrutiMentBanner.png") no-repeat center top;
@@ -5075,14 +5076,14 @@ input[type="radio"] {
         line-height: 1.5;
         font-family: inherit;
         margin-top: 14px;
-        color: #fff;
+        color: $white;
         font-size: 23px;
         text-transform: initial;
     }
 }
 #default-section {
     padding: 30px 0;
-    background: #fff;
+    background: $white;
     .section-header {
         width: 66.66666666666666%;
         text-align: center;
@@ -5218,7 +5219,7 @@ input[type="radio"] {
     }
 }
 #risks-market {
-    background: #f6f5f0;
+    background: $lightYellow;
     padding: 30px 0;
 
 }
@@ -5239,7 +5240,7 @@ h3 {
     height: auto;
     li {
         color: #84837c;
-        font-family: Lato,sans-serif;
+        font-family: $Lato;
         font-size: 18px;
         font-weight: 600;
         // list-style-image: url(../images/dest/arrow_Li.png);
@@ -5291,14 +5292,14 @@ h3 {
         display: inline-block;
         color: #2db2d3;
         &:hover {
-            color: #fe374f;
+            color: $red;
         }
     }
 }
 .partners-logos {
     display: flex;
     a {
-        background: #fff;
+        background: $white;
         display: inline-block;
         margin-right: 40px;
         &:hover {
@@ -5320,7 +5321,7 @@ h3 {
     padding: 18px 0 14px;
 }
 #gratitude {
-    background: #f6f5f0;
+    background: $lightYellow;
     padding: 30px 0;
     text-align: center;
     p {
@@ -5334,7 +5335,7 @@ h3 {
             display: inline-block;
             color: #2db2d3;
             &:hover {
-                color: #fe374f;
+                color: $red;
             }
         }
     }
@@ -5346,12 +5347,12 @@ h3 {
     background: url("/images/dest/commentcamarche-banner.png") no-repeat scroll center top/cover;
     padding-top: 90px;
     h1 {
-        font-family: "Lato",sans-serif;
+        font-family: $Lato;
         font-size: 26px;
         font-weight: bold;
         margin-bottom: 10px;
         text-transform: uppercase;
-        color: #666;
+        color: $darkGrey;
         line-height: 25px;
         span {
             margin: 10px 0 30px;
@@ -5364,13 +5365,13 @@ h3 {
     #goDown {
         width: 36px;
         height: 36px;
-        border: 1px solid #fff;
+        border: 1px solid $white;
         border-radius: 50%;
         background: rgba(74,93,115,.05);
-        color: #fff;
+        color: $white;
         line-height: 34px;
-        -webkit-box-shadow: 0 1px 1px #49515e;
-        box-shadow: 0 1px 1px #49515e;
+        -webkit-box-shadow: 0 1px 1px $darkGreyBG;
+        box-shadow: 0 1px 1px $darkGreyBG;
         display: inline-block;
         cursor: pointer;
         margin: 100px 0 30px;
@@ -5390,21 +5391,21 @@ h3 {
         font-size: 18px;
         &:hover {
             outline: 0;
-            color: #fff;
+            color: $white;
             background: #e6001b;
 
         }
     }
 }
 #commentcamarche-section-default {
-    background: #fff;
-    font-family: "Lato", sans-serif;
+    background: $white;
+    font-family: $Lato;
     font-size: 16px;
     line-height: 25px;
     padding: 50px 0;
     h3 {
-        color: #666;
-        font-family: "Lato",sans-serif;
+        color: $darkGrey;
+        font-family: $Lato;
         font-size: 18px;
         font-weight: bold;
         margin: 0 0 5px;
@@ -5415,7 +5416,7 @@ h3 {
 }
 .virtual-table {
     border-collapse: collapse;
-    color: #918e7e;
+    color: $textGrey;
     display: table;
     font-size: 15px;
     line-height: 30px;
@@ -5436,20 +5437,20 @@ h3 {
     }
 }
 #commentcamarche-section-offwhite {
-    font-family: "Lato", sans-serif;
+    font-family: $Lato;
     font-size: 16px;
     line-height: 25px;
     padding: 50px 0;
-    background: #f6f5f0;
+    background: $lightYellow;
     h2 {
         text-align: center;
         color: #2db2d3;
-        font-family: "Lato",sans-serif;
+        font-family: $Lato;
         font-size: 28px;
         margin-bottom: 40px;
     }
     .listing {
-        font-family: "Lato",sans-serif;
+        font-family: $Lato;
         font-size: 18px;
         font-weight: bold;
         list-style: none;
@@ -5479,11 +5480,11 @@ h3 {
     }
 }
 #commentcamarche-section-tabs {
-    font-family: "Lato", sans-serif;
+    font-family: $Lato;
     font-size: 16px;
     line-height: 25px;
     padding: 50px 0;
-    background: #f6f5f0;
+    background: $lightYellow;
     .tabs {
         display: flex;
 
@@ -5494,7 +5495,7 @@ h3 {
     }
     h2 {
         color: #2db2d3;
-        font-family: "Lato", sans-serif;
+        font-family: $Lato;
         font-size: 40px;
         font-weight: normal;
         margin-bottom: 10px;
@@ -5506,8 +5507,8 @@ h3 {
         background-color: #ff334b;
         border: medium none;
         border-radius: 0;
-        color: #fff;
-        font-family: "Lato",sans-serif;
+        color: $white;
+        font-family: $Lato;
         font-size: 18px;
         line-height: 48px;
         margin: 40px 0 20px;
@@ -5516,15 +5517,15 @@ h3 {
         display: inline-block;
         &:hover {
             outline: 0;
-            color: #fff;
+            color: $white;
             background: #e6001b;
 
         }
     }
     .tabs__content {
         border: 1px solid #d7d5d0;
-        background: #fff none repeat scroll 0 0;
-        color: #918e7e;
+        background: $white none repeat scroll 0 0;
+        color: $textGrey;
         font-size: 18px;
         height: 580px;
         line-height: 1.3;
@@ -5543,7 +5544,7 @@ h3 {
         width: 100%;
         max-width: 263px;
         li {
-            color: #918e7e;
+            color: $textGrey;
             display: block;
             font-size: 20px;
             height: 145px;
@@ -5564,7 +5565,7 @@ h3 {
         li.active {
             background: #ff334b;
             border-color: #ff334b;
-            color: #fff;
+            color: $white;
         }
     }
 }
@@ -5576,7 +5577,7 @@ h3 {
     border: none;
     margin: inherit;
     width: auto;
-    background: #fff;
+    background: $white;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.200);
     .container {
         max-width: 1800px;
@@ -5599,7 +5600,7 @@ h3 {
         }
     }
     .logo__list li.request-quote a {
-        color: #fff;
+        color: $white;
         background-color: #f54949;
         border-bottom-color: rgba(0, 0, 0, 0.15);
         transition: all 0.3s;
@@ -5660,7 +5661,7 @@ h3 {
     min-height: 80vh;
     font-size: 14px;
     color: #3D4E60;
-    font-family: "Lato", sans-serif;
+    font-family: $Lato;
     background: #f3f3f3;
     .container {
         max-width: 1800px;
@@ -5672,7 +5673,7 @@ h3 {
 }
 .profile-block {
     padding: 20px 30px;
-    background: #fff;
+    background: $white;
 }
 .content-overlay-outer {
     background: url("/images/dest/bg-profile.jpg") no-repeat center top;
@@ -5741,7 +5742,7 @@ h3 {
     justify-content: center;
     li {
         min-width: 110px;
-        background: #fff;
+        background: $white;
         color: #828f99;
         font-size: 12px;
         margin: 0 5px;
@@ -5852,7 +5853,7 @@ h3 {
     }
     .btn-group .active {
         background: #0083fe;
-        color: #fff;
+        color: $white;
     }
 }
 .account-type-label {
@@ -5886,7 +5887,7 @@ h3 {
     font-size: 14px;
     line-height: 1.5;
     padding: 10px 16px;
-    background-color: #fff;
+    background-color: $white;
     color: #1f2b33;
     border: 1px solid #e7e9f0;
     margin-bottom: 0px;
@@ -5930,7 +5931,7 @@ h3 {
     }
 }
 .btn-primary {
-    color: #fff;
+    color: $white;
     background-color: #0083fe;
     border-bottom-color: rgba(0, 0, 0, 0.15);
     transition: all 0.3s;
@@ -5947,7 +5948,7 @@ h3 {
     border-color: #2e6da4;
     font-size: 18px;
     &:hover {
-        color: #fff;
+        color: $white;
         background-color: #005ccc;
         border-color: rgba(0, 0, 0, 0.15);
     }
@@ -6010,7 +6011,7 @@ h3 {
 #page-confirmed {
     font-size: 14px;
     color: #3D4E60;
-    font-family: "Lato", sans-serif;
+    font-family: $Lato;
     background: #f3f3f3;
     padding: 20px 0;
     .container {
@@ -6032,7 +6033,7 @@ h3 {
     text-align: left;
 }
 .confirmed-block {
-    background: #fff;
+    background: $white;
     padding: 10px 0;
 }
 .empty-case-inner {
@@ -6065,7 +6066,7 @@ h3 {
 #services-associated {
     font-size: 14px;
     color: #3D4E60;
-    font-family: "Lato", sans-serif;
+    font-family: $Lato;
     background: #f3f3f3;
     padding: 20px 0;
     .container {
@@ -6091,7 +6092,7 @@ h3 {
 .services-content {
     padding: 20px 23px;
     margin-bottom: 30px;
-    background: #fff;
+    background: $white;
     text-align: center;
     height: 90%;
 }
@@ -6103,7 +6104,7 @@ h3 {
     .btn-primary {
         min-width: 105px;
         height: 38px;
-        color: #fff;
+        color: $white;
         background-color: #0083fe;
         border-color: rgba(0, 0, 0, 0.15);
         font-size: 14px;
@@ -6155,7 +6156,7 @@ h3 {
     .content-box {
         padding: 35px 37px 40px;
         width: 100%;
-        background: #fff;
+        background: $white;
         box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.12);
         text-align: center;
         display: flex;
@@ -6170,7 +6171,7 @@ h3 {
 #profile-wizard {
     font-size: 14px;
     color: #3D4E60;
-    font-family: "Lato", sans-serif;
+    font-family: $Lato;
     background: #f3f3f3;
     padding: 20px 0;
     .content-box {
@@ -6178,7 +6179,7 @@ h3 {
     }
 }
 .btn-success {
-    color: #fff;
+    color: $white;
     background-color: #35c86f;
     border-color: rgba(0, 0, 0, 0.15);
     border-radius: 50px;
@@ -6214,7 +6215,7 @@ h3 {
 #profile-wizard2 {
     font-size: 14px;
     color: #3D4E60;
-    font-family: "Lato", sans-serif;
+    font-family: $Lato;
     background: #f3f3f3;
     padding: 20px 0;
     form {
@@ -6242,7 +6243,7 @@ h3 {
 }
 .info-box {
     background: #1796e7;
-    color: #fff;
+    color: $white;
     margin: 0 0 20px !important;
     padding: 17px 10px 21px;
     width: 100%;
@@ -6289,7 +6290,7 @@ h3 {
 }
 .btn-darkgray {
     font-size: 16px;
-    color: #fff;
+    color: $white;
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 7px;
@@ -6370,7 +6371,7 @@ body.lock {
         padding: 30px 10px;
         .popup__content {
             z-index: 999;
-            background: #fff;
+            background: $white;
             max-width: 900px;
             //  margin: 80px auto 30px;
             padding: 120px 40px 40px;
@@ -6427,7 +6428,7 @@ body.lock {
                     background: #cedded;
                     padding: 20px;
                     border-radius: 15px;
-                    border: 1px solid  #fff;
+                    border: 1px solid  $white;
 
                 }
             }
@@ -6449,7 +6450,7 @@ body.lock {
 .btn-dlue {
     width: 120px;
     height: 47px;
-    color: #fff;
+    color: $white;
     background-color: #0083fe;
     transition: all 0.3s;
     border-radius: 50px;
@@ -6465,7 +6466,7 @@ body.lock {
     -o-transition: all 0.3s linear;
     transition: all 0.3s linear;
     &:hover {
-        color: #fff;
+        color: $white;
         background-color: #005ccc;
         border-color: rgba(0, 0, 0, 0.15);
     }
@@ -6507,7 +6508,7 @@ body.lock {
         display: flex;
         align-items: center;
         // justify-content: space-between;
-        background: #fff;
+        background: $white;
         max-height: 85px;
         margin-bottom: 10px;
         box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.12);
@@ -6590,7 +6591,7 @@ body.lock {
         line-height: 1.2;
         color: #3D4E60;
         opacity: 0.6;
-        font-family: "Lato", sans-serif;
+        font-family: $Lato;
     }
     input ~ span em {
         content: '';
@@ -6614,7 +6615,7 @@ body.lock {
     }
     input ~ span em:before {
         content: '';
-        background: #fff;
+        background: $white;
         width: 22px;
         height: 22px;
         border-radius: 100px;

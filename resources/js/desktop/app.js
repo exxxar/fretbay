@@ -41,6 +41,8 @@ Vue.component('latest-transactions-component', require('../desktop/components/La
 Vue.component('top-movers-component', require('../desktop/components/TopMovers.vue').default);
 Vue.component('modals-component', require('../desktop/components/Modals.vue').default);
 Vue.component('system-notification-component', require('../desktop/components/SystemNotification.vue').default);
+//slider
+Vue.component('how-it-work-slider', require('../desktop/components/Slider/HowItWorkSlider.vue').default);
 
 //auth
 Vue.component('login-page', require('./pages/Auth/Login.vue').default);
