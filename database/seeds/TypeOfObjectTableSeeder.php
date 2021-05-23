@@ -926,5 +926,117 @@ class TypeOfObjectTableSeeder extends Seeder
             "img" => "/images/common/icons/volume/92h.svg",
             "object_category_id" =>$this->getCategoryIdByTitle("Chamber")
         ]);
+
+
+
+        //garden
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Garden table",
+                "ru"=>"Garden table",
+                'fr'=>"Garden table",
+            ],
+            "img" => "/images/common/icons/volume/93h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Garden")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Garden chair",
+                "ru"=>"Garden chair",
+                'fr'=>"Garden chair",
+            ],
+            "img" => "/images/common/icons/volume/7h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Garden")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Sunbath",
+                "ru"=>"Sunbath",
+                'fr'=>"Sunbath",
+            ],
+            "img" => "/images/common/icons/volume/95h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Garden")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Parasol",
+                "ru"=>"Parasol",
+                'fr'=>"Parasol",
+            ],
+            "img" => "/images/common/icons/volume/96h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Garden")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Barbecue(Coal)",
+                "ru"=>"Barbecue(Coal)",
+                'fr'=>"Barbecue(Coal)",
+            ],
+            "img" => "/images/common/icons/volume/97h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Garden")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Barbecue(Electric)",
+                "ru"=>"Barbecue(Electric)",
+                'fr'=>"Barbecue(Electric)",
+            ],
+            "img" => "/images/common/icons/volume/98h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Garden")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Barbecue(Stone)",
+                "ru"=>"Barbecue(Stone)",
+                'fr'=>"Barbecue(Stone)",
+            ],
+            "img" => "/images/common/icons/volume/99h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Garden")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Arbor",
+                "ru"=>"Arbor",
+                'fr'=>"Arbor",
+            ],
+            "img" => "/images/common/icons/volume/100h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Garden")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Plants(Small)",
+                "ru"=>"Plants(Small)",
+                'fr'=>"Plants(Small)",
+            ],
+            "img" => "/images/common/icons/volume/101h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Garden")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Plants(Medium)",
+                "ru"=>"Plants(Medium)",
+                'fr'=>"Plants(Medium)",
+            ],
+            "img" => "/images/common/icons/volume/102h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Garden")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Plants(Large)",
+                "ru"=>"Plants(Large)",
+                'fr'=>"Plants(Large)",
+            ],
+            "img" => "/images/common/icons/volume/103h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Garden")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Mower",
+                "ru"=>"Mower",
+                'fr'=>"Mower",
+            ],
+            "img" => "/images/common/icons/volume/104h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Garden")
+        ]);
     }
 }
