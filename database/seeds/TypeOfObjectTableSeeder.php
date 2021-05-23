@@ -617,6 +617,314 @@ class TypeOfObjectTableSeeder extends Seeder
             "img" => "/images/common/icons/volume/49h.svg",
             "object_category_id" =>$this->getCategoryIdByTitle("Kitchen")
         ]);
+
+
+
+
+
+
+         //Dining room
+         TypeOfObject::create([
+            "title" => [
+                "en"=>"2-bodied buffet",
+                "ru"=>"2-bodied buffet",
+                'fr'=>"2-bodied buffet",
+            ],
+            "img" => "/images/common/icons/volume/60h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Dining room")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Low buffet",
+                "ru"=>"Low buffet",
+                'fr'=>"Low buffet",
+            ],
+            "img" => "/images/common/icons/volume/66h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Dining room")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Service",
+                "ru"=>"Service",
+                'fr'=>"Service",
+            ],
+            "img" => "/images/common/icons/volume/61h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Dining room")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Living",
+                "ru"=>"Living",
+                'fr'=>"Living",
+            ],
+            "img" => "/images/common/icons/volume/67h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Dining room")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Chair",
+                "ru"=>"Chair",
+                'fr'=>"Chair",
+            ],
+            "img" => "/images/common/icons/volume/30h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Dining room")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Table",
+                "ru"=>"Table",
+                'fr'=>"Table",
+            ],
+            "img" => "/images/common/icons/volume/10h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Dining room")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Pantry cabinet",
+                "ru"=>"Pantry cabinet",
+                'fr'=>"Pantry cabinet",
+            ],
+            "img" => "/images/common/icons/volume/63h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Dining room")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Pedestal table",
+                "ru"=>"Pedestal table",
+                'fr'=>"Pedestal table",
+            ],
+            "img" => "/images/common/icons/volume/69h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Dining room")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Dresser",
+                "ru"=>"Dresser",
+                'fr'=>"Dresser",
+            ],
+            "img" => "/images/common/icons/volume/64h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Dining room")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Armchair",
+                "ru"=>"Armchair",
+                'fr'=>"Armchair",
+            ],
+            "img" => "/images/common/icons/volume/70h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Dining room")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Moving box",
+                "ru"=>"Moving box",
+                'fr'=>"Moving box",
+            ],
+            "img" => "/images/common/icons/volume/65h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Dining room")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Grandfather clock",
+                "ru"=>"Grandfather clock",
+                'fr'=>"Grandfather clock",
+            ],
+            "img" => "/images/common/icons/volume/71h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Dining room")
+        ]);
+
         
+
+
+        //Chamber
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Chair",
+                "ru"=>"Chair",
+                'fr'=>"Chair",
+            ],
+            "img" => "/images/common/icons/volume/72h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Chamber")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Chest of drawers",
+                "ru"=>"Chest of drawers",
+                'fr'=>"Chest of drawers",
+            ],
+            "img" => "/images/common/icons/volume/82h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Chamber")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Armchair",
+                "ru"=>"Armchair",
+                'fr'=>"Armchair",
+            ],
+            "img" => "/images/common/icons/volume/73h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Chamber")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Single bed",
+                "ru"=>"Single bed",
+                'fr'=>"Single bed",
+            ],
+            "img" => "/images/common/icons/volume/83h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Chamber")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Bed(double)",
+                "ru"=>"Bed(double)",
+                'fr'=>"Bed(double)",
+            ],
+            "img" => "/images/common/icons/volume/74h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Chamber")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Bedside",
+                "ru"=>"Bedside",
+                'fr'=>"Bedside",
+            ],
+            "img" => "/images/common/icons/volume/84h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Chamber")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Bunk bed",
+                "ru"=>"Bunk bed",
+                'fr'=>"Bunk bed",
+            ],
+            "img" => "/images/common/icons/volume/75h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Chamber")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Baby bed",
+                "ru"=>"Baby bed",
+                'fr'=>"Baby bed",
+            ],
+            "img" => "/images/common/icons/volume/85h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Chamber")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Wardrobe 2 doors",
+                "ru"=>"Wardrobe 2 doors",
+                'fr'=>"Wardrobe 2 doors",
+            ],
+            "img" => "/images/common/icons/volume/76h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Chamber")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"3-doored wardrobe",
+                "ru"=>"3-doored wardrobe",
+                'fr'=>"3-doored wardrobe",
+            ],
+            "img" => "/images/common/icons/volume/86h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Chamber")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Toy chest",
+                "ru"=>"Toy chest",
+                'fr'=>"Toy chest",
+            ],
+            "img" => "/images/common/icons/volume/77h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Chamber")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Changing table",
+                "ru"=>"Changing table",
+                'fr'=>"Changing table",
+            ],
+            "img" => "/images/common/icons/volume/87h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Chamber")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Moving box",
+                "ru"=>"Moving box",
+                'fr'=>"Moving box",
+            ],
+            "img" => "/images/common/icons/volume/78h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Chamber")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Dressing table",
+                "ru"=>"Dressing table",
+                'fr'=>"Dressing table",
+            ],
+            "img" => "/images/common/icons/volume/79h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Chamber")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Dressing",
+                "ru"=>"Dressing",
+                'fr'=>"Dressing",
+            ],
+            "img" => "/images/common/icons/volume/80h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Chamber")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Office chair",
+                "ru"=>"Office chair",
+                'fr'=>"Office chair",
+            ],
+            "img" => "/images/common/icons/volume/81h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Chamber")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Trunk/canteen",
+                "ru"=>"Trunk/canteen",
+                'fr'=>"Trunk/canteen",
+            ],
+            "img" => "/images/common/icons/volume/88h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Chamber")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Pouf,footrest",
+                "ru"=>"Pouf,footrest",
+                'fr'=>"Pouf,footrest",
+            ],
+            "img" => "/images/common/icons/volume/89h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Chamber")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Wardrobe box",
+                "ru"=>"Wardrobe box",
+                'fr'=>"Wardrobe box",
+            ],
+            "img" => "/images/common/icons/volume/90h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Chamber")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Matress(single)",
+                "ru"=>"Matress(single)",
+                'fr'=>"Matress(single)",
+            ],
+            "img" => "/images/common/icons/volume/91h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Chamber")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Matress(double)",
+                "ru"=>"Matress(double)",
+                'fr'=>"Matress(double)",
+            ],
+            "img" => "/images/common/icons/volume/92h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Chamber")
+        ]);
     }
 }
