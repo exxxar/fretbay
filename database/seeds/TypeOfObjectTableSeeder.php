@@ -1038,5 +1038,134 @@ class TypeOfObjectTableSeeder extends Seeder
             "img" => "/images/common/icons/volume/104h.svg",
             "object_category_id" =>$this->getCategoryIdByTitle("Garden")
         ]);
+
+
+        //Miscellaneous
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Upright piano",
+                "ru"=>"Upright piano",
+                'fr'=>"Upright piano",
+            ],
+            "img" => "/images/common/icons/volume/118h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Miscellaneous")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Grand piano",
+                "ru"=>"Grand piano",
+                'fr'=>"Grand piano",
+            ],
+            "img" => "/images/common/icons/volume/119h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Miscellaneous")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Pool table",
+                "ru"=>"Pool table",
+                'fr'=>"Pool table",
+            ],
+            "img" => "/images/common/icons/volume/120h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Miscellaneous")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Babyfoot",
+                "ru"=>"Babyfoot",
+                'fr'=>"Babyfoot",
+            ],
+            "img" => "/images/common/icons/volume/121h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Miscellaneous")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Table",
+                "ru"=>"Table",
+                'fr'=>"Table",
+            ],
+            "img" => "/images/common/icons/volume/68h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Miscellaneous")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Aquarium(120L)",
+                "ru"=>"Aquarium(120L)",
+                'fr'=>"Aquarium(120L)",
+            ],
+            "img" => "/images/common/icons/volume/123h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Miscellaneous")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Aquarium(180L)",
+                "ru"=>"Aquarium(180L)",
+                'fr'=>"Aquarium(180L)",
+            ],
+            "img" => "/images/common/icons/volume/124h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Miscellaneous")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Aquarium(240L)",
+                "ru"=>"Aquarium(240L)",
+                'fr'=>"Aquarium(240L)",
+            ],
+            "img" => "/images/common/icons/volume/125h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Miscellaneous")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Aquarium(300L)",
+                "ru"=>"Aquarium(300L)",
+                'fr'=>"Aquarium(300L)",
+            ],
+            "img" => "/images/common/icons/volume/126h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Miscellaneous")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Aquarium(400L)",
+                "ru"=>"Aquarium(400L)",
+                'fr'=>"Aquarium(400L)",
+            ],
+            "img" => "/images/common/icons/volume/127h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Miscellaneous")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Bodybuilding equipment (Exercise bike)",
+                "ru"=>"Bodybuilding equipment (Exercise bike)",
+                'fr'=>"Bodybuilding equipment (Exercise bike)",
+            ],
+            "img" => "/images/common/icons/volume/128h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Miscellaneous")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Bodybuilding equipment (Treadmill)",
+                "ru"=>"Bodybuilding equipment (Treadmill)",
+                'fr'=>"Bodybuilding equipment (Treadmill)",
+            ],
+            "img" => "/images/common/icons/volume/129h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Miscellaneous")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Wheelbarrow",
+                "ru"=>"Wheelbarrow",
+                'fr'=>"Wheelbarrow",
+            ],
+            "img" => "/images/common/icons/volume/130h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Miscellaneous")
+        ]);
+        TypeOfObject::create([
+            "title" => [
+                "en"=>"Ping pong table",
+                "ru"=>"Ping pong table",
+                'fr'=>"Ping pong table",
+            ],
+            "img" => "/images/common/icons/volume/131h.svg",
+            "object_category_id" =>$this->getCategoryIdByTitle("Miscellaneous")
+        ]);
     }
 }
