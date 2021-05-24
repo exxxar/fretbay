@@ -179,6 +179,8 @@ return [
         App\Providers\PermissionServiceProvider::class,
         App\Providers\TranslationServiceProvider::class,
 
+        Yandex\Geocode\YandexGeocodeServiceProvider::class
+
     ],
 
     /*
@@ -230,6 +232,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        'YaGeo' => Yandex\Geocode\Facades\YandexGeocodeFacade::class
 
     ],
 

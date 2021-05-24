@@ -21,12 +21,30 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::group(["prefix" => "desktop"], function () {
     Route::group(["prefix" => "v1"], function () {
-        Route::get("/get-type-of-transport", DictionaryController::class . "@typeOfTransport");
-        Route::get("/get-type-of-object", DictionaryController::class . "@typeOfObject");
-        Route::get("/get-type-of-object/{category_id}", DictionaryController::class . "@typeOfObjectByCategory");
-        Route::get("/get-vehicles", DictionaryController::class . "@vehicles");
-        Route::get("/get-latest-transactions", DictionaryController::class . "@latestTransactions");
-        Route::get("/get-top-movers", DictionaryController::class . "@topMovers");
+        Route::get("/get-type-of-transport", \DictionaryController::class . "@typeOfTransport");
+        Route::get("/get-type-of-object", \DictionaryController::class . "@typeOfObject");
+        Route::get("/get-type-of-object/{category_id}", \DictionaryController::class . "@typeOfObjectByCategory");
+        Route::get("/get-vehicles", \DictionaryController::class . "@vehicles");
+        Route::get("/get-latest-transactions", \DictionaryController::class . "@latestTransactions");
+        Route::get("/get-top-movers", \DictionaryController::class . "@topMovers");
+
+        Route::group(["prefix"=>"cars"],function(){
+           Route::get("/categories", \DictionaryController::class."@carsCategories");
+           Route::get("/marks/{categoryId}", \DictionaryController::class."@carsMarks");
+           Route::get("/models/{categoryId}/{markId}", \DictionaryController::class."@carsModels");
+        });
+
+        Route::group(["prefix"=>"locations"],function(){
+            Route::get("/countries", \DictionaryController::class."@getCountries");
+            Route::get("/cities/{country}", \DictionaryController::class."@getCities");
+        });
+
+        Route::group(["prefix"=>"dist"],function(){
+            Route::get("/math/{fA}/{lA}/{fB}/{lB}", \DictionaryController::class."@getMathDist");
+            Route::get("/api/{fA}/{lA}/{fB}/{lB}", \DictionaryController::class."@getApiDist");
+            Route::get("/route/{fA}/{lA}/{fB}/{lB}", \DictionaryController::class."@getRoute");
+            Route::get("/coords/{address}", \DictionaryController::class."@getCoords");
+        });
     });
 });
 

@@ -23,6 +23,7 @@ class Subcategory extends Model
         'is_active',
     ];
 
+    
     /**
      * The attributes that should be cast to native types.
      *
