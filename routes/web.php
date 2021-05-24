@@ -91,6 +91,12 @@ Route::group(["prefix" => "admin"], function () {
         Route::get('/translations', 'LanguageTranslationController@index');
     });
 });
-//Auth::routes();
+Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::group([
+    'middleware' => 'auth',
+], function () {
+ Route::group(['middleware' => ['role:admin']], function () {
+ });
+});
