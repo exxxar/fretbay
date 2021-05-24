@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -52,44 +53,72 @@ Route::group(['middleware' => 'role:web-developer'], function () {
         return 'Добро пожаловать, Веб-разработчик';
     });
 });
+//не админ 
+//заходим на /admin => admin/login
+Route::get("/admin", "AdminSidebarController@login")->name("admin.login");
 
+//админ
+//заходим на /admin => admin
+Route::group(['middleware' => ['auth','role:admin']], function () {
+    Route::group(["prefix" => "admin"], function () {
+        Route::get("/", "AdminSidebarController@index")->name("admin.index");
+        Route::get("/orders", "AdminSidebarController@orders")->name("admin.orders");
 
-Route::group(["prefix" => "admin"], function () {
-    Route::view("/", "admin.pages.index")->name("admin.index");
-    Route::view("/login", "admin.pages.login")->name("admin.login");
-    Route::view("/users", "admin.pages.users")->name("admin.users");
-    Route::group(["prefix" => "languages"], function () {
-        //GET /languages
-        //GET /languages/create
-        //POST /languages
-        //GET /languages/{language}/translations
-        //GET /languages/{language}/translations/create
-        //POST /languages/{language}/translations
-        //PUT /languages/{language}/translations
-        Route::get('/', 'LanguageController@index')
+        Route::group(["prefix" => "objects"], function () {
+            Route::get("/categories", "AdminSidebarController@objects_categories")->name("objects.categories");
+            Route::get("/types", "AdminSidebarController@objects_types")->name("objects.types");
+            Route::get("/transport-types", "AdminSidebarController@objects_transport_types")->name("objects.transport-types");
+            Route::get("/transport", "AdminSidebarController@objects_transport")->name("objects.transport");
+        });
+        Route::group(["prefix" => "users"], function () {
+            Route::get("/list", "AdminSidebarController@users_list")->name("users.list");
+            Route::get("/profiles", "AdminSidebarController@users_profiles")->name("users.profiles");
+            Route::get("/roles", "AdminSidebarController@users_roles")->name("users.roles");
+            Route::get("/permissions", "AdminSidebarController@users_permissions")->name("users.permissions");
+        });
+
+        Route::group(["prefix" => "languages"], function () {
+            //GET /languages
+            //GET /languages/create
+            //POST /languages
+            //GET /languages/{language}/translations
+            //GET /languages/{language}/translations/create
+            //POST /languages/{language}/translations
+            //PUT /languages/{language}/translations
+            Route::get('/', 'LanguageController@index')
+                ->name('languages.index');
+
+            Route::get('/create', 'LanguageController@create')
+                ->name('languages.create');
+
+            Route::post('/', 'LanguageController@store')
+                ->name('languages.store');
+
+            Route::get('/{language}/translations', 'LanguageTranslationController@index')
+                ->name('languages.translations.index');
+
+            Route::post('/{language}', 'LanguageTranslationController@update')
+                ->name('languages.translations.update');
+
+            Route::get('/{language}/translations/create', 'LanguageTranslationController@create')
+                ->name('languages.translations.create');
+
+            Route::post('/{language}/translations', 'LanguageTranslationController@store')
+                ->name('languages.translations.store');
+
+            Route::get('/translations', 'LanguageTranslationController@index');
+
+            Route::get('/', 'LanguageController@index')
             ->name('languages.index');
-
-        Route::get('/create', 'LanguageController@create')
-            ->name('languages.create');
-
-        Route::post('/', 'LanguageController@store')
-            ->name('languages.store');
-
-        Route::get('/{language}/translations', 'LanguageTranslationController@index')
-            ->name('languages.translations.index');
-
-        Route::post('/{language}', 'LanguageTranslationController@update')
-            ->name('languages.translations.update');
-
-        Route::get('/{language}/translations/create', 'LanguageTranslationController@create')
-            ->name('languages.translations.create');
-
-        Route::post('/{language}/translations', 'LanguageTranslationController@store')
-            ->name('languages.translations.store');
-
-        Route::get('/translations', 'LanguageTranslationController@index');
+        });
     });
 });
-//Auth::routes();
+Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::group([
+    'middleware' => 'auth',
+], function () {
+ Route::group(['middleware' => ['role:admin']], function () {
+ });
+});

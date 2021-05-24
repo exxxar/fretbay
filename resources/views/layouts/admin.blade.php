@@ -48,7 +48,7 @@
 @include("admin.partials.sidebar")
 
 <div class="c-wrapper" id="app">
-    <header-component></header-component>
+    <header-component items="{{Route::currentRouteName()}}" admin="{{route("admin.index")}}"></header-component>
     <div class="c-body">
         <main class="c-main">
 

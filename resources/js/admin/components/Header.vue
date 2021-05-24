@@ -82,15 +82,42 @@
                 </div>
             </li>
         </ul>
-        <div class="c-subheader px-3">
-            <ol class="breadcrumb border-0 m-0">
-                <li class="breadcrumb-item"><a href="/">Home</a></li>
-
-                <li class="breadcrumb-item">Test</li>
-
-                <li class="breadcrumb-item active">Index</li>
-
-            </ol>
+        <div class="c-subheader" style="height: 56px;">
+            <b-breadcrumb :items="getBreadcrumbs(items)" style="height: 56px; align-content: center; border-radius:0px;background-color:inherit;"></b-breadcrumb>
         </div>
     </header>
 </template>
+<script>
+  export default {
+    props: [
+        'items',
+        'admin'
+    ],
+    data() {
+      return {
+      }
+    },
+  methods: {
+    getBreadcrumbs: function (route) {
+        var routeLinks = route.split('.');
+        var breadcrumbs = []
+        if(routeLinks[0] != "admin"){
+            routeLinks.unshift("admin");
+        }
+        for (var i = 0; i < routeLinks.length; i++) {
+            var text = routeLinks[i].charAt(0).toUpperCase() + routeLinks[i].slice(1);
+            let item = {
+                "text": text
+            };
+            if(text == "Admin"){
+             item.href = this.admin;  
+            }else{
+                item.active = true;
+            }
+            breadcrumbs.push(item);
+        }
+    return breadcrumbs;
+    }
+  }
+  }
+</script>
