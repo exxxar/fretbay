@@ -6,7 +6,7 @@
     </div>
     <ul class="c-sidebar-nav">
         <li class="c-sidebar-nav-item">
-            <a class="c-sidebar-nav-link" href="home">
+            <a class="c-sidebar-nav-link" href="{{route('admin.index')}}">
                 <i class="fab fa-amazon c-sidebar-nav-icon"></i>
                 Главная страница
             </a>
@@ -18,19 +18,19 @@
                 Объекты</a>
             <ul class="c-sidebar-nav-dropdown-items">
 
-                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="base/breadcrumb.html"><span
+                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{{route("objects.categories")}}"><span
                             class="c-sidebar-nav-icon"></span>Категории объектов</a></li>
-                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="base/collapse.html"><span
+                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{{route("objects.types")}}"><span
                             class="c-sidebar-nav-icon"></span>Типы объектов</a></li>
-                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="base/cards.html"><span
+                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{{route("objects.transport-types")}}"><span
                             class="c-sidebar-nav-icon"></span>Типы транспортировки</a></li>
-                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="base/carousel.html"><span
+                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{{route("objects.transport")}}"><span
                             class="c-sidebar-nav-icon"></span>Транспорт</a></li>
             </ul>
         </li>
 
         <li class="c-sidebar-nav-item">
-            <a class="c-sidebar-nav-link" href="">
+            <a class="c-sidebar-nav-link" href="{{route('admin.orders')}}">
                 <i class="fab fa-amazon c-sidebar-nav-icon"></i>
                 Заказы</a>
         </li>
@@ -41,13 +41,13 @@
                 <i class="fab fa-amazon c-sidebar-nav-icon"></i>
                 Пользователи</a>
             <ul class="c-sidebar-nav-dropdown-items">
-                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{{route("admin.users")}}"><span
+                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{{route("users.list")}}"><span
                             class="c-sidebar-nav-icon"></span>Пользователи</a></li>
-                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="base/collapse.html"><span
+                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{{route("users.profiles")}}"><span
                             class="c-sidebar-nav-icon"></span>Профайлы</a></li>
-                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="base/cards.html"><span
+                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{{route("users.roles")}}"><span
                             class="c-sidebar-nav-icon"></span>Роли</a></li>
-                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="base/carousel.html"><span
+                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{{route("users.permissions")}}"><span
                             class="c-sidebar-nav-icon"></span>Роли и разрешения</a></li>
             </ul>
         </li>

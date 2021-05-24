@@ -56,9 +56,23 @@ Route::group(['middleware' => 'role:web-developer'], function () {
 
 
 Route::group(["prefix" => "admin"], function () {
-    Route::view("/", "admin.pages.index")->name("admin.index");
-    Route::view("/login", "admin.pages.login")->name("admin.login");
-    Route::view("/users", "admin.pages.users")->name("admin.users");
+    Route::get("/", "AdminSidebarController@index")->name("admin.index");
+    Route::get("/login", "AdminSidebarController@login")->name("admin.login");
+    Route::get("/orders", "AdminSidebarController@orders")->name("admin.orders");
+
+    Route::group(["prefix" => "objects"], function () {
+        Route::get("/categories", "AdminSidebarController@objects_categories")->name("objects.categories");
+        Route::get("/types", "AdminSidebarController@objects_types")->name("objects.types");
+        Route::get("/transport-types", "AdminSidebarController@objects_transport_types")->name("objects.transport-types");
+        Route::get("/transport", "AdminSidebarController@objects_transport")->name("objects.transport");
+    });
+    Route::group(["prefix" => "users"], function () {
+        Route::get("/list", "AdminSidebarController@users_list")->name("users.list");
+        Route::get("/profiles", "AdminSidebarController@users_profiles")->name("users.profiles");
+        Route::get("/roles", "AdminSidebarController@users_roles")->name("users.roles");
+        Route::get("/permissions", "AdminSidebarController@users_permissions")->name("users.permissions");
+    });
+
     Route::group(["prefix" => "languages"], function () {
         //GET /languages
         //GET /languages/create
@@ -89,6 +103,9 @@ Route::group(["prefix" => "admin"], function () {
             ->name('languages.translations.store');
 
         Route::get('/translations', 'LanguageTranslationController@index');
+
+        Route::get('/', 'LanguageController@index')
+        ->name('languages.index');
     });
 });
 Auth::routes();
