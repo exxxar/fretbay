@@ -82,8 +82,8 @@
                 </div>
             </li>
         </ul>
-        <div class="c-subheader px-3">
-            <b-breadcrumb :items="getBreadcrumbs(items)"></b-breadcrumb>
+        <div class="c-subheader" style="height: 56px;">
+            <b-breadcrumb :items="getBreadcrumbs(items)" style="height: 56px; align-content: center; border-radius:0px;background-color:inherit;"></b-breadcrumb>
         </div>
     </header>
 </template>
