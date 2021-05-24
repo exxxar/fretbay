@@ -55,9 +55,9 @@ Route::group(['middleware' => 'role:web-developer'], function () {
 
 
 Route::group(["prefix" => "admin"], function () {
-    Route::view("/", "AdminSidebarController@index")->name("admin.index");
-    Route::view("/login", "AdminSidebarController@login")->name("admin.login");
-    Route::view("/orders", "AdminSidebarController@orders")->name("admin.orders");
+    Route::get("/", "AdminSidebarController@index")->name("admin.index");
+    Route::get("/login", "AdminSidebarController@login")->name("admin.login");
+    Route::get("/orders", "AdminSidebarController@orders")->name("admin.orders");
 
     Route::group(["prefix" => "objects"], function () {
         Route::get("/categories", "AdminSidebarController@objects_categories")->name("objects.categories");
