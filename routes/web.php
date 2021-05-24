@@ -55,15 +55,21 @@ Route::group(['middleware' => 'role:web-developer'], function () {
 
 
 Route::group(["prefix" => "admin"], function () {
-    Route::view("/", "admin.pages.index", ['display' => 'index'])->name("admin.index");
-    Route::view("/login", "admin.pages.login")->name("admin.login");
-    Route::view("/users", "admin.pages.users")->name("admin.users");
+    Route::view("/", "AdminSidebarController@index")->name("admin.index");
+    Route::view("/login", "AdminSidebarController@login")->name("admin.login");
+    Route::view("/orders", "AdminSidebarController@orders")->name("admin.orders");
 
     Route::group(["prefix" => "objects"], function () {
-        Route::view("/categories", "admin.pages.index", ['display' => 'objects-categories'])->name("objects.categories");
-        Route::view("/types", "admin.pages.index", ['display' => 'objects-types'])->name("objects.types");
-        Route::view("/transport_types", "admin.pages.index", ['display' => 'objects-transport-types'])->name("objects.transport_types");
-        Route::view("/transport", "admin.pages.index", ['display' => 'objects-transport'])->name("objects.transport");
+        Route::get("/categories", "AdminSidebarController@objects_categories")->name("objects.categories");
+        Route::get("/types", "AdminSidebarController@objects_types")->name("objects.types");
+        Route::get("/transport-types", "AdminSidebarController@objects_transport_types")->name("objects.transport-types");
+        Route::get("/transport", "AdminSidebarController@objects_transport")->name("objects.transport");
+    });
+    Route::group(["prefix" => "users"], function () {
+        Route::get("/list", "AdminSidebarController@users_list")->name("users.list");
+        Route::get("/profiles", "AdminSidebarController@users_profiles")->name("users.profiles");
+        Route::get("/roles", "AdminSidebarController@users_roles")->name("users.roles");
+        Route::get("/permissions", "AdminSidebarController@users_permissions")->name("users.permissions");
     });
 
     Route::group(["prefix" => "languages"], function () {
