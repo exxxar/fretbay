@@ -7894,10 +7894,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/LatestTransactions.vue?vue&type=script&lang=js&":
-/*!*************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/components/LatestTransactions.vue?vue&type=script&lang=js& ***!
-  \*************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/LatestTransactionItem.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/components/LatestTransactionItem.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -7958,167 +7958,37 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/LatestTransactions.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/components/LatestTransactions.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _LatestTransactionItem__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./LatestTransactionItem */ "./resources/js/desktop/components/LatestTransactionItem.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    LatestTransactionItem: _LatestTransactionItem__WEBPACK_IMPORTED_MODULE_0__["default"]
+  }
+});
 
 /***/ }),
 
@@ -8382,6 +8252,48 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/TopMoverItem.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/components/TopMoverItem.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/TopMovers.vue?vue&type=script&lang=js&":
 /*!****************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/components/TopMovers.vue?vue&type=script&lang=js& ***!
@@ -8391,6 +8303,34 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _TopMoverItem__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TopMoverItem */ "./resources/js/desktop/components/TopMoverItem.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    TopMoverItem: _TopMoverItem__WEBPACK_IMPORTED_MODULE_0__["default"]
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/testimonialnew__item.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/components/testimonialnew__item.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -10806,6 +10746,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components_testimonialnew_item__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/testimonialnew__item */ "./resources/js/desktop/components/testimonialnew__item.vue");
 //
 //
 //
@@ -11255,97 +11196,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    testimonialnew__item: _components_testimonialnew_item__WEBPACK_IMPORTED_MODULE_0__["default"]
+  }
+});
 
 /***/ }),
 
@@ -55358,7 +55214,7 @@ var render = function() {
           _vm._m(0),
           _vm._v(" "),
           _c("button", { staticClass: "first__btn" }, [
-            _vm._v("\r\n                REQUEST A QUOTE\r\n            ")
+            _vm._v("\n                REQUEST A QUOTE\n            ")
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "row" }, [
@@ -55380,10 +55236,10 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("h1", [
-      _vm._v("\r\n                Find your mover\r\n                "),
+      _vm._v("\n                Find your mover\n                "),
       _c("span", [
         _vm._v(
-          "\r\n                    The leading marketplace for cheap transport and moving services\r\n                "
+          "\n                    The leading marketplace for cheap transport and moving services\n                "
         )
       ])
     ])
@@ -55634,10 +55490,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/LatestTransactions.vue?vue&type=template&id=04bab6f4&":
-/*!*****************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/components/LatestTransactions.vue?vue&type=template&id=04bab6f4& ***!
-  \*****************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/LatestTransactionItem.vue?vue&type=template&id=aaae137c&":
+/*!********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/components/LatestTransactionItem.vue?vue&type=template&id=aaae137c& ***!
+  \********************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -55656,343 +55512,84 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("h2", [_vm._v("\n            Latest transactions\n        ")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-lg-12 recenListingSlider" }, [
-          _c("ul", { staticClass: "list-unstyled recenListing" }, [
-            _c("li", { staticClass: "recen__item row" }, [
-              _c("div", { staticClass: "categoryInfo" }, [
-                _c("div", { staticClass: "circleImg id-377110" }, [
-                  _c("img", { attrs: { src: "/images/catMedium/colis.png" } })
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "recen__title" }, [
-                  _vm._v(
-                    "\n                                Package/Fold\n                                "
-                  ),
-                  _c("span", [
-                    _c("b", [
-                      _vm._v(
-                        "\n\t\t\t\t\t\t\t\t\t\t\t\t\tCategory\n\t\t\t\t\t\t\t\t\t\t\t\t"
-                      )
-                    ]),
-                    _vm._v(
-                      "\n\t\t\t\t\t\t\t\t\t\t\t\t: Package\n\t\t\t\t\t\t\t\t\t\t\t"
-                    )
-                  ])
-                ])
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-lg-12 recenListingSlider" }, [
+        _c("ul", { staticClass: "list-unstyled recenListing" }, [
+          _c("li", { staticClass: "recen__item row" }, [
+            _c("div", { staticClass: "categoryInfo" }, [
+              _c("div", { staticClass: "circleImg id-377110" }, [
+                _c("img", { attrs: { src: "/images/catMedium/colis.png" } })
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "locationInfo" }, [
-                _c("p", [
-                  _vm._v(
-                    "\n                                Bavaria - Canton of Geneva\n                            "
-                  )
-                ]),
-                _vm._v(" "),
-                _c("p", [
-                  _vm._v(
-                    "\n                                689.16km\n                            "
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "trasporterInfo" }, [
-                _c("div", { staticClass: "circleImg" }, [
-                  _c("img", {
-                    staticClass: "about__img img-responsive mx-auto d-block",
-                    attrs: {
-                      src:
-                        "/images/photoTransporteur/validation-173x173.png?ver=1.2",
-                      alt: "about"
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "marginImg" }, [
-                  _c("p", [
+              _c("p", { staticClass: "recen__title" }, [
+                _vm._v(
+                  "\n                            Package/Fold\n                            "
+                ),
+                _c("span", [
+                  _c("b", [
                     _vm._v(
-                      "\n                                    Nars24\n                                "
+                      "\n\t\t\t\t\t\t\t\t\t\t\t\t\tCategory\n\t\t\t\t\t\t\t\t\t\t\t\t"
                     )
                   ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "ratingBlock" }, [
-                    _c("img", { attrs: { src: "/images/star-on.png" } }),
-                    _vm._v(" "),
-                    _c("img", { attrs: { src: "/images/star-on.png" } }),
-                    _vm._v(" "),
-                    _c("img", { attrs: { src: "/images/star-on.png" } }),
-                    _vm._v(" "),
-                    _c("img", { attrs: { src: "/images/star-on.png" } }),
-                    _vm._v(" "),
-                    _c("img", { attrs: { src: "/images/star-half.png" } })
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "priceInfo" }, [
-                _c("p", [
                   _vm._v(
-                    "\n                                580€\n                            "
+                    "\n\t\t\t\t\t\t\t\t\t\t\t\t: Package\n\t\t\t\t\t\t\t\t\t\t\t"
                   )
                 ])
               ])
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-lg-12 recenListingSlider" }, [
-          _c("ul", { staticClass: "list-unstyled recenListing" }, [
-            _c("li", { staticClass: "recen__item row" }, [
-              _c("div", { staticClass: "categoryInfo" }, [
-                _c("div", { staticClass: "circleImg id-377110" }, [
-                  _c("img", { attrs: { src: "/images/catMedium/colis.png" } })
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "recen__title" }, [
-                  _vm._v(
-                    "\n                                Package/Fold\n                                "
-                  ),
-                  _c("span", [
-                    _c("b", [
-                      _vm._v(
-                        "\n\t\t\t\t\t\t\t\t\t\t\t\t\tCategory\n\t\t\t\t\t\t\t\t\t\t\t\t"
-                      )
-                    ]),
-                    _vm._v(
-                      "\n\t\t\t\t\t\t\t\t\t\t\t\t: Package\n\t\t\t\t\t\t\t\t\t\t\t"
-                    )
-                  ])
-                ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "locationInfo" }, [
+              _c("p", [
+                _vm._v(
+                  "\n                            Bavaria - Canton of Geneva\n                        "
+                )
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "locationInfo" }, [
+              _c("p", [
+                _vm._v(
+                  "\n                            689.16km\n                        "
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "trasporterInfo" }, [
+              _c("div", { staticClass: "circleImg" }, [
+                _c("img", {
+                  staticClass: "about__img img-responsive mx-auto d-block",
+                  attrs: {
+                    src:
+                      "/images/photoTransporteur/validation-173x173.png?ver=1.2",
+                    alt: "about"
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "marginImg" }, [
                 _c("p", [
                   _vm._v(
-                    "\n                                Bavaria - Canton of Geneva\n                            "
+                    "\n                                Nars24\n                            "
                   )
                 ]),
                 _vm._v(" "),
-                _c("p", [
-                  _vm._v(
-                    "\n                                689.16km\n                            "
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "trasporterInfo" }, [
-                _c("div", { staticClass: "circleImg" }, [
-                  _c("img", {
-                    staticClass: "about__img img-responsive mx-auto d-block",
-                    attrs: {
-                      src:
-                        "/images/photoTransporteur/validation-173x173.png?ver=1.2",
-                      alt: "about"
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "marginImg" }, [
-                  _c("p", [
-                    _vm._v(
-                      "\n                                    Nars24\n                                "
-                    )
-                  ]),
+                _c("div", { staticClass: "ratingBlock" }, [
+                  _c("img", { attrs: { src: "/images/star-on.png" } }),
                   _vm._v(" "),
-                  _c("div", { staticClass: "ratingBlock" }, [
-                    _c("img", { attrs: { src: "/images/star-on.png" } }),
-                    _vm._v(" "),
-                    _c("img", { attrs: { src: "/images/star-on.png" } }),
-                    _vm._v(" "),
-                    _c("img", { attrs: { src: "/images/star-on.png" } }),
-                    _vm._v(" "),
-                    _c("img", { attrs: { src: "/images/star-on.png" } }),
-                    _vm._v(" "),
-                    _c("img", { attrs: { src: "/images/star-half.png" } })
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "priceInfo" }, [
-                _c("p", [
-                  _vm._v(
-                    "\n                                580€\n                            "
-                  )
+                  _c("img", { attrs: { src: "/images/star-on.png" } }),
+                  _vm._v(" "),
+                  _c("img", { attrs: { src: "/images/star-on.png" } }),
+                  _vm._v(" "),
+                  _c("img", { attrs: { src: "/images/star-on.png" } }),
+                  _vm._v(" "),
+                  _c("img", { attrs: { src: "/images/star-half.png" } })
                 ])
               ])
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-lg-12 recenListingSlider" }, [
-          _c("ul", { staticClass: "list-unstyled recenListing" }, [
-            _c("li", { staticClass: "recen__item row" }, [
-              _c("div", { staticClass: "categoryInfo" }, [
-                _c("div", { staticClass: "circleImg id-377110" }, [
-                  _c("img", { attrs: { src: "/images/catMedium/colis.png" } })
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "recen__title" }, [
-                  _vm._v(
-                    "\n                                Package/Fold\n                                "
-                  ),
-                  _c("span", [
-                    _c("b", [
-                      _vm._v(
-                        "\n\t\t\t\t\t\t\t\t\t\t\t\t\tCategory\n\t\t\t\t\t\t\t\t\t\t\t\t"
-                      )
-                    ]),
-                    _vm._v(
-                      "\n\t\t\t\t\t\t\t\t\t\t\t\t: Package\n\t\t\t\t\t\t\t\t\t\t\t"
-                    )
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "locationInfo" }, [
-                _c("p", [
-                  _vm._v(
-                    "\n                                Bavaria - Canton of Geneva\n                            "
-                  )
-                ]),
-                _vm._v(" "),
-                _c("p", [
-                  _vm._v(
-                    "\n                                689.16km\n                            "
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "trasporterInfo" }, [
-                _c("div", { staticClass: "circleImg" }, [
-                  _c("img", {
-                    staticClass: "about__img img-responsive mx-auto d-block",
-                    attrs: {
-                      src:
-                        "/images/photoTransporteur/validation-173x173.png?ver=1.2",
-                      alt: "about"
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "marginImg" }, [
-                  _c("p", [
-                    _vm._v(
-                      "\n                                    Nars24\n                                "
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "ratingBlock" }, [
-                    _c("img", { attrs: { src: "/images/star-on.png" } }),
-                    _vm._v(" "),
-                    _c("img", { attrs: { src: "/images/star-on.png" } }),
-                    _vm._v(" "),
-                    _c("img", { attrs: { src: "/images/star-on.png" } }),
-                    _vm._v(" "),
-                    _c("img", { attrs: { src: "/images/star-on.png" } }),
-                    _vm._v(" "),
-                    _c("img", { attrs: { src: "/images/star-half.png" } })
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "priceInfo" }, [
-                _c("p", [
-                  _vm._v(
-                    "\n                                580€\n                            "
-                  )
-                ])
-              ])
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-lg-12 recenListingSlider" }, [
-          _c("ul", { staticClass: "list-unstyled recenListing" }, [
-            _c("li", { staticClass: "recen__item row" }, [
-              _c("div", { staticClass: "categoryInfo" }, [
-                _c("div", { staticClass: "circleImg id-377110" }, [
-                  _c("img", { attrs: { src: "/images/catMedium/colis.png" } })
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "recen__title" }, [
-                  _vm._v(
-                    "\n                                Package/Fold\n                                "
-                  ),
-                  _c("span", [
-                    _c("b", [
-                      _vm._v(
-                        "\n\t\t\t\t\t\t\t\t\t\t\t\t\tCategory\n\t\t\t\t\t\t\t\t\t\t\t\t"
-                      )
-                    ]),
-                    _vm._v(
-                      "\n\t\t\t\t\t\t\t\t\t\t\t\t: Package\n\t\t\t\t\t\t\t\t\t\t\t"
-                    )
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "locationInfo" }, [
-                _c("p", [
-                  _vm._v(
-                    "\n                                Bavaria - Canton of Geneva\n                            "
-                  )
-                ]),
-                _vm._v(" "),
-                _c("p", [
-                  _vm._v(
-                    "\n                                689.16km\n                            "
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "trasporterInfo" }, [
-                _c("div", { staticClass: "circleImg" }, [
-                  _c("img", {
-                    staticClass: "about__img img-responsive mx-auto d-block",
-                    attrs: {
-                      src:
-                        "/images/photoTransporteur/validation-173x173.png?ver=1.2",
-                      alt: "about"
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "marginImg" }, [
-                  _c("p", [
-                    _vm._v(
-                      "\n                                    Nars24\n                                "
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "ratingBlock" }, [
-                    _c("img", { attrs: { src: "/images/star-on.png" } }),
-                    _vm._v(" "),
-                    _c("img", { attrs: { src: "/images/star-on.png" } }),
-                    _vm._v(" "),
-                    _c("img", { attrs: { src: "/images/star-on.png" } }),
-                    _vm._v(" "),
-                    _c("img", { attrs: { src: "/images/star-on.png" } }),
-                    _vm._v(" "),
-                    _c("img", { attrs: { src: "/images/star-half.png" } })
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "priceInfo" }, [
-                _c("p", [
-                  _vm._v(
-                    "\n                                580€\n                            "
-                  )
-                ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "priceInfo" }, [
+              _c("p", [
+                _vm._v(
+                  "\n                            580€\n                        "
+                )
               ])
             ])
           ])
@@ -56001,6 +55598,44 @@ var staticRenderFns = [
     ])
   }
 ]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/LatestTransactions.vue?vue&type=template&id=04bab6f4&":
+/*!*****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/components/LatestTransactions.vue?vue&type=template&id=04bab6f4& ***!
+  \*****************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c("h2", [_vm._v("\n        Latest transactions\n    ")]),
+      _vm._v(" "),
+      _c("latest-transaction-item"),
+      _vm._v(" "),
+      _c("latest-transaction-item"),
+      _vm._v(" "),
+      _c("latest-transaction-item"),
+      _vm._v(" "),
+      _c("latest-transaction-item")
+    ],
+    1
+  )
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -56330,10 +55965,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/TopMovers.vue?vue&type=template&id=2a4a26bf&":
-/*!********************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/components/TopMovers.vue?vue&type=template&id=2a4a26bf& ***!
-  \********************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/TopMoverItem.vue?vue&type=template&id=cce922d2&":
+/*!***********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/components/TopMoverItem.vue?vue&type=template&id=cce922d2& ***!
+  \***********************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -56352,49 +55987,155 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("h2", [_vm._v("\n        Top movers\n    ")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-lg-12" }, [
-          _c("div", { staticClass: "postBlock row" }, [
-            _c("div", { staticClass: "col-md-3 col-sm-4 no-padding" }, [
-              _c("div", { staticClass: "postImg" }, [
-                _c("img", {
-                  staticClass: "about__img img-responsive mx-auto d-block",
-                  attrs: { src: "/images/avatar.png", alt: "about" }
-                })
-              ])
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-lg-12" }, [
+        _c("div", { staticClass: "postBlock row" }, [
+          _c("div", { staticClass: "col-md-3 col-sm-4 no-padding" }, [
+            _c("div", { staticClass: "postImg" }, [
+              _c("img", {
+                staticClass: "about__img img-responsive mx-auto d-block",
+                attrs: { src: "/images/avatar.png", alt: "about" }
+              })
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-9 col-sm-8" }, [
+            _c("p", { staticClass: "postblock__title" }, [
+              _vm._v("\n                    Wojtek92\n                ")
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "col-md-9 col-sm-8" }, [
-              _c("p", { staticClass: "postblock__title" }, [
-                _vm._v(
-                  "\n                        Wojtek92\n                    "
-                )
-              ]),
+            _c("p", { staticClass: "postblock__prg" }, [
+              _vm._v(
+                "\n                    Excellent service. Un seul bémol : le problème de la langue. Il y a ..\n                "
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "ratingBlock" }, [
+              _c("img", { attrs: { src: "/images/star-on.png" } }),
               _vm._v(" "),
-              _c("p", { staticClass: "postblock__prg" }, [
-                _vm._v(
-                  "\n                        Excellent service. Un seul bémol : le problème de la langue. Il y a ..\n                    "
-                )
-              ]),
+              _c("img", { attrs: { src: "/images/star-on.png" } }),
               _vm._v(" "),
-              _c("div", { staticClass: "ratingBlock" }, [
-                _c("img", { attrs: { src: "/images/star-on.png" } }),
-                _vm._v(" "),
-                _c("img", { attrs: { src: "/images/star-on.png" } }),
-                _vm._v(" "),
-                _c("img", { attrs: { src: "/images/star-on.png" } }),
-                _vm._v(" "),
-                _c("img", { attrs: { src: "/images/star-on.png" } }),
-                _vm._v(" "),
-                _c("img", { attrs: { src: "/images/star-half.png" } })
-              ])
+              _c("img", { attrs: { src: "/images/star-on.png" } }),
+              _vm._v(" "),
+              _c("img", { attrs: { src: "/images/star-on.png" } }),
+              _vm._v(" "),
+              _c("img", { attrs: { src: "/images/star-half.png" } })
             ])
           ])
         ])
       ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/TopMovers.vue?vue&type=template&id=2a4a26bf&":
+/*!********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/components/TopMovers.vue?vue&type=template&id=2a4a26bf& ***!
+  \********************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c("h2", [_vm._v("\n        Top movers\n    ")]),
+      _vm._v(" "),
+      _c("top-mover-item")
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/testimonialnew__item.vue?vue&type=template&id=42c7fb2c&":
+/*!*******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/desktop/components/testimonialnew__item.vue?vue&type=template&id=42c7fb2c& ***!
+  \*******************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-4" }, [
+      _c(
+        "div",
+        { staticClass: "testimonialnew__item slick-slide slick-active" },
+        [
+          _c("div", { staticClass: "testimonialText" }, [
+            _c("p", { staticClass: "testimonialtext__txt" }, [
+              _c("i", { staticClass: "fa fa-quote-left" }),
+              _vm._v(
+                "\n                    On a utiliser les services de fretbay pour demenager de paris au vaucluse. On a choisi tripfret comme ils avais un tarf tres interessant. Le chaffeur ...\n                    "
+              ),
+              _c("i", { staticClass: "fa fa-quote-right" })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "commenterName" }, [
+              _c("span", { staticClass: "date" }, [
+                _vm._v(
+                  "\n\t\t\t\t\t\t\t\t\t\t\tDate: 07/02/2021\n\t\t\t\t\t\t\t\t\t\t"
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "reviewer" }, [
+                _vm._v(
+                  "\n                        Ghassan\n                    "
+                )
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "rating" }, [
+            _c("p", [
+              _c("strong", [_vm._v("100")]),
+              _vm._v("%\n                ")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "ratingBlock" }, [
+              _c("img", { attrs: { src: "/images/star-on.png" } }),
+              _vm._v(" "),
+              _c("img", { attrs: { src: "/images/star-on.png" } }),
+              _vm._v(" "),
+              _c("img", { attrs: { src: "/images/star-on.png" } }),
+              _vm._v(" "),
+              _c("img", { attrs: { src: "/images/star-on.png" } }),
+              _vm._v(" "),
+              _c("img", { attrs: { src: "/images/star-half.png" } })
+            ])
+          ])
+        ]
+      )
     ])
   }
 ]
@@ -61734,7 +61475,31 @@ var render = function() {
     _vm._v(" "),
     _vm._m(2),
     _vm._v(" "),
-    _vm._m(3)
+    _c("section", { attrs: { id: "testimonialNew" } }, [
+      _c("div", { staticClass: "container" }, [
+        _vm._m(3),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "slider testimonialnew__list slick-initialized slick-slider row"
+            },
+            [
+              _c("testimonialnew__item"),
+              _vm._v(" "),
+              _c("testimonialnew__item"),
+              _vm._v(" "),
+              _c("testimonialnew__item")
+            ],
+            1
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _vm._m(4)
+    ])
   ])
 }
 var staticRenderFns = [
@@ -61754,13 +61519,13 @@ var staticRenderFns = [
                 _vm._v(" "),
                 _c("p", { staticClass: "seekheader__title" }, [
                   _vm._v(
-                    "\r\n                            18 millions\r\n                        "
+                    "\n                            18 millions\n                        "
                   )
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "seekheader__txt" }, [
                   _vm._v(
-                    "\r\n                            kg reduction in CO2 emissions\r\n                        "
+                    "\n                            kg reduction in CO2 emissions\n                        "
                   )
                 ])
               ]
@@ -61773,13 +61538,13 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("p", { staticClass: "seekheader__title" }, [
                 _vm._v(
-                  "\r\n                            A network of +8000\r\n                        "
+                  "\n                            A network of +8000\n                        "
                 )
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "seekheader__txt" }, [
                 _vm._v(
-                  "\r\n                            authorized movers\r\n                        "
+                  "\n                            authorized movers\n                        "
                 )
               ])
             ])
@@ -61791,13 +61556,13 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("p", { staticClass: "seekheader__title" }, [
                 _vm._v(
-                  "\r\n                            1 943 364 users\r\n                        "
+                  "\n                            1 943 364 users\n                        "
                 )
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "seekheader__txt" }, [
                 _vm._v(
-                  "\r\n                            have used our services\r\n                        "
+                  "\n                            have used our services\n                        "
                 )
               ])
             ])
@@ -61809,13 +61574,13 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("p", { staticClass: "seekheader__title" }, [
                 _vm._v(
-                  "\r\n                            an unbeatable price\r\n                        "
+                  "\n                            an unbeatable price\n                        "
                 )
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "seekheader__txt" }, [
                 _vm._v(
-                  "\r\n                            save up to 75%\r\n                        "
+                  "\n                            save up to 75%\n                        "
                 )
               ])
             ])
@@ -61834,9 +61599,9 @@ var staticRenderFns = [
           _c("div", { staticClass: "col-md-3 col-xs-6" }, [
             _c("div", { staticClass: "stepsnew__item" }, [
               _c("h3", { staticClass: "stepsnew__title" }, [
-                _c("span", [_vm._v("\r\n\t\t\t\t\t\t\t\t1\r\n\t\t\t\t\t\t\t")]),
+                _c("span", [_vm._v("\n\t\t\t\t\t\t\t\t1\n\t\t\t\t\t\t\t")]),
                 _vm._v(
-                  "\r\n                            Publish your listing\r\n                        "
+                  "\n                            Publish your listing\n                        "
                 )
               ]),
               _vm._v(" "),
@@ -61850,9 +61615,9 @@ var staticRenderFns = [
           _c("div", { staticClass: "col-md-3 col-xs-6" }, [
             _c("div", { staticClass: "stepsnew__item" }, [
               _c("h3", { staticClass: "stepsnew__title" }, [
-                _c("span", [_vm._v("\r\n\t\t\t\t\t\t\t\t2\r\n\t\t\t\t\t\t\t")]),
+                _c("span", [_vm._v("\n\t\t\t\t\t\t\t\t2\n\t\t\t\t\t\t\t")]),
                 _vm._v(
-                  "\r\n                            Get instant quotes\r\n                        "
+                  "\n                            Get instant quotes\n                        "
                 )
               ]),
               _vm._v(" "),
@@ -61866,9 +61631,9 @@ var staticRenderFns = [
           _c("div", { staticClass: "col-md-3 col-xs-6" }, [
             _c("div", { staticClass: "stepsnew__item" }, [
               _c("h3", { staticClass: "stepsnew__title" }, [
-                _c("span", [_vm._v("\r\n\t\t\t\t\t\t\t\t3\r\n\t\t\t\t\t\t\t")]),
+                _c("span", [_vm._v("\n\t\t\t\t\t\t\t\t3\n\t\t\t\t\t\t\t")]),
                 _vm._v(
-                  "\r\n                            Get delivered\r\n                        "
+                  "\n                            Get delivered\n                        "
                 )
               ]),
               _vm._v(" "),
@@ -61882,9 +61647,9 @@ var staticRenderFns = [
           _c("div", { staticClass: "col-md-3 col-xs-6" }, [
             _c("div", { staticClass: "stepsnew__item" }, [
               _c("h3", { staticClass: "stepsnew__title" }, [
-                _c("span", [_vm._v("\r\n\t\t\t\t\t\t\t\t4\r\n\t\t\t\t\t\t\t")]),
+                _c("span", [_vm._v("\n\t\t\t\t\t\t\t\t4\n\t\t\t\t\t\t\t")]),
                 _vm._v(
-                  "\r\n                            Rate the service\r\n                        "
+                  "\n                            Rate the service\n                        "
                 )
               ]),
               _vm._v(" "),
@@ -61897,7 +61662,7 @@ var staticRenderFns = [
         ]),
         _vm._v(" "),
         _c("button", { staticClass: "first__btn" }, [
-          _vm._v("\r\n                REQUEST A QUOTE\r\n            ")
+          _vm._v("\n                REQUEST A QUOTE\n            ")
         ])
       ])
     ])
@@ -61913,29 +61678,29 @@ var staticRenderFns = [
             _c("div", { staticClass: "trevalnew__item trevalnew__item-left" }, [
               _c("a", { staticClass: "trevalnew__title" }, [
                 _vm._v(
-                  "\r\n                            Find a mover\r\n                        "
+                  "\n                            Find a mover\n                        "
                 )
               ]),
               _vm._v(" "),
               _c("p", { staticClass: "trevalnew__txt" }, [
                 _vm._v(
-                  "\r\n                            Finding a cheap mover on FretBay is very easy!\r\n                            "
+                  "\n                            Finding a cheap mover on FretBay is very easy!\n                            "
                 ),
                 _c("br"),
                 _vm._v(
-                  "\r\n                            Let's say you simply want to move for example, you only need to publish a listing for free to receive low-cost moving quotes or cheap mover rates.\r\n                        "
+                  "\n                            Let's say you simply want to move for example, you only need to publish a listing for free to receive low-cost moving quotes or cheap mover rates.\n                        "
                 )
               ]),
               _vm._v(" "),
               _c("p", { staticClass: "trevalnew__txt" }, [
                 _vm._v(
-                  "\r\n                            A grouped transport guarantees you very low moving prices. Once this request has been made, each transporter can send you a moving quote and make you an offer for a transport price. Then, all you have to do is select the transportation service offer that best meets your needs!\r\n                        "
+                  "\n                            A grouped transport guarantees you very low moving prices. Once this request has been made, each transporter can send you a moving quote and make you an offer for a transport price. Then, all you have to do is select the transportation service offer that best meets your needs!\n                        "
                 )
               ]),
               _vm._v(" "),
               _c("a", { staticClass: "trevalnew__btn" }, [
                 _vm._v(
-                  "\r\n                            Find out more\r\n                        "
+                  "\n                            Find out more\n                        "
                 )
               ])
             ])
@@ -61948,33 +61713,33 @@ var staticRenderFns = [
               [
                 _c("a", { staticClass: "trevalnew__title" }, [
                   _vm._v(
-                    "\r\n                            I'm a transporter\r\n                        "
+                    "\n                            I'm a transporter\n                        "
                   )
                 ]),
                 _vm._v(" "),
                 _c("p", { staticClass: "trevalnew__txt" }, [
                   _vm._v(
-                    "\r\n                            FretBay is very easy for transporters to use.\r\n                            "
+                    "\n                            FretBay is very easy for transporters to use.\n                            "
                   ),
                   _c("br"),
                   _vm._v(
-                    "\r\n                            Every day, hundreds of people publish a listing to request a cheap quote for a moving, private parcel, vehicle or animal transport.\r\n                        "
+                    "\n                            Every day, hundreds of people publish a listing to request a cheap quote for a moving, private parcel, vehicle or animal transport.\n                        "
                   )
                 ]),
                 _vm._v(" "),
                 _c("p", { staticClass: "trevalnew__txt" }, [
                   _vm._v(
-                    "\r\n                            All you have to do is consult the listings corresponding to your travel locations to find loads and deliveries. Then, all that remains is to offer an estimate to the client.\r\n                            "
+                    "\n                            All you have to do is consult the listings corresponding to your travel locations to find loads and deliveries. Then, all that remains is to offer an estimate to the client.\n                            "
                   ),
                   _c("br"),
                   _vm._v(
-                    "\r\n                            Registration and publication of an ad on FretBay are free and without obligation, take advantage of it!\r\n                        "
+                    "\n                            Registration and publication of an ad on FretBay are free and without obligation, take advantage of it!\n                        "
                   )
                 ]),
                 _vm._v(" "),
                 _c("a", { staticClass: "trevalnew__btn" }, [
                   _vm._v(
-                    "\r\n                            Find out more\r\n                        "
+                    "\n                            Find out more\n                        "
                   )
                 ])
               ]
@@ -61988,208 +61753,126 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("section", { attrs: { id: "testimonialNew" } }, [
-      _c("div", { staticClass: "container" }, [
-        _c("a", { staticClass: "trustLogo" }, [
-          _c("img", {
-            attrs: { src: "/images/home/trustpilot-logoN.png", alt: "" }
-          })
+    return _c("a", { staticClass: "trustLogo" }, [
+      _c("img", {
+        attrs: { src: "/images/home/trustpilot-logoN.png", alt: "" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "tabs-footer-section " }, [
+      _c("input", {
+        attrs: { type: "radio", name: "tab", id: "tab-1", checked: "" }
+      }),
+      _vm._v(" "),
+      _c("label", { attrs: { for: "tab-1" } }, [_vm._v("Moves")]),
+      _vm._v(" "),
+      _c("input", { attrs: { type: "radio", name: "tab", id: "tab-2" } }),
+      _vm._v(" "),
+      _c("label", { attrs: { for: "tab-2" } }, [_vm._v("Moves by city")]),
+      _vm._v(" "),
+      _c("input", { attrs: { type: "radio", name: "tab", id: "tab-3" } }),
+      _vm._v(" "),
+      _c("label", { attrs: { for: "tab-3" } }, [_vm._v("Transport")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "content" }, [
+        _c("article", { staticClass: "tab-1" }, [
+          _c("div", { staticClass: "container" }, [
+            _c("ul", { staticClass: "col-md-4" }, [
+              _c("li", [
+                _c("a", { attrs: { href: "#" } }, [
+                  _vm._v(
+                    "\n                                    Moving cheaply\n                                "
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { attrs: { href: "#" } }, [
+                  _vm._v(
+                    "\n                                    Estimating your move with FretBay\n                                "
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { attrs: { href: "#" } }, [
+                  _vm._v(
+                    "\n                                    Moving when you're on your own\n                                "
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { attrs: { href: "#" } }, [
+                  _vm._v(
+                    "\n                                    An optimized move in Europe\n                                "
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { attrs: { href: "#" } }, [
+                  _vm._v(
+                    "\n                                    Grouped moving, a system with many advantages\n                                "
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { attrs: { href: "#" } }, [
+                  _vm._v(
+                    "\n                                    Moving your furniture in complete serenity\n                                "
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { attrs: { href: "#" } }, [
+                  _vm._v(
+                    "\n                                    Rent the right truck for your move\n                                "
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { attrs: { href: "#" } }, [
+                  _vm._v(
+                    "\n                                    Moving for students\n                                "
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { attrs: { href: "#" } }, [
+                  _vm._v(
+                    "\n                                    One-way move\n                                "
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { attrs: { href: "#" } }, [
+                  _vm._v(
+                    "\n                                    Moving for individuals\n                                "
+                  )
+                ])
+              ])
+            ])
+          ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c(
-            "div",
-            {
-              staticClass:
-                "slider testimonialnew__list slick-initialized slick-slider row"
-            },
-            [
-              _c("div", { staticClass: "col-md-4" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "testimonialnew__item slick-slide slick-active"
-                  },
-                  [
-                    _c("div", { staticClass: "testimonialText" }, [
-                      _c("p", { staticClass: "testimonialtext__txt" }, [
-                        _c("i", { staticClass: "fa fa-quote-left" }),
-                        _vm._v(
-                          "\r\n                                    On a utiliser les services de fretbay pour demenager de paris au vaucluse. On a choisi tripfret comme ils avais un tarf tres interessant. Le chaffeur ...\r\n                                    "
-                        ),
-                        _c("i", { staticClass: "fa fa-quote-right" })
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "commenterName" }, [
-                        _c("span", { staticClass: "date" }, [
-                          _vm._v(
-                            "\r\n\t\t\t\t\t\t\t\t\t\t\tDate: 07/02/2021\r\n\t\t\t\t\t\t\t\t\t\t"
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "reviewer" }, [
-                          _vm._v(
-                            "\r\n                                        Ghassan\r\n                                    "
-                          )
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "rating" }, [
-                      _c("p", [
-                        _c("strong", [_vm._v("100")]),
-                        _vm._v("%\r\n                                ")
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "ratingBlock" }, [
-                        _c("img", { attrs: { src: "/images/star-on.png" } }),
-                        _vm._v(" "),
-                        _c("img", { attrs: { src: "/images/star-on.png" } }),
-                        _vm._v(" "),
-                        _c("img", { attrs: { src: "/images/star-on.png" } }),
-                        _vm._v(" "),
-                        _c("img", { attrs: { src: "/images/star-on.png" } }),
-                        _vm._v(" "),
-                        _c("img", { attrs: { src: "/images/star-half.png" } })
-                      ])
-                    ])
-                  ]
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-4" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "testimonialnew__item slick-slide slick-active"
-                  },
-                  [
-                    _c("div", { staticClass: "testimonialText" }, [
-                      _c("p", { staticClass: "testimonialtext__txt" }, [
-                        _c("i", { staticClass: "fa fa-quote-left" }),
-                        _vm._v(
-                          "\r\n                                    On a utiliser les services de fretbay pour demenager de paris au vaucluse. On a choisi tripfret comme ils avais un tarf tres interessant. Le chaffeur ...\r\n                                    "
-                        ),
-                        _c("i", { staticClass: "fa fa-quote-right" })
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "commenterName" }, [
-                        _c("span", { staticClass: "date" }, [
-                          _vm._v(
-                            "\r\n\t\t\t\t\t\t\t\t\t\t\tDate: 07/02/2021\r\n\t\t\t\t\t\t\t\t\t\t"
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "reviewer" }, [
-                          _vm._v(
-                            "\r\n                                        Ghassan\r\n                                    "
-                          )
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "rating" }, [
-                      _c("p", [
-                        _c("strong", [_vm._v("100")]),
-                        _vm._v("%\r\n                                ")
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "ratingBlock" }, [
-                        _c("img", { attrs: { src: "/images/star-on.png" } }),
-                        _vm._v(" "),
-                        _c("img", { attrs: { src: "/images/star-on.png" } }),
-                        _vm._v(" "),
-                        _c("img", { attrs: { src: "/images/star-on.png" } }),
-                        _vm._v(" "),
-                        _c("img", { attrs: { src: "/images/star-on.png" } }),
-                        _vm._v(" "),
-                        _c("img", { attrs: { src: "/images/star-half.png" } })
-                      ])
-                    ])
-                  ]
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-4" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "testimonialnew__item slick-slide slick-active"
-                  },
-                  [
-                    _c("div", { staticClass: "testimonialText" }, [
-                      _c("p", { staticClass: "testimonialtext__txt" }, [
-                        _c("i", { staticClass: "fa fa-quote-left" }),
-                        _vm._v(
-                          "\r\n                                    On a utiliser les services de fretbay pour demenager de paris au vaucluse. On a choisi tripfret comme ils avais un tarf tres interessant. Le chaffeur ...\r\n                                    "
-                        ),
-                        _c("i", { staticClass: "fa fa-quote-right" })
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "commenterName" }, [
-                        _c("span", { staticClass: "date" }, [
-                          _vm._v(
-                            "\r\n\t\t\t\t\t\t\t\t\t\t\tDate: 07/02/2021\r\n\t\t\t\t\t\t\t\t\t\t"
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "reviewer" }, [
-                          _vm._v(
-                            "\r\n                                        Ghassan\r\n                                    "
-                          )
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "rating" }, [
-                      _c("p", [
-                        _c("strong", [_vm._v("100")]),
-                        _vm._v("%\r\n                                ")
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "ratingBlock" }, [
-                        _c("img", { attrs: { src: "/images/star-on.png" } }),
-                        _vm._v(" "),
-                        _c("img", { attrs: { src: "/images/star-on.png" } }),
-                        _vm._v(" "),
-                        _c("img", { attrs: { src: "/images/star-on.png" } }),
-                        _vm._v(" "),
-                        _c("img", { attrs: { src: "/images/star-on.png" } }),
-                        _vm._v(" "),
-                        _c("img", { attrs: { src: "/images/star-half.png" } })
-                      ])
-                    ])
-                  ]
-                )
-              ])
-            ]
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "tabs-footer-section " }, [
-        _c("input", {
-          attrs: { type: "radio", name: "tab", id: "tab-1", checked: "" }
-        }),
-        _vm._v(" "),
-        _c("label", { attrs: { for: "tab-1" } }, [_vm._v("Moves")]),
-        _vm._v(" "),
-        _c("input", { attrs: { type: "radio", name: "tab", id: "tab-2" } }),
-        _vm._v(" "),
-        _c("label", { attrs: { for: "tab-2" } }, [_vm._v("Moves by city")]),
-        _vm._v(" "),
-        _c("input", { attrs: { type: "radio", name: "tab", id: "tab-3" } }),
-        _vm._v(" "),
-        _c("label", { attrs: { for: "tab-3" } }, [_vm._v("Transport")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "content" }, [
-          _c("article", { staticClass: "tab-1" }, [
-            _c("div", { staticClass: "container" }, [
+        _c("article", { staticClass: "tab-2" }, [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "row" }, [
               _c("ul", { staticClass: "col-md-4" }, [
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
                     _vm._v(
-                      "\r\n                                    Moving cheaply\r\n                                "
+                      "\n                                        Move from Hamptworth to Codnor\n                                    "
                     )
                   ])
                 ]),
@@ -62197,7 +61880,7 @@ var staticRenderFns = [
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
                     _vm._v(
-                      "\r\n                                    Estimating your move with FretBay\r\n                                "
+                      "\n                                        Move from Foscott to Heacham\n                                    "
                     )
                   ])
                 ]),
@@ -62205,7 +61888,7 @@ var staticRenderFns = [
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
                     _vm._v(
-                      "\r\n                                    Moving when you're on your own\r\n                                "
+                      "\n                                        Move from Goldthorn Park to Troway\n                                    "
                     )
                   ])
                 ]),
@@ -62213,7 +61896,7 @@ var staticRenderFns = [
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
                     _vm._v(
-                      "\r\n                                    An optimized move in Europe\r\n                                "
+                      "\n                                        Move from Chislet to Wackerfield\n                                    "
                     )
                   ])
                 ]),
@@ -62221,7 +61904,7 @@ var staticRenderFns = [
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
                     _vm._v(
-                      "\r\n                                    Grouped moving, a system with many advantages\r\n                                "
+                      "\n                                        Move from Asserby to Marton\n                                    "
                     )
                   ])
                 ]),
@@ -62229,7 +61912,7 @@ var staticRenderFns = [
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
                     _vm._v(
-                      "\r\n                                    Moving your furniture in complete serenity\r\n                                "
+                      "\n                                        Move from Invergowrie to Sellafirth\n                                    "
                     )
                   ])
                 ]),
@@ -62237,336 +61920,116 @@ var staticRenderFns = [
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
                     _vm._v(
-                      "\r\n                                    Rent the right truck for your move\r\n                                "
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [
-                    _vm._v(
-                      "\r\n                                    Moving for students\r\n                                "
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [
-                    _vm._v(
-                      "\r\n                                    One-way move\r\n                                "
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [
-                    _vm._v(
-                      "\r\n                                    Moving for individuals\r\n                                "
+                      "\n                                        Move from Ruddington to Creeting St Peter\n                                    "
                     )
                   ])
                 ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("article", { staticClass: "tab-2" }, [
-            _c("div", { staticClass: "container" }, [
-              _c("div", { staticClass: "row" }, [
-                _c("ul", { staticClass: "col-md-4" }, [
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _vm._v(
-                        "\r\n                                        Move from Hamptworth to Codnor\r\n                                    "
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _vm._v(
-                        "\r\n                                        Move from Foscott to Heacham\r\n                                    "
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _vm._v(
-                        "\r\n                                        Move from Goldthorn Park to Troway\r\n                                    "
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _vm._v(
-                        "\r\n                                        Move from Chislet to Wackerfield\r\n                                    "
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _vm._v(
-                        "\r\n                                        Move from Asserby to Marton\r\n                                    "
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _vm._v(
-                        "\r\n                                        Move from Invergowrie to Sellafirth\r\n                                    "
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _vm._v(
-                        "\r\n                                        Move from Ruddington to Creeting St Peter\r\n                                    "
-                      )
-                    ])
+              ]),
+              _vm._v(" "),
+              _c("ul", { staticClass: "col-md-4" }, [
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v(
+                      "\n                                        Move from Lower Stanton St Quintin to Wareham\n                                    "
+                    )
                   ])
                 ]),
                 _vm._v(" "),
-                _c("ul", { staticClass: "col-md-4" }, [
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _vm._v(
-                        "\r\n                                        Move from Lower Stanton St Quintin to Wareham\r\n                                    "
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _vm._v(
-                        "\r\n                                        Move from Longborough to Rossbrick Glebe\r\n                                    "
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _vm._v(
-                        "\r\n                                        Move from Oving to Hadstock\r\n                                    "
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _vm._v(
-                        "\r\n                                        Move from Duggleby to Craigstrome\r\n                                    "
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _vm._v(
-                        "\r\n                                        Move from Ballyronan to Bredbury\r\n                                    "
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _vm._v(
-                        "\r\n                                        Move from Swineshead to Oxborough\r\n                                    "
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _vm._v(
-                        "\r\n                                        Move from Hillfield to Gayle\r\n                                    "
-                      )
-                    ])
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v(
+                      "\n                                        Move from Longborough to Rossbrick Glebe\n                                    "
+                    )
                   ])
                 ]),
                 _vm._v(" "),
-                _c("ul", { staticClass: "col-md-4" }, [
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _vm._v(
-                        "\r\n                                        Move from Dogsthorpe to Laverton\r\n                                    "
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _vm._v(
-                        "\r\n                                        Move from Townsend Fold to Beeby\r\n                                    "
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _vm._v(
-                        "\r\n                                        Move from Purslow to Maker\r\n                                    "
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _vm._v(
-                        "\r\n                                        Move from Great Bricett to Clawthorpe\r\n                                    "
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _vm._v(
-                        "\r\n                                        Move from Shirley to London Gatwick Airport\r\n                                    "
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _vm._v(
-                        "\r\n                                        Move from Appleton to Hengrave\r\n                                    "
-                      )
-                    ])
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v(
+                      "\n                                        Move from Oving to Hadstock\n                                    "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v(
+                      "\n                                        Move from Duggleby to Craigstrome\n                                    "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v(
+                      "\n                                        Move from Ballyronan to Bredbury\n                                    "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v(
+                      "\n                                        Move from Swineshead to Oxborough\n                                    "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v(
+                      "\n                                        Move from Hillfield to Gayle\n                                    "
+                    )
                   ])
                 ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("article", { staticClass: "tab-3" }, [
-            _c("div", { staticClass: "container" }, [
-              _c("div", { staticClass: "row" }, [
-                _c("ul", { staticClass: "col-md-4" }, [
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _vm._v(
-                        "\r\n                                        Horse transport\r\n                                    "
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _vm._v(
-                        "\r\n                                        Animal transport\r\n                                    "
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _vm._v(
-                        "\r\n                                        low cost car transport\r\n                                    "
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _vm._v(
-                        "\r\n                                        Low cost motorcycle transport\r\n                                    "
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _vm._v(
-                        "\r\n                                        Piano\r\n                                    "
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _vm._v(
-                        "\r\n                                        Furniture transport\r\n                                    "
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _vm._v(
-                        "\r\n                                        Commercial goods\r\n                                    "
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _vm._v(
-                        "\r\n                                        Bulky parcel\r\n                                    "
-                      )
-                    ])
+              ]),
+              _vm._v(" "),
+              _c("ul", { staticClass: "col-md-4" }, [
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v(
+                      "\n                                        Move from Dogsthorpe to Laverton\n                                    "
+                    )
                   ])
                 ]),
                 _vm._v(" "),
-                _c("ul", { staticClass: "col-md-4" }, [
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _vm._v(
-                        "\r\n                                        Household appliances\r\n                                    "
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _vm._v(
-                        "\r\n                                        Parcel transport\r\n                                    "
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _vm._v(
-                        "\r\n                                        Container transport\r\n                                    "
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _vm._v(
-                        "\r\n                                        Fragile objects\r\n                                    "
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _vm._v(
-                        "\r\n                                        Boat transport\r\n                                    "
-                      )
-                    ])
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v(
+                      "\n                                        Move from Townsend Fold to Beeby\n                                    "
+                    )
                   ])
                 ]),
                 _vm._v(" "),
-                _c("ul", { staticClass: "col-md-4 blue" }, [
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _vm._v(
-                        "\r\n                                        FretBay, the online freight platform\r\n                                    "
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _vm._v(
-                        "\r\n                                        Join our network of movers\r\n                                    "
-                      )
-                    ])
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v(
+                      "\n                                        Move from Purslow to Maker\n                                    "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v(
+                      "\n                                        Move from Great Bricett to Clawthorpe\n                                    "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v(
+                      "\n                                        Move from Shirley to London Gatwick Airport\n                                    "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v(
+                      "\n                                        Move from Appleton to Hengrave\n                                    "
+                    )
                   ])
                 ])
               ])
@@ -62574,8 +62037,140 @@ var staticRenderFns = [
           ])
         ]),
         _vm._v(" "),
-        _c("br", { staticClass: "clear:both" })
-      ])
+        _c("article", { staticClass: "tab-3" }, [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("ul", { staticClass: "col-md-4" }, [
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v(
+                      "\n                                        Horse transport\n                                    "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v(
+                      "\n                                        Animal transport\n                                    "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v(
+                      "\n                                        low cost car transport\n                                    "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v(
+                      "\n                                        Low cost motorcycle transport\n                                    "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v(
+                      "\n                                        Piano\n                                    "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v(
+                      "\n                                        Furniture transport\n                                    "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v(
+                      "\n                                        Commercial goods\n                                    "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v(
+                      "\n                                        Bulky parcel\n                                    "
+                    )
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("ul", { staticClass: "col-md-4" }, [
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v(
+                      "\n                                        Household appliances\n                                    "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v(
+                      "\n                                        Parcel transport\n                                    "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v(
+                      "\n                                        Container transport\n                                    "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v(
+                      "\n                                        Fragile objects\n                                    "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v(
+                      "\n                                        Boat transport\n                                    "
+                    )
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("ul", { staticClass: "col-md-4 blue" }, [
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v(
+                      "\n                                        FretBay, the online freight platform\n                                    "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v(
+                      "\n                                        Join our network of movers\n                                    "
+                    )
+                  ])
+                ])
+              ])
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("br", { staticClass: "clear:both" })
     ])
   }
 ]
@@ -84359,6 +83954,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/desktop/components/LatestTransactionItem.vue":
+/*!*******************************************************************!*\
+  !*** ./resources/js/desktop/components/LatestTransactionItem.vue ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _LatestTransactionItem_vue_vue_type_template_id_aaae137c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./LatestTransactionItem.vue?vue&type=template&id=aaae137c& */ "./resources/js/desktop/components/LatestTransactionItem.vue?vue&type=template&id=aaae137c&");
+/* harmony import */ var _LatestTransactionItem_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./LatestTransactionItem.vue?vue&type=script&lang=js& */ "./resources/js/desktop/components/LatestTransactionItem.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _LatestTransactionItem_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _LatestTransactionItem_vue_vue_type_template_id_aaae137c___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _LatestTransactionItem_vue_vue_type_template_id_aaae137c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/desktop/components/LatestTransactionItem.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/desktop/components/LatestTransactionItem.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************!*\
+  !*** ./resources/js/desktop/components/LatestTransactionItem.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_LatestTransactionItem_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./LatestTransactionItem.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/LatestTransactionItem.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_LatestTransactionItem_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/desktop/components/LatestTransactionItem.vue?vue&type=template&id=aaae137c&":
+/*!**************************************************************************************************!*\
+  !*** ./resources/js/desktop/components/LatestTransactionItem.vue?vue&type=template&id=aaae137c& ***!
+  \**************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_LatestTransactionItem_vue_vue_type_template_id_aaae137c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./LatestTransactionItem.vue?vue&type=template&id=aaae137c& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/LatestTransactionItem.vue?vue&type=template&id=aaae137c&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_LatestTransactionItem_vue_vue_type_template_id_aaae137c___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_LatestTransactionItem_vue_vue_type_template_id_aaae137c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/desktop/components/LatestTransactions.vue":
 /*!****************************************************************!*\
   !*** ./resources/js/desktop/components/LatestTransactions.vue ***!
@@ -84811,6 +84475,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/desktop/components/TopMoverItem.vue":
+/*!**********************************************************!*\
+  !*** ./resources/js/desktop/components/TopMoverItem.vue ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _TopMoverItem_vue_vue_type_template_id_cce922d2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TopMoverItem.vue?vue&type=template&id=cce922d2& */ "./resources/js/desktop/components/TopMoverItem.vue?vue&type=template&id=cce922d2&");
+/* harmony import */ var _TopMoverItem_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TopMoverItem.vue?vue&type=script&lang=js& */ "./resources/js/desktop/components/TopMoverItem.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _TopMoverItem_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _TopMoverItem_vue_vue_type_template_id_cce922d2___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _TopMoverItem_vue_vue_type_template_id_cce922d2___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/desktop/components/TopMoverItem.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/desktop/components/TopMoverItem.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/desktop/components/TopMoverItem.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TopMoverItem_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./TopMoverItem.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/TopMoverItem.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TopMoverItem_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/desktop/components/TopMoverItem.vue?vue&type=template&id=cce922d2&":
+/*!*****************************************************************************************!*\
+  !*** ./resources/js/desktop/components/TopMoverItem.vue?vue&type=template&id=cce922d2& ***!
+  \*****************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TopMoverItem_vue_vue_type_template_id_cce922d2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./TopMoverItem.vue?vue&type=template&id=cce922d2& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/TopMoverItem.vue?vue&type=template&id=cce922d2&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TopMoverItem_vue_vue_type_template_id_cce922d2___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TopMoverItem_vue_vue_type_template_id_cce922d2___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/desktop/components/TopMovers.vue":
 /*!*******************************************************!*\
   !*** ./resources/js/desktop/components/TopMovers.vue ***!
@@ -84875,6 +84608,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TopMovers_vue_vue_type_template_id_2a4a26bf___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TopMovers_vue_vue_type_template_id_2a4a26bf___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/desktop/components/testimonialnew__item.vue":
+/*!******************************************************************!*\
+  !*** ./resources/js/desktop/components/testimonialnew__item.vue ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _testimonialnew_item_vue_vue_type_template_id_42c7fb2c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./testimonialnew__item.vue?vue&type=template&id=42c7fb2c& */ "./resources/js/desktop/components/testimonialnew__item.vue?vue&type=template&id=42c7fb2c&");
+/* harmony import */ var _testimonialnew_item_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./testimonialnew__item.vue?vue&type=script&lang=js& */ "./resources/js/desktop/components/testimonialnew__item.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _testimonialnew_item_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _testimonialnew_item_vue_vue_type_template_id_42c7fb2c___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _testimonialnew_item_vue_vue_type_template_id_42c7fb2c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/desktop/components/testimonialnew__item.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/desktop/components/testimonialnew__item.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************!*\
+  !*** ./resources/js/desktop/components/testimonialnew__item.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_testimonialnew_item_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./testimonialnew__item.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/testimonialnew__item.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_testimonialnew_item_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/desktop/components/testimonialnew__item.vue?vue&type=template&id=42c7fb2c&":
+/*!*************************************************************************************************!*\
+  !*** ./resources/js/desktop/components/testimonialnew__item.vue?vue&type=template&id=42c7fb2c& ***!
+  \*************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_testimonialnew_item_vue_vue_type_template_id_42c7fb2c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./testimonialnew__item.vue?vue&type=template&id=42c7fb2c& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/desktop/components/testimonialnew__item.vue?vue&type=template&id=42c7fb2c&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_testimonialnew_item_vue_vue_type_template_id_42c7fb2c___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_testimonialnew_item_vue_vue_type_template_id_42c7fb2c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
