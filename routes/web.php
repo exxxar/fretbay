@@ -48,7 +48,7 @@ Route::view("/profile-transporter-wizard-step-5", "desktop.pages.profile.transpo
 
 Route::view("/login", "desktop.pages.login")->name("desktop.login");
 
-Route::group(['middleware' => 'role:web-developer'], function () {
+Route::group(['middleware' => ['auth','role:web-developer']], function () {
     Route::get('/dashboard', function () {
         return 'Добро пожаловать, Веб-разработчик';
     });
