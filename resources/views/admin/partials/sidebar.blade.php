@@ -1,8 +1,6 @@
 <div class="c-sidebar c-sidebar-dark c-sidebar-fixed c-sidebar-lg-show" id="sidebar">
     <div class="c-sidebar-brand">
-        <img class="c-sidebar-brand-full main-logo" src="/images/logo.svg" alt="AlloTrans Logo">
-        <img class="c-sidebar-brand-minimized main-logo" src="/images/logo.svg" width="118" height="46"
-             alt="AlloTrans Logo">
+        <img class="c-sidebar-brand-full main-logo" src="/images/logo.svg" width="118" height="46" alt="AlloTrans Logo">
     </div>
     <ul class="c-sidebar-nav">
         <li class="c-sidebar-nav-item">
