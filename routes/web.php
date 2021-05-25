@@ -115,6 +115,10 @@ Route::group(['middleware' => ['auth','role:admin']], function () {
 });
 Auth::routes();
 
+
+Route::post("/logout", "AdminSidebarController@logout")->name("logout");
+
+
 Route::get('/home', 'HomeController@index')->name('home');
 Route::group([
     'middleware' => 'auth',
