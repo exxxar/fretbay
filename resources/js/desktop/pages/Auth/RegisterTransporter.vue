@@ -40,30 +40,25 @@
                                 <form action="#" id="signUpForm1">
                                     <div class="signUpForm1-inputs">
                                         <input type="text" class="signUpForm1__input signUpForm1__input-first"
-                                               placeholder="Name of your company">
-                                        <input type="text" class="signUpForm1__input" placeholder="First name">
-                                        <input type="text" class="signUpForm1__input" placeholder="Name">
-                                        <input type="text" class="signUpForm1__input" placeholder="Email">
-                                        <input type="text" class="signUpForm1__input" placeholder="Telephone number">
-                                        <input type="text" class="signUpForm1__input" placeholder="Mobile phone">
+                                               v-model="company_name" placeholder="Name of your company">
+                                        <input type="text" class="signUpForm1__input" v-model="first_name" placeholder="First name">
+                                        <input type="text" class="signUpForm1__input" v-model="name" placeholder="Name">
+                                        <input type="text" class="signUpForm1__input" v-model="email" placeholder="Email">
+                                        <input type="text" class="signUpForm1__input" v-model="phone" placeholder="Telephone number">
+                                        <input type="text" class="signUpForm1__input" v-model="mobile" placeholder="Mobile phone">
 
 
                                         <div class="size-container">
-                                            <select id="country" name="country">
-                                                <option value="Austria">Austria</option>
-                                                <option value="Belgium">Belgium</option>
-                                                <option value="Bulgaria">Bulgaria</option>
+                                            <select id="country" name="country" placeholder="Country" v-model="country_id" v-on:change="selectCountry(country_id);">
+                                                <option v-for="country in countries" :label="country.title">{{country.id}}</option>
                                             </select>
                                         </div>
 
-                                        <input type="text" class="signUpForm1__input" placeholder="Postal Code or City">
+                                        <input type="text" class="signUpForm1__input" v-model="postal" placeholder="Postal Code or City">
 
                                         <div class="size-container">
-                                            <select id="region" name="region">
-                                                <option value>Region</option>
-                                                <option value="Bruxelles-Capitale">Bruxelles-Capitale</option>
-                                                <option value="Région Flamande">Région Flamande</option>
-                                                <option value="Région Wallonne">Région Wallonne</option>
+                                            <select id="region" v-model="region_id" name="region" >
+                                                <option v-bind=region v-for="region in regions" :label="region.title">{{region.id}}</option>
                                             </select>
                                         </div>
                                         <div class="size-container size-container-expertise">
@@ -106,9 +101,9 @@
 
 
 
-                                        <input type="text" class="signUpForm1__input" placeholder="Username">
-                                        <input type="text" class="signUpForm1__input" placeholder="Password">
-                                        <input type="text" class="signUpForm1__input" placeholder="Confirm password">
+                                        <input type="text" class="signUpForm1__input" v-model="username"  placeholder="Username">
+                                        <input type="text" class="signUpForm1__input" v-model="password" placeholder="Password">
+                                        <input type="text" class="signUpForm1__input"  v-model="password_confimation" placeholder="Confirm password">
                                     </div>
 
                                     <div class="form-text">
@@ -124,12 +119,47 @@
                 </div>
             </div>
         </div>
-
-        </div>
     </section>
-</template>
+</template> 
 <script>
     export default {
-
+        data() {
+            return {
+                countries: [],
+                country_id: 0,
+                regions: [],
+                company_name: "",
+                first_name:"",
+                name:"",
+                email:"",
+                phone:"",
+                mobile:"",
+                postal:"",
+                region_id:"",
+                area_of_expertise:"",
+                username:"",
+                password:"",
+                password_confimation:""
+            }
+            },
+        created: function () {
+            axios
+                .get('locations/countries')
+                .then(response => {
+                    this.countries = response.data;
+                    
+                });
+        },
+        methods: {
+            selectCountry: function (id) {
+                console.log(this.country);
+                axios
+                .get('/locations/cities/'+id)
+                .then(response => {
+                    this.regions = response.data;
+                    
+                });
+            }
+        }
     }
 </script>

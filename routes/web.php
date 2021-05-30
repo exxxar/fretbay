@@ -113,7 +113,7 @@ Route::group(['middleware' => ['auth','role:admin']], function () {
         });
     });
 });
-Auth::routes();
+// Auth::routes();
 
 
 Route::post("/logout", "AdminSidebarController@logout")->name("logout");
