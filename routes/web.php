@@ -45,6 +45,12 @@ Route::view("/profile-transporter-wizard-step-2", "desktop.pages.profile.transpo
 Route::view("/profile-transporter-wizard-step-3", "desktop.pages.profile.transporter.profile-transporter-wizard-step-3")->name("desktop.profile-transporter-wizard-step-3");
 Route::view("/profile-transporter-wizard-step-4", "desktop.pages.profile.transporter.profile-transporter-wizard-step-4")->name("desktop.profile-transporter-wizard-step-4");
 Route::view("/profile-transporter-wizard-step-5", "desktop.pages.profile.transporter.profile-transporter-wizard-step-5")->name("desktop.profile-transporter-wizard-step-5");
+//Роут на редактирование профиля перевозчика
+Route::view("/profile-my-account", "desktop.pages.profile.transporter.my-account")->name("desktop.my-account");
+Route::view("/profile-my-company", "desktop.pages.profile.transporter.my-company")->name("desktop.my-company");
+Route::view("/profile-legal-documents", "desktop.pages.profile.transporter.legal-documents")->name("desktop.legal-documents");
+Route::view("/profile-my-vehicles", "desktop.pages.profile.transporter.my-vehicles")->name("desktop.my-vehicles");
+Route::view("/profile-settings", "desktop.pages.profile.transporter.settings")->name("desktop.settings");
 
 Route::view("/login", "desktop.pages.login")->name("desktop.login");
 
@@ -53,7 +59,7 @@ Route::group(['middleware' => 'role:web-developer'], function () {
         return 'Добро пожаловать, Веб-разработчик';
     });
 });
-//не админ 
+//не админ
 //заходим на /admin => admin/login
 Route::get("/admin", "AdminSidebarController@login")->name("admin.login");
 
