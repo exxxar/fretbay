@@ -142,6 +142,10 @@ h1 {
     }
 }
 
+#first {
+    height: 768px;
+}
+
 .first__btn {
     font-size: 20px;
     padding: 17px 36px;
@@ -694,7 +698,7 @@ h1 {
         height: 53px;
         margin-right: 12px;
         position: relative;
-        left: 26.5%;
+        left: 20%;
         text-align: center;
     }
 
@@ -7790,6 +7794,9 @@ body.lock {
     }
     #first {
         padding-top: 1px;
+    }
+    #first .container {
+        padding-top: 20%;
     }
     #default-section .section-header {
         width: 100%;

@@ -7715,6 +7715,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
@@ -55260,9 +55262,13 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("form", { attrs: { action: "/find-transporter" } }, [
-      _c("button", { staticClass: "first__btn", attrs: { type: "submit" } }, [
-        _vm._v("\n                    REQUEST A QUOTE\n                ")
+    return _c("div", { staticClass: "row justify-content-center" }, [
+      _c("form", { attrs: { action: "/find-transporter" } }, [
+        _c("button", { staticClass: "first__btn", attrs: { type: "submit" } }, [
+          _vm._v(
+            "\n                        REQUEST A QUOTE\n                    "
+          )
+        ])
       ])
     ])
   }
@@ -61532,7 +61538,7 @@ var staticRenderFns = [
     return _c("section", { attrs: { id: "seekHeader" } }, [
       _c("div", { staticClass: "container" }, [
         _c("ul", { staticClass: "row seekheader__list" }, [
-          _c("div", { staticClass: "col-md-3 col-sm-6" }, [
+          _c("div", { staticClass: "col-lg-3 col-md-6 col-sm-6" }, [
             _c(
               "li",
               { staticClass: "seekheader__item seekheader__item-first" },
@@ -61554,7 +61560,7 @@ var staticRenderFns = [
             )
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "col-md-3 col-sm-6" }, [
+          _c("div", { staticClass: "col-lg-3 col-md-6 col-sm-6" }, [
             _c("li", { staticClass: "seekheader__item" }, [
               _c("i", { staticClass: "icon seek2" }),
               _vm._v(" "),
@@ -61572,7 +61578,7 @@ var staticRenderFns = [
             ])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "col-md-3 col-sm-6" }, [
+          _c("div", { staticClass: "col-lg-3 col-md-6  col-sm-6" }, [
             _c("li", { staticClass: "seekheader__item" }, [
               _c("i", { staticClass: "icon seek3" }),
               _vm._v(" "),
@@ -61590,7 +61596,7 @@ var staticRenderFns = [
             ])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "col-md-3 col-sm-6" }, [
+          _c("div", { staticClass: "col-lg-3 col-md-6 col-sm-6" }, [
             _c("li", { staticClass: "seekheader__item" }, [
               _c("i", { staticClass: "icon seek4" }),
               _vm._v(" "),

@@ -9,11 +9,13 @@
                     The leading marketplace for cheap transport and moving services
                 </span>
                 </h1>
-                <form action="/find-transporter">
-                    <button type="submit" class="first__btn">
-                        REQUEST A QUOTE
-                    </button>
-                </form>
+                <div class="row justify-content-center">
+                    <form action="/find-transporter">
+                        <button type="submit" class="first__btn">
+                            REQUEST A QUOTE
+                        </button>
+                    </form>
+                </div>
                 <div class="row">
                     <div class="col-md-12 go-down">
                         <a id="goDown" @click="goDown">

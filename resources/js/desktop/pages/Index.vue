@@ -3,7 +3,7 @@
         <section id="seekHeader">
             <div class="container">
                 <ul class="row seekheader__list">
-                    <div class="col-md-3 col-sm-6">
+                    <div class="col-lg-3 col-md-6 col-sm-6">
                         <li class="seekheader__item seekheader__item-first">
                             <i class="icon seek1"></i>
                             <p class="seekheader__title">
@@ -14,7 +14,7 @@
                             </div>
                         </li>
                     </div>
-                    <div class="col-md-3 col-sm-6">
+                    <div class="col-lg-3 col-md-6 col-sm-6">
                         <li class="seekheader__item">
                             <i class="icon seek2"></i>
                             <p class="seekheader__title">
@@ -25,7 +25,7 @@
                             </div>
                         </li>
                     </div>
-                    <div class="col-md-3 col-sm-6">
+                    <div class="col-lg-3 col-md-6  col-sm-6">
                         <li class="seekheader__item">
                             <i class="icon seek3"></i>
                             <p class="seekheader__title">
@@ -36,7 +36,7 @@
                             </div>
                         </li>
                     </div>
-                    <div class="col-md-3 col-sm-6">
+                    <div class="col-lg-3 col-md-6 col-sm-6">
                         <li class="seekheader__item">
                             <i class="icon seek4"></i>
                             <p class="seekheader__title">
