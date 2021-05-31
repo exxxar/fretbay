@@ -22,7 +22,7 @@ class AdminSidebarController extends Controller
     public function logout()
     {
         \Auth::logout();
-        redirect()->route('desktop.index');
+        // redirect()->route('desktop.index');
     }
     //objects
     public function objects_categories()
