@@ -1,4 +1,5 @@
 {
+
     "/js/admin/app.js": "/js/admin/app.js",
     "/js/admin/media.js": "/js/admin/media.js",
     "/js/admin/media-cropp.js": "/js/admin/media-cropp.js",
@@ -7,6 +8,7 @@
     "/js/desktop/app.js": "/js/desktop/app.js",
     "/css/desktop/app.css": "/css/desktop/app.css",
     "/css/admin/app.css": "/css/admin/app.css",
+
     "/css/admin/coreui-chartjs.css": "/css/admin/coreui-chartjs.css?id=f2ae400edf860e4b91f1",
     "/css/admin/cropper.css": "/css/admin/cropper.css?id=27f22130a15bf5470243",
     "/js/admin/coreui-utils.js": "/js/admin/coreui-utils.js?id=d2b193e4d4dc7c5ec9a3",

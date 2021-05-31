@@ -21,12 +21,15 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::group(["prefix" => "desktop"], function () {
     Route::group(["prefix" => "v1"], function () {
-        Route::get("/get-type-of-transport", \DictionaryController::class . "@typeOfTransport");
-        Route::get("/get-type-of-object", \DictionaryController::class . "@typeOfObject");
-        Route::get("/get-type-of-object/{category_id}", \DictionaryController::class . "@typeOfObjectByCategory");
-        Route::get("/get-vehicles", \DictionaryController::class . "@vehicles");
-        Route::get("/get-latest-transactions", \DictionaryController::class . "@latestTransactions");
-        Route::get("/get-top-movers", \DictionaryController::class . "@topMovers");
+
+        Route::get("/get-type-of-transport", DictionaryController::class . "@typeOfTransport");
+        Route::get("/get-type-of-object", DictionaryController::class . "@typeOfObject");
+        Route::get("/get-type-of-object/{category_id}", DictionaryController::class . "@typeOfObjectByCategory");
+        Route::get("/get-vehicles", DictionaryController::class . "@vehicles");
+        Route::get("/get-latest-transactions", DictionaryController::class . "@latestTransactions");
+        Route::get("/get-top-movers", DictionaryController::class . "@topMovers");
+        Route::post("/register", RegisterController::class . "@createUser");
+        Route::post("/login", LoginController::class . "@login");
 
         Route::group(["prefix"=>"cars"],function(){
            Route::get("/categories", \DictionaryController::class."@carsCategories");
@@ -45,6 +48,10 @@ Route::group(["prefix" => "desktop"], function () {
             Route::get("/route/{fA}/{lA}/{fB}/{lB}", \DictionaryController::class."@getRoute");
             Route::get("/coords/{address}", \DictionaryController::class."@getCoords");
         });
+
     });
 });
+
+
+
 
