@@ -28,6 +28,7 @@ Route::group(["prefix" => "desktop"], function () {
         Route::get("/get-latest-transactions", DictionaryController::class . "@latestTransactions");
         Route::get("/get-top-movers", DictionaryController::class . "@topMovers");
         Route::post("/register", RegisterController::class . "@createUser");
+        Route::post("/login", LoginController::class . "@login");
     });
 });
 
