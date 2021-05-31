@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 
@@ -34,7 +35,7 @@ Route::view("/fraud-prevention", "desktop.pages.fraud-prevention")->name("deskto
 
 Route::view("/register", "desktop.pages.register")->name("desktop.register");
 Route::view("/register-transporter", "desktop.pages.register-transporter")->name("desktop.register-transporter");
-Route::view("/register-user", "desktop.pages.register-user")->name("desktop.register-user");
+Route::view("/register-customer", "desktop.pages.register-customer")->name("desktop.register-customer");
 Route::view("/profile-personal-info", "desktop.pages.profile.profile-personal-info")->name("desktop.profile-personal-info");
 Route::view("/activity-listing", "desktop.pages.profile.customer.activity-listing")->name("desktop.activity-listing");
 Route::view("/listings", "desktop.pages.profile.customer.listings")->name("desktop.listings");
@@ -46,26 +47,20 @@ Route::view("/profile-transporter-wizard-step-3", "desktop.pages.profile.transpo
 Route::view("/profile-transporter-wizard-step-4", "desktop.pages.profile.transporter.profile-transporter-wizard-step-4")->name("desktop.profile-transporter-wizard-step-4");
 Route::view("/profile-transporter-wizard-step-5", "desktop.pages.profile.transporter.profile-transporter-wizard-step-5")->name("desktop.profile-transporter-wizard-step-5");
 //Роут на редактирование профиля перевозчика
-Route::view("/profile-my-account", "desktop.pages.profile.transporter.my-account")->name("desktop.my-account");
-Route::view("/profile-my-company", "desktop.pages.profile.transporter.my-company")->name("desktop.my-company");
-Route::view("/profile-legal-documents", "desktop.pages.profile.transporter.legal-documents")->name("desktop.legal-documents");
-Route::view("/profile-my-vehicles", "desktop.pages.profile.transporter.my-vehicles")->name("desktop.my-vehicles");
-Route::view("/profile-settings", "desktop.pages.profile.transporter.settings")->name("desktop.settings");
 
-Route::view("/login", "desktop.pages.login")->name("desktop.login");
-
-Route::group(['middleware' => ['auth','role:web-developer']], function () {
-    Route::get('/dashboard', function () {
-        return 'Добро пожаловать, Веб-разработчик';
-    });
+Route::group(['middleware' => ['auth', 'role:transporter'], "prefix" => "transporter"], function () {
+    Route::view("/profile-my-account", "desktop.pages.profile.transporter.my-account")->name("transporter-account");
+    Route::view("/profile-my-company", "desktop.pages.profile.transporter.my-company")->name("transporter-company");
+    Route::view("/profile-legal-documents", "desktop.pages.profile.transporter.legal-documents")->name("transporter-legal-documents");
+    Route::view("/profile-my-vehicles", "desktop.pages.profile.transporter.my-vehicles")->name("transporter-vehicles");
+    Route::view("/profile-settings", "desktop.pages.profile.transporter.settings")->name("transporter-settings");
 });
-//не админ
-//заходим на /admin => admin/login
-Route::get("/admin", "AdminSidebarController@login")->name("admin.login");
 
-//админ
-//заходим на /admin => admin
-Route::group(['middleware' => ['auth','role:admin']], function () {
+Route::group(['middleware' => ['auth', 'role:customer'], "prefix" => "customer"], function () {
+    Route::view("/profile-my-account", "desktop.pages.profile.transporter.my-account")->name("customer-account");
+});
+
+Route::group(['middleware' => ['auth', 'role:admin']], function () {
     Route::group(["prefix" => "admin"], function () {
         Route::get("/", "AdminSidebarController@index")->name("admin.index");
         Route::get("/orders", "AdminSidebarController@orders")->name("admin.orders");
@@ -115,20 +110,14 @@ Route::group(['middleware' => ['auth','role:admin']], function () {
             Route::get('/translations', 'LanguageTranslationController@index');
 
             Route::get('/', 'LanguageController@index')
-            ->name('languages.index');
+                ->name('languages.index');
         });
     });
 });
-// Auth::routes();
+
+Auth::routes();
+
+Route::post('/register-customer',\Auth\RegisterController::class.'@registerCustomer')->name("register-customer");
+Route::post('/register-transporter',\Auth\RegisterController::class.'@registerTransporter')->name("register-transporter");
 
 
-Route::post("/logout", "AdminSidebarController@logout")->name("logout");
-
-
-Route::get('/home', 'HomeController@index')->name('home');
-Route::group([
-    'middleware' => 'auth',
-], function () {
- Route::group(['middleware' => ['role:admin']], function () {
- });
-});

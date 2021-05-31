@@ -13,7 +13,7 @@ class CustomerStoreRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,10 +24,15 @@ class CustomerStoreRequest extends FormRequest
     public function rules()
     {
         return [
+            'company_name' => ['required', 'string', 'min:2', 'max:256'],
             'name' => ['required', 'string', 'min:2', 'max:256'],
-            'email' => ['required','unique:post', 'email'],
-            'phone' => ['required','numeric','min:11']
-
+            'email' => 'required|unique:users|email|required_with:email_confirmation|same:email_confirmation',
+            'email_confirmation' =>  ['required', 'email'],
+            "telephone_number_1" => ['required','unique:users,phone'],
+            "telephone_number_2" => ['required'],
+            'password' => 'min:6|required_with:password_confirmation|same:password_confirmation',
+            'password_confirmation' => 'min:6',
+            'type' => ['required']
         ];
     }
 }

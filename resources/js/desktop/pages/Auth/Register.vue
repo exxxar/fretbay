@@ -21,7 +21,7 @@
                         </div>
                     </div>
                     <div class="etape-box-btn">
-                        <a href="/register-user" class="btn-etape btn-etape-red">Click here to receive free and non-binding quotes</a>
+                        <a href="/register-customer" class="btn-etape btn-etape-red">Click here to receive free and non-binding quotes</a>
                     </div>
                 </div>
                 <div class="etape-box">

@@ -37,34 +37,43 @@
                               The registration process takes no more than a minute.
                            </span>
                                 </h3>
-                                <form action="#" id="signUpForm1" @submit.prevent="submit">
+                                <form action="/register-transporter" method="post">
+                                    <slot name="any-error"></slot>
+
+                                    <slot name="csrf"></slot>
+
                                     <div class="signUpForm1-inputs">
                                         <input type="text" class="signUpForm1__input signUpForm1__input-first"
-                                               v-model="company_name" placeholder="Name of your company">
-                                        <input type="text" class="signUpForm1__input" v-model="name" placeholder="Name">
-                                        <input type="email" class="signUpForm1__input" v-model="email" placeholder="Email">
-                                        <input type="tel" class="signUpForm1__input" v-mask="'+ ### ### #######'"  v-model="phone" placeholder="Telephone number">
-                                        <input type="tel" class="signUpForm1__input" v-mask="'+ ### ### #######'" v-model="mobile" placeholder="Mobile phone">
+                                               name="company_name" placeholder="Name of your company">
+                                        <input type="text" class="signUpForm1__input" name="first_name" placeholder="First name">
+                                        <input type="text" class="signUpForm1__input" name="second_name" placeholder="Second name">
+                                        <input type="email" class="signUpForm1__input" name="email" placeholder="Email">
+                                        <input type="email" class="signUpForm1__input" name="email_confirmation" placeholder="Email confirm">
+                                        <input type="tel" class="signUpForm1__input" v-mask="'+ ### ### #######'"  name="telephone_number_1" placeholder="Telephone number">
+                                        <input type="tel" class="signUpForm1__input" v-mask="'+ ### ### #######'" name="telephone_number_2"  placeholder="Mobile phone">
 
 
                                         <div class="size-container">
-                                            <select id="country" v-model="country_id" v-on:change="selectCountry(country_id);">
+                                            <select id="country" name="country" v-on:change="selectCountry(country_id)">
                                                 <option value="" disabled selected>Country</option>
+                                                <option value="test">Test</option>
                                                 <option v-for="country in countries" :label="country.title">{{country.id}}</option>
                                             </select>
                                         </div>
 
-                                        <input type="text" class="signUpForm1__input" v-model="postal" placeholder="Postal Code or City">
+                                        <input type="text" class="signUpForm1__input" name="postal" placeholder="Postal Code or City">
+                                        <input type="text" class="signUpForm1__input" name="city" placeholder="Your city">
 
                                         <div class="size-container">
-                                            <select id="region" v-model="region_id" name="region" >
+                                            <select id="region" name="region" >
                                                 <option value="" disabled selected>Region</option>
+                                                <option value="test" >test</option>
                                                 <option v-bind=region v-for="region in regions" :label="region.title">{{region.id}}</option>
                                             </select>
                                         </div>
                                         <!-- <div class="size-container size-container-expertise"> -->
                                             <div class="size-container size-container-expertise">
-                                            <select id="area_of_expertise" name="area_of_expertise" v-model="area_of_expertise">
+                                            <select id="area_of_expertise" name="areas_of_expertise" v-model="area_of_expertise">
                                                 <option value="" disabled selected>Your area of expertise</option>
                                                 <option value="Home equipment">Home equipment</option>
                                                 <option value="Moving">Moving</option>
@@ -76,12 +85,9 @@
 
 
 
-                                        <input type="text" class="signUpForm1__input" v-model="username"  placeholder="Username">
-                                        <input type="password" class="signUpForm1__input" v-model="password" placeholder="Password" v-on:change="pass_validate();">
-                                        <input type="password" class="signUpForm1__input"  v-model="password_confimation" placeholder="Confirm password" v-on:change="pass_validate();">
-                                        <p v-if="!password_correct" style="opacity: 0.7;" class="font-weight-bold text-danger">Пароли не совпадают.</p>
-                                        <p v-if="password_correct" style="opacity: 0.7;" class="font-weight-bold text-success">Пароли совпадают.</p>
- 
+                                        <input type="text" class="signUpForm1__input" name="username" placeholder="Username">
+                                        <input type="password" class="signUpForm1__input" name="password" placeholder="Password" v-on:change="pass_validate();">
+                                        <input type="password" class="signUpForm1__input"  name="password_confirmation" placeholder="Confirm password" v-on:change="pass_validate();">
                                     </div>
 
                                     <div class="form-text">
@@ -98,7 +104,7 @@
             </div>
         </div>
     </section>
-</template> 
+</template>
 <script>
     export default {
         data() {
@@ -125,7 +131,7 @@
                 .get('locations/countries')
                 .then(response => {
                     this.countries = response.data;
-                    
+
                 });
         },
         methods: {
@@ -135,7 +141,7 @@
                 .get('/locations/cities/'+id)
                 .then(response => {
                     this.regions = response.data;
-                    
+
                 });
             },
              pass_validate: function () {

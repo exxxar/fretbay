@@ -23,9 +23,8 @@ class CreateUsersTable extends Migration
             $table->unsignedInteger("profile_id")
                 ->references('id')
                 ->on('profiles');
-                $table->unsignedInteger("role_id")
-                ->references('id')
-                ->on('roles');
+
+            $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();
         });

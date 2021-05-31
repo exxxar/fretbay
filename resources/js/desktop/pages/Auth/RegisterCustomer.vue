@@ -14,31 +14,32 @@
                         </div>
                         <div class="col-md-6 col-sm-6">
                             <h2 class="ebu__title">
-                                Get started - it's free.
+                                Get started - it's free. 1
                                 <span>
                            The registration takes no more than a minute...
                         </span>
                             </h2>
-                            <form action="#" id="signUpForm1" @submit.prevent="submit">
+                            <slot name="any-error"></slot>
+                            <form action="/register-customer" method="post">
+                                <slot name="csrf"></slot>
                                 <div class="signUpForm1-radio">
-                                    <input type="radio" class="suf1-radio" id="radioBox01" selected>
+                                    <input type="radio" name="type" class="suf1-radio" id="radioBox01" value="individual" selected>
                                     <label for="radioBox01">You are an individual</label>
-                                    <input type="radio" class="suf1-radio" id="radioBox02" v-model="is_pro">
+                                    <input type="radio" name="type" class="suf1-radio" id="radioBox02" value="professional">
                                     <label for="radioBox02">You are a professional</label>
                                 </div>
                                 <div class="signUpForm1-inputs">
-                                    <input type="text" class="signUpForm1__input signUpForm1__input-first" v-model="company_name" placeholder="Name of your company">
-                                    <input type="email" class="signUpForm1__input signUpForm1__input-first" v-model="email" placeholder="Your email" v-on:change="email_validate();">
-                                    <input type="email" class="signUpForm1__input" v-model="email_confimation" placeholder="Confirm your email" v-on:change="email_validate();">
-                                    <p v-if="!email_correct" style="opacity: 0.7;" class="font-weight-bold text-danger">Почты не совпадают.</p>
-                                    <p v-if="email_correct" style="opacity: 0.7;" class="font-weight-bold text-success">Почты совпадают.</p>
-                                    <input type="password" class="signUpForm1__input" v-model="password" placeholder="Your password" v-on:change="pass_validate();">
-                                    <input type="password" class="signUpForm1__input" v-model="password_confimation" placeholder="Confirm your password" v-on:change="pass_validate();">
-                                    <p v-if="!password_correct" style="opacity: 0.7;" class="font-weight-bold text-danger">Пароли не совпадают.</p>
-                                    <p v-if="password_correct" style="opacity: 0.7;" class="font-weight-bold text-success">Пароли совпадают.</p>
-                                    <input type="text" class="signUpForm1__input" v-model="username" placeholder="Your Username">
-                                    <input type="tel" class="signUpForm1__input" v-mask="'+ ### ### #######'"  v-model="phone" placeholder="Your phone">
-                                    <input type="tel" class="signUpForm1__input"  v-mask="'+ ### ### #######'" v-model="mobile" placeholder="Your mobile number">
+                                    <input type="text" class="signUpForm1__input signUpForm1__input-first" name="company_name" placeholder="Name of your company">
+                                    <input type="email" class="signUpForm1__input signUpForm1__input-first" name="email"  placeholder="Your email" v-on:change="email_validate();">
+                                    <input type="email" class="signUpForm1__input" name="email_confirmation"  placeholder="Confirm your email" v-on:change="email_validate();">
+                                    <slot name="error-email"></slot>
+                                    <input type="password" class="signUpForm1__input"name="password"  placeholder="Your password" v-on:change="pass_validate();">
+                                    <input type="password" class="signUpForm1__input" name="password_confirmation"  placeholder="Confirm your password" v-on:change="pass_validate();">
+                                    <slot name="error-password"></slot>
+                                    <input type="text" class="signUpForm1__input" name="name"  placeholder="Your Username">
+                                    <input type="tel" class="signUpForm1__input" v-mask="'+ ### ### #######'"  name="telephone_number_1"  placeholder="Your phone">
+                                    <input type="tel" class="signUpForm1__input"  v-mask="'+ ### ### #######'" name="telephone_number_2"  placeholder="Your mobile number">
+                                    <slot name="error-phone"></slot>
                                 </div>
                                 <div class="signUpForm1-checkbox">
                                     <input type="checkbox" class="suf1-checkbox" id="checkBox01">
@@ -71,7 +72,7 @@
                 mobile:"",
                 username:"",
                 password:"",
-                password_confimation:"",         
+                password_confimation:"",
                 password_correct: false,
                 email_correct: false,
                 is_pro: false

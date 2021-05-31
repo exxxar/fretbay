@@ -18,21 +18,28 @@
                                 <h2 class="ebu__title">
                                     FretBay Identification
                                 </h2>
-                                <form action="#" id="signUpForm1">
+                                <form action="/login" method="post">
+                                   <slot name="csrf"></slot>
+
                                     <div class="signUpForm1-inputs">
                                         <div class="log-row input-row">
                                             <i class="glyphicon glyphicon-user"></i>
-                                            <span id="wp-pseudo2">
-                                    <input type="text" class="signUpForm1__input signUpForm1__input-first" v-model="login" placeholder="Login or Email">
-                                     <p v-if="!login_correct" style="opacity: 0.7;" class="font-weight-bold text-danger">Неверный логин.</p>
-                                 </span>
+
+                                            <input type="email" class="signUpForm1__input signUpForm1__input-first"
+                                                   name="email" placeholder="Login or Email">
+
+                                            <slot name="error-email"></slot>
+
+
                                         </div>
                                         <div class="pass-row input-row">
                                             <i class="glyphicon glyphicon-user"></i>
-                                            <span id="wp-pseudo2">
-                                    <input type="password" class="signUpForm1__input" v-model="pass" placeholder="Password">
-                                     <p v-if="!pass_correct" style="opacity: 0.7;" class="font-weight-bold text-danger">Неверный пароль.</p>
-                                 </span>
+
+                                            <input type="password" class="signUpForm1__input" name="password"
+                                                   placeholder="Password">
+
+                                            <slot name="error-password"></slot>
+
                                         </div>
                                         <!-- <input type="text" class="signUpForm1__input signUpForm1__input-first" placeholder="Login or Email">
                                         <input type="text" class="signUpForm1__input" placeholder="Password"> -->
@@ -59,42 +66,15 @@
 </template>
 <script>
     export default {
-        data() {
-            return {
-                login: "",
-                pass: "",
-                isPro: false,
-                login_correct:true,
-                pass_correct: true
-            }
-            },
-        methods: {
-            submit: function () {
-                axios
-                    .post('login',{
-                        username : this.login,
-                        password : this.password,
-                    })
-                    .then(response => {
-                        if(response=400){
-                            this.login_correct = false;
-                        }else if(response==403){
-                          this.pass_correct = false; 
-                        }else{
-                           console.log(response); 
-                        }
-                        
-                    });
-            }
-        }
+
     }
 </script>
 <style lang="scss" scoped>
     h1 {
-        margin-top:0px;
+        margin-top: 0px;
     }
 
     p.h1 {
-        font-size:20px;
+        font-size: 20px;
     }
 </style>

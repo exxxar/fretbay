@@ -20,6 +20,7 @@ class Category extends Model
     protected $fillable = [
         'title',
         'min_price',
+        'additional_menu_title',
         'image',
         'position',
         'is_active',
