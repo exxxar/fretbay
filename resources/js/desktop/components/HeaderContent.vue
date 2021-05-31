@@ -1,6 +1,6 @@
 <template>
     <header v-bind:style="{background:'url('+background+') repeat-x'}">
-        <main-menu/>
+        <main-menu :auth="auth"/>
         <div id="first">
             <div class="container">
                 <h1>
@@ -33,6 +33,10 @@ import MainMenu from "./MainMenu";
 
 export default {
     props: {
+        auth:{
+          type: String,
+          default:'0',
+        },
         background: {
             type: String,
             default: "/images/home/video-bg.png",
