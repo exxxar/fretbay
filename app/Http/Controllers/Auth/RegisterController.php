@@ -77,15 +77,6 @@ class RegisterController extends Controller
             'email' => $data['email']??'',
             'password' => Hash::make($data['password']),
             'phone' => $data['phone'],
-        ]);
-    }
-    protected function createTrans(array $data)
-    {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            'phone' => $data['phone'],
            'company_name'=>$data['company_name']??'',
            'first_name'=>$data['first_name']??'',
            'telephone_number'=>$data['telephone_number']??'',
@@ -97,4 +88,5 @@ class RegisterController extends Controller
 
         ]);
     }
+
 }
