@@ -48,3 +48,6 @@ Route::group(["prefix" => "desktop"], function () {
     });
 });
 
+
+Route::post("/register-user", RegisterController::class . "@createUser");
+Route::post("/register-transporter", RegisterController::class . "@createTrans");

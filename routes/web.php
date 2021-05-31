@@ -34,7 +34,7 @@ Route::view("/fraud-prevention", "desktop.pages.fraud-prevention")->name("deskto
 
 Route::view("/register", "desktop.pages.register")->name("desktop.register");
 Route::view("/register-transporter", "desktop.pages.register-transporter")->name("desktop.register-transporter");
-Route::view("/register-customer", "desktop.pages.register-user")->name("desktop.register-user");
+Route::view("/register-user", "desktop.pages.register-user")->name("desktop.register-user");
 Route::view("/profile-personal-info", "desktop.pages.profile.profile-personal-info")->name("desktop.profile-personal-info");
 Route::view("/activity-listing", "desktop.pages.profile.customer.activity-listing")->name("desktop.activity-listing");
 Route::view("/listings", "desktop.pages.profile.customer.listings")->name("desktop.listings");
@@ -119,7 +119,11 @@ Route::group(['middleware' => ['auth','role:admin']], function () {
         });
     });
 });
-Auth::routes();
+// Auth::routes();
+
+
+Route::post("/logout", "AdminSidebarController@logout")->name("logout");
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::group([

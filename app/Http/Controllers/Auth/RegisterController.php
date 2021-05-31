@@ -70,4 +70,31 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
+    protected function createUser(array $data)
+    {
+        return User::create([
+            'name' => $data['name'],
+            'email' => $data['email']??'',
+            'password' => Hash::make($data['password']),
+            'phone' => $data['phone'],
+        ]);
+    }
+    protected function createTrans(array $data)
+    {
+        return User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+            'phone' => $data['phone'],
+           'company_name'=>$data['company_name']??'',
+           'first_name'=>$data['first_name']??'',
+           'telephone_number'=>$data['telephone_number']??'',
+           'mobile_number'=>$data['mobile_number']??'',
+           'country'=>$data['country']??'',
+           'city'=>$data['city']??'',
+           'region'=>$data['region']??'',
+           'areas_of_expertise'=>$data['areas_of_expertise']??'',
+
+        ]);
+    }
 }

@@ -19,6 +19,9 @@ window.eventBus = new Vue();
 
 import Notifications from 'vue-notification'
 
+import VueTheMask from 'vue-the-mask'
+Vue.use(VueTheMask)
+
 Vue.use(Notifications)
 
 import VueLazyload from 'vue-lazyload'
