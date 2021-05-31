@@ -123,6 +123,11 @@ h1 {
         font-size: 23px;
     }
 }
+
+#first {
+    height: 768px;
+}
+
 .first__btn {
     font-size: 20px;
     padding: 17px 36px;
@@ -609,6 +614,10 @@ h1 {
         position: relative;
         left: 26.5%;
         text-align: center;
+    }
+
+    label:hover {
+        color: black;
     }
 
     input {
@@ -6271,7 +6280,7 @@ h3 {
     cursor: pointer;
 }
 .hide {
-    display: none!important;
+    display: none !important;
 }
 .d-block {
     display: block;
@@ -6396,7 +6405,7 @@ body.lock {
                     content: ' ';
                     height: 33px;
                     width: 2px;
-                    background-color:  #1E2B3B;
+                    background-color: #1E2B3B;
                 }
                 &:before {
                     transform: rotate(45deg);
@@ -6644,9 +6653,12 @@ body.lock {
     }
     .flag-uk {
         background-image: url("/images/dest/uk.svg");
-    }.flag-es {
-         background-image: url("/images/dest/es.svg");
-     }
+    }
+
+    .flag-es {
+        background-image: url("/images/dest/es.svg");
+    }
+
     .flag-de {
         background-image: url("/images/dest/de.svg");
     }
@@ -6882,301 +6894,13 @@ body.lock {
     line-height: 40px;
 }
 
-.price-symbol {
-    position: absolute;
-    top: 8px;
-    right: 20px;
-    font-size: 16px;
-}
-
-
-.input-has-icon-right {
-    position: relative;
-}
-
-.transporter-img {
-    $size: 150px;
-    width: $size;
-    height: $size;
-    margin: 0 auto 35px;
-}
-
-.btn-upload-pic {
-    background: #3d4d60;
-    border-bottom: 4px solid rgba(0, 0, 0, 0.15);
-    transition: all 0.3s;
-    color: $white;
-    border-radius: 50px;
-    padding: 5px 20px;
-    position: relative;
-    text-align: center;
-    margin-top: 15px;
-    line-height: 1.5;
-    cursor: pointer;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 14px;
-
-    input {
-        width: 100%;
-        position: absolute;
-        top:0;
-        left: 0;
-        border-bottom: 4px solid rgba(0,0,0,0);
-        border-radius: 50px;
-        height: 100%;
-        display: none;
-    }
-}
-
-.sidebar {
-    max-width: 350px;
-    width: 100%;
-}
-
-.c-sidebar-list {
-    font-family: $Lato;
-
-    .has-menu {
-        margin-bottom: 10px;
-
-        a {
-            padding: 20px 10px 20px 45px;
-            background-color: $white;
-            background-size: 24px auto;
-            background-position: 9px center;
-            background-repeat: no-repeat;
-            font-size: 18px;
-            color: #404e5e;
-        }
-
-        .active-item-menu {
-            border-left: 10px solid #3c4d5f;
-            font-weight: 700;
-        }
-
-        .tab-link1 {
-            background-image: url(https://fretbay.com/fr/frv2/assets/images/transporter/profile/nav-icons/1.svg);
-        }
-
-        .tab-link2 {
-            background-image: url(https://fretbay.com/fr/frv2/assets/images/transporter/profile/nav-icons/2.svg);
-        }
-
-        .tab-link3 {
-            background-image: url(https://fretbay.com/fr/frv2/assets/images/transporter/profile/nav-icons/3.svg);
-        }
-
-        .tab-link4 {
-            background-image: url(https://fretbay.com/fr/frv2/assets/images/transporter/profile/nav-icons/4.svg);
-        }
-
-        .tab-link5 {
-            background-image: url(https://fretbay.com/fr/frv2/assets/images/common/icons/general/setting.svg);
-        }
-    }
-}
-
-.sub-menu {
-    display: none;
-}
-.active-sub-menu {
-    display: block;
-    background: $white;
-}
-.has-menu > .active-sub-menu > li > a{
-    font-size: 15px;
-    border-left: none;
-    padding: 15px 10px 15px 80px;
-}
-
-.list-transport-categories {
-    margin: 0 -5px;
-    padding-left: 0;
-    text-align: center;
-
-    ul {
-        li.list-transport-category {
-            display: inline;
-
-            label {
-                position: relative;
-                display: inline-block;
-                width: 140px;
-                margin: 0 5px 10px;
-                vertical-align: middle;
-                border: 2px solid transparent;
-                border-radius: 10px;
-                padding: 10px;
-                cursor: pointer;
-
-                &.selected {
-                    background: #f2f8fc;
-                    border: 2px solid #0083fe;
-
-                    .category-icon {
-                        -webkit-filter: none;
-                        -o-filter: none;
-                        filter: none;
-                        opacity: 1;
-                    }
-                }
-
-                input[type=checkbox] {
-                    box-sizing: border-box;
-                    padding: 0;
-                    margin: 4px 0 0;
-                    line-height: normal;
-                    display: none;
-                }
-
-                .category-icon {
-                    display: block;
-                    margin-bottom: 10px;
-                    -webkit-filter: grayscale(1);
-                    -o-filter: grayscale(1);
-                    filter: grayscale(1);
-                    opacity: 0.5;
-
-                    img {
-                        border: 0;
-                        vertical-align: middle;
-                        width: 75px;
-                        height: 75px;
-                    }
-                }
-
-                .category-name {
-                    display: block;
-                    min-height: 35px;
-                    margin-bottom: 10px;
-                    font-size: 14px;
-                    color: #3d4d60;
-                    font-family: $Lato;
-                }
-            }
-        }
-    }
-}
-
-.add-vehicle-icon {
-    width: 110px;
-    height: 110px;
-    margin-bottom: 20px;
-    cursor: pointer;
-    vertical-align: middle;
-}
-
-.add-vehicle-btn {
-    text-align: center;
-    margin: 15px auto 25px;
-    font-weight: 700;
-    color: $white;
-}
-
-.label-inline {
-    margin-right: 15px;
-}
-
-.number-of-drivers {
-    display: inline-block;
-}
-
-.add-vehicle-active {
-    display: block;
-}
-
-#add-vehicle {
-
-    .modal-dialog {
-        z-index: 1050;
-        margin: 80px auto 30px;
-
-        .truck-img {
-            max-width: 320px;
-            width: 100%;
-            margin-bottom: -100px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .modal-content {
-            box-shadow: none;
-            border-radius: 10px;
-            overflow: hidden;
-            padding: 120px 40px 40px 40px;
-            text-align: center;
-            color: #879199;
-
-            .modal-header {
-                padding: 0;
-                text-align: inherit;
-                border: 0;
-
-                .modal-title {
-                    font-size: 18px;
-                    font-weight: 900;
-                    font-family: $Lato;
-                    margin-top: 0;
-                    margin-bottom: 20px;
-                    text-align: left;
-                    padding-right: 50px;
-                    color: #3D4E60;
-                }
-            }
-
-            .modal-body {
-                padding: 0;
-            }
-
-            .modal-footer {
-                padding: 0;
-                border: 0;
-
-                .vehicle-save-button {
-                    margin: 0 auto;
-                }
-            }
-        }
-    }
-
-    .modal-backdrop {
-        background-color: #1c3748;
-        opacity: 0.8;
-    }
-
-    .dropdown-toggle::after {
-        content: '';
-        border-style: solid;
-        border-width: 6px 6px 0;
-        border-color: #616161 transparent;
-        position: absolute;
-        top: 50%;
-        right: 10px;
-        margin-top: -3px;
-    }
-
-    .modal-backdrop {
-        cursor: pointer;
-    }
-}
-
-
-
-
-
-
-
-
-
-
 @media (max-width: 992px) {
     //BENEFITS-TRANSPORTER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     .benefits-transporter-header h1 {
         font-size: 40px;
         margin-top: 90px;
     }
-    .benefits-transporter-header h1 .small  {
+    .benefits-transporter-header h1 .small {
         font-weight: 300;
         margin: 14px 0 34px;
     }
@@ -7291,6 +7015,9 @@ body.lock {
     #first {
         padding-top: 1px;
     }
+    #first .container {
+        padding-top: 20%;
+    }
     #default-section .section-header {
         width: 100%;
         margin: 0;
@@ -7400,7 +7127,10 @@ body.lock {
         margin-bottom: 10px;
     }
     .tabs-footer-section label {
-        width: 160px;
+        width: 100%;
+        left: 0;
+        font-size: 14px;
+        margin: 0 0 10px;
     }
     #goDown {
         display: none;
@@ -7449,19 +7179,6 @@ body.lock {
             text-transform: initial;
         }
     }
-    .tabs-footer-section label {
-        width: 120px;
-        left: 2%;
-        font-size: 13px;
-        height: 40px;
-        padding: 10px 0;
-    }
-    .tabs-footer-section {
-        margin: 20px auto;
-    }
-    .tabs-footer-section article {
-        padding: 20px 0;
-    }
     #stepsNew {
         .container {
             padding-right: 15px;
@@ -7475,9 +7192,6 @@ body.lock {
 @media (max-width: 360px) {
     //INDEX!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     .tabs-footer-section label {
-        width: 110px;
-        left: 2%;
-        font-size: 15px;
         height: 40px;
         padding: 10px 0;
         margin-right: 5px;

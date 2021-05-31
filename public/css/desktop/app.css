@@ -13841,6 +13841,10 @@ h1 span {
   font-size: 23px;
 }
 
+#first {
+  height: 768px;
+}
+
 .first__btn {
   font-size: 20px;
   padding: 17px 36px;
@@ -13963,7 +13967,7 @@ h1 span {
 
 #recentList h2 {
   color: #859295;
-  font-size: 32px;
+  font-size: 24px;
   font-weight: normal;
   font-family: "Lato", sans-serif;
   margin: 20px 0 10px;
@@ -13979,11 +13983,9 @@ h1 span {
 }
 
 .postImg {
-  overflow: hidden;
   background-color: #d7d5d0;
-  margin: 6px 0 0 8px;
+  margin: 6px 0 0 15px;
   height: 70px;
-  width: 70px;
 }
 
 .postImg img {
@@ -14207,7 +14209,7 @@ h1 span {
   margin-left: -1px;
   width: 2.5px;
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 20%, white 50%, rgba(255, 255, 255, 0.8) 80%, rgba(255, 255, 255, 0) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#00ffffff',GradientType=0 );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#00ffffff', GradientType=0);
 }
 
 .trevalnew__title {
@@ -14337,8 +14339,12 @@ h1 span {
   height: 53px;
   margin-right: 12px;
   position: relative;
-  left: 26.5%;
+  left: 20%;
   text-align: center;
+}
+
+.tabs-footer-section label:hover {
+  color: black;
 }
 
 .tabs-footer-section input {
@@ -21626,9 +21632,7 @@ body.lock {
     font-size: 18px;
   }
   #recentList h2 {
-    color: #383a35;
     margin-bottom: 12px;
-    font-size: 20px;
   }
   #recentList {
     padding: 30px 0;
@@ -21692,6 +21696,9 @@ body.lock {
   }
   #first {
     padding-top: 1px;
+  }
+  #first .container {
+    padding-top: 20%;
   }
   #default-section .section-header {
     width: 100%;
@@ -21794,7 +21801,10 @@ body.lock {
     margin-bottom: 10px;
   }
   .tabs-footer-section label {
-    width: 160px;
+    width: 100%;
+    left: 0;
+    font-size: 14px;
+    margin: 0 0 10px;
   }
   #goDown {
     display: none;
@@ -21833,19 +21843,6 @@ body.lock {
     margin: 20px 0;
     text-transform: initial;
   }
-  .tabs-footer-section label {
-    width: 120px;
-    left: 2%;
-    font-size: 13px;
-    height: 40px;
-    padding: 10px 0;
-  }
-  .tabs-footer-section {
-    margin: 20px auto;
-  }
-  .tabs-footer-section article {
-    padding: 20px 0;
-  }
   #stepsNew .container {
     padding-right: 15px;
     padding-left: 15px;
@@ -21856,9 +21853,6 @@ body.lock {
 
 @media (max-width: 360px) {
   .tabs-footer-section label {
-    width: 110px;
-    left: 2%;
-    font-size: 15px;
     height: 40px;
     padding: 10px 0;
     margin-right: 5px;
