@@ -1,27 +1,29 @@
 <template>
-<header v-bind:style="{background:'url('+background+') repeat-x'}">
-    <main-menu />
-    <div id="first">
-        <div class="container">
-            <h1>
-                Find your mover
-                <span>
+    <header v-bind:style="{background:'url('+background+') repeat-x'}">
+        <main-menu/>
+        <div id="first">
+            <div class="container">
+                <h1>
+                    Find your mover
+                    <span>
                     The leading marketplace for cheap transport and moving services
                 </span>
-            </h1>
-            <button class="first__btn">
-                REQUEST A QUOTE
-            </button>
-            <div class="row">
-                <div class="col-md-12 go-down">
-                    <a id="goDown" @click="goDown">
-                        <i class="fa fa-caret-down"></i>
-                    </a>
+                </h1>
+                <form action="/find-transporter">
+                    <button type="submit" class="first__btn">
+                        REQUEST A QUOTE
+                    </button>
+                </form>
+                <div class="row">
+                    <div class="col-md-12 go-down">
+                        <a id="goDown" @click="goDown">
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
 </template>
 
 <script>
