@@ -19,8 +19,8 @@ Vue.use(IconsPlugin)
 Vue.use(Notifications)
 
 import VueLazyload from 'vue-lazyload'
-import { VueMaskFilter } from 'v-mask'
-Vue.filter('VMask', VueMaskFilter)
+
+
 Vue.use(VueLazyload, {
     preLoad: 1.3,
     error: "/images/common/icons/general/content-loader.gif",

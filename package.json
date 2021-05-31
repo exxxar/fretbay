@@ -54,7 +54,6 @@
         "pusher-js": "^7.0.2",
         "uniqid": "^5.2.0",
         "uuid": "^8.3.2",
-        "v-mask": "^2.2.4",
         "v-tooltip": "^2.0.3",
         "vue-currency-filter": "^4.0.3",
         "vue-custom-scrollbar": "^1.4.0",
