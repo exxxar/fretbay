@@ -269,7 +269,7 @@ h1 {
 
     h2 {
         color: #859295;
-        font-size: 32px;
+        font-size: 24px;
         font-weight: normal;
         font-family: $Lato;
         margin: 20px 0 10px;
@@ -286,11 +286,10 @@ h1 {
 }
 
 .postImg {
-    overflow: hidden;
+    //overflow: hidden;
     background-color: #d7d5d0;
-    margin: 6px 0 0 8px;
+    margin: 6px 0 0 15px;
     height: 70px;
-    width: 70px;
 
     img {
         max-width: 100%;
@@ -7714,9 +7713,7 @@ body.lock {
         }
     }
     #recentList h2 {
-        color: #383a35;
         margin-bottom: 12px;
-        font-size: 20px;
     }
     #recentList {
         padding: 30px 0;

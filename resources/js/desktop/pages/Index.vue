@@ -52,11 +52,11 @@
         </section>
         <section id="recentList">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
+                <div class="row col">
+                    <div class="col-lg-4">
                         <top-movers-component/>
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-lg-8">
                         <latest-transactions-component/>
                     </div>
                 </div>
@@ -65,7 +65,7 @@
         <section id="stepsNew">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-3 col-xs-6">
+                    <div class="col-lg-3 col-md-6 col-xs-6">
                         <div class="stepsnew__item">
                             <h3 class="stepsnew__title">
 							<span>
@@ -74,10 +74,10 @@
                                 Publish your listing
                             </h3>
                             <img src="/images/home/stepN-1.png" alt="about"
-                                 class="about__img img-responsive mx-auto d-block">
+                                 class="about__img img-responsive mx-auto d-block img-fluid">
                         </div>
                     </div>
-                    <div class="col-md-3 col-xs-6">
+                    <div class="col-lg-3 col-md-6 col-xs-6">
                         <div class="stepsnew__item">
                             <h3 class="stepsnew__title">
 							<span>
@@ -86,10 +86,10 @@
                                 Get instant quotes
                             </h3>
                             <img src="/images/home/stepN-2.png" alt="about"
-                                 class="about__img img-responsive mx-auto d-block">
+                                 class="about__img img-responsive mx-auto d-block img-fluid">
                         </div>
                     </div>
-                    <div class="col-md-3 col-xs-6">
+                    <div class="col-lg-3 col-md-6 col-xs-6">
                         <div class="stepsnew__item">
                             <h3 class="stepsnew__title">
 							<span>
@@ -98,10 +98,10 @@
                                 Get delivered
                             </h3>
                             <img src="/images/home/stepN-3.png" alt="about"
-                                 class="about__img img-responsive mx-auto d-block">
+                                 class="about__img img-responsive mx-auto d-block img-fluid">
                         </div>
                     </div>
-                    <div class="col-md-3 col-xs-6">
+                    <div class="col-lg-3 col-md-6 col-xs-6">
                         <div class="stepsnew__item">
                             <h3 class="stepsnew__title">
 							<span>
@@ -110,7 +110,7 @@
                                 Rate the service
                             </h3>
                             <img src="/images/home/stepN-4.png" alt="about"
-                                 class="about__img img-responsive mx-auto d-block">
+                                 class="about__img img-responsive mx-auto d-block img-fluid">
                         </div>
                     </div>
                 </div>
@@ -141,7 +141,7 @@
                                 price. Then, all you have to do is select the transportation service offer that best
                                 meets your needs!
                             </p>
-                            <a class="trevalnew__btn">
+                            <a href="/find-transporter" class="trevalnew__btn">
                                 Find out more
                             </a>
                         </div>
@@ -164,7 +164,7 @@
                                 Registration and publication of an ad on FretBay are free and without obligation, take
                                 advantage of it!
                             </p>
-                            <a class="trevalnew__btn">
+                            <a href="#" class="trevalnew__btn">
                                 Find out more
                             </a>
                         </div>

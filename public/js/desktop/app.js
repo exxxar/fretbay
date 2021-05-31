@@ -8290,10 +8290,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -56015,41 +56011,37 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-lg-12" }, [
-        _c("div", { staticClass: "postBlock row" }, [
-          _c("div", { staticClass: "col-md-3 col-sm-4 no-padding" }, [
-            _c("div", { staticClass: "postImg" }, [
-              _c("img", {
-                staticClass: "about__img img-responsive mx-auto d-block",
-                attrs: { src: "/images/avatar.png", alt: "about" }
-              })
-            ])
-          ]),
+    return _c("div", { staticClass: "postBlock row" }, [
+      _c("div", { staticClass: "col-md-3 col-sm-4 no-padding p-0" }, [
+        _c("div", { staticClass: "postImg" }, [
+          _c("img", {
+            staticClass: "about__img img-responsive mx-auto d-block",
+            attrs: { src: "/images/avatar.png", alt: "about" }
+          })
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-9 col-sm-8" }, [
+        _c("p", { staticClass: "postblock__title" }, [
+          _c("b", [_vm._v("Wojtek92")])
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "postblock__prg" }, [
+          _vm._v(
+            "\n            Excellent service. Un seul bémol : le problème de la langue. Il y a ..\n        "
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "ratingBlock" }, [
+          _c("img", { attrs: { src: "/images/star-on.png" } }),
           _vm._v(" "),
-          _c("div", { staticClass: "col-md-9 col-sm-8" }, [
-            _c("p", { staticClass: "postblock__title" }, [
-              _vm._v("\n                    Wojtek92\n                ")
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "postblock__prg" }, [
-              _vm._v(
-                "\n                    Excellent service. Un seul bémol : le problème de la langue. Il y a ..\n                "
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "ratingBlock" }, [
-              _c("img", { attrs: { src: "/images/star-on.png" } }),
-              _vm._v(" "),
-              _c("img", { attrs: { src: "/images/star-on.png" } }),
-              _vm._v(" "),
-              _c("img", { attrs: { src: "/images/star-on.png" } }),
-              _vm._v(" "),
-              _c("img", { attrs: { src: "/images/star-on.png" } }),
-              _vm._v(" "),
-              _c("img", { attrs: { src: "/images/star-half.png" } })
-            ])
-          ])
+          _c("img", { attrs: { src: "/images/star-on.png" } }),
+          _vm._v(" "),
+          _c("img", { attrs: { src: "/images/star-on.png" } }),
+          _vm._v(" "),
+          _c("img", { attrs: { src: "/images/star-on.png" } }),
+          _vm._v(" "),
+          _c("img", { attrs: { src: "/images/star-half.png" } })
         ])
       ])
     ])
@@ -61481,17 +61473,17 @@ var render = function() {
     _vm._v(" "),
     _c("section", { attrs: { id: "recentList" } }, [
       _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "row col" }, [
           _c(
             "div",
-            { staticClass: "col-md-4" },
+            { staticClass: "col-lg-4" },
             [_c("top-movers-component")],
             1
           ),
           _vm._v(" "),
           _c(
             "div",
-            { staticClass: "col-md-8" },
+            { staticClass: "col-lg-8" },
             [_c("latest-transactions-component")],
             1
           )
@@ -61624,7 +61616,7 @@ var staticRenderFns = [
     return _c("section", { attrs: { id: "stepsNew" } }, [
       _c("div", { staticClass: "container" }, [
         _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-3 col-xs-6" }, [
+          _c("div", { staticClass: "col-lg-3 col-md-6 col-xs-6" }, [
             _c("div", { staticClass: "stepsnew__item" }, [
               _c("h3", { staticClass: "stepsnew__title" }, [
                 _c("span", [_vm._v("\n\t\t\t\t\t\t\t\t1\n\t\t\t\t\t\t\t")]),
@@ -61634,13 +61626,14 @@ var staticRenderFns = [
               ]),
               _vm._v(" "),
               _c("img", {
-                staticClass: "about__img img-responsive mx-auto d-block",
+                staticClass:
+                  "about__img img-responsive mx-auto d-block img-fluid",
                 attrs: { src: "/images/home/stepN-1.png", alt: "about" }
               })
             ])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "col-md-3 col-xs-6" }, [
+          _c("div", { staticClass: "col-lg-3 col-md-6 col-xs-6" }, [
             _c("div", { staticClass: "stepsnew__item" }, [
               _c("h3", { staticClass: "stepsnew__title" }, [
                 _c("span", [_vm._v("\n\t\t\t\t\t\t\t\t2\n\t\t\t\t\t\t\t")]),
@@ -61650,13 +61643,14 @@ var staticRenderFns = [
               ]),
               _vm._v(" "),
               _c("img", {
-                staticClass: "about__img img-responsive mx-auto d-block",
+                staticClass:
+                  "about__img img-responsive mx-auto d-block img-fluid",
                 attrs: { src: "/images/home/stepN-2.png", alt: "about" }
               })
             ])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "col-md-3 col-xs-6" }, [
+          _c("div", { staticClass: "col-lg-3 col-md-6 col-xs-6" }, [
             _c("div", { staticClass: "stepsnew__item" }, [
               _c("h3", { staticClass: "stepsnew__title" }, [
                 _c("span", [_vm._v("\n\t\t\t\t\t\t\t\t3\n\t\t\t\t\t\t\t")]),
@@ -61666,13 +61660,14 @@ var staticRenderFns = [
               ]),
               _vm._v(" "),
               _c("img", {
-                staticClass: "about__img img-responsive mx-auto d-block",
+                staticClass:
+                  "about__img img-responsive mx-auto d-block img-fluid",
                 attrs: { src: "/images/home/stepN-3.png", alt: "about" }
               })
             ])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "col-md-3 col-xs-6" }, [
+          _c("div", { staticClass: "col-lg-3 col-md-6 col-xs-6" }, [
             _c("div", { staticClass: "stepsnew__item" }, [
               _c("h3", { staticClass: "stepsnew__title" }, [
                 _c("span", [_vm._v("\n\t\t\t\t\t\t\t\t4\n\t\t\t\t\t\t\t")]),
@@ -61682,7 +61677,8 @@ var staticRenderFns = [
               ]),
               _vm._v(" "),
               _c("img", {
-                staticClass: "about__img img-responsive mx-auto d-block",
+                staticClass:
+                  "about__img img-responsive mx-auto d-block img-fluid",
                 attrs: { src: "/images/home/stepN-4.png", alt: "about" }
               })
             ])
@@ -61734,11 +61730,18 @@ var staticRenderFns = [
                 )
               ]),
               _vm._v(" "),
-              _c("a", { staticClass: "trevalnew__btn" }, [
-                _vm._v(
-                  "\n                                Find out more\n                            "
-                )
-              ])
+              _c(
+                "a",
+                {
+                  staticClass: "trevalnew__btn",
+                  attrs: { href: "/find-transporter" }
+                },
+                [
+                  _vm._v(
+                    "\n                                Find out more\n                            "
+                  )
+                ]
+              )
             ])
           ]),
           _vm._v(" "),
@@ -61773,11 +61776,15 @@ var staticRenderFns = [
                   )
                 ]),
                 _vm._v(" "),
-                _c("a", { staticClass: "trevalnew__btn" }, [
-                  _vm._v(
-                    "\n                                Find out more\n                            "
-                  )
-                ])
+                _c(
+                  "a",
+                  { staticClass: "trevalnew__btn", attrs: { href: "#" } },
+                  [
+                    _vm._v(
+                      "\n                                Find out more\n                            "
+                    )
+                  ]
+                )
               ]
             )
           ])

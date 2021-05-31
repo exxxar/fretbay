@@ -13967,7 +13967,7 @@ h1 span {
 
 #recentList h2 {
   color: #859295;
-  font-size: 32px;
+  font-size: 24px;
   font-weight: normal;
   font-family: "Lato", sans-serif;
   margin: 20px 0 10px;
@@ -13983,11 +13983,9 @@ h1 span {
 }
 
 .postImg {
-  overflow: hidden;
   background-color: #d7d5d0;
-  margin: 6px 0 0 8px;
+  margin: 6px 0 0 15px;
   height: 70px;
-  width: 70px;
 }
 
 .postImg img {
@@ -21141,9 +21139,7 @@ body.lock {
     font-size: 18px;
   }
   #recentList h2 {
-    color: #383a35;
     margin-bottom: 12px;
-    font-size: 20px;
   }
   #recentList {
     padding: 30px 0;
