@@ -25,7 +25,7 @@ class TransporterUpdateRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string', 'min:2', 'max:256'],
-            'email' => ['required', 'email'],
+            'email' => ['required','unique:post', 'email'],
           'company_name'=>['required','string','min:2','max:256'],
           'first_name'=>['required','string','min:2', 'max:256'],
           'telephone_number'=> ['required','numeric','min:11'],
