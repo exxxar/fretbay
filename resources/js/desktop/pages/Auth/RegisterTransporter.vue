@@ -37,84 +37,57 @@
                               The registration process takes no more than a minute.
                            </span>
                                 </h3>
-                                <form action="#" id="signUpForm1">
+                                <form action="#" id="signUpForm1" @submit.prevent="submit">
                                     <div class="signUpForm1-inputs">
                                         <input type="text" class="signUpForm1__input signUpForm1__input-first"
-                                               placeholder="Name of your company">
-                                        <input type="text" class="signUpForm1__input" placeholder="First name">
-                                        <input type="text" class="signUpForm1__input" placeholder="Name">
-                                        <input type="text" class="signUpForm1__input" placeholder="Email">
-                                        <input type="text" class="signUpForm1__input" placeholder="Telephone number">
-                                        <input type="text" class="signUpForm1__input" placeholder="Mobile phone">
+                                               v-model="company_name" placeholder="Name of your company">
+                                        <input type="text" class="signUpForm1__input" v-model="name" placeholder="Name">
+                                        <input type="email" class="signUpForm1__input" v-model="email" placeholder="Email">
+                                        <input type="tel" class="signUpForm1__input" v-mask="'+ ### ### #######'"  v-model="phone" placeholder="Telephone number">
+                                        <input type="tel" class="signUpForm1__input" v-mask="'+ ### ### #######'" v-model="mobile" placeholder="Mobile phone">
 
 
                                         <div class="size-container">
-                                            <select id="country" name="country">
-                                                <option value="Austria">Austria</option>
-                                                <option value="Belgium">Belgium</option>
-                                                <option value="Bulgaria">Bulgaria</option>
+                                            <select id="country" v-model="country_id" v-on:change="selectCountry(country_id);">
+                                                <option value="" disabled selected>Country</option>
+                                                <option v-for="country in countries" :label="country.title">{{country.id}}</option>
                                             </select>
                                         </div>
 
-                                        <input type="text" class="signUpForm1__input" placeholder="Postal Code or City">
+                                        <input type="text" class="signUpForm1__input" v-model="postal" placeholder="Postal Code or City">
 
                                         <div class="size-container">
-                                            <select id="region" name="region">
-                                                <option value>Region</option>
-                                                <option value="Bruxelles-Capitale">Bruxelles-Capitale</option>
-                                                <option value="Région Flamande">Région Flamande</option>
-                                                <option value="Région Wallonne">Région Wallonne</option>
+                                            <select id="region" v-model="region_id" name="region" >
+                                                <option value="" disabled selected>Region</option>
+                                                <option v-bind=region v-for="region in regions" :label="region.title">{{region.id}}</option>
                                             </select>
                                         </div>
-                                        <div class="size-container size-container-expertise">
-                                            <button type="button" class="btn-default">
-                                    <span>
-                                       Your areas of expertise
-                                    </span>
-                                            </button>
-                                            <div class="dropdown-menu">
-                                                <a href="#" class="close-ddrop">x</a>
-                                                <ul class="dropdown-list">
-                                                    <li class="dropdown-item">
-                                                        <a href="#">
-                                                            <span class="glyphicon equipment"></span>
-                                                            <span class="text">
-                                                Home equipment
-                                             </span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="dropdown-item">
-                                                        <a href="#">
-                                                            <span class="glyphicon demenagement"></span>
-                                                            <span class="text">
-                                                Moving
-                                             </span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="dropdown-item">
-                                                        <a href="#">
-                                                            <span class="glyphicon vehicle"></span>
-                                                            <span class="text">
-                                                Vehicle
-                                             </span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
+                                        <!-- <div class="size-container size-container-expertise"> -->
+                                            <div class="size-container size-container-expertise">
+                                            <select id="area_of_expertise" name="area_of_expertise" v-model="area_of_expertise">
+                                                <option value="" disabled selected>Your area of expertise</option>
+                                                <option value="Home equipment">Home equipment</option>
+                                                <option value="Moving">Moving</option>
+                                                <option value="Vehicle">Vehicle</option>
+                                            </select>
                                         </div>
+                                        <!-- </div> -->
 
 
 
 
-                                        <input type="text" class="signUpForm1__input" placeholder="Username">
-                                        <input type="text" class="signUpForm1__input" placeholder="Password">
-                                        <input type="text" class="signUpForm1__input" placeholder="Confirm password">
+                                        <input type="text" class="signUpForm1__input" v-model="username"  placeholder="Username">
+                                        <input type="password" class="signUpForm1__input" v-model="password" placeholder="Password" v-on:change="pass_validate();">
+                                        <input type="password" class="signUpForm1__input"  v-model="password_confimation" placeholder="Confirm password" v-on:change="pass_validate();">
+                                        <p v-if="!password_correct" style="opacity: 0.7;" class="font-weight-bold text-danger">Пароли не совпадают.</p>
+                                        <p v-if="password_correct" style="opacity: 0.7;" class="font-weight-bold text-success">Пароли совпадают.</p>
+ 
                                     </div>
 
                                     <div class="form-text">
                                         By clicking on register, I accept the <a href="#">General conditions</a> of FretBay.com.
                                     </div>
-                                    <button type="submit" class="signUpForm1-button">
+                                    <button type="submit" class="signUpForm1-button" >
                                         Register
                                     </button>
                                 </form>
@@ -124,12 +97,72 @@
                 </div>
             </div>
         </div>
-
-        </div>
     </section>
-</template>
+</template> 
 <script>
     export default {
-
+        data() {
+            return {
+                countries: [],
+                country_id: "",
+                regions: [],
+                company_name: "",
+                name:"",
+                email:"",
+                phone:"",
+                mobile:"",
+                postal:"",
+                region_id:"",
+                area_of_expertise:"",
+                username:"",
+                password:"",
+                password_confimation:"",
+                password_correct: false
+            }
+            },
+        created: function () {
+            axios
+                .get('locations/countries')
+                .then(response => {
+                    this.countries = response.data;
+                    
+                });
+        },
+        methods: {
+            selectCountry: function (id) {
+                console.log(this.country);
+                axios
+                .get('/locations/cities/'+id)
+                .then(response => {
+                    this.regions = response.data;
+                    
+                });
+            },
+             pass_validate: function () {
+                if(this.password != this.password_confimation){
+                    this.password_correct = false;
+                }else{
+                     this.password_correct = true;
+                }
+             },
+            submit: function () {
+                axios
+                .post('/registerTransporter/',{
+                    name : this.name,
+                    email : this.email,
+                    password : this.password,
+                    mobile_number : this.mobile,
+                    company_name : this.company_name,
+                    telephone_number : this.phone,
+                    country : this.country_id,
+                    city : this.postal,
+                    region : this.region_id,
+                    areas_of_expertise : this.area_of_expertise,
+                }) //почему то отправляет на /api/desktop/v1/registerTransporter/, надо будет либо разобраться либо как костыль просто изменить route в api.php))0
+                .then(response => {
+                    console.log(response);
+                });
+            }
+        }
     }
 </script>
