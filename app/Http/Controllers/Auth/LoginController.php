@@ -40,6 +40,17 @@ class LoginController extends Controller
     }
 
     public function login(array $data){
-        return Auth::attempt($data['username'], Hash::make($data['password']));
+        $user = User::where('email', '=', $data['username'])->first();
+        if ($user === null) {
+            abort(400);
+        }else{
+            try{
+                return Auth::attempt($data['username'], Hash::make($data['password']));
+            }catch(Exception $e){
+                abort(403);
+            }
+            
+        }
+        
     }
 }

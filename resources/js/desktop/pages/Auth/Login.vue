@@ -24,12 +24,14 @@
                                             <i class="glyphicon glyphicon-user"></i>
                                             <span id="wp-pseudo2">
                                     <input type="text" class="signUpForm1__input signUpForm1__input-first" v-model="login" placeholder="Login or Email">
+                                     <p v-if="!login_correct" style="opacity: 0.7;" class="font-weight-bold text-danger">Неверный логин.</p>
                                  </span>
                                         </div>
                                         <div class="pass-row input-row">
                                             <i class="glyphicon glyphicon-user"></i>
                                             <span id="wp-pseudo2">
                                     <input type="password" class="signUpForm1__input" v-model="pass" placeholder="Password">
+                                     <p v-if="!pass_correct" style="opacity: 0.7;" class="font-weight-bold text-danger">Неверный пароль.</p>
                                  </span>
                                         </div>
                                         <!-- <input type="text" class="signUpForm1__input signUpForm1__input-first" placeholder="Login or Email">
@@ -61,7 +63,9 @@
             return {
                 login: "",
                 pass: "",
-                isPro: false
+                isPro: false,
+                login_correct:true,
+                pass_correct: true
             }
             },
         methods: {
@@ -72,7 +76,14 @@
                         password : this.password,
                     })
                     .then(response => {
-                        console.log(response);
+                        if(response=400){
+                            this.login_correct = false;
+                        }else if(response==403){
+                          this.pass_correct = false; 
+                        }else{
+                           console.log(response); 
+                        }
+                        
                     });
             }
         }
