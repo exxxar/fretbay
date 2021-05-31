@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <users-page></users-page>
+    <users-list></users-list>
 @endsection
 
 @section('javascript')

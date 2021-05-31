@@ -1,11 +1,12 @@
 {
-    "/js/admin/app.js": "/js/admin/app.js?id=3375d706c412b5a7b807",
+
+    "/js/admin/app.js": "/js/admin/app.js?id=32aac75be41dc265e842",
     "/js/admin/media.js": "/js/admin/media.js?id=6ecc95e2fe4e8a112011",
     "/js/admin/media-cropp.js": "/js/admin/media-cropp.js?id=672a3d1c799a76d96d5d",
     "/js/admin/menu-create.js": "/js/admin/menu-create.js?id=b7d033bf3022bf877083",
     "/js/admin/menu-edit.js": "/js/admin/menu-edit.js?id=1e6e7978c15ef21d9830",
-    "/js/desktop/app.js": "/js/desktop/app.js?id=93d4fc3a8904ea9aecc2",
-    "/css/desktop/app.css": "/css/desktop/app.css?id=c9ee1f19fe00334007b9",
+    "/js/desktop/app.js": "/js/desktop/app.js?id=d80dea4fe7684503a3e0",
+    "/css/desktop/app.css": "/css/desktop/app.css?id=aec4a6ed99890a671bd3",
     "/css/admin/app.css": "/css/admin/app.css?id=66311d5f009698f44298",
     "/css/admin/coreui-chartjs.css": "/css/admin/coreui-chartjs.css?id=f2ae400edf860e4b91f1",
     "/css/admin/cropper.css": "/css/admin/cropper.css?id=27f22130a15bf5470243",

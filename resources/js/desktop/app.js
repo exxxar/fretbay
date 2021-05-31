@@ -19,6 +19,9 @@ window.eventBus = new Vue();
 
 import Notifications from 'vue-notification'
 
+import VueTheMask from 'vue-the-mask'
+Vue.use(VueTheMask)
+
 Vue.use(Notifications)
 
 import VueLazyload from 'vue-lazyload'
@@ -41,8 +44,9 @@ Vue.component('latest-transactions-component', require('../desktop/components/La
 Vue.component('top-movers-component', require('../desktop/components/TopMovers.vue').default);
 Vue.component('modals-component', require('../desktop/components/Modals.vue').default);
 Vue.component('system-notification-component', require('../desktop/components/SystemNotification.vue').default);
-//slider
-Vue.component('how-it-work-slider', require('../desktop/components/Slider/HowItWorkSlider.vue').default);
+
+Vue.component('how-it-work-slider-component', require('../desktop/components/Slider/HowItWorkSlider.vue').default);
+Vue.component('profile-menu-component', require('../desktop/components/Profile/ProfileMenu.vue').default);
 
 //auth
 Vue.component('login-page', require('./pages/Auth/Login.vue').default);
@@ -67,6 +71,12 @@ Vue.component('profile-transporter-wizard-step-2-page', require('./pages/Profile
 Vue.component('profile-transporter-wizard-step-3-page', require('./pages/Profile/Transporter/ProfileWizardStep3.vue').default);
 Vue.component('profile-transporter-wizard-step-4-page', require('./pages/Profile/Transporter/ProfileWizardStep4.vue').default);
 Vue.component('profile-transporter-wizard-step-5-page', require('./pages/Profile/Transporter/ProfileWizardStep5.vue').default);
+//На редактирование профиля перевозчика
+Vue.component('profile-my-account-page', require('./pages/Profile/Transporter/MyAccount.vue').default);
+Vue.component('profile-my-company-page', require('./pages/Profile/Transporter/MyCompany.vue').default);
+Vue.component('profile-legal-documents-page', require('./pages/Profile/Transporter/LegalDocuments.vue').default);
+Vue.component('profile-my-vehicles-page', require('./pages/Profile/Transporter/MyVehicles.vue').default);
+Vue.component('profile-settings-page', require('./pages/Profile/Transporter/Settings.vue').default);
 
 //other pages (not needed)
 Vue.component('contact-us-page', require('../desktop/pages/ContactUs.vue').default);
