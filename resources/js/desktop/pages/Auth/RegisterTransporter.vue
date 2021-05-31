@@ -146,22 +146,25 @@
                 }
              },
             submit: function () {
+                if(this.password_correct){
                 axios
-                .post('/registerTransporter/',{
-                    name : this.name,
-                    email : this.email,
-                    password : this.password,
-                    mobile_number : this.mobile,
-                    company_name : this.company_name,
-                    telephone_number : this.phone,
-                    country : this.country_id,
-                    city : this.postal,
-                    region : this.region_id,
-                    areas_of_expertise : this.area_of_expertise,
-                }) //почему то отправляет на /api/desktop/v1/registerTransporter/, надо будет либо разобраться либо как костыль просто изменить route в api.php))0
-                .then(response => {
-                    console.log(response);
-                });
+                    .post('register',{
+                        name : this.name,
+                        email : this.email,
+                        password : this.password,
+                        mobile_number : this.mobile,
+                        company_name : this.company_name,
+                        telephone_number : this.phone,
+                        country : this.country_id,
+                        city : this.postal,
+                        region : this.region_id,
+                        areas_of_expertise : this.area_of_expertise,
+                        role_id: "5"
+                    }) //почему то отправляет на /api/desktop/v1/registerTransporter/, надо будет либо разобраться либо как костыль просто изменить route в api.php))0
+                    .then(response => {
+                        console.log(response);
+                    });
+                }
             }
         }
     }
