@@ -21,7 +21,9 @@ class Subcategory extends Model
         'image',
         'position',
         'is_active',
+        'category_id',
     ];
+
 
     /**
      * The attributes that should be cast to native types.
@@ -41,6 +43,6 @@ class Subcategory extends Model
 
     public function category()
     {
-        return $this->belongsTo(\App\Category::class);
+        return $this->belongsTo(\App\Category::class,"id","category_id");
     }
 }

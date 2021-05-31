@@ -18,28 +18,39 @@ class UserSeeder extends Seeder
 
         $developer = Role::where('slug', 'web-developer')->first();
         $manager = Role::where('slug', 'project-manager')->first();
+        $admin = Role::where('slug', 'admin')->first();
         $createTasks = Permission::where('slug', 'create-tasks')->first();
         $manageUsers = Permission::where('slug', 'manage-users')->first();
 
-        $user1 = new User();
-        $user1->name = 'Jhon Deo';
-        $user1->email = 'jhon@deo.com';
-        $user1->password = bcrypt('secret');
-        $user1->phone = '1234567890';
-        $user1->profile_id = 1;
-        $user1->save();
-        $user1->roles()->attach($developer);
-        $user1->permissions()->attach($createTasks);
+        // $user1 = new User();
+        // $user1->name = 'Jhon Deo';
+        // $user1->email = 'jhon@deo.com';
+        // $user1->password = bcrypt('secret');
+        // $user1->phone = '1234567890';
+        // $user1->profile_id = 1;
+        // $user1->save();
+        // $user1->roles()->attach($developer);
+        // $user1->permissions()->attach($createTasks);
 
-        $user2 = new User();
-        $user2->name = 'Mike Thomas';
-        $user2->email = 'mike@thomas.com';
-        $user2->password = bcrypt('secret');
-        $user2->phone = '0987654321';
-        $user2->profile_id = 2;
-        $user2->save();
-        $user2->roles()->attach($manager);
-        $user2->permissions()->attach($manageUsers);
+        // $user2 = new User();
+        // $user2->name = 'Mike Thomas';
+        // $user2->email = 'mike@thomas.com';
+        // $user2->password = bcrypt('secret');
+        // $user2->phone = '0987654321';
+        // $user2->profile_id = 2;
+        // $user2->save();
+        // $user2->roles()->attach($manager);
+        // $user2->permissions()->attach($manageUsers);
+
+        $user3 = new User();
+        $user3->name = 'Миша';
+        $user3->email = 'coutaq@gmail.com';
+        $user3->password = bcrypt('root');
+        $user3->phone = '0987654333';
+        $user3->profile_id = 3;
+        $user3->save();
+        $user3->roles()->attach($admin);
+        $user3->permissions()->attach($manageUsers);
 
     }
 }

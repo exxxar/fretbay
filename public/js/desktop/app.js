@@ -55214,7 +55214,7 @@ var render = function() {
           _vm._m(0),
           _vm._v(" "),
           _c("button", { staticClass: "first__btn" }, [
-            _vm._v("\n                REQUEST A QUOTE\n            ")
+            _vm._v("\r\n                REQUEST A QUOTE\r\n            ")
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "row" }, [
@@ -55236,10 +55236,10 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("h1", [
-      _vm._v("\n                Find your mover\n                "),
+      _vm._v("\r\n                Find your mover\r\n                "),
       _c("span", [
         _vm._v(
-          "\n                    The leading marketplace for cheap transport and moving services\n                "
+          "\r\n                    The leading marketplace for cheap transport and moving services\r\n                "
         )
       ])
     ])
@@ -61519,13 +61519,13 @@ var staticRenderFns = [
                 _vm._v(" "),
                 _c("p", { staticClass: "seekheader__title" }, [
                   _vm._v(
-                    "\n                            18 millions\n                        "
+                    "\r\n                            18 millions\r\n                        "
                   )
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "seekheader__txt" }, [
                   _vm._v(
-                    "\n                            kg reduction in CO2 emissions\n                        "
+                    "\r\n                            kg reduction in CO2 emissions\r\n                        "
                   )
                 ])
               ]
@@ -61538,13 +61538,13 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("p", { staticClass: "seekheader__title" }, [
                 _vm._v(
-                  "\n                            A network of +8000\n                        "
+                  "\r\n                            A network of +8000\r\n                        "
                 )
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "seekheader__txt" }, [
                 _vm._v(
-                  "\n                            authorized movers\n                        "
+                  "\r\n                            authorized movers\r\n                        "
                 )
               ])
             ])
@@ -61556,13 +61556,13 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("p", { staticClass: "seekheader__title" }, [
                 _vm._v(
-                  "\n                            1 943 364 users\n                        "
+                  "\r\n                            1 943 364 users\r\n                        "
                 )
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "seekheader__txt" }, [
                 _vm._v(
-                  "\n                            have used our services\n                        "
+                  "\r\n                            have used our services\r\n                        "
                 )
               ])
             ])
@@ -61574,13 +61574,13 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("p", { staticClass: "seekheader__title" }, [
                 _vm._v(
-                  "\n                            an unbeatable price\n                        "
+                  "\r\n                            an unbeatable price\r\n                        "
                 )
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "seekheader__txt" }, [
                 _vm._v(
-                  "\n                            save up to 75%\n                        "
+                  "\r\n                            save up to 75%\r\n                        "
                 )
               ])
             ])
@@ -61599,9 +61599,9 @@ var staticRenderFns = [
           _c("div", { staticClass: "col-md-3 col-xs-6" }, [
             _c("div", { staticClass: "stepsnew__item" }, [
               _c("h3", { staticClass: "stepsnew__title" }, [
-                _c("span", [_vm._v("\n\t\t\t\t\t\t\t\t1\n\t\t\t\t\t\t\t")]),
+                _c("span", [_vm._v("\r\n\t\t\t\t\t\t\t\t1\r\n\t\t\t\t\t\t\t")]),
                 _vm._v(
-                  "\n                            Publish your listing\n                        "
+                  "\r\n                            Publish your listing\r\n                        "
                 )
               ]),
               _vm._v(" "),
@@ -61615,9 +61615,9 @@ var staticRenderFns = [
           _c("div", { staticClass: "col-md-3 col-xs-6" }, [
             _c("div", { staticClass: "stepsnew__item" }, [
               _c("h3", { staticClass: "stepsnew__title" }, [
-                _c("span", [_vm._v("\n\t\t\t\t\t\t\t\t2\n\t\t\t\t\t\t\t")]),
+                _c("span", [_vm._v("\r\n\t\t\t\t\t\t\t\t2\r\n\t\t\t\t\t\t\t")]),
                 _vm._v(
-                  "\n                            Get instant quotes\n                        "
+                  "\r\n                            Get instant quotes\r\n                        "
                 )
               ]),
               _vm._v(" "),
@@ -61631,9 +61631,9 @@ var staticRenderFns = [
           _c("div", { staticClass: "col-md-3 col-xs-6" }, [
             _c("div", { staticClass: "stepsnew__item" }, [
               _c("h3", { staticClass: "stepsnew__title" }, [
-                _c("span", [_vm._v("\n\t\t\t\t\t\t\t\t3\n\t\t\t\t\t\t\t")]),
+                _c("span", [_vm._v("\r\n\t\t\t\t\t\t\t\t3\r\n\t\t\t\t\t\t\t")]),
                 _vm._v(
-                  "\n                            Get delivered\n                        "
+                  "\r\n                            Get delivered\r\n                        "
                 )
               ]),
               _vm._v(" "),
@@ -61647,9 +61647,9 @@ var staticRenderFns = [
           _c("div", { staticClass: "col-md-3 col-xs-6" }, [
             _c("div", { staticClass: "stepsnew__item" }, [
               _c("h3", { staticClass: "stepsnew__title" }, [
-                _c("span", [_vm._v("\n\t\t\t\t\t\t\t\t4\n\t\t\t\t\t\t\t")]),
+                _c("span", [_vm._v("\r\n\t\t\t\t\t\t\t\t4\r\n\t\t\t\t\t\t\t")]),
                 _vm._v(
-                  "\n                            Rate the service\n                        "
+                  "\r\n                            Rate the service\r\n                        "
                 )
               ]),
               _vm._v(" "),
@@ -61662,7 +61662,7 @@ var staticRenderFns = [
         ]),
         _vm._v(" "),
         _c("button", { staticClass: "first__btn" }, [
-          _vm._v("\n                REQUEST A QUOTE\n            ")
+          _vm._v("\r\n                REQUEST A QUOTE\r\n            ")
         ])
       ])
     ])
@@ -61678,29 +61678,29 @@ var staticRenderFns = [
             _c("div", { staticClass: "trevalnew__item trevalnew__item-left" }, [
               _c("a", { staticClass: "trevalnew__title" }, [
                 _vm._v(
-                  "\n                            Find a mover\n                        "
+                  "\r\n                            Find a mover\r\n                        "
                 )
               ]),
               _vm._v(" "),
               _c("p", { staticClass: "trevalnew__txt" }, [
                 _vm._v(
-                  "\n                            Finding a cheap mover on FretBay is very easy!\n                            "
+                  "\r\n                            Finding a cheap mover on FretBay is very easy!\r\n                            "
                 ),
                 _c("br"),
                 _vm._v(
-                  "\n                            Let's say you simply want to move for example, you only need to publish a listing for free to receive low-cost moving quotes or cheap mover rates.\n                        "
+                  "\r\n                            Let's say you simply want to move for example, you only need to publish a listing for free to receive low-cost moving quotes or cheap mover rates.\r\n                        "
                 )
               ]),
               _vm._v(" "),
               _c("p", { staticClass: "trevalnew__txt" }, [
                 _vm._v(
-                  "\n                            A grouped transport guarantees you very low moving prices. Once this request has been made, each transporter can send you a moving quote and make you an offer for a transport price. Then, all you have to do is select the transportation service offer that best meets your needs!\n                        "
+                  "\r\n                            A grouped transport guarantees you very low moving prices. Once this request has been made, each transporter can send you a moving quote and make you an offer for a transport price. Then, all you have to do is select the transportation service offer that best meets your needs!\r\n                        "
                 )
               ]),
               _vm._v(" "),
               _c("a", { staticClass: "trevalnew__btn" }, [
                 _vm._v(
-                  "\n                            Find out more\n                        "
+                  "\r\n                            Find out more\r\n                        "
                 )
               ])
             ])
@@ -61713,33 +61713,33 @@ var staticRenderFns = [
               [
                 _c("a", { staticClass: "trevalnew__title" }, [
                   _vm._v(
-                    "\n                            I'm a transporter\n                        "
+                    "\r\n                            I'm a transporter\r\n                        "
                   )
                 ]),
                 _vm._v(" "),
                 _c("p", { staticClass: "trevalnew__txt" }, [
                   _vm._v(
-                    "\n                            FretBay is very easy for transporters to use.\n                            "
+                    "\r\n                            FretBay is very easy for transporters to use.\r\n                            "
                   ),
                   _c("br"),
                   _vm._v(
-                    "\n                            Every day, hundreds of people publish a listing to request a cheap quote for a moving, private parcel, vehicle or animal transport.\n                        "
+                    "\r\n                            Every day, hundreds of people publish a listing to request a cheap quote for a moving, private parcel, vehicle or animal transport.\r\n                        "
                   )
                 ]),
                 _vm._v(" "),
                 _c("p", { staticClass: "trevalnew__txt" }, [
                   _vm._v(
-                    "\n                            All you have to do is consult the listings corresponding to your travel locations to find loads and deliveries. Then, all that remains is to offer an estimate to the client.\n                            "
+                    "\r\n                            All you have to do is consult the listings corresponding to your travel locations to find loads and deliveries. Then, all that remains is to offer an estimate to the client.\r\n                            "
                   ),
                   _c("br"),
                   _vm._v(
-                    "\n                            Registration and publication of an ad on FretBay are free and without obligation, take advantage of it!\n                        "
+                    "\r\n                            Registration and publication of an ad on FretBay are free and without obligation, take advantage of it!\r\n                        "
                   )
                 ]),
                 _vm._v(" "),
                 _c("a", { staticClass: "trevalnew__btn" }, [
                   _vm._v(
-                    "\n                            Find out more\n                        "
+                    "\r\n                            Find out more\r\n                        "
                   )
                 ])
               ]
@@ -61785,7 +61785,7 @@ var staticRenderFns = [
               _c("li", [
                 _c("a", { attrs: { href: "#" } }, [
                   _vm._v(
-                    "\n                                    Moving cheaply\n                                "
+                    "\r\n                                    Moving cheaply\r\n                                "
                   )
                 ])
               ]),
@@ -61793,7 +61793,7 @@ var staticRenderFns = [
               _c("li", [
                 _c("a", { attrs: { href: "#" } }, [
                   _vm._v(
-                    "\n                                    Estimating your move with FretBay\n                                "
+                    "\r\n                                    Estimating your move with FretBay\r\n                                "
                   )
                 ])
               ]),
@@ -61801,7 +61801,7 @@ var staticRenderFns = [
               _c("li", [
                 _c("a", { attrs: { href: "#" } }, [
                   _vm._v(
-                    "\n                                    Moving when you're on your own\n                                "
+                    "\r\n                                    Moving when you're on your own\r\n                                "
                   )
                 ])
               ]),
@@ -61809,7 +61809,7 @@ var staticRenderFns = [
               _c("li", [
                 _c("a", { attrs: { href: "#" } }, [
                   _vm._v(
-                    "\n                                    An optimized move in Europe\n                                "
+                    "\r\n                                    An optimized move in Europe\r\n                                "
                   )
                 ])
               ]),
@@ -61817,7 +61817,7 @@ var staticRenderFns = [
               _c("li", [
                 _c("a", { attrs: { href: "#" } }, [
                   _vm._v(
-                    "\n                                    Grouped moving, a system with many advantages\n                                "
+                    "\r\n                                    Grouped moving, a system with many advantages\r\n                                "
                   )
                 ])
               ]),
@@ -61825,7 +61825,7 @@ var staticRenderFns = [
               _c("li", [
                 _c("a", { attrs: { href: "#" } }, [
                   _vm._v(
-                    "\n                                    Moving your furniture in complete serenity\n                                "
+                    "\r\n                                    Moving your furniture in complete serenity\r\n                                "
                   )
                 ])
               ]),
@@ -61833,7 +61833,7 @@ var staticRenderFns = [
               _c("li", [
                 _c("a", { attrs: { href: "#" } }, [
                   _vm._v(
-                    "\n                                    Rent the right truck for your move\n                                "
+                    "\r\n                                    Rent the right truck for your move\r\n                                "
                   )
                 ])
               ]),
@@ -61841,7 +61841,7 @@ var staticRenderFns = [
               _c("li", [
                 _c("a", { attrs: { href: "#" } }, [
                   _vm._v(
-                    "\n                                    Moving for students\n                                "
+                    "\r\n                                    Moving for students\r\n                                "
                   )
                 ])
               ]),
@@ -61849,7 +61849,7 @@ var staticRenderFns = [
               _c("li", [
                 _c("a", { attrs: { href: "#" } }, [
                   _vm._v(
-                    "\n                                    One-way move\n                                "
+                    "\r\n                                    One-way move\r\n                                "
                   )
                 ])
               ]),
@@ -61857,7 +61857,7 @@ var staticRenderFns = [
               _c("li", [
                 _c("a", { attrs: { href: "#" } }, [
                   _vm._v(
-                    "\n                                    Moving for individuals\n                                "
+                    "\r\n                                    Moving for individuals\r\n                                "
                   )
                 ])
               ])
@@ -61872,7 +61872,7 @@ var staticRenderFns = [
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
                     _vm._v(
-                      "\n                                        Move from Hamptworth to Codnor\n                                    "
+                      "\r\n                                        Move from Hamptworth to Codnor\r\n                                    "
                     )
                   ])
                 ]),
@@ -61880,7 +61880,7 @@ var staticRenderFns = [
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
                     _vm._v(
-                      "\n                                        Move from Foscott to Heacham\n                                    "
+                      "\r\n                                        Move from Foscott to Heacham\r\n                                    "
                     )
                   ])
                 ]),
@@ -61888,7 +61888,7 @@ var staticRenderFns = [
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
                     _vm._v(
-                      "\n                                        Move from Goldthorn Park to Troway\n                                    "
+                      "\r\n                                        Move from Goldthorn Park to Troway\r\n                                    "
                     )
                   ])
                 ]),
@@ -61896,7 +61896,7 @@ var staticRenderFns = [
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
                     _vm._v(
-                      "\n                                        Move from Chislet to Wackerfield\n                                    "
+                      "\r\n                                        Move from Chislet to Wackerfield\r\n                                    "
                     )
                   ])
                 ]),
@@ -61904,7 +61904,7 @@ var staticRenderFns = [
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
                     _vm._v(
-                      "\n                                        Move from Asserby to Marton\n                                    "
+                      "\r\n                                        Move from Asserby to Marton\r\n                                    "
                     )
                   ])
                 ]),
@@ -61912,7 +61912,7 @@ var staticRenderFns = [
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
                     _vm._v(
-                      "\n                                        Move from Invergowrie to Sellafirth\n                                    "
+                      "\r\n                                        Move from Invergowrie to Sellafirth\r\n                                    "
                     )
                   ])
                 ]),
@@ -61920,7 +61920,7 @@ var staticRenderFns = [
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
                     _vm._v(
-                      "\n                                        Move from Ruddington to Creeting St Peter\n                                    "
+                      "\r\n                                        Move from Ruddington to Creeting St Peter\r\n                                    "
                     )
                   ])
                 ])
@@ -61930,7 +61930,7 @@ var staticRenderFns = [
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
                     _vm._v(
-                      "\n                                        Move from Lower Stanton St Quintin to Wareham\n                                    "
+                      "\r\n                                        Move from Lower Stanton St Quintin to Wareham\r\n                                    "
                     )
                   ])
                 ]),
@@ -61938,7 +61938,7 @@ var staticRenderFns = [
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
                     _vm._v(
-                      "\n                                        Move from Longborough to Rossbrick Glebe\n                                    "
+                      "\r\n                                        Move from Longborough to Rossbrick Glebe\r\n                                    "
                     )
                   ])
                 ]),
@@ -61946,7 +61946,7 @@ var staticRenderFns = [
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
                     _vm._v(
-                      "\n                                        Move from Oving to Hadstock\n                                    "
+                      "\r\n                                        Move from Oving to Hadstock\r\n                                    "
                     )
                   ])
                 ]),
@@ -61954,7 +61954,7 @@ var staticRenderFns = [
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
                     _vm._v(
-                      "\n                                        Move from Duggleby to Craigstrome\n                                    "
+                      "\r\n                                        Move from Duggleby to Craigstrome\r\n                                    "
                     )
                   ])
                 ]),
@@ -61962,7 +61962,7 @@ var staticRenderFns = [
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
                     _vm._v(
-                      "\n                                        Move from Ballyronan to Bredbury\n                                    "
+                      "\r\n                                        Move from Ballyronan to Bredbury\r\n                                    "
                     )
                   ])
                 ]),
@@ -61970,7 +61970,7 @@ var staticRenderFns = [
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
                     _vm._v(
-                      "\n                                        Move from Swineshead to Oxborough\n                                    "
+                      "\r\n                                        Move from Swineshead to Oxborough\r\n                                    "
                     )
                   ])
                 ]),
@@ -61978,7 +61978,7 @@ var staticRenderFns = [
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
                     _vm._v(
-                      "\n                                        Move from Hillfield to Gayle\n                                    "
+                      "\r\n                                        Move from Hillfield to Gayle\r\n                                    "
                     )
                   ])
                 ])
@@ -61988,7 +61988,7 @@ var staticRenderFns = [
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
                     _vm._v(
-                      "\n                                        Move from Dogsthorpe to Laverton\n                                    "
+                      "\r\n                                        Move from Dogsthorpe to Laverton\r\n                                    "
                     )
                   ])
                 ]),
@@ -61996,7 +61996,7 @@ var staticRenderFns = [
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
                     _vm._v(
-                      "\n                                        Move from Townsend Fold to Beeby\n                                    "
+                      "\r\n                                        Move from Townsend Fold to Beeby\r\n                                    "
                     )
                   ])
                 ]),
@@ -62004,7 +62004,7 @@ var staticRenderFns = [
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
                     _vm._v(
-                      "\n                                        Move from Purslow to Maker\n                                    "
+                      "\r\n                                        Move from Purslow to Maker\r\n                                    "
                     )
                   ])
                 ]),
@@ -62012,7 +62012,7 @@ var staticRenderFns = [
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
                     _vm._v(
-                      "\n                                        Move from Great Bricett to Clawthorpe\n                                    "
+                      "\r\n                                        Move from Great Bricett to Clawthorpe\r\n                                    "
                     )
                   ])
                 ]),
@@ -62020,7 +62020,7 @@ var staticRenderFns = [
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
                     _vm._v(
-                      "\n                                        Move from Shirley to London Gatwick Airport\n                                    "
+                      "\r\n                                        Move from Shirley to London Gatwick Airport\r\n                                    "
                     )
                   ])
                 ]),
@@ -62028,7 +62028,7 @@ var staticRenderFns = [
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
                     _vm._v(
-                      "\n                                        Move from Appleton to Hengrave\n                                    "
+                      "\r\n                                        Move from Appleton to Hengrave\r\n                                    "
                     )
                   ])
                 ])
@@ -62044,7 +62044,7 @@ var staticRenderFns = [
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
                     _vm._v(
-                      "\n                                        Horse transport\n                                    "
+                      "\r\n                                        Horse transport\r\n                                    "
                     )
                   ])
                 ]),
@@ -62052,7 +62052,7 @@ var staticRenderFns = [
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
                     _vm._v(
-                      "\n                                        Animal transport\n                                    "
+                      "\r\n                                        Animal transport\r\n                                    "
                     )
                   ])
                 ]),
@@ -62060,7 +62060,7 @@ var staticRenderFns = [
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
                     _vm._v(
-                      "\n                                        low cost car transport\n                                    "
+                      "\r\n                                        low cost car transport\r\n                                    "
                     )
                   ])
                 ]),
@@ -62068,7 +62068,7 @@ var staticRenderFns = [
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
                     _vm._v(
-                      "\n                                        Low cost motorcycle transport\n                                    "
+                      "\r\n                                        Low cost motorcycle transport\r\n                                    "
                     )
                   ])
                 ]),
@@ -62076,7 +62076,7 @@ var staticRenderFns = [
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
                     _vm._v(
-                      "\n                                        Piano\n                                    "
+                      "\r\n                                        Piano\r\n                                    "
                     )
                   ])
                 ]),
@@ -62084,7 +62084,7 @@ var staticRenderFns = [
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
                     _vm._v(
-                      "\n                                        Furniture transport\n                                    "
+                      "\r\n                                        Furniture transport\r\n                                    "
                     )
                   ])
                 ]),
@@ -62092,7 +62092,7 @@ var staticRenderFns = [
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
                     _vm._v(
-                      "\n                                        Commercial goods\n                                    "
+                      "\r\n                                        Commercial goods\r\n                                    "
                     )
                   ])
                 ]),
@@ -62100,7 +62100,7 @@ var staticRenderFns = [
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
                     _vm._v(
-                      "\n                                        Bulky parcel\n                                    "
+                      "\r\n                                        Bulky parcel\r\n                                    "
                     )
                   ])
                 ])
@@ -62110,7 +62110,7 @@ var staticRenderFns = [
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
                     _vm._v(
-                      "\n                                        Household appliances\n                                    "
+                      "\r\n                                        Household appliances\r\n                                    "
                     )
                   ])
                 ]),
@@ -62118,7 +62118,7 @@ var staticRenderFns = [
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
                     _vm._v(
-                      "\n                                        Parcel transport\n                                    "
+                      "\r\n                                        Parcel transport\r\n                                    "
                     )
                   ])
                 ]),
@@ -62126,7 +62126,7 @@ var staticRenderFns = [
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
                     _vm._v(
-                      "\n                                        Container transport\n                                    "
+                      "\r\n                                        Container transport\r\n                                    "
                     )
                   ])
                 ]),
@@ -62134,7 +62134,7 @@ var staticRenderFns = [
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
                     _vm._v(
-                      "\n                                        Fragile objects\n                                    "
+                      "\r\n                                        Fragile objects\r\n                                    "
                     )
                   ])
                 ]),
@@ -62142,7 +62142,7 @@ var staticRenderFns = [
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
                     _vm._v(
-                      "\n                                        Boat transport\n                                    "
+                      "\r\n                                        Boat transport\r\n                                    "
                     )
                   ])
                 ])
@@ -62152,7 +62152,7 @@ var staticRenderFns = [
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
                     _vm._v(
-                      "\n                                        FretBay, the online freight platform\n                                    "
+                      "\r\n                                        FretBay, the online freight platform\r\n                                    "
                     )
                   ])
                 ]),
@@ -62160,7 +62160,7 @@ var staticRenderFns = [
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
                     _vm._v(
-                      "\n                                        Join our network of movers\n                                    "
+                      "\r\n                                        Join our network of movers\r\n                                    "
                     )
                   ])
                 ])
@@ -87235,6 +87235,18 @@ module.exports = {
     "failed": "These credentials do not match our records.",
     "throttle": "Too many login attempts. Please try again in :seconds seconds."
   },
+  "en.cars-categories": {
+    "type.1": "\u041B\u0435\u0433\u043A\u043E\u0432\u044B\u0435",
+    "type.10": "\u0421\u0435\u043B\u044C\u0445\u043E\u0437\u0442\u0435\u0445\u043D\u0438\u043A\u0430",
+    "type.2": "\u041C\u043E\u0442\u043E",
+    "type.3": "\u0412\u043E\u0434\u043D\u044B\u0439 \u0442\u0440\u0430\u043D\u0441\u043F\u043E\u0440\u0442",
+    "type.4": "\u0421\u043F\u0435\u0446\u0442\u0435\u0445\u043D\u0438\u043A\u0430",
+    "type.5": "\u041F\u0440\u0438\u0446\u0435\u043F\u044B",
+    "type.6": "\u0413\u0440\u0443\u0437\u043E\u0432\u0438\u043A\u0438",
+    "type.7": "\u0410\u0432\u0442\u043E\u0431\u0443\u0441\u044B",
+    "type.8": "\u0410\u0432\u0442\u043E\u0434\u043E\u043C\u0430",
+    "type.9": "\u0412\u043E\u0437\u0434\u0443\u0448\u043D\u044B\u0439 \u0442\u0440\u0430\u043D\u0441\u043F\u043E\u0440\u0442"
+  },
   "en.pagination": {
     "next": "Next &raquo;",
     "previous": "&laquo; Previous"
@@ -87387,6 +87399,18 @@ module.exports = {
   "fr.auth": {
     "failed": "",
     "throttle": ""
+  },
+  "fr.cars-categories": {
+    "type.1": "\u041B\u0435\u0433\u043A\u043E\u0432\u044B\u0435",
+    "type.10": "\u0421\u0435\u043B\u044C\u0445\u043E\u0437\u0442\u0435\u0445\u043D\u0438\u043A\u0430",
+    "type.2": "\u041C\u043E\u0442\u043E",
+    "type.3": "\u0412\u043E\u0434\u043D\u044B\u0439 \u0442\u0440\u0430\u043D\u0441\u043F\u043E\u0440\u0442",
+    "type.4": "\u0421\u043F\u0435\u0446\u0442\u0435\u0445\u043D\u0438\u043A\u0430",
+    "type.5": "\u041F\u0440\u0438\u0446\u0435\u043F\u044B",
+    "type.6": "\u0413\u0440\u0443\u0437\u043E\u0432\u0438\u043A\u0438",
+    "type.7": "\u0410\u0432\u0442\u043E\u0431\u0443\u0441\u044B",
+    "type.8": "\u0410\u0432\u0442\u043E\u0434\u043E\u043C\u0430",
+    "type.9": "\u0412\u043E\u0437\u0434\u0443\u0448\u043D\u044B\u0439 \u0442\u0440\u0430\u043D\u0441\u043F\u043E\u0440\u0442"
   },
   "fr.pagination": {
     "next": "",
@@ -87565,9 +87589,9 @@ module.exports = {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! H:\Web\Projects\AlloTrans\fretbay\resources\js\desktop\app.js */"./resources/js/desktop/app.js");
-__webpack_require__(/*! H:\Web\Projects\AlloTrans\fretbay\resources\sass\desktop\app.scss */"./resources/sass/desktop/app.scss");
-module.exports = __webpack_require__(/*! H:\Web\Projects\AlloTrans\fretbay\resources\sass\admin\app.scss */"./resources/sass/admin/app.scss");
+__webpack_require__(/*! C:\Users\Michael\source\repos\fretbay\resources\js\desktop\app.js */"./resources/js/desktop/app.js");
+__webpack_require__(/*! C:\Users\Michael\source\repos\fretbay\resources\sass\desktop\app.scss */"./resources/sass/desktop/app.scss");
+module.exports = __webpack_require__(/*! C:\Users\Michael\source\repos\fretbay\resources\sass\admin\app.scss */"./resources/sass/admin/app.scss");
 
 
 /***/ })
