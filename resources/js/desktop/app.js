@@ -107,7 +107,14 @@ Vue.use(VueLang, {
     fallback: 'en' // Set fallback locale
 });
 
+// import VueSlickCarousel from 'vue-slick-carousel'
+// import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+// import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+// Vue.component('slick',  VueSlickCarousel);
 
+import VueSplide from '@splidejs/vue-splide';
+import '@splidejs/splide/dist/css/themes/splide-sea-green.min.css';
+Vue.use( VueSplide );
 
 const app = new Vue({
     store,

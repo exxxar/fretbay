@@ -24,6 +24,7 @@ class Category extends Model
         'image',
         'position',
         'is_active',
+        'mode'
     ];
 
     /**
