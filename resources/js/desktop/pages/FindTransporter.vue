@@ -7,16 +7,31 @@
             <div class="row">
                 <div class="col-lg-9 col-md-6 col-12 mt-2">
                     <div class="panel-left">
-                        <type-selector v-on:select-type="selectType"/>
+                        <div v-if="step===0">
+                            <type-selector v-on:select-type="selectType"/>
+                        </div>
 
+                        <div v-if="step===1">
 
-                        <article-form/>
+<!--                            <div v-if="category.mode =='article'">-->
+                                <article-form/>
+<!--                            </div>-->
+<!--                            <div v-if="category.mode =='grid'">-->
+<!--                                <grid :category="category"></grid>-->
+<!--                            </div>-->
+<!--                            <div v-if="category.mode =='calculator'">-->
+                                <moving-category></moving-category>
+<!--                            </div>-->
 
-                        <volume-form/>
-
-                        <inventory-form/>
-
-                        <type-of-transport/>
+<!--                            <type-of-transport/>-->
+                        </div>
+                        <div v-if="step===2">
+                            <adress-info-form/>
+                        </div>
+                        <div v-if="step===3">
+                            if user not logged in --> registration
+                            Order complete
+                        </div>
 
                     </div>
 
@@ -48,9 +63,6 @@
                 </div>
             </div>
 
-            <moving-package-form/>
-
-            <adress-info-form/>
         </div>
     </div>
 </template>
@@ -63,19 +75,46 @@
     import TypeOfTransport from '../components/FindTransporter/TypeOfTransport'
     import MovingPackageForm from '../components/FindTransporter/MovingPackageForm'
     import AdressInfoForm from '../components/FindTransporter/AdressInfoForm'
+    import MovingCategory from "../components/FindTransporter/MovingCategory";
 
     export default {
         components: {
+            MovingCategory,
             Steps, TypeSelector, ArticleForm, VolumeForm, InventoryForm, TypeOfTransport,MovingPackageForm, AdressInfoForm
         },
         data() {
             return {
-                type: null,
+                category: null,
+                component_name:''
             }
         },
+        computed: {
+            categories() {
+                return this.$store.getters.categories;
+            },
+            step() {
+                return this.$store.getters.step;
+            }
+        },
+        mounted() {
+            this.$store.dispatch('setStep', 0)
+        },
         methods: {
-            selectType(type) {
-                this.type = type
+            selectType(category) {
+                //todo: find object of category by id or index
+                this.category = category;
+                this.$store.dispatch('editNewListing', {key:'category', value: category})
+                // if(this.category.mode === 'calculator') {
+                //     this.component_name = 'inventory-form';
+                // }
+                // else if (this.category.mode === 'grid')
+                // {
+                //     this.component_name = 'grid';
+                // }
+                // else {
+                //     this.component_name = 'article-form';
+                // }
+                this.$store.dispatch('setStep', 1)
             },
             submit() {
 

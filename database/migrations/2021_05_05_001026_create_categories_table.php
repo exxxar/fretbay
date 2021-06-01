@@ -18,6 +18,7 @@ class CreateCategoriesTable extends Migration
             $table->longText('title');
             $table->double('min_price');
             $table->string('image');
+            $table->string('mode');
             $table->integer('position');
             $table->boolean('is_active');
             $table->softDeletes();
