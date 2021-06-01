@@ -18,19 +18,28 @@
                                 <h2 class="ebu__title">
                                     FretBay Identification
                                 </h2>
-                                <form action="#" id="signUpForm1">
+                                <form action="/login" method="post">
+                                   <slot name="csrf"></slot>
+
                                     <div class="signUpForm1-inputs">
                                         <div class="log-row input-row">
                                             <i class="glyphicon glyphicon-user"></i>
-                                            <span id="wp-pseudo2">
-                                    <input type="text" class="signUpForm1__input signUpForm1__input-first" placeholder="Login or Email">
-                                 </span>
+
+                                            <input type="email" class="signUpForm1__input signUpForm1__input-first"
+                                                   name="email" placeholder="Login or Email">
+
+                                            <slot name="error-email"></slot>
+
+
                                         </div>
                                         <div class="pass-row input-row">
                                             <i class="glyphicon glyphicon-user"></i>
-                                            <span id="wp-pseudo2">
-                                    <input type="text" class="signUpForm1__input" placeholder="Password">
-                                 </span>
+
+                                            <input type="password" class="signUpForm1__input" name="password"
+                                                   placeholder="Password">
+
+                                            <slot name="error-password"></slot>
+
                                         </div>
                                         <!-- <input type="text" class="signUpForm1__input signUpForm1__input-first" placeholder="Login or Email">
                                         <input type="text" class="signUpForm1__input" placeholder="Password"> -->
@@ -39,12 +48,12 @@
                                         Sign in
                                     </button>
                                     <div class="form-text">
-                                        Forgotten password? <a href="#">Sign up here</a>
+                                        Forgotten password? <a href="/register">Sign up here</a>
                                     </div>
                                 </form>
                             </div>
                             <div class="ebu__txt">
-                                Not yet registered on FretBay? <a href="#">Sign up here</a>
+                                Not yet registered on FretBay? <a href="/register">Sign up here</a>
                             </div>
                         </div>
                     </div>
@@ -56,14 +65,16 @@
 
 </template>
 <script>
-    export default {}
+    export default {
+
+    }
 </script>
 <style lang="scss" scoped>
     h1 {
-        margin-top:0px;
+        margin-top: 0px;
     }
 
     p.h1 {
-        font-size:20px;
+        font-size: 20px;
     }
 </style>

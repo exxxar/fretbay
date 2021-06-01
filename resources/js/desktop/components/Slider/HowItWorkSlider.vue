@@ -82,15 +82,17 @@
                     this.selected = 0;
                 }
                 this.selected += 1;
-                this.timer = setTimeout(this.tick, 4000);
+                this.timer = setTimeout(this.tick, this.changeSlideTimeout);
             },
             clearTickInterval: function() {
                 clearTimeout(this.timer);
-                this.timer = setTimeout(this.tick, 4000);
+                this.timer = setTimeout(this.tick, this.changeSlideTimeout);
             }
         },
+
         data() {
             return {
+                changeSlideTimeout: 5000,
                 tabs: [
                     {
                         id: 1,

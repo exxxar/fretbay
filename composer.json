@@ -20,7 +20,8 @@
         "laravel/ui": "2.4",
         "mariuzzo/laravel-js-localization": "^1.8",
         "spatie/laravel-translatable": "^4.6",
-        "vkcom/vk-php-sdk": "^5.101"
+        "vkcom/vk-php-sdk": "^5.101",
+      "ext-http": "*"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

@@ -19,6 +19,11 @@ class AdminSidebarController extends Controller
     {
         return view('admin.pages.orders');
     }
+    public function logout()
+    {
+        \Auth::logout();
+        // redirect()->route('desktop.index');
+    }
     //objects
     public function objects_categories()
     {

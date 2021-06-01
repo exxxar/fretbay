@@ -16,9 +16,10 @@ class CreateSubcategoriesTable extends Migration
         Schema::create('subcategories', function (Blueprint $table) {
             $table->id();
             $table->longText('title');
-            $table->string('image');
-            $table->integer('position');
-            $table->boolean('is_active');
+            $table->string('image',512)->default('');
+            $table->integer('position')->default(0);
+            $table->boolean('is_active')->default(true);
+            $table->double('volume')->default(0);
             $table->unsignedInteger('category_id')->nullable();
             $table->softDeletes();
             $table->timestamps();

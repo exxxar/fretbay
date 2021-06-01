@@ -20,6 +20,7 @@ Vue.use(Notifications)
 
 import VueLazyload from 'vue-lazyload'
 
+
 Vue.use(VueLazyload, {
     preLoad: 1.3,
     error: "/images/common/icons/general/content-loader.gif",

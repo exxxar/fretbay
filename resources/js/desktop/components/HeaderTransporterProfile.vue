@@ -6,7 +6,7 @@
                 <div class="logo__body">
                     <nav class="logo__menu">
                         <ul class="logo__list row">
-                            <div class="col-md-9 col-sm-11">
+                           <!-- <div class="col-md-9 col-sm-11">
                                 <li>
                                     <a href="#"><img
                                         src="https://fretbay.com/fr/frv2/assets/images/common/logos/logo-header.svg?v=0.0.0"
@@ -53,7 +53,7 @@
                                             widht="35" height="35" alt="Logo">
                                     </a>
                                 </li>
-                            </div>
+                            </div>-->
                         </ul>
                     </nav>
                 </div>

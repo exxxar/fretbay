@@ -23,6 +23,8 @@ class CreateUsersTable extends Migration
             $table->unsignedInteger("profile_id")
                 ->references('id')
                 ->on('profiles');
+
+            $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();
         });
