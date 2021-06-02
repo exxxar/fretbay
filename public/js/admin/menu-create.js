@@ -153,7 +153,7 @@ document.getElementById("type").onchange = function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! E:\OpenServer\OSPanel\domains\fretbay\resources\js\admin\coreui\menu-create.js */"./resources/js/admin/coreui/menu-create.js");
+module.exports = __webpack_require__(/*! D:\projects\fretbay\resources\js\admin\coreui\menu-create.js */"./resources/js/admin/coreui/menu-create.js");
 
 
 /***/ })

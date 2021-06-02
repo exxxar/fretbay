@@ -21,7 +21,6 @@ class CategoryProperty extends Model
         'slug',
         'type',
         'icon',
-        'required'
     ];
 
     /**
@@ -33,9 +32,8 @@ class CategoryProperty extends Model
         'id' => 'integer',
     ];
 
-
     public function category()
     {
-        return $this->belongsTo(\App\Category::class);
+        return $this->belongsToMany(\App\CategoryProperty::class,'category_has_category_properties','category_property_id','id');
     }
 }

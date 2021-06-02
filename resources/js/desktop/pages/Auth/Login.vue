@@ -4,7 +4,7 @@
             <div class="form-login">
                 <div class="etape-box-user">
                     <div class="row">
-                        <div class="col-md-6 col-sm-6">
+                        <div class="col-md-6 col-sm-12">
                             <h2 class="ebu__title">
                                 Log into your FretBay account.
                             </h2>
@@ -13,11 +13,12 @@
                             </p>
                             <img src="images/conecLogImg.png" class="img-responsive fix-img">
                         </div>
-                        <div class="col-md-6 col-sm-6">
+                        <div class="col-md-6 col-sm-12">
                             <div class="login__form">
                                 <h2 class="ebu__title">
                                     FretBay Identification
                                 </h2>
+                                <slot name="any-error"></slot>
                                 <form action="/login" method="post">
                                    <slot name="csrf"></slot>
 

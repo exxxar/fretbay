@@ -28,7 +28,7 @@
                         </div>
                         <div class="col-md-3  logo__list-aut" v-if="auth||auth==true">
                             <li>
-                                <a href="/transporter/profile-my-account">Profile</a>
+                                <a href="/transporter/profile-my-account">Профиль</a>
                             </li>
                         </div>
 

@@ -4,7 +4,7 @@
             <div class="fix-etape-box">
                 <div class="etape-box">
                     <div class="row">
-                        <div class="col-md-10 col-sm-10">
+                        <div class="col-md-10 col-sm-12">
                             <h2 class="etape-box__title">
                                 I'm looking for a carrier
                             </h2>
@@ -26,7 +26,7 @@
                 </div>
                 <div class="etape-box">
                     <div class="row">
-                        <div class="col-md-9 col-sm-9">
+                        <div class="col-md-9 col-sm-12">
                             <h2 class="etape-box__title">
                                 Are you a carrier?
                             </h2>
