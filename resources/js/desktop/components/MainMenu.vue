@@ -18,7 +18,7 @@
                                 <a href="/how-it-works">How it works</a>
                             </li>
                         </div>
-                        <div class="col-md-3  logo__list-aut" v-if="!auth||auth==false">
+                        <div class="col-md-3  logo__list-aut" v-if="!auth">
                             <li>
                                 <a href="/register">Register</a>
                             </li>
@@ -26,9 +26,9 @@
                                 <a href="/login">Log in</a>
                             </li>
                         </div>
-                        <div class="col-md-3  logo__list-aut">
+                        <div class="col-md-3  logo__list-aut" v-else>
                             <li>
-                                <a href="/transporter/profile-my-account">Профиль</a>
+                                <a href="/transporter/profile-my-account">Profile</a>
                             </li>
                         </div>
 

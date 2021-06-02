@@ -5,7 +5,7 @@
         <div class="container">
 
             <div class="row">
-                <div class="col-lg-9 col-md-6 col-12 mt-2">
+                <div class="col-lg-9 col-md-12 col-sm-12 col-12 mt-2">
                     <div class="panel-left">
                         <div v-if="step===0">
                             <type-selector v-on:select-type="selectType"/>
@@ -20,7 +20,7 @@
 <!--                                <grid :category="category"></grid>-->
 <!--                            </div>-->
 <!--                            <div v-if="category.mode =='calculator'">-->
-                                <moving-category></moving-category>
+                                <moving-category/>
 <!--                            </div>-->
 
 <!--                            <type-of-transport/>-->
@@ -38,7 +38,7 @@
 
                 </div>
 
-                <div class="col-lg-3 col-md-6 col-12 mt-2">
+                <div class="col-lg-3 col-md-12 col-sm-12 col-12 mt-2">
                     <div class="panel-right ">
                         <h4> Publish your listing</h4>
                         <p> Our system matches your move with those of our other Fretbay users.</p>

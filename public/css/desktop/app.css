@@ -16034,7 +16034,7 @@ input[type="radio"] {
 }
 
 #login {
-  padding: 140px 0 0;
+  padding: 240px 0 0;
 }
 
 #login .fix-img {
@@ -18679,14 +18679,6 @@ input[type="radio"] {
   float: left;
   margin-right: 3px;
   top: -4px;
-}
-
-#login {
-  padding: 75px 0 0;
-}
-
-#login .fix-img {
-  margin-top: 0;
 }
 
 .ebu__subtitle {

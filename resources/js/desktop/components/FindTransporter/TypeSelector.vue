@@ -5,7 +5,7 @@
 
 
         <ul class="row">
-            <li class="col-md-3 col-6 transport-category" v-bind:class="{'active':(selected===0)}"
+            <li class="col-md-3 col-sm-6 col-12 transport-category" v-bind:class="{'active':(selected===0)}"
                 @click="selectType(0)">
                 <label>
 										<span class="category-label-inner">
@@ -17,7 +17,7 @@
 										</span>
                 </label>
             </li>
-            <li class="col-md-3 col-6 transport-category" v-bind:class="{'active':(selected===1)}"
+            <li class="col-md-3 col-sm-6 col-12 transport-category" v-bind:class="{'active':(selected===1)}"
                 @click="selectType(1)">
                 <label>
 										<span class="category-label-inner">
@@ -30,9 +30,9 @@
 										</span>
                 </label>
             </li>
-            <li class="col-md-3 col-6 transport-category" v-bind:class="{'active':(selected===2)}"
+            <li class="col-md-3 col-sm-6 col-12 transport-category" v-bind:class="{'active':(selected===2)}"
                 @click="selectType(2)">
-                <label n>
+                <label>
 										<span class="category-label-inner">
 											<span class="animated-icon">
 												<img src="/images/common/icons/category/default/3.svg?v=0.0.4"
@@ -43,7 +43,7 @@
 										</span>
                 </label>
             </li>
-            <li class="col-md-3 col-6 transport-category" v-bind:class="{'active':(selected===3)}"
+            <li class="col-md-3 col-sm-6 col-12 transport-category" v-bind:class="{'active':(selected===3)}"
                 @click="selectType(3)">
                 <label>
 										<span class="category-label-inner">
@@ -55,7 +55,7 @@
 										</span>
                 </label>
             </li>
-            <li class="col-md-3 col-6 transport-category" v-bind:class="{'active':(selected===4)}"
+            <li class="col-md-3 col-sm-6 col-12 transport-category" v-bind:class="{'active':(selected===4)}"
                 @click="selectType(4)" v-show="need_more">
                 <label>
 										<span class="category-label-inner">
@@ -68,7 +68,7 @@
 										</span>
                 </label>
             </li>
-            <li class="col-md-3 col-6 transport-category" v-bind:class="{'active':(selected===5)}"
+            <li class="col-md-3 col-sm-6 col-12 transport-category" v-bind:class="{'active':(selected===5)}"
                 @click="selectType(5)" v-show="need_more">
                 <label>
 										<span class="category-label-inner">
@@ -81,7 +81,7 @@
 										</span>
                 </label>
             </li>
-            <li class="col-md-3 col-6 transport-category" v-bind:class="{'active':(selected===6)}"
+            <li class="col-md-3 col-sm-6 col-12 transport-category" v-bind:class="{'active':(selected===6)}"
                 @click="selectType(6)" v-show="need_more">
                 <label>
 										<span class="category-label-inner">
@@ -94,7 +94,7 @@
 										</span>
                 </label>
             </li>
-            <li class="col-md-3 col-6 transport-category" v-bind:class="{'active':(selected===7)}"
+            <li class="col-md-3 col-sm-6 col-12 transport-category" v-bind:class="{'active':(selected===7)}"
                 @click="selectType(7)" v-show="need_more">
                 <label>
 										<span class="category-label-inner">
@@ -107,7 +107,7 @@
 										</span>
                 </label>
             </li>
-            <li class="col-md-3 col-6 transport-category" v-bind:class="{'active':(selected===8)}"
+            <li class="col-md-3 col-sm-6 col-12 transport-category" v-bind:class="{'active':(selected===8)}"
                 @click="selectType(8)" v-show="need_more">
                 <label>
 										<span class="category-label-inner">
@@ -120,7 +120,7 @@
 										</span>
                 </label>
             </li>
-            <li class="col-md-3 col-6 transport-category" v-bind:class="{'active':(selected===9)}"
+            <li class="col-md-3 col-sm-6 col-12 transport-category" v-bind:class="{'active':(selected===9)}"
                 @click="selectType(9)" v-show="need_more">
                 <label>
 										<span class="category-label-inner">
@@ -133,7 +133,7 @@
 										</span>
                 </label>
             </li>
-            <li class="col-md-3 col-6 transport-category" v-bind:class="{'active':(selected===10)}"
+            <li class="col-md-3 col-sm-6 col-12 transport-category" v-bind:class="{'active':(selected===10)}"
                 @click="selectType(10)" v-show="need_more">
                 <label>
 										<span class="category-label-inner">
@@ -146,7 +146,7 @@
 										</span>
                 </label>
             </li>
-            <li class="col-md-3 col-6 transport-category" v-bind:class="{'active':(selected===11)}"
+            <li class="col-md-3 col-sm-6 col-12 transport-category" v-bind:class="{'active':(selected===11)}"
                 @click="selectType(11)" v-show="need_more">
                 <label>
 										<span class="category-label-inner">
@@ -207,7 +207,6 @@
         border-bottom: 4px solid rgba(0, 0, 0, 0.09);
 
     }
-
 
 
 </style>
