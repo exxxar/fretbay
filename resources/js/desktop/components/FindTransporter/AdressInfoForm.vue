@@ -6,11 +6,11 @@
 
         <div class="row">
             <div class="col-6">
-                <p><img src="https://fretbay.com/en/assets/images/common/icons/general/icon-loading.svg" alt="">Place of loading</p>
+                <h4 class="mt-0 form-group section-title address-title title-loading">Place of loading</h4>
                 <choose-place-form/>
             </div>
             <div class="col-6">
-                <p><img src="https://fretbay.com/en/assets/images/common/icons/general/icon-delivery.svg" alt="">Place of delivery</p>
+                <h4 class="mt-0 form-group section-title address-title title-delivery">Place of delivery</h4>
                 <choose-place-form/>
             </div>
         </div>
@@ -20,9 +20,9 @@
 
         <div class="row">
             <div class="col-6">
-                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <textarea class="w-100" name="" id="" cols="30" rows="10"></textarea>
             </div>
-            <div class="col-6">
+            <div class="col-6" style="font-size: 14px">
                 <p class="alert-danger">
                     This information is public, NEVER give your contact details to preserve your privacy
                 </p>
@@ -54,17 +54,32 @@
 
         <div class="row">
             <div class="col-12">
-            <div class="custom-control custom-switch"><input type="checkbox" id="accept_conveyors" class="custom-control-input"> <label for="accept_conveyors" class="custom-control-label">I accept conveyors</label></div>
+            <div class="custom-control custom-switch">
+                <input type="checkbox" id="commercial" class="custom-control-input">
+                <label for="commercial" class="custom-control-label">I agree to receive commercial offers from AlloTrans and its partners</label>
+            </div>
         </div>
 
             <div class="col-12">
-                <div class="custom-control custom-switch"><input type="checkbox" id="accept_conveyors" class="custom-control-input"> <label for="accept_conveyors" class="custom-control-label">I accept conveyors</label></div>
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" id="terms" class="custom-control-input">
+                    <label for="terms" class="custom-control-label">I accept AlloTrans's Terms of Use </label>
+                </div>
             </div>
 
         </div>
 
         <p>This information can often be found on the Internet. </p>
         <p>Approximate measures will already allow carriers to offer you a suitable offer.</p>
+
+        <div class="row d-flex justify-content-end mt-2 w-100">
+            <div class="col-2">
+                <button class="btn btn-custom-danger" @click="prevStep">Back</button>
+            </div>
+            <div class="col-3">
+                <button class="btn btn-custom-white" @click="nextStep">Next</button>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -74,10 +89,39 @@
     export default {
         components:{
             ChoosePlaceForm
+        },
+        methods: {
+            nextStep() {
+                this.$store.dispatch('setStep', 2)
+            },
+            prevStep() {
+                this.$store.dispatch('setStep', 0)
+            },
         }
     }
 </script>
 <style lang="scss">
+    @media (max-width: 767px) {
+        .section-title {
+            margin-bottom: 10px;
+        }
+    }
 
+    .title-loading {
+        background-image: url(https://fretbay.com/en/assets/images/common/icons/general/icon-loading.svg);
+    }
 
+    .title-delivery {
+        background-image: url(https://fretbay.com/en/assets/images/common/icons/general/icon-delivery.svg);
+    }
+
+    .address-title {
+        font-size: 18px;
+        padding-left: 35px;
+        background-repeat: no-repeat;
+        background-size: 24px auto;
+    }
+    .section-title {
+        font-weight: 700;
+    }
 </style>

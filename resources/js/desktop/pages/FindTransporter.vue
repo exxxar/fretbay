@@ -5,23 +5,24 @@
         <div class="container">
 
             <div class="row">
-                <div class="col-lg-9 col-md-12 col-sm-12 col-12 mt-2">
+                <div class="col-lg-9 col-md-6 col-12 mt-2">
                     <div class="panel-left">
                         <div v-if="step===0">
-                            <type-selector v-on:select-type="selectType"/>
+<!--                            <type-selector v-on:select-type="selectType"/>-->
+                            <adress-info-form/>
                         </div>
 
                         <div v-if="step===1">
 
-<!--                            <div v-if="category.mode =='article'">-->
-                                <article-form/>
-<!--                            </div>-->
-<!--                            <div v-if="category.mode =='grid'">-->
-<!--                                <grid :category="category"></grid>-->
-<!--                            </div>-->
-<!--                            <div v-if="category.mode =='calculator'">-->
-                                <moving-category/>
-<!--                            </div>-->
+                            <div v-if="category.mode =='article'">
+                                <article-form :category="category"/>
+                            </div>
+                            <div v-if="category.mode =='grid'">
+                                <grid :category="category"></grid>
+                            </div>
+                            <div v-if="category.mode =='calculator'">
+                                <moving-category :category="category"></moving-category>
+                            </div>
 
 <!--                            <type-of-transport/>-->
                         </div>
@@ -38,7 +39,7 @@
 
                 </div>
 
-                <div class="col-lg-3 col-md-12 col-sm-12 col-12 mt-2">
+                <div class="col-lg-3 col-md-6 col-12 mt-2">
                     <div class="panel-right ">
                         <h4> Publish your listing</h4>
                         <p> Our system matches your move with those of our other Fretbay users.</p>
@@ -96,14 +97,21 @@
                 return this.$store.getters.step;
             }
         },
+        created() {
+            if(this.categories.length <=0)
+            {
+                this.$store.dispatch('getCategories')
+            }
+        },
         mounted() {
             this.$store.dispatch('setStep', 0)
         },
         methods: {
-            selectType(category) {
+            selectType(id) {
                 //todo: find object of category by id or index
-                this.category = category;
-                this.$store.dispatch('editNewListing', {key:'category', value: category})
+                let index = this.categories.findIndex(category => category.id === id)
+                this.category = this.categories[index];
+                this.$store.dispatch('editNewListing', {key:'category', value: id})
                 // if(this.category.mode === 'calculator') {
                 //     this.component_name = 'inventory-form';
                 // }

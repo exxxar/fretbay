@@ -49,7 +49,7 @@ class Category extends Model
         return $this->hasMany(\App\Thing::class);
     }
 
-    public function categoryProperties()
+    public function properties()
     {
         return $this->hasMany(\App\CategoryProperty::class);
     }
