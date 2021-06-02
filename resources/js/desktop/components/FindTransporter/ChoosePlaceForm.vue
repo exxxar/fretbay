@@ -1,8 +1,7 @@
 <template>
     <form>
         <div class="form-group">
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Adress">
         </div>
 
         <div class="form-row">
@@ -16,20 +15,20 @@
             </div>
         </div>
 
-        <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-            <option selected>Choose...</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-        </select>
+<!--        <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">-->
+<!--            <option selected>Choose...</option>-->
+<!--            <option value="1">One</option>-->
+<!--            <option value="2">Two</option>-->
+<!--            <option value="3">Three</option>-->
+<!--        </select>-->
 
 
-        <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-            <option selected>Choose...</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-        </select>
+<!--        <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">-->
+<!--            <option selected>Choose...</option>-->
+<!--            <option value="1">One</option>-->
+<!--            <option value="2">Two</option>-->
+<!--            <option value="3">Three</option>-->
+<!--        </select>-->
 
     </form>
 </template>

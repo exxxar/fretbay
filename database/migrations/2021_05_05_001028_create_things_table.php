@@ -20,6 +20,8 @@ class CreateThingsTable extends Migration
             $table->string('image');
             $table->integer('position');
             $table->boolean('is_active');
+            $table->unsignedInteger('category_id')->nullable();
+            $table->unsignedInteger('subcategory_id')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

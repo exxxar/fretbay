@@ -17,6 +17,10 @@ class CreateCategoryPropertiesTable extends Migration
             $table->id();
             $table->longText('title');
             $table->string('type', 500);
+            $table->string('slug', 500);
+            $table->string('icon', 500);
+            $table->boolean( 'required')->default(false);
+
             $table->timestamps();
         });
     }

@@ -18,7 +18,10 @@ class CategoryProperty extends Model
      */
     protected $fillable = [
         'title',
+        'slug',
         'type',
+        'icon',
+        'required'
     ];
 
     /**
