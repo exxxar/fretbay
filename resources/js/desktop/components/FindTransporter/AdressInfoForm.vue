@@ -5,13 +5,13 @@
         </h2>
 
         <div class="row">
-            <div class="col-6">
+            <div class="col-12 col-sm-6">
                 <h4 class="mt-0 form-group section-title address-title title-loading">Place of loading</h4>
-                <choose-place-form/>
+                <choose-place-form :date1="'shipping_date_from'" :date2="'shipping_date_to'"/>
             </div>
-            <div class="col-6">
+            <div class="col-12 col-sm-6">
                 <h4 class="mt-0 form-group section-title address-title title-delivery">Place of delivery</h4>
-                <choose-place-form/>
+                <choose-place-form :date1="'unshipping_date_from'" :date2="'unshipping_date_to'"/>
             </div>
         </div>
 
@@ -20,7 +20,7 @@
 
         <div class="row">
             <div class="col-6">
-                <textarea class="w-100" name="" id="" cols="30" rows="10"></textarea>
+                <textarea class="w-100" v-model="additional_info" @blur="saveAdditionalInfo" id="" cols="30" rows="10"></textarea>
             </div>
             <div class="col-6" style="font-size: 14px">
                 <p class="alert-danger">
@@ -43,22 +43,22 @@
 
         <h4>Increase your chances of being solicited, insert a photo!</h4>
 
-        <div class="row">
-            <div class="col-4">
-                <button class="btn btn-primary">Upload</button>
-            </div>
-            <div class="col-8">
-                <p>This information can often be found on the Internet. Approximate measures will already allow carriers to offer you a suitable offer.</p>
-            </div>
-        </div>
-
+<!--        <div class="row">-->
+<!--            <div class="col-4">-->
+<!--                <button class="btn btn-primary">Upload</button>-->
+<!--            </div>-->
+<!--            <div class="col-8">-->
+<!--                <p>This information can often be found on the Internet. Approximate measures will already allow carriers to offer you a suitable offer.</p>-->
+<!--            </div>-->
+<!--        </div>-->
+<upload-files></upload-files>
         <div class="row">
             <div class="col-12">
-            <div class="custom-control custom-switch">
-                <input type="checkbox" id="commercial" class="custom-control-input">
-                <label for="commercial" class="custom-control-label">I agree to receive commercial offers from AlloTrans and its partners</label>
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" id="commercial" class="custom-control-input">
+                    <label for="commercial" class="custom-control-label">I agree to receive commercial offers from AlloTrans and its partners</label>
+                </div>
             </div>
-        </div>
 
             <div class="col-12">
                 <div class="custom-control custom-switch">
@@ -73,10 +73,10 @@
         <p>Approximate measures will already allow carriers to offer you a suitable offer.</p>
 
         <div class="row d-flex justify-content-end mt-2 w-100">
-            <div class="col-2">
+            <div class="col-12 col-sm-2">
                 <button class="btn btn-custom-danger" @click="prevStep">Back</button>
             </div>
-            <div class="col-3">
+            <div class="col-12 col-sm-3">
                 <button class="btn btn-custom-white" @click="nextStep">Next</button>
             </div>
         </div>
@@ -84,19 +84,27 @@
 </template>
 
 <script>
-    import ChoosePlaceForm from "./ChoosePlaceForm";
-
+    import ChoosePlaceForm from "../AddressInfoForm/ChoosePlaceForm";
+import UploadFiles from "../AddressInfoForm/UploadFiles";
     export default {
         components:{
-            ChoosePlaceForm
+            ChoosePlaceForm, UploadFiles
+        },
+        data() {
+            return {
+                additional_info:''
+            }
         },
         methods: {
             nextStep() {
-                this.$store.dispatch('setStep', 2)
+                this.$store.dispatch('setStep', 3)
             },
             prevStep() {
-                this.$store.dispatch('setStep', 0)
+                this.$store.dispatch('setStep', 1)
             },
+            saveAdditionalInfo() {
+                this.$store.dispatch('editNewListing', {key:'additional_info', value: this.additional_info})
+            }
         }
     }
 </script>

@@ -120,6 +120,4 @@ Auth::routes();
 Route::post('/register-customer',\Auth\RegisterController::class.'@registerCustomer')->name("register-customer");
 Route::post('/register-transporter',\Auth\RegisterController::class.'@registerTransporter')->name("register-transporter");
 
-//category
-Route::get('categories', 'CategoryContoller@index');
 

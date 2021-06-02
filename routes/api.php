@@ -50,7 +50,11 @@ Route::group(["prefix" => "desktop"], function () {
             Route::get("/route/{fA}/{lA}/{fB}/{lB}", DictionaryController::class."@getRoute");
             Route::get("/coords/{address}", DictionaryController::class."@getCoords");
         });
-
+        Route::get("/getAddress/{address}/{lang}", "DictionaryController@getAddress");
+        //category
+        Route::group(["prefix"=>"categories"],function() {
+            Route::get('/', 'CategoryController@index');
+        });
     });
 });
 

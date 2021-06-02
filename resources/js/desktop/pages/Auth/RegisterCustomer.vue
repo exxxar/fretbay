@@ -67,12 +67,12 @@
                 company_name: "",
                 name:"",
                 email:"",
-                email_confimation:"",
+                email_confirmation:"",
                 phone:"",
                 mobile:"",
                 username:"",
                 password:"",
-                password_confimation:"",
+                password_confirmation:"",
                 password_correct: false,
                 email_correct: false,
                 is_pro: false
@@ -80,14 +80,14 @@
             },
         methods: {
              pass_validate: function () {
-                if(this.password != this.password_confimation){
+                if(this.password != this.password_confirmation){
                     this.password_correct = false;
                 }else{
                      this.password_correct = true;
                 }
              },
               email_validate: function () {
-                if(this.email != this.email_confimation){
+                if(this.email != this.email_confirmation){
                     this.email_correct = false;
                 }else{
                      this.email_correct = true;
