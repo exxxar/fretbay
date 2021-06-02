@@ -51,6 +51,10 @@ class Category extends Model
 
     public function properties()
     {
-        return $this->hasMany(\App\CategoryProperty::class);
+        return $this->belongsToMany(\App\CategoryProperty::class,
+            'category_has_category_properties',
+            'category_d',
+            'id')
+            ->withPivot('required');
     }
 }

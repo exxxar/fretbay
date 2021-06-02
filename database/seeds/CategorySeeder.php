@@ -12,7 +12,7 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        Category::create([
+        $category = Category::create([
             'title' => [
                 "en" => "Household equipment",
                 "ru" => "Household equipment",
@@ -25,6 +25,14 @@ class CategorySeeder extends Seeder
             'is_active' => true,
             'mode' => ''
         ]);
+
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "article_name")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "length")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "width")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "height")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "weight")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "quantity")->first()->id,['required' => true]);
+
 
         Category::create([
             'title' => [
@@ -40,7 +48,7 @@ class CategorySeeder extends Seeder
             'mode' => ''
         ]);
 
-        Category::create([
+        $category = Category::create([
             'title' => [
                 "en" => "Vehicle",
                 "ru" => "Vehicle",
@@ -54,8 +62,15 @@ class CategorySeeder extends Seeder
             'mode' => ''
         ]);
 
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "article_name")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "make")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "model")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "estimated_value")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "moving_vehicle")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "accept_conveyors")->first()->id,['required' => true]);
 
-        Category::create([
+
+        $category = Category::create([
             'title' => [
                 "en" => "Motorcycles and sports vehicles",
                 "ru" => "Motorcycles and sports vehicles",
@@ -69,7 +84,14 @@ class CategorySeeder extends Seeder
             'mode' => ''
         ]);
 
-        Category::create([
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "article_name")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "make")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "model")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "estimated_value")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "moving_vehicle")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "accept_conveyors")->first()->id,['required' => true]);
+
+        $category = Category::create([
             'title' => [
                 "en" => "Boats & voluminous",
                 "ru" => "Boats & voluminous",
@@ -83,7 +105,18 @@ class CategorySeeder extends Seeder
             'mode' => ''
         ]);
 
-        Category::create([
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "article_name")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "length")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "width")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "height")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "weight")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "quantity")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "make")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "model")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "estimated_value")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "accept_conveyors")->first()->id,['required' => true]);
+
+        $category = Category::create([
             'title' => [
                 "en" => "Fragile goods",
                 "ru" => "Fragile goods",
@@ -97,7 +130,14 @@ class CategorySeeder extends Seeder
             'mode' => ''
         ]);
 
-        Category::create([
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "article_name")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "length")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "width")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "height")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "weight")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "quantity")->first()->id,['required' => true]);
+
+        $category = Category::create([
             'title' => [
                 "en" => "Package/Fold",
                 "ru" => "Package/Fold",
@@ -111,8 +151,15 @@ class CategorySeeder extends Seeder
             'mode' => ''
         ]);
 
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "article_name")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "length")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "width")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "height")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "weight")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "quantity")->first()->id,['required' => true]);
 
-        Category::create([
+
+        $category = Category::create([
             'title' => [
                 "en" => "Pallet",
                 "ru" => "Pallet",
@@ -126,7 +173,13 @@ class CategorySeeder extends Seeder
             'mode' => ''
         ]);
 
-        Category::create([
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "article_name")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "height")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "weight")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "quantity")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "fragile_goods")->first()->id,['required' => false]);
+
+       $category =  Category::create([
             'title' => [
                 "en" => "Animals",
                 "ru" => "Animals",
@@ -140,8 +193,18 @@ class CategorySeeder extends Seeder
             'mode' => ''
         ]);
 
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "article_name")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "animal_bread")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "weight")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "quantity")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "special_needs")->first()->id,['required' => false]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "vaccinations_date")->first()->id,['required' => false]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "length")->first()->id,['required' => false]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "width")->first()->id,['required' => false]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "height")->first()->id,['required' => false]);
 
-        Category::create([
+
+       $category =  Category::create([
             'title' => [
                 "en" => "Agri-food",
                 "ru" => "Agri-food",
@@ -155,7 +218,11 @@ class CategorySeeder extends Seeder
             'mode' => ''
         ]);
 
-        Category::create([
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "article_name")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "weight")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "quantity")->first()->id,['required' => true]);
+
+        $category = Category::create([
             'title' => [
                 "en" => "Commercial goods",
                 "ru" => "Commercial goods",
@@ -169,7 +236,15 @@ class CategorySeeder extends Seeder
             'mode' => ''
         ]);
 
-        Category::create([
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "article_name")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "length")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "width")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "height")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "weight")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "quantity")->first()->id,['required' => true]);
+
+
+        $category = Category::create([
             'title' => [
                 "en" => "Miscellaneous",
                 "ru" => "Miscellaneous",
@@ -182,6 +257,13 @@ class CategorySeeder extends Seeder
             'is_active' => true,
             'mode' => ''
         ]);
+
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "article_name")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "length")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "width")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "height")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "weight")->first()->id,['required' => true]);
+        $category->properties()->attach(\App\CategoryProperty::where("slug", "quantity")->first()->id,['required' => true]);
 
         ////////////////////////////////////////////
         ///
