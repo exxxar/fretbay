@@ -116,6 +116,21 @@ import VueSplide from '@splidejs/vue-splide';
 import '@splidejs/splide/dist/css/themes/splide-sea-green.min.css';
 Vue.use( VueSplide );
 
+import { ValidationProvider, extend, ValidationObserver } from 'vee-validate';
+import { required, email } from 'vee-validate/dist/rules';
+Vue.component('ValidationProvider', ValidationProvider);
+Vue.component('ValidationObserver', ValidationObserver);
+
+import Fuse from 'fuse.js'
+Vue.prototype.$search = function (term, list, options) {
+    return new Promise(function (resolve, reject) {
+        var run = new Fuse(list, options);
+        var results = run.search(term);
+        results.forEach(item => { let tmp_item = item; item = tmp_item.item});
+        resolve(results)
+    })
+}
+
 const app = new Vue({
     store,
     el: '#app',

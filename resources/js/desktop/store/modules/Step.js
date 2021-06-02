@@ -8,6 +8,7 @@ const state = {
         thing:'',
         volume:'',
         articles:[],
+        volume_items:[],
         place_of_loading:'',
         place_of_delivery:'',
         shipping_date_from:'',

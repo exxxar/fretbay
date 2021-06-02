@@ -15,6 +15,13 @@ const getters = {
 
 // actions
 const actions = {
+    async getCategories({state, commit}) {
+        return axios
+            .get('/categories')
+            .then(resp => {
+                commit('setCategories', resp.data.categories);
+            })
+    },
     loadData({state, commit}) {
         return axios
             .get('/category/get')
@@ -77,6 +84,9 @@ const actions = {
 
 // mutations
 const mutations = {
+    setCategories(state, payload) {
+        state.categories=payload
+    },
     addCategory(state, payload) {
         state.categories.push(payload)
     },

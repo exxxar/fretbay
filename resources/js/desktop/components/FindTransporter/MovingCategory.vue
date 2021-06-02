@@ -33,7 +33,7 @@
                     </div>
                 </div>
                 <div v-else>
-                    <inventory-form/>
+                    <inventory-form :category="category"/>
                 </div>
             </template>
             <template v-slot:step_1>
@@ -339,11 +339,11 @@
         components: {
             InventoryForm, Wizard
         },
+        props:['category'],
         data() {
             return {
                 // current_step: 0,
                 inventory_mode: false,
-
             }
         },
         computed: {

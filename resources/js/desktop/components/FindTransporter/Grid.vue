@@ -76,15 +76,19 @@
 <script>
     export default {
         name: "Grid",
-        props:['category', 'subcategories', 'things'],
+        props:['category'],
         data() {
             return {
                 selected_subcategory:'',
                 selected_thing:'',
+                subcategories:[],
+                things:[]
                 // step:0
             }
         },
         created() {
+            this.subcategories = this.category.subcategories;
+            this.things = this.category.things;
             if(this.subcategories.length < 0) {
                 this.$refs.wizard.nextStep();
             }
@@ -105,7 +109,12 @@
                     this.$store.dispatch('setStep', 0)
                 }
                 else {
-                    this.$refs.wizard.prevStep();
+                    if(this.subcategories.length > 0) {
+                        this.$refs.wizard.prevStep();
+                    }
+                    else {
+                        this.$store.dispatch('setStep', 0)
+                    }
                 }
                 // if(this.current_step === 0)
                 // {

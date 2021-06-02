@@ -75,8 +75,8 @@ const actions = {
         commit('pushArticleItemToCart', item);
     },
 
-    setArticleItemInCart({state, commit}, item) {
-        commit('changeArticleItemInCart', item);
+    setArticleItemInCart({state, commit}, payload) {
+        commit('changeArticleItemInCart', payload);
     },
     removeArticleItem({state, commit}, id) {
         commit('removeArticleItem', id);
@@ -89,14 +89,15 @@ const actions = {
 // mutations
 const mutations = {
     pushArticleItemToCart(state, item) {
-        state.article_items.push(item)
+        state.article_items.push(item);
 
         localStorage.setItem('ArticleCart', JSON.stringify(state.article_items));
     },
 
-    changeArticleItemInCart(state, item) {
+    changeArticleItemInCart(state, payload) {
         // const cartItem = state.article_items.find(item => item.id === item.id)
         // cartItem.item = item;
+        state.article_items[payload.index] = payload.item;
         localStorage.setItem('ArticleCart', JSON.stringify(state.article_items));
     },
 
