@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\Auth\RegisterController;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/test', function () {
+    App::setLocale('fr');
+    dd(\App\CategoryProperty::find(1)->title);
+});
 
 Route::view("/", "desktop.pages.index")->name("desktop.index");
 Route::view("/find-loads", "desktop.pages.find-loads")->name("desktop.find-loads");
@@ -47,6 +53,13 @@ Route::view("/profile-transporter-wizard-step-3", "desktop.pages.profile.transpo
 Route::view("/profile-transporter-wizard-step-4", "desktop.pages.profile.transporter.profile-transporter-wizard-step-4")->name("desktop.profile-transporter-wizard-step-4");
 Route::view("/profile-transporter-wizard-step-5", "desktop.pages.profile.transporter.profile-transporter-wizard-step-5")->name("desktop.profile-transporter-wizard-step-5");
 //Роут на редактирование профиля перевозчика
+
+Route::get('setlocale/{locale}', function ($locale) {
+    if (in_array($locale, Config::get('app.locales'))) {   # Проверяем, что у пользователя выбран доступный язык
+        Session::put('locale', $locale);                    # И устанавливаем его в сессии под именем locale
+    }
+    return redirect()->back();                              # Редиректим его <s>взад</s> на ту же страницу
+});
 
 Route::group(['middleware' => ['auth', 'role:transporter'], "prefix" => "transporter"], function () {
     Route::view("/profile-my-account", "desktop.pages.profile.transporter.my-account")->name("transporter-account");
@@ -117,8 +130,8 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
 
 Auth::routes();
 
-Route::post('/register-customer',\Auth\RegisterController::class.'@registerCustomer')->name("register-customer");
-Route::post('/register-transporter',\Auth\RegisterController::class.'@registerTransporter')->name("register-transporter");
-Route::get('/logout',\Auth\LoginController::class.'@logout')->name("logout");
+Route::post('/register-customer', \Auth\RegisterController::class . '@registerCustomer')->name("register-customer");
+Route::post('/register-transporter', \Auth\RegisterController::class . '@registerTransporter')->name("register-transporter");
+Route::get('/logout', \Auth\LoginController::class . '@logout')->name("logout");
 
 
