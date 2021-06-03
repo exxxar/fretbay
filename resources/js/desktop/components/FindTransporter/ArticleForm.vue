@@ -21,7 +21,7 @@
                             </ValidationProvider>
                         </div>
                         <div class="row m-auto w-100">
-                            <template v-for="property in category.properties">
+                            <template class="col-12 col-sm-6" v-for="property in category.properties">
                                 <article-input :field="property" :data.sync="modes[mode].properties[property.slug]"></article-input>
                             </template>
                         </div>
@@ -284,10 +284,10 @@
         </div>
 
         <div class="row d-flex justify-content-end mt-2 w-100">
-            <div class="col-2">
+            <div class="col-12 col-sm-2">
                 <button class="btn btn-custom-danger" @click="prevStep">Back</button>
             </div>
-            <div class="col-3">
+            <div class="col-12 col-sm-3">
                 <button class="btn btn-custom-white" @click="nextStep" :disabled="article_items.length===0">Next</button>
             </div>
         </div>

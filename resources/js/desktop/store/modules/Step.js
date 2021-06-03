@@ -17,7 +17,7 @@ const state = {
         unshipping_date_to:'',
         messages:[],
         additional_info:'',
-        images:'',
+        images:[],
         status:'',
     }
 };

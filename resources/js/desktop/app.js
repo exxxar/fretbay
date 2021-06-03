@@ -10,7 +10,6 @@ require('./bootstrap');
 window.Vue = require('vue');
 
 import Vuex from 'vuex';
-
 Vue.use(Vuex);
 
 import store from './store';
@@ -18,14 +17,12 @@ import store from './store';
 window.eventBus = new Vue();
 
 import Notifications from 'vue-notification'
+Vue.use(Notifications)
 
 import VueTheMask from 'vue-the-mask'
 Vue.use(VueTheMask)
 
-Vue.use(Notifications)
-
 import VueLazyload from 'vue-lazyload'
-
 Vue.use(VueLazyload, {
     preLoad: 1.3,
     error: "/images/common/icons/general/content-loader.gif",
@@ -130,6 +127,17 @@ Vue.prototype.$search = function (term, list, options) {
         resolve(results)
     })
 }
+import {BootstrapVue, IconsPlugin} from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+Vue.use(BootstrapVue);
+Vue.use(IconsPlugin);
+
+const moment = require('moment');
+// require('moment/locale/en');
+Vue.use(require('vue-moment'), {
+    moment
+});
 
 const app = new Vue({
     store,
@@ -139,6 +147,8 @@ const app = new Vue({
 
 if (localStorage.getItem('locale')) {
     app.$lang.setLocale(localStorage.getItem('locale'));
+    app.$moment.locale(localStorage.getItem('locale'));
 } else {
     app.$lang.setLocale('en');
+    app.$moment.locale('en');
 }

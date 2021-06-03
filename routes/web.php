@@ -121,6 +121,4 @@ Route::post('/register-customer',\Auth\RegisterController::class.'@registerCusto
 Route::post('/register-transporter',\Auth\RegisterController::class.'@registerTransporter')->name("register-transporter");
 Route::get('/logout',\Auth\LoginController::class.'@logout')->name("logout");
 
-//category
-Route::get('categories', 'CategoryContoller@index');
 

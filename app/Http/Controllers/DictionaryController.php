@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 
+use App\Classes\Api\MapBoxAPI;
 use App\Classes\Api\RioAPII;
 use App\Classes\CarsAPIManager;
 use App\Classes\CitiesAndCountriesAPIManager;
 use App\Classes\DistanceAPIManager;
+use App\Classes\MapBoxAPIManager;
 use App\Models\TypeOfObject;
 use App\Models\TypeOfTransport;
 use App\Vehicle;
@@ -18,12 +20,14 @@ class DictionaryController extends Controller
     protected $cars = null;
     protected $citiesAndCountries = null;
     protected $distance = null;
+    protected $mapBox = null;
 
     public function __construct()
     {
         $this->cars = new CarsAPIManager();
         $this->citiesAndCountries = new CitiesAndCountriesAPIManager();
         $this->distance = new DistanceAPIManager();
+        $this->mapBox = new MapBoxAPIManager();
     }
 
     public function typeOfTransport()
@@ -116,6 +120,9 @@ class DictionaryController extends Controller
     {
         return response()->json($this->distance->getAPI()->coords($address));
     }
-
+    public function getAddress(string $address, string $lang)
+    {
+        return response()->json($this->mapBox->getAPI()->getAddress($address, $lang));
+    }
 
 }
