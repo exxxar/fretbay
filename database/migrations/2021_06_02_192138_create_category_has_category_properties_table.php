@@ -13,6 +13,7 @@ class CreateCategoryHasCategoryPropertiesTable extends Migration
      */
     public function up()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::create('category_has_category_properties', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger("category_id")->nullable();
@@ -23,6 +24,7 @@ class CreateCategoryHasCategoryPropertiesTable extends Migration
            /// $table->string('custom_title')->nullable();
             $table->timestamps();
         });
+        Schema::enableForeignKeyConstraints();
     }
 
     /**

@@ -10,6 +10,7 @@ import Category from "./modules/Category";
 import Subcategory from "./modules/Subcategory";
 import Thing from "./modules/Thing";
 import Step from "./modules/Step";
+
 Vue.use(Vuex);
 
 export default new Vuex.Store({
