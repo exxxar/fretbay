@@ -257,7 +257,7 @@
                             </div>
                             <ul v-for="property in category.properties" class="list-group">
                                 <li class="list-group-item">
-                                    <span class="article-unit-text">{{property.title.en}}</span>
+                                    <span class="article-unit-text">{{property.title}}</span>
                                     <span class="badge">{{article.properties[property.slug].value}}</span>
                                 </li>
 

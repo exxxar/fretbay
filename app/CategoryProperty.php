@@ -2,8 +2,10 @@
 
 namespace App;
 
+use App\Casts\TitleLang;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\App;
 use Spatie\Translatable\HasTranslations;
 
 class CategoryProperty extends Model
@@ -31,6 +33,13 @@ class CategoryProperty extends Model
     protected $casts = [
         'id' => 'integer',
     ];
+
+
+    public function getTitleAttribute()
+    {
+        return $this->getTranslations()["title"][App::getLocale()];
+    }
+
 
     public function category()
     {

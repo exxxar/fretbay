@@ -1,11 +1,11 @@
 <template>
     <div>
         <div class="form-group w-100" v-if="data && field.type !== 'checkbox' && field.type !== 'radio'">
-            <ValidationProvider :name="field.title.en" :rules="getRules(field)" v-slot="{ errors }">
+            <ValidationProvider :name="field.title" :rules="getRules(field)" v-slot="{ errors }">
                 <div class="input-has-icon-right">
                     <input v-model="data.value" :type="field.type"
                            class="form-control"
-                           :placeholder="field.title.en">
+                           :placeholder="field.title">
                     <span class="rel-icon rel-icon-square" v-if="field.icon && field.icon!=null && field.icon !==''">
                         <img :src="field.icon" alt="">
                     </span>
