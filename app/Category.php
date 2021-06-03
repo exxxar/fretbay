@@ -53,7 +53,7 @@ class Category extends Model
     {
         return $this->belongsToMany(\App\CategoryProperty::class,
             'category_has_category_properties',
-            'category_d',
+            'category_id',
             'id')
             ->withPivot('required');
     }

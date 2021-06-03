@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class CargoryPropertyTableSeeder extends Seeder
+class CategoryPropertySeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -22,7 +22,7 @@ class CargoryPropertyTableSeeder extends Seeder
             ],
             'slug'=>'article_name',
             'type'=>'text',
-            'icon'=>null,
+            'icon'=>'',
         ]);
 
 
@@ -90,7 +90,7 @@ class CargoryPropertyTableSeeder extends Seeder
             ],
             'slug'=>'make',
             'type'=>'text',
-            'icon'=>null,
+            'icon'=>'',
         ]);
 
         \App\CategoryProperty::create([
@@ -101,7 +101,7 @@ class CargoryPropertyTableSeeder extends Seeder
             ],
             'slug'=>'model',
             'type'=>'text',
-            'icon'=>null,
+            'icon'=>'',
         ]);
 
         \App\CategoryProperty::create([
@@ -123,7 +123,7 @@ class CargoryPropertyTableSeeder extends Seeder
             ],
             'slug'=>'accept_conveyors',
             'type'=>'radio',
-            'icon'=>null,
+            'icon'=>'',
         ]);
 
         \App\CategoryProperty::create([
@@ -133,8 +133,8 @@ class CargoryPropertyTableSeeder extends Seeder
                 "ru"=>"Fragile goods"
             ],
             'slug'=>'fragile_goods',
-            'type'=>'check',
-            'icon'=>null,
+            'type'=>'checkbox',
+            'icon'=>'',
         ]);
 
 
@@ -168,7 +168,7 @@ class CargoryPropertyTableSeeder extends Seeder
             ],
             'slug'=>'moving_vehicle',
             'type'=>'radio',
-            'icon'=>null,
+            'icon'=>'',
         ]);
     }
 }

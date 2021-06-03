@@ -4,7 +4,7 @@
             <div class="form-fields-wrap content-box-gray content-box-padding">
                 <ValidationObserver v-slot="{ invalid }">
                     <div class="content-box-gray">
-                        <ValidationProvider name="listing_title" rules="required" v-slot="{ errors }">
+                        <ValidationProvider name="listing_title" rules="" v-slot="{ errors }">
                             <div class="form-group ">
                                 <input v-model="listing_title" @blur="saveListingTitle" type="text" class="form-control"
                                        placeholder="3-seater Sofa, chairs, desks...">
@@ -15,15 +15,20 @@
                         </h6>
 
                         <div class="form-group">
-                            <ValidationProvider name="Article name" rules="required" v-slot="{ errors }">
-                                <input v-model="modes[mode].title" type="text" required="" class="form-control "
-                                       placeholder="Article name">`
+                            <ValidationProvider name="Article name" rules="" v-slot="{ errors }">
+                                <input v-if="mode===0" v-model="new_article.title" type="text" required="" class="form-control "
+                                       placeholder="Article name">
+                                <input v-else v-model="edit_article.title" type="text" required="" class="form-control "
+                                       placeholder="Article name">
                             </ValidationProvider>
                         </div>
                         <div class="row m-auto w-100">
-                            <template class="col-12 col-sm-6" v-for="property in category.properties">
-                                <article-input :field="property" :data.sync="modes[mode].properties[property.slug]"></article-input>
-                            </template>
+                            <div class="col-12 col-sm-6" v-for="property in category.properties">
+                                <article-input v-if="mode===0" :field="property" :data.sync="new_article.properties[property.slug]">
+                                </article-input>
+                                <article-input v-else :field="property" :data.sync="edit_article.properties[property.slug]">
+                                </article-input>
+                            </div>
                         </div>
     <!--                    <div class="row">-->
     <!--                        <div class="col-6">-->
@@ -211,11 +216,11 @@
     <!--                    </div>-->
                         <div class="form-group row w-100 m-auto">
                             <div class="col-6" v-if="mode === 1">
-                                <button class="btn btn-custom-danger" @click="cancel" :disabled="true">Cancel article
+                                <button class="btn btn-custom-danger" @click="cancel">Cancel
                                 </button>
                             </div>
                             <div class="col-6" v-if="mode === 1">
-                                <button class="btn btn-custom-white" @click="save" :disabled="invalid">Save article
+                                <button class="btn btn-custom-white" @click="save" :disabled="invalid">Save
                                 </button>
                             </div>
                             <div class="col-12" v-if="mode === 0">
@@ -232,7 +237,7 @@
             <div class="article-section">
                 <div class="articles-list-scroll">
                     <ul class="articles-list">
-                        <li v-for="(article, index) in article_items">
+                        <li v-for="(article, index) in article_items" v-if="article_items.length>0">
                             <div class="article-header">
                                 <div class="row m-auto w-100">
                                     <div class="col-8">
@@ -252,8 +257,8 @@
                             </div>
                             <ul v-for="property in category.properties" class="list-group">
                                 <li class="list-group-item">
-                                    <span class="article-unit-text">{{property.title}}</span>
-                                    <span class="badge">{{article.properties[property.slug]}}</span>
+                                    <span class="article-unit-text">{{property.title.en}}</span>
+                                    <span class="badge">{{article.properties[property.slug].value}}</span>
                                 </li>
 
 <!--                                <li class="list-group-item">-->
@@ -353,11 +358,11 @@
                 // edit_mode: false,
                 edit_index:'',
                 mode:0,
-                modes:['new_article', 'edit_article']
+                // modes:['new_article', 'edit_article']
             }
         },
-        created() {
-            this.category.properties.forEach(item=> {
+        mounted() {
+            this.category.properties.forEach((item) => {
                 if(item.type==='checkbox')
                 {
                     this.new_article.properties[item.slug]={ value:false};
@@ -371,6 +376,8 @@
                 }
 
             })
+        },
+        created() {
         },
         computed: {
             article_items() {
@@ -421,10 +428,10 @@
                 // this.edit_mode = false;
             },
             nextStep() {
-                this.$store.dispatch('setStep', 3)
+                this.$store.dispatch('setStep', 2)
             },
             prevStep() {
-                this.$store.dispatch('setStep', 1)
+                this.$store.dispatch('setStep', 0)
             },
             saveListingTitle() {
                 this.$store.dispatch('editNewListing', {key:'title', value: this.listing_title})
