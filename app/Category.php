@@ -2,8 +2,10 @@
 
 namespace App;
 
+use App\Casts\TitleLang;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\App;
 use Spatie\Translatable\HasTranslations;
 
 class Category extends Model
@@ -37,6 +39,13 @@ class Category extends Model
         'min_price' => 'double',
         'is_active' => 'boolean',
     ];
+
+
+    public function getTitleAttribute()
+    {
+        return $this->getTranslations()["title"][App::getLocale()];
+    }
+
 
 
     public function subcategories()
