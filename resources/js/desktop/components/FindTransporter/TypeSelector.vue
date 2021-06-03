@@ -1,7 +1,7 @@
 <template>
 
     <div>
-        <h3 class="mt-0 text-uppercase text-black content-box-title">Type of transport</h3>
+        <h3 class="mt-0 text-uppercase text-black content-box-title">Categories</h3>
 
 
         <ul class="row">
