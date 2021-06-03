@@ -29,6 +29,11 @@
         rel="stylesheet">
 
 
+    @if (Auth::check())
+        <meta name="user" content="{{ Auth::user() }}" />
+    @endif
+
+
 </head>
 <body>
 <div id="app">

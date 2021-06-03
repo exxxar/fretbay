@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class CargoryPropertyTableSeeder extends Seeder
+class CategoryPropertyTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.

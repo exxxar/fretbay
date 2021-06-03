@@ -17,7 +17,7 @@ class CreateCategoriesTable extends Migration
             $table->id();
             $table->longText('title');
             $table->double('min_price')->default(0);
-            $table->string('image')->default('');
+            $table->string('image')->nullable();
             $table->integer('position')->default(0);
             $table->boolean('is_active')->default(true);
             $table->string('additional_menu_title')->nullable();
