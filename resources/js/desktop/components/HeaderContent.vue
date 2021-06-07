@@ -1,10 +1,10 @@
 <template>
     <header v-bind:style="{background:'url('+background+') repeat-x'}">
         <main-menu :auth="auth"/>
-        <div id="first">
-            <div class="container">
+        <div id="first" style="height: 543px">
+            <div class="container" style="top: 15%">
                 <h1>
-                    Find your mover
+                    <b>Find your mover</b>
                     <span>
                     The leading marketplace for cheap transport and moving services
                 </span>
@@ -33,9 +33,9 @@ import MainMenu from "./MainMenu";
 
 export default {
     props: {
-        auth:{
-          type: String,
-          default:'0',
+        auth: {
+            type: String,
+            default: '0',
         },
         background: {
             type: String,
