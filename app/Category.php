@@ -4,13 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Spatie\Translatable\HasTranslations;
 
 class Category extends Model
 {
-    use SoftDeletes, HasTranslations;
-
-    public $translatable = ['title'];
+    use SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -42,9 +39,9 @@ class Category extends Model
         return $this->hasMany(\App\Subcategory::class);
     }
 
-    public function things()
+    public function objects()
     {
-        return $this->hasMany(\App\Thing::class);
+        return $this->hasMany(\App\Object::class);
     }
 
     public function categoryProperties()

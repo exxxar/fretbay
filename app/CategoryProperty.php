@@ -3,14 +3,9 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
-use Spatie\Translatable\HasTranslations;
 
 class CategoryProperty extends Model
 {
-    use HasTranslations;
-
-    public $translatable = ['title'];
     /**
      * The attributes that are mass assignable.
      *

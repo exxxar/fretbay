@@ -4,13 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Spatie\Translatable\HasTranslations;
 
 class Subcategory extends Model
 {
-    use SoftDeletes, HasTranslations;
+    use SoftDeletes;
 
-    public $translatable = ['title'];
     /**
      * The attributes that are mass assignable.
      *
@@ -21,9 +19,7 @@ class Subcategory extends Model
         'image',
         'position',
         'is_active',
-        'category_id',
     ];
-
 
     /**
      * The attributes that should be cast to native types.
@@ -36,13 +32,13 @@ class Subcategory extends Model
     ];
 
 
-    public function things()
+    public function objects()
     {
-        return $this->hasMany(\App\Thing::class);
+        return $this->hasMany(\App\Object::class);
     }
 
     public function category()
     {
-        return $this->belongsTo(\App\Category::class,"id","category_id");
+        return $this->belongsTo(\App\Category::class);
     }
 }
