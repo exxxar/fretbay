@@ -1,6 +1,8 @@
 @import "config";
 @import "colors";
 @import "fonts";
+@import "customer-profile";
+@import "to-be-confirmed";
 // CUSTOM USER STYLES & IMPORTS
 ul,
 li,
@@ -6775,17 +6777,17 @@ body.lock {
             background-position: 50%;
             background-repeat: no-repeat;
         }
-
-        .flag-fr {background-image: url(https://fretbay.com/fr/frv2/assets/images/common/flags/fr.svg);}
-        .flag-uk {background-image: url(https://fretbay.com/fr/frv2/assets/images/common/flags/uk.svg);}
-        .flag-es {background-image: url(https://fretbay.com/fr/frv2/assets/images/common/flags/es.svg);}
-        .flag-de {background-image: url(https://fretbay.com/fr/frv2/assets/images/common/flags/de.svg);}
     }
 
     .checkbox-list-notifications {
         padding-bottom: 0;
     }
 }
+
+.flag-fr {background-image: url(https://fretbay.com/fr/frv2/assets/images/common/flags/fr.svg) !important;}
+.flag-uk {background-image: url(https://fretbay.com/fr/frv2/assets/images/common/flags/uk.svg) !important;}
+.flag-es {background-image: url(https://fretbay.com/fr/frv2/assets/images/common/flags/es.svg) !important;}
+.flag-de {background-image: url(https://fretbay.com/fr/frv2/assets/images/common/flags/de.svg) !important;}
 
 .upload-block {
     margin-bottom: 15px;

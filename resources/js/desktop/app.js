@@ -44,6 +44,7 @@ Vue.component('system-notification-component', require('../desktop/components/Sy
 
 Vue.component('how-it-work-slider-component', require('../desktop/components/Slider/HowItWorkSlider.vue').default);
 Vue.component('profile-menu-component', require('../desktop/components/Profile/ProfileMenu.vue').default);
+Vue.component('to-be-confirmed-item-component', require('../desktop/components/Profile/ToBeConfirmedItem.vue').default);
 
 //auth
 Vue.component('login-page', require('./pages/Auth/Login.vue').default);
@@ -74,6 +75,10 @@ Vue.component('profile-my-company-page', require('./pages/Profile/Transporter/My
 Vue.component('profile-legal-documents-page', require('./pages/Profile/Transporter/LegalDocuments.vue').default);
 Vue.component('profile-my-vehicles-page', require('./pages/Profile/Transporter/MyVehicles.vue').default);
 Vue.component('profile-settings-page', require('./pages/Profile/Transporter/Settings.vue').default);
+//Профиль заказчика
+Vue.component('profile-customer-page', require('./pages/Profile/Customer/Profile.vue').default);
+Vue.component('to-be-confirmed-empty-page', require('./pages/Profile/Customer/ToBeConfirmedEmpty.vue').default);
+Vue.component('to-be-confirmed-page', require('./pages/Profile/Customer/ToBeConfirmed.vue').default);
 
 //other pages (not needed)
 Vue.component('contact-us-page', require('../desktop/pages/ContactUs.vue').default);

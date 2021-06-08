@@ -51,6 +51,11 @@ Route::view("/profile-my-company", "desktop.pages.profile.transporter.my-company
 Route::view("/profile-legal-documents", "desktop.pages.profile.transporter.legal-documents")->name("desktop.legal-documents");
 Route::view("/profile-my-vehicles", "desktop.pages.profile.transporter.my-vehicles")->name("desktop.my-vehicles");
 Route::view("/profile-settings", "desktop.pages.profile.transporter.settings")->name("desktop.settings");
+//Роут на редактирование профиля заказчика
+Route::view("/profile-customer", "desktop.pages.profile.customer.profile")->name("desktop.customer-profile");
+Route::view("/to-be-confirmed-empty", "desktop.pages.profile.customer.to-be-confirmed-empty")->name("desktop.customer-to-be-confirmed-empty");
+Route::view("/to-be-confirmed", "desktop.pages.profile.customer.to-be-confirmed")->name("desktop.customer-to-be-confirmed");
+
 
 Route::view("/login", "desktop.pages.login")->name("desktop.login");
 
