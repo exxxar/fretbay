@@ -2,8 +2,10 @@
 
 namespace App;
 
+use App\Casts\TitleLang;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\App;
 use Spatie\Translatable\HasTranslations;
 
 class CategoryProperty extends Model
@@ -18,7 +20,9 @@ class CategoryProperty extends Model
      */
     protected $fillable = [
         'title',
+        'slug',
         'type',
+        'icon',
     ];
 
     /**
@@ -31,8 +35,14 @@ class CategoryProperty extends Model
     ];
 
 
+    public function getTitleAttribute()
+    {
+        return $this->getTranslations()["title"][App::getLocale()];
+    }
+
+
     public function category()
     {
-        return $this->belongsTo(\App\Category::class);
+        return $this->belongsToMany(\App\CategoryProperty::class,'category_has_category_properties','category_property_id','id');
     }
 }

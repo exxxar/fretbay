@@ -10,11 +10,8 @@
                         <p class="recen__title">
                             Package/Fold
                             <span>
-												<b>
-													Category
-												</b>
-												: Package
-											</span>
+                                <b>Category</b> : Package
+                            </span>
                         </p>
                     </div>
                     <div class="locationInfo">
@@ -27,7 +24,8 @@
                     </div>
                     <div class="trasporterInfo">
                         <div class="circleImg">
-                            <img src="/images/photoTransporteur/validation-173x173.png?ver=1.2" alt="about" class="about__img img-responsive mx-auto d-block">
+                            <img src="/images/photoTransporteur/validation-173x173.png?ver=1.2" alt="about"
+                                 class="about__img img-responsive mx-auto d-block">
                         </div>
                         <div class="marginImg">
                             <p>
@@ -54,7 +52,5 @@
 </template>
 
 <script>
-    export default {
-
-    }
+export default {}
 </script>

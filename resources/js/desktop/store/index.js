@@ -6,19 +6,16 @@ import TypeOfObjectModule from './modules/TypeOfObjectModule'
 import ArticleCart from './modules/ArticleCart'
 import VolumeCart from './modules/VolumeCart'
 import VehicleModule from './modules/VehicleModule'
-
-/*
-import tourModule from './modules/tourModule';
-import aviaModule from './modules/aviaModule';
-import storiesModule from './modules/storiesModule';
-*/
-
+import Category from "./modules/Category";
+import Subcategory from "./modules/Subcategory";
+import Thing from "./modules/Thing";
+import Step from "./modules/Step";
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
     namespaced: true,
     modules: {
-        TypeOfTransportModule, TypeOfObjectModule, ArticleCart, VolumeCart, VehicleModule
+        TypeOfTransportModule, TypeOfObjectModule, ArticleCart, VolumeCart, VehicleModule, Category, Subcategory, Thing, Step
     }
 })

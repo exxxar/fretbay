@@ -11,17 +11,27 @@ class RedirectIfAuthenticated
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
-     * @param  string|null  $guard
+     * @param \Illuminate\Http\Request $request
+     * @param \Closure $next
+     * @param string|null $guard
      * @return mixed
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        if (Auth::guard($guard)->check()) {
-            return redirect(RouteServiceProvider::HOME);
+        $user = Auth::user();
+
+        if (!Auth::guard($guard)->check()) {
+            return $next($request);
         }
 
-        return $next($request);
+        if ($user->hasRole("transporter"))
+            return redirect()->route("transporter-account");
+
+
+        if ($user->hasRole("admin"))
+            return redirect()->route("admin.index");
+
+
+        return redirect()->route("customer-account");
     }
 }

@@ -10,7 +10,6 @@ require('./bootstrap');
 window.Vue = require('vue');
 
 import Vuex from 'vuex';
-
 Vue.use(Vuex);
 
 import store from './store';
@@ -18,11 +17,12 @@ import store from './store';
 window.eventBus = new Vue();
 
 import Notifications from 'vue-notification'
-
 Vue.use(Notifications)
 
-import VueLazyload from 'vue-lazyload'
+import VueTheMask from 'vue-the-mask'
+Vue.use(VueTheMask)
 
+import VueLazyload from 'vue-lazyload'
 Vue.use(VueLazyload, {
     preLoad: 1.3,
     error: "/images/common/icons/general/content-loader.gif",
@@ -109,7 +109,40 @@ Vue.use(VueLang, {
     fallback: 'en' // Set fallback locale
 });
 
+// import VueSlickCarousel from 'vue-slick-carousel'
+// import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+// import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+// Vue.component('slick',  VueSlickCarousel);
 
+import VueSplide from '@splidejs/vue-splide';
+import '@splidejs/splide/dist/css/themes/splide-sea-green.min.css';
+Vue.use( VueSplide );
+
+import { ValidationProvider, extend, ValidationObserver } from 'vee-validate';
+import { required, email } from 'vee-validate/dist/rules';
+Vue.component('ValidationProvider', ValidationProvider);
+Vue.component('ValidationObserver', ValidationObserver);
+
+import Fuse from 'fuse.js'
+Vue.prototype.$search = function (term, list, options) {
+    return new Promise(function (resolve, reject) {
+        var run = new Fuse(list, options);
+        var results = run.search(term);
+        results.forEach(item => { let tmp_item = item; item = tmp_item.item});
+        resolve(results)
+    })
+}
+import {BootstrapVue, IconsPlugin} from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+Vue.use(BootstrapVue);
+Vue.use(IconsPlugin);
+
+const moment = require('moment');
+// require('moment/locale/en');
+Vue.use(require('vue-moment'), {
+    moment
+});
 
 const app = new Vue({
     store,
@@ -119,6 +152,8 @@ const app = new Vue({
 
 if (localStorage.getItem('locale')) {
     app.$lang.setLocale(localStorage.getItem('locale'));
+    app.$moment.locale(localStorage.getItem('locale'));
 } else {
     app.$lang.setLocale('en');
+    app.$moment.locale('en');
 }

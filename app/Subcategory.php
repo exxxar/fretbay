@@ -22,6 +22,7 @@ class Subcategory extends Model
         'position',
         'is_active',
         'category_id',
+        'volume',
     ];
 
 
@@ -33,6 +34,7 @@ class Subcategory extends Model
     protected $casts = [
         'id' => 'integer',
         'is_active' => 'boolean',
+        'volume' => 'double',
     ];
 
 

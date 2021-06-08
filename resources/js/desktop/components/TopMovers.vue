@@ -3,14 +3,15 @@
         <h2>
             Top movers
         </h2>
-        <top-mover-item />
+        <top-mover-item/>
     </div>
 </template>
 <script>
-    import TopMoverItem from "./TopMoverItem";
-    export default {
-        components: {
-            TopMoverItem
-        }
+import TopMoverItem from "./TopMoverItem";
+
+export default {
+    components: {
+        TopMoverItem
     }
+}
 </script>

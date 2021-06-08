@@ -51,7 +51,7 @@ const getters = {
         });
         return sum
     },
-}
+};
 
 // actions
 const actions = {
@@ -85,7 +85,7 @@ const mutations = {
             state.volume_items.push({
                 item,
                 quantity: 1,
-            })
+            });
         else
             cartItem.quantity++;
 
@@ -94,7 +94,7 @@ const mutations = {
 
     incrementVolumeItemQuantity(state, id) {
         const cartItem = state.volume_items.find(item => item.item.id === id)
-        cartItem.quantity++
+        cartItem.quantity++;
         localStorage.setItem('VolumeCart', JSON.stringify(state.volume_items));
     },
 

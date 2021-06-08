@@ -2,8 +2,10 @@
 
 namespace App;
 
+use App\Casts\TitleLang;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\App;
 use Spatie\Translatable\HasTranslations;
 
 class Category extends Model
@@ -20,9 +22,11 @@ class Category extends Model
     protected $fillable = [
         'title',
         'min_price',
+        'additional_menu_title',
         'image',
         'position',
         'is_active',
+        'mode'
     ];
 
     /**
@@ -37,6 +41,13 @@ class Category extends Model
     ];
 
 
+    public function getTitleAttribute()
+    {
+        return $this->getTranslations()["title"][App::getLocale()];
+    }
+
+
+
     public function subcategories()
     {
         return $this->hasMany(\App\Subcategory::class);
@@ -47,8 +58,10 @@ class Category extends Model
         return $this->hasMany(\App\Thing::class);
     }
 
-    public function categoryProperties()
+    public function properties()
     {
-        return $this->hasMany(\App\CategoryProperty::class);
+        return $this->belongsToMany(\App\CategoryProperty::class,
+            'category_has_category_properties')
+            ->withPivot('required');
     }
 }

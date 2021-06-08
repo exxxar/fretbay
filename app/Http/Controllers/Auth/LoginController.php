@@ -4,7 +4,11 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
@@ -37,4 +41,59 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    /* public function login(Request $request)
+     {
+         $credentials = $request->validate([
+             'username' => ['required', 'email'],
+             'password' => ['required'],
+         ]);
+
+
+         $user = User::where('email', '=', $request->username)->first();
+         if ($user === null)
+             abort(402,$request->username);
+
+         if (Auth::attempt($credentials)) {
+             $request->session()->regenerate();
+
+             return redirect()->intended('dashboard');
+         }
+
+     }*/
+
+    public function login(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|string',
+            'password' => 'required|string',
+        ]);
+
+
+        $credentials = request(['password']);
+        $credentials['email'] = $request->email;
+        $credentials['deleted_at'] = null;
+
+        if (!Auth::attempt($credentials))
+            return redirect()->back();
+
+        $user = $request->user();
+
+        if ($user->hasRole("transporter"))
+            return redirect()->route("transporter-account");
+
+
+        if ($user->hasRole("admin"))
+            return redirect()->route("admin.index");
+
+
+        return redirect()->route("customer-account");
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        return response()->redirectToRoute("login");
+    }
+
 }

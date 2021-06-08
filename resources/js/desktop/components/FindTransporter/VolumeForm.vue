@@ -2,8 +2,7 @@
     <div class="p-2 mt-5">
 
 
-        <h2 class="text-uppercase text-black text-center">The volume of your
-            move</h2>
+        <h2 class="text-uppercase text-black text-center">The volume of your move</h2>
         <div class="volume-step-box-wrap text-center">
             <div class="row">
                 <div class="col-sm-6">

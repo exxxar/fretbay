@@ -1,5 +1,5 @@
 <template>
-    <header class="simple-nav">
+    <header class="simple-nav" style="overflow: hidden">
         <main-menu/>
     </header>
 </template>

@@ -13,12 +13,18 @@ class CreateCategoryPropertiesTable extends Migration
      */
     public function up()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::create('category_properties', function (Blueprint $table) {
             $table->id();
             $table->longText('title');
             $table->string('type', 500);
+            $table->string('slug', 500);
+            $table->string('icon', 500)->nullable();
+
             $table->timestamps();
         });
+
+        Schema::enableForeignKeyConstraints();
     }
 
     /**

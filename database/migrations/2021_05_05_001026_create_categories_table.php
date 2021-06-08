@@ -16,10 +16,12 @@ class CreateCategoriesTable extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->longText('title');
-            $table->double('min_price');
-            $table->string('image');
-            $table->integer('position');
-            $table->boolean('is_active');
+            $table->double('min_price')->default(0);
+            $table->string('image')->nullable();
+            $table->integer('position')->default(0);
+            $table->boolean('is_active')->default(true);
+            $table->string('additional_menu_title')->nullable();
+            $table->string('mode');
             $table->softDeletes();
             $table->timestamps();
         });

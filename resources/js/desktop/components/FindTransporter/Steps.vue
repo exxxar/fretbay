@@ -27,7 +27,7 @@
                 type: Number,
                 default: 0
             }
-        }
+        },
     }
 </script>
 <style lang="scss" scope>
