@@ -1,0 +1,284 @@
+@import "colors";
+@import "fonts";
+
+.profile-page-content {
+    margin: 20px 0;
+    min-height: 80vh;
+    font-family: $Lato;
+
+    .content-box-padding {
+        padding: 20px 30px;
+        background: $white;
+
+        .content-overlay-outer {
+            position: relative;
+            padding: 0 0 10px;
+
+            .banner {
+                position: relative;
+                padding: 0 35px 20px;
+                background: url(https://fretbay.com/en/assets/images/shipper/profile/bg-profile.jpg) no-repeat center top;
+
+                .username-wrapper {
+
+                    .member-since {
+                        color: #888;
+                    }
+                }
+
+                .logout {
+
+                    img {
+                        width: 24px;
+                    }
+
+                    span {
+                        display: inline-block;
+                    }
+                }
+            }
+
+            .notification-section {
+
+                .section-title {
+                    margin: 15px 40px 10px 0;
+                    float:left;
+                    font-size: 14px;
+                    color: #3D4E60;
+                }
+
+                label.vswitch {
+                    padding: 0;
+                    margin-right: 60px;
+
+                    input:checked ~ span {
+                        font-weight: 700;
+                    }
+
+                    input ~ span {
+                        padding-left: 60px;
+                        position: relative;
+                        display: inline-block;
+                        line-height: 1.2;
+
+                        em {
+                            width: 48px;
+                            height: 24px;
+                            border: none;
+                            background: #bfe1f7;
+                            border-radius: 40px;
+                            position: absolute;
+                            top: 9px;
+                            left: 0;
+                            vertical-align: top;
+                            margin-top: -12px;
+
+
+                        }
+                    }
+                }
+                label.vcheck {
+                    input:checked ~ span {
+                        color: #1f2b33;
+
+                        em {
+                            &:before {
+                                right: 1px;
+                                left: auto;
+                                background: #0083fe;
+                            }
+                        }
+                    }
+
+                    input ~ span {
+                        color: #879199;
+                        font-size: 14px;
+
+                        em {
+                            &:before {
+                                width: 20px;
+                                height: 20px;
+                                margin: 1px 1px 1px 0;
+                                left: 2px;
+                                top: 1px;
+                                background: #a1c9e6;
+                                border-radius: 50%;
+                                position: absolute;
+                                display: block;
+                                content: "";
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .profile-form {
+            position: relative;
+            border-bottom: 1px solid #f0f1f5;
+            margin-bottom:  10px;
+
+            &:after {
+                clear: both;
+            }
+
+            .pull-sm-left {
+                float: left;
+            }
+
+            .pull-sm-right {
+                float: right;
+            }
+
+            .section-title {
+                font-size: 14px;
+                margin-bottom: 20px;
+                color: #3D4E60;
+            }
+
+
+            .account-type-label {
+                box-sizing: border-box;
+                padding: 0 20px;
+                margin-bottom: 15px;
+
+                label {
+                    &:first-child {
+                        border-radius: 50px 0 0 50px;
+                    }
+                    &:last-child {
+                        border-radius: 0 50px 50px 0;
+                    }
+                }
+            }
+
+            .btn-group{
+
+                .btn:first-child {
+                    margin-left: 0;
+                }
+
+                .vcheck {
+                    border: none;
+                    box-shadow:  none;
+                    margin-right: 0;
+                    padding: 3px 20px;
+                    background: #f0f0f0;
+
+
+
+                    &.active {
+                        background: #0083fe;
+
+                        span {
+                            color: $white;
+                            font-weight: 700;
+                        }
+                    }
+
+                    span {
+                        color: #a1bcd0;
+                        font-weight: 400;
+                    }
+                }
+            }
+
+            .form-group {
+                .form-control {
+                    background-color: $white;
+                    color: #1f2b33;
+                    border: 1px solid #e7e9f0;
+                    border-radius: 4px;
+                    box-shadow: none;
+                    transition: none;
+                    padding: 10px 15px;
+
+                    &:focus {
+                        border-color: #66afe9;
+                    }
+                    &[disabled] {
+                        background: #cadae5;
+                        border-color: #cadae5;
+                    }
+
+                }
+                .input-has-icon-left {
+                    input {
+                        padding-left: 45px;
+                    }
+
+                    .rel-icon {
+                        position: absolute;
+                        top: 50%;
+                        display: block;
+                        line-height: 1;
+                        left: 5px;
+                        margin-top: -15px;
+
+                        img {
+                            width: 30px;
+                            height: 30px;
+                            display: block;
+                        }
+                    }
+                }
+
+                .custom-phone-menu-wrapper {
+                    position: relative;
+
+                    .custom-phone-menu {
+                        position: static;
+                        padding: 0;
+                        height: auto;
+
+                        .dropdown {
+                            position: absolute;
+                            left: 0;
+                            z-index: 1;
+
+                            .glyphicon {
+                                position: absolute;
+                                right: 0;
+                                padding: 8px 27px;
+                            }
+
+                            .ui-select-match {
+                                .ui-select-toggle {
+                                    border: none;
+                                    z-index: -1;
+                                    background-color: inherit;
+                                    padding-right: 30px;
+                                    padding-left: 15px;
+
+                                    .text-muted {
+                                        display: none;
+                                    }
+
+                                    .ui-select-match-text {
+                                        line-height: 1.5;
+                                        padding-right: 0;
+
+                                        span {
+                                            width: 20px;
+                                            height: 1em;
+                                            margin-right: 10px;
+                                            overflow: hidden;
+                                            display: inline-block;
+                                            vertical-align: middle;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        input[type=search] {display: none;}
+                    }
+
+                    .phone-field {
+                        padding-left: 100px;
+                    }
+                }
+            }
+        }
+    }
+}

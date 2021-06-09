@@ -3,7 +3,7 @@
         <section id="seekHeader">
             <div class="container">
                 <ul class="row seekheader__list">
-                    <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="col-lg-3 col-md-6 col-sm-12">
                         <li class="seekheader__item seekheader__item-first">
                             <i class="icon seek1"></i>
                             <p class="seekheader__title">
@@ -14,7 +14,7 @@
                             </div>
                         </li>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="col-lg-3 col-md-6 col-sm-12">
                         <li class="seekheader__item">
                             <i class="icon seek2"></i>
                             <p class="seekheader__title">
@@ -25,7 +25,7 @@
                             </div>
                         </li>
                     </div>
-                    <div class="col-lg-3 col-md-6  col-sm-6">
+                    <div class="col-lg-3 col-md-6  col-sm-12">
                         <li class="seekheader__item">
                             <i class="icon seek3"></i>
                             <p class="seekheader__title">
@@ -36,7 +36,7 @@
                             </div>
                         </li>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="col-lg-3 col-md-6 col-sm-12">
                         <li class="seekheader__item">
                             <i class="icon seek4"></i>
                             <p class="seekheader__title">
@@ -52,7 +52,7 @@
         </section>
         <section id="recentList">
             <div class="container">
-                <div class="row col">
+                <div class="row">
                     <div class="col-lg-4">
                         <top-movers-component/>
                     </div>
@@ -65,19 +65,17 @@
         <section id="stepsNew">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 col-xs-6">
+                    <div class="col-lg-3 col-6">
                         <div class="stepsnew__item">
                             <h3 class="stepsnew__title">
-							<span>
-								1
-							</span>
+                                <span>1</span>
                                 Publish your listing
                             </h3>
                             <img src="/images/home/stepN-1.png" alt="about"
                                  class="about__img img-responsive mx-auto d-block img-fluid">
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-xs-6">
+                    <div class="col-lg-3 col-6">
                         <div class="stepsnew__item">
                             <h3 class="stepsnew__title">
 							<span>
@@ -89,7 +87,7 @@
                                  class="about__img img-responsive mx-auto d-block img-fluid">
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-xs-6">
+                    <div class="col-lg-3 col-6">
                         <div class="stepsnew__item">
                             <h3 class="stepsnew__title">
 							<span>
@@ -101,7 +99,7 @@
                                  class="about__img img-responsive mx-auto d-block img-fluid">
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-xs-6">
+                    <div class="col-lg-3 col-6">
                         <div class="stepsnew__item">
                             <h3 class="stepsnew__title">
 							<span>
@@ -197,7 +195,7 @@
                 <div class="content">
                     <article class="tab-1">
                         <div class="container">
-                            <ul class="col-md-4">
+                            <ul class="col-md-6">
                                 <li>
                                     <a href="#">
                                         Moving cheaply
