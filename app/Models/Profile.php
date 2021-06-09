@@ -18,5 +18,6 @@ class Profile extends Model
            "region",
            "areas_of_expertise",
             "role_id"
+          
     ];
 }

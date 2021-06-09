@@ -99,3 +99,34 @@ Route::group([
  Route::group(['middleware' => ['role:admin']], function () {
  });
 });
+
+
+Route::resource('category', 'CategoryController');
+
+Route::resource('subcategory', 'SubcategoryController');
+
+
+Route::resource('transporter', 'TransporterController');
+
+Route::resource('customer', 'CustomerController');
+
+
+Route::resource('transporter', 'TransporterController');
+
+Route::resource('customer', 'CustomerController');
+
+
+Route::resource('profile', 'ProfileController');
+
+
+Route::resource('profile', 'ProfileController');
+
+
+Route::resource('profile', 'ProfileController');
+
+
+Route::resource('category', 'CategoryController');
+
+Route::resource('subcategory', 'SubcategoryController');
+
+Route::resource('profile', 'ProfileController');
