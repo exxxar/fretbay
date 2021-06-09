@@ -52,7 +52,11 @@ Route::view("/profile-transporter-wizard-step-2", "desktop.pages.profile.transpo
 Route::view("/profile-transporter-wizard-step-3", "desktop.pages.profile.transporter.profile-transporter-wizard-step-3")->name("desktop.profile-transporter-wizard-step-3");
 Route::view("/profile-transporter-wizard-step-4", "desktop.pages.profile.transporter.profile-transporter-wizard-step-4")->name("desktop.profile-transporter-wizard-step-4");
 Route::view("/profile-transporter-wizard-step-5", "desktop.pages.profile.transporter.profile-transporter-wizard-step-5")->name("desktop.profile-transporter-wizard-step-5");
-//Роут на редактирование профиля перевозчика
+
+//Роут на редактирование профиля заказчика
+Route::view("/profile-customer", "desktop.pages.profile.customer.profile")->name("desktop.customer-profile");
+Route::view("/to-be-confirmed-empty", "desktop.pages.profile.customer.to-be-confirmed-empty")->name("desktop.customer-to-be-confirmed-empty");
+Route::view("/to-be-confirmed", "desktop.pages.profile.customer.to-be-confirmed")->name("desktop.customer-to-be-confirmed");
 
 Route::get('setlocale/{locale}', function ($locale) {
     if (in_array($locale, Config::get('app.locales'))) {   # Проверяем, что у пользователя выбран доступный язык
