@@ -1,5 +1,5 @@
 const state = {
-    article_items: JSON.parse(localStorage.getItem('ArticleCart')) || [
+    article_items: [
         // {
         //     id: 1,//uuid
         //     category_title: "",
@@ -91,26 +91,26 @@ const mutations = {
     pushArticleItemToCart(state, item) {
         state.article_items.push(item);
 
-        localStorage.setItem('ArticleCart', JSON.stringify(state.article_items));
+        // localStorage.setItem('ArticleCart', JSON.stringify(state.article_items));
     },
 
     changeArticleItemInCart(state, payload) {
         // const cartItem = state.article_items.find(item => item.id === item.id)
         // cartItem.item = item;
         state.article_items[payload.index] = payload.item;
-        localStorage.setItem('ArticleCart', JSON.stringify(state.article_items));
+        // localStorage.setItem('ArticleCart', JSON.stringify(state.article_items));
     },
 
     removeArticleItem(state, id) {
         // let tmp = state.article_items.filter((item) => item.id !== id);
         // state.article_items = tmp
         state.article_items.splice(id, 1)
-        localStorage.setItem('ArticleCart', JSON.stringify(state.article_items));
+        // localStorage.setItem('ArticleCart', JSON.stringify(state.article_items));
     },
 
     clearAllArticleItems(state) {
-        state.article_items = []
-        localStorage.setItem('ArticleCart', JSON.stringify(state.article_items));
+        state.article_items = [];
+        // localStorage.setItem('ArticleCart', JSON.stringify(state.article_items));
     },
 
 
