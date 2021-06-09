@@ -4,13 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Spatie\Translatable\HasTranslations;
 
 class Listing extends Model
 {
-    use SoftDeletes, HasTranslations;
-
-    public $translatable = ['title', 'status'];
+    use SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
