@@ -9,13 +9,13 @@ import VehicleModule from './modules/VehicleModule'
 import Category from "./modules/Category";
 import Subcategory from "./modules/Subcategory";
 import Thing from "./modules/Thing";
-import Step from "./modules/Step";
+import ListingModule from "./modules/ListingModule";
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
     namespaced: true,
     modules: {
-        TypeOfTransportModule, TypeOfObjectModule, ArticleCart, VolumeCart, VehicleModule, Category, Subcategory, Thing, Step
+        TypeOfTransportModule, TypeOfObjectModule, ArticleCart, VolumeCart, VehicleModule, Category, Subcategory, Thing, ListingModule
     }
 })

@@ -27,6 +27,7 @@ class Listing extends Model
         'additional_info',
         'images',
         'status',
+        'expiration_date'
     ];
 
     /**
