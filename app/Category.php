@@ -46,8 +46,6 @@ class Category extends Model
         return $this->getTranslations()["title"][App::getLocale()];
     }
 
-
-
     public function subcategories()
     {
         return $this->hasMany(\App\Subcategory::class);
@@ -55,7 +53,7 @@ class Category extends Model
 
     public function things()
     {
-        return $this->hasMany(\App\Thing::class);
+        return $this->hasMany(\App\Thing::class ,'category_id', 'id');
     }
 
     public function properties()
@@ -64,4 +62,21 @@ class Category extends Model
             'category_has_category_properties')
             ->withPivot('required');
     }
+
+    public function getSubcategoriesCountAttribute()
+    {
+        return $this->subcategories()->count();
+    }
+
+    public function getThingsCountAttribute()
+    {
+        return $this->things()->count();
+    }
+
+    public function getPropertiesCountAttribute()
+    {
+        return $this->properties()->count();
+    }
+
+
 }

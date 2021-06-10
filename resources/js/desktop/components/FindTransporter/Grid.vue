@@ -3,7 +3,7 @@
         <wizard :steps="2" ref="grid_wizard">
             <template v-slot:step_0>
                 <ul class="row">
-                    <li v-for="subcategory in subcategories" class="col-md-3 col-6 transport-category" v-bind:class="{'active':(selected_subcategory===0)}"
+                    <li v-for="subcategory in subcategories" class="col-md-3 col-6 transport-category" v-bind:class="{'active':(selected_subcategory===subcategory.id)}"
                         @click="selectSubcategory(subcategory.id)">
                         <label>
                     <span class="category-label-inner">
@@ -18,18 +18,20 @@
                 </ul>
             </template>
             <template v-slot:step_1>
-                <li v-for="thing in things" class="col-md-3 col-6 transport-category" v-bind:class="{'active':(selected_thing===0)}"
-                    @click="selectThing(thing.id)">
-                    <label>
-                    <span class="category-label-inner">
-                        <span class="animated-icon">
-                            <img :src="thing.image" width="75px"
-                                 height="75px" alt="">
+                <ul class="row">
+                    <li v-for="thing in filteredThings" class="col-md-3 col-6 transport-category" v-bind:class="{'active':(selected_thing===thing.id)}"
+                        @click="selectThing(thing.id)">
+                        <label>
+                        <span class="category-label-inner">
+                            <span class="animated-icon">
+                                <img :src="thing.image" width="75px"
+                                     height="75px" alt="">
+                            </span>
+                            <span>{{thing.title}}</span>
                         </span>
-                        <span>{{thing.title}}</span>
-                    </span>
-                    </label>
-                </li>
+                        </label>
+                    </li>
+                </ul>
             </template>
             <template v-slot:footer>
                 <div class="row d-flex justify-content-end mt-2 w-100">
@@ -74,8 +76,12 @@
 </template>
 
 <script>
+    import Wizard from "./Wizard";
     export default {
         name: "Grid",
+        components:{
+            Wizard
+        },
         props:['category'],
         data() {
             return {
@@ -90,27 +96,34 @@
             this.subcategories = this.category.subcategories;
             this.things = this.category.things;
             if(this.subcategories.length < 0) {
-                this.$refs.wizard.nextStep();
+                this.$refs.grid_wizard.nextStep();
+            }
+        },
+        computed: {
+            filteredThings() {
+                return this.things.filter(item=>
+                    item.subcategory_id === this.selected_subcategory
+                )
             }
         },
         methods: {
             nextStep() {
-                if(this.$refs.wizard.current_step === 1)
+                if(this.$refs.grid_wizard.current_step === 1)
                 {
                     this.$store.dispatch('setStep', 2)
                 }
                 else {
-                    this.$refs.wizard.nextStep();
+                    this.$refs.grid_wizard.nextStep();
                 }
             },
             prevStep() {
-                if(this.$refs.wizard.current_step === 0)
+                if(this.$refs.grid_wizard.current_step === 0)
                 {
                     this.$store.dispatch('setStep', 0)
                 }
                 else {
                     if(this.subcategories.length > 0) {
-                        this.$refs.wizard.prevStep();
+                        this.$refs.grid_wizard.prevStep();
                     }
                     else {
                         this.$store.dispatch('setStep', 0)

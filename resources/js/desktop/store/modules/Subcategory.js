@@ -15,7 +15,7 @@ const getters = {
 
 // actions
 const actions = {
-    loadData({state, commit}) {
+    loadSubcategories({state, commit}) {
         return axios
             .get('/subcategory/get')
             .then(resp => {

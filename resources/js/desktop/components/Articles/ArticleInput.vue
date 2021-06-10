@@ -1,8 +1,8 @@
 <template>
     <div>
         <div class="form-group w-100" v-if="data && field.type !== 'checkbox' && field.type !== 'radio'">
-            <ValidationProvider :name="field.title" :rules="getRules(field)" v-slot="{ errors }">
-                <div class="input-has-icon-right">
+            <ValidationProvider :name="field.title" :rules="getRules(field)" v-slot="provider">
+                <div class="input-has-icon-right position-relative">
                     <input v-model="data.value" :type="field.type"
                            class="form-control"
                            :placeholder="field.title">
@@ -29,15 +29,25 @@
         },
         methods:{
             getRules(field) {
-                // if(field.required == true) {
-                //     return 'required'
-                // }
-                // return ''
+                if(field.pivot.required == true) {
+                    console.log(field.pivot.required, 'field.pivot.required');
+                    return 'required'
+                }
+                return ''
             }
         }
     }
 </script>
 
 <style scoped>
+    .content-box-gray .input-has-icon-right .rel-icon {
+        position: absolute;
+        right: 0px;
+        left: auto;
+        top: 0;
+    }
 
+    .content-box-gray .input-has-icon-right .rel-icon img{
+        margin: 0;
+    }
 </style>

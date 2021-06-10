@@ -2,31 +2,32 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
-import {BootstrapVue, IconsPlugin} from 'bootstrap-vue'
-import Notifications from 'vue-notification'
-import VueCurrencyFilter from 'vue-currency-filter'
+import VueCurrencyFilter from 'vue-currency-filter';
 import 'lazysizes';
 
-
 import VTooltip from 'v-tooltip'
+Vue.use(VTooltip);
 
-Vue.use(VTooltip)
+import {BootstrapVue, IconsPlugin} from 'bootstrap-vue'
 // Import Bootstrap an BootstrapVue CSS files (order is important)
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
-Vue.use(BootstrapVue)
-Vue.use(IconsPlugin)
-Vue.use(Notifications)
+Vue.use(BootstrapVue);
+Vue.use(IconsPlugin);
+
+import Notifications from 'vue-notification'
+Vue.use(Notifications);
 
 import VueLazyload from 'vue-lazyload'
-
-
 Vue.use(VueLazyload, {
     preLoad: 1.3,
     error: "/images/common/icons/general/content-loader.gif",
     loading: "/images/common/icons/general/content-loader.gif" ,
     attempt: 1
 })
+
+import Multiselect from 'vue-multiselect';
+Vue.component('multiselect', Multiselect);
 
 //component
 Vue.component('header-component', require('./components/Header.vue').default);
