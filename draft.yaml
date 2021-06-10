@@ -1,5 +1,12 @@
-models:
-  # ...
-
 controllers:
-  # ...
+  Category:
+    resource
+
+  Subcategory:
+    resource
+
+  Profile:
+    resource
+
+
+

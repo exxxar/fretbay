@@ -3,86 +3,97 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Http\Requests\CategoryStoreRequest;
+use App\Http\Requests\CategoryUpdateRequest;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\JsonResponse
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $categories = Category::with(['subcategories', 'things', 'properties'])->get();
-        return response()->json([
-            'categories' => $categories
-        ]);
+
+        if ($request->ajax()) {
+            $categories = Category::with(['subcategories', 'things', 'properties'])->get();
+            return response()->json([
+                'categories' => $categories
+            ]);
+        }
+
+
+        $categories = Category::all();
+
+        return view('category.index', compact('categories'));
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        return view('category.create');
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \App\Http\Requests\CategoryStoreRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CategoryStoreRequest $request)
     {
-        //
+        $category = Category::create($request->validated());
+
+        $request->session()->flash('category.id', $category->id);
+
+        return redirect()->route('category.index');
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  \App\Category  $category
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Category $category
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
+    public function show(Request $request, Category $category)
     {
-        //
+        return view('category.show', compact('category'));
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Category  $category
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Category $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit(Request $request, Category $category)
     {
-        //
+        return view('category.edit', compact('category'));
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Category  $category
+     * @param \App\Http\Requests\CategoryUpdateRequest $request
+     * @param \App\Category $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(CategoryUpdateRequest $request, Category $category)
     {
-        //
+        $category->update($request->validated());
+
+        $request->session()->flash('category.id', $category->id);
+
+        return redirect()->route('category.index');
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Category  $category
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Category $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function destroy(Request $request, Category $category)
     {
-        //
+        $category->delete();
+
+        return redirect()->route('category.index');
     }
 }
