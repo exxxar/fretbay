@@ -139,3 +139,34 @@ Route::post('/register-transporter', \Auth\RegisterController::class . '@registe
 Route::get('/logout', \Auth\LoginController::class . '@logout')->name("logout");
 
 
+
+
+Route::resource('category', 'CategoryController');
+
+Route::resource('subcategory', 'SubcategoryController');
+
+
+Route::resource('transporter', 'TransporterController');
+
+Route::resource('customer', 'CustomerController');
+
+
+Route::resource('transporter', 'TransporterController');
+
+Route::resource('customer', 'CustomerController');
+
+
+Route::resource('profile', 'ProfileController');
+
+
+Route::resource('profile', 'ProfileController');
+
+
+Route::resource('profile', 'ProfileController');
+
+
+Route::resource('category', 'CategoryController');
+
+Route::resource('subcategory', 'SubcategoryController');
+
+Route::resource('profile', 'ProfileController');

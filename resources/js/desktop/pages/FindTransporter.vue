@@ -222,47 +222,46 @@ import Grid from "../components/FindTransporter/Grid";
 
 <style lang="scss">
 
-.articles-list {
-    li {
-        padding: 10px;
-        background: #f3f4f8;
-        border-radius: 10px;
-        display: flex;
-        flex-wrap: wrap;
-
-        .article-header {
-            width: 100%;
-            display: flex;
-        }
-
-        .list-group {
-            width: 100%;
+    .articles-list {
+        li {
+            padding: 10px;
+            background: #f3f4f8;
+            border-radius: 10px;
             display: flex;
             flex-wrap: wrap;
-            flex-direction: row;
 
-            .list-group-item {
-                position: relative;
-                background-color: #fff;
-                border: 1px solid rgba(0, 0, 0, 0.125);
-                display: inline;
-                padding: 5px;
-                font-size: 10px;
-                border-radius: 10px;
-                margin-left: 5px;
-                margin-top: 5px;
+            .article-header {
+                width: 100%;
+                display: flex;
+            }
+
+            .list-group {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+
+                .list-group-item {
+                    position: relative;
+                    background-color: #fff;
+                    border: 1px solid rgba(0, 0, 0, 0.125);
+                    display: inline;
+                    padding: 5px;
+                    font-size: 10px;
+                    border-radius: 10px;
+                    margin-left: 5px;
+                    margin-top: 5px;
+                }
             }
         }
     }
-}
-
-.panel-left {
-    padding: 20px;
-    background: white;
-    box-sizing: border-box;
-    border-radius: 10px;
-    box-shadow: 0 3px 1px 0 rgb(0 0 0 / 6%);
-}
+    .panel-left {
+        padding: 20px;
+        background: white;
+        box-sizing: border-box;
+        border-radius: 10px;
+        box-shadow: 0 3px 1px 0 rgb(0 0 0 / 6%);
+    }
 
     .panel-right {
         padding: 20px;
@@ -277,34 +276,34 @@ import Grid from "../components/FindTransporter/Grid";
         }
     }
 
-.transport-category {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 5px;
+    .transport-category {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
 
 
-    &.active {
+        &.active {
 
 
-        &:after {
-            content: '';
-            background: url(/images/common/icons/general/circle-check.svg) no-repeat center center;
-            width: 30px;
-            height: 30px;
-            position: absolute;
-            left: 15px;
-            top: 15px;
+            &:after {
+                content: '';
+                background: url(/images/common/icons/general/circle-check.svg) no-repeat center center;
+                width: 30px;
+                height: 30px;
+                position: absolute;
+                left: 15px;
+                top: 15px;
+            }
+
+            label {
+                border: 2px #0083fe solid;
+                background-color: #008bdb17;
+
+            }
         }
 
         label {
-            border: 2px #0083fe solid;
-            background-color: #008bdb17;
-
-        }
-    }
-
-    label {
 
         min-height: 170px;
         width: 100%;
@@ -314,26 +313,26 @@ import Grid from "../components/FindTransporter/Grid";
         transition: .3s;
         text-align: center;
 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 2px transparent solid;
-
-        &:hover {
-            background-color: #008bdb17;
-            border: 2px #0083fe solid;
-        }
-
-        span.category-label-inner {
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-wrap: wrap;
-            flex-direction: column;
+            border: 2px transparent solid;
 
+            &:hover {
+                background-color: #008bdb17;
+                border: 2px #0083fe solid;
+            }
+
+            span.category-label-inner {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+                flex-direction: column;
+
+            }
         }
     }
-}
 
 
 </style>
