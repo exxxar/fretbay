@@ -13,7 +13,7 @@ class ProfileUpdateRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,15 @@ class ProfileUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'company_name'=>['required', 'string', 'min:2', 'max:256'],
+         'first_name'=>['required', 'string', 'min:2', 'max:256'],
+         'name'=>['required', 'string', 'min:2', 'max:256'],
+         'telephone_number'=>['required', 'string', 'min:8', 'max:11'],
+         'mobile_number'=>['required', 'string', 'min:8', 'max:11'],
+         'country'=>['required', 'string', 'min:2', 'max:256'],
+         'city'=>['required', 'string', 'min:2', 'max:256'],
+         'region'=>['required', 'string', 'min:2', 'max:256'],
+         'areas_of_expertise'=>['required', 'string', 'min:2', 'max:256'],
         ];
     }
 }
