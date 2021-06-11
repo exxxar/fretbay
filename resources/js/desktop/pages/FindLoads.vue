@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <!-- <div>
             <div class="container-fluid">
                 <div class="container-fluid">
                 <div class= "row d-flex flex-column flex-lg-row justify-content-center  bg-white py-4">
@@ -201,7 +201,7 @@
                         </div> 
                     </div>
                 </div>
-    </div> 
+    </div>  -->
          <div class="container-fluid align-items ">
              <div class="table-responsive d-none d-lg-flex">
                  <table class="table table-light">
@@ -227,7 +227,7 @@
                                     17 days
                                 </strong>
                             </div>
-                            <div class="td-nom">
+                            <div class="td-nom d-inline-flex flex-column">
                                 <a href="#" class="category category-2">
                                     <span>
                                         Déménagement 17.35m
@@ -236,14 +236,13 @@
                                 <span class="listing-status">
                                     Priority listing
                                 </span>
-                                <div>
+                                <div class="d-inline-flex">
                                     <div class="bg-success rounded d-flex align-items-center mr-2">
                                         <span style="padding: 0px; margin:0px" class="px-3 py-2 text-white font-weight-bold">Economique</span>
                                     </div>
-                                    <span>
-                                        12 m
-                                        <sup>3</sup>
-                                    </span>
+                                    <div class="bg-success rounded align-items-center font-weight-bold mr-2 text-white px-3 py-2">
+                                        <p>12m<sup>3</sup></p>
+                                    </div>
                                 </div>
                             </div>  
                             </div>
