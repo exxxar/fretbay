@@ -193,17 +193,16 @@
                                         </h5>
                                         <input type="text" class="form-control ref" placeholder="Ex : 345765">
                                     </div>
-                                </div>         
+                                </div>
                             </div>
                         </div>
                         <div class="col mt-3">
-                            
-                        </div> 
+
+                        </div>
                     </div>
                 </div>
-    </div> 
-         <div class="container-fluid align-items ">
-             <div class="table-responsive d-none d-lg-flex">
+    <div class="container-fluid align-items ">
+        <div class="table-responsive d-none d-lg-flex">
                  <table class="table table-light">
                   <thead class="thead">
                     <tr>
@@ -245,7 +244,7 @@
                                         <sup>3</sup>
                                     </span>
                                 </div>
-                            </div>  
+                            </div>
                             </div>
                         </td>
                         <td>
@@ -352,8 +351,9 @@
                     </tr>
                 </tbody>
              </table>
-        </div>                 
-    </div> 
+        </div>
+    </div>
+    </div>
 </template>
 
 <script>
