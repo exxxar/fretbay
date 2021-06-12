@@ -22,7 +22,7 @@ const actions = {
                 commit('setCategories', resp.data.categories);
             })
     },
-    loadData({state, commit}) {
+    loadCategories({state, commit}) {
         return axios
             .get('/category/get')
             .then(resp => {

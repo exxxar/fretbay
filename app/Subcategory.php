@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\App;
 use Spatie\Translatable\HasTranslations;
 
 class Subcategory extends Model
@@ -46,5 +47,9 @@ class Subcategory extends Model
     public function category()
     {
         return $this->belongsTo(\App\Category::class,"id","category_id");
+    }
+    public function getTitleAttribute()
+    {
+        return $this->getTranslations()["title"][App::getLocale()];
     }
 }

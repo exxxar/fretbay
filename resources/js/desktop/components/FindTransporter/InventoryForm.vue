@@ -1,26 +1,16 @@
 <template>
     <div>
-        <div class="row">
-            <div class="col-6">
+        <div class="row w-100 m-auto">
+            <div class="col-12 col-sm-7">
                 <h4>Volume calculator </h4>
             </div>
 
-            <div class="col-2">
-                <p class="mt-2">Total volume</p>
-            </div>
-            <div class="col-3">
-                <div class="form-group ">
-                    <div class="volume-field-wrap blue-field">
-<!--                        <input type="text" class="form-control"-->
-<!--                               placeholder="Your volume" autofocus="">-->
-                        {{volumeCartTotalVolume.toFixed(2)}}
-                        <em class="volume-unit text-bold">m<sup>3</sup></em>
-                    </div>
-                </div>
+            <div class="col-12 col-sm-5">
+                <p class="mt-2" style="float: right">Total volume  {{volumeCartTotalVolume.toFixed(2)}} <em class="text-bold">m<sup>3</sup></em></p>
             </div>
         </div>
 
-        <div class="row">
+        <div class="row w-100 m-auto">
             <div class="col-12 col-sm-8" v-if="!search_mode">
 <!--                v-if="category.subcategories.length>0"-->
                 <splide ref="splider" :options="options">
@@ -28,7 +18,7 @@
 <!--                        <div class="subcategory" :class="{'active': active_subcategory }">All</div>-->
 <!--                    </splide-slide>-->
                     <splide-slide v-for="(sub, index) in subcategories" :key="sub.id">
-                        <div class="subcategory" @click="chooseSubcategory(index, sub.id)" :class="{'active': active_subcategory == sub.id }">{{sub.title}}</div>
+                        <div class="subcategory" @click="chooseSubcategory(index, sub.id)" :class="{'active': active_subcategory === sub.id }">{{sub.title}}</div>
                     </splide-slide>
 <!--                    <splide-slide>-->
 <!--                        <div class="subcategory" :class="{'active': active_subcategory }">Entrance</div>-->
@@ -73,31 +63,39 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row w-100 m-auto">
             <div class="col-12">
                 <ul class="inventory-list">
-                    <li v-if="!search_mode" class="inventory-item-wrapper" v-for="thing in filteredThings">
+                    <li v-if="!search_mode"
+                        class="inventory-item-wrapper"
+                        :class="{'active': getQuantity(thing.id)>0}"
+                        v-for="thing in filteredThings"
+                    >
                         <div class="inventory-item">
                             <img :src="thing.image" class="img-fluid" alt="">
                             <h6 class="text-center">{{thing.title}}</h6>
                         </div>
                         <div class="inventory-controls" >
                             <!--<button class="btn btn-primary rounded">-</button>-->
-                            <a class="add-remove-count d-flex justify-content-center" @click="decrement(thing.id)">-</a>
+                            <div class="add-remove-count d-flex justify-content-center" @click="decrement(thing.id)">-</div>
                             <span>{{getQuantity(thing.id)}}</span>
-                            <a class="add-remove-count d-flex justify-content-center" @click="increment(thing)">+</a>
+                            <div class="add-remove-count d-flex justify-content-center" @click="increment(thing)">+</div>
                             <!--<button class="btn btn-primary rounded">+</button>-->
                         </div>
                     </li>
-                    <li v-if="search_mode" class="inventory-item-wrapper" v-for="thing in search_results">
+                    <li v-if="search_mode"
+                        class="inventory-item-wrapper"
+                        :class="{'active': getQuantity(thing.id)>0}"
+                        v-for="thing in search_results"
+                    >
                         <div class="inventory-item">
                             <img :src="thing.image" class="img-fluid" alt="">
                             <h6 class="text-center">{{thing.title}}</h6>
                         </div>
                         <div class="inventory-controls" >
-                            <a class="add-remove-count d-flex justify-content-center" @click="decrement(thing.id)">-</a>
+                            <div class="add-remove-count d-flex justify-content-center" @click="decrement(thing.id)">-</div>
                             <span>{{getQuantity(thing.id)}}</span>
-                            <a class="add-remove-count d-flex justify-content-center" @click="increment(thing)">+</a>
+                            <div class="add-remove-count d-flex justify-content-center" @click="increment(thing)">+</div>
                         </div>
                     </li>
                 </ul>
@@ -154,7 +152,9 @@
                 return this.$store.getters.volumeCartTotalVolume;
             },
             filteredThings() {
-                return this.things.filter(item => {item.subcategory_id === this.active_subcategory})
+                return this.things.filter(item=>
+                    item.subcategory_id === this.active_subcategory
+                )
             }
         },
         created() {
@@ -188,7 +188,7 @@
                     this.$store.dispatch('incVolumeItemQuantity', thing.id);
                 }
                 else {
-                    this.$store.dispatch('pushVolumeItemToCart', thing);
+                    this.$store.dispatch('addVolumeItemToCart', thing);
                 }
                 this.$store.dispatch('editNewListing', {key:'volume_items', value: this.volume_items});
             },
@@ -227,7 +227,6 @@
         right: 0em;
     }
 
-
     .volume-field-wrap.blue-field input {
         background: #def0ff;
     }
@@ -261,7 +260,6 @@
             cursor:pointer;
         }
     }
-
     .inventory-list {
         display: flex;
         justify-content: flex-start;
@@ -277,7 +275,6 @@
             .inventory-item {
                 padding: 10px;
                 border-radius: 5px;
-
             }
 
             .inventory-controls {
@@ -309,8 +306,29 @@
             &:hover {
                 .inventory-item {
                     background: #e8f1ff;
+                }
 
+                .inventory-controls {
+                    background: #89b2f2;
+                    &>* {
+                        display: block;
+                    }
 
+                    button {
+                        background: #89b2f2;
+                        border:1px solid #89b2f2;
+
+                    }
+
+                    span {
+                        color:white;
+                    }
+                }
+            }
+
+            &.active {
+                .inventory-item {
+                    background: #e8f1ff;
                 }
 
                 .inventory-controls {
@@ -331,21 +349,6 @@
                 }
             }
         }
-    }
-    .slick-prev::before, .slick-next::before {
-        color:#3490dc !important;
-    }
-    .slick-prev{
-        left: -8px !important;
-        opacity: 1 !important;
-    }
-    .slick-next{
-        right: -8px !important;
-        opacity: 1 !important;
-    }
-    .slick-list {
-        margin-left: 1.2rem !important;
-        margin-right: 1.2rem !important;
     }
 </style>
 

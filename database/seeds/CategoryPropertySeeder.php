@@ -43,7 +43,7 @@ class CategoryPropertySeeder extends Seeder
                 "fr"=>"Length (cm)",
                 "ru"=>"Length (cm)"
             ],
-            'slug'=>'length',
+            'slug'=>'length_cm',
             'type'=>'number',
             'icon'=>'/images/common/icons/units/longeur.svg',
         ]);

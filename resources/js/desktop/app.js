@@ -118,8 +118,21 @@ import VueSplide from '@splidejs/vue-splide';
 import '@splidejs/splide/dist/css/themes/splide-sea-green.min.css';
 Vue.use( VueSplide );
 
-import { ValidationProvider, extend, ValidationObserver } from 'vee-validate';
-import { required, email } from 'vee-validate/dist/rules';
+import { ValidationProvider, extend, ValidationObserver, localize, localeChanged } from 'vee-validate';
+import * as rules from 'vee-validate/dist/rules';
+import en from 'vee-validate/dist/locale/en.json';
+import fr from 'vee-validate/dist/locale/fr.json';
+import ru from 'vee-validate/dist/locale/ru.json';
+// install rules and localization
+Object.keys(rules).forEach(rule => {
+    extend(rule, rules[rule]);
+});
+localize({
+    en,
+    fr,
+    ru
+});
+
 Vue.component('ValidationProvider', ValidationProvider);
 Vue.component('ValidationObserver', ValidationObserver);
 
@@ -128,8 +141,11 @@ Vue.prototype.$search = function (term, list, options) {
     return new Promise(function (resolve, reject) {
         var run = new Fuse(list, options);
         var results = run.search(term);
-        results.forEach(item => { let tmp_item = item; item = tmp_item.item});
-        resolve(results)
+        let arr = [];
+        results.forEach(item => {
+            arr.push(item.item)
+        });
+        resolve(arr)
     })
 }
 import {BootstrapVue, IconsPlugin} from 'bootstrap-vue'
@@ -153,7 +169,10 @@ const app = new Vue({
 if (localStorage.getItem('locale')) {
     app.$lang.setLocale(localStorage.getItem('locale'));
     app.$moment.locale(localStorage.getItem('locale'));
+    localize(localStorage.getItem('locale'));
 } else {
+    localStorage.setItem('locale', 'en')
     app.$lang.setLocale('en');
     app.$moment.locale('en');
+    localize('en');
 }

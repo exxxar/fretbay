@@ -2,87 +2,95 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SubcategoryStoreRequest;
+use App\Http\Requests\SubcategoryUpdateRequest;
 use App\Subcategory;
 use Illuminate\Http\Request;
 
 class SubcategoryController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\JsonResponse
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        if ($request->ajax()) {
+            $subcategories = Subcategory::all();
+            return response()->json([
+                'subcategories' => $subcategories
+            ]);
+        }
         $subcategories = Subcategory::all();
-        return response()->json([
-            'subcategories' => $subcategories
-        ]);
+
+        return view('subcategory.index', compact('subcategories'));
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        return view('subcategory.create');
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \App\Http\Requests\SubcategoryStoreRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SubcategoryStoreRequest $request)
     {
-        //
+        $subcategory = Subcategory::create($request->validated());
+
+        $request->session()->flash('subcategory.id', $subcategory->id);
+
+        return redirect()->route('subcategory.index');
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  \App\Subcategory  $subcategory
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Subcategory $subcategory
      * @return \Illuminate\Http\Response
      */
-    public function show(Subcategory $subcategory)
+    public function show(Request $request, Subcategory $subcategory)
     {
-        //
+        return view('subcategory.show', compact('subcategory'));
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Subcategory  $subcategory
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Subcategory $subcategory
      * @return \Illuminate\Http\Response
      */
-    public function edit(Subcategory $subcategory)
+    public function edit(Request $request, Subcategory $subcategory)
     {
-        //
+        return view('subcategory.edit', compact('subcategory'));
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Subcategory  $subcategory
+     * @param \App\Http\Requests\SubcategoryUpdateRequest $request
+     * @param \App\Subcategory $subcategory
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Subcategory $subcategory)
+    public function update(SubcategoryUpdateRequest $request, Subcategory $subcategory)
     {
-        //
+        $subcategory->update($request->validated());
+
+        $request->session()->flash('subcategory.id', $subcategory->id);
+
+        return redirect()->route('subcategory.index');
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Subcategory  $subcategory
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Subcategory $subcategory
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Subcategory $subcategory)
+    public function destroy(Request $request, Subcategory $subcategory)
     {
-        //
+        $subcategory->delete();
+
+        return redirect()->route('subcategory.index');
     }
 }

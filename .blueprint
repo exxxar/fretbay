@@ -6,13 +6,13 @@ created:
     - database/factories/SubcategoryFactory.php
     - database/factories/ObjectFactory.php
     - database/factories/CategoryPropertyFactory.php
-    - database/migrations/2021_05_05_001023_create_verification_applications_table.php
-    - database/migrations/2021_05_05_001024_create_listings_table.php
-    - database/migrations/2021_05_05_001025_create_quotes_table.php
-    - database/migrations/2021_05_05_001026_create_categories_table.php
-    - database/migrations/2021_05_05_001027_create_subcategories_table.php
-    - database/migrations/2021_05_05_001028_create_objects_table.php
-    - database/migrations/2021_05_05_001029_create_category_properties_table.php
+    - database/migrations/2021_06_07_131251_create_verification_applications_table.php
+    - database/migrations/2021_06_07_131252_create_listings_table.php
+    - database/migrations/2021_06_07_131253_create_quotes_table.php
+    - database/migrations/2021_06_07_131254_create_categories_table.php
+    - database/migrations/2021_06_07_131255_create_subcategories_table.php
+    - database/migrations/2021_06_07_131256_create_objects_table.php
+    - database/migrations/2021_06_07_131257_create_category_properties_table.php
     - app/VerificationApplication.php
     - app/Listing.php
     - app/Quote.php

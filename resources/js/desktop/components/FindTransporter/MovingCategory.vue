@@ -2,7 +2,7 @@
     <div>
         <wizard :steps="2" ref="wizard">
             <template v-slot:step_0>
-                <div v-if="!inventory_mode">
+                <div class="panel-left" v-if="!inventory_mode">
                     <h2 class="text-uppercase text-black text-center">The volume of your move</h2>
                     <div class="volume-step-box-wrap text-center">
                         <div class="row">
@@ -32,128 +32,13 @@
                         </div>
                     </div>
                 </div>
-                <div v-else>
+                <div class="panel-left" v-else>
                     <inventory-form :category="category"/>
                 </div>
             </template>
             <template v-slot:step_1>
                 <div class="mt-2 item-moving-container">
-                    <div class="row">
-                        <div class="col-3">
-                            <div class="item-moving-package">
-                                <div class="package-header">
-                                    <div class="circle">
-                                        <img src="https://fretbay.com/en/assets/images/shipper/postJob/formula-icon1-w.svg" alt="">
-                                    </div>
-                                </div>
-
-                                <div class="package-body">
-                                    <h3>Truck with Driver package</h3>
-                                    <p>
-                                        No deposit to pay, no schedule to change for the trip, the driver drives for you!
-                                    </p>
-                                    <ul>
-                                        <li> A truck adapted to your volume</li>
-                                        <li> A professional driver who helps to secure the truck</li>
-                                        <li> The protection of goods by special equipment (blankets, straps...)</li>
-                                        <li> All road-related costs (fuel, possible tolls, insurance)</li>
-                                    </ul>
-
-                                    <div class="w-100 d-flex justify-content-center">
-                                        <button class="btn btn-custom-gray" @click="chooseMovingPackage('Truck with Driver')">Choose</button>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="item-moving-package">
-                                <div class="package-header">
-                                    <div class="circle">
-                                        <img src="https://fretbay.com/en/assets/images/shipper/postJob/formula-icon1-w.svg" alt="">
-                                    </div>
-                                </div>
-
-                                <div class="package-body">
-                                    <h3>Truck with Driver package</h3>
-                                    <p>
-                                        No deposit to pay, no schedule to change for the trip, the driver drives for you!
-                                    </p>
-                                    <ul>
-                                        <li> A truck adapted to your volume</li>
-                                        <li> A professional driver who helps to secure the truck</li>
-                                        <li> The protection of goods by special equipment (blankets, straps...)</li>
-                                        <li> All road-related costs (fuel, possible tolls, insurance)</li>
-                                    </ul>
-
-                                    <div class="w-100 d-flex justify-content-center">
-                                        <button class="btn btn-custom-gray" @click="chooseMovingPackage('Truck with Driver')">Choose</button>
-
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="item-moving-package">
-                                <div class="package-header">
-                                    <div class="circle">
-                                        <img src="https://fretbay.com/en/assets/images/shipper/postJob/formula-icon1-w.svg" alt="">
-                                    </div>
-                                </div>
-
-                                <div class="package-body">
-                                    <h3>Truck with Driver package</h3>
-                                    <p>
-                                        No deposit to pay, no schedule to change for the trip, the driver drives for you!
-                                    </p>
-                                    <ul>
-                                        <li> A truck adapted to your volume</li>
-                                        <li> A professional driver who helps to secure the truck</li>
-                                        <li> The protection of goods by special equipment (blankets, straps...)</li>
-                                        <li> All road-related costs (fuel, possible tolls, insurance)</li>
-                                    </ul>
-
-                                    <div class="w-100 d-flex justify-content-center">
-                                        <button class="btn btn-custom-gray" @click="chooseMovingPackage('Truck with Driver')">Choose</button>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="item-moving-package">
-                                <div class="package-header">
-                                    <div class="circle">
-                                        <img src="https://fretbay.com/en/assets/images/shipper/postJob/formula-icon1-w.svg" alt="">
-                                    </div>
-                                </div>
-
-                                <div class="package-body">
-                                    <h3>Truck with Driver package</h3>
-                                    <p>
-                                        No deposit to pay, no schedule to change for the trip, the driver drives for you!
-                                    </p>
-                                    <ul>
-                                        <li> A truck adapted to your volume</li>
-                                        <li> A professional driver who helps to secure the truck</li>
-                                        <li> The protection of goods by special equipment (blankets, straps...)</li>
-                                        <li> All road-related costs (fuel, possible tolls, insurance)</li>
-                                    </ul>
-
-                                    <div class="w-100 d-flex justify-content-center">
-                                        <button class="btn btn-custom-gray" @click="chooseMovingPackage('Truck with Driver')">Choose</button>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
+                   <moving-package-form></moving-package-form>
                 </div>
             </template>
             <template v-slot:footer>
@@ -334,10 +219,11 @@
 <script>
     import InventoryForm from "./InventoryForm";
     import Wizard from "./Wizard";
+    import MovingPackageForm from "./MovingPackageForm";
     export default {
         name: "MovingCategory",
         components: {
-            InventoryForm, Wizard
+            InventoryForm, Wizard, MovingPackageForm
         },
         props:['category'],
         data() {

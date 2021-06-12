@@ -4,7 +4,7 @@
         <!-- Dropdown Input -->
         <input class="dropdown-input form-control"
                @focus="showOptions()"
-               @blur="exit()"
+               @blur="handleBlur"
                @input="getAddress"
                @keyup="keyMonitor"
                v-model="searchFilter"
@@ -12,7 +12,7 @@
                :placeholder="placeholder" />
 
         <!-- Dropdown Menu -->
-        <div class="dropdown-content" v-show="optionsShown">
+        <div class="dropdown-content w-100" v-show="optionsShown">
             <div
                 class="dropdown-item"
                 @mousedown="selectOption(option)"
@@ -42,6 +42,9 @@
             //     default: [],
             //     note: 'Options of dropdown. An array of options with id and name',
             // },
+            address: {
+                note: 'Input v-model'
+            },
             placeholder: {
                 type: String,
                 required: false,
@@ -61,6 +64,10 @@
                 note: 'Max items showing'
             }
         },
+        model: {
+            prop: 'address',
+            event: 'blur'
+        },
         data() {
             return {
                 selected: {},
@@ -70,7 +77,10 @@
             }
         },
         created() {
-            this.$emit('selected', this.selected);
+            // this.$emit('selected', this.selected);
+            // this.selected = this.address;
+            // this.searchFilter = this.address.place_name;
+console.log('created address input')
         },
         computed: {
             filteredOptions() {
@@ -85,6 +95,10 @@
             }
         },
         methods: {
+            handleBlur (value) {
+                this.$emit('blur', value);
+                this.exit();
+            },
             selectOption(option) {
                 this.selected = option;
                 this.optionsShown = false;
@@ -100,7 +114,7 @@
             exit() {
                 if (!this.selected.id) {
                     this.selected = {};
-                    this.searchFilter = '';
+                    // this.searchFilter = '';
                 } else {
                     this.searchFilter = this.selected.place_name;
                 }
@@ -113,13 +127,19 @@
                     this.selectOption(this.filteredOptions[0]);
             },
             getAddress: _.debounce(function(e)  {
-                this.selected = {};
-                axios
+                if (this.searchFilter.trim() !=='') {
+                    this.selected = {};
+                    this.runSearch();
+                }
+
+            }, 500),
+            async runSearch() {
+                await axios
                     .get('/getAddress/'+this.searchFilter+'/en')
                     .then(resp => {
-                       this.options = resp.data
+                        this.options = resp.data
                     })
-            }, 500),
+            }
         },
         watch: {
             // searchFilter() {

@@ -2,19 +2,25 @@
     <form>
         <div class="form-group">
 <!--            <input type="text" class="form-control" aria-describedby="address" placeholder="Address">-->
-            <address-input v-on:selected="selectAddress" :disabled="false" placeholder="Address"></address-input>
+            <ValidationProvider :name="address" rules="required" v-slot="{ errors }">
+                <address-input v-model="listing[address]" v-on:selected="selectAddress" :disabled="false" placeholder="Address"></address-input>
+            </ValidationProvider>
         </div>
 
         <div class="form-row">
             <div class="form-group col-12 col-sm-6">
-                <b-form-datepicker v-model="listing[date1]" :min="min1" @input="changeDate" placeholder=""
-                                   :date-format-options="{ day: '2-digit', month: '2-digit', year: 'numeric'}"
-                ></b-form-datepicker>
+                <ValidationProvider :name="date1" rules="required" v-slot="{ errors }">
+                    <b-form-datepicker v-model="listing[date1]" :min="min1" @input="changeDate" placeholder=""
+                                       :date-format-options="{ day: '2-digit', month: '2-digit', year: 'numeric'}"
+                    ></b-form-datepicker>
+                </ValidationProvider>
             </div>
             <div class="form-group col-12 col-md-6">
-                <b-form-datepicker v-model="listing[date2]" :min="min2" @input="changeDate" placeholder=""
-                                   :date-format-options="{ day: '2-digit', month: '2-digit', year: 'numeric'}"
-                ></b-form-datepicker>
+                <ValidationProvider :name="date2" rules="required" v-slot="{ errors }">
+                    <b-form-datepicker v-model="listing[date2]" :min="min2" @input="changeDate" placeholder=""
+                                       :date-format-options="{ day: '2-digit', month: '2-digit', year: 'numeric'}"
+                    ></b-form-datepicker>
+                </ValidationProvider>
             </div>
         </div>
 
@@ -45,7 +51,7 @@
         },
         data() {
             return {
-               address: '',
+                address: '',
                 date_from:'',
                 date_to:''
             }
@@ -57,7 +63,7 @@
             min1() {
                 if(this.listing['shipping_date_from'] !=='')
                 {
-                    if(this.date1=='unshipping_date_from')
+                    if(this.date1 === 'unshipping_date_from')
                     {
                         return moment(this.listing['shipping_date_from']).toDate();
                     }
@@ -73,7 +79,13 @@
             }
         },
         mounted() {
-
+            if(this.date1 === 'unshipping_date_from')
+            {
+                this.address = 'place_of_delivery'
+            }
+            else {
+                this.address = 'place_of_loading'
+            }
         },
         methods:{
             // changeDateFrom(date) {
@@ -109,13 +121,13 @@
                 this.$store.dispatch('editNewListing', {key:this.date1, value: this.listing[this.date1]});
                 this.$store.dispatch('editNewListing', {key:this.date2, value: this.listing[this.date2]});
 
-                if(this.listing[this.date1] =='' && this.listing[this.date2] != '')
+                if(this.listing[this.date1] === '' && this.listing[this.date2] !== '')
                 {
                     this.listing[this.date1] = this.listing[this.date2];
                     this.$store.dispatch('editNewListing', {key:this.date1, value: this.listing[this.date1]});
                 }
 
-                if(this.listing[this.date2] =='' && this.listing[this.date1] != '')
+                if(this.listing[this.date2] === '' && this.listing[this.date1] !== '')
                 {
                     this.listing[this.date2] = this.listing[this.date1];
                     this.$store.dispatch('editNewListing', {key:this.date2, value: this.listing[this.date2]});
@@ -129,7 +141,7 @@
                     this.listing[this.date2] = this.listing[this.date1];
                     this.$store.dispatch('editNewListing', {key:this.date2, value: this.listing[this.date2]});
                 }
-                if( this.date1 == 'shipping_date_from') {
+                if( this.date1 === 'shipping_date_from') {
                     let d = new Date(this.listing['unshipping_date_from']);
                     let d0 = new Date(this.listing['unshipping_date_to']);
                     if(d < d1)
@@ -143,7 +155,7 @@
                 }
             },
             selectAddress(selection) {
-                if(this.date1 =='unshipping_date_from'){
+                if(this.date1 === 'unshipping_date_from'){
                     this.$store.dispatch('editNewListing', {key:'place_of_delivery', value: selection});
                 }
                 else {

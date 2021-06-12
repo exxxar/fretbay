@@ -1,23 +1,23 @@
 <template>
     <div id="file-drag-drop">
         <div v-show="dragging" class="large-12 medium-12 small-12 filezone"
-             @dragend="dragging=false" @dragleave="dragging=false" @drop="dragging=false"
+             @dragend="dragging=false" @dragleave="dragging=false" @drop="handleFiles()"
         >
             <input type="file" id="files" ref="files" multiple v-on:change="handleFiles()"/>
             <p>
                 Drag and drop pictures here <br> or click to search
             </p>
         </div>
-        <div class="row" @dragenter="dragging=true">
-            <div class="col-4">
+        <div class="row w-100 m-auto" @dragenter="dragging=true" v-show="!dragging">
+            <div class="col-12 col-md-4">
                 <button class="btn btn-primary" @click="startUpload">Upload</button>
             </div>
-            <div class="col-8">
+            <div class="col-12 col-md-8">
                 <p>This information can often be found on the Internet. Approximate measures will already allow carriers to offer you a suitable offer.</p>
             </div>
         </div>
-        <ul class="row" v-if="files.length>0">
-            <li v-for="(file, key) in files" class="col-md-3 col-6 transport-category">
+        <ul class="row w-100 m-auto" @dragenter="dragging=true" v-show="!dragging" v-if="files.length>0">
+            <li v-for="(file, key) in files" class="col-md-3 col-sm-6 col-12 transport-category">
                 <label>
                     <span class="category-label-inner">
                         <span class="animated-icon">
@@ -37,9 +37,7 @@
         data(){
             return {
                 dragAndDropCapable: false,
-                files: [],
-                images: [],
-                uploadPercentage: 0,
+                // files: [],
                 dragging:false
             }
         },
@@ -65,7 +63,16 @@
             //     }.bind(this));
             // }
         },
-
+        computed: {
+            files: {
+                get () {
+                    return this.$store.getters.listing.images
+                },
+                set (value) {
+                    this.$store.commit('editNewListing', {key:'images', value: value})
+                }
+            }
+        },
         methods: {
             // determineDragAndDropCapable(){
             //
@@ -80,20 +87,18 @@
             getImagePreviews(){
                 for( let i = 0; i < this.files.length; i++ ){
                     if ( /\.(jpe?g|png|gif|svg)$/i.test( this.files[i].name ) ) {
-
                         let reader = new FileReader();
-
                         reader.addEventListener("load", function(){
                             this.$refs['preview'+ i ][0].src = reader.result;
                         }.bind(this), false);
-
                         reader.readAsDataURL( this.files[i] );
                     }
                 }
             },
             removeFile( key ){
                 this.files.splice( key, 1 );
-                this.$store.dispatch('editNewListing', {key:'images', value: this.files})
+                this.getImagePreviews();
+                // this.$store.dispatch('editNewListing', {key:'images', value: this.files})
             },
             handleFiles() {
                 let uploadedFiles = this.$refs['files'].files;
@@ -104,7 +109,8 @@
                         this.getImagePreviews();
                     }
                 }
-                this.$store.dispatch('editNewListing', {key:'images', value: this.files})
+                this.dragging = false;
+                // this.$store.dispatch('editNewListing', {key:'images', value: this.files})
             },
             startUpload() {
                 this.$refs.files.click();
