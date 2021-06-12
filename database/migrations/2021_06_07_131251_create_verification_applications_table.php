@@ -15,11 +15,23 @@ class CreateVerificationApplicationsTable extends Migration
     {
         Schema::create('verification_applications', function (Blueprint $table) {
             $table->id();
+
+            $table->string("title")->default('');
+            $table->string("document_number")->default('');
+
+            $table->integer("type")->default(0);
+
             $table->json('documents');
             $table->json('images');
-            $table->string('status', 2000);
+
             $table->longText('comment');
+            $table->boolean('is_approved')->default(false)->comment("статус верификации");
             $table->json('additional_properties');
+            $table->unsignedInteger("profile_id")->nullable();
+
+            $table->timestamp("issue_date")->nullable();
+            $table->timestamp("expire_date")->nullable();
+
             $table->softDeletes();
             $table->timestamps();
         });

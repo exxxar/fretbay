@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Models\Profile;
+use App\Models\Review;
 use App\Traits\HasRolesAndPermissions;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -18,7 +20,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'phone', 'profile_id'
     ];
 
     /**
@@ -43,5 +45,15 @@ class User extends Authenticatable
     public function isAdmin()
     {
         return $this->is_admin === 1;
+    }
+
+    public function profile()
+    {
+        return $this->hasOne(Profile::class, "id", "profile_id");
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class, "user_id", "id");
     }
 }

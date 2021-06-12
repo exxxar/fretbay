@@ -5,66 +5,90 @@
     <ul class="c-sidebar-nav">
         <li class="c-sidebar-nav-item">
             <a class="c-sidebar-nav-link" href="{{route('admin.index')}}">
-                <i class="fab fa-amazon c-sidebar-nav-icon"></i>
-                Главная страница
+                <i class="fas fa-home c-sidebar-nav-icon"></i>
+                Main page
             </a>
         </li>
 
         <li class="c-sidebar-nav-item c-sidebar-nav-dropdown c-show"><a
                 class="c-sidebar-nav-link c-sidebar-nav-dropdown-toggle c-active" href="#">
-                <i class="fab fa-amazon c-sidebar-nav-icon"></i>
-                Объекты</a>
+                <i class="far fa-plus-square c-sidebar-nav-icon"></i>
+                Categories</a>
             <ul class="c-sidebar-nav-dropdown-items">
 
-                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{{route("objects.categories")}}"><span
-                            class="c-sidebar-nav-icon"></span>Категории объектов</a></li>
-                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{{route("objects.types")}}"><span
-                            class="c-sidebar-nav-icon"></span>Типы объектов</a></li>
-                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{{route("objects.transport-types")}}"><span
-                            class="c-sidebar-nav-icon"></span>Типы транспортировки</a></li>
-                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{{route("objects.transport")}}"><span
-                            class="c-sidebar-nav-icon"></span>Транспорт</a></li>
+                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{{route("admin.categories")}}"><span
+                            class="c-sidebar-nav-icon"></span>Categories</a></li>
+
+                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{{route("admin.subcategories")}}"><span
+                            class="c-sidebar-nav-icon"></span>Subcategories</a></li>
+
+                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{{route("admin.properties")}}"><span
+                            class="c-sidebar-nav-icon"></span>Category properties</a></li>
+
+                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{{route("admin.things")}}"><span
+                            class="c-sidebar-nav-icon"></span>Things properties</a></li>
             </ul>
         </li>
 
         <li class="c-sidebar-nav-item">
             <a class="c-sidebar-nav-link" href="{{route('admin.orders')}}">
-                <i class="fab fa-amazon c-sidebar-nav-icon"></i>
-                Заказы</a>
+                <i class="fas fa-file-invoice c-sidebar-nav-icon"></i>
+                Orders</a>
+
+        </li>
+
+        <li class="c-sidebar-nav-item">
+            <a class="c-sidebar-nav-link" href="{{route('admin.listings')}}">
+                <i class="fas fa-file-alt c-sidebar-nav-icon"></i>
+                Listings</a>
+        </li>
+
+        <li class="c-sidebar-nav-item">
+            <a class="c-sidebar-nav-link" href="{{route('admin.reviews')}}">
+                <i class="far fa-comments c-sidebar-nav-icon"></i>
+                Reviews</a>
+
         </li>
 
 
         <li class="c-sidebar-nav-item c-sidebar-nav-dropdown c-show"><a
                 class="c-sidebar-nav-link c-sidebar-nav-dropdown-toggle c-active" href="#">
-                <i class="fab fa-amazon c-sidebar-nav-icon"></i>
-                Пользователи</a>
+                <i class="fas fa-users c-sidebar-nav-icon"></i>
+                Users</a>
+
             <ul class="c-sidebar-nav-dropdown-items">
-                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{{route("users.list")}}"><span
-                            class="c-sidebar-nav-icon"></span>Пользователи</a></li>
-                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{{route("users.profiles")}}"><span
-                            class="c-sidebar-nav-icon"></span>Профайлы</a></li>
-                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{{route("users.roles")}}"><span
-                            class="c-sidebar-nav-icon"></span>Роли</a></li>
-                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{{route("users.permissions")}}"><span
-                            class="c-sidebar-nav-icon"></span>Роли и разрешения</a></li>
+                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{{route("admin.users")}}"><span
+                            class="c-sidebar-nav-icon"></span>Users</a></li>
+                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{{route("admin.transporters")}}"><span
+                            class="c-sidebar-nav-icon"></span>Transporters</a></li>
+                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{{route("admin.verifications")}}"><span
+                            class="c-sidebar-nav-icon"></span>Verifications</a></li>
+                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{{route("admin.vehicles")}}"><span
+                            class="c-sidebar-nav-icon"></span>Vehicles</a></li>
+                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{{route("admin.customers")}}"><span
+                            class="c-sidebar-nav-icon"></span>Customers</a></li>
+                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{{route("admin.roles")}}"><span
+                            class="c-sidebar-nav-icon"></span>Roles</a></li>
+                <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{{route("admin.permissions")}}"><span
+                            class="c-sidebar-nav-icon"></span>Permissions</a></li>
             </ul>
         </li>
         <li class="c-sidebar-nav-item c-sidebar-nav-dropdown c-show">
             <a class="c-sidebar-nav-link c-sidebar-nav-dropdown-toggle c-active" href="#">
                 <i class="fab fa-amazon c-sidebar-nav-icon"></i>
-                Локализация
+                Locale
             </a>
             <ul class="c-sidebar-nav-dropdown-items">
                 <li class="c-sidebar-nav-item">
                     <a class="c-sidebar-nav-link" href="/admin/languages">
                         <span class="c-sidebar-nav-icon fas fa-globe"></span>
-                        Языки
+                        Langs
                     </a>
                 </li>
                 <li class="c-sidebar-nav-item">
                     <a class="c-sidebar-nav-link" href="/admin/languages/translations">
                         <span class="c-sidebar-nav-icon fas fa-language"></span>
-                        Переводы
+                        Transaltions
                     </a>
                 </li>
             </ul>

@@ -18,5 +18,32 @@ class Profile extends Model
         "region",
         "postal",
         "areas_of_expertise",
+        "transport_specialities",
+        "number_of_drivers",
+        "cargo_insurance_amount",
+        "about_company",
+        "additional_service",
+        "insurance_company",
+        "is_approved",
+        "is_first_activation",
     ];
+
+    protected $casts = [
+        "transport_specialities" => "array",
+        "number_of_drivers" => "integer",
+        "cargo_insurance_amount" => "integer",
+        "is_approved" => "boolean",
+        "is_first_activation" => "boolean"
+    ];
+
+
+    public function vehicles()
+    {
+        return $this->hasMany(Vehicle::class, "profile_id", "id");
+    }
+
+    public function verifications()
+    {
+        return $this->hasMany(VerificationApplication::class, "profile_id", "id");
+    }
 }

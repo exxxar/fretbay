@@ -2,84 +2,69 @@
 
 namespace App\Http\Controllers;
 
-use App\Review;
+use App\Http\Requests\OrderStoreRequest;
+use App\Http\Requests\OrderUpdateRequest;
+use App\Http\Requests\ReviewStoreRequest;
+use App\Http\Requests\ReviewUpdateRequest;
+use App\Models\Order;
+use  App\Models\Review;
 use Illuminate\Http\Request;
 
 class ReviewController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        return view('admin.pages.reviews.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+
+    public function store(ReviewStoreRequest $request)
     {
-        //
+        Review::create($request->validated());
+
+        return response()->noContent();
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Review  $review
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Review $review)
+
+    public function show(Request $request, $id)
     {
-        //
+        $review = Review::find($id);
+        return view('admin.pages.reviews.show', compact('review'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Review  $review
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Review $review)
+
+    public function edit(Request $request, $id)
     {
-        //
+        $review = Review::find($id);
+        return view('admin.pages.reviews.update', compact('review'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Review  $review
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Review $review)
+
+    public function update(ReviewUpdateRequest $request, $id)
     {
-        //
+        $review = Review::find($id);
+        $review->update($request->validated());
+
+        return response()->noContent();
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Review  $review
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Review $review)
+
+    public function destroy(Request $request, $id)
     {
-        //
+        Review::find($id)->delete();
+
+        return response()->noContent();
+    }
+
+    public function restore(Request $request, $id)
+    {
+        Review::withTrashed()->where("id", $id)->restore();
+
+        return response()->noContent();
     }
 }

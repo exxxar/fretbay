@@ -44,21 +44,17 @@
 
 <body class="c-app">
 
-
 @include("admin.partials.sidebar")
 
 <div class="c-wrapper" id="app">
     <header-component items="{{Route::currentRouteName()}}" admin="{{route("admin.index")}}"></header-component>
     <div class="c-body">
         <main class="c-main">
-
             @yield('content')
-
         </main>
         <footer-component></footer-component>
     </div>
 </div>
-
 
 <!-- CoreUI and necessary plugins-->
 <script src="{{ asset('js/admin/app.js') }}" defer></script>

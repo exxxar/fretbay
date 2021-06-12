@@ -15,7 +15,14 @@ class CreateReviewsTable extends Migration
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
+            $table->string('title')->default('');
+            $table->longText('text')->default('');
+            $table->integer('type')->default(0)->comment("Раздел, для которого отзыв");
+            $table->boolean("is_visible")->default(false)->comment("флаг модерации");
+            $table->unsignedInteger('user_id')->nullable();
+            $table->unsignedInteger('review_id')->nullable()->comment("комментарий на комментарий");
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
