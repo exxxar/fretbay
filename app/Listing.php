@@ -27,7 +27,12 @@ class Listing extends Model
         'additional_info',
         'images',
         'status',
-        'expiration_date'
+        'expiration_date',
+        'user_id',
+        'category_id',
+        'subcategory_id',
+        'thing_id',
+        'summary_volume'
     ];
 
     /**
@@ -54,12 +59,26 @@ class Listing extends Model
         'shipping_date_to',
         'unshipping_date_from',
         'unshipping_date_to',
+        'expiration_date',
     ];
 
+    protected $appends = [
+
+    ];
 
     public function category()
     {
-        return $this->hasOne(\App\Category::class);
+        return $this->belongsTo(\App\Category::class)->with(['properties']);
+    }
+
+    public function subcategory()
+    {
+        return $this->belongsTo(\App\Subcategory::class);
+    }
+
+    public function thing()
+    {
+        return $this->belongsTo(\App\Thing::class);
     }
 
     public function quotes()
@@ -71,4 +90,5 @@ class Listing extends Model
     {
         return $this->belongsTo(\App\User::class);
     }
+
 }

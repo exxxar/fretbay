@@ -29,6 +29,10 @@ class CreateListingsTable extends Migration
             $table->string('status');
             $table->date('expiration_date');
             $table->double('summary_volume', 8,2 );
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->unsignedBigInteger('category_id')->nullable();
+            $table->unsignedBigInteger('subcategory_id')->nullable();
+            $table->unsignedBigInteger('thing_id')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

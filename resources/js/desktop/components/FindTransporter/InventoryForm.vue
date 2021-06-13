@@ -191,6 +191,7 @@
                     this.$store.dispatch('addVolumeItemToCart', thing);
                 }
                 this.$store.dispatch('editNewListing', {key:'volume_items', value: this.volume_items});
+                this.$store.dispatch('editNewListing', {key:'summary_volume', value: this.volumeCartTotalVolume});
             },
             decrement(id) {
                 let index = this.volume_items.findIndex(item => item.item.id === id);
@@ -198,6 +199,7 @@
                 {
                     this.$store.dispatch('decVolumeItemQuantity', id);
                     this.$store.dispatch('editNewListing', {key:'volume_items', value: this.volume_items});
+                    this.$store.dispatch('editNewListing', {key:'summary_volume', value: this.volumeCartTotalVolume});
                 }
             },
             getQuantity(id) {

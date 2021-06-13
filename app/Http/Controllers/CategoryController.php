@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Category;
-use App\Http\Requests\CategoryStoreRequest;
-use App\Http\Requests\CategoryUpdateRequest;
+//use App\Http\Requests\CategoryStoreRequest;
+//use App\Http\Requests\CategoryUpdateRequest;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -27,6 +27,14 @@ class CategoryController extends Controller
         $categories = Category::all();
 
         return view('category.index', compact('categories'));
+    }
+
+    public function get()
+    {
+        $categories = Category::with(['subcategories', 'things', 'properties'])->get();
+        return response()->json([
+            'categories' => $categories
+        ]);
     }
 
     /**

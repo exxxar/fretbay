@@ -48,6 +48,10 @@ class Thing extends Model
     {
         return $this->belongsTo(\App\SubCategory::class,"id","subcategory_id");
     }
+    public function listings()
+    {
+        return $this->hasMany(Listing::class);
+    }
 //    public function category()
 //    {
 //        return $this->belongsTo(\App\Category::class);

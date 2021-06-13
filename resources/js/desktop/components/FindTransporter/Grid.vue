@@ -86,13 +86,16 @@
         data() {
             return {
                 selected_subcategory:'',
+                subcategory:'',
                 selected_thing:'',
+                thing:'',
                 subcategories:[],
                 things:[]
                 // step:0
             }
         },
         created() {
+            this.$store.dispatch('editNewListing', {key:'title', value: this.category.title})
             this.subcategories = this.category.subcategories;
             this.things = this.category.things;
             if(this.subcategories.length < 0) {
@@ -146,10 +149,17 @@
             selectSubcategory(id) {
                 // this.step = 1;
                this.selected_subcategory = id;
+               let index = this.subcategories.findIndex(subcategory => subcategory.id === id);
+               this.subcategory = this.subcategories[index];
+               this.$store.dispatch('editNewListing', {key:'subcategory_id', value: id});
+               this.$store.dispatch('editNewListing', {key:'subcategory', value: this.subcategory});
             },
             selectThing(id) {
                 this.selected_thing = id;
-                this.$store.dispatch('editNewListing', {key:'thing', value: id})
+                let index = this.things.findIndex(thing => thing.id === id);
+                this.thing = this.things[index];
+                this.$store.dispatch('editNewListing', {key:'thing_id', value: id});
+                this.$store.dispatch('editNewListing', {key:'thing', value: this.thing});
             }
         }
     }

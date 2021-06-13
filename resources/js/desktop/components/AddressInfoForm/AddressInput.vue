@@ -2,21 +2,33 @@
     <div class="dropdown" v-if="options">
 
         <!-- Dropdown Input -->
-        <input class="dropdown-input form-control"
-               @focus="showOptions()"
-               @blur="handleBlur"
-               @input="getAddress"
-               @keyup="keyMonitor"
-               v-model="searchFilter"
-               :disabled="disabled"
-               :placeholder="placeholder" />
+        <b-form-input class="dropdown-input form-control"
+                      @focus="showOptions()"
+                      @blur="handleBlur"
+                      @update="runSearch"
+                      @keyup="keyMonitor"
+                      v-model="searchFilter"
+                      :disabled="disabled"
+                      :placeholder="placeholder"
+                      type="text" debounce="600"
+                      autocomplete="off"
+        >
+        </b-form-input>
+<!--        <input class="dropdown-input form-control"-->
+<!--               @focus="showOptions()"-->
+<!--               @blur="handleBlur"-->
+<!--               @input="getAddress"-->
+<!--               @keyup="keyMonitor"-->
+<!--               v-model="searchFilter"-->
+<!--               :disabled="disabled"-->
+<!--               :placeholder="placeholder" />-->
 
         <!-- Dropdown Menu -->
         <div class="dropdown-content w-100" v-show="optionsShown">
             <div
                 class="dropdown-item"
                 @mousedown="selectOption(option)"
-                v-for="(option, index) in filteredOptions"
+                v-for="(option, index) in options"
                 :key="index"
             >
                 {{ option.place_name }}
@@ -80,7 +92,6 @@
             // this.$emit('selected', this.selected);
             // this.selected = this.address;
             // this.searchFilter = this.address.place_name;
-console.log('created address input')
         },
         computed: {
             filteredOptions() {
@@ -123,8 +134,8 @@ console.log('created address input')
             },
             // Selecting when pressing Enter
             keyMonitor: function(event) {
-                if (event.key === "Enter" && this.filteredOptions[0])
-                    this.selectOption(this.filteredOptions[0]);
+                if (event.key === "Enter" && this.options[0])
+                    this.selectOption(this.options[0]);
             },
             getAddress: _.debounce(function(e)  {
                 if (this.searchFilter.trim() !=='') {
@@ -134,11 +145,14 @@ console.log('created address input')
 
             }, 500),
             async runSearch() {
-                await axios
-                    .get('/getAddress/'+this.searchFilter+'/en')
-                    .then(resp => {
-                        this.options = resp.data
-                    })
+                if (this.searchFilter.trim() !=='') {
+                    this.selected = {};
+                    await axios
+                        .get('/api/getAddress/' + this.searchFilter + '/en')
+                        .then(resp => {
+                            this.options = resp.data
+                        })
+                }
             }
         },
         watch: {

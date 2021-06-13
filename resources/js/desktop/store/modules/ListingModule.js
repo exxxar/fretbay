@@ -1,12 +1,16 @@
 const state = {
     step: 0,
-    listing:{
+    listing: {
         title:'',
         mode:'',
         category:'',
+        user_id:'',
+        category_id:'',
+        subcategory_id:'',
+        thing_id:'',
         moving_package:'',
         thing:'',
-        volume:'',
+        summary_volume:'',
         articles:[],
         volume_items:[],
         place_of_loading:'',

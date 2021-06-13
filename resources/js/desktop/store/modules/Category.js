@@ -17,7 +17,7 @@ const getters = {
 const actions = {
     async getCategories({state, commit}) {
         return axios
-            .get('/categories')
+            .get('/api/categories')
             .then(resp => {
                 commit('setCategories', resp.data.categories);
             })

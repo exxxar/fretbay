@@ -19,7 +19,7 @@ class SubcategorySeeder extends Seeder
      */
     public function run()
     {
-        $categories = [
+        $subcategories = [
             [
                 'en' => 'Entrance',
                 'ru' => 'Прихожая',
@@ -56,7 +56,6 @@ class SubcategorySeeder extends Seeder
                 'fr'=>'',
             ],
 
-
             [
                 'en' => 'Garden',
                 'ru' => 'Гараж',
@@ -71,12 +70,66 @@ class SubcategorySeeder extends Seeder
 
         ];
 
-        foreach ($categories as $category) {
+        foreach ($subcategories as $subcategory) {
             Subcategory::create([
-                "title" => $category,
+                "title" => $subcategory,
                 "image" => "",
-                "category_id" => $this->getCategoryIdByTitle("Moving")
-                , 'position' => 0,
+                "category_id" => $this->getCategoryIdByTitle("Moving"),
+                'position' => 0,
+                'is_active' => true
+            ]);
+        }
+        $subcategories = [
+            [
+                'en' => 'Cars and vans',
+                'ru' => 'Cars and vans',
+                'fr'=> 'Cars and vans',
+            ],
+            [
+                'en' => 'Recreational vehicles (RVs)',
+                'ru' => 'Recreational vehicles (RVs)',
+                'fr'=> 'Recreational vehicles (RVs)',
+            ],
+            [
+                'en' => 'Trailers',
+                'ru' => 'Trailers',
+                'fr'=> 'Trailers',
+            ],
+            [
+                'en' =>  'Caravans',
+                'ru' =>  'Caravans',
+                'fr'=>  'Caravans',
+            ],
+            [
+                'en' =>   'Vehicle spare parts',
+                'ru' =>   'Vehicle spare parts',
+                'fr'=>   'Vehicle spare parts',
+            ],
+            [
+                'en' => 'Aircrafts',
+                'ru' => 'Aircrafts',
+                'fr'=> 'Aircrafts',
+            ],
+            [
+                'en' => 'HGVs and construction vehicles',
+                'ru' => 'HGVs and construction vehicles',
+                'fr'=> 'HGVs and construction vehicles',
+            ],
+            [
+                'en' => 'Tractors and agricultural equipment',
+                'ru' => 'Tractors and agricultural equipment',
+                'fr'=>  'Tractors and agricultural equipment',
+            ],
+
+// 'Vintage vehicles'
+//'Other vehicles'
+    ];
+        foreach ($subcategories as $subcategory) {
+            Subcategory::create([
+                "title" => $subcategory,
+                'image' => '/images/common/icons/category/default/3.svg',
+                "category_id" => $this->getCategoryIdByTitle("Vehicle"),
+                'position' => 0,
                 'is_active' => true
             ]);
         }

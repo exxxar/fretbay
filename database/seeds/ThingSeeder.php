@@ -1164,5 +1164,51 @@ class ThingSeeder extends Seeder
             "image" => "/images/common/icons/volume/131h.svg", 'category_id' => 2, 'position'=>0, 'is_active'=>1, 'volume' => 0.5,
             "subcategory_id" =>$this->getCategoryIdByTitle("Miscellaneous")
         ]);
+
+        Thing::create([
+            "title" => [
+                "en"=>"Volume 0-5",
+                "ru"=>"Volume 0-5",
+                'fr'=>"Volume 0-5",
+            ],
+            "image" => '/images/common/icons/category/default/3.svg', 'category_id' => 3, 'position'=>0, 'is_active'=>1, 'volume' => 5,
+            "subcategory_id" =>$this->getCategoryIdByTitle("Caravans")
+        ]);
+        Thing::create([
+            "title" => [
+                "en"=>"Volume 5-10",
+                "ru"=>"Volume 5-10",
+                'fr'=>"Volume 5-10",
+            ],
+            "image" => '/images/common/icons/category/default/3.svg', 'category_id' => 3, 'position'=>0, 'is_active'=>1, 'volume' => 10,
+            "subcategory_id" =>$this->getCategoryIdByTitle("Caravans")
+        ]);
+        Thing::create([
+            "title" => [
+                "en"=>"Volume 0-5",
+                "ru"=>"Volume 0-5",
+                'fr'=>"Volume 0-5",
+            ],
+            "image" => '/images/common/icons/category/default/3.svg', 'category_id' => 3, 'position'=>0, 'is_active'=>1, 'volume' => 5,
+            "subcategory_id" =>$this->getCategoryIdByTitle("Trailers")
+        ]);
+        Thing::create([
+            "title" => [
+                "en"=>"Volume 5-10",
+                "ru"=>"Volume 5-10",
+                'fr'=>"Volume 5-10",
+            ],
+            "image" => '/images/common/icons/category/default/3.svg', 'category_id' => 3, 'position'=>0, 'is_active'=>1, 'volume' => 10,
+            "subcategory_id" =>$this->getCategoryIdByTitle("Trailers")
+        ]);
+        Thing::create([
+            "title" => [
+                "en"=>"Volume 10-15",
+                "ru"=>"Volume 10-15",
+                'fr'=>"Volume 10-15",
+            ],
+            "image" => '/images/common/icons/category/default/3.svg', 'category_id' => 3, 'position'=>0, 'is_active'=>1, 'volume' => 10,
+            "subcategory_id" =>$this->getCategoryIdByTitle("Trailers")
+        ]);
     }
 }

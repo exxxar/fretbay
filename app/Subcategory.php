@@ -48,6 +48,11 @@ class Subcategory extends Model
     {
         return $this->belongsTo(\App\Category::class,"id","category_id");
     }
+    public function listings()
+    {
+        return $this->hasMany(Listing::class);
+    }
+
     public function getTitleAttribute()
     {
         return $this->getTranslations()["title"][App::getLocale()];

@@ -21,8 +21,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::group(["prefix" => "desktop"], function () {
-    Route::group(["prefix" => "v1"], function () {
+//Route::group(["prefix" => "desktop"], function () {
+//    Route::group(["prefix" => "v1"], function () {
 
         Route::get("/get-type-of-transport", DictionaryController::class . "@typeOfTransport");
         Route::get("/get-type-of-object", DictionaryController::class . "@typeOfObject");
@@ -55,8 +55,15 @@ Route::group(["prefix" => "desktop"], function () {
         Route::group(["prefix"=>"categories"],function() {
             Route::get('/', 'CategoryController@index');
         });
-    });
-});
+        //listing
+        Route::group(["prefix"=>"listings"],function() {
+            Route::get('/', 'ListingController@index');
+        });
+        Route::group(["prefix"=>"listing"],function() {
+            Route::post('/', 'ListingController@store');
+        });
+//    });
+//});
 
 
 

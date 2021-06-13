@@ -19,7 +19,7 @@ class CategorySeeder extends Seeder
                 'fr' => "Household equipment",
             ],
             'min_price' => 0,
-            'additional_menu_title' => 'choice_of_category',
+
             'image' => '/images/common/icons/category/default/1.svg',
             'position' => 0,
             'is_active' => true,
@@ -41,7 +41,7 @@ class CategorySeeder extends Seeder
                 'fr' => "Moving",
             ],
             'min_price' => 0,
-            'additional_menu_title' => 'choice_of_category',
+
             'image' => '/images/common/icons/category/default/2.svg',
             'position' => 0,
             'is_active' => true,
@@ -55,7 +55,7 @@ class CategorySeeder extends Seeder
                 'fr' => "Vehicle",
             ],
             'min_price' => 0,
-            'additional_menu_title' => 'choice_of_category',
+
             'image' => '/images/common/icons/category/default/3.svg',
             'position' => 0,
             'is_active' => true,
@@ -77,7 +77,7 @@ class CategorySeeder extends Seeder
                 'fr' => "Motorcycles and sports vehicles",
             ],
             'min_price' => 0,
-            'additional_menu_title' => 'choice_of_category',
+
             'image' => '/images/common/icons/category/default/17.svg',
             'position' => 0,
             'is_active' => true,
@@ -98,7 +98,7 @@ class CategorySeeder extends Seeder
                 'fr' => "Boats & voluminous",
             ],
             'min_price' => 0,
-            'additional_menu_title' => 'choice_of_category',
+
             'image' => '/images/common/icons/category/default/5.svg',
             'position' => 0,
             'is_active' => true,
@@ -123,7 +123,7 @@ class CategorySeeder extends Seeder
                 'fr' => "Fragile goods",
             ],
             'min_price' => 0,
-            'additional_menu_title' => 'choice_of_category',
+
             'image' => '/images/common/icons/category/default/13.svg',
             'position' => 0,
             'is_active' => true,
@@ -144,7 +144,7 @@ class CategorySeeder extends Seeder
                 'fr' => "Package/Fold",
             ],
             'min_price' => 0,
-            'additional_menu_title' => 'choice_of_category',
+
             'image' => '/images/common/icons/category/default/18.svg',
             'position' => 0,
             'is_active' => true,
@@ -166,7 +166,7 @@ class CategorySeeder extends Seeder
                 'fr' => "Pallet",
             ],
             'min_price' => 0,
-            'additional_menu_title' => 'choice_of_category',
+
             'image' => '/images/common/icons/category/default/19.svg',
             'position' => 0,
             'is_active' => true,
@@ -186,7 +186,7 @@ class CategorySeeder extends Seeder
                 'fr' => "Animals",
             ],
             'min_price' => 0,
-            'additional_menu_title' => 'choice_of_category',
+
             'image' => '/images/common/icons/category/default/11.svg',
             'position' => 0,
             'is_active' => true,
@@ -211,7 +211,7 @@ class CategorySeeder extends Seeder
                 'fr' => "Agri-food",
             ],
             'min_price' => 0,
-            'additional_menu_title' => 'choice_of_category',
+
             'image' => '/images/common/icons/category/default/14.svg',
             'position' => 0,
             'is_active' => true,
@@ -229,7 +229,7 @@ class CategorySeeder extends Seeder
                 'fr' => "Commercial goods",
             ],
             'min_price' => 0,
-            'additional_menu_title' => 'choice_of_category',
+
             'image' => '/images/common/icons/category/default/9.svg',
             'position' => 0,
             'is_active' => true,
@@ -251,7 +251,7 @@ class CategorySeeder extends Seeder
                 'fr' => "Miscellaneous",
             ],
             'min_price' => 0,
-            'additional_menu_title' => 'choice_of_category',
+
             'image' => '/images/common/icons/category/default/6.svg',
             'position' => 0,
             'is_active' => true,

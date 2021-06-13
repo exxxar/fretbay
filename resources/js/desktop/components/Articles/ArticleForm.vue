@@ -3,6 +3,12 @@
         <div class="col-12 col-sm-6">
             <div class="form-fields-wrap content-box-gray content-box-padding">
                 <div class="content-box-gray">
+                    <ValidationProvider name="listing_title" rules="required" v-slot="{ errors }">
+                        <div class="form-group">
+                            <input v-model="listing_title" @blur="saveListingTitle" type="text" class="form-control"
+                                   placeholder="3-seater Sofa, chairs, desks...">
+                        </div>
+                    </ValidationProvider>
                     <h6>Information about your equipment <span
                         class="text-primary d-inline">(required)</span></h6>
                     <ValidationObserver ref="article" disabled v-slot="observer">
@@ -16,196 +22,196 @@
                         </div>
                         <div class="row m-auto w-100">
                             <div class="col-12 col-sm-6 p-1" v-for="property in category.properties">
-                                <article-input v-if="mode===0" :field="property" :data.sync="new_article.properties[property.slug]">
+                                <article-input v-if="mode===0" :field="property" :props_data.sync="new_article.properties[property.slug]">
                                 </article-input>
-                                <article-input v-else :field="property" :data.sync="edit_article.properties[property.slug]">
+                                <article-input v-else :field="property" :props_data.sync="edit_article.properties[property.slug]">
                                 </article-input>
                             </div>
                         </div>
-                        <!--                    <div class="row">-->
-                        <!--                        <div class="col-6">-->
-                        <!--                            <div class="form-group ">-->
-                        <!--                                <div class="input-has-icon-right">-->
-                        <!--                                    <input v-model="modes[mode].length" type="number" class="form-control"-->
-                        <!--                                           placeholder="Length (cm)" required="">-->
-                        <!--                                    <span class="rel-icon rel-icon-square"><img-->
-                        <!--                                        src="/images/common/icons/units/longeur.svg"-->
-                        <!--                                        alt=""></span>-->
-                        <!--                                </div>-->
-                        <!--                            </div>-->
-                        <!--                        </div>-->
-                        <!--                        <div class="col-6">-->
-                        <!--                            <div class="form-group ">-->
-                        <!--                                <div class="input-has-icon-right">-->
-                        <!--                                    <input v-model="modes[mode].width" type="number" class="form-control" placeholder="Width (cm)"-->
-                        <!--                                           required="">-->
-                        <!--                                    <span class="rel-icon rel-icon-square"><img-->
-                        <!--                                        src="/images/common/icons/units/largeur.svg"-->
-                        <!--                                        alt=""></span>-->
-                        <!--                                </div>-->
-                        <!--                            </div>-->
-                        <!--                        </div>-->
-                        <!--                    </div>-->
+<!--                                            <div class="row">-->
+<!--                                                <div class="col-6">-->
+<!--                                                    <div class="form-group ">-->
+<!--                                                        <div class="input-has-icon-right">-->
+<!--                                                            <input v-model="modes[mode].length" type="number" class="form-control"-->
+<!--                                                                   placeholder="Length (cm)" required="">-->
+<!--                                                            <span class="rel-icon rel-icon-square"><img-->
+<!--                                                                src="/images/common/icons/units/longeur.svg"-->
+<!--                                                                alt=""></span>-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                                <div class="col-6">-->
+<!--                                                    <div class="form-group ">-->
+<!--                                                        <div class="input-has-icon-right">-->
+<!--                                                            <input v-model="modes[mode].width" type="number" class="form-control" placeholder="Width (cm)"-->
+<!--                                                                   required="">-->
+<!--                                                            <span class="rel-icon rel-icon-square"><img-->
+<!--                                                                src="/images/common/icons/units/largeur.svg"-->
+<!--                                                                alt=""></span>-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
 
-                        <!--                    <div class="row">-->
-                        <!--                        <div class="col-4">-->
-                        <!--                            <div class="form-group ">-->
-                        <!--                                <div class="input-has-icon-right">-->
-                        <!--                                    <input v-model="modes[mode].height" type="text" class="form-control"-->
-                        <!--                                           placeholder="Height (cm)" required="">-->
-                        <!--                                    <span class="rel-icon rel-icon-square"><img-->
-                        <!--                                        src="/images/common/icons/units/hauteur.svg"-->
-                        <!--                                        alt=""></span>-->
-                        <!--                                </div>-->
-                        <!--                            </div>-->
-                        <!--                        </div>-->
-                        <!--                        <div class="col-4">-->
-                        <!--                            <div class="form-group ">-->
-                        <!--                                <div class="input-has-icon-right">-->
-                        <!--                                    <input v-model="modes[mode].weight" type="text" class="form-control" placeholder="Weight"-->
-                        <!--                                           required="">-->
-                        <!--                                    <span class="rel-icon rel-icon-square"><img-->
-                        <!--                                        src="/images/common/icons/units/poids.svg"-->
-                        <!--                                        alt=""></span>-->
-                        <!--                                </div>-->
-                        <!--                            </div>-->
-                        <!--                        </div>-->
-                        <!--                        <div class="col-4">-->
-                        <!--                            <div class="form-group ">-->
-                        <!--                                <div class="input-has-icon-right">-->
-                        <!--                                    <input v-model="modes[mode].quantity" type="text"-->
-                        <!--                                           class="form-control"-->
-                        <!--                                           placeholder="Quantity" required="">-->
-                        <!--                                    <span class="rel-icon rel-icon-square"><img-->
-                        <!--                                        src="/images/common/icons/units/quantity.svg"-->
-                        <!--                                        alt=""></span>-->
-                        <!--                                </div>-->
-                        <!--                            </div>-->
-                        <!--                        </div>-->
-                        <!--                    </div>-->
-                        <!--                    <div class="row">-->
-                        <!--                        <div class="col-6">-->
-                        <!--                            <div class="input-has-icon-right">-->
-                        <!--                                <input type="text" class="form-control" placeholder="Make" required="">-->
+<!--                                            <div class="row">-->
+<!--                                                <div class="col-4">-->
+<!--                                                    <div class="form-group ">-->
+<!--                                                        <div class="input-has-icon-right">-->
+<!--                                                            <input v-model="modes[mode].height" type="text" class="form-control"-->
+<!--                                                                   placeholder="Height (cm)" required="">-->
+<!--                                                            <span class="rel-icon rel-icon-square"><img-->
+<!--                                                                src="/images/common/icons/units/hauteur.svg"-->
+<!--                                                                alt=""></span>-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                                <div class="col-4">-->
+<!--                                                    <div class="form-group ">-->
+<!--                                                        <div class="input-has-icon-right">-->
+<!--                                                            <input v-model="modes[mode].weight" type="text" class="form-control" placeholder="Weight"-->
+<!--                                                                   required="">-->
+<!--                                                            <span class="rel-icon rel-icon-square"><img-->
+<!--                                                                src="/images/common/icons/units/poids.svg"-->
+<!--                                                                alt=""></span>-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                                <div class="col-4">-->
+<!--                                                    <div class="form-group ">-->
+<!--                                                        <div class="input-has-icon-right">-->
+<!--                                                            <input v-model="modes[mode].quantity" type="text"-->
+<!--                                                                   class="form-control"-->
+<!--                                                                   placeholder="Quantity" required="">-->
+<!--                                                            <span class="rel-icon rel-icon-square"><img-->
+<!--                                                                src="/images/common/icons/units/quantity.svg"-->
+<!--                                                                alt=""></span>-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                            <div class="row">-->
+<!--                                                <div class="col-6">-->
+<!--                                                    <div class="input-has-icon-right">-->
+<!--                                                        <input type="text" class="form-control" placeholder="Make" required="">-->
 
-                        <!--                                <span class="rel-icon rel-icon-square"><img-->
-                        <!--                                    src="/images/common/icons/units/hauteur.svg"-->
-                        <!--                                    alt=""></span>-->
-                        <!--                            </div>-->
-                        <!--                        </div>-->
-                        <!--                        <div class="col-6">-->
-                        <!--                            <div class="input-has-icon-right">-->
-                        <!--                                <input type="text" class="form-control" placeholder="Model" required="">-->
-                        <!--                                <span class="rel-icon rel-icon-square"><img-->
-                        <!--                                    src="/images/common/icons/units/hauteur.svg"-->
-                        <!--                                    alt=""></span>-->
-                        <!--                            </div>-->
-                        <!--                        </div>-->
-                        <!--                    </div>-->
+<!--                                                        <span class="rel-icon rel-icon-square"><img-->
+<!--                                                            src="/images/common/icons/units/hauteur.svg"-->
+<!--                                                            alt=""></span>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                                <div class="col-6">-->
+<!--                                                    <div class="input-has-icon-right">-->
+<!--                                                        <input type="text" class="form-control" placeholder="Model" required="">-->
+<!--                                                        <span class="rel-icon rel-icon-square"><img-->
+<!--                                                            src="/images/common/icons/units/hauteur.svg"-->
+<!--                                                            alt=""></span>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
 
-                        <!--                    <div class="row">-->
-                        <!--                        <div class="col-12 p-2">-->
-                        <!--                            <div class="custom-control custom-switch">-->
-                        <!--                                <input type="checkbox" class="custom-control-input" id="accept_conveyors">-->
-                        <!--                                <label class="custom-control-label" for="accept_conveyors">I accept conveyors</label>-->
-                        <!--                            </div>-->
-                        <!--                        </div>-->
-                        <!--                    </div>-->
+<!--                                            <div class="row">-->
+<!--                                                <div class="col-12 p-2">-->
+<!--                                                    <div class="custom-control custom-switch">-->
+<!--                                                        <input type="checkbox" class="custom-control-input" id="accept_conveyors">-->
+<!--                                                        <label class="custom-control-label" for="accept_conveyors">I accept conveyors</label>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
 
-                        <!--                    <div class="row">-->
-                        <!--                        <div class="col-12 p-2">-->
-                        <!--                            <div class="custom-control custom-switch">-->
-                        <!--                                <input type="checkbox" class="custom-control-input" id="fragile_goods">-->
-                        <!--                                <label class="custom-control-label" for="fragile_goods">Fragile goods</label>-->
-                        <!--                            </div>-->
-                        <!--                        </div>-->
-                        <!--                    </div>-->
-
-
-                        <!--                    <div class="row mb-2">-->
-                        <!--                        <div class="col-12">-->
-                        <!--                            <div class="input-has-icon-right">-->
-                        <!--                                <input type="text" class="form-control" placeholder="Estimated value" required="">-->
-                        <!--                                <span class="rel-icon rel-icon-square">-->
-                        <!--                                    <img src="/images/common/icons/units/euro.svg" alt="">-->
-                        <!--                                </span>-->
-                        <!--                            </div>-->
-
-                        <!--                        </div>-->
-                        <!--                    </div>-->
+<!--                                            <div class="row">-->
+<!--                                                <div class="col-12 p-2">-->
+<!--                                                    <div class="custom-control custom-switch">-->
+<!--                                                        <input type="checkbox" class="custom-control-input" id="fragile_goods">-->
+<!--                                                        <label class="custom-control-label" for="fragile_goods">Fragile goods</label>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
 
 
-                        <!--                    <div class="row mb-2">-->
-                        <!--                        <div class="col-12">-->
-                        <!--                            <div class="input-has-icon-right">-->
-                        <!--                                <input type="text" class="form-control" placeholder="Animal bread" required="">-->
-                        <!--                            </div>-->
-                        <!--                        </div>-->
-                        <!--                    </div>-->
+<!--                                            <div class="row mb-2">-->
+<!--                                                <div class="col-12">-->
+<!--                                                    <div class="input-has-icon-right">-->
+<!--                                                        <input type="text" class="form-control" placeholder="Estimated value" required="">-->
+<!--                                                        <span class="rel-icon rel-icon-square">-->
+<!--                                                            <img src="/images/common/icons/units/euro.svg" alt="">-->
+<!--                                                        </span>-->
+<!--                                                    </div>-->
+
+<!--                                                </div>-->
+<!--                                            </div>-->
 
 
-                        <!--                    <div class="row mb-2">-->
-                        <!--                        <div class="col-6">-->
-                        <!--                            <div class="input-has-icon-right">-->
-                        <!--                                <input type="text" class="form-control" placeholder="Special needs" required="">-->
-                        <!--                                <span class="rel-icon rel-icon-square">-->
-                        <!--                                    <img src="https://fretbay.com/en/assets/images/common/icons/units/need.svg" alt="">-->
-                        <!--                                </span>-->
-                        <!--                            </div>-->
+<!--                                            <div class="row mb-2">-->
+<!--                                                <div class="col-12">-->
+<!--                                                    <div class="input-has-icon-right">-->
+<!--                                                        <input type="text" class="form-control" placeholder="Animal bread" required="">-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
 
-                        <!--                        </div>-->
 
-                        <!--                        <div class="col-6">-->
-                        <!--                            <div class="input-has-icon-right">-->
-                        <!--                                <input type="text" class="form-control" placeholder="Are the vaccinations up to date?"-->
-                        <!--                                       required="">-->
-                        <!--                                <span class="rel-icon rel-icon-square">-->
-                        <!--                                    <img src="https://fretbay.com/en/assets/images/common/icons/units/vaccine.svg"-->
-                        <!--                                         alt="">-->
-                        <!--                                </span>-->
-                        <!--                            </div>-->
+<!--                                            <div class="row mb-2">-->
+<!--                                                <div class="col-6">-->
+<!--                                                    <div class="input-has-icon-right">-->
+<!--                                                        <input type="text" class="form-control" placeholder="Special needs" required="">-->
+<!--                                                        <span class="rel-icon rel-icon-square">-->
+<!--                                                            <img src="https://fretbay.com/en/assets/images/common/icons/units/need.svg" alt="">-->
+<!--                                                        </span>-->
+<!--                                                    </div>-->
 
-                        <!--                        </div>-->
-                        <!--                    </div>-->
+<!--                                                </div>-->
 
-                        <!--                    <h6>Cage (optional)</h6>-->
+<!--                                                <div class="col-6">-->
+<!--                                                    <div class="input-has-icon-right">-->
+<!--                                                        <input type="text" class="form-control" placeholder="Are the vaccinations up to date?"-->
+<!--                                                               required="">-->
+<!--                                                        <span class="rel-icon rel-icon-square">-->
+<!--                                                            <img src="https://fretbay.com/en/assets/images/common/icons/units/vaccine.svg"-->
+<!--                                                                 alt="">-->
+<!--                                                        </span>-->
+<!--                                                    </div>-->
 
-                        <!--                    <div class="row mb-2">-->
-                        <!--                        <div class="col-4">-->
-                        <!--                            <div class="form-group ">-->
-                        <!--                                <div class="input-has-icon-right">-->
-                        <!--                                    <input type="text" class="form-control"-->
-                        <!--                                           placeholder="Cage length (cm)" required="">-->
-                        <!--                                    <span class="rel-icon rel-icon-square"><img-->
-                        <!--                                        src="/images/common/icons/units/longeur.svg"-->
-                        <!--                                        alt=""></span>-->
-                        <!--                                </div>-->
-                        <!--                            </div>-->
-                        <!--                        </div>-->
-                        <!--                        <div class="col-4">-->
-                        <!--                            <div class="form-group ">-->
-                        <!--                                <div class="input-has-icon-right">-->
-                        <!--                                    <input type="text" class="form-control" placeholder="Cage width (cm)"-->
-                        <!--                                           required="">-->
-                        <!--                                    <span class="rel-icon rel-icon-square"><img-->
-                        <!--                                        src="/images/common/icons/units/largeur.svg"-->
-                        <!--                                        alt=""></span>-->
-                        <!--                                </div>-->
-                        <!--                            </div>-->
-                        <!--                        </div>-->
-                        <!--                        <div class="col-4">-->
-                        <!--                            <div class="form-group ">-->
-                        <!--                                <div class="input-has-icon-right">-->
-                        <!--                                    <input type="text"-->
-                        <!--                                           class="form-control"-->
-                        <!--                                           placeholder="Cage height" required="">-->
-                        <!--                                    <span class="rel-icon rel-icon-square"><img-->
-                        <!--                                        src="/images/common/icons/units/hauteur.svg"-->
-                        <!--                                        alt=""></span>-->
-                        <!--                                </div>-->
-                        <!--                            </div>-->
-                        <!--                        </div>-->
-                        <!--                    </div>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+
+<!--                                            <h6>Cage (optional)</h6>-->
+
+<!--                                            <div class="row mb-2">-->
+<!--                                                <div class="col-4">-->
+<!--                                                    <div class="form-group ">-->
+<!--                                                        <div class="input-has-icon-right">-->
+<!--                                                            <input type="text" class="form-control"-->
+<!--                                                                   placeholder="Cage length (cm)" required="">-->
+<!--                                                            <span class="rel-icon rel-icon-square"><img-->
+<!--                                                                src="/images/common/icons/units/longeur.svg"-->
+<!--                                                                alt=""></span>-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                                <div class="col-4">-->
+<!--                                                    <div class="form-group ">-->
+<!--                                                        <div class="input-has-icon-right">-->
+<!--                                                            <input type="text" class="form-control" placeholder="Cage width (cm)"-->
+<!--                                                                   required="">-->
+<!--                                                            <span class="rel-icon rel-icon-square"><img-->
+<!--                                                                src="/images/common/icons/units/largeur.svg"-->
+<!--                                                                alt=""></span>-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                                <div class="col-4">-->
+<!--                                                    <div class="form-group ">-->
+<!--                                                        <div class="input-has-icon-right">-->
+<!--                                                            <input type="text"-->
+<!--                                                                   class="form-control"-->
+<!--                                                                   placeholder="Cage height" required="">-->
+<!--                                                            <span class="rel-icon rel-icon-square"><img-->
+<!--                                                                src="/images/common/icons/units/hauteur.svg"-->
+<!--                                                                alt=""></span>-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
                         <div class="form-group row w-100 m-auto">
                             <div class="col-12 col-sm-6" v-if="mode === 1">
                                 <button class="btn w-100" @click="cancel">
@@ -312,9 +318,7 @@
                     height: '',
                     weight: '',
                     quantity: '',
-                    properties: [
-
-                    ]
+                    properties: {}
                 },
                 edit_article: {
                     category_title: "",
@@ -327,9 +331,7 @@
                     height: '',
                     weight: '',
                     quantity: '',
-                    properties: [
-
-                    ]
+                    properties: {}
                 },
                 temp_article: {
                     category_title: "",
@@ -342,9 +344,7 @@
                     height: '',
                     weight: '',
                     quantity: '',
-                    properties: [
-
-                    ]
+                    properties: {}
                 },
                 // edit_mode: false,
                 edit_index:'',
@@ -353,17 +353,24 @@
             }
         },
         mounted() {
+            this.listing_title = this.listing.title;
             this.category.properties.forEach((item) => {
                 if(item.type==='checkbox')
                 {
-                    this.new_article.properties[item.slug]={ value:false};
-                    this.edit_article.properties[item.slug]={ value:false};
-                    this.temp_article.properties[item.slug]={ value:false};
+                    this.$set(this.new_article.properties, item.slug, { value:false})
+                    this.$set(this.edit_article.properties, item.slug, { value:false})
+                    this.$set(this.temp_article.properties, item.slug, { value:false})
+                    // this.new_article.properties[item.slug]={ value:false};
+                    // this.edit_article.properties[item.slug]={ value:false};
+                    // this.temp_article.properties[item.slug]={ value:false};
                 }
                 else {
-                    this.new_article.properties[item.slug]={ value:''};
-                    this.edit_article.properties[item.slug]={ value:''};
-                    this.temp_article.properties[item.slug]={ value:''};
+                    this.$set(this.new_article.properties, item.slug, { value:''})
+                    this.$set(this.edit_article.properties, item.slug, { value:''})
+                    this.$set(this.temp_article.properties, item.slug, { value:''})
+                    // this.new_article.properties[item.slug]={ value:''};
+                    // this.edit_article.properties[item.slug]={ value:''};
+                    // this.temp_article.properties[item.slug]={ value:''};
                 }
 
             })
@@ -373,6 +380,9 @@
         computed: {
             article_items() {
                 return this.$store.getters.articleCart;
+            },
+            listing() {
+                return this.$store.getters.listing;
             },
         },
         methods: {
@@ -394,7 +404,7 @@
                     height: '',
                     weight: '',
                     quantity: '',
-                    properties: []
+                    properties: {}
                 }
                 this.category.properties.forEach((item) => {
                     if(item.type==='checkbox')
