@@ -59,6 +59,8 @@ Vue.component('find-transporter-page', require('../desktop/pages/FindTransporter
 Vue.component('how-it-work-page', require('../desktop/pages/HowItWork.vue').default);
 Vue.component('who-we-are-page', require('../desktop/pages/WhoWeAre.vue').default);
 
+Vue.component('profile-page', require('./pages/Profile.vue').default);
+
 Vue.component('profile-personal-info-page', require('./pages/Profile/PersonalInfo.vue').default);
 Vue.component('profile-customer-activity-listing-page', require('../desktop/pages/Profile/Customer/ActivityListing.vue').default);
 Vue.component('profile-customer-listings-page', require('../desktop/pages/Profile/Customer/Listings.vue').default);

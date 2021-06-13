@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class VehicleStoreRequest extends FormRequest
 {
@@ -13,7 +14,7 @@ class VehicleStoreRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return Auth::user()->hasRole("admin");
     }
 
     /**
@@ -24,7 +25,12 @@ class VehicleStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            "brand"=>"required|string|max:255",
+            "model"=>"required|string|max:255",
+            "plate_number"=>"required|string|max:255",
+            "total_laden_weight"=>"required|integer|min:0",
+            "cubing"=>"required|integer|min:0",
+            "profile_id"=>"nullable"
         ];
     }
 }

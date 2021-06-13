@@ -24,7 +24,19 @@ class ListingStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title'=>"required|string|max:255",
+            'articles'=>"required",
+            'place_of_loading'=>"required",
+            'place_of_delivery'=>"required",
+            'shipping_date_from'=>"required",
+            'shipping_date_to'=>"required",
+            'unshipping_date_from'=>"required",
+            'unshipping_date_to'=>"required",
+            'messages'=>"nullable",
+            'additional_info'=>"nullable",
+            'images'=>"nullable",
+            'status'=>"nullable",
+            'summary_volume'=>"nullable"
         ];
     }
 }

@@ -39,6 +39,11 @@
     <link rel="icon" href="/images/logo.svg">
 
     <link href="{{ asset('css/admin/coreui-chartjs.css') }}" rel="stylesheet">
+
+    @if (Auth::check())
+        <meta name="user" content="{{ App\User::self() }}" />
+    @endif
+
 </head>
 
 

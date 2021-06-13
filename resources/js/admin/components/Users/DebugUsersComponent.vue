@@ -82,7 +82,7 @@
             },
             filteredJsonData() {
                 if (!this.search)
-                    return this.jsonData.data
+                    return this.jsonData.data||[]
 
                 let tmp = [];
 

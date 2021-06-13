@@ -39,6 +39,8 @@ Vue.use(JsonViewer)
 import Multiselect from 'vue-multiselect';
 Vue.component('multiselect', Multiselect);
 
+
+
 //component
 Vue.component('header-component', require('./components/Header.vue').default);
 Vue.component('footer-component', require('./components/Footer.vue').default);

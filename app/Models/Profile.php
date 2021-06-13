@@ -11,6 +11,7 @@ class Profile extends Model
         "type",
         "first_name",
         "second_name",
+        "image",
         "telephone_number_1",
         "telephone_number_2",
         "country",
@@ -28,6 +29,10 @@ class Profile extends Model
         "is_first_activation",
     ];
 
+    protected $appends = [
+        "address"
+    ];
+
     protected $casts = [
         "transport_specialities" => "array",
         "number_of_drivers" => "integer",
@@ -36,6 +41,10 @@ class Profile extends Model
         "is_first_activation" => "boolean"
     ];
 
+    public function getAddressAttribute()
+    {
+        return $this->country . ", " . $this->city . ", " . $this->region;
+    }
 
     public function vehicles()
     {

@@ -37,6 +37,12 @@ class ProfileUpdateRequest extends FormRequest
             "region"=>"string",
             "postal"=>"string",
             "areas_of_expertise"=>"string",
+
+            "transport_specialities" => "nullable",
+            "number_of_drivers" => "integer",
+            "cargo_insurance_amount" => "integer",
+            "is_approved" => "boolean",
+            "is_first_activation" => "boolean"
         ];
     }
 }
