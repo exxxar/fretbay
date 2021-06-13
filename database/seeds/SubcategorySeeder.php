@@ -1,6 +1,8 @@
 <?php
-use App\Subcategory;
-use App\Category;
+;
+
+use App\Models\Category;
+use App\Models\Subcategory;
 use Illuminate\Database\Seeder;
 
 class SubcategorySeeder extends Seeder

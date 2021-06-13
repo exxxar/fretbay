@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\VerificationApplication;
 use Illuminate\Database\Seeder;
 
 class VerificationApplicationSeeder extends Seeder
@@ -11,6 +12,6 @@ class VerificationApplicationSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\VerificationApplication::class, 5)->create();
+        factory(VerificationApplication::class, 5)->create();
     }
 }

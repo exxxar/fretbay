@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\CategoryProperty;
 use Illuminate\Database\Seeder;
 
 class CategoryPropertySeeder extends Seeder
@@ -14,7 +15,7 @@ class CategoryPropertySeeder extends Seeder
         ////Article name, Length (cm), width (cm), height (cm), weight, quantity, make, model, estimated value, accept conveyors, fragile goods
         ///special needs, vaccinations up to date, animal bread
 
-        \App\CategoryProperty::create([
+        CategoryProperty::create([
             'title'=>[
                 "en"=>"Article name",
                 "fr"=>"Article name",
@@ -26,7 +27,7 @@ class CategoryPropertySeeder extends Seeder
         ]);
 
 
-        \App\CategoryProperty::create([
+        CategoryProperty::create([
             'title'=>[
                 "en"=>"Width (cm)",
                 "fr"=>"Width (cm)",
@@ -37,7 +38,7 @@ class CategoryPropertySeeder extends Seeder
             'icon'=>'/images/common/icons/units/largeur.svg',
         ]);
 
-        \App\CategoryProperty::create([
+        CategoryProperty::create([
             'title'=>[
                 "en"=>"Length (cm)",
                 "fr"=>"Length (cm)",
@@ -48,7 +49,7 @@ class CategoryPropertySeeder extends Seeder
             'icon'=>'/images/common/icons/units/longeur.svg',
         ]);
 
-        \App\CategoryProperty::create([
+        CategoryProperty::create([
             'title'=>[
                 "en"=>"Height (cm)",
                 "fr"=>"Height (cm)",
@@ -60,7 +61,7 @@ class CategoryPropertySeeder extends Seeder
         ]);
 
 
-        \App\CategoryProperty::create([
+        CategoryProperty::create([
             'title'=>[
                 "en"=>"Weight",
                 "fr"=>"Weight",
@@ -71,7 +72,7 @@ class CategoryPropertySeeder extends Seeder
             'icon'=>'/images/common/icons/units/poids.svg',
         ]);
 
-        \App\CategoryProperty::create([
+        CategoryProperty::create([
             'title'=>[
                 "en"=>"Quantity",
                 "fr"=>"Quantity",
@@ -82,7 +83,7 @@ class CategoryPropertySeeder extends Seeder
             'icon'=>'/images/common/icons/units/quantity.svg',
         ]);
 
-        \App\CategoryProperty::create([
+        CategoryProperty::create([
             'title'=>[
                 "en"=>"Make",
                 "fr"=>"Make",
@@ -93,7 +94,7 @@ class CategoryPropertySeeder extends Seeder
             'icon'=>'',
         ]);
 
-        \App\CategoryProperty::create([
+        CategoryProperty::create([
             'title'=>[
                 "en"=>"Model",
                 "fr"=>"Model",
@@ -104,7 +105,7 @@ class CategoryPropertySeeder extends Seeder
             'icon'=>'',
         ]);
 
-        \App\CategoryProperty::create([
+        CategoryProperty::create([
             'title'=>[
                 "en"=>"Estimated value",
                 "fr"=>"Estimated value",
@@ -115,7 +116,7 @@ class CategoryPropertySeeder extends Seeder
             'icon'=>'/images/common/icons/units/euro.svg',
         ]);
 
-        \App\CategoryProperty::create([
+        CategoryProperty::create([
             'title'=>[
                 "en"=>"I accept conveyors",
                 "fr"=>"I accept conveyors",
@@ -126,7 +127,7 @@ class CategoryPropertySeeder extends Seeder
             'icon'=>'',
         ]);
 
-        \App\CategoryProperty::create([
+        CategoryProperty::create([
             'title'=>[
                 "en"=>"Fragile goods",
                 "fr"=>"Fragile goods",
@@ -138,7 +139,7 @@ class CategoryPropertySeeder extends Seeder
         ]);
 
 
-        \App\CategoryProperty::create([
+        CategoryProperty::create([
             'title'=>[
                 "en"=>"Special needs",
                 "fr"=>"Special needs",
@@ -149,7 +150,7 @@ class CategoryPropertySeeder extends Seeder
             'icon'=>'/images/common/icons/units/need.svg',
         ]);
 
-        \App\CategoryProperty::create([
+        CategoryProperty::create([
             'title'=>[
                 "en"=>"Are the vaccinations up to date?",
                 "fr"=>"Are the vaccinations up to date?",
@@ -160,7 +161,7 @@ class CategoryPropertySeeder extends Seeder
             'icon'=>'/images/common/icons/units/vaccine.svg',
         ]);
 
-        \App\CategoryProperty::create([
+        CategoryProperty::create([
             'title'=>[
                 "en"=>"Moving vehicle?",
                 "fr"=>"Moving vehicle?",
