@@ -23,7 +23,6 @@ class CategoryController extends Controller
             ]);
         }
 
-
         $categories = Category::all();
 
         return view('admin.pages.categories.index', compact('categories'));

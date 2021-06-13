@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -62,28 +62,25 @@ class Listing extends Model
         'expiration_date',
     ];
 
-    protected $appends = [
-
-    ];
 
     public function category()
     {
-        return $this->belongsTo(\App\Category::class)->with(['properties']);
+        return $this->belongsTo(Category::class)->with(['properties']);
     }
 
     public function subcategory()
     {
-        return $this->belongsTo(\App\Subcategory::class);
+        return $this->belongsTo(Subcategory::class);
     }
 
     public function thing()
     {
-        return $this->belongsTo(\App\Thing::class);
+        return $this->belongsTo(Thing::class);
     }
 
     public function quotes()
     {
-        return $this->hasMany(\App\Quote::class);
+        return $this->hasMany(Quote::class);
     }
 
     public function user()

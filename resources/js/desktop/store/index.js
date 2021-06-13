@@ -4,6 +4,7 @@ import Vuex from 'vuex';
 
 import ArticleCart from './modules/ArticleCart'
 import VolumeCart from './modules/VolumeCart'
+
 import Category from "./modules/Category";
 import Subcategory from "./modules/Subcategory";
 import Thing from "./modules/Thing";
