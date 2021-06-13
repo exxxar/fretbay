@@ -27,6 +27,16 @@ class CreateProfilesTable extends Migration
             $table->string('region')->default('');
             $table->string('postal')->default('');
             $table->string('areas_of_expertise')->default('');
+
+            $table->json("transport_specialities")->nullable();
+            $table->integer("number_of_drivers")->default(0);
+            $table->integer("cargo_insurance_amount")->default(0);
+            $table->longText("about_company")->nullable();
+            $table->longText("additional_service")->nullable();
+            $table->string("insurance_company")->default('');
+            $table->boolean('is_approved')->default(false);
+            $table->boolean('is_first_activation')->default(true);
+
             $table->softDeletes();
             $table->timestamps();
         });

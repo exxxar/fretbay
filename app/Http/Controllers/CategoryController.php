@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
-//use App\Http\Requests\CategoryStoreRequest;
-//use App\Http\Requests\CategoryUpdateRequest;
+use App\Models\Category;
+use App\Http\Requests\CategoryStoreRequest;
+use App\Http\Requests\CategoryUpdateRequest;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -23,10 +23,9 @@ class CategoryController extends Controller
             ]);
         }
 
-
         $categories = Category::all();
 
-        return view('category.index', compact('categories'));
+        return view('admin.pages.categories.index', compact('categories'));
     }
 
     public function get()
@@ -43,7 +42,7 @@ class CategoryController extends Controller
      */
     public function create(Request $request)
     {
-        return view('category.create');
+        return view('admin.pages.categories.create');
     }
 
     /**
@@ -54,9 +53,7 @@ class CategoryController extends Controller
     {
         $category = Category::create($request->validated());
 
-        $request->session()->flash('category.id', $category->id);
-
-        return redirect()->route('category.index');
+        return response()->noContent();
     }
 
     /**
@@ -64,9 +61,10 @@ class CategoryController extends Controller
      * @param \App\Category $category
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request, Category $category)
+    public function show(Request $request, $id)
     {
-        return view('category.show', compact('category'));
+        $category = Category::find($id);
+        return view('admin.pages.categories.show', compact('category'));
     }
 
     /**
@@ -74,9 +72,10 @@ class CategoryController extends Controller
      * @param \App\Category $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request, Category $category)
+    public function edit(Request $request, $id)
     {
-        return view('category.edit', compact('category'));
+        $category = Category::find($id);
+        return view('admin.pages.categories.update', compact('category'));
     }
 
     /**
@@ -84,13 +83,12 @@ class CategoryController extends Controller
      * @param \App\Category $category
      * @return \Illuminate\Http\Response
      */
-    public function update(CategoryUpdateRequest $request, Category $category)
+    public function update(CategoryUpdateRequest $request, $id)
     {
+        $category = Category::find($id);
         $category->update($request->validated());
 
-        $request->session()->flash('category.id', $category->id);
-
-        return redirect()->route('category.index');
+        return response()->noContent();
     }
 
     /**
@@ -98,10 +96,11 @@ class CategoryController extends Controller
      * @param \App\Category $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request, Category $category)
+    public function destroy(Request $request, $id)
     {
+        $category = Category::find($id);
         $category->delete();
 
-        return redirect()->route('category.index');
+        return response()->noContent();
     }
 }

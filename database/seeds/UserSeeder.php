@@ -17,6 +17,7 @@ class UserSeeder extends Seeder
     {
         //
 
+
         $admin = Role::where('slug', 'admin')->first();
         $transporter = Role::where('slug', 'transporter')->first();
         $customer = Role::where('slug', 'customer')->first();
@@ -44,6 +45,17 @@ class UserSeeder extends Seeder
         $user4->save();
         $user4->roles()->attach($transporter);
         $user4->permissions()->attach($manageUsers);
+
+        $profile3 = Profile::create();
+        $user5 = new User();
+        $user5->name = 'Test';
+        $user5->email = 'admin@admin.com';
+        $user5->password = bcrypt('password');
+        $user5->phone = '123456';
+        $user5->profile_id = $profile3->id;
+        $user5->save();
+        $user5->roles()->attach($admin);
+        $user5->permissions()->attach($manageUsers);
 
     }
 }

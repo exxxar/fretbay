@@ -30,8 +30,9 @@
 
 
     @if (Auth::check())
-        <meta name="user" content="{{ Auth::user() }}" />
+        <meta name="user" content="{{ App\User::self() }}" />
     @endif
+
 
 
 </head>

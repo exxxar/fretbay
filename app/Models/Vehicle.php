@@ -1,21 +1,25 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Spatie\Translatable\HasTranslations;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Vehicle extends Model
 {
-    //
 
-    use HasTranslations;
-
-    public $translatable = ['title'];
 
     protected $fillable = [
-        "title",
-        "position",
-        "is_active"
+        "brand",
+        "model",
+        "plate_number",
+        "total_laden_weight",
+        "cubing",
+        "profile_id"
+    ];
+
+    protected $casts = [
+        "total_laden_weight" => "integer",
+        "cubing" => "integer",
     ];
 }

@@ -11,10 +11,10 @@
                         <form action="#">
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <div class="form-group"><label for="" class="text-lg">Company name</label><input type="text" class="form-control form-control-img-lock" placeholder="company" disabled></div>
-                                    <div class="form-group"><label for="" class="text-lg">Address</label><input type="text" class="form-control-empty form-control" placeholder="address"></div>
-                                    <div class="form-group"><label for="" class="text-lg">Phone number</label><input type="text" class="form-control form-control-img-lock" placeholder="1234567890" disabled></div>
-                                    <div class="form-group"><label for="" class="text-lg">Mobile phone number</label><input type="text" class="form-control form-control-img-lock" placeholder="1234567890" disabled></div>
+                                    <div class="form-group"><label for="" class="text-lg">Company name</label><input type="text" :value="user.profile.company_name" class="form-control form-control-img-lock" placeholder="company" disabled></div>
+                                    <div class="form-group"><label for="" class="text-lg">Address</label><input type="text" :value="user.profile.address" class="form-control-empty form-control" placeholder="address"></div>
+                                    <div class="form-group"><label for="" class="text-lg">Phone number</label><input type="text" :value="user.profile.telephone_number_1" class="form-control form-control-img-lock" placeholder="1234567890" disabled></div>
+                                    <div class="form-group"><label for="" class="text-lg">Mobile phone number</label><input type="text" :value="user.profile.telephone_number_2" class="form-control form-control-img-lock" placeholder="1234567890" disabled></div>
                                 </div>
                             </div>
                         </form>
@@ -28,22 +28,22 @@
                         <form action="">
                             <div class="form-group">
                                 <label for="" class="text-lg">About my company</label>
-                                <textarea class="form-control-textarea" rows="4"></textarea>
+                                <textarea class="form-control-textarea" rows="4">{{user.profile.about_company}}</textarea>
                             </div>
                             <div class="form-group">
                                 <label for="" class="text-lg">Additional services</label>
-                                <textarea class="form-control-textarea" rows="4"></textarea>
+                                <textarea class="form-control-textarea" rows="4">{{user.profile.additional_service}}</textarea>
                             </div>
                             <div class="form-group row">
                                 <label for="" class="col-sm-6 text-lg lh-40">Insurance company</label>
                                 <div class="col-sm-6">
-                                    <input type="text" class="form-control-empty form-control" placeholder="1234567890">
+                                    <input type="text" :value="user.profile.insurance_company" class="form-control-empty form-control" placeholder="1234567890">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="" class="col-sm-6 text-lg">Cargo insurance amount</label>
                                 <div class="col-sm-6 input-has-icon-right">
-                                    <input type="text" class="form-control-empty form-control" placeholder="0">
+                                    <input type="text" class="form-control-empty form-control" :value="user.profile.cargo_insurance_amount" placeholder="0">
                                     <span class="price-symbol">€</span>
                                 </div>
                             </div>
@@ -170,8 +170,8 @@
                             </label>
                         </li>
                         <li class="list-transport-category">
-                            <label for="">
-                                <input type="checkbox">
+                            <label for="seleted-moving">
+                                <input type="checkbox" id="seleted-moving">
                                 <span class="category-icon"><img src="https://fretbay.com/fr/frv2/assets/images/common/icons/category/default/2.svg?v=0.0.5" alt=""></span>
                                 <span class="category-name">Moving</span>
                             </label>
@@ -253,6 +253,10 @@
  </template>
 <script>
     export default {
-
+        computed: {
+            user() {
+                return JSON.parse(window.user)
+            }
+        },
     }
 </script>

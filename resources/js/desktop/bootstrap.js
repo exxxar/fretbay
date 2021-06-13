@@ -21,7 +21,7 @@ try {
 
 window.axios = require('axios');
 
-// window.axios.defaults.baseURL = '/api/desktop/v1';
+window.axios.defaults.baseURL = '/api/';
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 

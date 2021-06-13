@@ -33,6 +33,7 @@ class CreateOrdersTable extends Migration
 
             $table->json("additional_properties")->comment("Дополнительные параметры");
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -39,11 +39,15 @@
     <link rel="icon" href="/images/logo.svg">
 
     <link href="{{ asset('css/admin/coreui-chartjs.css') }}" rel="stylesheet">
+
+    @if (Auth::check())
+        <meta name="user" content="{{ App\User::self() }}" />
+    @endif
+
 </head>
 
 
 <body class="c-app">
-
 
 @include("admin.partials.sidebar")
 
@@ -51,14 +55,11 @@
     <header-component items="{{Route::currentRouteName()}}" admin="{{route("admin.index")}}"></header-component>
     <div class="c-body">
         <main class="c-main">
-
             @yield('content')
-
         </main>
         <footer-component></footer-component>
     </div>
 </div>
-
 
 <!-- CoreUI and necessary plugins-->
 <script src="{{ asset('js/admin/app.js') }}" defer></script>
