@@ -74,7 +74,7 @@ Route::group(['middleware' => ['auth', 'role:transporter'], "prefix" => "transpo
 
 Route::group(['middleware' => ['auth', 'role:customer'], "prefix" => "customer"], function () {
     Route::group(["prefix" => "profile"], function () {
-        Route::view("/my-account", "desktop.pages.profile.transporter.my-account")->name("customer-account");
+        Route::view("/", "desktop.pages.profile.customer.index")->name("customer-account");
     });
 });
 

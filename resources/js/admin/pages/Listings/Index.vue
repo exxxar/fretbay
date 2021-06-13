@@ -8,14 +8,14 @@
         </b-row>
         <b-tabs content-class="mt-3">
             <b-tab title="Active" active>
-                <listing-table
+                <listings-table-page
                     :listings="listings"
                     :loading="loading"
                     :rows="listings_totalRows"
                 />
             </b-tab>
             <b-tab title="Deleted">
-                <listing-table
+                <listings-table-page
                     :listings="deleted_listings"
                     :loading="loading"
                     :rows="deleted_listings_totalRows"
@@ -32,12 +32,10 @@
 </template>
 
 <script>
-    import ListingTable from '~/pages/Listings/Table'
+
 
     export default {
-        components: {
-            ListingTable
-        },
+
         data() {
             return {
                 loading: false,
