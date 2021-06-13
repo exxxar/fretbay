@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -27,6 +27,7 @@ class Listing extends Model
         'additional_info',
         'images',
         'status',
+        'expiration_date'
         'summary_volume',
     ];
 
@@ -59,12 +60,12 @@ class Listing extends Model
 
     public function category()
     {
-        return $this->hasOne(Category::class);
+        return $this->hasOne(\App\Category::class);
     }
 
     public function quotes()
     {
-        return $this->hasMany(Quote::class);
+        return $this->hasMany(\App\Quote::class);
     }
 
     public function user()
