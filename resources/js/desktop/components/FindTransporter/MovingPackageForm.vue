@@ -23,7 +23,6 @@
 
                         <div class="w-100 d-flex justify-content-center">
                             <button class="btn btn-custom-gray"
-                                    v-if="selected_package !=='Truck with Driver package'"
                                     @click="chooseMovingPackage('Truck with Driver')"
                             >
                                 Choose

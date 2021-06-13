@@ -23,9 +23,18 @@ class CategoryController extends Controller
             ]);
         }
 
+
         $categories = Category::all();
 
         return view('admin.pages.categories.index', compact('categories'));
+    }
+
+    public function get()
+    {
+        $categories = Category::with(['subcategories', 'things', 'properties'])->get();
+        return response()->json([
+            'categories' => $categories
+        ]);
     }
 
     /**

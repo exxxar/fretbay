@@ -1,14 +1,14 @@
 <template>
     <div class="row mt-2">
         <ValidationObserver ref="article_form" v-slot="{invalid}" >
-            <div class="row mx-auto d-flex justify-content-start mt-2 w-100">
-                <ValidationProvider name="listing_title" rules="required" v-slot="{ errors }">
-                    <div class="form-group">
-                        <input v-model="listing_title" @blur="saveListingTitle" type="text" class="form-control"
-                               placeholder="3-seater Sofa, chairs, desks...">
-                    </div>
-                </ValidationProvider>
-            </div>
+<!--            <div class="row mx-auto d-flex justify-content-start mt-2 w-100">-->
+<!--                <ValidationProvider name="listing_title" rules="required" v-slot="{ errors }">-->
+<!--                    <div class="form-group">-->
+<!--                        <input v-model="listing_title" @blur="saveListingTitle" type="text" class="form-control"-->
+<!--                               placeholder="3-seater Sofa, chairs, desks...">-->
+<!--                    </div>-->
+<!--                </ValidationProvider>-->
+<!--            </div>-->
             <article-form :category="category"></article-form>
             <div class="row mx-auto d-flex justify-content-end mt-2 w-100">
                 <div class="col-12 col-sm-2">

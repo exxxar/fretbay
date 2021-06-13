@@ -1,6 +1,6 @@
 <template>
 <div class="row w-100 m-auto">
-    <div class="col-lg-9 col-md-8 col-12 mt-2">
+    <div class="col-12 mt-2">
         <div class="panel-left">
             <h3 class="mt-0 text-uppercase text-black content-box-title">Categories</h3>
             <ul class="row w-100 m-auto">
@@ -20,29 +20,29 @@
             </ul>
         </div>
     </div>
-    <div class="hidden-sm hidden-xs col-md-4 col-lg-3 col-12 mt-2">
-        <div class="panel-right ">
-            <h4> Publish your listing</h4>
-            <p> Our system matches your move with those of our other Fretbay users.</p>
+<!--    <div class="hidden-sm hidden-xs col-md-4 col-lg-3 col-12 mt-2">-->
+<!--        <div class="panel-right ">-->
+<!--            <h4> Publish your listing</h4>-->
+<!--            <p> Our system matches your move with those of our other Fretbay users.</p>-->
 
 
-            <h4>Compare the quotes</h4>
-            <p> Grouped quotes at low prices are offered by our network of professional carriers.
-            </p>
+<!--            <h4>Compare the quotes</h4>-->
+<!--            <p> Grouped quotes at low prices are offered by our network of professional carriers.-->
+<!--            </p>-->
 
-            <h4> Select a quote</h4>
-            <p> Establish your transportation terms by contacting the carrier of your choice.
-            </p>
+<!--            <h4> Select a quote</h4>-->
+<!--            <p> Establish your transportation terms by contacting the carrier of your choice.-->
+<!--            </p>-->
 
-            <h4> Evaluate the service</h4>
+<!--            <h4> Evaluate the service</h4>-->
 
-            <p> Following the move, give your opinion on the mover's service and the quality of the
-                grouped
-                transport of your goods.</p>
+<!--            <p> Following the move, give your opinion on the mover's service and the quality of the-->
+<!--                grouped-->
+<!--                transport of your goods.</p>-->
 
-        </div>
+<!--        </div>-->
 
-    </div>
+<!--    </div>-->
 </div>
 </template>
 <script>

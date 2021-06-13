@@ -21,7 +21,6 @@ class Category extends Model
     protected $fillable = [
         'title',
         'min_price',
-        'additional_menu_title',
         'image',
         'position',
         'is_active',
@@ -39,10 +38,17 @@ class Category extends Model
         'is_active' => 'boolean',
     ];
 
+    protected $appends = [
+        'subcategories_count', 'things_count',  'properties_count'
+    ];
 
     public function getTitleAttribute()
     {
         return $this->getTranslations()["title"][App::getLocale()];
+    }
+    public function listings()
+    {
+        return $this->hasMany(Listing::class);
     }
 
     public function subcategories()

@@ -42,15 +42,24 @@ Route::group(["prefix" => "locations"], function () {
     Route::get("/cities/{country}", DictionaryController::class . "@getCities");
 });
 
-Route::group(["prefix" => "dist"], function () {
-    Route::get("/math/{fA}/{lA}/{fB}/{lB}", DictionaryController::class . "@getMathDist");
-    Route::get("/api/{fA}/{lA}/{fB}/{lB}", DictionaryController::class . "@getApiDist");
-    Route::get("/route/{fA}/{lA}/{fB}/{lB}", DictionaryController::class . "@getRoute");
-    Route::get("/coords/{address}", DictionaryController::class . "@getCoords");
-});
-Route::get("/getAddress/{address}/{lang}", "DictionaryController@getAddress");
-//category
-Route::group(["prefix" => "categories"], function () {
-    Route::get('/', 'CategoryController@index');
-});
+        Route::group(["prefix"=>"dist"],function(){
+            Route::get("/math/{fA}/{lA}/{fB}/{lB}", DictionaryController::class."@getMathDist");
+            Route::get("/api/{fA}/{lA}/{fB}/{lB}", DictionaryController::class."@getApiDist");
+            Route::get("/route/{fA}/{lA}/{fB}/{lB}", DictionaryController::class."@getRoute");
+            Route::get("/coords/{address}", DictionaryController::class."@getCoords");
+        });
+        Route::get("/getAddress/{address}/{lang}", "DictionaryController@getAddress");
+        //category
+        Route::group(["prefix"=>"categories"],function() {
+            Route::get('/', 'CategoryController@index');
+        });
+        //listing
+        Route::group(["prefix"=>"listings"],function() {
+            Route::get('/', 'ListingController@index');
+        });
+        Route::group(["prefix"=>"listing"],function() {
+            Route::post('/', 'ListingController@store');
+        });
+
+
 

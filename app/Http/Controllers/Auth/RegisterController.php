@@ -10,6 +10,7 @@ use App\Models\Role;
 use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -100,6 +101,32 @@ class RegisterController extends Controller
 
         return redirect()->route("login");
     }
+
+    public function registerCustomerWithListing(Request $request)
+    {
+        $customer = Role::where('slug', 'customer')->first();
+
+        $profile = Profile::create([
+            "company_name"=>$request->name,
+
+        ]);
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = bcrypt($request->password);
+        $user->phone = $request->phone;
+        $user->profile_id = $profile->id;
+        $user->save();
+        $user->roles()->attach($customer);
+
+        Auth::login($user, true);
+
+//        return redirect()->route("login");
+        return response()->json([
+            'user_id' => $user->id
+        ]);
+    }
+
 
     public function registerTransporter(TransporterStoreRequest $request)
     {

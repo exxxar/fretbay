@@ -17,7 +17,7 @@ const getters = {
 const actions = {
     async getListings({state, commit}) {
         return axios
-            .get('/listings')
+            .get('/api/listings')
             .then(resp => {
                 commit('setListings', resp.data.listings);
             })
@@ -68,10 +68,12 @@ const actions = {
             });
     },
     async addListing({state, commit}, listing) {
-        await axios
-            .post('/listing').then(resp => {
-                commit('addListing', resp.data.listing)
-            })
+        return await axios
+            .post('/api/listing', listing, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                },
+            });
     },
 }
 

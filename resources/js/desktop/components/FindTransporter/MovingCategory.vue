@@ -12,7 +12,7 @@
                                     <h4>I know my volume to move. It is correct and I would like to inform it.</h4>
                                     <div class="volume-field">
                                         <div class="volume-field-wrap">
-                                            <input v-model="listing.volume" type="text" class="form-control input-lg text-center text-black"
+                                            <input v-model="listing.summary_volume" type="text" class="form-control input-lg text-center text-black"
                                                    @blur="editVolume" placeholder="Your volume" autofocus="">
                                             <em class="volume-unit text-bold">m<sup>3</sup></em>
                                         </div>
@@ -245,6 +245,7 @@
         },
         methods: {
           nextStep() {
+              this.$store.dispatch('editNewListing', {key:'title', value: 'Déménagement '+ this.listing.summary_volume+' m3'})
               if(this.$refs.wizard.current_step === 1)
               {
                   this.$store.dispatch('setStep', 2)
@@ -292,7 +293,7 @@
                 this.$store.dispatch('editNewListing', {key:'moving_package', value: title})
             },
             editVolume() {
-                this.$store.dispatch('editNewListing', {key:'volume', value: this.listing.volume})
+                this.$store.dispatch('editNewListing', {key:'summary_volume', value: this.listing.summary_volume})
             }
         }
     }

@@ -16,7 +16,6 @@
                 </div>
             </div>
 
-
             <h4>Additional information <em>(recomended)</em></h4>
 
             <div class="row w-100 m-auto">
@@ -97,15 +96,40 @@
                 additional_info:''
             }
         },
+        computed: {
+            listing() {
+                return this.$store.getters.listing;
+            },
+            articles() {
+                return this.$store.getters.articleCart;
+            },
+        },
         methods: {
             nextStep() {
                 if(window.user) {
-                    window.location = '/profile-my-account'
+                    let user = JSON.parse(window.user)
+                    this.$store.dispatch('editNewListing', {key:'user_id', value:user.id});
+                    // this.$store.dispatch('editNewListing', {key:'articles', value:this.articles});
+                    let formData = new FormData();
+                    Object.keys(this.listing).forEach(key => {
+                        if ( key !== 'images' && key !=='place_of_loading' && key !=='place_of_delivery' &&  key !=='articles') {
+                            formData.append(key, this.listing[key]);
+                        }
+                    });
+                    formData.append('place_of_loading', JSON.stringify(this.listing.place_of_loading));
+                    formData.append('place_of_delivery', JSON.stringify(this.listing.place_of_delivery));
+                    formData.append('articles', JSON.stringify(this.listing.articles));
+                    for( let i = 0; i < this.listing.images.length; i++ ) {
+                        formData.append('images[' + i + ']', this.listing.images[i]);
+                    }
+                    this.$store.dispatch('addListing', formData).then( resp => {
+                        this.$store.commit('addListing', resp.data.listing);
+                        window.location = '/find-loads'
+                    })
                 }
                 else {
                     this.$store.dispatch('setStep', 3)
                 }
-
             },
             prevStep() {
                 this.$store.dispatch('setStep', 1)

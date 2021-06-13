@@ -5,6 +5,7 @@ use Illuminate\Contracts\Session\Session;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/test', function () {
     App::setLocale('fr');
     dd(\App\CategoryProperty::find(1)->title);
+});
+
+Route::get("/storage/listings/{dir}/{name}",function ($dir, $name){
+
+    $file = Storage::disk('local')->get("public/listings/$dir/$name");
+    return (new Response($file, 200))
+        ->header('Content-Type', 'image/jpeg');
+
 });
 
 Route::view("/", "desktop.pages.index")->name("desktop.index");
@@ -258,14 +267,26 @@ Route::group(['middleware' => ['auth', 'role:admin'], "prefix" => "admin"], func
 Auth::routes();
 
 Route::post('/register-customer', \Auth\RegisterController::class . '@registerCustomer')->name("register-customer");
+Route::post('/register-customer-with-listing', \Auth\RegisterController::class . '@registerCustomerWithListing')->name("register-customer-with-listing");
 Route::post('/register-transporter', \Auth\RegisterController::class . '@registerTransporter')->name("register-transporter");
 Route::get('/logout', \Auth\LoginController::class . '@logout')->name("logout");
 
 
-Route::get('setlocale/{locale}', "HomeController@setLocale");
+
+
+Route::resource('category', 'CategoryController');
+
+Route::resource('subcategory', 'SubcategoryController');
+
+Route::resource('transporter', 'TransporterController');
+
+Route::resource('customer', 'CustomerController');
 
 Route::resource('profile', 'ProfileController');
-Route::resource('category', 'CategoryController');
-Route::resource('subcategory', 'SubcategoryController');
+
+Route::get('setlocale/{locale}', "HomeController@setLocale");
+
+
+
 
 
