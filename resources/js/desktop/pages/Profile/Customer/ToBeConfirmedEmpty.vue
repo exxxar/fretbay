@@ -19,7 +19,7 @@
                                     <h3 class="text-bold ng-binding">Ouuups, no listing to confirm at this time</h3>
                                     <p class="ng-binding">Once your listings are published, they will appear here to
                                         book a carrier/mover quote.</p>
-                                    <a href="" class="btn btn-primary ng-binding"">Request for quotation</a></div>
+                                    <a href="" class="btn btn-primary ng-binding">Request for quotation</a></div>
                             </div>
                         </div>
                     </div>

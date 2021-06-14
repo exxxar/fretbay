@@ -68,7 +68,7 @@ class User extends Authenticatable
         return $this->hasMany(Listing::class);
     }
 
-    public function profile()
+    /*public function profile()
     {
         return $this->hasOne(Profile::class, "id", "profile_id");
     }
@@ -81,5 +81,5 @@ class User extends Authenticatable
     public static function self()
     {
         return User::with(["profile", "profile.vehicles", "profile.verifications", "roles", "reviews"])->where("id", Auth::user()->id)->first();
-    }
+    }*/
 }

@@ -25,9 +25,8 @@
  {{--   <link rel="stylesheet" href="{{asset("/css/custom.css")}}">--}}
     <!-- Styles -->
     <link
-        href="{{ env("APP_DEBUG")?asset('css/desktop/app.css'):asset("css/desktop/app.min.css") }}?version={{env("APP_VERSION")}}"
+        href="{{ env("APP_DEBUG")?asset('/css/desktop/app.css'):asset("/css/desktop/app.min.css") }}?version={{env("APP_VERSION")}}"
         rel="stylesheet">
-
 
     @if (Auth::check())
         <meta name="user" content="{{ App\User::self() }}" />
@@ -38,7 +37,6 @@
 </head>
 <body>
 <div id="app">
-
     <preloader-component></preloader-component>
     @yield('content')
     <system-notification-component></system-notification-component>

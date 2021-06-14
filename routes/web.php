@@ -56,7 +56,6 @@ Route::view("/activity-listing", "desktop.pages.profile.customer.activity-listin
 Route::view("/listings", "desktop.pages.profile.customer.listings")->name("desktop.listings");
 
 //Роут на редактирование профиля заказчика
-Route::view("/profile-customer", "desktop.pages.profile.customer.profile")->name("desktop.customer-profile");
 Route::view("/to-be-confirmed-empty", "desktop.pages.profile.customer.to-be-confirmed-empty")->name("desktop.customer-to-be-confirmed-empty");
 Route::view("/to-be-confirmed", "desktop.pages.profile.customer.to-be-confirmed")->name("desktop.customer-to-be-confirmed");
 

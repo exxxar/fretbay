@@ -92,9 +92,9 @@
                                             </div>
                                             <span class="glyphicon"></span>
                                             <input type="search" placeholder="Search" class="from-control ng-hide">
-                                            <ui class="ui-select-choices ui-select-dropdown dropdown-menu">
+                                            <ul class="ui-select-choices ui-select-dropdown dropdown-menu">
                                                 <li class="ui-select-choices-group"></li>
-                                            </ui>
+                                            </ul>
                                         </div>
                                         <input type="text" class="form-control phone-field" placeholder="Phone" disabled="disabled" maxlength="10" :value="user.profile.telephone_number_1">
                                     </div>
@@ -119,9 +119,9 @@
                                             </div>
                                             <span class="glyphicon"></span>
                                             <input type="search" placeholder="Search" class="from-control ng-hide">
-                                            <ui class="ui-select-choices ui-select-dropdown dropdown-menu">
+                                            <ul class="ui-select-choices ui-select-dropdown dropdown-menu">
                                                 <li class="ui-select-choices-group"></li>
-                                            </ui>
+                                            </ul>
                                         </div>
                                         <input type="text" class="form-control phone-field" placeholder="Phone" maxlength="10" :value="user.profile.telephone_number_2">
                                     </div>
