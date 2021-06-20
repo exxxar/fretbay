@@ -21,6 +21,7 @@ class CreateCategoriesTable extends Migration
             $table->integer('position')->default(0);
             $table->boolean('is_active')->default(true);
             $table->string('mode');
+            $table->string('additional_menu_title');
             $table->softDeletes();
             $table->timestamps();
         });
