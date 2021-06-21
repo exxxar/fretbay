@@ -1,31 +1,3 @@
-created:
-    - database/factories/VerificationApplicationFactory.php
-    - database/factories/ListingFactory.php
-    - database/factories/QuoteFactory.php
-    - database/factories/CategoryFactory.php
-    - database/factories/SubcategoryFactory.php
-    - database/factories/ObjectFactory.php
-    - database/factories/CategoryPropertyFactory.php
-    - database/migrations/2021_06_07_131251_create_verification_applications_table.php
-    - database/migrations/2021_06_07_131252_create_listings_table.php
-    - database/migrations/2021_06_07_131253_create_quotes_table.php
-    - database/migrations/2021_06_07_131254_create_categories_table.php
-    - database/migrations/2021_06_07_131255_create_subcategories_table.php
-    - database/migrations/2021_06_07_131256_create_objects_table.php
-    - database/migrations/2021_06_07_131257_create_category_properties_table.php
-    - app/VerificationApplication.php
-    - app/Listing.php
-    - app/Quote.php
-    - app/Category.php
-    - app/Subcategory.php
-    - app/Object.php
-    - app/CategoryProperty.php
-    - database/seeds/VerificationApplicationSeeder.php
-    - database/seeds/ListingSeeder.php
-    - database/seeds/QuoteSeeder.php
-    - database/seeds/CategorySeeder.php
-    - database/seeds/SubcategorySeeder.php
-    - database/seeds/ObjectSeeder.php
 models:
     VerificationApplication: { documents: json, images: json, status: 'string:2000', comment: longtext, additional_properties: json, softdeletes: softDeletes }
     Listing: { title: longtext, articles: json, place_of_loading: json, place_of_delivery: json, shipping_date_from: datetime, shipping_date_to: datetime, unshipping_date_from: datetime, unshipping_date_to: datetime, messages: json, additional_info: longtext, images: json, status: string, softdeletes: softDeletes, relationships: { hasOne: Category, hasMany: Quote, belongsTo: User } }
@@ -34,3 +6,4 @@ models:
     Subcategory: { title: longtext, image: string, position: integer, is_active: boolean, softdeletes: softDeletes, relationships: { hasMany: Object, belongsTo: Category } }
     Object: { title: longtext, volume: double, image: string, position: integer, is_active: boolean, softdeletes: softDeletes, relationships: { belongsTo: 'Category, Subcategory' } }
     CategoryProperty: { title: longtext, type: 'string:500', relationships: { belongsTo: Category } }
+    Reviews: { id: id, title: 'stirng:200', subtitle: 'string:200', description: longtext, author_id: 'id:users', order_id: 'id:orders', comment_position: integer, published_at: 'nullable timestamp' }

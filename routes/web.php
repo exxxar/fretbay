@@ -54,15 +54,14 @@ Route::view("/register-customer", "desktop.pages.register-customer")->name("desk
 Route::view("/profile-personal-info", "desktop.pages.profile.profile-personal-info")->name("desktop.profile-personal-info");
 Route::view("/activity-listing", "desktop.pages.profile.customer.activity-listing")->name("desktop.activity-listing");
 Route::view("/listings", "desktop.pages.profile.customer.listings")->name("desktop.listings");
+Route::view("/listing-details", "desktop.pages.profile.customer.listing-details")->name("desktop.listing-details");
 
-//Роут на редактирование профиля заказчика
-Route::view("/to-be-confirmed-empty", "desktop.pages.profile.customer.to-be-confirmed-empty")->name("desktop.customer-to-be-confirmed-empty");
-Route::view("/to-be-confirmed", "desktop.pages.profile.customer.to-be-confirmed")->name("desktop.customer-to-be-confirmed");
 
+Route::view("/to-be-confirmed", "desktop.pages.profile.customer.to-be-confirmed")->name("to-be-confirmed");
 Route::group(['middleware' => ['auth', 'role:transporter'], "prefix" => "transporter"], function () {
     Route::group(["prefix" => "profile"], function () {
 
-        Route::view("/", "desktop.pages.profile.transporter.index")->name("transporter.index");
+        //Route::view("/transporter-index", "desktop.pages.profile.transporter.index")->name("transporter.index");
         Route::view("/my-account", "desktop.pages.profile.transporter.my-account")->name("transporter-account");
         Route::view("/my-company", "desktop.pages.profile.transporter.my-company")->name("transporter-company");
         Route::view("/legal-documents", "desktop.pages.profile.transporter.legal-documents")->name("transporter-legal-documents");
@@ -83,6 +82,8 @@ Route::group(['middleware' => ['auth', 'role:transporter'], "prefix" => "transpo
 Route::group(['middleware' => ['auth', 'role:customer'], "prefix" => "customer"], function () {
     Route::group(["prefix" => "profile"], function () {
         Route::view("/", "desktop.pages.profile.customer.index")->name("customer-account");
+        Route::view("/to-be-confirmed-empty", "desktop.pages.profile.customer.to-be-confirmed-empty")->name("to-be-confirmed-empty");
+        Route::view("/to-be-confirmed", "desktop.pages.profile.customer.to-be-confirmed")->name("to-be-confirmed");
     });
 });
 
@@ -289,3 +290,10 @@ Route::get('setlocale/{locale}', "HomeController@setLocale");
 
 
 
+
+
+Route::resource('category', 'CategoryController');
+
+Route::resource('subcategory', 'SubcategoryController');
+
+Route::resource('profile', 'ProfileController');

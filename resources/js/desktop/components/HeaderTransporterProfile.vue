@@ -1,6 +1,6 @@
 <template>
     <header>
-        <div class="navbar-transporter navbar-fixed-top navbar navbar-default col-xs-center col-sm-center">
+        <div class="navbar-transporter navbar-fixed-top navbar navbar-default col-xs-center col-sm-center header-transporter-profile">
             <span class="nav-overlay">&nbsp;</span>
             <div class="container-fluid">
                 <div>

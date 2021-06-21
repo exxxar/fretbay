@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\SubcategoryStoreRequest;
 use App\Http\Requests\SubcategoryUpdateRequest;
-use  App\Models\Subcategory;
+use App\Subcategory;
 use Illuminate\Http\Request;
 
 class SubcategoryController extends Controller
@@ -15,15 +15,9 @@ class SubcategoryController extends Controller
      */
     public function index(Request $request)
     {
-        if ($request->ajax()) {
-            $subcategories = Subcategory::all();
-            return response()->json([
-                'subcategories' => $subcategories
-            ]);
-        }
         $subcategories = Subcategory::all();
 
-        return view('admin.pages.subcategories.index', compact('subcategories'));
+        return view('subcategory.index', compact('subcategories'));
     }
 
     /**
@@ -32,7 +26,7 @@ class SubcategoryController extends Controller
      */
     public function create(Request $request)
     {
-        return view('admin.pages.subcategories.create');
+        return view('subcategory.create');
     }
 
     /**
@@ -41,10 +35,11 @@ class SubcategoryController extends Controller
      */
     public function store(SubcategoryStoreRequest $request)
     {
-        Subcategory::create($request->validated());
+        $subcategory = Subcategory::create($request->validated());
 
+        $request->session()->flash('subcategory.id', $subcategory->id);
 
-        return response()->noContent();
+        return redirect()->route('subcategory.index');
     }
 
     /**
@@ -52,12 +47,9 @@ class SubcategoryController extends Controller
      * @param \App\Subcategory $subcategory
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request, $id)
+    public function show(Request $request, Subcategory $subcategory)
     {
-
-        $subcategory = Subcategory::find($id);
-
-        return view('admin.pages.subcategories.show', compact('subcategory'));
+        return view('subcategory.show', compact('subcategory'));
     }
 
     /**
@@ -65,11 +57,9 @@ class SubcategoryController extends Controller
      * @param \App\Subcategory $subcategory
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request, $id)
+    public function edit(Request $request, Subcategory $subcategory)
     {
-        $subcategory = Subcategory::find($id);
-
-        return view('admin.pages.subcategories.edit', compact('subcategory'));
+        return view('subcategory.edit', compact('subcategory'));
     }
 
     /**
@@ -77,14 +67,13 @@ class SubcategoryController extends Controller
      * @param \App\Subcategory $subcategory
      * @return \Illuminate\Http\Response
      */
-    public function update(SubcategoryUpdateRequest $request, $id)
+    public function update(SubcategoryUpdateRequest $request, Subcategory $subcategory)
     {
-
-        $subcategory = Subcategory::find($id);
-
         $subcategory->update($request->validated());
 
-        return response()->noContent();
+        $request->session()->flash('subcategory.id', $subcategory->id);
+
+        return redirect()->route('subcategory.index');
     }
 
     /**
@@ -92,20 +81,10 @@ class SubcategoryController extends Controller
      * @param \App\Subcategory $subcategory
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request, $id)
+    public function destroy(Request $request, Subcategory $subcategory)
     {
-
-        $subcategory = Subcategory::find($id);
         $subcategory->delete();
 
-        return response()->noContent();
-    }
-
-    public function restore(Request $request, $id)
-    {
-
-        Subcategory::withTrashed()->where("id", $id)->restore();
-
-        return response()->noContent();
+        return redirect()->route('subcategory.index');
     }
 }

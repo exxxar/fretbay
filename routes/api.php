@@ -60,7 +60,3 @@ Route::group(["prefix" => "locations"], function () {
         Route::group(["prefix"=>"listing"],function() {
             Route::post('/', 'ListingController@store');
         });
-
-
-
-

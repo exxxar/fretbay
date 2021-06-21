@@ -1,6 +1,6 @@
 <template>
     <header>
-        <div class="navbar-fixed-top navbar navbar-default col-xs-center col-sm-center">
+        <div class="navbar-fixed-top navbar navbar-default col-xs-center col-sm-center header-customer-profile">
             <span class="nav-overlay">&nbsp;</span>
             <div class="container">
                 <div>

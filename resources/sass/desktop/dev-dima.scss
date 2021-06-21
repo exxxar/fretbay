@@ -1,0 +1,1886 @@
+@import "colors";
+@import "fonts";
+
+.pull-right {
+    float: right!important;
+}
+
+.pull-left {
+    float: left!important;
+}
+
+.text-danger {
+    color: #f54949 !important;
+}
+/*
+.visible-lg, .visible-md, .visible-sm, .visible-xs {
+    display: none !important;
+}
+*/
+.text-bold {font-weight: 700 !important;}
+
+
+.visible-lg, .visible-md, .visible-sm, .visible-xs {
+    display: block !important;
+}
+
+.hidden-lg, .hidden-md, .hidden-sm, .hidden-xs {
+    display: none !important;
+}
+
+.mt-0 {
+    margin-top: 0 !important;
+}
+
+.mb-15 {
+    margin-bottom: 15px !important;
+}
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert>p, .alert>ul {
+    margin-bottom: 0;
+}
+
+.nav>li {
+    position: relative;
+    display: block;
+
+    &>a {
+        position: relative;
+        display: block;
+        padding: 10px 15px;
+    }
+}
+
+.nav-tabs>li {
+    float: left;
+    margin-bottom: -1px;
+
+    &>a {
+        margin-right: 2px;
+        line-height: 1.42857143;
+        border: 1px solid transparent;
+        border-radius: 4px 4px 0 0;
+    }
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    color: #555;
+    cursor: default;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+}
+
+
+
+//Customer-profile
+
+
+
+.navbar-default {
+    background: $white;
+
+    & .navbar-toggle {
+        float: left;
+        display: none;
+        position: relative;
+        padding: 9px 10px;
+        margin-top: 8px;
+        margin-right: 15px;
+        margin-bottom: 8px;
+        background-color: transparent;
+        background-image: none;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+
+    & .navbar-nav {
+        width:  auto;
+        margin-right:  inherit;
+
+
+
+        &> .dropdown-profile {
+            margin: 17px 0 8px 15px;
+
+            a {
+                padding: 0;
+                color: #3D4E60;
+            }
+        }
+
+        & > .notification-menu-toggle {
+            margin: 20px 15px 8px 20px;
+
+            a {
+                padding: 0;
+                border: none;
+            }
+
+            span {
+                position: relative;
+            }
+        }
+
+        & > li {
+            float: left;
+            position: relative;
+            display: block;
+
+            & > a {
+                background: none;
+                font-size: 16px;
+                text-align: center;
+                margin: 0;
+                padding: 24px 15px 22px;
+                color: #3D4E60;
+
+                &:hover {
+                    text-decoration: none;
+                }
+
+                img {
+                    max-width: none;
+                }
+            }
+            &.request-quote {
+                margin-top: 16px;
+                min-width: 172px;
+
+                & > a {
+                    font-family: $Lato;
+                    color: #fff;
+                    background-color: #f54949;
+                    border-bottom-color: rgba(0, 0, 0, 0.15);
+                    transition: all .3s;
+
+                    border-radius: 50px;
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    padding-top: 7px;
+                    padding-bottom: 7px;
+                    line-height: 1.42857;
+                    border-bottom: 4px solid rgba(0, 0, 0, 0.09);
+                    -webkit-transition: all 0.3s linear;
+                    -moz-transition: all 0.3s linear;
+                    -ms-transition: all 0.3s linear;
+                    -o-transition: all 0.3s linear;
+                    transition: all 0.3s linear;
+                }
+            }
+            & > .dropdown-menu {
+                margin-top: 0;
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+                right: 0;
+                left: auto;
+            }
+        }
+    }
+
+    & .navbar-right {
+        float: right;
+    }
+
+    & .right-navigation-menu {
+        flex-direction: row;
+    }
+
+    .navbar-collapse, .navbar-form {
+        border-color: #e7e7e7;
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+.navbar-nav {
+    float: left;
+    margin: 0;
+
+    & > li {
+        float: left;
+        position: relative;
+    }
+}
+
+.navbar-transporter.navbar {
+    padding: 0 15px;
+    font-family: $Lato;
+
+    .navbar-nav {
+        &>.dropdown-profile {
+            margin: 0;
+            margin-left: 10px;
+
+            a {
+                position: relative;
+                border-left: 1px solid #ccc;
+                padding: 19px 0 17px 25px;
+            }
+
+            .arrow-down {
+                width: 12px;
+                margin-left: 5px;
+            }
+        }
+    }
+
+    .user-avatar {
+        display: inline-block;
+        vertical-align: middle;
+        width: 35px;
+        height: 35px;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-image: url("https://fretbay.com/fr/frv2/assets/images/common/avatar/transporter/7.svg");
+    }
+}
+
+#navbar-main {
+    float: left;
+
+    & > .navbar-nav {
+        float: left;
+        margin: 0;
+        flex-direction: row;
+
+        &>.dropdown-toggle:after {display: none;}
+    }
+
+    .badge {
+        font-weight: normal;
+        font-size: 11px;
+        background: #e9ecf0;
+        color: #3D4E60;
+        border-radius: 10px;
+        display: inline-block;
+        min-width: 10px;
+        padding: 3px 7px;
+        line-height: 1;
+        text-align: center;
+        white-space: nowrap;
+    }
+}
+
+.notification-menu {
+    width: 340px;
+    padding: 6px;
+    overflow: hidden;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+.red-dot-badge {
+    position: relative;
+}
+#navbar-main .dropdown .dropdown-toggle:after,
+.dropdown-profile .dropdown-toggle:after,
+.notification-menu-toggle .dropdown-toggle:after {
+    display: none;
+}
+
+.dropdown-toggle>span>.notification-icon {
+    display: inline-block;
+    background-image: url(https://fretbay.com/en/assets/images/common/icons/general/bell.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: auto 100%;
+    width: 28px;
+    height: 28px;
+    margin: 0;
+}
+
+.header-user-img {
+    width: 35px;
+    height: 35px;
+    margin-right: 5px;
+    border-radius: 50%;
+}
+
+.hidden-lg {
+    display: none;
+}
+
+.navbar-toggle .icon-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+    background-color: #888;
+}
+
+.custom-nav-btn .icon-bar {
+    width: 22px;
+    transition: all 0.2s;
+}
+
+.custom-nav-btn .top-bar {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+}
+
+.custom-nav-btn.collapsed .top-bar {
+    transform: rotate(0);
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+
+.navbar {
+    min-height: 70px;
+    border: none;
+    box-shadow: 0 1px 4px rgba(0,0,0, 0.2);
+    margin: inherit;
+    width: auto;
+
+    .nav-overlay {
+        display: none;
+    }
+
+    .container, .container-fluid {
+        .navbar-header {
+            margin-right: 0;
+            margin-left: 0;
+            float: left;
+
+            .navbar-brand {
+                padding: 0;
+            }
+        }
+    }
+
+    .container, .container-fluid {
+        & .navbar-brand {
+            margin-left: -15px;
+            color: #777;
+            padding-top: 3px;
+            padding-bottom: 10px;
+            float: left;
+            height: 50px;
+            padding: 15px;
+            font-size: 18px;
+            line-height: 20px;
+
+            img {
+                width: 170px;
+                display: block;
+            }
+        }
+    }
+}
+
+.header-customer-profile {
+    .container, .container-fluid {
+        & .navbar-brand {
+            img {
+                max-height: 60px;
+            }
+        }
+    }
+}
+
+.header-transporter-profile {
+    .container, .container-fluid {
+        & .navbar-brand {
+            img {
+                max-height: 50px;
+            }
+        }
+    }
+}
+
+.to-be-confirmed {
+    div {
+        display: block;
+    }
+
+    .badge {
+        display: inline-block;
+        min-width: 10px;
+        padding: 3px 7px;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 1;
+        color: #fff;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        background-color: #777;
+        border-radius: 10px;
+    }
+}
+
+.profile-page-content {
+    margin: 20px 0;
+    min-height: 80vh;
+    font-family: $Lato;
+
+    button.btn {
+        border-radius: 50px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        line-height: 1.42857;
+        border-bottom: 4px solid rgba(0, 0, 0, 0.09);
+        -webkit-transition: all 0.3s linear;
+        -moz-transition: all 0.3s linear;
+        -ms-transition: all 0.3s linear;
+        -o-transition: all 0.3s linear;
+        transition: all 0.3s linear;
+    }
+
+    .content-box-padding {
+        padding: 20px 30px;
+        background: $white;
+
+        .content-overlay-outer {
+            position: relative;
+            padding: 0 0 10px;
+
+            .banner {
+                position: relative;
+                padding: 0 35px 20px;
+                background: url(https://fretbay.com/en/assets/images/shipper/profile/bg-profile.jpg) no-repeat center top;
+
+                .username-wrapper {
+
+                    .member-since {
+                        color: #888;
+                    }
+                }
+
+                .logout {
+
+                    img {
+                        width: 24px;
+                    }
+
+                    span {
+                        display: inline-block;
+                    }
+                }
+            }
+
+            .notification-section {
+
+                .section-title {
+                    margin: 15px 40px 10px 0;
+                    float:left;
+                    font-size: 14px;
+                    color: #3D4E60;
+                }
+
+                label.vswitch {
+                    padding: 0;
+                    margin-right: 60px;
+
+                    input:checked ~ span {
+                        font-weight: 700;
+                    }
+
+                    input ~ span {
+                        padding-left: 60px;
+                        position: relative;
+                        display: inline-block;
+                        line-height: 1.2;
+
+                        em {
+                            width: 48px;
+                            height: 24px;
+                            border: none;
+                            background: #bfe1f7;
+                            border-radius: 40px;
+                            position: absolute;
+                            top: 9px;
+                            left: 0;
+                            vertical-align: top;
+                            margin-top: -12px;
+
+
+                        }
+                    }
+                }
+
+                label.vcheck {
+                    input:checked ~ span {
+                        color: #1f2b33;
+
+                        em {
+                            &:before {
+                                right: 1px;
+                                left: auto;
+                                background: #0083fe;
+                            }
+                        }
+                    }
+
+                    input ~ span {
+                        color: #879199;
+                        font-size: 14px;
+
+                        em {
+                            &:before {
+                                width: 20px;
+                                height: 20px;
+                                margin: 1px 1px 1px 0;
+                                left: 2px;
+                                top: 1px;
+                                background: #a1c9e6;
+                                border-radius: 50%;
+                                position: absolute;
+                                display: block;
+                                content: "";
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .profile-form {
+            position: relative;
+            border-bottom: 1px solid #f0f1f5;
+            margin-bottom:  10px;
+
+            &:after {
+                clear: both;
+            }
+
+            .pull-sm-left {
+                float: left;
+            }
+
+            .pull-sm-right {
+                float: right;
+            }
+
+            .section-title {
+                font-size: 14px;
+                margin-bottom: 20px;
+                color: #3D4E60;
+            }
+
+
+            .account-type-label {
+                box-sizing: border-box;
+                padding: 0 20px;
+                margin-bottom: 15px;
+
+                label {
+                    &:first-child {
+                        border-radius: 50px 0 0 50px;
+                    }
+                    &:last-child {
+                        border-radius: 0 50px 50px 0;
+                    }
+                }
+            }
+
+            .btn-group{
+
+                .btn:first-child {
+                    margin-left: 0;
+                }
+
+                .vcheck {
+                    border: none;
+                    box-shadow:  none;
+                    margin-right: 0;
+                    padding: 3px 20px;
+                    background: #f0f0f0;
+
+
+
+                    &.active {
+                        background: #0083fe;
+
+                        span {
+                            color: $white;
+                            font-weight: 700;
+                        }
+                    }
+
+                    span {
+                        color: #a1bcd0;
+                        font-weight: 400;
+                    }
+                }
+            }
+
+            .form-group {
+                .form-control {
+                    background-color: $white;
+                    color: #1f2b33;
+                    border: 1px solid #e7e9f0;
+                    border-radius: 4px;
+                    box-shadow: none;
+                    transition: none;
+                    padding: 10px 15px;
+
+                    &:focus {
+                        border-color: #66afe9;
+                    }
+                    &[disabled] {
+                        background: #cadae5;
+                        border-color: #cadae5;
+                    }
+
+                }
+                .input-has-icon-left {
+                    input {
+                        padding-left: 45px;
+                    }
+
+                    .rel-icon {
+                        position: absolute;
+                        top: 50%;
+                        display: block;
+                        line-height: 1;
+                        left: 5px;
+                        margin-top: -15px;
+
+                        img {
+                            width: 30px;
+                            height: 30px;
+                            display: block;
+                        }
+                    }
+                }
+
+                .custom-phone-menu-wrapper {
+                    position: relative;
+
+                    .custom-phone-menu {
+                        position: static;
+                        padding: 0;
+                        height: auto;
+
+                        .dropdown {
+                            position: absolute;
+                            left: 0;
+                            z-index: 1;
+
+                            .glyphicon {
+                                position: absolute;
+                                right: 0;
+                                padding: 8px 27px;
+                            }
+
+                            .ui-select-match {
+                                .ui-select-toggle {
+                                    border: none;
+                                    z-index: -1;
+                                    background-color: inherit;
+                                    padding-right: 30px;
+                                    padding-left: 15px;
+
+                                    .text-muted {
+                                        display: none;
+                                    }
+
+                                    .ui-select-match-text {
+                                        line-height: 1.5;
+                                        padding-right: 0;
+
+                                        span {
+                                            width: 20px;
+                                            height: 1em;
+                                            margin-right: 10px;
+                                            overflow: hidden;
+                                            display: inline-block;
+                                            vertical-align: middle;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        input[type=search] {display: none;}
+                    }
+
+                    .phone-field {
+                        padding-left: 100px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse {
+    max-height: 340px;
+}
+
+
+
+// To-be-confirmed
+
+
+
+@import "fonts";
+@import "colors";
+
+.content-title {
+    min-height: 40px;
+    margin-bottom: 15px;
+
+    h3 {
+        padding-top: 5px;
+        color: #3d4d60;
+        font-family: $Lato;
+        text-align: left;
+    }
+}
+//To be confirmed empty page
+.content-box {
+    background: $white;
+
+    .empty-case {
+        height: 70vh;
+        text-align: center;
+        color: #879199;
+        padding-top: 40px;
+        padding-bottom: 40px;
+
+        .empty-case-inner {
+            max-width: 400px;
+            margin: 0 auto;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            p {
+                padding-right: 0;
+                line-height: 1.5;
+            }
+            img {
+                width: 250px;
+                height: 115px;
+                display: block;
+                margin: 0 auto;
+                border: 0;
+            }
+        }
+
+        h3 {
+            color: #3D4E60;
+            font-size: 18px;
+        }
+    }
+}
+//To be confirmed list page
+.default-listing {
+    padding: 0;
+    margin: 0;
+    font-family: $Lato;
+
+    & li {
+        position: relative;
+        display: table;
+        height: 200px;
+        width: 100%;
+        background: #fff;
+        margin-bottom: 10px;
+        border-left: 10px solid transparent;
+        font-size: 16px;
+        table-layout: fixed;
+        transition: border 0.5s;
+
+        &>div {
+            padding: 30px 25px;
+            vertical-align: middle;
+            display: table-cell;
+            border-left: 1px solid #f4f5f9;
+
+            &:first-child {
+                border-left: 0;
+            }
+        }
+
+        .listing-transporter {
+            width: 120px;
+            text-align: center;
+            font-size: 12px;
+
+            p {
+                color: #879199;
+                margin: 0 0 10px;
+            }
+        }
+
+        .link-overlay {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 2;
+        }
+
+        .listing-title {
+            text-align: left;
+
+            & .reference-number {
+                font-size: 14px;
+                margin-bottom: 5px;
+
+                & .text-mute {
+                    display: inline-block;
+                    margin-right: 5px;
+                }
+            }
+
+            & p {
+                font-size: 20px;
+            }
+        }
+
+        .listing-address {
+            padding-left: 55px;
+
+            .address {
+                display: block;
+                margin-bottom: 5px;
+            }
+
+            .address-with-arrow {
+                background-image: url("https://fretbay.com/en/assets/images/common/icons/general/icon-loading.svg");
+                background-repeat: no-repeat;
+                background-position: left 5px;
+                background-size: 22px auto;
+                padding-left: 30px;
+
+                &.arrow-delivery {
+                    background-image: url("https://fretbay.com/en/assets/images/common/icons/general/icon-delivery.svg");
+                }
+            }
+        }
+
+        .bid-message {
+            width: 200px;
+        }
+
+        .listing-bids {
+            font-size: 14px;
+            margin-bottom: 5px;
+
+            span {
+                display: inline-block;
+                vertical-align: middle;
+            }
+        }
+
+        .listing-messages, .listing-bids {
+            max-width: 130px;
+            margin: 0 auto;
+            color: #3D4E60;
+            font-size: 14px;
+
+            .icon {
+                position: relative;
+
+                img {
+                    width: 20px;
+                    height: 20px;
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+
+}
+
+.content-box-rounded {
+    border-radius: 12px;
+}
+
+.content-box-shadow {
+    box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.12);
+}
+
+.category-icon {
+    max-width: 85px;
+    height: auto;
+}
+
+.calendar-icon {
+    background: url("https://fretbay.com/en/assets/images/common/icons/general/calendar.svg") no-repeat center center;
+    width: 15px;
+    height: 20px;
+    vertical-align: top;
+    display: inline-block;
+    margin-left: 2px;
+    margin-right: 10px;
+}
+
+.listing-title p {
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.tags .badge {
+    font-size: 12px;
+    margin: 0 10px 10px 0;
+    padding: 5px 14px;
+    transition: all 0.3s;
+    color: #9c9c9c;
+    font-weight: normal;
+    vertical-align: middle;
+
+    &.badge-gray {
+        background-color: #f5f5f5;
+    }
+}
+
+
+
+// Offer
+
+
+.clearfix {
+    clear: both;
+}
+
+.content-left {
+    width: 60%;
+    margin-right: 2%;
+    float: left;
+}
+
+.content-right {
+    width: 37%;
+    float: right;
+}
+
+.offer-page {
+    font-size: 14px;
+    color: #3D4E60;
+    font-family: $Lato;
+
+    span {
+        display: inline;
+    }
+
+    .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+        font-family: inherit;
+        font-weight: 500;
+        line-height: 1.1;
+        color: inherit;
+    }
+
+    .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+        color: #3D4E60;
+    }
+
+    .h4, h4 {
+        font-size: 18px;
+    }
+
+    .h4, .h5, .h6, h4, h5, h6 {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .btn, .navbar-default .navbar-nav > .request-quote > a {
+        border-radius: 50px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        line-height: 1.42857;
+        border-bottom: 4px solid rgba(0, 0, 0, 0.09);
+        -webkit-transition: all 0.3s linear;
+        -moz-transition: all 0.3s linear;
+        -ms-transition: all 0.3s linear;
+        -o-transition: all 0.3s linear;
+        transition: all 0.3s linear;
+    }
+
+    .btn-primary {
+        color: #fff;
+        background-color: #0083fe;
+        border-bottom-color: rgba(0, 0, 0, 0.15);
+        transition: all 0.3s;
+        min-width: auto;
+    }
+
+    .btn-theme {
+        color: #fff;
+        background-color: #3d4d60;
+        border-bottom-color: rgba(0, 0, 0, 0.5) !important;
+        transition: all 0.3s;
+    }
+
+    .box-primary .btn, .box-primary .navbar-default .navbar-nav > .request-quote > a, .navbar-default .box-primary .navbar-nav > .request-quote > a {
+        position: absolute;
+        top: 50%;
+        right: 29px;
+        margin-top: -19px;
+    }
+
+    .text-danger {
+        color: #f54949 !important;
+    }
+
+    .pull-sm-right {
+        float: right !important;
+    }
+
+    .mb-10 {
+        margin-bottom: 10px;
+    }
+
+    .text-small {
+        font-size: 12px;
+    }
+    .job-info-top {
+        padding: 9px 6px 0 0;
+        margin-bottom: 15px;
+
+        .views-info {
+            img {
+                width: 20px;
+                opacity: 0.5;
+                margin-right: 2px;
+            }
+        }
+
+        .date-info {
+            display: inline-block;
+            margin-left: 25px;
+        }
+    }
+
+    .page-back-btn {
+        background: #e4e4e4;
+        color: #000;
+        position: relative;
+        border-radius: 8px;
+        margin-top: -9px;
+        display: inline-block;
+        padding: 7px 20px;
+        line-height: 1.42857;
+        border-bottom: 4px solid rgba(0, 0, 0, 0.09);
+        -webkit-transition: all 0.3s linear;
+        -moz-transition: all 0.3s linear;
+        -ms-transition: all 0.3s linear;
+        -o-transition: all 0.3s linear;
+        transition: all 0.3s linear;
+
+        &:hover {
+            background: #d1d1d1;
+            color: #333;
+            text-decoration: none;
+        }
+
+        img {
+            width: 18px;
+            margin-right: 8px;
+        }
+    }
+
+    .content-box {
+        box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    }
+
+    .content-box-padding {
+        padding: 30px 25px;
+    }
+
+    .with-category-icon {
+        position: relative;
+        padding-left: 68px;
+        color: #3D4E60;
+        text-align: left;
+
+        &:before {
+            background-size: 100% auto;
+            content: '';
+            position: absolute;
+            top: 1px;
+            left: 0;
+            background-repeat: no-repeat;
+            width: 48px;
+            height: 48px;
+            opacity: 0.6;
+        }
+    }
+
+    .reference-number {
+        display: block;
+        font-size: 14px;
+        padding-top: 10px;
+    }
+
+    .category-2:before {
+        background-image: url(https://fretbay.com/fr/frv2/assets/images/common/icons/category/dark/2.svg);
+    }
+
+    .mapboxgl-map {
+        height: 300px;
+        font: 12px/20px Helvetica Neue,Arial,Helvetica,sans-serif;
+        overflow: hidden;
+        position: relative;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+        img {
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+
+    .map-bottom {
+        background: #f5f5f5;
+        padding: 10px 25px;
+
+        p {
+            margin-bottom: 0;
+        }
+    }
+
+    .map-wrapper {
+
+        .map-distance {
+            display: inline-block;
+            margin-right: 10px;
+            font-size: 14px;
+        }
+
+        .fa {
+            opacity: 0.5;
+            margin-right: 3px;
+        }
+    }
+
+    .job-info {
+        padding: 24px 15px 24px 35px;
+
+        .info-loading {
+            margin-bottom: 30px;
+        }
+
+        &.with-markers {
+            .info-loading {
+                background: url(https://fretbay.com/fr/frv2/assets/images/common/icons/general/marker-loading.svg) no-repeat;
+                background-size: 20px auto;
+            }
+
+            .info-delivery {
+                background: url(https://fretbay.com/fr/frv2/assets/images/common/icons/general/marker-delivery.svg) no-repeat;
+                background-size: 20px auto;
+            }
+        }
+
+        .address {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .info-delivery {
+            margin-bottom: 10px;
+        }
+    }
+
+    .job-info .info-loading, .job-info .info-delivery {
+        position: relative;
+        padding-left: 30px;
+    }
+
+    .related-images {
+        margin: 0 -1% 50px;
+
+        li {
+            position: relative;
+            width: 18%;
+            padding-top: 18%;
+            float: left;
+            margin: 0 1%;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    }
+
+    .demenagement-info .volume {
+        margin-right: 62px;
+        font-size: 18px;
+    }
+
+    .volume-articles {
+        padding-top: 15px;
+        margin-bottom: 30px;
+
+        .title {
+            display: block;
+            margin-bottom: 10px;
+        }
+    }
+
+    .list-inline>li {
+        display: inline-block;
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+
+    .tags li {
+        background: #f5f5f5;
+        font-size: 12px;
+        font-weight: 700;
+        border-radius: 100px;
+        margin: 0 3px 6px;
+        padding: 4px 15px 5px;
+    }
+
+    .tags .title {
+        background: none;
+        font-size: 18px;
+        border-radius: 0;
+        padding: 4px 0 0;
+    }
+
+    .demenagement-info .formula {
+        padding-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .custom-alert {
+        background: #ffc;
+    }
+
+    .alert {
+        border: none;
+    }
+
+    .other-detail {
+        padding: 30px 0;
+    }
+
+    .tabs-wrapper {
+        position: relative;
+    }
+
+    .tab-pane {
+         height: 77vh;
+         overflow: auto;
+     }
+
+    .content-right .inner-wrapper-sticky {
+        box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    }
+
+    a, a:hover, .notification-menu a.has-notification, .page-tabs > li.active > a:hover, .page-tabs > li.active > a:focus, a:focus {
+        text-decoration: none;
+        outline: 0;
+    }
+
+    .tab-links {
+        border-bottom: none;
+
+        li {
+            width: 50%;
+            margin-bottom: 0;
+
+            & > a {
+                background: #f3f3f3;
+                display: block;
+                color: #3D4E60;
+                font-size: 24px;
+                border: none;
+                margin: 0;
+                padding: 20px;
+                font-weight: 400;
+                text-align: center;
+                border-radius: 0;
+            }
+
+            &.active > a {
+                background: #fff;
+                border: none;
+                font-weight: 900;
+            }
+        }
+    }
+
+    .nav>li>a:focus, .nav>li>a:hover {
+        text-decoration: none;
+        background-color: #eee;
+    }
+
+    .nav-tabs>li>a:hover {
+        border-color: #eee #eee #ddd;
+    }
+
+    .tab-links > li.active > a:hover, .notification-menu .tab-links > li.active > a.has-notification, .page-tabs.tab-links > li.active > a:focus, .tab-links > li.active > a:focus {
+        background: #fff;
+        border: none;
+    }
+
+    .tab-content {
+        padding: 25px 0 0;
+    }
+
+    .tab-content-1 {
+        padding: 0 25px;
+    }
+
+    .first-screen {
+        background: #fff;
+        position: relative;
+        height: 100%;
+        z-index: 1;
+    }
+
+    .custom-active {
+        display: block;
+    }
+
+    .carrier-title {
+        line-height: 1.5;
+        padding: 0 28px;
+        margin-bottom: 20px;
+    }
+
+    .box-primary {
+        position: relative;
+        background: #e5f2ff;
+        margin-bottom: 11px;
+        border-radius: 8px;
+        padding: 13px 150px 14px 29px;
+        color: #000;
+    }
+
+    .bids-list {
+        margin-top: 20px;
+
+        li {
+            display: table;
+            width: 100%;
+            margin-bottom: 5px;
+            border-bottom: 2px solid #ebebeb;
+            padding: 15px 0;
+            text-align: center;
+
+            &:first-child {
+                border-top: 2px solid #ebebeb;
+            }
+
+            &>div {
+                display: table-cell;
+                padding: 0 13px;
+                vertical-align: middle;
+            }
+        }
+
+        .profile-info {
+            width: 200px;
+            position: relative;
+            padding-left: 50px;
+
+            img {
+                height: 24px;
+                position: absolute;
+                left: 4px;
+                top: 50%;
+                margin-top: -12px;
+            }
+
+            .username {
+                color: #404e5e;
+            }
+        }
+
+        .rating-bar {
+            display: inline-block;
+
+            .star {
+                width: 12px;
+                height: 12px;
+                margin: 0 1px;
+            }
+        }
+
+        .td-price {
+            width: 200px;
+        }
+
+        .price {
+            display: block;
+            font-size: 30px;
+            line-height: 1;
+        }
+    }
+
+    .rating-bar {
+        display: inline-block;
+
+        .star {
+            width: 20px;
+            display: inline-block;
+            height: 20px;
+            background: url(https://fretbay.com/fr/frv2/assets/images/common/icons/rating/star-off.svg) no-repeat center center;
+            margin: 0 2px;
+
+            &.filled {
+                background-image: url(https://fretbay.com/fr/frv2/assets/images/common/icons/rating/star.svg);
+            }
+        }
+    }
+}
+
+
+
+// Listing details
+
+
+
+.listing-details {
+    font-size: 14px;
+    font-family: $Lato;
+
+    span {
+        display: inline;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+        color: #3D4E60;
+    }
+    .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+        font-family: inherit;
+        font-weight: 500;
+        line-height: 1.1;
+        color: inherit;
+    }
+
+    .h1, .h2, .h3, h1, h2, h3 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .main-tabs {
+        border-bottom: none;
+
+        & > li {
+            margin-right: 20px;
+
+            a {
+                display: block;
+                font-size: 20px;
+                color: #474d58;
+                border: none;
+                border-radius: 0;
+                padding: 16px 30px;
+            }
+
+            &.active {
+                & > a {
+                    background: #fafafa;
+                    color: #474d58;
+                    border: none;
+                }
+            }
+        }
+    }
+
+    .main-tabs-content {
+        background: #fafafa;
+        padding: 20px;
+    }
+
+    .main-content-box {
+        background: #fff;
+        border: 1px solid #e0e0e0;
+        border-radius: 6px;
+        padding: 20px;
+    }
+
+    .category-d-13:before {
+        background-image: url(https://fretbay.com/en/assets/images/common/icons/category/default/13.svg);
+        background-repeat: no-repeat;
+    }
+
+    .content-sidebar {
+        ul {margin-bottom:0;}
+
+        li {
+            color: #777;
+            border-top: 1px solid #f7f7f7;
+            padding: 5px 0;
+        }
+
+        .black {
+            color: #000 !important;
+        }
+
+        .info-val {
+            color: #000;
+        }
+
+        .mb-10 {
+            margin-bottom: 10px;
+        }
+
+        .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+            color: #3D4E60;
+        }
+
+        .h4, h4 {
+            font-size: 18px;
+        }
+
+        article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+            display: block;
+        }
+
+        .list-title {
+            display: block;
+            font-size: 16.5px;
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: 20px 20px;
+            color: #000;
+            margin-bottom: 10px;
+            padding-left: 33px;
+        }
+
+        .main-content-box {
+            margin-bottom: 13px;
+            padding: 12px 15px;
+        }
+
+        .listing-title {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .title-loading {
+            background-image: url(https://fretbay.com/en/assets/images/common/icons/general/marker-loading.svg);
+        }
+
+        .title-delivery {
+            background-image: url(https://fretbay.com/en/assets/images/common/icons/general/marker-delivery.svg);
+        }
+
+        .title-category {
+            position: relative;
+            padding-right: 55px;
+            padding-left: 0;
+
+            &:before {
+                content: '';
+                width: 35px;
+                height: 35px;
+                position: absolute;
+                top: -6px;
+                right: 0;
+                z-index: 1;
+            }
+        }
+
+        .info-val {
+            color: #000;
+        }
+    }
+
+    .action-btns {
+        padding-top: 10px;
+    }
+
+    .btn, .navbar-default .navbar-nav > .request-quote > a {
+        border-radius: 50px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        line-height: 1.42857;
+        border-bottom: 4px solid rgba(0, 0, 0, 0.09);
+        -webkit-transition: all 0.3s linear;
+        -moz-transition: all 0.3s linear;
+        -ms-transition: all 0.3s linear;
+        -o-transition: all 0.3s linear;
+        transition: all 0.3s linear;
+    }
+
+    #content-sidebar .action-btns .btn, #content-sidebar .action-btns .navbar-default .navbar-nav > .request-quote > a, .navbar-default #content-sidebar .action-btns .navbar-nav > .request-quote > a {
+        margin: 0 5px 5px;
+    }
+
+    .btn-primary {
+        min-width: auto;
+    }
+
+    .btn-warning {
+        color: $white;
+        background-color: #ff9900;
+
+        &:hover {
+            color: $white;
+            background-color: #ff6e00;
+        }
+    }
+
+    .promote-listing-btn {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .map-wrapper {
+        height: 435px;
+        border: 1px solid #ddd;
+
+        &>div {height: 100%;}
+
+        .mapboxgl-map {
+            font: 12px/20px Helvetica Neue,Arial,Helvetica,sans-serif;
+            overflow: hidden;
+            position: relative;
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+            img {
+                min-width: 100%;
+                width: 100%;
+            }
+        }
+    }
+
+    .row-narrow {
+        margin-left: -7px;
+        margin-right: -7px;
+        background-color: transparent;
+        padding: 0;
+    }
+
+    .map-bottom {
+        padding: 10px 0;
+
+        .map-distance {
+            width: 70%;
+            margin-right: 10px;
+        }
+    }
+
+    .grey-box {
+        background: #eef2f8;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        padding: 20px;
+    }
+
+    .upload-images {
+        margin-bottom: 20px;
+        border: 2px dashed #ccc;
+
+        li {
+            position: relative;
+            width: 66px;
+            height: 66px;
+            margin: 0 2px;
+            padding: 0;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .grey-box-title {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .list-inline {
+        margin-left: -5px;
+
+        &>li {
+            display: inline-block;
+        }
+    }
+
+    label {
+        display: inline-block;
+        max-width: 100%;
+        margin-bottom: 5px;
+        font-weight: normal;
+
+
+        input[type=file] {
+            display: none;
+        }
+    }
+
+    .img-link {
+        cursor: pointer;
+    }
+
+    .progressbar-wrap {
+        position: relative;
+        height: 24px;
+        margin-bottom: 10px;
+        border: 1px solid #c5c5c5;
+    }
+
+    .progressbar {
+        background: url(https://fretbay.com/en/assets/images/common/icons/general/bar-bg.png) repeat-x;
+        height: 100%;
+    }
+
+    .progressbar-label {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        text-align: center;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .content-box-narrow-padding {
+        padding: 15px 20px;
+        border-radius: 12px;
+    }
+
+    .common-sidebar {
+        color: #3D4E60;
+
+
+        .hiw-steps {
+            background: #dfe1e5;
+            border: none;
+            color: #3D4E60;
+            padding-bottom: 10px;
+
+            article {
+                padding-bottom: 10px;
+            }
+
+            .title {
+                margin: 10px 0;
+                color: #3d4d60;
+            }
+
+            p {
+                margin-bottom: 5px;
+            }
+        }
+    }
+
+    .panel-group {
+        margin-bottom: 20px;
+    }
+
+    .faq-section {
+        margin-top: 20px;
+        padding: 20px;
+
+        .title {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .panel {
+            margin-bottom: 0;
+            box-shadow: none;
+            border-radius: 0;
+            background-color: #fff;
+            border: 1px solid transparent;
+        }
+
+        .faq-link {
+            position: relative;
+            background: #d2ebfa;
+            display: block;
+            color: #333;
+            border-radius: 4px;
+            padding: 12px 35px 12px 24px;
+
+            &:after {
+                content: '';
+                //content: '\f106';
+                color: #9ab9cc;
+                //font-family: fontAwesome;
+                position: absolute;
+                top: 11px;
+                right: 15px;
+                font-size: 20px;
+                line-height: 1;
+            }
+
+            &.collapsed {
+                background: #f0f1f5;
+            }
+        }
+
+        .panel-body {
+            padding: 16px 15px 28px;
+        }
+    }
+
+    .text-primary {
+        color: #0083fe !important;
+    }
+
+    .collapse.in {
+        display: block;
+    }
+}
+
+@media (min-width: 1801px) and (max-width: 3440px) {
+    .fluid-page .sidebar {
+        max-width: 350px;
+        width: 100%;
+    }
+}

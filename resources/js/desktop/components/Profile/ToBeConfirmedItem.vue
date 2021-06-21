@@ -2,7 +2,7 @@
     <li class="content-box-rounded content-box-shadow">
         <div class="listing-transporter">
             <a href="#" class="link-overlay"></a>
-            <p class="hidden-xs">
+            <p class="visible-xs">
                 <img class="category-icon" src="https://fretbay.com/en/assets/images/common/icons/category/default/17.svg?v0.0.5" alt="">
             </p>
         </div>

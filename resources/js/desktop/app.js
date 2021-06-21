@@ -81,6 +81,7 @@ Vue.component('profile-settings-page', require('./pages/Profile/Transporter/Sett
 Vue.component('profile-customer-page', require('./pages/Profile/Customer/Profile.vue').default);
 Vue.component('to-be-confirmed-empty-page', require('./pages/Profile/Customer/ToBeConfirmedEmpty.vue').default);
 Vue.component('to-be-confirmed-page', require('./pages/Profile/Customer/ToBeConfirmed.vue').default);
+Vue.component('listing-details-page', require('./pages/Profile/Customer/ListingDetails').default);
 
 //other pages (not needed)
 Vue.component('contact-us-page', require('../desktop/pages/ContactUs.vue').default);
