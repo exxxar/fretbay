@@ -87,30 +87,5 @@
     }
 </script>
 <style lang="scss">
-   .scroll-area {
-       position: relative;
-       margin: auto;
-       width: 100%;
-       height: 400px;
 
-       ul {
-           width: 100%;
-           height: 100%;
-
-           li.item {
-               width: 100%;
-               padding: 10px;
-               cursor:pointer;
-
-               &:nth-of-type(2n){
-                   background: #f6f6f6;
-               }
-
-               &:hover {
-                   background:green;
-                   color:white;
-               }
-           }
-       }
-   }
 </style>

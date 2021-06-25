@@ -13,40 +13,12 @@
         <div class="row w-100 m-auto">
             <div class="col-12 col-sm-8" v-if="!search_mode">
 <!--                v-if="category.subcategories.length>0"-->
-                <splide ref="splider" :options="options">
-<!--                    <splide-slide>-->
-<!--                        <div class="subcategory" :class="{'active': active_subcategory }">All</div>-->
-<!--                    </splide-slide>-->
-                    <splide-slide v-for="(sub, index) in subcategories" :key="sub.id">
-                        <div class="subcategory" @click="chooseSubcategory(index, sub.id)" :class="{'active': active_subcategory === sub.id }">{{sub.title}}</div>
-                    </splide-slide>
-<!--                    <splide-slide>-->
-<!--                        <div class="subcategory" :class="{'active': active_subcategory }">Entrance</div>-->
-<!--                    </splide-slide>-->
-<!--                    <splide-slide>-->
-<!--                        <div class="subcategory" >Bathroom</div>-->
-<!--                    </splide-slide>-->
-<!--                    <splide-slide>-->
-<!--                        <div class="subcategory" @click="chooseSubcategory(2)">Living room</div>-->
-<!--                    </splide-slide>-->
-<!--                    <splide-slide>-->
-<!--                        <div class="subcategory">Kitchen</div>-->
-<!--                    </splide-slide>-->
-<!--                    <splide-slide>-->
-<!--                        <div class="subcategory">Chamber</div>-->
-<!--                    </splide-slide>-->
-<!--                    <splide-slide>-->
-<!--                        <div class="subcategory" @click="chooseSubcategory(5)">Garden</div>-->
-<!--                    </splide-slide>-->
-                </splide>
-<!--                <ul class="d-flex justify-content-around flex-wrap choose-inventory-type">-->
-<!--                    <li class="active">Entrance</li>-->
-<!--                    <li>Bathroom</li>-->
-<!--                    <li>Living room</li>-->
-<!--                    <li>Kitchen</li>-->
-<!--                    <li>Chamber</li>-->
-<!--                    <li>Garden</li>-->
-<!--                </ul>-->
+
+                <VueSlickCarousel v-bind="settings" v-if="categories.length>0">
+                    <div v-for="(sub, index) in categories" class="p-1" :key="sub.id" v-if="sub.subcategories.length>0">
+                        <button class="btn btn-outline-primary w-100" @click="chooseSubcategory(sub.id)" :class="{'btn-primary text-white': active_category.id === sub.id }">{{sub.title}}</button>
+                    </div>
+                </VueSlickCarousel>
 
             </div>
 
@@ -54,7 +26,6 @@
                 <div class="form-group w-100">
                     <div class="input-has-icon-right position-relative w-100">
                         <input v-model="search"
-                               @input="runSearch"
                                type="text"
                                class="form-control w-100"
                                placeholder="Search">
@@ -64,82 +35,61 @@
         </div>
 
         <div class="row w-100 m-auto">
-            <div class="col-12">
-                <ul class="inventory-list">
-                    <li v-if="!search_mode"
-                        class="inventory-item-wrapper"
-                        :class="{'active': getQuantity(thing.id)>0}"
-                        v-for="thing in filteredThings"
-                    >
-                        <div class="inventory-item">
-                            <img :src="thing.image" class="img-fluid" alt="">
-                            <h6 class="text-center">{{thing.title}}</h6>
+            <div class="col-3 mb-2"  v-for="thing in filteredThings">
+
+                <div class="card text-white">
+                    <img class="card-img" v-lazy="thing.image" alt="Card image">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title text-dark">{{thing.title}}</h5>
+
+                    </div>
+                    <div class="card-footer text-muted">
+                        <div class="row">
+
+                            <div class="col-4">
+                                <button class="btn btn-outline-primary w-100" @click="decrement(thing.id)">-</button>
+                            </div>
+                            <div class="col-4  d-flex justify-content-center align-items-center">
+                                <span><strong>{{getQuantity(thing.id)}}</strong></span>
+                            </div>
+                            <div class="col-4">
+                                <button class="btn btn-outline-primary w-100"  @click="increment(thing)">+</button>
+                            </div>
                         </div>
-                        <div class="inventory-controls" >
-                            <!--<button class="btn btn-primary rounded">-</button>-->
-                            <div class="add-remove-count d-flex justify-content-center" @click="decrement(thing.id)">-</div>
-                            <span>{{getQuantity(thing.id)}}</span>
-                            <div class="add-remove-count d-flex justify-content-center" @click="increment(thing)">+</div>
-                            <!--<button class="btn btn-primary rounded">+</button>-->
-                        </div>
-                    </li>
-                    <li v-if="search_mode"
-                        class="inventory-item-wrapper"
-                        :class="{'active': getQuantity(thing.id)>0}"
-                        v-for="thing in search_results"
-                    >
-                        <div class="inventory-item">
-                            <img :src="thing.image" class="img-fluid" alt="">
-                            <h6 class="text-center">{{thing.title}}</h6>
-                        </div>
-                        <div class="inventory-controls" >
-                            <div class="add-remove-count d-flex justify-content-center" @click="decrement(thing.id)">-</div>
-                            <span>{{getQuantity(thing.id)}}</span>
-                            <div class="add-remove-count d-flex justify-content-center" @click="increment(thing)">+</div>
-                        </div>
-                    </li>
-                </ul>
+                    </div>
+                </div>
+
             </div>
         </div>
 
-
-<!--        <div class="row d-flex justify-content-end mt-2 w-100">-->
-<!--            <div class="col-2">-->
-<!--                <button class="btn btn-custom-danger">Back</button>-->
-<!--            </div>-->
-<!--            <div class="col-3">-->
-<!--                <button class="btn btn-custom-white">Next</button>-->
-<!--            </div>-->
-<!--        </div>-->
     </div>
 </template>
 <script>
+    import VueSlickCarousel from 'vue-slick-carousel'
+    import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+    // optional style for arrows & dots
+    import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+
+
     export default {
         name: "InventoryForm",
         props: ['category'],
         data() {
             return {
-                search:'',
-                search_results: [],
-                search_options: {
-                    // minMatchCharLength: 1,
-                    shouldSort: false,
-                    threshold: 0.2,
-                    keys: [
-                        'title',
-                    ]
+                search:null,
+                search_mode: false,
+                active_category: null,
+                settings:{
+                    "dots": false,
+                    "arrows": true,
+                    "focusOnSelect": true,
+                    "infinite": true,
+                    "speed": 500,
+                    "slidesToShow": 5,
+                    "slidesToScroll": 3,
+                    "touchThreshold": 5
                 },
-                search_mode:false,
-                active_subcategory: '',
-                options: {
-                    type     : 'slide',
-                    rewind   : false,
-                    trimSpace: true,
-                    autoWidth: true,
-                    pagination:false,
-                    focus: 'center',
-                    updateOnMove: true,
-                },
+                categories:[],
                 subcategories:[],
                 things:[],
             }
@@ -152,35 +102,46 @@
                 return this.$store.getters.volumeCartTotalVolume;
             },
             filteredThings() {
-                return this.things.filter(item=>
-                    item.subcategory_id === this.active_subcategory
-                )
+                if ( !this.search)
+                    return this.things;
+
+                let tmpThings = [];
+                this.categories.forEach(category=>{
+                    category.subcategories.forEach(sub=>{
+                        if ( sub.title.trim().toLowerCase().indexOf(this.search.trim().toLowerCase())!==-1)
+                            tmpThings.push(sub);
+                    })
+                })
+                return tmpThings
             }
         },
         created() {
-            this.subcategories = this.category.subcategories;
-            this.active_subcategory = this.subcategories[0].id;
-            this.things = this.category.things;
+            this.loadCategories();
         },
         methods: {
-            chooseSubcategory(slide, id) {
-                this.$refs.splider.go(slide);
-                this.active_subcategory = id;
-                console.log(slide)
+            loadCategories(){
+              axios.get('/api/get-volume-categories')
+              .then(response=>{
+                  console.log(response)
+                  this.categories = response.data.categories
+                  this.active_category = this.categories[0];
+                  this.things =  this.active_category.subcategories;
+
+
+                  console.log("categories",this.categories)
+                  console.log("active_category",this.active_category)
+                  console.log("things",this.things)
+
+
+
+                  this.active_category = this.subcategories[0].id;
+              })
             },
-            runSearch() {
-                if(this.search.trim()=='')
-                {
-                    this.search_results = [];
-                    this.search_mode = false;
-                }
-                else {
-                    this.$search(this.search, this.things, this.search_options).then(result => {
-                        this.search_results = result;
-                    });
-                    this.search_mode = true;
-                }
+            chooseSubcategory(id) {
+                this.active_category =  this.categories.find(item=>item.id===id);
+                this.things =  this.active_category.subcategories;
             },
+
             increment(thing) {
                 let index = this.volume_items.findIndex(item => item.item.id === thing.id);
                 if ( index > -1)
@@ -210,147 +171,12 @@
                 }
                 return 0;
             }
+        },
+        components:{
+            VueSlickCarousel
         }
     }
 </script>
 
-<style lang="scss">
-    .splide {
-        padding: 0 1.5em;
-    }
-    .splide__arrow svg {
-        width: 1.5em;
-        height: 1.5em;
-    }
-    .splide__arrow--prev {
-        left: 0em;
-    }
-    .splide__arrow--next {
-        right: 0em;
-    }
 
-    .volume-field-wrap.blue-field input {
-        background: #def0ff;
-    }
-    .subcategory{
-        padding:10px;
-    }
-    .subcategory:hover,
-    .subcategory:hover .active {
-        background: #3490dc;
-        color: white;
-        transition:.3s;
-        cursor:pointer;
-    }
-    .choose-inventory-type {
-        li {
-            padding:10px;
-        }
-
-        li:hover,
-        .active {
-            background: #3490dc;
-            color: white;
-            transition:.3s;
-            cursor:pointer;
-        }
-        .subcategory:hover,
-        .subcategory .active {
-            background: #3490dc;
-            color: white;
-            transition:.3s;
-            cursor:pointer;
-        }
-    }
-    .inventory-list {
-        display: flex;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-
-        .inventory-item-wrapper {
-            width:20%;
-            padding:5px;
-            box-sizing: border-box;
-            min-height: 100px;
-            cursor: pointer;
-
-            .inventory-item {
-                padding: 10px;
-                border-radius: 5px;
-            }
-
-            .inventory-controls {
-                display: flex;
-                justify-content: space-between;
-                align-items:center;
-                height:40px;
-                border-radius:0px 0px 5px 5px;
-
-                &>* {
-                    display: none;
-                }
-
-                button {
-                    background: #89b2f2;
-                    border:1px solid #89b2f2;
-
-                    &:active,
-                    &:focus {
-                        outline:none;
-                    }
-                }
-
-                span {
-                    color:white;
-                }
-            }
-
-            &:hover {
-                .inventory-item {
-                    background: #e8f1ff;
-                }
-
-                .inventory-controls {
-                    background: #89b2f2;
-                    &>* {
-                        display: block;
-                    }
-
-                    button {
-                        background: #89b2f2;
-                        border:1px solid #89b2f2;
-
-                    }
-
-                    span {
-                        color:white;
-                    }
-                }
-            }
-
-            &.active {
-                .inventory-item {
-                    background: #e8f1ff;
-                }
-
-                .inventory-controls {
-                    background: #89b2f2;
-                    &>* {
-                        display: block;
-                    }
-
-                    button {
-                        background: #89b2f2;
-                        border:1px solid #89b2f2;
-
-                    }
-
-                    span {
-                        color:white;
-                    }
-                }
-            }
-        }
-    }
-</style>
 

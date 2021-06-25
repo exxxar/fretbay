@@ -11,7 +11,8 @@ try {
     window.$ = window.jQuery = require('jquery');
 
     require('bootstrap');
-} catch (e) {}
+} catch (e) {
+}
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
@@ -22,14 +23,14 @@ try {
 window.axios = require('axios');
 
 // window.axios.defaults.baseURL = '/api/desktop/v1';
-window.axios.defaults.baseURL = '/api/';
+window.axios.defaults.baseURL = '/';
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 window.user = document.head.querySelector('meta[name="user"]') != null ?
     document.head.querySelector('meta[name="user"]').content : null;
 
-
+window.locale = document.documentElement.lang
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening

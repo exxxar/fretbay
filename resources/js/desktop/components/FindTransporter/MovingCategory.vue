@@ -1,20 +1,24 @@
 <template>
-    <div>
+    <div class="container pb-5">
         <wizard :steps="2" ref="wizard">
             <template v-slot:step_0>
-                <div class="panel-left" v-if="!inventory_mode">
+                <div class="col-12" v-if="!inventory_mode">
                     <h2 class="text-uppercase text-black text-center">The volume of your move</h2>
                     <div class="volume-step-box-wrap text-center">
                         <div class="row">
                             <div class="col-sm-6">
                                 <h3 class="box-title text-center">I know my volume</h3>
                                 <div class="volume-step-box box-top">
-                                    <h4>I know my volume to move. It is correct and I would like to inform it.</h4>
+                                    <h6>I know my volume to move. It is correct and I would like to inform it.</h6>
                                     <div class="volume-field">
                                         <div class="volume-field-wrap">
-                                            <input v-model="listing.summary_volume" type="text" class="form-control input-lg text-center text-black"
-                                                   @blur="editVolume" placeholder="Your volume" autofocus="">
-                                            <em class="volume-unit text-bold">m<sup>3</sup></em>
+                                            <div class="input-group mb-3">
+                                                <input  v-model="listing.summary_volume" type="text" class="form-control" @blur="editVolume" placeholder="Your volume">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text" id="basic-addon2"><em class="volume-unit text-bold">m<sup>3</sup></em></span>
+                                                </div>
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -23,16 +27,16 @@
                             <div class="col-sm-6">
                                 <h3 class="box-title text-center">I don’t know my volume</h3>
                                 <div class="volume-step-box">
-                                    <h4>I don't know my volume to move. I would like to carry out my inventory online.</h4>
+                                    <h6>I don't know my volume to move. I would like to carry out my inventory online.</h6>
                                     <div class="form-group">
-                                        <a class="btn btn-custom-success" @click="inventory_mode=true">Online inventory</a>
+                                        <a class="btn btn-primary" @click="inventory_mode=true">Online inventory</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="panel-left" v-else>
+                <div class="col-12" v-else>
                     <inventory-form :category="category"/>
                 </div>
             </template>
@@ -42,12 +46,12 @@
                 </div>
             </template>
             <template v-slot:footer>
-                <div class="row d-flex justify-content-end mt-2 w-100">
+                <div class="row d-flex justify-content-end mt-2">
                     <div class="col-12 col-sm-2">
-                        <button class="btn btn-custom-danger" @click="prevStep">Back</button>
+                        <button class="btn btn-outline-warning  w-100" @click="prevStep">Back</button>
                     </div>
                     <div class="col-12 col-sm-3">
-                        <button class="btn btn-custom-white" @click="nextStep">Next</button>
+                        <button class="btn btn-outline-primary  w-100" @click="nextStep">Next</button>
                     </div>
                 </div>
             </template>

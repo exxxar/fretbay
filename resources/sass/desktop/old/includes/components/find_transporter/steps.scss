@@ -1,0 +1,19 @@
+.top-wrap {
+    margin-top: 80px;
+    background: #3D4E60;
+
+    .done {
+        color: lightgrey;
+
+        &.active {
+            color: white;
+        }
+    }
+
+}
+.steps-box{
+    width: 100%;
+    position:relative;
+    padding:30px 0;
+    height: 15px;
+}

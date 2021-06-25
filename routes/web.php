@@ -17,12 +17,19 @@ use Illuminate\Support\Facades\Storage;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/test', function () {
-    App::setLocale('fr');
-    dd(\App\CategoryProperty::find(1)->title);
+
+
+Route::get('/locale/{lang?}', function ($lang = "en") {
+
+    if (!in_array($lang, ['en', 'ru', 'fr'])) {
+        abort(400);
+    }
+
+    App::setLocale($lang);
+    return redirect()->back();
 });
 
-Route::get("/storage/listings/{dir}/{name}",function ($dir, $name){
+Route::get("/storage/listings/{dir}/{name}", function ($dir, $name) {
 
     $file = Storage::disk('local')->get("public/listings/$dir/$name");
     return (new Response($file, 200))
@@ -270,8 +277,6 @@ Route::post('/register-customer', \Auth\RegisterController::class . '@registerCu
 Route::post('/register-customer-with-listing', \Auth\RegisterController::class . '@registerCustomerWithListing')->name("register-customer-with-listing");
 Route::post('/register-transporter', \Auth\RegisterController::class . '@registerTransporter')->name("register-transporter");
 Route::get('/logout', \Auth\LoginController::class . '@logout')->name("logout");
-
-
 
 
 Route::resource('category', 'CategoryController');

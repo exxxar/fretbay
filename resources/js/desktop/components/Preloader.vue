@@ -28,19 +28,5 @@
 </script>
 
 <style lang="scss">
-    .page-loader {
-        position: fixed;
-        background: rgba(255, 255, 255, 0.96);
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        width: 100%;
-        height: 100vh;
-        z-index: 99999;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+
 </style>

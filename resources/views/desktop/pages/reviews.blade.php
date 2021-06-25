@@ -2,7 +2,7 @@
 @extends("layouts.app")
 
 @section("content")
-    <header-simple-component></header-simple-component>
+    <header-component></header-component>
     <reviews-page></reviews-page>
     <footer-component></footer-component>
 @endsection

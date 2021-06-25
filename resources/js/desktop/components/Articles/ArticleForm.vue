@@ -28,198 +28,15 @@
                                 </article-input>
                             </div>
                         </div>
-<!--                                            <div class="row">-->
-<!--                                                <div class="col-6">-->
-<!--                                                    <div class="form-group ">-->
-<!--                                                        <div class="input-has-icon-right">-->
-<!--                                                            <input v-model="modes[mode].length" type="number" class="form-control"-->
-<!--                                                                   placeholder="Length (cm)" required="">-->
-<!--                                                            <span class="rel-icon rel-icon-square"><img-->
-<!--                                                                src="/images/common/icons/units/longeur.svg"-->
-<!--                                                                alt=""></span>-->
-<!--                                                        </div>-->
-<!--                                                    </div>-->
-<!--                                                </div>-->
-<!--                                                <div class="col-6">-->
-<!--                                                    <div class="form-group ">-->
-<!--                                                        <div class="input-has-icon-right">-->
-<!--                                                            <input v-model="modes[mode].width" type="number" class="form-control" placeholder="Width (cm)"-->
-<!--                                                                   required="">-->
-<!--                                                            <span class="rel-icon rel-icon-square"><img-->
-<!--                                                                src="/images/common/icons/units/largeur.svg"-->
-<!--                                                                alt=""></span>-->
-<!--                                                        </div>-->
-<!--                                                    </div>-->
-<!--                                                </div>-->
-<!--                                            </div>-->
 
-<!--                                            <div class="row">-->
-<!--                                                <div class="col-4">-->
-<!--                                                    <div class="form-group ">-->
-<!--                                                        <div class="input-has-icon-right">-->
-<!--                                                            <input v-model="modes[mode].height" type="text" class="form-control"-->
-<!--                                                                   placeholder="Height (cm)" required="">-->
-<!--                                                            <span class="rel-icon rel-icon-square"><img-->
-<!--                                                                src="/images/common/icons/units/hauteur.svg"-->
-<!--                                                                alt=""></span>-->
-<!--                                                        </div>-->
-<!--                                                    </div>-->
-<!--                                                </div>-->
-<!--                                                <div class="col-4">-->
-<!--                                                    <div class="form-group ">-->
-<!--                                                        <div class="input-has-icon-right">-->
-<!--                                                            <input v-model="modes[mode].weight" type="text" class="form-control" placeholder="Weight"-->
-<!--                                                                   required="">-->
-<!--                                                            <span class="rel-icon rel-icon-square"><img-->
-<!--                                                                src="/images/common/icons/units/poids.svg"-->
-<!--                                                                alt=""></span>-->
-<!--                                                        </div>-->
-<!--                                                    </div>-->
-<!--                                                </div>-->
-<!--                                                <div class="col-4">-->
-<!--                                                    <div class="form-group ">-->
-<!--                                                        <div class="input-has-icon-right">-->
-<!--                                                            <input v-model="modes[mode].quantity" type="text"-->
-<!--                                                                   class="form-control"-->
-<!--                                                                   placeholder="Quantity" required="">-->
-<!--                                                            <span class="rel-icon rel-icon-square"><img-->
-<!--                                                                src="/images/common/icons/units/quantity.svg"-->
-<!--                                                                alt=""></span>-->
-<!--                                                        </div>-->
-<!--                                                    </div>-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-<!--                                            <div class="row">-->
-<!--                                                <div class="col-6">-->
-<!--                                                    <div class="input-has-icon-right">-->
-<!--                                                        <input type="text" class="form-control" placeholder="Make" required="">-->
-
-<!--                                                        <span class="rel-icon rel-icon-square"><img-->
-<!--                                                            src="/images/common/icons/units/hauteur.svg"-->
-<!--                                                            alt=""></span>-->
-<!--                                                    </div>-->
-<!--                                                </div>-->
-<!--                                                <div class="col-6">-->
-<!--                                                    <div class="input-has-icon-right">-->
-<!--                                                        <input type="text" class="form-control" placeholder="Model" required="">-->
-<!--                                                        <span class="rel-icon rel-icon-square"><img-->
-<!--                                                            src="/images/common/icons/units/hauteur.svg"-->
-<!--                                                            alt=""></span>-->
-<!--                                                    </div>-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-
-<!--                                            <div class="row">-->
-<!--                                                <div class="col-12 p-2">-->
-<!--                                                    <div class="custom-control custom-switch">-->
-<!--                                                        <input type="checkbox" class="custom-control-input" id="accept_conveyors">-->
-<!--                                                        <label class="custom-control-label" for="accept_conveyors">I accept conveyors</label>-->
-<!--                                                    </div>-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-
-<!--                                            <div class="row">-->
-<!--                                                <div class="col-12 p-2">-->
-<!--                                                    <div class="custom-control custom-switch">-->
-<!--                                                        <input type="checkbox" class="custom-control-input" id="fragile_goods">-->
-<!--                                                        <label class="custom-control-label" for="fragile_goods">Fragile goods</label>-->
-<!--                                                    </div>-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-
-
-<!--                                            <div class="row mb-2">-->
-<!--                                                <div class="col-12">-->
-<!--                                                    <div class="input-has-icon-right">-->
-<!--                                                        <input type="text" class="form-control" placeholder="Estimated value" required="">-->
-<!--                                                        <span class="rel-icon rel-icon-square">-->
-<!--                                                            <img src="/images/common/icons/units/euro.svg" alt="">-->
-<!--                                                        </span>-->
-<!--                                                    </div>-->
-
-<!--                                                </div>-->
-<!--                                            </div>-->
-
-
-<!--                                            <div class="row mb-2">-->
-<!--                                                <div class="col-12">-->
-<!--                                                    <div class="input-has-icon-right">-->
-<!--                                                        <input type="text" class="form-control" placeholder="Animal bread" required="">-->
-<!--                                                    </div>-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-
-
-<!--                                            <div class="row mb-2">-->
-<!--                                                <div class="col-6">-->
-<!--                                                    <div class="input-has-icon-right">-->
-<!--                                                        <input type="text" class="form-control" placeholder="Special needs" required="">-->
-<!--                                                        <span class="rel-icon rel-icon-square">-->
-<!--                                                            <img src="https://fretbay.com/en/assets/images/common/icons/units/need.svg" alt="">-->
-<!--                                                        </span>-->
-<!--                                                    </div>-->
-
-<!--                                                </div>-->
-
-<!--                                                <div class="col-6">-->
-<!--                                                    <div class="input-has-icon-right">-->
-<!--                                                        <input type="text" class="form-control" placeholder="Are the vaccinations up to date?"-->
-<!--                                                               required="">-->
-<!--                                                        <span class="rel-icon rel-icon-square">-->
-<!--                                                            <img src="https://fretbay.com/en/assets/images/common/icons/units/vaccine.svg"-->
-<!--                                                                 alt="">-->
-<!--                                                        </span>-->
-<!--                                                    </div>-->
-
-<!--                                                </div>-->
-<!--                                            </div>-->
-
-<!--                                            <h6>Cage (optional)</h6>-->
-
-<!--                                            <div class="row mb-2">-->
-<!--                                                <div class="col-4">-->
-<!--                                                    <div class="form-group ">-->
-<!--                                                        <div class="input-has-icon-right">-->
-<!--                                                            <input type="text" class="form-control"-->
-<!--                                                                   placeholder="Cage length (cm)" required="">-->
-<!--                                                            <span class="rel-icon rel-icon-square"><img-->
-<!--                                                                src="/images/common/icons/units/longeur.svg"-->
-<!--                                                                alt=""></span>-->
-<!--                                                        </div>-->
-<!--                                                    </div>-->
-<!--                                                </div>-->
-<!--                                                <div class="col-4">-->
-<!--                                                    <div class="form-group ">-->
-<!--                                                        <div class="input-has-icon-right">-->
-<!--                                                            <input type="text" class="form-control" placeholder="Cage width (cm)"-->
-<!--                                                                   required="">-->
-<!--                                                            <span class="rel-icon rel-icon-square"><img-->
-<!--                                                                src="/images/common/icons/units/largeur.svg"-->
-<!--                                                                alt=""></span>-->
-<!--                                                        </div>-->
-<!--                                                    </div>-->
-<!--                                                </div>-->
-<!--                                                <div class="col-4">-->
-<!--                                                    <div class="form-group ">-->
-<!--                                                        <div class="input-has-icon-right">-->
-<!--                                                            <input type="text"-->
-<!--                                                                   class="form-control"-->
-<!--                                                                   placeholder="Cage height" required="">-->
-<!--                                                            <span class="rel-icon rel-icon-square"><img-->
-<!--                                                                src="/images/common/icons/units/hauteur.svg"-->
-<!--                                                                alt=""></span>-->
-<!--                                                        </div>-->
-<!--                                                    </div>-->
-<!--                                                </div>-->
-<!--                                            </div>-->
                         <div class="form-group row w-100 m-auto">
                             <div class="col-12 col-sm-6" v-if="mode === 1">
-                                <button class="btn w-100" @click="cancel">
+                                <button class="btn btn-warning w-100" @click="cancel">
                                     Cancel
                                 </button>
                             </div>
                             <div class="col-12 col-sm-6" v-if="mode === 1">
-                                <button class="btn w-100"
+                                <button class="btn btn-primary w-100"
                                         @click="save"
                                         :disabled="observer.invalid"
                                 >
@@ -229,7 +46,7 @@
                             <div class="col-12" v-if="mode === 0">
                                 <button @click="add"
                                         :disabled="observer.invalid"
-                                        class="btn w-100 btn-custom-white"
+                                        class="btn w-100 btn-primary"
                                 >
                                     Add article
                                 </button>
@@ -240,6 +57,32 @@
             </div>
         </div>
         <div class="col-12 col-sm-6 bg-gray-xs">
+
+            <ul class="list-group">
+                <li class="list-group-item" v-for="(article, index) in article_items" v-if="article_items.length>0">
+
+                    <div class="row">
+                        <div class="col-8"><h5 class="text-primary">{{article.title}}</h5></div>
+                        <div class="col-4 d-flex justify-content-end">
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <button type="button" class="btn btn-link " @click="edit(index, article)">   <i class="fa fa-edit"></i></button>
+                                <button type="button" class="btn btn-link" @click="remove(index)" v-if="mode === 0">   <i class="fa fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-between">
+                        <div class="d-inline p-2 bg-primary text-white p-2 m-2" v-for="property in category.properties">
+                            {{property.title}}
+                            <span class="badge badge-primary">{{article.properties[property.slug].value}}</span>
+                        </div>
+                    </div>
+
+
+
+                </li>
+            </ul>
+
+      <!--
             <div class="article-section">
                 <div class="articles-list-scroll">
                     <ul class="articles-list">
@@ -267,31 +110,31 @@
                                     <span class="badge">{{article.properties[property.slug].value}}</span>
                                 </li>
 
-                                <!--                                <li class="list-group-item">-->
-                                <!--                                    <span class="article-unit-text">Height</span>-->
-                                <!--                                    <span class="badge">{{article.height}}</span>-->
-                                <!--                                </li>-->
-                                <!--                                <li class="list-group-item">-->
-                                <!--                                    <span class="article-unit-text">Width</span>-->
-                                <!--                                    <span class="badge">{{article.width}}</span>-->
-                                <!--                                </li>-->
-                                <!--                                <li class="list-group-item">-->
-                                <!--                                    <span class="article-unit-text">Weight</span>-->
-                                <!--                                    <span class="badge">{{article.weight}}</span>-->
-                                <!--                                </li>-->
-                                <!--                                <li class="list-group-item">-->
-                                <!--                                    <span class="article-unit-text">Length</span>-->
-                                <!--                                    <span class="badge">{{article.length}}</span>-->
-                                <!--                                </li>-->
-                                <!--                                <li class="list-group-item">-->
-                                <!--                                    <span class="article-unit-text">Quantity</span>-->
-                                <!--                                    <span class="badge">{{article.quantity}}</span>-->
-                                <!--                                </li>-->
+                                &lt;!&ndash;                                <li class="list-group-item">&ndash;&gt;
+                                &lt;!&ndash;                                    <span class="article-unit-text">Height</span>&ndash;&gt;
+                                &lt;!&ndash;                                    <span class="badge">{{article.height}}</span>&ndash;&gt;
+                                &lt;!&ndash;                                </li>&ndash;&gt;
+                                &lt;!&ndash;                                <li class="list-group-item">&ndash;&gt;
+                                &lt;!&ndash;                                    <span class="article-unit-text">Width</span>&ndash;&gt;
+                                &lt;!&ndash;                                    <span class="badge">{{article.width}}</span>&ndash;&gt;
+                                &lt;!&ndash;                                </li>&ndash;&gt;
+                                &lt;!&ndash;                                <li class="list-group-item">&ndash;&gt;
+                                &lt;!&ndash;                                    <span class="article-unit-text">Weight</span>&ndash;&gt;
+                                &lt;!&ndash;                                    <span class="badge">{{article.weight}}</span>&ndash;&gt;
+                                &lt;!&ndash;                                </li>&ndash;&gt;
+                                &lt;!&ndash;                                <li class="list-group-item">&ndash;&gt;
+                                &lt;!&ndash;                                    <span class="article-unit-text">Length</span>&ndash;&gt;
+                                &lt;!&ndash;                                    <span class="badge">{{article.length}}</span>&ndash;&gt;
+                                &lt;!&ndash;                                </li>&ndash;&gt;
+                                &lt;!&ndash;                                <li class="list-group-item">&ndash;&gt;
+                                &lt;!&ndash;                                    <span class="article-unit-text">Quantity</span>&ndash;&gt;
+                                &lt;!&ndash;                                    <span class="badge">{{article.quantity}}</span>&ndash;&gt;
+                                &lt;!&ndash;                                </li>&ndash;&gt;
                             </ul>
                         </li>
                     </ul>
                 </div>
-            </div>
+            </div>-->
         </div>
     </div>
 </template>
@@ -455,36 +298,6 @@
     }
 </script>
 <style lang="scss">
-    .content-box-gray {
-        background: #f3f4f8;
-        border-radius: 12px;
-        padding: 10px;
-        box-sizing: border-box;
-
-        .input-has-icon-right {
-            position: relative;
-
-            input {
-                font-size: 12px;
-            }
-
-            .rel-icon {
-                position: absolute;
-                right: 6px;
-                left: auto;
-                top: -3px;
-
-                img {
-                    width: 30px;
-                    height: 30px;
-                }
-            }
-        }
-    }
-
-    .form-control {
-        padding: 10px 34px 10px 10px;
-    }
 
 
 </style>

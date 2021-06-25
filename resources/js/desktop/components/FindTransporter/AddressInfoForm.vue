@@ -1,5 +1,5 @@
 <template>
-    <div class="p-2 mt-5">
+    <div class="container p-2 mt-5">
         <ValidationObserver v-slot="{ invalid }">
             <h2>
                 Information on loading and delivery addresses move
@@ -16,7 +16,7 @@
                 </div>
             </div>
 
-            <h4>Additional information <em>(recomended)</em></h4>
+            <h6>Additional information <em>(recomended)</em></h6>
 
             <div class="row w-100 m-auto">
                 <div class="col-12 col-md-6">
@@ -141,27 +141,5 @@
     }
 </script>
 <style lang="scss">
-    @media (max-width: 767px) {
-        .section-title {
-            margin-bottom: 10px;
-        }
-    }
 
-    .title-loading {
-        background-image: url(https://fretbay.com/en/assets/images/common/icons/general/icon-loading.svg);
-    }
-
-    .title-delivery {
-        background-image: url(https://fretbay.com/en/assets/images/common/icons/general/icon-delivery.svg);
-    }
-
-    .address-title {
-        font-size: 18px;
-        padding-left: 35px;
-        background-repeat: no-repeat;
-        background-size: 24px auto;
-    }
-    .section-title {
-        font-weight: 700;
-    }
 </style>

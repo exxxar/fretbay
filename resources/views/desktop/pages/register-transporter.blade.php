@@ -1,7 +1,7 @@
 @extends("layouts.app")
 
 @section("content")
-    <header-simple-component></header-simple-component>
+    <header-component></header-component>
     <register-transporter-page>
         <template v-slot:any-error>
             @isset($errors)

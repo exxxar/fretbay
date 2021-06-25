@@ -1,0 +1,137 @@
+.splide {
+    padding: 0 1.5em;
+}
+.splide__arrow svg {
+    width: 1.5em;
+    height: 1.5em;
+}
+.splide__arrow--prev {
+    left: 0em;
+}
+.splide__arrow--next {
+    right: 0em;
+}
+
+.volume-field-wrap.blue-field input {
+    background: #def0ff;
+}
+.subcategory{
+    padding:10px;
+}
+.subcategory:hover,
+.subcategory:hover .active {
+    background: #3490dc;
+    color: white;
+    transition:.3s;
+    cursor:pointer;
+}
+.choose-inventory-type {
+    li {
+        padding:10px;
+    }
+
+    li:hover,
+    .active {
+        background: #3490dc;
+        color: white;
+        transition:.3s;
+        cursor:pointer;
+    }
+    .subcategory:hover,
+    .subcategory .active {
+        background: #3490dc;
+        color: white;
+        transition:.3s;
+        cursor:pointer;
+    }
+}
+.inventory-list {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    .inventory-item-wrapper {
+        width:20%;
+        padding:5px;
+        box-sizing: border-box;
+        min-height: 100px;
+        cursor: pointer;
+
+        .inventory-item {
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .inventory-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items:center;
+            height:40px;
+            border-radius:0px 0px 5px 5px;
+
+            &>* {
+                display: none;
+            }
+
+            button {
+                background: #89b2f2;
+                border:1px solid #89b2f2;
+
+                &:active,
+                &:focus {
+                    outline:none;
+                }
+            }
+
+            span {
+                color:white;
+            }
+        }
+
+        &:hover {
+            .inventory-item {
+                background: #e8f1ff;
+            }
+
+            .inventory-controls {
+                background: #89b2f2;
+                &>* {
+                    display: block;
+                }
+
+                button {
+                    background: #89b2f2;
+                    border:1px solid #89b2f2;
+
+                }
+
+                span {
+                    color:white;
+                }
+            }
+        }
+
+        &.active {
+            .inventory-item {
+                background: #e8f1ff;
+            }
+
+            .inventory-controls {
+                background: #89b2f2;
+                &>* {
+                    display: block;
+                }
+
+                button {
+                    background: #89b2f2;
+                    border:1px solid #89b2f2;
+
+                }
+
+                span {
+                    color:white;
+                }
+            }
+        }
+    }
+}

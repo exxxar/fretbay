@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -10,9 +10,6 @@
     <title>{{ config('app.name', 'Fretbay') }}</title>
 
     <!-- Scripts -->
-    <script
-        src="{{ env("APP_DEBUG")?asset('js/desktop/app.js'):asset("js/desktop/app.min.js") }}?version={{env("APP_VERSION")}}"
-        defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -29,20 +26,25 @@
         rel="stylesheet">
 
 
+
     @if (Auth::check())
         <meta name="user" content="{{ App\User::self() }}" />
     @endif
 
-
-
 </head>
 <body>
-<div id="app">
 
+<div id="app">
     <preloader-component></preloader-component>
     @yield('content')
     <system-notification-component></system-notification-component>
     <modals-component></modals-component>
+    <sidebar-component></sidebar-component>
 </div>
+
+<script
+    src="{{ env("APP_DEBUG")?asset('js/desktop/app.js'):asset("js/desktop/app.min.js") }}?version={{env("APP_VERSION")}}"
+    defer></script>
+
 </body>
 </html>

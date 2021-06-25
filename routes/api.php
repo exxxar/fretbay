@@ -23,6 +23,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 Route::get("/get-type-of-transport", DictionaryController::class . "@typeOfTransport");
+Route::get("/get-volume-categories", \DictionaryController::class . "@volumeCategories");
 Route::get("/get-type-of-object", DictionaryController::class . "@typeOfObject");
 Route::get("/get-type-of-object/{category_id}", DictionaryController::class . "@typeOfObjectByCategory");
 Route::get("/get-vehicles", DictionaryController::class . "@vehicles");

@@ -1,23 +1,18 @@
 <template>
-    <div class="container-fluid mb-2 top-wrap">
-        <div class="container">
-            <div class="row">
-                <div class="steps-box d-flex align-items-center">
-                    <ul class="steps d-flex">
-                        <li class="done d-flex d-inline p-2" v-bind:class="{'active':(step===0)}"><span class="step-num align-self-center">1</span> <span
-                            class="step-text">Choice of Category</span>
-                        </li>
-                        <li class="done d-flex d-inline p-2 " v-bind:class="{'active':(step===1)}"><span class="step-num align-self-center">2</span> <span
-                            class="step-text">Add item / volume</span>
-                        </li>
-                        <li class="done d-flex d-inline p-2" v-bind:class="{'active':(step===2)}"><span class="step-num align-self-center">3</span> <span
-                            class="step-text">Address, Information / Photo</span>
-                        </li>
-                    </ul>
-                </div>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-12">
+                <ol class="breadcrumb p-0" style="background: transparent;">
+                    <li class="breadcrumb-item" v-bind:class="{'active':(step===0)}"><a href="#">Choice of Category</a></li>
+                    <li class="breadcrumb-item" v-bind:class="{'active':(step===1)}"><a href="#">Add item / volume</a></li>
+                    <li class="breadcrumb-item " v-bind:class="{'active':(step===2)}" >Address, Information / Photo</li>
+                </ol>
             </div>
         </div>
     </div>
+
+
 </template>
 
 <script>
@@ -31,23 +26,5 @@
     }
 </script>
 <style lang="scss" scope>
-    .top-wrap {
-        margin-top: 80px;
-        background: #3D4E60;
 
-        .done {
-            color: lightgrey;
-
-            &.active {
-                color: white;
-            }
-        }
-
-    }
-    .steps-box{
-        width: 100%;
-        position:relative;
-        padding:30px 0;
-        height: 15px;
-    }
 </style>

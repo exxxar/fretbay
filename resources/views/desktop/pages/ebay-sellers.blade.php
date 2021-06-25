@@ -3,7 +3,7 @@
 @extends("layouts.app")
 
 @section("content")
-    <header-simple-component></header-simple-component>
+    <header-component></header-component>
     <ebay-sellers-page></ebay-sellers-page>
     <footer-component></footer-component>
 @endsection
