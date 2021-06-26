@@ -84,8 +84,7 @@
                                 {{currentLocale}}
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" v-for="lang in langOptions" @click="selectLang(lang.countryCode)" :href="'#'+lang.countryName">{{lang.countryName}}</a>
-                            </div>
+                                 </div>
                         </div>
 
                     </div>

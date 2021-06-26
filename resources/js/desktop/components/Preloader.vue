@@ -28,5 +28,16 @@
 </script>
 
 <style lang="scss">
-
+    .page-loader {
+        width:100%;
+        height: 100vh;
+        z-index: 10000000;
+        position: fixed;
+        top: 0px;
+        left:0px;
+        background:white;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
 </style>

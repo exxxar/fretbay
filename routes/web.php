@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Contracts\Session\Session;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Route;
@@ -271,7 +273,10 @@ Route::group(['middleware' => ['auth', 'role:admin'], "prefix" => "admin"], func
     });
 });
 
-Auth::routes();
+//Auth::routes();
+
+Route::view("/login","auth.login");
+Route::post("/login","Auth\LoginController@login");
 
 Route::post('/register-customer', \Auth\RegisterController::class . '@registerCustomer')->name("register-customer");
 Route::post('/register-customer-with-listing', \Auth\RegisterController::class . '@registerCustomerWithListing')->name("register-customer-with-listing");

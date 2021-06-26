@@ -38,7 +38,9 @@
     <preloader-component></preloader-component>
     @yield('content')
     <system-notification-component></system-notification-component>
-    <modals-component></modals-component>
+    <modals-component>
+
+    </modals-component>
     <sidebar-component></sidebar-component>
 </div>
 

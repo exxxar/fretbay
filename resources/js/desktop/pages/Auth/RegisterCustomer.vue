@@ -4,6 +4,7 @@
             <div class="col-md-6 col-12 col-sm-12">
                 <form class="js-validate form-signin" action="/register-customer" method="post">
 
+                    <slot name="any-errors"></slot>
                     <slot name="csrf"></slot>
                     <div id="signin" data-target-group="idForm">
                         <!-- Title -->
@@ -13,78 +14,112 @@
                             <p>And after SignIn to manage your account.</p>
                         </header>
 
-                        <div class="js-form-message mb-3">
-                            <div class="js-focus-state form signUpForm1-radio">
-                                <input type="radio" name="type" class="suf1-radio" id="radioBox01" value="individual"
-                                       v-model="userType" checked>
-                                <label for="radioBox01">You are an individual</label>
-                                <input type="radio" name="type" class="suf1-radio" id="radioBox02" v-model="userType"
-                                       value="professional">
-                                <label for="radioBox02">You are a professional</label>
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="js-form-message mb-3">
+                                    <div class="js-focus-state form signUpForm1-radio">
+                                        <input type="radio" name="type" class="suf1-radio" id="radioBox01"
+                                               value="individual"
+                                               v-model="userType" checked>
+                                        <label for="radioBox01">You are an individual</label>
+                                        <input type="radio" name="type" class="suf1-radio" id="radioBox02"
+                                               v-model="userType"
+                                               value="professional">
+                                        <label for="radioBox02">You are a professional</label>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- Input -->
-                        <div class="js-form-message mb-3" v-if="userType==='professional'">
-                            <div class="js-focus-state form">
-                                <input type="text" class="form-control form__input" name="company_name"
-                                       placeholder="Name of your company" required>
-                            </div>
-                        </div>
-                        <!-- End Input -->
-
-                        <!-- Input -->
-                        <div class="js-form-message mb-3">
-                            <div class="js-focus-state form">
-                                <input type="email" class="form-control form__input" name="email" placeholder="Email"
-                                       required>
-                                <slot name="error-email"></slot>
-                            </div>
-                        </div>
-                        <!-- End Input -->
-
-                        <div class="js-form-message mb-3">
-                            <div class="js-focus-state form">
-                                <input type="email" class="form-control form__input" name="email_confirmation"
-                                       placeholder="Confirm email" required>
-                                <slot name="error-email"></slot>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <!-- Input -->
+                                <div class="js-form-message mb-3" v-if="userType==='professional'">
+                                    <div class="js-focus-state form">
+                                        <input type="text" class="form-control form__input" name="company_name"
+                                               placeholder="Name of your company" required>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6">
 
-                        <div class="js-form-message mb-3">
-                            <div class="js-focus-state form">
-                                <input type="password" class="form-control form__input" name="password"
-                                       placeholder="Your password" required>
-                                <slot name="error-password"></slot>
+                                <!-- Input -->
+                                <div class="js-form-message mb-3">
+                                    <div class="js-focus-state form">
+                                        <input type="email" class="form-control form__input" name="email"
+                                               placeholder="Email"
+                                               required>
+                                        <slot name="error-email"></slot>
+                                    </div>
+                                </div>
+                                <!-- End Input -->
                             </div>
-                        </div>
+                            <div class="col-sm-12 col-md-6">
+                                <div class="js-form-message mb-3">
+                                    <div class="js-focus-state form">
+                                        <input type="email" class="form-control form__input" name="email_confirmation"
+                                               placeholder="Confirm email" required>
+                                        <slot name="error-email"></slot>
+                                    </div>
+                                </div>
 
-                        <div class="js-form-message mb-3">
-                            <div class="js-focus-state form">
-                                <input type="password" class="form-control form__input" name="password_confirmation"
-                                       placeholder="Confirm your password" required>
-                                <slot name="error-password"></slot>
-                            </div>
-                        </div>
-
-
-                        <div class="js-form-message mb-3">
-                            <div class="js-focus-state form">
-                                <input type="tel" v-mask="'+ ### ### #######'" class="form-control form__input"
-                                       name="telephone_number_1" placeholder="Your phone" required>
-                                <slot name="error-phone"></slot>
                             </div>
                         </div>
 
 
-                        <div class="js-form-message mb-3">
-                            <div class="js-focus-state form">
-                                <input type="tel" v-mask="'+ ### ### #######'" class="form-control form__input"
-                                       name="telephone_number_2" placeholder="Your mobile number" required>
-                                <slot name="error-phone"></slot>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6">
+
+                                <div class="js-form-message mb-3">
+                                    <div class="js-focus-state form">
+                                        <input type="password" class="form-control form__input" name="password"
+                                               placeholder="Your password" required>
+                                        <slot name="error-password"></slot>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-sm-12 col-md-6">
+
+                                <div class="js-form-message mb-3">
+                                    <div class="js-focus-state form">
+                                        <input type="password" class="form-control form__input"
+                                               name="password_confirmation"
+                                               placeholder="Confirm your password" required>
+                                        <slot name="error-password"></slot>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+
+
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6">
+
+                                <div class="js-form-message mb-3">
+                                    <div class="js-focus-state form">
+                                        <input type="tel" v-mask="'+ ### ### #######'" class="form-control form__input"
+                                               name="telephone_number_1" placeholder="Your phone" required>
+                                        <slot name="error-phone"></slot>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-6">
+                                <div class="js-form-message mb-3">
+                                    <div class="js-focus-state form">
+                                        <input type="tel" v-mask="'+ ### ### #######'" class="form-control form__input"
+                                               name="telephone_number_2" placeholder="Your mobile number" required>
+                                        <slot name="error-phone"></slot>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
                     </div>
 
                     <div class="js-form-message mb-3">
@@ -138,3 +173,13 @@
         </div>
     </div>
 </template>
+
+<script>
+    export default {
+        data(){
+            return {
+                userType: 0,
+            }
+        }
+    }
+</script>

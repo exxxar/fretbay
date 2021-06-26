@@ -8,8 +8,8 @@
                     <!-- Logo -->
                     <div class="u-header__navbar-brand-wrapper">
                         <a class="navbar-brand u-header__navbar-brand" href="." aria-label="Space">
-                            <img class="u-header__navbar-brand-default w-100" src="/assets/img/logo.png" alt="Logo">
-                            <img class="u-header__navbar-brand-mobile w-100" src="/assets/img/logo.png" alt="Logo">
+                            <img class="u-header__navbar-brand-default w-100" style="object-fit: contain; height:50px;" v-lazy="'/assets/img/logo.png'" alt="Logo">
+                            <img class="u-header__navbar-brand-mobile w-100" style="object-fit: contain; height:50px;" v-lazy="'/assets/img/logo.png'" alt="Logo">
                         </a>
                     </div>
                     <!-- End Logo -->
@@ -28,6 +28,7 @@
                     <!-- Navigation -->
                     <div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse py-0">
                         <ul class="navbar-nav u-header__navbar-nav">
+
                             <!--  Request a quote -->
                             <li class="nav-item hs-has-mega-menu u-header__nav-item">
                                 <a href="/find-transporter" class="nav-link u-header__nav-link">
@@ -64,6 +65,8 @@
 
 
 
+
+
                             <li class="nav-item dropdown u-header__nav-item-btn" v-if="!user">
                                 <a class="btn btn-primary dropdown-toggle" href="#" id="signupDropdown"
                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -82,6 +85,17 @@
                                 </button>
                             </li>
                             <!-- End Button -->
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    {{currentLocale}}
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
+                                    <a class="dropdown-item" v-for="lang in langOptions" @click="selectLang(lang.countryCode)" :href="'#'+lang.countryName">{{lang.countryName}}</a>
+
+                                </div>
+                            </li>
 
                             <!-- Search -->
                             <li class="nav-item u-header__navbar-icon u-header__navbar-v-divider">
@@ -138,9 +152,30 @@
         components: {
             MainMenu
         },
+        data() {
+            return {
+                langOptions: [
+                    {
+                        countryCode: "en",
+                        countryName: "English"
+                    },
+                    {
+                        countryCode: "fr",
+                        countryName: "Français"
+                    },
+                    {
+                        countryCode: "ru",
+                        countryName: "Русский"
+                    }
+                ]
+            }
+        },
         computed: {
             user: function () {
                 return window.user;
+            },
+            currentLocale:function(){
+                return this.langOptions.find(item=>item.countryCode===window.locale).countryName
             }
         },
         methods: {
@@ -149,8 +184,13 @@
             },
             toggleSidebar() {
                 $("#sidebar").toggleClass("u-unfold--hidden");
+            },
+            selectLang(lang){
+                window.location.href=`/locale/${lang}`
             }
 
         },
     }
 </script>
+
+

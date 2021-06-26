@@ -1,23 +1,24 @@
 <template>
 
-            <div class="container" style="padding:130px;">
-                <VueSlickCarousel v-bind="slickOptions" >
+    <div class="container" style="padding:130px;">
+        <h1 class="text-center mb-2">Movers evaluated by our customers</h1>
 
-                        <div v-for="tab in tabs" style="padding: 20px;border:none;">
-                            <div class="card mb-3"  style="padding: 20px;border:none;">
-                                <img class="card-img-top w-100 custom-slick-slide-img" :src="tab.image" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{tab.title}}</h5>
-                                    <p class="card-text">{{tab.text}}}</p>
-                                    <a :href="tab.href" class="btn-theme">{{tab.anchor}}</a>
-                                </div>
-                            </div>
+        <VueSlickCarousel v-bind="slickOptions">
 
-                        </div>
-
-                </VueSlickCarousel>
+            <div v-for="tab in tabs">
+                <div class="row">
+                    <div class="col-sm-4"><img class="card-img-top w-100 custom-slick-slide-img" :src="tab.image"
+                                               alt="Card image cap"></div>
+                    <div class="col-sm-8"><h5 class="card-title">{{tab.title}}</h5>
+                        <p class="card-text">{{tab.text}}}</p>
+                        <a :href="tab.href" class="btn-theme">{{tab.anchor}}</a></div>
+                </div>
 
             </div>
+
+        </VueSlickCarousel>
+
+    </div>
 
 </template>
 
@@ -33,14 +34,14 @@
         },
         name: "HowItWorkSlider",
         methods: {
-            tick: function() {
-                if(this.selected > this.items.length-1) {
+            tick: function () {
+                if (this.selected > this.items.length - 1) {
                     this.selected = 0;
                 }
                 this.selected += 1;
                 this.timer = setTimeout(this.tick, this.changeSlideTimeout);
             },
-            clearTickInterval: function() {
+            clearTickInterval: function () {
                 clearTimeout(this.timer);
                 this.timer = setTimeout(this.tick, this.changeSlideTimeout);
             }
@@ -51,7 +52,7 @@
                 changeSlideTimeout: 5000,
                 slickOptions: {
                     //options can be used from the plugin documentation
-                    slidesToShow: 3,
+                    slidesToShow: 1,
                     infinite: true,
                     accessibility: true,
                     adaptiveHeight: true,
@@ -64,14 +65,14 @@
                         {
                             breakpoint: 1200,
                             settings: {
-                                slidesToShow: 3,
+                                slidesToShow: 1,
                                 slidesToScroll: 1
                             }
                         },
                         {
                             breakpoint: 1008,
                             settings: {
-                                slidesToShow: 2,
+                                slidesToShow: 1,
                                 slidesToScroll: 1
                             }
                         },

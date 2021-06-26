@@ -48,7 +48,7 @@
             <template v-slot:footer>
                 <div class="row d-flex justify-content-end mt-2">
                     <div class="col-12 col-sm-2">
-                        <button class="btn btn-outline-warning  w-100" @click="prevStep">Back</button>
+                        <button class="btn btn-outline-blue  w-100" @click="prevStep">Back</button>
                     </div>
                     <div class="col-12 col-sm-3">
                         <button class="btn btn-outline-primary  w-100" @click="nextStep">Next</button>

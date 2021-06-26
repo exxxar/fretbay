@@ -5,10 +5,9 @@
             <div class="modal-content border-0">
                 <div class="modal-body p-5">
 
-                    <slot name="any-error"></slot>
                     <form class="js-validate" action="/register-transporter" method="post">
 
-                        <slot name="csrf"></slot>
+                        <input type="hidden" name="token" :value="csrf">
                         <div id="signin" data-target-group="idForm">
                             <!-- Title -->
                             <header class="text-center mb-5">
@@ -16,105 +15,161 @@
                                 <p>And after SignIn to manage your account.</p>
                             </header>
 
-                            <div class="js-form-message mb-3">
-                                <div class="js-focus-state form">
-                                    <input type="text" class="form-control form__input" name="company_name"
-                                           placeholder="Name of your company" required>
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="js-form-message mb-3">
+                                        <div class="js-focus-state form">
+                                            <input type="text" class="form-control form__input" name="company_name"
+                                                   placeholder="Name of your company" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="js-form-message mb-3">
+                                        <div class="js-focus-state form">
+                                            <input type="text" class="form-control form__input" name="first_name"
+                                                   placeholder="First name" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-sm-12">
+
+                                    <div class="js-form-message mb-3">
+                                        <div class="js-focus-state form">
+                                            <input type="text" class="form-control form__input" name="second_name"
+                                                   placeholder="Second name" required>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="js-form-message mb-3">
-                                <div class="js-focus-state form">
-                                    <input type="text" class="form-control form__input" name="first_name"
-                                           placeholder="First name" required>
+
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+
+                                    <div class="js-form-message mb-3">
+                                        <div class="js-focus-state form">
+                                            <input type="email" class="form-control form__input" name="email"
+                                                   placeholder="Email" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="js-form-message mb-3">
+                                        <div class="js-focus-state form">
+                                            <input type="email" class="form-control form__input"
+                                                   name="email_confirmation"
+                                                   placeholder="Email confirm" required>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="js-form-message mb-3">
-                                <div class="js-focus-state form">
-                                    <input type="text" class="form-control form__input" name="second_name"
-                                           placeholder="Second name" required>
+
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="js-form-message mb-3">
+                                        <div class="js-focus-state form">
+                                            <input type="tel" class="form-control form__input"
+                                                   v-mask="'+ ### ### #######'"
+                                                   name="telephone_number_1"
+                                                   placeholder="Telephone number" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-sm-12">
+
+                                    <div class="js-form-message mb-3">
+                                        <div class="js-focus-state form">
+                                            <input type="tel" class="form-control form__input"
+                                                   v-mask="'+ ### ### #######'"
+                                                   name="telephone_number_2"
+                                                   placeholder="Mobile number" required>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="js-form-message mb-3">
-                                <div class="js-focus-state form">
-                                    <input type="email" class="form-control form__input" name="email"
-                                           placeholder="Email" required>
+
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="js-form-message mb-3">
+                                        <div class="js-focus-state form">
+                                            <select id="country" class="form-control form__input" v-model="country_id"
+                                                    name="country" v-on:change="loadCity()">
+                                                <option value="" disabled selected>Country</option>
+                                                <option v-for="country in countries" :label="country.title"
+                                                        :value="country.id">
+                                                    {{country.id}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="js-form-message mb-3">
+                                        <div class="js-focus-state form">
+                                            <select id="region" name="region" class="form-control form__input">
+                                                <option value="" disabled selected>Region</option>
+                                                <option value="test">test</option>
+                                                <option v-bind=region v-for="region in regions" :label="region.title">
+                                                    {{region.id}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="js-form-message mb-3">
-                                <div class="js-focus-state form">
-                                    <input type="email" class="form-control form__input" name="email_confirmation"
-                                           placeholder="Email confirm" required>
+
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="js-form-message mb-3">
+                                        <div class="js-focus-state form">
+                                            <input type="text" class="form-control form__input" name="postal"
+                                                   placeholder="Postal Code or City" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-sm-12">
+
+                                    <div class="js-form-message mb-3">
+                                        <div class="js-focus-state form">
+                                            <input type="text" class="form-control form__input" name="city"
+                                                   placeholder="Your city" required>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
 
-                            <div class="js-form-message mb-3">
-                                <div class="js-focus-state form">
-                                    <input type="tel" class="form-control form__input" v-mask="'+ ### ### #######'"
-                                           name="telephone_number_1"
-                                           placeholder="Telephone number" required>
+
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="js-form-message mb-3">
+                                        <div class="js-focus-state form">
+                                            <select id="area_of_expertise" name="areas_of_expertise"
+                                                    class="form-control form__input">
+                                                <option value="" disabled selected>Your area of expertise</option>
+                                                <option value="Home equipment">Home equipment</option>
+                                                <option value="Moving">Moving</option>
+                                                <option value="Vehicle">Vehicle</option>
+                                            </select>
+                                        </div>
+                                    </div>
                                 </div>
+
                             </div>
 
-                            <div class="js-form-message mb-3">
-                                <div class="js-focus-state form">
-                                    <input type="tel" class="form-control form__input" v-mask="'+ ### ### #######'"
-                                           name="telephone_number_2"
-                                           placeholder="Mobile number" required>
-                                </div>
-                            </div>
-
-                            <div class="js-form-message mb-3">
-                                <div class="js-focus-state form">
-                                    <select id="country" class="form-control form__input" v-model="country_id"
-                                            name="country" v-on:change="loadCity()">
-                                        <option value="" disabled selected>Country</option>
-                                        <option v-for="country in countries" :label="country.title" :value="country.id">
-                                            {{country.id}}
-                                        </option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="js-form-message mb-3">
-                                <div class="js-focus-state form">
-                                    <input type="text" class="form-control form__input" name="postal"
-                                           placeholder="Postal Code or City" required>
-                                </div>
-                            </div>
-
-                            <div class="js-form-message mb-3">
-                                <div class="js-focus-state form">
-                                    <input type="text" class="form-control form__input" name="city"
-                                           placeholder="Your city" required>
-                                </div>
-                            </div>
-
-                            <div class="js-form-message mb-3">
-                                <div class="js-focus-state form">
-                                    <select id="region" name="region" class="form-control form__input">
-                                        <option value="" disabled selected>Region</option>
-                                        <option value="test">test</option>
-                                        <option v-bind=region v-for="region in regions" :label="region.title">
-                                            {{region.id}}
-                                        </option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="js-form-message mb-3">
-                                <div class="js-focus-state form">
-                                    <select id="area_of_expertise" name="areas_of_expertise" class="form-control form__input">
-                                        <option value="" disabled selected>Your area of expertise</option>
-                                        <option value="Home equipment">Home equipment</option>
-                                        <option value="Moving">Moving</option>
-                                        <option value="Vehicle">Vehicle</option>
-                                    </select>
-                                </div>
-                            </div>
 
                             <!-- Divider -->
                             <div class="text-center u-divider-wrapper my-3">
@@ -123,39 +178,61 @@
                             <!-- End Divider -->
 
 
-                            <div class="js-form-message mb-3">
-                                <div class="js-focus-state form">
-                                    <input type="text" class="form-control form__input" name="username"
-                                           placeholder="Username" required>
-                                </div>
-                            </div>
-
-                            <div class="js-form-message mb-3">
-                                <div class="js-focus-state form">
-                                    <input type="password" class="form-control form__input" name="password"
-                                           placeholder="Password" required>
-                                </div>
-                            </div>
-
-                            <div class="js-form-message mb-3">
-                                <div class="js-focus-state form">
-                                    <input type="password" class="form-control form__input" name="password_confirmation"
-                                           placeholder="Confirm password" required>
-                                </div>
-                            </div>
-
-                            <div class="js-form-message mb-3">
-                                <div class="js-focus-state form">
-                                    <!-- Checkbox -->
-                                    <div class="custom-control custom-checkbox d-flex align-items-center text-muted">
-                                        <input type="checkbox" class="custom-control-input" id="iAgree">
-                                        <label class="custom-control-label" for="iAgree">
-                                            I agree to receive commercial offers from FretBay and its partners.
-                                        </label>
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="js-form-message mb-3">
+                                        <div class="js-focus-state form">
+                                            <input type="text" class="form-control form__input" name="username"
+                                                   placeholder="Username" required>
+                                        </div>
                                     </div>
-                                    <!-- End Checkbox -->
                                 </div>
 
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="js-form-message mb-3">
+                                        <div class="js-focus-state form">
+                                            <input type="password" class="form-control form__input" name="password"
+                                                   placeholder="Password" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-sm-12">
+
+                                    <div class="js-form-message mb-3">
+                                        <div class="js-focus-state form">
+                                            <input type="password" class="form-control form__input"
+                                                   name="password_confirmation"
+                                                   placeholder="Confirm password" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+
+
+                                    <div class="js-form-message mb-3">
+                                        <div class="js-focus-state form">
+                                            <!-- Checkbox -->
+                                            <div
+                                                class="custom-control custom-checkbox d-flex align-items-center text-muted">
+                                                <input type="checkbox" class="custom-control-input" id="iAgree">
+                                                <label class="custom-control-label" for="iAgree">
+                                                    I agree to receive commercial offers from FretBay and its partners.
+                                                </label>
+                                            </div>
+                                            <!-- End Checkbox -->
+                                        </div>
+
+                                    </div>
+
+                                </div>
                             </div>
 
 
@@ -217,6 +294,12 @@
                 country_id: null
             }
         },
+        computed: {
+            csrf: function () {
+                return window.csrf;
+
+            }
+        },
         created: function () {
             //this.loadCountries();
         },
@@ -240,3 +323,6 @@
         }
     }
 </script>
+
+
+

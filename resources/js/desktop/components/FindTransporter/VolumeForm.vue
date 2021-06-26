@@ -26,7 +26,7 @@
                     <div class="volume-step-box">
                         <h4>I don't know my volume to move. I would like to carry out my inventory online.</h4>
                         <div class="form-group">
-                            <a class="btn btn-custom-success">Online inventory</a>
+                            <a class="btn btn-outline-primary">Online inventory</a>
                         </div>
                     </div>
                 </div>
@@ -35,10 +35,10 @@
 
         <div class="row d-flex justify-content-end mt-2 w-100">
             <div class="col-2">
-                <button class="btn btn-custom-danger">Back</button>
+                <button class="btn btn-outline-blue">Back</button>
             </div>
             <div class="col-3">
-                <button class="btn btn-custom-white">Next</button>
+                <button class="btn btn-outline-primary">Next</button>
             </div>
         </div>
     </div>

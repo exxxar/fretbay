@@ -32,6 +32,9 @@ window.user = document.head.querySelector('meta[name="user"]') != null ?
 
 window.locale = document.documentElement.lang
 
+window.csrf = document.head.querySelector('meta[name="csrf-token"]').content
+
+
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting

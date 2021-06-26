@@ -1,16 +1,16 @@
 <template>
-    <div class="modal fade" id="signIn" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="signIn" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content border-0">
                 <div class="modal-body p-5">
 
 
+                    <form method="post" action="/login">
 
-                    <form class="js-validate" method="post" action="/login">
-
-                        <slot name="csrf"></slot>
+                        <input type="hidden" name="token" :value="csrf">
                         <!-- Signin -->
-                        <div id="signin" data-target-group="idForm">
+                        <div v-if="!forgotPassword" data-target-group="idForm">
                             <!-- Title -->
                             <header class="text-center mb-5">
                                 <h2 class="h4 mb-0">Please sign in</h2>
@@ -18,11 +18,14 @@
                             </header>
                             <!-- End Title -->
 
+
                             <!-- Input -->
                             <div class="js-form-message mb-3">
-                                <div class="js-focus-state form">
-                                    <input type="email" class="form-control form__input" name="email" required="" placeholder="Email" aria-label="Email" data-msg="Please enter a valid email address." data-error-class="u-has-error" data-success-class="u-has-success">
-                                    <slot name="error-email"></slot>
+                                <div class="input-group form">
+                                    <input type="email" class="form-control form__input" name="email" required=""
+                                           placeholder="Email" aria-label="Email"
+                                           data-msg="Please enter a valid email address." data-error-class="u-has-error"
+                                           data-success-class="u-has-success">
                                 </div>
                             </div>
                             <!-- End Input -->
@@ -30,8 +33,10 @@
                             <!-- Input -->
                             <div class="js-form-message mb-3">
                                 <div class="js-focus-state form">
-                                    <input type="password" class="form-control form__input" name="password" required="" placeholder="Password" aria-label="Password" data-msg="Your password is invalid. Please try again." data-error-class="u-has-error" data-success-class="u-has-success">
-                                    <slot name="error-password"></slot>
+                                    <input type="password" class="form-control form__input" name="password" required=""
+                                           placeholder="Password" aria-label="Password"
+                                           data-msg="Your password is invalid. Please try again."
+                                           data-error-class="u-has-error" data-success-class="u-has-success">
                                 </div>
                             </div>
                             <!-- End Input -->
@@ -49,7 +54,9 @@
                                 </div>
 
                                 <div class="col-6 text-right">
-                                    <a class="js-animation-link float-right" href="javascript:;" data-target="#forgotPassword" data-link-group="idForm" data-animation-in="fadeIn">Forgot Password?</a>
+                                    <a class="js-animation-link float-right" href="#" @click="forgotPassword = true"
+                                       data-target="#forgotPassword" data-link-group="idForm"
+                                       data-animation-in="fadeIn">Forgot Password?</a>
                                 </div>
                             </div>
 
@@ -59,9 +66,10 @@
 
                             <div class="text-center mb-3">
                                 <p class="text-muted">
-                                    Do not have an account?
-                                    <a class="js-animation-link" href="javascript:;" data-target="#signup" data-link-group="idForm" data-animation-in="fadeIn">Signup
-                                    </a>
+                                    Do not have an account?<br>
+                                    <a class="js-animation-link" href="/register-customer">Signup
+                                        as Customer</a> or <a class="js-animation-link" href="/register-transporter">Signup
+                                    as Transporter </a>
                                 </p>
                             </div>
 
@@ -102,7 +110,10 @@
                             <!-- Input -->
                             <div class="js-form-message mb-3">
                                 <div class="js-focus-state form">
-                                    <input type="email" class="form-control form__input" name="email" required="" placeholder="Email" aria-label="Email" data-msg="Please enter a valid email address." data-error-class="u-has-error" data-success-class="u-has-success">
+                                    <input type="email" class="form-control form__input" name="email" required=""
+                                           placeholder="Email" aria-label="Email"
+                                           data-msg="Please enter a valid email address." data-error-class="u-has-error"
+                                           data-success-class="u-has-success">
                                 </div>
                             </div>
                             <!-- End Input -->
@@ -110,7 +121,10 @@
                             <!-- Input -->
                             <div class="js-form-message mb-3">
                                 <div class="js-focus-state form">
-                                    <input type="password" class="form-control form__input" name="password" id="password" required="" placeholder="Password" aria-label="Password" data-msg="Your password is invalid. Please try again." data-error-class="u-has-error" data-success-class="u-has-success">
+                                    <input type="password" class="form-control form__input" name="password"
+                                           id="password" required="" placeholder="Password" aria-label="Password"
+                                           data-msg="Your password is invalid. Please try again."
+                                           data-error-class="u-has-error" data-success-class="u-has-success">
                                 </div>
                             </div>
                             <!-- End Input -->
@@ -118,7 +132,10 @@
                             <!-- Input -->
                             <div class="js-form-message mb-3">
                                 <div class="js-focus-state form">
-                                    <input type="password" class="form-control form__input" name="confirmPassword" required="" placeholder="Confirm Password" aria-label="Confirm Password" data-msg="Password does not match the confirm password." data-error-class="u-has-error" data-success-class="u-has-success">
+                                    <input type="password" class="form-control form__input" name="confirmPassword"
+                                           required="" placeholder="Confirm Password" aria-label="Confirm Password"
+                                           data-msg="Password does not match the confirm password."
+                                           data-error-class="u-has-error" data-success-class="u-has-success">
                                 </div>
                             </div>
                             <!-- End Input -->
@@ -130,7 +147,8 @@
                             <div class="text-center mb-3">
                                 <p class="text-muted">
                                     Have an account?
-                                    <a class="js-animation-link" href="javascript:;" data-target="#signin" data-link-group="idForm" data-animation-in="fadeIn">Signin
+                                    <a class="js-animation-link" href="#" data-target="#signin" data-link-group="idForm"
+                                       data-animation-in="fadeIn">Signin
                                     </a>
                                 </p>
                             </div>
@@ -161,7 +179,7 @@
                         <!-- End Signup -->
 
                         <!-- Forgot Password -->
-                        <div id="forgotPassword" style="display: none; opacity: 0;" data-target-group="idForm">
+                        <div id="forgotPassword" v-if="forgotPassword" data-target-group="idForm">
                             <!-- Title -->
                             <header class="text-center mb-5">
                                 <h2 class="h4 mb-0">Recover account</h2>
@@ -172,7 +190,10 @@
                             <!-- Input -->
                             <div class="js-form-message mb-3">
                                 <div class="js-focus-state form">
-                                    <input type="email" class="form-control form__input" name="email" required="" placeholder="Email" aria-label="Email" data-msg="Please enter a valid email address." data-error-class="u-has-error" data-success-class="u-has-success">
+                                    <input type="email" class="form-control form__input" name="email" required=""
+                                           placeholder="Email" aria-label="Email"
+                                           data-msg="Please enter a valid email address." data-error-class="u-has-error"
+                                           data-success-class="u-has-success">
                                 </div>
                             </div>
                             <!-- End Input -->
@@ -184,7 +205,8 @@
                             <div class="text-center mb-3">
                                 <p class="text-muted">
                                     Have an account?
-                                    <a class="js-animation-link" href="javascript:;" data-target="#signin" data-link-group="idForm" data-animation-in="fadeIn">Signin
+                                    <a class="js-animation-link" href="#" @click="forgotPassword=false"
+                                       data-target="#signin" data-link-group="idForm" data-animation-in="fadeIn">Signin
                                     </a>
                                 </p>
                             </div>
@@ -193,11 +215,37 @@
                     </form>
                 </div>
 
-                <button type="button" class="close position-absolute-top-right-0 mt-4 mr-4" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true"><i class="svg-icon svg-icon-xs text-muted"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></i></span>
+                <button type="button" class="close position-absolute-top-right-0 mt-4 mr-4" data-dismiss="modal"
+                        aria-label="Close">
+                    <span aria-hidden="true"><i class="svg-icon svg-icon-xs text-muted"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18"
+                                                                                                   y2="18"></line></svg></i></span>
                 </button>
             </div>
         </div>
     </div>
 
 </template>
+
+<script>
+    export default {
+        data() {
+            return {
+                forgotPassword: false,
+            }
+        },
+        computed: {
+            csrf: function () {
+                return window.csrf;
+
+            }
+        },
+        methods: {
+            hide() {
+                $("#signIn").modal("hide")
+            }
+        }
+    }
+</script>
