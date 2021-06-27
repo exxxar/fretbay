@@ -1,6 +1,6 @@
 <template>
 
-    <div class="container" style="padding:130px;">
+    <div class="container" style="padding-top:50px;">
         <div class="row d-flex justify-content-center align-items-center"  style="height: 100vh;">
             <div class="col-md-6 col-12 col-sm-12">
 

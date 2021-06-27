@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\App;
 use Spatie\Translatable\HasTranslations;
 
-class Category extends Model
+class ObjectCategory extends Model
 {
     use SoftDeletes, HasTranslations;
 
