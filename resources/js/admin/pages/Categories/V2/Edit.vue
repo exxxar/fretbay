@@ -39,7 +39,7 @@
                 this.message = null;
                 axios.put(`/admin/categories/edit/${this.json.id}`, this.json)
                     .then(resp=>{
-                        this.sendMessage("Success Category update!")
+                        this.sendMessage("Success ObjectCategory update!")
                     }).catch((e)=>{
                     this.sendMessage(e.response.data.message, 'error');
                 })

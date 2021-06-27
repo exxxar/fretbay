@@ -72,8 +72,7 @@ Route::view("/to-be-confirmed", "desktop.pages.profile.customer.to-be-confirmed"
 Route::group(['middleware' => ['auth', 'role:transporter'], "prefix" => "transporter"], function () {
     Route::group(["prefix" => "profile"], function () {
 
-        Route::view("/", "desktop.pages.profile.transporter.index")->name("transporter.index");
-        Route::view("/my-account", "desktop.pages.profile.transporter.my-account")->name("transporter-account");
+        Route::view("/", "desktop.pages.profile.transporter.index")->name("transporter-account");
         Route::view("/my-company", "desktop.pages.profile.transporter.my-company")->name("transporter-company");
         Route::view("/legal-documents", "desktop.pages.profile.transporter.legal-documents")->name("transporter-legal-documents");
         Route::view("/my-vehicles", "desktop.pages.profile.transporter.my-vehicles")->name("transporter-vehicles");
@@ -96,7 +95,7 @@ Route::group(['middleware' => ['auth', 'role:customer'], "prefix" => "customer"]
     });
 });
 
-Route::group(['middleware' => ['auth', 'role:admin'], "prefix" => "admin"], function () {
+Route::group(['middleware' => ['auth', 'role:admin'], "prefix" => "program-admin"], function () {
     Route::get("/", "AdminController@index")->name("admin.index");
 
     Route::group(["prefix" => "orders"], function () {
@@ -274,8 +273,9 @@ Route::group(['middleware' => ['auth', 'role:admin'], "prefix" => "admin"], func
 });
 
 //Auth::routes();
+Route::view("/404","errors.404")->name("errors.404");
 
-Route::view("/login","auth.login");
+Route::view("/login","auth.login")->name("login");
 Route::post("/login","Auth\LoginController@login");
 
 Route::post('/register-customer', \Auth\RegisterController::class . '@registerCustomer')->name("register-customer");
@@ -300,3 +300,8 @@ Route::get('setlocale/{locale}', "HomeController@setLocale");
 
 
 
+
+
+Route::group(['prefix' => 'v-admin'], function () {
+    Voyager::routes();
+});

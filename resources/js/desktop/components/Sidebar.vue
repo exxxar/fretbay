@@ -8,17 +8,7 @@
                     <div class="d-flex align-items-center border-bottom py-4 px-5">
                         <h4 class="h5 mb-0">Account</h4>
 
-                        <button type="button" class="close u-sidebar__close ml-auto"
-                                aria-controls="sidebarContent"
-                                aria-haspopup="true"
-                                aria-expanded="false"
-                                data-unfold-event="click"
-                                data-unfold-hide-on-scroll="false"
-                                data-unfold-target="#sidebarContent"
-                                data-unfold-type="css-animation"
-                                data-unfold-animation-in="fadeInRight"
-                                data-unfold-animation-out="fadeOutRight"
-                                data-unfold-duration="500">
+                        <button type="button" class="close u-sidebar__close ml-auto" @click="close()">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
@@ -29,17 +19,17 @@
                         <div class="u-sidebar__content py-5">
                             <!-- Title -->
                             <div class="py-2 px-5">
-                                <h4 class="text-uppercase text-muted font-size-13 mb-0">Menu label</h4>
+                                <h4 class="text-uppercase text-muted font-size-13 mb-0">User menu</h4>
                             </div>
                             <!-- End Title -->
 
                             <!-- List -->
                             <ul class="list-unstyled font-size-14 mb-5">
                                 <li>
-                                    <a class="media align-items-center u-sidebar--panel__link py-2 px-5" href="#">
+                                    <a class="media align-items-center u-sidebar--panel__link py-2 px-5" :href="profileLink">
                                         <img class="max-width-4 mr-3" src="/assets/svg/components/finance-dark-icon.svg" alt="Image Description">
                                         <div class="media-body">
-                                            <span>Dashboard</span>
+                                            <span>Profile</span>
                                         </div>
                                     </a>
                                 </li>
@@ -47,7 +37,7 @@
                                     <a class="media align-items-center u-sidebar--panel__link py-2 px-5" href="#">
                                         <img class="max-width-4 mr-3" src="/assets/svg/components/touch-dark-icon.svg" alt="Image Description">
                                         <div class="media-body">
-                                            <span>Activity</span>
+                                            <span>My company</span>
                                         </div>
                                     </a>
                                 </li>
@@ -55,7 +45,7 @@
                                     <a class="media align-items-center u-sidebar--panel__link py-2 px-5" href="#">
                                         <img class="max-width-4 mr-3" src="/assets/svg/components/team-dark-icon.svg" alt="Image Description">
                                         <div class="media-body">
-                                            <span>Team</span>
+                                            <span>My quotes </span>
                                         </div>
                                     </a>
                                 </li>
@@ -63,7 +53,7 @@
                                     <a class="media align-items-center u-sidebar--panel__link py-2 px-5" href="#">
                                         <img class="max-width-4 mr-3" src="/assets/svg/components/email-dark-icon.svg" alt="Image Description">
                                         <div class="media-body">
-                                            <span>Mailbox</span>
+                                            <span>My messages</span>
                                         </div>
                                     </a>
                                 </li>
@@ -71,7 +61,16 @@
                                     <a class="media align-items-center u-sidebar--panel__link py-2 px-5" href="#">
                                         <img class="max-width-4 mr-3" src="/assets/svg/components/projects-dark-icon.svg" alt="Image Description">
                                         <div class="media-body">
-                                            <span>Projects</span>
+                                            <span>My loadings</span>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a class="media align-items-center u-sidebar--panel__link py-2 px-5" href="#">
+                                        <img class="max-width-4 mr-3" src="/assets/svg/components/projects-dark-icon.svg" alt="Image Description">
+                                        <div class="media-body">
+                                            <span>My evaluations</span>
                                         </div>
                                     </a>
                                 </li>
@@ -80,7 +79,7 @@
 
                             <!-- Title -->
                             <div class="py-2 px-5">
-                                <h4 class="text-uppercase text-muted font-size-13 mb-0">Sub level</h4>
+                                <h4 class="text-uppercase text-muted font-size-13 mb-0">Other</h4>
                             </div>
                             <!-- End Title -->
 
@@ -90,23 +89,15 @@
                                     <a class="media align-items-center u-sidebar--panel__link py-2 px-5" href="#">
                                         <img class="max-width-4 mr-3" src="/assets/svg/components/calendar-dark-icon.svg" alt="Image Description">
                                         <div class="media-body">
-                                            <span>Calendar</span>
+                                            <span>Settings</span>
                                         </div>
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="media align-items-center u-sidebar--panel__link py-2 px-5" href="#">
+                                    <a class="media align-items-center u-sidebar--panel__link py-2 px-5" href="/logout">
                                         <img class="max-width-4 mr-3" src="/assets/svg/components/cog-dark-icon.svg" alt="Image Description">
                                         <div class="media-body">
-                                            <span>Tools</span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="media align-items-center u-sidebar--panel__link py-2 px-5" href="#">
-                                        <img class="max-width-4 mr-3" src="/assets/svg/components/archive-dark-icon.svg" alt="Image Description">
-                                        <div class="media-body">
-                                            <span>Archive</span>
+                                            <span>Logout</span>
                                         </div>
                                     </a>
                                 </li>
@@ -141,3 +132,17 @@
     </aside>
     <!-- End Panel Sidebar Navigation -->
 </template>
+<script>
+    export default {
+        computed:{
+            profileLink(){
+                return window.user.is_transporter?"/transporter/profile":"/customer/profile"
+            }
+        },
+        methods:{
+            close(){
+                $("#sidebar").toggleClass("u-unfold--hidden");
+            }
+        }
+    }
+</script>

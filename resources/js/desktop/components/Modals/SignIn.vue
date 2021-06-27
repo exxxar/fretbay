@@ -99,122 +99,45 @@
                         <!-- End Signin -->
 
                         <!-- Signup -->
-                        <div id="signup" style="display: none; opacity: 0;" data-target-group="idForm">
-                            <!-- Title -->
-                            <header class="text-center mb-5">
-                                <h2 class="h4 mb-0">Please sign up</h2>
-                                <p>Fill out the form to get started.</p>
-                            </header>
-                            <!-- End Title -->
 
-                            <!-- Input -->
-                            <div class="js-form-message mb-3">
-                                <div class="js-focus-state form">
-                                    <input type="email" class="form-control form__input" name="email" required=""
-                                           placeholder="Email" aria-label="Email"
-                                           data-msg="Please enter a valid email address." data-error-class="u-has-error"
-                                           data-success-class="u-has-success">
-                                </div>
-                            </div>
-                            <!-- End Input -->
 
-                            <!-- Input -->
-                            <div class="js-form-message mb-3">
-                                <div class="js-focus-state form">
-                                    <input type="password" class="form-control form__input" name="password"
-                                           id="password" required="" placeholder="Password" aria-label="Password"
-                                           data-msg="Your password is invalid. Please try again."
-                                           data-error-class="u-has-error" data-success-class="u-has-success">
-                                </div>
-                            </div>
-                            <!-- End Input -->
-
-                            <!-- Input -->
-                            <div class="js-form-message mb-3">
-                                <div class="js-focus-state form">
-                                    <input type="password" class="form-control form__input" name="confirmPassword"
-                                           required="" placeholder="Confirm Password" aria-label="Confirm Password"
-                                           data-msg="Password does not match the confirm password."
-                                           data-error-class="u-has-error" data-success-class="u-has-success">
-                                </div>
-                            </div>
-                            <!-- End Input -->
-
-                            <div class="mb-3">
-                                <button type="submit" class="btn btn-block btn-primary">Signup</button>
-                            </div>
-
-                            <div class="text-center mb-3">
-                                <p class="text-muted">
-                                    Have an account?
-                                    <a class="js-animation-link" href="#" data-target="#signin" data-link-group="idForm"
-                                       data-animation-in="fadeIn">Signin
-                                    </a>
-                                </p>
-                            </div>
-
-                            <!-- Divider -->
-                            <div class="text-center u-divider-wrapper my-3">
-                                <span class="u-divider u-divider--xs u-divider--text">OR</span>
-                            </div>
-                            <!-- End Divider -->
-
-                            <!-- Signup Social Buttons -->
-                            <div class="row mx-gutters-2 mb-4">
-                                <div class="col-sm-6 mb-2 mb-sm-0">
-                                    <button type="button" class="btn btn-block btn-facebook text-nowrap">
-                                        <i class="fab fa-facebook-f mr-2"></i>
-                                        Signup with Facebook
-                                    </button>
-                                </div>
-                                <div class="col-sm-6">
-                                    <button type="button" class="btn btn-block btn-twitter">
-                                        <i class="fab fa-twitter mr-2"></i>
-                                        Signup with Twitter
-                                    </button>
-                                </div>
-                            </div>
-                            <!-- End Signup Social Buttons -->
-                        </div>
-                        <!-- End Signup -->
-
-                        <!-- Forgot Password -->
-                        <div id="forgotPassword" v-if="forgotPassword" data-target-group="idForm">
-                            <!-- Title -->
-                            <header class="text-center mb-5">
-                                <h2 class="h4 mb-0">Recover account</h2>
-                                <p>Enter your email address and an email with instructions will be sent to you.</p>
-                            </header>
-                            <!-- End Title -->
-
-                            <!-- Input -->
-                            <div class="js-form-message mb-3">
-                                <div class="js-focus-state form">
-                                    <input type="email" class="form-control form__input" name="email" required=""
-                                           placeholder="Email" aria-label="Email"
-                                           data-msg="Please enter a valid email address." data-error-class="u-has-error"
-                                           data-success-class="u-has-success">
-                                </div>
-                            </div>
-                            <!-- End Input -->
-
-                            <div class="mb-3">
-                                <button type="submit" class="btn btn-block btn-primary">Recover Account</button>
-                            </div>
-
-                            <div class="text-center mb-3">
-                                <p class="text-muted">
-                                    Have an account?
-                                    <a class="js-animation-link" href="#" @click="forgotPassword=false"
-                                       data-target="#signin" data-link-group="idForm" data-animation-in="fadeIn">Signin
-                                    </a>
-                                </p>
-                            </div>
-                        </div>
-                        <!-- End Forgot Password -->
                     </form>
                 </div>
 
+               <!--  Forgot Password
+                <div id="forgotPassword" v-if="forgotPassword" data-target-group="idForm">
+                     Title
+                    <header class="text-center mb-5">
+                        <h2 class="h4 mb-0">Recover account</h2>
+                        <p>Enter your email address and an email with instructions will be sent to you.</p>
+                    </header>
+                     End Title
+
+                     Input
+                    <div class="js-form-message mb-3">
+                        <div class="js-focus-state form">
+                            <input type="email" class="form-control form__input" name="email" required=""
+                                   placeholder="Email" aria-label="Email"
+                                   data-msg="Please enter a valid email address." data-error-class="u-has-error"
+                                   data-success-class="u-has-success">
+                        </div>
+                    </div>
+                     End Input
+
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-block btn-primary">Recover Account</button>
+                    </div>
+
+                    <div class="text-center mb-3">
+                        <p class="text-muted">
+                            Have an account?
+                            <a class="js-animation-link" href="#" @click="forgotPassword=false"
+                               data-target="#signin" data-link-group="idForm" data-animation-in="fadeIn">Signin
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                 End Forgot Password-->
                 <button type="button" class="close position-absolute-top-right-0 mt-4 mr-4" data-dismiss="modal"
                         aria-label="Close">
                     <span aria-hidden="true"><i class="svg-icon svg-icon-xs text-muted"><svg

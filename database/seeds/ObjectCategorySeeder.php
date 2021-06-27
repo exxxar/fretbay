@@ -4,7 +4,7 @@ use App\Models\ObjectCategory;
 use App\Models\CategoryProperty;
 use Illuminate\Database\Seeder;
 
-class CategorySeeder extends Seeder
+class ObjectCategorySeeder extends Seeder
 {
     /**
      * Run the database seeds.

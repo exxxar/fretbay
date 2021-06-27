@@ -16,9 +16,9 @@ class CreateCategoryHasCategoryPropertiesTable extends Migration
         Schema::disableForeignKeyConstraints();
         Schema::create('category_has_category_properties', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger("category_id")->nullable();
+            $table->unsignedBigInteger("object_category_id")->nullable();
             $table->unsignedBigInteger("category_property_id")->nullable();
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->foreign('object_category_id')->references('id')->on('object_categories')->onDelete('cascade');
             $table->foreign('category_property_id')->references('id')->on('category_properties')->onDelete('cascade');
             $table->boolean( 'required')->default(false);
            /// $table->string('custom_title')->nullable();

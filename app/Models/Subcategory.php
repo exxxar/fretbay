@@ -22,7 +22,7 @@ class Subcategory extends Model
         'image',
         'position',
         'is_active',
-        'category_id',
+        'object_category_id',
         'volume',
     ];
 
@@ -46,7 +46,7 @@ class Subcategory extends Model
 
     public function category()
     {
-        return $this->belongsTo(Category::class,"id","category_id");
+        return $this->belongsTo(ObjectCategory::class,"id","object_category_id");
     }
     public function listings()
     {

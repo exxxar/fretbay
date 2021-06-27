@@ -53,12 +53,12 @@ class ObjectCategory extends Model
 
     public function subcategories()
     {
-        return $this->hasMany(Subcategory::class,"category_id","id");
+        return $this->hasMany(Subcategory::class,"object_category_id","id");
     }
 
     public function things()
     {
-        return $this->hasMany(Thing::class ,'category_id', 'id');
+        return $this->hasMany(Thing::class ,'object_category_id', 'id');
     }
 
     public function properties()

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
+use App\Models\ObjectCategory;
 use App\Models\CategoryProperty;
 use App\Models\Listing;
 use App\Models\Order;
@@ -50,9 +50,9 @@ class AdminController extends Controller
 
     public function getCategories(Request $request)
     {
-        $categories = Category::paginate(50);
+        $categories = ObjectCategory::paginate(50);
 
-        $deleted = Category::withTrashed()->whereNotNull("deleted_at")->paginate(50);
+        $deleted = ObjectCategory::withTrashed()->whereNotNull("deleted_at")->paginate(50);
 
         return view("admin.pages.categories.index", [
             "categories" => json_encode($categories),

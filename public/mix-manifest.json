@@ -1,12 +1,12 @@
 {
-    "/js/admin/app.js": "/js/admin/app.js?id=9c43ca5bf83aa51fe716",
-    "/js/admin/media.js": "/js/admin/media.js?id=c4ae4692bf23f1ca16a7",
-    "/js/admin/media-cropp.js": "/js/admin/media-cropp.js?id=09cf2755c2867e58a63a",
-    "/js/admin/menu-create.js": "/js/admin/menu-create.js?id=4e99a8a57af0b000c159",
-    "/js/admin/menu-edit.js": "/js/admin/menu-edit.js?id=09be6e4a6268d5707f24",
-    "/js/desktop/app.js": "/js/desktop/app.js?id=7431c120e61980b93040",
-    "/css/desktop/app.css": "/css/desktop/app.css?id=f7f65c2b0ce3d21b4e90",
-    "/css/admin/app.css": "/css/admin/app.css?id=16c6728d68d78e54f078",
+    "/js/admin/app.js": "/js/admin/app.js?id=b4a765e3d22feb679510",
+    "/js/admin/media.js": "/js/admin/media.js?id=4b6a76952219ec3eea6d",
+    "/js/admin/media-cropp.js": "/js/admin/media-cropp.js?id=49d142e5db4d56bfa952",
+    "/js/admin/menu-create.js": "/js/admin/menu-create.js?id=5e7c981091d565cd2b18",
+    "/js/admin/menu-edit.js": "/js/admin/menu-edit.js?id=875fb5ecaf18f66516f4",
+    "/js/desktop/app.js": "/js/desktop/app.js?id=363374580b06eb88164f",
+    "/css/desktop/app.css": "/css/desktop/app.css?id=7c2af8ce5a5cfd16b199",
+    "/css/admin/app.css": "/css/admin/app.css?id=b489f4f3b4de2661080a",
     "/css/admin/coreui-chartjs.css": "/css/admin/coreui-chartjs.css?id=f2ae400edf860e4b91f1",
     "/css/admin/cropper.css": "/css/admin/cropper.css?id=27f22130a15bf5470243",
     "/js/admin/coreui-utils.js": "/js/admin/coreui-utils.js?id=d2b193e4d4dc7c5ec9a3",
@@ -23,5 +23,9 @@
     "/js/admin/tooltips.js": "/js/admin/tooltips.js?id=847bbbc98a687e8e0a0e",
     "/css/admin/free.min.css": "/css/admin/free.min.css?id=6495e982dc49c7f4c54a",
     "/css/admin/brand.min.css": "/css/admin/brand.min.css?id=e4a94efa7ebb42374cb3",
-    "/css/admin/flag.min.css": "/css/admin/flag.min.css?id=1ee7ebe2cec02dfc3495"
+    "/css/admin/flag.min.css": "/css/admin/flag.min.css?id=1ee7ebe2cec02dfc3495",
+    "/js/admin/app.min.js": "/js/admin/app.min.js?id=b4a765e3d22feb679510",
+    "/css/admin/app.min.css": "/css/admin/app.min.css?id=b489f4f3b4de2661080a",
+    "/js/desktop/app.min.js": "/js/desktop/app.min.js?id=363374580b06eb88164f",
+    "/css/desktop/app.min.css": "/css/desktop/app.min.css?id=7c2af8ce5a5cfd16b199"
 }

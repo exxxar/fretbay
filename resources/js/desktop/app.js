@@ -77,6 +77,7 @@ Vue.component('how-it-work-page', require('../desktop/pages/HowItWork.vue').defa
 Vue.component('who-we-are-page', require('../desktop/pages/WhoWeAre.vue').default);
 
 Vue.component('profile-page', require('./pages/Profile.vue').default);
+Vue.component('profile-transporter-page', require('./pages/Profile/Transporter/Profile.vue').default);
 
 Vue.component('profile-personal-info-page', require('./pages/Profile/PersonalInfo.vue').default);
 Vue.component('profile-customer-activity-listing-page', require('../desktop/pages/Profile/Customer/ActivityListing.vue').default);

@@ -24,7 +24,7 @@ class Thing extends Model
         'image',
         'position',
         'is_active',
-        'category_id',
+        'object_category_id',
         'subcategory_id'
     ];
 
@@ -42,7 +42,7 @@ class Thing extends Model
 
     public function category()
     {
-        return $this->belongsTo(Category::class,"id","category_id");
+        return $this->belongsTo(ObjectCategory::class,"id","object_category_id");
     }
     public function subcategory()
     {
@@ -54,7 +54,7 @@ class Thing extends Model
     }
 //    public function category()
 //    {
-//        return $this->belongsTo(\App\Category::class);
+//        return $this->belongsTo(\App\ObjectCategory::class);
 //    }
 //
 //    public function subcategory()
