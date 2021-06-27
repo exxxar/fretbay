@@ -144,10 +144,10 @@
                     </div>
                 </div>
                 <div class="row text-xs-center">
-                    <div class="col-sm-6 col-sm-pull-6">
+                    <div class="col-sm-12 col-md-6 col-md-pull-6 text-center text-md-left">
                         <a href="#" class="delete-account">Delete my account</a>
                     </div>
-                    <div class="col-sm-6 text-sm-right">
+                    <div class="col-sm-12 col-md-6 text-center text-md-right">
                         <a href="#" class="btn btn-link reset-password">Change password</a>
                         <button class="btn btn-primary btn-lg">save</button>
                     </div>

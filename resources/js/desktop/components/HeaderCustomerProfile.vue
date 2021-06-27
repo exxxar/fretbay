@@ -3,7 +3,7 @@
         <div class="navbar-fixed-top navbar navbar-default col-xs-center col-sm-center header-customer-profile">
             <span class="nav-overlay">&nbsp;</span>
             <div class="container">
-                <div>
+                <div class="navbar-header-wrapper">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle custom-nav-btn collapsed">
                         <span class="sr-only">Toggle navigation</span>

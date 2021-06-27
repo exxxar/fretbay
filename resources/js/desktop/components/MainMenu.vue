@@ -4,7 +4,7 @@
             <div class="logo__body">
                 <nav class="logo__menu">
                     <ul class="logo__list row">
-                        <div class="col-md-9 col-sm-11">
+                        <div class="col-md-9 col-12">
                             <li>
                                 <a href="/"><img src="/images/logo.svg" class="main-logo" alt="Logo"></a>
                             </li>
@@ -18,7 +18,7 @@
                                 <a href="/how-it-works">How it works</a>
                             </li>
                         </div>
-                        <div class="col-md-3  logo__list-aut" v-if="!auth||auth==false">
+                        <div class="сol-md-3 logo__list-aut" v-if="!auth||auth==false">
                             <li>
                                 <a href="/register">Register</a>
                             </li>

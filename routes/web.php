@@ -56,12 +56,10 @@ Route::view("/activity-listing", "desktop.pages.profile.customer.activity-listin
 Route::view("/listings", "desktop.pages.profile.customer.listings")->name("desktop.listings");
 Route::view("/listing-details", "desktop.pages.profile.customer.listing-details")->name("desktop.listing-details");
 
-
-Route::view("/to-be-confirmed", "desktop.pages.profile.customer.to-be-confirmed")->name("to-be-confirmed");
 Route::group(['middleware' => ['auth', 'role:transporter'], "prefix" => "transporter"], function () {
     Route::group(["prefix" => "profile"], function () {
 
-        //Route::view("/transporter-index", "desktop.pages.profile.transporter.index")->name("transporter.index");
+        Route::view("/", "desktop.pages.profile.transporter.index")->name("transporter.index");
         Route::view("/my-account", "desktop.pages.profile.transporter.my-account")->name("transporter-account");
         Route::view("/my-company", "desktop.pages.profile.transporter.my-company")->name("transporter-company");
         Route::view("/legal-documents", "desktop.pages.profile.transporter.legal-documents")->name("transporter-legal-documents");

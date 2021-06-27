@@ -1,0 +1,507 @@
+@media (min-width: 1801px) and (max-width: 3440px) {
+    .fluid-page .sidebar {
+        max-width: 350px;
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 1199px) and (max-width: 1800px) {
+    .offer-page {
+        .h4, h4 {
+            font-size: 16px;
+        }
+
+        h3, .h3 {
+            font-size: 1.5rem;
+        }
+
+        .tab-links > li > a {
+            font-size: 18px;
+        }
+
+        .bids-list .price {
+            font-size: 18px;
+        }
+
+        .text-small {
+            font-size: 10px;
+        }
+
+        .btn, .navbar-default .navbar-nav > .request-quote > a {
+            padding: 5px 10px;
+            font-size: 14px;
+        }
+
+        .box-primary .btn, .box-primary .navbar-default .navbar-nav > .request-quote > a, .navbar-default .box-primary .navbar-nav > .request-quote > a {
+            right: 15px;
+        }
+
+        .box-primary {
+            margin-bottom: 10px;
+            padding: 10px 100px 14px 20px;
+        }
+    }
+
+}
+
+
+
+@media (min-width: 992px) and (max-width: 1198px) {
+    header {
+        .container {
+            max-width: 992px;
+        }
+    }
+
+    .navbar-default .navbar-nav > li > a {
+        padding: 24px 10px 22px;;
+    }
+
+    .navbar-header-wrapper {
+        float: left;
+    }
+
+    .offer-page {
+        .content-left {
+            width: 60%;
+            float: left;
+        }
+
+        .content-right {
+            width: 37%;
+            float: right;
+        }
+    }
+
+    .my-account-container {
+        .btn-upload-pic {
+            font-size: 12px;
+        }
+    }
+}
+
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+    header {
+        .logo__list li a {
+            padding: 0 10px;
+            font-size: 14px;
+        }
+
+        .navbar-header-wrapper {
+            width: 100%;
+
+            & ~ ul.mr-0 {
+                margin: 0 auto !important;
+            }
+        }
+
+
+        .navbar .container .navbar-header {
+            width: 100%;
+            float: none;
+            display: flex;
+            justify-content: center;
+
+
+            .navbar-brand {
+                float: none;
+
+                img {
+                    text-align: center;
+                }
+            }
+        }
+
+        #navbar-main {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        #navbar-main > .navbar-nav {
+            float: none;
+        }
+    }
+
+    .listing-details {
+        h4, .h4, h3, .h3 {
+            font-size: 1.25rem;
+        }
+
+        .main-tabs > li {
+            margin-right: 10px;
+
+            a {
+                padding: 15px 20px;
+                font-size: 16px;
+            }
+        }
+
+        .promote-listing-btn {
+            font-size: 14px;
+        }
+    }
+
+    .offer-page {
+        .content-left {
+            width: 100%;
+            float: none;
+        }
+
+        .content-right {
+            width: 100%;
+            float: none;
+        }
+
+        .tab-content-1 {
+            padding: 0 25px;
+        }
+    }
+
+    .my-account-container {
+        .tab {
+            padding: 20px;
+        }
+
+        .btn-upload-pic {
+            font-size: 12px;
+        }
+
+        .number-of-drivers {
+            margin: 0 auto;
+        }
+    }
+
+    #add-vehicle {
+        .modal-dialog {
+            margin: 20px auto;
+
+            .truck-img {
+                max-width: 275px;
+            }
+        }
+    }
+}
+
+
+
+@media (min-width: 576px) and (max-width: 767px)  {
+    header {
+        .logo__list {
+            justify-content: center;
+        }
+        .logo__list > div.logo__list-aut {
+            justify-content: center;
+        }
+
+        .logo__list li a {
+            padding: 0 10px;
+            font-size: 14px;
+            line-height: 24px;
+        }
+
+        .navbar-header-wrapper {
+            width: 100%;
+
+            &~ul.mr-0 {
+                margin: 0 auto !important;
+            }
+        }
+
+        .navbar .container .navbar-header {
+            width: 100%;
+            float: none;
+            display: flex;
+            justify-content: center;
+
+
+            .navbar-brand {
+                float: none;
+
+                img {
+                    text-align: center;
+                }
+            }
+        }
+
+        #navbar-main {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        #navbar-main > .navbar-nav {
+            float: none;
+        }
+
+
+
+
+        .header-transporter-profile {
+            .right-navigation-menu {
+                li {
+                    a {
+                        font-size: 14px;
+                        padding: 20px 15px;
+                    }
+                }
+            }
+        }
+    }
+
+    .listing-details {
+        h4, .h4, h3, .h3 {
+            font-size: 1.25rem;
+        }
+
+        .main-tabs > li {
+            margin-right: 10px;
+
+            a {
+                padding: 15px 20px;
+                font-size: 16px;
+            }
+        }
+
+        .promote-listing-btn {
+            font-size: 14px;
+        }
+    }
+
+    .offer-page {
+        .content-left {
+            width: 100%;
+            float: none;
+        }
+
+        .content-right {
+            width: 100%;
+            float: none;
+        }
+
+        .tab-content-1 {
+            padding: 0 25px;
+        }
+
+        .job-info-top .date-info {
+            margin-left: 25px;
+            display: inline;
+        }
+    }
+
+    .fretbaysocial-ico {
+        transform: scale(1);
+    }
+
+    .my-account-container {
+        .sidebar {
+            max-width: 100%;
+        }
+
+        .number-of-drivers {
+            margin: 0 auto;
+        }
+    }
+
+    #add-vehicle {
+        .modal-dialog {
+            margin: 20px auto;
+
+            .truck-img {
+                max-width: 275px;
+            }
+        }
+    }
+
+    .profile-page-content .content-box-padding .content-overlay-outer .notification-section label.vswitch {
+        margin-top: 10px;
+    }
+}
+
+
+
+@media (min-width: 360px) and (max-width: 575px)  {
+    header {
+        .logo__list {
+            justify-content: center;
+        }
+
+        .logo__list > div.logo__list-aut {
+            justify-content: center;
+        }
+
+        .logo__list li a {
+            padding: 0 10px;
+            font-size: 14px;
+            line-height: 24px;
+        }
+
+        .navbar-header-wrapper {
+            width: 100%;
+
+            &~ul.mr-0 {
+                margin: 0 auto !important;
+            }
+        }
+
+        .navbar .container .navbar-header {
+            width: 100%;
+            float: none;
+            display: flex;
+            justify-content: center;
+
+
+            .navbar-brand {
+                float: none;
+
+                img {
+                    text-align: center;
+                }
+            }
+        }
+
+        #navbar-main {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        #navbar-main > .navbar-nav {
+            float: none;
+        }
+
+
+
+        .header-transporter-profile {
+            .right-navigation-menu {
+                li {
+                    a {
+                        font-size: 14px;
+                        padding: 20px 15px;
+                    }
+                }
+            }
+        }
+    }
+
+    .listing-details {
+        h4, .h4, h3, .h3 {
+            font-size: 1.2rem;
+        }
+
+        .main-tabs > li {
+            margin-right: 5px;
+
+            a {
+                padding: 15px 10px;
+                font-size: 14px;
+            }
+        }
+
+        .promote-listing-btn {
+            font-size: 14px;
+        }
+    }
+
+    .offer-page {
+        .content-left {
+            width: 100%;
+            float: none;
+        }
+
+        .content-right {
+            width: 100%;
+            float: none;
+        }
+
+        .tab-content-1 {
+            padding: 0 25px;
+        }
+
+        .job-info-top .date-info {
+            margin-left: 15px;
+            display: block;
+        }
+    }
+
+    .fretbaysocial-ico {
+        transform: scale(0.5);
+    }
+
+    .my-account-container {
+        .sidebar {
+            max-width: 100%;
+        }
+
+        .c-sidebar-list .has-menu a {
+            font-size: 14px;
+        }
+
+        .tab {
+            padding: 10px 15px;
+        }
+
+        h2, .h2 {
+            font-size: 1.5rem;
+        }
+
+        .text-lg {
+            font-size: 14px;
+        }
+
+        .tab-content .inform-box {
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        h4, .h4 {
+            font-size: 1rem;
+        }
+
+        .number-of-drivers {
+            margin: 0 auto;
+            padding: 10px;
+        }
+    }
+
+    #add-vehicle {
+        .modal-dialog {
+            margin: 20px auto;
+
+            .truck-img {
+                max-width: 250px;
+            }
+        }
+    }
+
+    .profile-page-content {
+        .content-box-padding .content-overlay-outer .notification-section label.vswitch {
+            margin-top: 10px;
+        }
+
+        .avatar-wrapper {
+            padding: 30px 20px;
+        }
+
+        .logout {
+            top: 5px;
+        }
+
+        .jobs-detail {
+            flex-wrap: wrap;
+            justify-content: left;
+
+            li {
+                min-width: 100%;
+                margin: 10px;
+            }
+        }
+
+        .delete-account {
+            margin: 10px 0;
+        }
+    }
+}

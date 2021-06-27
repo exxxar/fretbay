@@ -78,7 +78,9 @@
     border-bottom-color: transparent;
 }
 
-
+.form-control.number-of-drivers {
+    display: inline-block;
+}
 
 //Customer-profile
 
@@ -388,7 +390,6 @@
 
     .container, .container-fluid {
         & .navbar-brand {
-            margin-left: -15px;
             color: #777;
             padding-top: 3px;
             padding-bottom: 10px;
@@ -478,7 +479,7 @@
             .banner {
                 position: relative;
                 padding: 0 35px 20px;
-                background: url(https://fretbay.com/en/assets/images/shipper/profile/bg-profile.jpg) no-repeat center top;
+                background: url(https://fretbay.com/en/assets/images/shipper/profile/bg-profile.jpg) center top;
 
                 .username-wrapper {
 
@@ -664,6 +665,7 @@
                     }
 
                 }
+
                 .input-has-icon-left {
                     input {
                         padding-left: 45px;
@@ -992,6 +994,7 @@
 }
 
 .offer-page {
+    padding: 20px;
     font-size: 14px;
     color: #3D4E60;
     font-family: $Lato;
@@ -1072,6 +1075,7 @@
     .text-small {
         font-size: 12px;
     }
+
     .job-info-top {
         padding: 9px 6px 0 0;
         margin-bottom: 15px;
@@ -1088,6 +1092,11 @@
             display: inline-block;
             margin-left: 25px;
         }
+    }
+
+    .job-info-top-row {
+        display: flex;
+        justify-content: space-between;
     }
 
     .page-back-btn {
@@ -1327,9 +1336,10 @@
         li {
             width: 50%;
             margin-bottom: 0;
+            background: #f3f3f3;
 
             & > a {
-                background: #f3f3f3;
+
                 display: block;
                 color: #3D4E60;
                 font-size: 24px;
@@ -1339,12 +1349,14 @@
                 font-weight: 400;
                 text-align: center;
                 border-radius: 0;
+                cursor: pointer;
             }
 
-            &.active > a {
+            &.active  {
                 background: #fff;
                 border: none;
                 font-weight: 900;
+                cursor: none;
             }
         }
     }
@@ -1482,6 +1494,7 @@
 
 
 .listing-details {
+    padding: 20px;
     font-size: 14px;
     font-family: $Lato;
 
@@ -1878,9 +1891,4 @@
     }
 }
 
-@media (min-width: 1801px) and (max-width: 3440px) {
-    .fluid-page .sidebar {
-        max-width: 350px;
-        width: 100%;
-    }
-}
+

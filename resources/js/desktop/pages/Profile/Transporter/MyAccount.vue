@@ -1,5 +1,5 @@
 <template>
-    <div class="tab-content col-md-offset-4 col-md-8">
+    <div class="tab-content col-md-offset-4 col-lg-8 col-md-12">
         <div class="tab1_1 tab">
             <div class="row">
                 <div class="col-md-10 offset-md-1">
@@ -10,7 +10,7 @@
                         Please contact us at <a href="#">transporteur@fretbay.com</a> to make the request.</p>
                     <form action="#">
                         <div class="row">
-                            <div class="col-sm-7">
+                            <div class="col-lg-7 col-md-12">
                                 <div class="form-group"><label for="" class="text-lg">Name</label><input type="text"
                                                                                                          class="form-control form-control-img-lock"
                                                                                                          placeholder="name"
@@ -25,7 +25,7 @@
                                     placeholder="1234567890"
                                     disabled></div>
                             </div>
-                            <div class="col-sm-5">
+                            <div class="col-lg-5 col-md-12">
                                 <div class="transporter-img">
                                     <img
                                         v-lazy="user.profile.image"

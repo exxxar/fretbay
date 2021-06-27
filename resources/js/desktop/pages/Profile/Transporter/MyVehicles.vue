@@ -1,7 +1,7 @@
 <template>
-        <div class="tab-content col-md-8">
+        <div class="tab-content col-md-12 col-lg-8">
 
-            <div v-show="visible" id="add-vehicle" class="modal add-vehicle-active" >
+            <div  id="add-vehicle" class="modal add-vehicle-active" >
                 <div class="modal-dialog modal-lg">
                     <div class="text-center">
                         <img src="https://fretbay.com/fr/frv2/assets/images/public/truck.png" alt="" class="truck-img">
@@ -163,7 +163,7 @@
                         <a class="text-center" href="#"><img class="add-vehicle-icon" src="https://fretbay.com/fr/frv2/assets/images/common/icons/general/driver-icon.svg" alt=""></a>
                         <div class="text-center">
                             <label class="label-inline">Number of drivers</label>
-                            <input type="text" class="number-of-drivers col-sm-3 form-control form-control-empty">
+                            <input type="text" class="number-of-drivers col-6 col-md-3 form-control form-control-empty">
                         </div>
                     </div>
                 </div>

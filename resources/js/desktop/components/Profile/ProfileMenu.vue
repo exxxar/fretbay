@@ -1,5 +1,5 @@
 <template>
-    <div class="col-md-4 sidebar">
+    <div class="col-md-12 col-lg-4 sidebar">
         <ul class="c-sidebar-list">
             <li class="has-menu">
                 <a class="tab-link1" @click="activate(1)" :class="{ 'active-item-menu': activeElement == 1 }">My

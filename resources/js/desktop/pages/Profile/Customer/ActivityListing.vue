@@ -1,14 +1,14 @@
 <template>
-    <div class="clearfix offer-page m-5">
+    <div class="clearfix offer-page">
         <div class="content-left">
             <div class="job-info-top">
-                <div class="row">
-                    <div class="col-sm-2">
+                <div class="job-info-top-row">
+                    <div class="">
                         <a href="#" class="btn page-back-btn visible-xs">
                             <img src="https://fretbay.com/fr/frv2/assets/images/common/icons/general/arrow-back.svg" alt="">Back
                         </a>
                     </div>
-                    <div class="col-sm-10 text-sm-right">
+                    <div class="text-sm-right">
                         <span class="views-info"><img src="https://fretbay.com/fr/frv2/assets/images/common/icons/general/eye-gray.svg" alt="">Views: <span class="text-bold"> 150</span></span>
                         <span class="date-info">Posted on: <span class="text-bold">10/06/2021</span></span>
                         <span class="date-info listing-expiry text-danger">Expires in <span class="text-bold">19 days</span></span>

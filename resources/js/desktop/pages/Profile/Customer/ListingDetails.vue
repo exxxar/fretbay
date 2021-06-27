@@ -1,6 +1,6 @@
 <template>
-    <div class="row main-row listing-details m-5">
-        <div class="col-md-8 contents">
+    <div class="row main-row listing-details">
+        <div class="col-lg-8 col-12 contents">
             <ul class="nav nav-tabs main-tabs">
                 <li class="active">
                     <a href="#">My listing</a>
@@ -138,7 +138,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4 sidebar common-sidebar">
+        <div class="col-lg-4 col-12 sidebar common-sidebar">
             <div class="content-box-light-shadow content-box-narrow-padding form-group hiw-steps">
                 <article>
                     <h4 class="title text-bold">Don't miss any opportunities</h4>

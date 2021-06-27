@@ -3,10 +3,10 @@
         <div class="footer-main">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-2">
+                    <div class="col-lg-2">
                         <a href="#" class="footer-main__logotip"><img src="/images/footer-logo.svg" width="143" height="165" alt="Logo"></a>
                     </div>
-                    <div class="col-md-10 top-right-footersection">
+                    <div class="col-lg-10 top-right-footersection">
                         <div class="row">
                             <div class="col-md-3">
                                 <h2 class="trfs__title">

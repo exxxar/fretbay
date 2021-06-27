@@ -1,5 +1,5 @@
  <template>
-        <div class="tab-content col-md-8">
+        <div class="tab-content col-md-12 col-lg-8">
             <div class="tab1_1 tab">
                 <div class="row">
                     <div class="col-md-10 offset-md-1">

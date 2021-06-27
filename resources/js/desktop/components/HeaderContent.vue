@@ -1,5 +1,5 @@
 <template>
-    <header v-bind:style="{background:'url('+background+') repeat-x'}">
+    <header v-bind:style="{background:'repeat-x url('+background+')', 'background-size':'cover'}">
         <main-menu :auth="auth"/>
         <div id="first" style="height: 543px">
             <div class="container" style="top: 15%">
