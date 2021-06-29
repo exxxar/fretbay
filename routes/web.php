@@ -83,7 +83,7 @@ Route::group(['middleware' => ['auth', 'role:transporter'], "prefix" => "transpo
 
 Route::group(['middleware' => ['auth', 'role:customer'], "prefix" => "customer"], function () {
     Route::group(["prefix" => "profile"], function () {
-        Route::view("/my-account", "desktop.pages.profile.transporter.my-account")->name("customer-account");
+        Route::view("/", "desktop.pages.profile.customer.index")->name("customer-account");
     });
 });
 
@@ -272,10 +272,21 @@ Route::post('/register-transporter', \Auth\RegisterController::class . '@registe
 Route::get('/logout', \Auth\LoginController::class . '@logout')->name("logout");
 
 
-Route::get('setlocale/{locale}', "HomeController@setLocale");
+
+
+Route::resource('category', 'CategoryController');
+
+Route::resource('subcategory', 'SubcategoryController');
+
+Route::resource('transporter', 'TransporterController');
+
+Route::resource('customer', 'CustomerController');
 
 Route::resource('profile', 'ProfileController');
-Route::resource('category', 'CategoryController');
-Route::resource('subcategory', 'SubcategoryController');
+
+Route::get('setlocale/{locale}', "HomeController@setLocale");
+
+
+
 
 

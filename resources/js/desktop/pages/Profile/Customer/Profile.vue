@@ -5,22 +5,24 @@
                 <div class="content-overlay-outer">
                     <div class="banner text-center">
                         <div class="avatar-wrapper">
+
                             <label for="" class="avatar-label">
                                 <span class="img-placeholder">
-                                    <input type="file" class="hide">
+                                     <img v-lazy="" alt="">
+                                  <!--  <input type="file" class="hide">-->
                                 </span>
                             </label>
                         </div>
                         <div class="username-wrapper">
-                            <h3 class="username">UNIQUEUSERNAME</h3>
-                            <p class="member-since">Member since <span class="text-small">03/03/2020</span></p>
+                            <h3 class="username">{{user.name}}</h3>
+                            <p class="member-since">Member since <span class="text-small">{{user.created_at}}</span></p>
                         </div>
                         <ul class="jobs-detail">
                             <li>To be confimerd <span class="job-count">0</span></li>
                             <li>Expired <span class="job-count">0</span></li>
                             <li>Validated <span class="job-count">0</span></li>
                         </ul>
-                        <a href="#" class="logout">
+                        <a href="/logout" class="logout">
                             <img src="https://fretbay.com/en/assets/images/common/icons/general/logout.svg" alt="">
                             <span>Log out</span>
                         </a>
@@ -66,11 +68,11 @@
                     <div class="row form-group-lg">
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Name">
+                                <input type="text" class="form-control" placeholder="Name" :value="user.profile.second_name">
                             </div>
                         </div>
                         <div class="col-sm-6">
-                            <div class="form-group"><input type="text" class="form-control" placeholder="First name"></div>
+                            <div class="form-group"><input type="text" class="form-control" placeholder="First name" :value="user.profile.first_name"></div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group form-group-lg">
@@ -94,7 +96,7 @@
                                                 <li class="ui-select-choices-group"></li>
                                             </ui>
                                         </div>
-                                        <input type="text" class="form-control phone-field" placeholder="Phone" disabled="disabled" maxlength="10" value="8476253958">
+                                        <input type="text" class="form-control phone-field" placeholder="Phone" disabled="disabled" maxlength="10" :value="user.profile.telephone_number_1">
                                     </div>
                                 </div>
                             </div>
@@ -121,7 +123,7 @@
                                                 <li class="ui-select-choices-group"></li>
                                             </ui>
                                         </div>
-                                        <input type="text" class="form-control phone-field" placeholder="Phone" maxlength="10" value="8476253958">
+                                        <input type="text" class="form-control phone-field" placeholder="Phone" maxlength="10" :value="user.profile.telephone_number_2">
                                     </div>
                                 </div>
                             </div>
@@ -137,7 +139,7 @@
                             </div></div>
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Address"></div>
+                                <input type="text" class="form-control" placeholder="Address" :value="user.profile.address"></div>
                         </div>
                     </div>
                 </div>
@@ -157,6 +159,17 @@
 
 <script>
     export default {
-
+        computed: {
+            user() {
+                return JSON.parse(window.user)
+            }
+        },
     }
 </script>
+
+<style lang="scss">
+    .img-placeholder {
+        display: flex !important;
+    }
+
+</style>

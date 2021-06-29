@@ -100,6 +100,12 @@
  */
 
 /**
+  * vee-validate v3.4.8
+  * (c) 2021 Abdelrahman Awad
+  * @license MIT
+  */
+
+/**
  * @license
  * Lodash <https://lodash.com/>
  * Copyright OpenJS Foundation and other contributors <https://openjsf.org/>

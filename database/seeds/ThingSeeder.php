@@ -8,7 +8,7 @@ class ThingSeeder extends Seeder
 {
     public function getCategoryIdByTitle($title)
     {
-        return Subcategory::where("title->en", $title)->first()->id;
+        return Subcategory::where("title->en", $title)->first()->id ?? null;
     }
     /**
      * Run the database seeds.

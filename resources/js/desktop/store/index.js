@@ -16,6 +16,6 @@ Vue.use(Vuex);
 export default new Vuex.Store({
     namespaced: true,
     modules: {
-         ArticleCart, VolumeCart, Category, Subcategory, Thing, ListingModule, Listing
+        ArticleCart, VolumeCart, Category, Subcategory, Thing, ListingModule, Listing
     }
 })

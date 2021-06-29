@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Quote;
 use Illuminate\Database\Seeder;
 
 class QuoteSeeder extends Seeder
@@ -11,6 +12,6 @@ class QuoteSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Quote::class, 5)->create();
+        factory(Quote::class, 5)->create();
     }
 }

@@ -131,6 +131,7 @@ Vue.component('things-debug-component', require('./components/Things/DebugThings
 
 //Listings
 Vue.component('listings-index-page', require('./pages/Listings/Index.vue').default);
+Vue.component('listings-table-page', require('./pages/Listings/Table.vue').default);
 Vue.component('listings-create-page', require('./pages/Listings/Create.vue').default);
 Vue.component('listings-edit-page', require('./pages/Listings/Edit.vue').default);
 Vue.component('listings-show-page', require('./pages/Listings/Show.vue').default);

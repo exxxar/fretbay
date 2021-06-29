@@ -48,11 +48,6 @@ class User extends Authenticatable
         return $this->is_admin === 1;
     }
 
-    public function listings()
-    {
-        return $this->hasMany(Listing::class);
-    }
-
     public function profile()
     {
         return $this->hasOne(Profile::class, "id", "profile_id");
@@ -67,4 +62,11 @@ class User extends Authenticatable
     {
         return User::with(["profile", "profile.vehicles", "profile.verifications", "roles", "reviews"])->where("id", Auth::user()->id)->first();
     }
+
+    public function listings()
+    {
+        return $this->hasMany(Listing::class);
+    }
+
+
 }
