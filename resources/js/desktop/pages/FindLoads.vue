@@ -501,32 +501,5 @@ export default {
 </script>
 
 <style scoped>
-.container-fluid{
-   padding: 0;
-}
-    .listing-item-btn {
-        border: none;
-        outline: none;
-        background: #0fb15d none repeat scroll 0% 0%;
-        color: white;
-        box-shadow: rgb(7, 173, 84) 0px 3px 15px -2px;
-        border-radius: 50px;
-        padding: 10px 25px;
-        text-transform: uppercase;
-        font-weight: 700;
-    }
-.category-2::before {
-    background-image: url("/images/02.svg");
-}
- .category::before {
-    content: "";
-    display: inline-block;
-    width: 22px;
-    height: 22px;
-    background-repeat: no-repeat;
-    background-position: left center;
-    opacity: 0.6;
-    vertical-align: middle;
-    margin-right: 10px;
-}
+
 </style>

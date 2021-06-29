@@ -12,10 +12,10 @@
 
         <div class="row d-flex justify-content-end mt-2 w-100">
             <div class="col-2">
-                <button class="btn btn-custom-danger">Back</button>
+                <button class="btn btn-outline-blue">Back</button>
             </div>
             <div class="col-3">
-                <button class="btn btn-custom-white">Next</button>
+                <button class="btn btn-outline-primary">Next</button>
             </div>
         </div>
     </div>
@@ -87,30 +87,5 @@
     }
 </script>
 <style lang="scss">
-   .scroll-area {
-       position: relative;
-       margin: auto;
-       width: 100%;
-       height: 400px;
 
-       ul {
-           width: 100%;
-           height: 100%;
-
-           li.item {
-               width: 100%;
-               padding: 10px;
-               cursor:pointer;
-
-               &:nth-of-type(2n){
-                   background: #f6f6f6;
-               }
-
-               &:hover {
-                   background:green;
-                   color:white;
-               }
-           }
-       }
-   }
 </style>

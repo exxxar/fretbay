@@ -75,7 +75,5 @@
     export default {}
 </script>
 <style lang="scss">
-    #fix-etape {
-        padding-top: 100px;
-    }
+
 </style>

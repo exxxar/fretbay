@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
+use App\Models\ObjectCategory;
 use App\Http\Requests\CategoryStoreRequest;
 use App\Http\Requests\CategoryUpdateRequest;
 use Illuminate\Http\Request;
@@ -17,7 +17,7 @@ class CategoryController extends Controller
     {
 
         if ($request->ajax()) {
-            $categories = Category::with(['subcategories', 'things', 'properties'])
+            $categories = ObjectCategory::with(['subcategories', 'things', 'properties'])
                 ->where('additional_menu_title', 'choice_of_category')
                 ->get();
             return response()->json([
@@ -25,14 +25,14 @@ class CategoryController extends Controller
             ]);
         }
 
-        $categories = Category::all();
+        $categories = ObjectCategory::all();
 
         return view('admin.pages.categories.index', compact('categories'));
     }
 
     public function get()
     {
-        $categories = Category::with(['subcategories', 'things', 'properties'])->get();
+        $categories = ObjectCategory::with(['subcategories', 'things', 'properties'])->get();
         return response()->json([
             'categories' => $categories
         ]);
@@ -53,7 +53,7 @@ class CategoryController extends Controller
      */
     public function store(CategoryStoreRequest $request)
     {
-        $category = Category::create($request->validated());
+        $category = ObjectCategory::create($request->validated());
 
         return response()->noContent();
     }
@@ -65,7 +65,7 @@ class CategoryController extends Controller
      */
     public function show(Request $request, $id)
     {
-        $category = Category::find($id);
+        $category = ObjectCategory::find($id);
         return view('admin.pages.categories.show', compact('category'));
     }
 
@@ -76,7 +76,7 @@ class CategoryController extends Controller
      */
     public function edit(Request $request, $id)
     {
-        $category = Category::find($id);
+        $category = ObjectCategory::find($id);
         return view('admin.pages.categories.update', compact('category'));
     }
 
@@ -87,7 +87,7 @@ class CategoryController extends Controller
      */
     public function update(CategoryUpdateRequest $request, $id)
     {
-        $category = Category::find($id);
+        $category = ObjectCategory::find($id);
         $category->update($request->validated());
 
         return response()->noContent();
@@ -100,7 +100,7 @@ class CategoryController extends Controller
      */
     public function destroy(Request $request, $id)
     {
-        $category = Category::find($id);
+        $category = ObjectCategory::find($id);
         $category->delete();
 
         return response()->noContent();

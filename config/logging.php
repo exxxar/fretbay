@@ -37,13 +37,8 @@ return [
     'channels' => [
         'stack' => [
             'driver' => 'stack',
-            'channels' =>['single', 'telegram'],
+            'channels' =>['single'],
             'ignore_exceptions' => false,
-        ],
-        'telegram' => [
-            'driver' => 'custom',
-            'via'    => Logger\TelegramLogger::class,
-            'level'  => 'debug',
         ],
         'single' => [
             'driver' => 'single',

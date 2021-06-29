@@ -5,11 +5,13 @@
  */
 import '@fortawesome/fontawesome-free/css/all.css'
 import '@fortawesome/fontawesome-free/js/all.js'
+
 require('./bootstrap');
 
 window.Vue = require('vue');
 
 import Vuex from 'vuex';
+
 Vue.use(Vuex);
 
 import store from './store';
@@ -17,12 +19,15 @@ import store from './store';
 window.eventBus = new Vue();
 
 import Notifications from 'vue-notification'
+
 Vue.use(Notifications)
 
 import VueTheMask from 'vue-the-mask'
+
 Vue.use(VueTheMask)
 
 import VueLazyload from 'vue-lazyload'
+
 Vue.use(VueLazyload, {
     preLoad: 1.3,
     error: "/images/common/icons/general/content-loader.gif",
@@ -30,11 +35,23 @@ Vue.use(VueLazyload, {
     attempt: 1
 })
 
+
+import vSelect from "vue-select";
+
+Vue.component("v-select", vSelect);
+
+import "vue-select/dist/vue-select.css";
+
 //components
 Vue.component('preloader-component', require('../desktop/components/Preloader.vue').default);
 Vue.component('footer-component', require('../desktop/components/Footer.vue').default);
-Vue.component('header-content-component', require('../desktop/components/HeaderContent.vue').default);
-Vue.component('header-simple-component', require('../desktop/components/HeaderSimple.vue').default);
+Vue.component('header-component', require('./components/Header.vue').default);
+Vue.component('sidebar-component', require('./components/Sidebar.vue').default);
+Vue.component('signin-component', require('./components/Modals/SignIn.vue').default);
+Vue.component('signup-transporter-component', require('./components/Modals/SignUpTransporter.vue').default);
+Vue.component('signup-customer-component', require('./components/Modals/SignUpCustomer.vue').default);
+
+
 Vue.component('header-customer-profile-component', require('../desktop/components/HeaderCustomerProfile.vue').default);
 Vue.component('header-transporter-profile-component', require('../desktop/components/HeaderTransporterProfile.vue').default);
 Vue.component('latest-transactions-component', require('../desktop/components/LatestTransactions.vue').default);
@@ -60,6 +77,7 @@ Vue.component('how-it-work-page', require('../desktop/pages/HowItWork.vue').defa
 Vue.component('who-we-are-page', require('../desktop/pages/WhoWeAre.vue').default);
 
 Vue.component('profile-page', require('./pages/Profile.vue').default);
+Vue.component('profile-transporter-page', require('./pages/Profile/Transporter/Profile.vue').default);
 
 Vue.component('profile-personal-info-page', require('./pages/Profile/PersonalInfo.vue').default);
 Vue.component('profile-customer-activity-listing-page', require('../desktop/pages/Profile/Customer/ActivityListing.vue').default);
@@ -118,9 +136,10 @@ Vue.use(VueLang, {
 
 import VueSplide from '@splidejs/vue-splide';
 import '@splidejs/splide/dist/css/themes/splide-sea-green.min.css';
-Vue.use( VueSplide );
 
-import { ValidationProvider, extend, ValidationObserver, localize, localeChanged } from 'vee-validate';
+Vue.use(VueSplide);
+
+import {ValidationProvider, extend, ValidationObserver, localize, localeChanged} from 'vee-validate';
 import * as rules from 'vee-validate/dist/rules';
 import en from 'vee-validate/dist/locale/en.json';
 import fr from 'vee-validate/dist/locale/fr.json';
@@ -139,6 +158,7 @@ Vue.component('ValidationProvider', ValidationProvider);
 Vue.component('ValidationObserver', ValidationObserver);
 
 import Fuse from 'fuse.js'
+
 Vue.prototype.$search = function (term, list, options) {
     return new Promise(function (resolve, reject) {
         var run = new Fuse(list, options);
@@ -151,16 +171,17 @@ Vue.prototype.$search = function (term, list, options) {
     })
 }
 import {BootstrapVue, IconsPlugin} from 'bootstrap-vue'
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
-Vue.use(BootstrapVue);
-Vue.use(IconsPlugin);
+/*import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'*/
+/*Vue.use(BootstrapVue);*/
+/*Vue.use(IconsPlugin);*/
 
 const moment = require('moment');
 // require('moment/locale/en');
 Vue.use(require('vue-moment'), {
     moment
 });
+
 
 const app = new Vue({
     store,
@@ -178,3 +199,7 @@ if (localStorage.getItem('locale')) {
     app.$moment.locale('en');
     localize('en');
 }
+
+
+
+

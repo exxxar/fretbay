@@ -1,0 +1,30 @@
+.content-box-gray {
+    background: #f3f4f8;
+    border-radius: 12px;
+    padding: 10px;
+    box-sizing: border-box;
+
+    .input-has-icon-right {
+        position: relative;
+
+        input {
+            font-size: 12px;
+        }
+
+        .rel-icon {
+            position: absolute;
+            right: 6px;
+            left: auto;
+            top: -3px;
+
+            img {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+}
+
+.form-control {
+    padding: 10px 34px 10px 10px;
+}

@@ -1,7 +1,7 @@
 @extends("layouts.app")
 
 @section("content")
-    <header-transporter-profile-component></header-transporter-profile-component>
-    <profile-page></profile-page>
+    <header-component></header-component>
+    <profile-transporter-page></profile-transporter-page>
     <footer-component></footer-component>
 @endsection

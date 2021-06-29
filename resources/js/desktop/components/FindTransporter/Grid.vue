@@ -36,10 +36,10 @@
             <template v-slot:footer>
                 <div class="row d-flex justify-content-end mt-2 w-100">
                     <div class="col-12 col-sm-2">
-                        <button class="btn btn-custom-danger" @click="prevStep">Back</button>
+                        <button class="btn btn-outline-blue" @click="prevStep">Back</button>
                     </div>
                     <div class="col-12 col-sm-3">
-                        <button class="btn btn-custom-white" @click="nextStep">Next</button>
+                        <button class="btn btn-outline-primary" @click="nextStep">Next</button>
                     </div>
                 </div>
             </template>

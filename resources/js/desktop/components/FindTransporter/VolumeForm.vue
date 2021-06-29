@@ -26,7 +26,7 @@
                     <div class="volume-step-box">
                         <h4>I don't know my volume to move. I would like to carry out my inventory online.</h4>
                         <div class="form-group">
-                            <a class="btn btn-custom-success">Online inventory</a>
+                            <a class="btn btn-outline-primary">Online inventory</a>
                         </div>
                     </div>
                 </div>
@@ -35,70 +35,14 @@
 
         <div class="row d-flex justify-content-end mt-2 w-100">
             <div class="col-2">
-                <button class="btn btn-custom-danger">Back</button>
+                <button class="btn btn-outline-blue">Back</button>
             </div>
             <div class="col-3">
-                <button class="btn btn-custom-white">Next</button>
+                <button class="btn btn-outline-primary">Next</button>
             </div>
         </div>
     </div>
 </template>
 <style lang="scss">
 
-    .volume-step-box-wrap {
-        &:after {
-            content: 'Or';
-            margin-top: -166px;
-            position: absolute;
-            background: white;
-            padding: 16px;
-            text-transform: uppercase;
-            border-radius: 50%;
-            width: 70px;
-            height: 70px;
-            font-weight: 900;
-            margin-left: -35px;
-            line-height: 200%;
-        }
-    }
-
-
-    .volume-field-wrap {
-        position: relative;
-
-        input {
-            background:white;
-        }
-
-        .volume-unit {
-            position: absolute;
-            top: 10px;
-            right: 14px;
-        }
-    }
-    .volume-step-box {
-        position: relative;
-        background: #f3f4f8;
-        min-height: 254px;
-        padding: 40px 20%;
-        border-radius: 8px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-
-
-
-        h4 {
-            font-size:14px;
-
-        }
-    }
-
-    .box-title {
-        color: #5b6981;
-        font-size: 20px;
-        font-weight:400;
-
-    }
 </style>

@@ -1,90 +1,47 @@
 <template>
-    <div>
-        <section id="commentcamarche-section-tabs">
-            <div class="container">
-                <div class="tabs">
-                    <div class="tab-pane tabs__content" v-for="tab in tabs" :class="{active:tab.id == selected}" >
-                        <div class="slide-thumb">
-                            <img :src="tab.image" alt="">
-                        </div>
-                        <div class="slide-content">
-                            <h2>{{tab.title}}</h2>
-                            <p>{{tab.text}}}</p>
-                            <a :href="tab.href" class="btn-theme">{{tab.anchor}}</a>
-                        </div>
-                    </div>
-                    <!--<div class="tab-pane tabs__content active">
-                        <div class="slide-thumb">
-                            <img src="/images/commentcamarche-img1.png" alt="">
-                        </div>
-                        <div class="slide-content">
-                            <h2>Publish a listing</h2>
-                            <p>Post your listing for free. It is only a few clicks away from being published and visible
-                                by all our professional carriers.</p>
-                            <a href="#" class="btn-theme">REQUEST FOR QUOTATION</a>
-                        </div>
-                    </div>
-                    <div class="tab-pane tabs__content">
-                        <div class="slide-thumb">
-                            <img src="/images/commentcamarche-img2.png" alt="">
-                        </div>
-                        <div class="slide-content">
-                            <h2>Receive quotes</h2>
-                            <p>Once your listing is posted, our professional carriers will have access to your request
-                                and will offer you their quote. You will have the opportunity to choose the quote that
-                                suits you best and cheapest thanks to our reverse auction system.</p>
-                            <a href="#" class="btn-theme">REQUEST FOR QUOTATION</a>
-                        </div>
-                    </div>
-                    <div class="tab-pane tabs__content">
-                        <div class="slide-thumb">
-                            <img src="/images/commentcamarche-img3.png" alt="">
-                        </div>
-                        <div class="slide-content">
-                            <h2>Get delivered</h2>
-                            <p>Once your quotation has been selected, the carrier will take care of your furniture and
-                                belongings at the address and on the date you have chosen until the destination of your
-                                choice. Your belongings are handled safely by professionals equipped with equipment
-                                adapted to your needs in order to avoid any damage.</p>
-                            <a href="#" class="btn-theme">REQUEST FOR QUOTATION</a>
-                        </div>
-                    </div>
-                    <div class="tab-pane tabs__content">
-                        <div class="slide-thumb">
-                            <img src="/images/commentcamarche-img4.png" alt="">
-                        </div>
-                        <div class="slide-content">
-                            <h2>Evaluate the service</h2>
-                            <p>When your move is completed, you have the opportunity to evaluate your carrier on our
-                                site. All our carriers are evaluated in order to allow you to choose your service as
-                                well as possible. So, thanks to the contribution of our customers, you are guaranteed to
-                                find the carrier that suits you.</p>
-                            <a href="#" class="btn btn-theme">REQUEST FOR QUOTATION</a>
-                        </div>
-                    </div>-->
-                    <ul class="tabs__caption">
-                        <li v-for="item in items" :class="{active:item.number == selected}" @click="selected = item.number, clearTickInterval()">
-                            <strong>{{ item.number }}</strong>{{ item.message }}
-                        </li>
-                    </ul>
+
+    <div class="container" style="padding:130px;">
+        <h1 class="text-center mb-2">Movers evaluated by our customers</h1>
+
+        <VueSlickCarousel v-bind="slickOptions">
+
+            <div v-for="tab in tabs">
+                <div class="row">
+                    <div class="col-sm-4"><img class="card-img-top w-100 custom-slick-slide-img" :src="tab.image"
+                                               alt="Card image cap"></div>
+                    <div class="col-sm-8"><h5 class="card-title">{{tab.title}}</h5>
+                        <p class="card-text">{{tab.text}}}</p>
+                        <a :href="tab.href" class="btn-theme">{{tab.anchor}}</a></div>
                 </div>
+
             </div>
-        </section>
+
+        </VueSlickCarousel>
+
     </div>
+
 </template>
 
 <script>
+    import VueSlickCarousel from 'vue-slick-carousel'
+    import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+    // optional style for arrows & dots
+    import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+
     export default {
+        components: {
+            VueSlickCarousel
+        },
         name: "HowItWorkSlider",
         methods: {
-            tick: function() {
-                if(this.selected > this.items.length-1) {
+            tick: function () {
+                if (this.selected > this.items.length - 1) {
                     this.selected = 0;
                 }
                 this.selected += 1;
                 this.timer = setTimeout(this.tick, this.changeSlideTimeout);
             },
-            clearTickInterval: function() {
+            clearTickInterval: function () {
                 clearTimeout(this.timer);
                 this.timer = setTimeout(this.tick, this.changeSlideTimeout);
             }
@@ -93,6 +50,42 @@
         data() {
             return {
                 changeSlideTimeout: 5000,
+                slickOptions: {
+                    //options can be used from the plugin documentation
+                    slidesToShow: 1,
+                    infinite: true,
+                    accessibility: true,
+                    adaptiveHeight: true,
+                    arrows: true,
+                    dots: true,
+                    draggable: true,
+                    edgeFriction: 0.30,
+                    swipe: true,
+                    responsive: [
+                        {
+                            breakpoint: 1200,
+                            settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1
+                            }
+                        },
+                        {
+                            breakpoint: 1008,
+                            settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1
+                            }
+                        },
+                        {
+                            breakpoint: 800,
+                            settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1
+                            }
+                        }
+
+                    ]
+                },
                 tabs: [
                     {
                         id: 1,
@@ -152,7 +145,8 @@
 </script>
 
 <style scoped>
-    .tabs__caption > li {
-        cursor: pointer;
+    .custom-slick-slide-img {
+        object-fit: contain;
+        height: 147px;
     }
 </style>

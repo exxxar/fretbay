@@ -166,13 +166,5 @@
     }
 </script>
 <style>
-    .b-calendar-grid-body .btn-primary {
-        width: 32px !important;
-        min-width: 32px !important;
-        height: 32px !important;
-        font-size: 14px;
-        line-height: 1;
-        margin: 3px auto;
-        padding: 9px 0;
-    }
+ 
 </style>

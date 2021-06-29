@@ -6,7 +6,7 @@ use App\Http\Requests\CategoryStoreRequest;
 use App\Http\Requests\CategoryUpdateRequest;
 use App\Http\Requests\ListingStoreRequest;
 use App\Http\Requests\ListingUpdateRequest;
-use App\Models\Category;
+use App\Models\ObjectCategory;
 use App\Models\Listing;
 use Illuminate\Http\Request;
 

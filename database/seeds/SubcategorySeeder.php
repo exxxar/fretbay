@@ -1,7 +1,7 @@
 <?php
 ;
 
-use App\Models\Category;
+use App\Models\ObjectCategory;
 use App\Models\Subcategory;
 use Illuminate\Database\Seeder;
 
@@ -10,7 +10,7 @@ class SubcategorySeeder extends Seeder
 
     public function getCategoryIdByTitle($title)
     {
-        return Category::where("title->en", $title)->first()->id ?? null;
+        return ObjectCategory::where("title->en", $title)->first()->id ?? null;
     }
 
     /**
@@ -31,7 +31,7 @@ class SubcategorySeeder extends Seeder
             ],
 
             "image" => "/images/common/icons/volume/132h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Entrance"),
+            "object_category_id" => $this->getCategoryIdByTitle("Entrance"),
 
             'position' => 0,
             "volume" => 0,
@@ -45,7 +45,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Mirror",
             ],
             "image" => "/images/common/icons/volume/2h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Entrance"),
+            "object_category_id" => $this->getCategoryIdByTitle("Entrance"),
 
             'position' => 0,
 
@@ -61,7 +61,7 @@ class SubcategorySeeder extends Seeder
                     'fr' => "Shoe cabinet",
                 ],
             "image" => "/images/common/icons/volume/3h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Entrance"),
+            "object_category_id" => $this->getCategoryIdByTitle("Entrance"),
 
             'position' => 0,
 
@@ -76,7 +76,7 @@ class SubcategorySeeder extends Seeder
                     'fr' => "Carpet",
                 ],
             "image" => "/images/common/icons/volume/3h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Entrance"),
+            "object_category_id" => $this->getCategoryIdByTitle("Entrance"),
 
             'position' => 0,
 
@@ -90,7 +90,7 @@ class SubcategorySeeder extends Seeder
                     'fr' => "Pedestal table",
                 ],
             "image" => "/images/common/icons/volume/5h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Entrance"),
+            "object_category_id" => $this->getCategoryIdByTitle("Entrance"),
 
             'position' => 0,
 
@@ -104,7 +104,7 @@ class SubcategorySeeder extends Seeder
                     'fr' => "Console",
                 ],
             "image" => "/images/common/icons/volume/6h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Entrance"),
+            "object_category_id" => $this->getCategoryIdByTitle("Entrance"),
 
             'position' => 0,
 
@@ -118,7 +118,7 @@ class SubcategorySeeder extends Seeder
                     'fr' => "Chair",
                 ],
             "image" => "/images/common/icons/volume/30h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Entrance"),
+            "object_category_id" => $this->getCategoryIdByTitle("Entrance"),
 
             'position' => 0,
 
@@ -132,7 +132,7 @@ class SubcategorySeeder extends Seeder
                     'fr' => "Moving box",
                 ],
             "image" => "/images/common/icons/volume/8h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Entrance"),
+            "object_category_id" => $this->getCategoryIdByTitle("Entrance"),
 
             'position' => 0,
 
@@ -148,7 +148,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Column cabinet",
             ],
             "image" => "/images/common/icons/volume/9h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Bathroom"),
+            "object_category_id" => $this->getCategoryIdByTitle("Bathroom"),
 
             'position' => 0,
 
@@ -163,7 +163,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Low cabinet",
             ],
             "image" => "/images/common/icons/volume/10h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Bathroom"),
+            "object_category_id" => $this->getCategoryIdByTitle("Bathroom"),
 
             'position' => 0,
 
@@ -179,7 +179,7 @@ class SubcategorySeeder extends Seeder
                     'fr' => "Laundry basket",
                 ],
             "image" => "/images/common/icons/volume/11h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Bathroom"),
+            "object_category_id" => $this->getCategoryIdByTitle("Bathroom"),
 
             'position' => 0,
 
@@ -194,7 +194,7 @@ class SubcategorySeeder extends Seeder
                     'fr' => "Moving box",
                 ],
             "image" => "/images/common/icons/volume/12h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Bathroom"),
+            "object_category_id" => $this->getCategoryIdByTitle("Bathroom"),
 
             'position' => 0,
 
@@ -208,7 +208,7 @@ class SubcategorySeeder extends Seeder
                     'fr' => "Washing machine",
                 ],
             "image" => "/images/common/icons/volume/13h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Bathroom"),
+            "object_category_id" => $this->getCategoryIdByTitle("Bathroom"),
 
             'position' => 0,
 
@@ -222,7 +222,7 @@ class SubcategorySeeder extends Seeder
                     'fr' => "Dryer",
                 ],
             "image" => "/images/common/icons/volume/14h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Bathroom"),
+            "object_category_id" => $this->getCategoryIdByTitle("Bathroom"),
 
             'position' => 0,
 
@@ -236,7 +236,7 @@ class SubcategorySeeder extends Seeder
                     'fr' => "Medicine closet",
                 ],
             "image" => "/images/common/icons/volume/15h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Bathroom"),
+            "object_category_id" => $this->getCategoryIdByTitle("Bathroom"),
 
             'position' => 0,
 
@@ -250,7 +250,7 @@ class SubcategorySeeder extends Seeder
                     'fr' => "Wall shelf",
                 ],
             "image" => "/images/common/icons/volume/16h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Bathroom"),
+            "object_category_id" => $this->getCategoryIdByTitle("Bathroom"),
 
             'position' => 0,
 
@@ -266,7 +266,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Moving box",
             ],
             "image" => "/images/common/icons/volume/17h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Living room"),
+            "object_category_id" => $this->getCategoryIdByTitle("Living room"),
 
             'position' => 0,
 
@@ -281,7 +281,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Office desk",
             ],
             "image" => "/images/common/icons/volume/18h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Living room"),
+            "object_category_id" => $this->getCategoryIdByTitle("Living room"),
 
             'position' => 0,
 
@@ -297,7 +297,7 @@ class SubcategorySeeder extends Seeder
                     'fr' => "2-seater sofa",
                 ],
             "image" => "/images/common/icons/volume/29h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Living room"),
+            "object_category_id" => $this->getCategoryIdByTitle("Living room"),
 
             'position' => 0,
 
@@ -312,7 +312,7 @@ class SubcategorySeeder extends Seeder
                     'fr' => "Chair",
                 ],
             "image" => "/images/common/icons/volume/30h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Living room"),
+            "object_category_id" => $this->getCategoryIdByTitle("Living room"),
 
             'position' => 0,
 
@@ -326,7 +326,7 @@ class SubcategorySeeder extends Seeder
                     'fr' => "Armchair",
                 ],
             "image" => "/images/common/icons/volume/19h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Living room"),
+            "object_category_id" => $this->getCategoryIdByTitle("Living room"),
 
             'position' => 0,
 
@@ -340,7 +340,7 @@ class SubcategorySeeder extends Seeder
                     'fr' => "Living",
                 ],
             "image" => "/images/common/icons/volume/67h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Living room"),
+            "object_category_id" => $this->getCategoryIdByTitle("Living room"),
 
             'position' => 0,
 
@@ -354,7 +354,7 @@ class SubcategorySeeder extends Seeder
                     'fr' => "HiFi system",
                 ],
             "image" => "/images/common/icons/volume/20h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Living room"),
+            "object_category_id" => $this->getCategoryIdByTitle("Living room"),
 
             'position' => 0,
 
@@ -368,7 +368,7 @@ class SubcategorySeeder extends Seeder
                     'fr' => "Secretary desk",
                 ],
             "image" => "/images/common/icons/volume/32h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Living room"),
+            "object_category_id" => $this->getCategoryIdByTitle("Living room"),
 
             'position' => 0,
 
@@ -382,7 +382,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Coffee table",
             ],
             "image" => "/images/common/icons/volume/21h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Living room"),
+            "object_category_id" => $this->getCategoryIdByTitle("Living room"),
 
             'position' => 0,
 
@@ -397,7 +397,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Sofa bed",
             ],
             "image" => "/images/common/icons/volume/33h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Living room"),
+            "object_category_id" => $this->getCategoryIdByTitle("Living room"),
 
             'position' => 0,
 
@@ -413,7 +413,7 @@ class SubcategorySeeder extends Seeder
                     'fr' => "3-seater sofa",
                 ],
             "image" => "/images/common/icons/volume/22h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Living room"),
+            "object_category_id" => $this->getCategoryIdByTitle("Living room"),
 
             'position' => 0,
 
@@ -428,7 +428,7 @@ class SubcategorySeeder extends Seeder
                     'fr' => "Corner sofa",
                 ],
             "image" => "/images/common/icons/volume/34h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Living room"),
+            "object_category_id" => $this->getCategoryIdByTitle("Living room"),
 
             'position' => 0,
 
@@ -442,7 +442,7 @@ class SubcategorySeeder extends Seeder
                     'fr' => "TV",
                 ],
             "image" => "/images/common/icons/volume/23h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Living room"),
+            "object_category_id" => $this->getCategoryIdByTitle("Living room"),
 
             'position' => 0,
 
@@ -456,7 +456,7 @@ class SubcategorySeeder extends Seeder
                     'fr' => "TV+Furniture",
                 ],
             "image" => "/images/common/icons/volume/35h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Living room"),
+            "object_category_id" => $this->getCategoryIdByTitle("Living room"),
 
             'position' => 0,
 
@@ -470,7 +470,7 @@ class SubcategorySeeder extends Seeder
                     'fr' => "Library",
                 ],
             "image" => "/images/common/icons/volume/24h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Living room"),
+            "object_category_id" => $this->getCategoryIdByTitle("Living room"),
 
             'position' => 0,
 
@@ -484,7 +484,7 @@ class SubcategorySeeder extends Seeder
                     'fr' => "Showcase",
                 ],
             "image" => "/images/common/icons/volume/36h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Living room"),
+            "object_category_id" => $this->getCategoryIdByTitle("Living room"),
 
             'position' => 0,
 
@@ -498,7 +498,7 @@ class SubcategorySeeder extends Seeder
                     'fr' => "Floor lamp",
                 ],
             "image" => "/images/common/icons/volume/25h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Living room"),
+            "object_category_id" => $this->getCategoryIdByTitle("Living room"),
 
             'position' => 0,
 
@@ -512,7 +512,7 @@ class SubcategorySeeder extends Seeder
                     'fr' => "Trunk with drawers",
                 ],
             "image" => "/images/common/icons/volume/37h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Living room"),
+            "object_category_id" => $this->getCategoryIdByTitle("Living room"),
 
             'position' => 0,
 
@@ -526,7 +526,7 @@ class SubcategorySeeder extends Seeder
                     'fr' => "Lightning (Chandelier)",
                 ],
             "image" => "/images/common/icons/volume/26h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Living room"),
+            "object_category_id" => $this->getCategoryIdByTitle("Living room"),
 
             'position' => 0,
 
@@ -540,7 +540,7 @@ class SubcategorySeeder extends Seeder
                     'fr' => "Lightning (Bedside lamp)",
                 ],
             "image" => "/images/common/icons/volume/27h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Living room"),
+            "object_category_id" => $this->getCategoryIdByTitle("Living room"),
 
             'position' => 0,
 
@@ -554,7 +554,7 @@ class SubcategorySeeder extends Seeder
                     'fr' => "Lightning (Floor lamp)",
                 ],
             "image" => "/images/common/icons/volume/28h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Living room"),
+            "object_category_id" => $this->getCategoryIdByTitle("Living room"),
 
             'position' => 0,
 
@@ -568,7 +568,7 @@ class SubcategorySeeder extends Seeder
                     'fr' => "Pouf",
                 ],
             "image" => "/images/common/icons/volume/38h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Living room"),
+            "object_category_id" => $this->getCategoryIdByTitle("Living room"),
 
             'position' => 0,
 
@@ -582,7 +582,7 @@ class SubcategorySeeder extends Seeder
                     'fr' => "Bolster/side table",
                 ],
             "image" => "/images/common/icons/volume/39h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Living room"),
+            "object_category_id" => $this->getCategoryIdByTitle("Living room"),
 
             'position' => 0,
 
@@ -598,7 +598,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Buffet",
             ],
             "image" => "/images/common/icons/volume/66h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Kitchen"),
+            "object_category_id" => $this->getCategoryIdByTitle("Kitchen"),
 
             'position' => 0,
 
@@ -611,7 +611,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "High element",
             ],
             "image" => "/images/common/icons/volume/50h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Kitchen"),
+            "object_category_id" => $this->getCategoryIdByTitle("Kitchen"),
 
             'position' => 0,
 
@@ -624,7 +624,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Low element",
             ],
             "image" => "/images/common/icons/volume/41h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Kitchen"),
+            "object_category_id" => $this->getCategoryIdByTitle("Kitchen"),
 
             'position' => 0,
 
@@ -637,7 +637,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Chair",
             ],
             "image" => "/images/common/icons/volume/51h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Kitchen"),
+            "object_category_id" => $this->getCategoryIdByTitle("Kitchen"),
 
             'position' => 0,
 
@@ -650,7 +650,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Table",
             ],
             "image" => "/images/common/icons/volume/10h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Kitchen"),
+            "object_category_id" => $this->getCategoryIdByTitle("Kitchen"),
 
             'position' => 0,
 
@@ -663,7 +663,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Stool",
             ],
             "image" => "/images/common/icons/volume/52h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Kitchen"),
+            "object_category_id" => $this->getCategoryIdByTitle("Kitchen"),
 
             'position' => 0,
 
@@ -676,7 +676,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Cooker",
             ],
             "image" => "/images/common/icons/volume/43h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Kitchen"),
+            "object_category_id" => $this->getCategoryIdByTitle("Kitchen"),
 
             'position' => 0,
 
@@ -689,7 +689,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Fridge",
             ],
             "image" => "/images/common/icons/volume/53h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Kitchen"),
+            "object_category_id" => $this->getCategoryIdByTitle("Kitchen"),
 
             'position' => 0,
 
@@ -702,7 +702,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Dishwasher",
             ],
             "image" => "/images/common/icons/volume/44h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Kitchen"),
+            "object_category_id" => $this->getCategoryIdByTitle("Kitchen"),
 
             'position' => 0,
 
@@ -715,7 +715,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Oven",
             ],
             "image" => "/images/common/icons/volume/54h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Kitchen"),
+            "object_category_id" => $this->getCategoryIdByTitle("Kitchen"),
 
             'position' => 0,
 
@@ -728,7 +728,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Baby chair",
             ],
             "image" => "/images/common/icons/volume/45h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Kitchen"),
+            "object_category_id" => $this->getCategoryIdByTitle("Kitchen"),
 
             'position' => 0,
 
@@ -741,7 +741,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Cooking plate",
             ],
             "image" => "/images/common/icons/volume/55h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Kitchen"),
+            "object_category_id" => $this->getCategoryIdByTitle("Kitchen"),
 
             'position' => 0,
 
@@ -754,7 +754,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Microwave",
             ],
             "image" => "/images/common/icons/volume/46h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Kitchen"),
+            "object_category_id" => $this->getCategoryIdByTitle("Kitchen"),
 
             'position' => 0,
 
@@ -767,7 +767,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Freezer",
             ],
             "image" => "/images/common/icons/volume/56h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Kitchen"),
+            "object_category_id" => $this->getCategoryIdByTitle("Kitchen"),
 
             'position' => 0,
 
@@ -780,7 +780,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Washing machine",
             ],
             "image" => "/images/common/icons/volume/57h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Kitchen"),
+            "object_category_id" => $this->getCategoryIdByTitle("Kitchen"),
 
             'position' => 0,
 
@@ -793,7 +793,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Bar/Counter",
             ],
             "image" => "/images/common/icons/volume/48h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Kitchen"),
+            "object_category_id" => $this->getCategoryIdByTitle("Kitchen"),
 
             'position' => 0,
 
@@ -806,7 +806,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Refrigerator(Standard)",
             ],
             "image" => "/images/common/icons/volume/57h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Kitchen"),
+            "object_category_id" => $this->getCategoryIdByTitle("Kitchen"),
 
             'position' => 0,
 
@@ -819,7 +819,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Refrigerator(Top)",
             ],
             "image" => "/images/common/icons/volume/58h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Kitchen"),
+            "object_category_id" => $this->getCategoryIdByTitle("Kitchen"),
 
             'position' => 0,
 
@@ -832,7 +832,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Refrigerator(American)",
             ],
             "image" => "/images/common/icons/volume/59h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Kitchen"),
+            "object_category_id" => $this->getCategoryIdByTitle("Kitchen"),
 
             'position' => 0,
 
@@ -845,7 +845,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Bench",
             ],
             "image" => "/images/common/icons/volume/49h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Kitchen"),
+            "object_category_id" => $this->getCategoryIdByTitle("Kitchen"),
 
             'position' => 0,
 
@@ -861,7 +861,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "2-bodied buffet",
             ],
             "image" => "/images/common/icons/volume/60h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Dining room"),
+            "object_category_id" => $this->getCategoryIdByTitle("Dining room"),
 
             'position' => 0,
 
@@ -874,7 +874,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Low buffet",
             ],
             "image" => "/images/common/icons/volume/66h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Dining room"),
+            "object_category_id" => $this->getCategoryIdByTitle("Dining room"),
 
             'position' => 0,
 
@@ -887,7 +887,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Service",
             ],
             "image" => "/images/common/icons/volume/61h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Dining room"),
+            "object_category_id" => $this->getCategoryIdByTitle("Dining room"),
 
             'position' => 0,
 
@@ -900,7 +900,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Living",
             ],
             "image" => "/images/common/icons/volume/67h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Dining room"),
+            "object_category_id" => $this->getCategoryIdByTitle("Dining room"),
 
             'position' => 0,
 
@@ -913,7 +913,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Chair",
             ],
             "image" => "/images/common/icons/volume/30h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Dining room"),
+            "object_category_id" => $this->getCategoryIdByTitle("Dining room"),
 
             'position' => 0,
 
@@ -926,7 +926,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Table",
             ],
             "image" => "/images/common/icons/volume/10h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Dining room"),
+            "object_category_id" => $this->getCategoryIdByTitle("Dining room"),
 
             'position' => 0,
 
@@ -939,7 +939,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Pantry cabinet",
             ],
             "image" => "/images/common/icons/volume/63h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Dining room"),
+            "object_category_id" => $this->getCategoryIdByTitle("Dining room"),
 
             'position' => 0,
 
@@ -952,7 +952,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Pedestal table",
             ],
             "image" => "/images/common/icons/volume/69h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Dining room"),
+            "object_category_id" => $this->getCategoryIdByTitle("Dining room"),
 
             'position' => 0,
 
@@ -965,7 +965,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Dresser",
             ],
             "image" => "/images/common/icons/volume/64h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Dining room"),
+            "object_category_id" => $this->getCategoryIdByTitle("Dining room"),
 
             'position' => 0,
 
@@ -978,7 +978,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Armchair",
             ],
             "image" => "/images/common/icons/volume/70h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Dining room"),
+            "object_category_id" => $this->getCategoryIdByTitle("Dining room"),
 
             'position' => 0,
 
@@ -991,7 +991,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Moving box",
             ],
             "image" => "/images/common/icons/volume/65h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Dining room"),
+            "object_category_id" => $this->getCategoryIdByTitle("Dining room"),
 
             'position' => 0,
 
@@ -1004,7 +1004,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Grandfather clock",
             ],
             "image" => "/images/common/icons/volume/71h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Dining room"),
+            "object_category_id" => $this->getCategoryIdByTitle("Dining room"),
 
             'position' => 0,
 
@@ -1020,7 +1020,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Chair",
             ],
             "image" => "/images/common/icons/volume/72h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Chamber"),
+            "object_category_id" => $this->getCategoryIdByTitle("Chamber"),
 
             'position' => 0,
 
@@ -1033,7 +1033,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Chest of drawers",
             ],
             "image" => "/images/common/icons/volume/82h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Chamber"),
+            "object_category_id" => $this->getCategoryIdByTitle("Chamber"),
 
             'position' => 0,
 
@@ -1046,7 +1046,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Armchair",
             ],
             "image" => "/images/common/icons/volume/73h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Chamber"),
+            "object_category_id" => $this->getCategoryIdByTitle("Chamber"),
 
             'position' => 0,
 
@@ -1059,7 +1059,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Single bed",
             ],
             "image" => "/images/common/icons/volume/83h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Chamber"),
+            "object_category_id" => $this->getCategoryIdByTitle("Chamber"),
 
             'position' => 0,
 
@@ -1072,7 +1072,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Bed(double)",
             ],
             "image" => "/images/common/icons/volume/74h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Chamber"),
+            "object_category_id" => $this->getCategoryIdByTitle("Chamber"),
 
             'position' => 0,
 
@@ -1085,7 +1085,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Bedside",
             ],
             "image" => "/images/common/icons/volume/84h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Chamber"),
+            "object_category_id" => $this->getCategoryIdByTitle("Chamber"),
 
             'position' => 0,
 
@@ -1098,7 +1098,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Bunk bed",
             ],
             "image" => "/images/common/icons/volume/75h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Chamber"),
+            "object_category_id" => $this->getCategoryIdByTitle("Chamber"),
 
             'position' => 0,
 
@@ -1111,7 +1111,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Baby bed",
             ],
             "image" => "/images/common/icons/volume/85h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Chamber"),
+            "object_category_id" => $this->getCategoryIdByTitle("Chamber"),
 
             'position' => 0,
 
@@ -1124,7 +1124,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Wardrobe 2 doors",
             ],
             "image" => "/images/common/icons/volume/76h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Chamber"),
+            "object_category_id" => $this->getCategoryIdByTitle("Chamber"),
 
             'position' => 0,
 
@@ -1137,7 +1137,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "3-doored wardrobe",
             ],
             "image" => "/images/common/icons/volume/86h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Chamber"),
+            "object_category_id" => $this->getCategoryIdByTitle("Chamber"),
 
             'position' => 0,
 
@@ -1150,7 +1150,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Toy chest",
             ],
             "image" => "/images/common/icons/volume/77h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Chamber"),
+            "object_category_id" => $this->getCategoryIdByTitle("Chamber"),
 
             'position' => 0,
 
@@ -1163,7 +1163,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Changing table",
             ],
             "image" => "/images/common/icons/volume/87h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Chamber"),
+            "object_category_id" => $this->getCategoryIdByTitle("Chamber"),
 
             'position' => 0,
 
@@ -1176,7 +1176,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Moving box",
             ],
             "image" => "/images/common/icons/volume/78h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Chamber"),
+            "object_category_id" => $this->getCategoryIdByTitle("Chamber"),
 
             'position' => 0,
 
@@ -1189,7 +1189,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Dressing table",
             ],
             "image" => "/images/common/icons/volume/79h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Chamber"),
+            "object_category_id" => $this->getCategoryIdByTitle("Chamber"),
 
             'position' => 0,
 
@@ -1202,7 +1202,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Dressing",
             ],
             "image" => "/images/common/icons/volume/80h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Chamber"),
+            "object_category_id" => $this->getCategoryIdByTitle("Chamber"),
 
             'position' => 0,
 
@@ -1215,7 +1215,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Office chair",
             ],
             "image" => "/images/common/icons/volume/81h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Chamber"),
+            "object_category_id" => $this->getCategoryIdByTitle("Chamber"),
 
             'position' => 0,
 
@@ -1228,7 +1228,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Trunk/canteen",
             ],
             "image" => "/images/common/icons/volume/88h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Chamber"),
+            "object_category_id" => $this->getCategoryIdByTitle("Chamber"),
 
             'position' => 0,
 
@@ -1241,7 +1241,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Pouf,footrest",
             ],
             "image" => "/images/common/icons/volume/89h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Chamber"),
+            "object_category_id" => $this->getCategoryIdByTitle("Chamber"),
 
             'position' => 0,
 
@@ -1254,7 +1254,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Wardrobe box",
             ],
             "image" => "/images/common/icons/volume/90h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Chamber"),
+            "object_category_id" => $this->getCategoryIdByTitle("Chamber"),
 
             'position' => 0,
 
@@ -1267,7 +1267,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Matress(single)",
             ],
             "image" => "/images/common/icons/volume/91h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Chamber"),
+            "object_category_id" => $this->getCategoryIdByTitle("Chamber"),
 
             'position' => 0,
 
@@ -1280,7 +1280,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Matress(double)",
             ],
             "image" => "/images/common/icons/volume/92h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Chamber"),
+            "object_category_id" => $this->getCategoryIdByTitle("Chamber"),
 
             'position' => 0,
 
@@ -1296,7 +1296,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Garden table",
             ],
             "image" => "/images/common/icons/volume/93h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Garden"),
+            "object_category_id" => $this->getCategoryIdByTitle("Garden"),
 
             'position' => 0,
 
@@ -1309,7 +1309,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Garden chair",
             ],
             "image" => "/images/common/icons/volume/7h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Garden"),
+            "object_category_id" => $this->getCategoryIdByTitle("Garden"),
 
             'position' => 0,
 
@@ -1322,7 +1322,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Sunbath",
             ],
             "image" => "/images/common/icons/volume/95h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Garden"),
+            "object_category_id" => $this->getCategoryIdByTitle("Garden"),
 
             'position' => 0,
 
@@ -1335,7 +1335,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Parasol",
             ],
             "image" => "/images/common/icons/volume/96h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Garden"),
+            "object_category_id" => $this->getCategoryIdByTitle("Garden"),
 
             'position' => 0,
 
@@ -1348,7 +1348,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Barbecue(Coal)",
             ],
             "image" => "/images/common/icons/volume/97h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Garden"),
+            "object_category_id" => $this->getCategoryIdByTitle("Garden"),
 
             'position' => 0,
 
@@ -1361,7 +1361,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Barbecue(Electric)",
             ],
             "image" => "/images/common/icons/volume/98h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Garden"),
+            "object_category_id" => $this->getCategoryIdByTitle("Garden"),
 
             'position' => 0,
 
@@ -1374,7 +1374,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Barbecue(Stone)",
             ],
             "image" => "/images/common/icons/volume/99h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Garden"),
+            "object_category_id" => $this->getCategoryIdByTitle("Garden"),
 
             'position' => 0,
 
@@ -1387,7 +1387,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Arbor",
             ],
             "image" => "/images/common/icons/volume/100h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Garden"),
+            "object_category_id" => $this->getCategoryIdByTitle("Garden"),
 
             'position' => 0,
 
@@ -1400,7 +1400,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Plants(Small)",
             ],
             "image" => "/images/common/icons/volume/101h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Garden"),
+            "object_category_id" => $this->getCategoryIdByTitle("Garden"),
 
             'position' => 0,
 
@@ -1413,7 +1413,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Plants(Medium)",
             ],
             "image" => "/images/common/icons/volume/102h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Garden"),
+            "object_category_id" => $this->getCategoryIdByTitle("Garden"),
 
             'position' => 0,
 
@@ -1426,7 +1426,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Plants(Large)",
             ],
             "image" => "/images/common/icons/volume/103h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Garden"),
+            "object_category_id" => $this->getCategoryIdByTitle("Garden"),
 
             'position' => 0,
 
@@ -1439,7 +1439,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Mower",
             ],
             "image" => "/images/common/icons/volume/104h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Garden"),
+            "object_category_id" => $this->getCategoryIdByTitle("Garden"),
 
             'position' => 0,
 
@@ -1455,7 +1455,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Upright piano",
             ],
             "image" => "/images/common/icons/volume/118h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Miscellaneous"),
+            "object_category_id" => $this->getCategoryIdByTitle("Miscellaneous"),
 
             'position' => 0,
 
@@ -1469,7 +1469,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Grand piano",
             ],
             "image" => "/images/common/icons/volume/119h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Miscellaneous"),
+            "object_category_id" => $this->getCategoryIdByTitle("Miscellaneous"),
 
             'position' => 0,
 
@@ -1482,7 +1482,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Pool table",
             ],
             "image" => "/images/common/icons/volume/120h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Miscellaneous"),
+            "object_category_id" => $this->getCategoryIdByTitle("Miscellaneous"),
 
             'position' => 0,
 
@@ -1495,7 +1495,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Babyfoot",
             ],
             "image" => "/images/common/icons/volume/121h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Miscellaneous"),
+            "object_category_id" => $this->getCategoryIdByTitle("Miscellaneous"),
 
             'position' => 0,
 
@@ -1508,7 +1508,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Table",
             ],
             "image" => "/images/common/icons/volume/68h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Miscellaneous"),
+            "object_category_id" => $this->getCategoryIdByTitle("Miscellaneous"),
 
             'position' => 0,
 
@@ -1521,7 +1521,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Aquarium(120L)",
             ],
             "image" => "/images/common/icons/volume/123h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Miscellaneous"),
+            "object_category_id" => $this->getCategoryIdByTitle("Miscellaneous"),
 
             'position' => 0,
 
@@ -1534,7 +1534,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Aquarium(180L)",
             ],
             "image" => "/images/common/icons/volume/124h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Miscellaneous"),
+            "object_category_id" => $this->getCategoryIdByTitle("Miscellaneous"),
 
             'position' => 0,
 
@@ -1547,7 +1547,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Aquarium(240L)",
             ],
             "image" => "/images/common/icons/volume/125h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Miscellaneous"),
+            "object_category_id" => $this->getCategoryIdByTitle("Miscellaneous"),
 
             'position' => 0,
 
@@ -1560,7 +1560,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Aquarium(300L)",
             ],
             "image" => "/images/common/icons/volume/126h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Miscellaneous"),
+            "object_category_id" => $this->getCategoryIdByTitle("Miscellaneous"),
 
             'position' => 0,
 
@@ -1573,7 +1573,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Aquarium(400L)",
             ],
             "image" => "/images/common/icons/volume/127h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Miscellaneous"),
+            "object_category_id" => $this->getCategoryIdByTitle("Miscellaneous"),
 
             'position' => 0,
 
@@ -1586,7 +1586,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Bodybuilding equipment (Exercise bike)",
             ],
             "image" => "/images/common/icons/volume/128h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Miscellaneous"),
+            "object_category_id" => $this->getCategoryIdByTitle("Miscellaneous"),
 
             'position' => 0,
 
@@ -1599,7 +1599,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Bodybuilding equipment (Treadmill)",
             ],
             "image" => "/images/common/icons/volume/129h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Miscellaneous"),
+            "object_category_id" => $this->getCategoryIdByTitle("Miscellaneous"),
 
             'position' => 0,
 
@@ -1612,7 +1612,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Wheelbarrow",
             ],
             "image" => "/images/common/icons/volume/130h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Miscellaneous"),
+            "object_category_id" => $this->getCategoryIdByTitle("Miscellaneous"),
 
             'position' => 0,
 
@@ -1625,7 +1625,7 @@ class SubcategorySeeder extends Seeder
                 'fr' => "Ping pong table",
             ],
             "image" => "/images/common/icons/volume/131h.svg",
-            "category_id" => $this->getCategoryIdByTitle("Miscellaneous"),
+            "object_category_id" => $this->getCategoryIdByTitle("Miscellaneous"),
 
             'position' => 0,
 

@@ -1,160 +1,130 @@
 <template>
-    <footer id="fretbayfooter">
-        <div class="footer-main">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-2">
-                        <a href="#" class="footer-main__logotip"><img src="/images/footer-logo.svg" width="143" height="165" alt="Logo"></a>
-                    </div>
-                    <div class="col-md-10 top-right-footersection">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <h2 class="trfs__title">
-                                    FretBay helps you
-                                </h2>
-                                <ul class="list-unstyled">
-                                    <li>
-                                        <a href="/find-transporter">Search for a transporter</a>
-                                    </li>
-                                    <li>
-                                        <a href="/find-loads">Search for a loads</a>
-                                    </li>
-                                    <li>
-                                        <a href="/benefits-transporter-mover-carrier">I am a transporter</a>
-                                    </li>
-                                    <li>
-                                        <a href="/how-it-works">How does it work?</a>
-                                    </li>
+    <footer class="bg-dark">
+        <div class="container space-2">
+            <div class="row justify-content-md-between">
+                <div class="col-6 col-md-3 col-lg-2 order-lg-3 mb-7 mb-lg-0">
+                    <h3 class="h6 text-white mb-3">About</h3>
 
-                                    <li>
-                                        <a href="/fequently-asked-questions">Frequently asked questions</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-md-3">
-                                <h2 class="trfs__title">
-                                    The company
-                                </h2>
-                                <ul class="list-unstyled">
-                                    <li>
-                                        <a href="/who-we-are">Who are we?</a>
-                                    </li>
-                                    <li>
-                                        <a href="/fequently-asked-questions">Fight the black market</a>
-                                    </li>
-                                    <li>
-                                        <a href="/recruitment">Recruitment</a>
-                                    </li>
-                                    <li>
-                                        <a href="/reviews">Reviews</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-md-3">
-                                <h2 class="trfs__title">
-                                    Our tips
-                                </h2>
-                                <ul class="list-unstyled">
-                                    <li>
-                                        <a href="/tips-moving">Moving advices</a>
-                                    </li>
-                                    <li>
-                                        <a href="/company-move">Company move</a>
-                                    </li>
-                                    <li>
-                                        <a href="/movers">Movers</a>
-                                    </li>
-                                    <li>
-                                        <a href="/ebay-sellers">eBay Sellers</a>
-                                    </li>
-                                    <li>
-                                        <a href="/fraud-prevention">Scam Prevention</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-md-3">
-                                <h2 class="trfs__title">
-                                    Customer Service
-                                </h2>
-                                <ul class="list-unstyled">
-                                    <li>
-                                        <a href="/reviews">Customer testimonials</a>
-                                    </li>
-                                    <li>
-                                        <a href="/quality-charter">Quality charter</a>
-                                    </li>
-                                    <li>
-                                        <a href="/privacy">Privacy</a>
-                                    </li>
-                                    <li>
-                                        <a href="/contact-us">Contact us</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                    <!-- List Group -->
+                    <div class="list-group list-group-flush list-group-transparent">
+                        <a class="list-group-item list-group-item-action" href="/who-we-are">Who we are</a>
+                        <a class="list-group-item list-group-item-action" href="/how-it-works">How does it work?</a>
+                        <a class="list-group-item list-group-item-action" href="/fequently-asked-questions">Frequently asked questions</a>
+                        <a class="list-group-item list-group-item-action" href="/find-transporter">Search for a transporter</a>
+                        <a class="list-group-item list-group-item-action" href="/find-loads">Search for a loads</a>
+                        <a class="list-group-item list-group-item-action" href="/benefits-transporter-mover-carrier">I am a transporter</a>
+                        <a class="list-group-item list-group-item-action" href="/recruitment">Recruitment</a>
                     </div>
+                    <!-- End List Group -->
                 </div>
-            </div>
-        </div>
 
-        <div class="footer-middle">
-            <div class="container">
-                <div class="footer-middle-inner">
-                    <p class="fmi__title">
-                        Other FretBay services
-                    </p>
-                    <a href="#" class="fretbay-pro-link">
-                        <img src="/images/fretbaypro-logo.svg" alt="">
-                    </a>
-                    <a href="#" class="fretbay-now-link">
-                        <img src="/images/fretbaynow-logo-w.svg" alt="">
-                    </a>
-                    <a href="#" class="fretbay-now-blank">
-                        <img src="/images/mbm-logo-w.svg" alt="">
-                    </a>
+                <div class="col-6 col-md-3 col-lg-2 order-lg-4 mb-7 mb-lg-0">
+                    <h3 class="h6 text-white mb-3"> Customer Service</h3>
+
+                    <!-- List Group -->
+                    <div class="list-group list-group-flush list-group-transparent">
+                        <a class="list-group-item list-group-item-action" href="/reviews">Customer testimonials</a>
+                        <a class="list-group-item list-group-item-action" href="/quality-charte">Quality charter</a>
+                        <a class="list-group-item list-group-item-action" href="/privacy">Privacy</a>
+                        <a class="list-group-item list-group-item-action" href="/contact-us">Contact us</a>
+                    </div>
+                    <!-- End List Group -->
                 </div>
-            </div>
-        </div>
-        <div class="footer-copyright">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="footer-copyright__txt">
-                            <a href="#">FretBay</a>
-                            SAS with a capital of 431,546€ © 2021 All rights reserved
-                            <br>
-                            The use of this website constitutes acceptance of the
-                            <a href="#">General Terms and Conditions</a>
-                            <br>
-                            31 rue de Reuilly 75012 Paris, France
-                            <br>
-                            Company registration: 502.134.208.00037 | VAT Number: FR08502134208 | N° Orias : 20000116
+
+                <div class="col-6 col-md-3 col-lg-2 order-lg-5 mb-7 mb-lg-0">
+                    <h3 class="h6 text-white mb-3">Our tips</h3>
+
+                    <!-- List Group -->
+                    <div class="list-group list-group-flush list-group-transparent">
+                        <a class="list-group-item list-group-item-action" href="/tips-moving">Moving advices</a>
+                        <a class="list-group-item list-group-item-action" href="/company-move">Company move</a>
+                        <a class="list-group-item list-group-item-action" href="/movers">Movers</a>
+                        <a class="list-group-item list-group-item-action" href="/ebay-sellers">eBay Sellers</a>
+                        <a class="list-group-item list-group-item-action" href="/fraud-prevention">Scam Prevention</a>
+                    </div>
+                    <!-- End List Group -->
+                </div>
+
+                <div class="col-6 col-md-3 col-lg-2 order-lg-6 mb-7 mb-lg-0">
+                    <h3 class="h6 text-white mb-3">Social</h3>
+
+                    <!-- List -->
+                    <div class="list-group list-group-flush list-group-transparent">
+                        <a class="list-group-item list-group-item-action" href="#">
+                            <i class="fab fa-facebook-f min-width-3 text-center mr-2"></i>
+                            Facebook
+                        </a>
+                        <a class="list-group-item list-group-item-action" href="#">
+                            <i class="fab fa-twitter min-width-3 text-center mr-2"></i>
+                            Twitter
+                        </a>
+                        <a class="list-group-item list-group-item-action" href="#">
+                            <i class="fab fa-dribbble min-width-3 text-center mr-2"></i>
+                            Dribbble
+                        </a>
+                        <a class="list-group-item list-group-item-action" href="#">
+                            <i class="fab fa-github min-width-3 text-center mr-2"></i>
+                            GitHub
+                        </a>
+                    </div>
+                    <!-- End List -->
+                </div>
+
+                <div class="col-lg-4 order-lg-1 d-flex align-items-start flex-column">
+                    <!-- Logo -->
+                    <a class="d-inline-block mb-5" href="/" aria-label="AlloTrans">
+                        <img src="/assets/img/logo-white.png" alt="Logo" style="width: 100px; max-width: 100%;">
+                    </a>
+                    <!-- End Logo -->
+
+                    <!-- Language -->
+                    <div class="btn-group d-block position-relative mb-4 mb-lg-auto">
+                        <div class="dropdown">
+                            <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{currentLocale}}
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                 </div>
                         </div>
+
                     </div>
-                    <div class="col-lg-6 no-padding fretbaysocial-ico">
-                        <ul class="list-unstyled list-inline row">
-                            <li class="li">
-                                <a href="#"></a>
-                            </li>
-                            <li class="tw">
-                                <a href="#"></a>
-                            </li>
-                            <li class="fb">
-                                <a href="#"></a>
-                            </li>
-                            <li class="yt">
-                                <a href="#"></a>
-                            </li>
-                        </ul>
-                    </div>
+                    <!-- End Language -->
+
+                    <p class="small text-muted">All rights reserved. © AlloTrans. 2021.</p>
                 </div>
             </div>
         </div>
     </footer>
-
 </template>
 <script>
     export default {
-
+        data() {
+            return {
+                langOptions: [
+                    {
+                        countryCode: "en",
+                        countryName: "English"
+                    },
+                    {
+                        countryCode: "fr",
+                        countryName: "Français"
+                    },
+                    {
+                        countryCode: "ru",
+                        countryName: "Русский"
+                    }
+                ]
+            }
+        },
+        computed:{
+          currentLocale:function(){
+              return this.langOptions.find(item=>item.countryCode===window.locale).countryName
+          }
+        },
+        methods:{
+            selectLang(lang){
+                window.location.href=`/locale/${lang}`
+            }
+        }
     }
 </script>

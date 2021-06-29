@@ -1,68 +1,141 @@
 <template>
-    <section id="login">
-        <div class="container">
-            <div class="form-login">
-                <div class="etape-box-user">
-                    <div class="row">
-                        <div class="col-md-6 col-sm-12">
-                            <h2 class="ebu__title">
-                                Log into your FretBay account.
-                            </h2>
-                            <p class="ebu__subtitle">
-                                Enter your email address or username and password to access all FretBay services.
-                            </p>
-                            <img src="images/conecLogImg.png" class="img-responsive fix-img">
+
+    <div class="container" style="padding-top:50px;">
+        <div class="row d-flex justify-content-center align-items-center"  style="height: 100vh;">
+            <div class="col-md-6 col-12 col-sm-12">
+
+                <form method="POST" action="/login">
+
+                    <slot name="csrf"></slot>
+                    <!-- Signin -->
+                    <div id="signin" data-target-group="idForm">
+                        <!-- Title -->
+                        <header class="text-center mb-5">
+                            <img src="/assets/img/logo.png" alt="Logo" style="width: 100px;">
+                            <h2 class="h4 mb-0">Please sign in</h2>
+                            <p>Signin to manage your account.</p>
+                        </header>
+
+
+                        <!-- End Title -->
+                        <slot name="any-error"></slot>
+                        <!-- Input -->
+                        <div class="mb-3">
+                            <div class="input-group form">
+
+                                <div class="input-group-prepend form__prepend">
+                                      <span class="input-group-text form__text">
+                                        <i class="fa fa-user form__text-inner"></i>
+                                      </span>
+                                </div>
+
+                                <input type="email" class="form-control form__input" name="email"  placeholder="Email">
+                            </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
-                            <div class="login__form">
-                                <h2 class="ebu__title">
-                                    FretBay Identification
-                                </h2>
-                                <slot name="any-error"></slot>
-                                <form action="/login" method="post">
-                                   <slot name="csrf"></slot>
+                        <!-- End Input -->
 
-                                    <div class="signUpForm1-inputs">
-                                        <div class="log-row input-row">
-                                            <i class="glyphicon glyphicon-user"></i>
-
-                                            <input type="email" class="signUpForm1__input signUpForm1__input-first"
-                                                   name="email" placeholder="Login or Email">
-
-                                            <slot name="error-email"></slot>
-
-
-                                        </div>
-                                        <div class="pass-row input-row">
-                                            <i class="glyphicon glyphicon-user"></i>
-
-                                            <input type="password" class="signUpForm1__input" name="password"
-                                                   placeholder="Password">
-
-                                            <slot name="error-password"></slot>
-
-                                        </div>
-                                        <!-- <input type="text" class="signUpForm1__input signUpForm1__input-first" placeholder="Login or Email">
-                                        <input type="text" class="signUpForm1__input" placeholder="Password"> -->
-                                    </div>
-                                    <button type="submit" class="signUpForm1-button">
-                                        Sign in
-                                    </button>
-                                    <div class="form-text">
-                                        Forgotten password? <a href="/register">Sign up here</a>
-                                    </div>
-                                </form>
+                        <!-- Input -->
+                        <div class="mb-3">
+                            <div class="input-group form">
+                                <div class="input-group-prepend form__prepend">
+                                  <span class="input-group-text form__text">
+                                    <i class="fa fa-lock form__text-inner"></i>
+                                  </span>
+                                </div>
+                                <input type="password" class="form-control form__input" name="password"  placeholder="Password">
                             </div>
-                            <div class="ebu__txt">
-                                Not yet registered on FretBay? <a href="/register">Sign up here</a>
+                        </div>
+                        <!-- End Input -->
+
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <!-- Checkbox -->
+                                <div class="custom-control custom-checkbox d-flex align-items-center text-muted">
+                                    <input type="checkbox" class="custom-control-input" id="rememberMeCheckbox">
+                                    <label class="custom-control-label" for="rememberMeCheckbox">
+                                        Remember Me
+                                    </label>
+                                </div>
+                                <!-- End Checkbox -->
                             </div>
+
+                            <div class="col-6 text-right">
+                                <a class="js-animation-link float-right" href="javascript:;" data-target="#forgotPassword" data-link-group="idForm" data-animation-in="fadeIn">Forgot Password?</a>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-block btn-primary">Signin</button>
+                        </div>
+
+                        <div class="text-center mb-3">
+                            <p class="text-muted">
+                                Do not have an account?
+                                <a class="js-animation-link" href="javascript:;" data-target="#signup" data-link-group="idForm" data-animation-in="fadeIn">Signup
+                                </a>
+                            </p>
+                        </div>
+
+                        <!-- Divider -->
+                        <div class="text-center u-divider-wrapper my-3">
+                            <span class="u-divider u-divider--xs u-divider--text">OR</span>
+                        </div>
+                        <!-- End Divider -->
+
+                        <!-- Signin Social Buttons -->
+                        <div class="row mx-gutters-2 mb-4">
+                            <div class="col-sm-6 mb-2 mb-sm-0">
+                                <button type="button" class="btn btn-block btn-facebook text-nowrap">
+                                    <i class="fab fa-facebook-f mr-2"></i>
+                                    Signin with Facebook
+                                </button>
+                            </div>
+                            <div class="col-sm-6">
+                                <button type="button" class="btn btn-block btn-twitter">
+                                    <i class="fab fa-twitter mr-2"></i>
+                                    Signin with Twitter
+                                </button>
+                            </div>
+                        </div>
+                        <!-- End Signin Social Buttons -->
+                    </div>
+                    <!-- End Signin -->
+                </form>
+
+                <!-- Forgot Password -->
+                <div id="forgotPassword" style="display: none; opacity: 0;" data-target-group="idForm">
+                    <!-- Title -->
+                    <header class="text-center mb-5">
+                        <h2 class="h4 mb-0">Recover account</h2>
+                        <p>Enter your email address and an email with instructions will be sent to you.</p>
+                    </header>
+                    <!-- End Title -->
+
+                    <!-- Input -->
+                    <div class="mb-3">
+                        <div class=" form">
+                            <input type="email" class="form-control form__input" name="email"  placeholder="Email" aria-label="Email" data-msg="Please enter a valid email address." data-error-class="u-has-error" data-success-class="u-has-success">
                         </div>
                     </div>
-                </div>
-            </div>
+                    <!-- End Input -->
 
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-block btn-primary">Recover Account</button>
+                    </div>
+
+                    <div class="text-center mb-3">
+                        <p class="text-muted">
+                            Have an account?
+                            <a class="js-animation-link" href="javascript:;" data-target="#signin" data-link-group="idForm" data-animation-in="fadeIn">Signin
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <!-- End Forgot Password -->
+            </div>
         </div>
-    </section>
+    </div>
+
 
 </template>
 <script>
@@ -71,11 +144,5 @@
     }
 </script>
 <style lang="scss" scoped>
-    h1 {
-        margin-top: 0px;
-    }
 
-    p.h1 {
-        font-size: 20px;
-    }
 </style>

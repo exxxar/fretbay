@@ -12,8 +12,6 @@ class CategoryPropertySeeder extends Seeder
      */
     public function run()
     {
-        ////Article name, Length (cm), width (cm), height (cm), weight, quantity, make, model, estimated value, accept conveyors, fragile goods
-        ///special needs, vaccinations up to date, animal bread
 
         CategoryProperty::create([
             'title'=>[

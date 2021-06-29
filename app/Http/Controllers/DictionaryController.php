@@ -10,6 +10,7 @@ use App\Classes\CitiesAndCountriesAPIManager;
 use App\Classes\DistanceAPIManager;
 use App\Classes\MapBoxAPIManager;
 
+use App\Models\ObjectCategory;
 use Illuminate\Http\Request;
 
 class DictionaryController extends Controller
@@ -38,6 +39,16 @@ class DictionaryController extends Controller
     {
 
     }
+
+    public function volumeCategories(){
+        $categories = ObjectCategory::with(['subcategories', 'things', 'properties'])
+            ->where('additional_menu_title', 'volume')
+            ->get();
+        return response()->json([
+            'categories' => $categories
+        ]);
+    }
+
 
     public function carsCategories()
     {

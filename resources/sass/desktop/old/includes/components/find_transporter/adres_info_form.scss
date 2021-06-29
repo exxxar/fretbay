@@ -1,0 +1,23 @@
+@media (max-width: 767px) {
+    .section-title {
+        margin-bottom: 10px;
+    }
+}
+
+.title-loading {
+    background-image: url(https://fretbay.com/en/assets/images/common/icons/general/icon-loading.svg);
+}
+
+.title-delivery {
+    background-image: url(https://fretbay.com/en/assets/images/common/icons/general/icon-delivery.svg);
+}
+
+.address-title {
+    font-size: 18px;
+    padding-left: 35px;
+    background-repeat: no-repeat;
+    background-size: 24px auto;
+}
+.section-title {
+    font-weight: 700;
+}

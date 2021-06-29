@@ -6,7 +6,7 @@ use App\Http\Requests\CategoryProperyStoreRequest;
 use App\Http\Requests\CategoryProperyUpdateRequest;
 use App\Http\Requests\CategoryStoreRequest;
 use App\Http\Requests\CategoryUpdateRequest;
-use App\Models\Category;
+use App\Models\ObjectCategory;
 use App\Models\CategoryProperty;
 use Illuminate\Http\Request;
 

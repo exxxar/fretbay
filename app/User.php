@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Models\Listing;
 use App\Models\Profile;
 use App\Models\Review;
 use App\Traits\HasRolesAndPermissions;
@@ -10,10 +11,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
-class User extends Authenticatable
+class User extends \TCG\Voyager\Models\User
 {
-    use Notifiable, HasRolesAndPermissions, SoftDeletes;
+    use Notifiable, SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -50,6 +52,17 @@ class User extends Authenticatable
 
     public function profile()
     {
+
+       /* if (is_null($this->profile_id)) {
+
+            $profile = new Profile();
+
+            Log::info($this->name);
+            Log::info($this->email);
+            $this->name = $this->name ?? "New User";
+            $this->profile_id = $profile->id;
+            $this->save();
+        }*/
         return $this->hasOne(Profile::class, "id", "profile_id");
     }
 

@@ -1,49 +1,121 @@
 <template>
-<div class="row w-100 m-auto">
-    <div class="col-12 mt-2">
-        <div class="panel-left">
-            <h3 class="mt-0 text-uppercase text-black content-box-title">Categories</h3>
-            <ul class="row w-100 m-auto">
-                <li v-for="category in categories" class="col-12 col-md-3 col-sm-6 transport-category"
-                    v-bind:class="{'active':(selected===category.id)}"
-                    @click="selectType(category.id)"
-                >
-                    <label>
-                    <span class="category-label-inner">
-                        <span class="animated-icon">
-                            <img :src="category.image" width="75px" height="75px" alt="">
-                        </span>
-                        <span>{{category.title}}</span>
+
+    <div class="container">
+        <h3 class="mt-0 text-uppercase text-black content-box-title">Categories</h3>
+        <div class="row pb-5 pt-5">
+
+
+            <div class="col-12 col-md-8 mt-2">
+                <div class="row w-100">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-12 mb-2" v-for="category in categories" @click="selectType(category.id)">
+                        <div class="card text-dark">
+                            <img class="card-img " v-lazy="category.image" style="padding: 20px;" alt="Card image">
+                            <div class="card-img-overlay">
+                                <h6 class="card-title">{{category.title}}</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div id="basicsAccordion">
+                    <div class="card border-0 mb-3">
+                        <div class="card-header card-collapse__header" id="basicsHeadingOne">
+                            <h5 class="mb-0">
+                                <button
+                                    class="btn btn-link btn-block font-weight-medium d-flex justify-content-between card-collapse__btn"
+                                    data-toggle="collapse" data-target="#basicsCollapseOne" aria-expanded="true"
+                                    aria-controls="basicsCollapseOne">
+                                    Publish your listing
+
+                                    <span class="card-collapse__btn-arrow">
+                      <i class="fa fa-arrow-down small"></i>
                     </span>
-                    </label>
-                </li>
-            </ul>
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="basicsCollapseOne" class="collapse show" aria-labelledby="basicsHeadingOne"
+                             data-parent="#basicsAccordion">
+                            <div class="card-body card-collapse__body px-0">
+                                Our system matches your move with those of our other Fretbay users.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card border-0 mb-3">
+                        <div class="card-header card-collapse__header" id="basicsHeadingTwo">
+                            <h5 class="mb-0">
+                                <button
+                                    class="btn btn-link btn-block font-weight-medium d-flex justify-content-between card-collapse__btn collapsed"
+                                    data-toggle="collapse" data-target="#basicsCollapseTwo" aria-expanded="false"
+                                    aria-controls="basicsCollapseTwo">
+                                    Compare the quotes
+
+                                    <span class="card-collapse__btn-arrow">
+                      <i class="fa fa-arrow-down small"></i>
+                    </span>
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="basicsCollapseTwo" class="collapse" aria-labelledby="basicsHeadingTwo"
+                             data-parent="#basicsAccordion">
+                            <div class="card-body card-collapse__body px-0">
+                                Grouped quotes at low prices are offered by our network of professional carriers.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card border-0 mb-3">
+                        <div class="card-header card-collapse__header" id="basicsHeadingThree">
+                            <h5 class="mb-0">
+                                <button
+                                    class="btn btn-link btn-block font-weight-medium d-flex justify-content-between card-collapse__btn collapsed"
+                                    data-toggle="collapse" data-target="#basicsCollapseThree" aria-expanded="false"
+                                    aria-controls="basicsCollapseThree">
+                                    Select a quote
+
+                                    <span class="card-collapse__btn-arrow">
+                      <i class="fa fa-arrow-down small"></i>
+                    </span>
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="basicsCollapseThree" class="collapse" aria-labelledby="basicsHeadingThree"
+                             data-parent="#basicsAccordion">
+                            <div class="card-body card-collapse__body px-0">
+                                Establish your transportation terms by contacting the carrier of your choice.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card border-0 mb-3">
+                        <div class="card-header card-collapse__header" id="basicsHeadingFour">
+                            <h5 class="mb-0">
+                                <button
+                                    class="btn btn-link btn-block font-weight-medium d-flex justify-content-between card-collapse__btn collapsed"
+                                    data-toggle="collapse" data-target="#basicsCollapseFour" aria-expanded="false"
+                                    aria-controls="basicsCollapseFour">
+                                    Evaluate the service
+
+                                    <span class="card-collapse__btn-arrow">
+                      <i class="fa fa-arrow-down small"></i>
+                    </span>
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="basicsCollapseFour" class="collapse" aria-labelledby="basicsHeadingFour"
+                             data-parent="#basicsAccordion">
+                            <div class="card-body card-collapse__body px-0">
+                                Following the move, give your opinion on the mover's service and the quality of the grouped transport of your goods.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </div>
-<!--    <div class="hidden-sm hidden-xs col-md-4 col-lg-3 col-12 mt-2">-->
-<!--        <div class="panel-right ">-->
-<!--            <h4> Publish your listing</h4>-->
-<!--            <p> Our system matches your move with those of our other Fretbay users.</p>-->
 
-
-<!--            <h4>Compare the quotes</h4>-->
-<!--            <p> Grouped quotes at low prices are offered by our network of professional carriers.-->
-<!--            </p>-->
-
-<!--            <h4> Select a quote</h4>-->
-<!--            <p> Establish your transportation terms by contacting the carrier of your choice.-->
-<!--            </p>-->
-
-<!--            <h4> Evaluate the service</h4>-->
-
-<!--            <p> Following the move, give your opinion on the mover's service and the quality of the-->
-<!--                grouped-->
-<!--                transport of your goods.</p>-->
-
-<!--        </div>-->
-
-<!--    </div>-->
-</div>
 </template>
 <script>
     export default {
@@ -69,22 +141,6 @@
 </script>
 <style lang="scss">
 
-    .btn-custom-white {
-        min-width: 200px;
-
-        color: #737480;
-        background-color: #f8f8fa;
-        transition: all 0.3s;
-
-        border-radius: 50px;
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-top: 7px;
-        padding-bottom: 7px;
-        line-height: 1.42857;
-        border-bottom: 4px solid rgba(0, 0, 0, 0.09);
-
-    }
 
 
 

@@ -66,7 +66,7 @@ class Listing extends Model
 
     public function category()
     {
-        return $this->belongsTo(Category::class)->with(['properties']);
+        return $this->belongsTo(ObjectCategory::class)->with(['properties']);
     }
 
     public function subcategory()

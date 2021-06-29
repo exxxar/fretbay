@@ -31,12 +31,5 @@
     </div>
 </template>
 <style lang="scss">
-    .vue-notification-group {
-        width: 100% !important;
-        z-index: 9999999999;
-    }
 
-    .notification-dialog.ios-style {
-        margin: 5px 10px 0px 10px !important;
-    }
 </style>

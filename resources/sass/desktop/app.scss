@@ -1,53 +1,7 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
-// Variables
-@import 'variables';
-
+@import 'theme-1';
+/*
 // Bootstrap
-@import '../../../node_modules/bootstrap/scss/bootstrap';
-
-@import "main";
-
-.btn-custom-gray {
-    min-width: 120px;
-    background-color: #c3c3c3;
-    transition: all 0.3s;
-    border-radius: 50px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    line-height: 1.42857;
-    border-bottom: 4px solid rgba(0, 0, 0, 0.09);
-    color: white;
-}
-
-
-.btn-custom-danger {
-    min-width: 120px;
-    background-color: #e3342f;
-    transition: all 0.3s;
-    border-radius: 50px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    line-height: 1.42857;
-    border-bottom: 4px solid rgba(0, 0, 0, 0.09);
-    color: white;
-}
-
-.btn-custom-success {
-    min-width: 120px;
-    background-color: #35c86f;
-    transition: all 0.3s;
-    border-radius: 50px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    line-height: 1.42857;
-    border-bottom: 4px solid rgba(0, 0, 0, 0.09);
-    color: white;
-}
+@import '../../../node_modules/bootstrap/scss/bootstrap';*/

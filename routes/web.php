@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Contracts\Session\Session;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Route;
@@ -17,12 +19,19 @@ use Illuminate\Support\Facades\Storage;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/test', function () {
-    App::setLocale('fr');
-    dd(\App\CategoryProperty::find(1)->title);
+
+
+Route::get('/locale/{lang?}', function ($lang = "en") {
+
+    if (!in_array($lang, ['en', 'ru', 'fr'])) {
+        abort(400);
+    }
+
+    App::setLocale($lang);
+    return redirect()->back();
 });
 
-Route::get("/storage/listings/{dir}/{name}",function ($dir, $name){
+Route::get("/storage/listings/{dir}/{name}", function ($dir, $name) {
 
     $file = Storage::disk('local')->get("public/listings/$dir/$name");
     return (new Response($file, 200))
@@ -63,8 +72,7 @@ Route::view("/to-be-confirmed", "desktop.pages.profile.customer.to-be-confirmed"
 Route::group(['middleware' => ['auth', 'role:transporter'], "prefix" => "transporter"], function () {
     Route::group(["prefix" => "profile"], function () {
 
-        Route::view("/", "desktop.pages.profile.transporter.index")->name("transporter.index");
-        Route::view("/my-account", "desktop.pages.profile.transporter.my-account")->name("transporter-account");
+        Route::view("/", "desktop.pages.profile.transporter.index")->name("transporter-account");
         Route::view("/my-company", "desktop.pages.profile.transporter.my-company")->name("transporter-company");
         Route::view("/legal-documents", "desktop.pages.profile.transporter.legal-documents")->name("transporter-legal-documents");
         Route::view("/my-vehicles", "desktop.pages.profile.transporter.my-vehicles")->name("transporter-vehicles");
@@ -87,7 +95,7 @@ Route::group(['middleware' => ['auth', 'role:customer'], "prefix" => "customer"]
     });
 });
 
-Route::group(['middleware' => ['auth', 'role:admin'], "prefix" => "admin"], function () {
+Route::group(['middleware' => ['auth', 'role:admin'], "prefix" => "program-admin"], function () {
     Route::get("/", "AdminController@index")->name("admin.index");
 
     Route::group(["prefix" => "orders"], function () {
@@ -264,14 +272,16 @@ Route::group(['middleware' => ['auth', 'role:admin'], "prefix" => "admin"], func
     });
 });
 
-Auth::routes();
+//Auth::routes();
+Route::view("/404","errors.404")->name("errors.404");
+
+Route::view("/login","auth.login")->name("login");
+Route::post("/login","Auth\LoginController@login");
 
 Route::post('/register-customer', \Auth\RegisterController::class . '@registerCustomer')->name("register-customer");
 Route::post('/register-customer-with-listing', \Auth\RegisterController::class . '@registerCustomerWithListing')->name("register-customer-with-listing");
 Route::post('/register-transporter', \Auth\RegisterController::class . '@registerTransporter')->name("register-transporter");
 Route::get('/logout', \Auth\LoginController::class . '@logout')->name("logout");
-
-
 
 
 Route::resource('category', 'CategoryController');
@@ -290,3 +300,8 @@ Route::get('setlocale/{locale}', "HomeController@setLocale");
 
 
 
+
+
+Route::group(['prefix' => 'v-admin'], function () {
+    Voyager::routes();
+});

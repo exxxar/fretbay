@@ -2,13 +2,17 @@
     <div>
         <div class="form-group w-100" v-if="props_data && field.type !== 'checkbox' && field.type !== 'radio'">
             <ValidationProvider :name="field.title" :rules="getRules(field)" v-slot="provider">
-                <div class="input-has-icon-right position-relative">
+
+
+                <div class="input-group mb-3">
                     <input v-model="props_data.value" :type="field.type"
                            class="form-control"
                            :placeholder="field.title">
-                    <span class="rel-icon rel-icon-square" v-if="field.icon && field.icon!=null && field.icon !==''">
-                        <img :src="field.icon" alt="">
-                    </span>
+                    <div class="input-group-append" v-if="field.icon && field.icon!=null && field.icon !==''">
+
+                        <span class="input-group-text" id="basic-addon2">   <img v-lazy="field.icon" alt="" style="width:25px"></span>
+
+                    </div>
                 </div>
             </ValidationProvider>
         </div>
@@ -39,14 +43,5 @@
 </script>
 
 <style scoped>
-    .content-box-gray .input-has-icon-right .rel-icon {
-        position: absolute;
-        right: 0px;
-        left: auto;
-        top: 0;
-    }
 
-    .content-box-gray .input-has-icon-right .rel-icon img{
-        margin: 0;
-    }
 </style>

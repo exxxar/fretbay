@@ -1,7 +1,7 @@
 @extends("layouts.app")
 
 @section("content")
-    <header-simple-component></header-simple-component>
+    <header-component></header-component>
     <login-page>
 
         <template v-slot:any-error>
