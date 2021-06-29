@@ -8,14 +8,14 @@
         </div>
 
         <div class="form-row">
-            <div class="form-group col-12 col-sm-6">
+            <div class="form-group col-12 col-sm-12">
                 <ValidationProvider :name="date1" rules="required" v-slot="{ errors }">
                     <b-form-datepicker v-model="listing[date1]" :min="min1" @input="changeDate" placeholder=""
                                        :date-format-options="{ day: '2-digit', month: '2-digit', year: 'numeric'}"
                     ></b-form-datepicker>
                 </ValidationProvider>
             </div>
-            <div class="form-group col-12 col-md-6">
+            <div class="form-group col-12 col-md-12">
                 <ValidationProvider :name="date2" rules="required" v-slot="{ errors }">
                     <b-form-datepicker v-model="listing[date2]" :min="min2" @input="changeDate" placeholder=""
                                        :date-format-options="{ day: '2-digit', month: '2-digit', year: 'numeric'}"
@@ -23,21 +23,6 @@
                 </ValidationProvider>
             </div>
         </div>
-
-<!--        <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">-->
-<!--            <option selected>Choose...</option>-->
-<!--            <option value="1">One</option>-->
-<!--            <option value="2">Two</option>-->
-<!--            <option value="3">Three</option>-->
-<!--        </select>-->
-
-
-<!--        <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">-->
-<!--            <option selected>Choose...</option>-->
-<!--            <option value="1">One</option>-->
-<!--            <option value="2">Two</option>-->
-<!--            <option value="3">Three</option>-->
-<!--        </select>-->
 
     </form>
 </template>
@@ -166,5 +151,5 @@
     }
 </script>
 <style>
- 
+
 </style>

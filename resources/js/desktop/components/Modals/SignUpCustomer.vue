@@ -5,9 +5,9 @@
             <div class="modal-content border-0">
                 <div class="modal-body p-5">
 
-                    <form class="js-validate" action="/register-customer" method="post">
+                    <form action="/register-customer" method="post">
 
-                        <input type="hidden" name="token" :value="csrf">
+                        <input type="hidden" name="_token" :value="csrf">
 
                         <!-- Title -->
                         <header class="text-center mb-5">
@@ -146,16 +146,16 @@
                         <!-- Signin Social Buttons -->
                         <div class="row mx-gutters-2 mb-4">
                             <div class="col-sm-6 mb-2 mb-sm-0">
-                                <button type="button" class="btn btn-block btn-facebook text-nowrap">
+                                <a href="/social/facebook" class="btn btn-block btn-facebook text-nowrap">
                                     <i class="fab fa-facebook-f mr-2"></i>
                                     Signin with Facebook
-                                </button>
+                                </a>
                             </div>
                             <div class="col-sm-6">
-                                <button type="button" class="btn btn-block btn-twitter">
+                                <a href="/social/twitter" class="btn btn-block btn-twitter">
                                     <i class="fab fa-twitter mr-2"></i>
                                     Signin with Twitter
-                                </button>
+                                </a>
                             </div>
                         </div>
                         <!-- End Signin Social Buttons -->

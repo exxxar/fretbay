@@ -6,8 +6,10 @@ use Illuminate\Contracts\Session\Session;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
+use Laravel\Socialite\Facades\Socialite;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,15 +23,7 @@ use Illuminate\Support\Facades\Storage;
 */
 
 
-Route::get('/locale/{lang?}', function ($lang = "en") {
-
-    if (!in_array($lang, ['en', 'ru', 'fr'])) {
-        abort(400);
-    }
-
-    App::setLocale($lang);
-    return redirect()->back();
-});
+Route::get('/locale/{lang?}', 'HomeController@setLocale');
 
 Route::get("/storage/listings/{dir}/{name}", function ($dir, $name) {
 
@@ -41,6 +35,7 @@ Route::get("/storage/listings/{dir}/{name}", function ($dir, $name) {
 
 Route::view("/", "desktop.pages.index")->name("desktop.index");
 Route::view("/find-loads", "desktop.pages.find-loads")->name("desktop.find-loads");
+Route::view("/pricing", "desktop.pages.pricing")->name("desktop.pricing");
 Route::view("/find-transporter", "desktop.pages.find-transporter")->name("desktop.find-transporter");
 Route::view("/how-it-works", "desktop.pages.how-it-works")->name("desktop.how-it-works");
 Route::view("/who-we-are", "desktop.pages.who-we-are")->name("desktop.who-we-are");
@@ -92,6 +87,7 @@ Route::group(['middleware' => ['auth', 'role:transporter'], "prefix" => "transpo
 Route::group(['middleware' => ['auth', 'role:customer'], "prefix" => "customer"], function () {
     Route::group(["prefix" => "profile"], function () {
         Route::view("/", "desktop.pages.profile.customer.index")->name("customer-account");
+        Route::put("/update", "CustomerController@update")->name("customer.update");
     });
 });
 
@@ -273,10 +269,10 @@ Route::group(['middleware' => ['auth', 'role:admin'], "prefix" => "program-admin
 });
 
 //Auth::routes();
-Route::view("/404","errors.404")->name("errors.404");
+Route::view("/404", "errors.404")->name("errors.404");
 
-Route::view("/login","auth.login")->name("login");
-Route::post("/login","Auth\LoginController@login");
+Route::view("/login", "auth.login")->name("login");
+Route::post("/login", "Auth\LoginController@login");
 
 Route::post('/register-customer', \Auth\RegisterController::class . '@registerCustomer')->name("register-customer");
 Route::post('/register-customer-with-listing', \Auth\RegisterController::class . '@registerCustomerWithListing')->name("register-customer-with-listing");
@@ -294,13 +290,28 @@ Route::resource('customer', 'CustomerController');
 
 Route::resource('profile', 'ProfileController');
 
-Route::get('setlocale/{locale}', "HomeController@setLocale");
 
+Route::get('/social/{name}', function ($name) {
+    return Socialite::driver($name)->redirect();
+});
 
+Route::get('/auth/callback/{name}', function ($name) {
+    $user = Socialite::driver($name)->user();
 
+    // OAuth 2.0 providers...
+    $token = $user->token;
+    $refreshToken = $user->refreshToken;
+    $expiresIn = $user->expiresIn;
 
+    // All providers...
+    $user->getId();
+    $user->getNickname();
+    $user->getName();
+    $user->getEmail();
+    $user->getAvatar();
 
-
+    dd($user);
+});
 
 Route::group(['prefix' => 'v-admin'], function () {
     Voyager::routes();

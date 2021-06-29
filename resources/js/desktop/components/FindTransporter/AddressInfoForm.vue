@@ -16,7 +16,12 @@
                 </div>
             </div>
 
-            <h6>Additional information <em>(recomended)</em></h6>
+
+            <div class="row">
+                <div class="col-12">
+                    <h6>Additional information <em>(recomended)</em></h6>
+                </div>
+            </div>
 
             <div class="row w-100 m-auto">
                 <div class="col-12 col-md-6">
@@ -43,15 +48,8 @@
 
             <h4>Increase your chances of being solicited, insert a photo!</h4>
 
-    <!--        <div class="row">-->
-    <!--            <div class="col-4">-->
-    <!--                <button class="btn btn-primary">Upload</button>-->
-    <!--            </div>-->
-    <!--            <div class="col-8">-->
-    <!--                <p>This information can often be found on the Internet. Approximate measures will already allow carriers to offer you a suitable offer.</p>-->
-    <!--            </div>-->
-    <!--        </div>-->
             <upload-files></upload-files>
+
             <div class="row w-100 m-auto">
                 <div class="col-12">
                     <div class="custom-control custom-switch">

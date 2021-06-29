@@ -92,7 +92,7 @@
                                     {{currentLocale}}
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
-                                    <a class="dropdown-item" v-for="lang in langOptions" @click="selectLang(lang.countryCode)" :href="'#'+lang.countryName">{{lang.countryName}}</a>
+                                    <a class="dropdown-item" v-for="lang in langOptions" :href="'/locale/'+lang.countryCode">{{lang.countryName}}</a>
 
                                 </div>
                             </li>

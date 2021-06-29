@@ -14,7 +14,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
 
-    <link rel="icon" href="/images/logo.svg">
+    <link rel="icon" href="/demenagement.png">
 
 
     <link
