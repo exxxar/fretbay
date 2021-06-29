@@ -8,7 +8,7 @@
 
                     <form method="post" action="/login">
 
-                        <input type="hidden" name="token" :value="csrf">
+                        <input type="hidden" name="_token" :value="csrf">
                         <!-- Signin -->
                         <div v-if="!forgotPassword" data-target-group="idForm">
                             <!-- Title -->
@@ -82,16 +82,16 @@
                             <!-- Signin Social Buttons -->
                             <div class="row mx-gutters-2 mb-4">
                                 <div class="col-sm-6 mb-2 mb-sm-0">
-                                    <button type="button" class="btn btn-block btn-facebook text-nowrap">
+                                    <a href="/social/facebook" class="btn btn-block btn-facebook text-nowrap">
                                         <i class="fab fa-facebook-f mr-2"></i>
                                         Signin with Facebook
-                                    </button>
+                                    </a>
                                 </div>
                                 <div class="col-sm-6">
-                                    <button type="button" class="btn btn-block btn-twitter">
+                                    <a href="/social/twitter" class="btn btn-block btn-twitter">
                                         <i class="fab fa-twitter mr-2"></i>
                                         Signin with Twitter
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                             <!-- End Signin Social Buttons -->
@@ -104,16 +104,13 @@
                     </form>
                 </div>
 
-               <!--  Forgot Password
                 <div id="forgotPassword" v-if="forgotPassword" data-target-group="idForm">
-                     Title
+
                     <header class="text-center mb-5">
                         <h2 class="h4 mb-0">Recover account</h2>
                         <p>Enter your email address and an email with instructions will be sent to you.</p>
                     </header>
-                     End Title
 
-                     Input
                     <div class="js-form-message mb-3">
                         <div class="js-focus-state form">
                             <input type="email" class="form-control form__input" name="email" required=""
@@ -122,7 +119,7 @@
                                    data-success-class="u-has-success">
                         </div>
                     </div>
-                     End Input
+
 
                     <div class="mb-3">
                         <button type="submit" class="btn btn-block btn-primary">Recover Account</button>
@@ -137,7 +134,7 @@
                         </p>
                     </div>
                 </div>
-                 End Forgot Password-->
+
                 <button type="button" class="close position-absolute-top-right-0 mt-4 mr-4" data-dismiss="modal"
                         aria-label="Close">
                     <span aria-hidden="true"><i class="svg-icon svg-icon-xs text-muted"><svg

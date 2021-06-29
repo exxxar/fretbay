@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Log;
 
 class HomeController extends Controller
 {
@@ -18,12 +20,17 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
-    public function setLocale($locale)
+    public function setLocale($lang)
     {
-        if (in_array($locale, Config::get('app.locales'))) {
-            Session::put('locale', $locale);
+        Log::info("LOCALE $lang");
+        if (!in_array($lang, (array)config("app.locales"))) {
+            abort(400);
         }
-        return redirect()->back();
+
+        session("my_locale",$lang);
+        App::setLocale($lang);
+
+        return redirect()->route("desktop.index");
     }
 
     /**

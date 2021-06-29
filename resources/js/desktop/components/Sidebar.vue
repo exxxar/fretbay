@@ -15,19 +15,48 @@
                     <!-- End Toggle Button -->
 
                     <!-- Content -->
-                    <div class="js-scrollbar u-sidebar__body">
+                    <div class="js-scrollbar u-sidebar__body" >
                         <div class="u-sidebar__content py-5">
                             <!-- Title -->
                             <div class="py-2 px-5">
-                                <h4 class="text-uppercase text-muted font-size-13 mb-0">User menu</h4>
+                                <h4 class="text-uppercase text-muted font-size-13 mb-0" v-if="user.is_admin">Admin menu</h4>
+                                <h4 class="text-uppercase text-muted font-size-13 mb-0" v-if="user.is_customer">Customer menu</h4>
+                                <h4 class="text-uppercase text-muted font-size-13 mb-0" v-if="user.is_transporter">Transporter menu</h4>
                             </div>
                             <!-- End Title -->
 
-                            <!-- List -->
-                            <ul class="list-unstyled font-size-14 mb-5">
+                            <ul class="list-unstyled font-size-14 mb-5" v-if="user.is_admin">
                                 <li>
-                                    <a class="media align-items-center u-sidebar--panel__link py-2 px-5" :href="profileLink">
-                                        <img class="max-width-4 mr-3" src="/assets/svg/components/finance-dark-icon.svg" alt="Image Description">
+                                    <a class="media align-items-center u-sidebar--panel__link py-2 px-5"
+                                       href="/v-admin/users">
+                                        <img class="max-width-4 mr-3" src="/assets/svg/components/finance-dark-icon.svg"
+                                             alt="Image Description">
+                                        <div class="media-body">
+                                            <span>Users</span>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a class="media align-items-center u-sidebar--panel__link py-2 px-5"
+                                       href="/v-admin/roles">
+                                        <img class="max-width-4 mr-3" src="/assets/svg/components/finance-dark-icon.svg"
+                                             alt="Image Description">
+                                        <div class="media-body">
+                                            <span>Roles</span>
+                                        </div>
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                            <!-- List -->
+                            <ul class="list-unstyled font-size-14 mb-5" v-if="!user.is_admin">
+                                <li>
+                                    <a class="media align-items-center u-sidebar--panel__link py-2 px-5"
+                                       :href="profileLink">
+                                        <img class="max-width-4 mr-3" src="/assets/svg/components/finance-dark-icon.svg"
+                                             alt="Image Description">
                                         <div class="media-body">
                                             <span>Profile</span>
                                         </div>
@@ -35,7 +64,8 @@
                                 </li>
                                 <li>
                                     <a class="media align-items-center u-sidebar--panel__link py-2 px-5" href="#">
-                                        <img class="max-width-4 mr-3" src="/assets/svg/components/touch-dark-icon.svg" alt="Image Description">
+                                        <img class="max-width-4 mr-3" src="/assets/svg/components/touch-dark-icon.svg"
+                                             alt="Image Description">
                                         <div class="media-body">
                                             <span>My company</span>
                                         </div>
@@ -43,7 +73,8 @@
                                 </li>
                                 <li>
                                     <a class="media align-items-center u-sidebar--panel__link py-2 px-5" href="#">
-                                        <img class="max-width-4 mr-3" src="/assets/svg/components/team-dark-icon.svg" alt="Image Description">
+                                        <img class="max-width-4 mr-3" src="/assets/svg/components/team-dark-icon.svg"
+                                             alt="Image Description">
                                         <div class="media-body">
                                             <span>My quotes </span>
                                         </div>
@@ -51,7 +82,8 @@
                                 </li>
                                 <li>
                                     <a class="media align-items-center u-sidebar--panel__link py-2 px-5" href="#">
-                                        <img class="max-width-4 mr-3" src="/assets/svg/components/email-dark-icon.svg" alt="Image Description">
+                                        <img class="max-width-4 mr-3" src="/assets/svg/components/email-dark-icon.svg"
+                                             alt="Image Description">
                                         <div class="media-body">
                                             <span>My messages</span>
                                         </div>
@@ -59,7 +91,9 @@
                                 </li>
                                 <li>
                                     <a class="media align-items-center u-sidebar--panel__link py-2 px-5" href="#">
-                                        <img class="max-width-4 mr-3" src="/assets/svg/components/projects-dark-icon.svg" alt="Image Description">
+                                        <img class="max-width-4 mr-3"
+                                             src="/assets/svg/components/projects-dark-icon.svg"
+                                             alt="Image Description">
                                         <div class="media-body">
                                             <span>My loadings</span>
                                         </div>
@@ -68,7 +102,9 @@
 
                                 <li>
                                     <a class="media align-items-center u-sidebar--panel__link py-2 px-5" href="#">
-                                        <img class="max-width-4 mr-3" src="/assets/svg/components/projects-dark-icon.svg" alt="Image Description">
+                                        <img class="max-width-4 mr-3"
+                                             src="/assets/svg/components/projects-dark-icon.svg"
+                                             alt="Image Description">
                                         <div class="media-body">
                                             <span>My evaluations</span>
                                         </div>
@@ -87,7 +123,9 @@
                             <ul class="list-unstyled font-size-14 mb-0">
                                 <li>
                                     <a class="media align-items-center u-sidebar--panel__link py-2 px-5" href="#">
-                                        <img class="max-width-4 mr-3" src="/assets/svg/components/calendar-dark-icon.svg" alt="Image Description">
+                                        <img class="max-width-4 mr-3"
+                                             src="/assets/svg/components/calendar-dark-icon.svg"
+                                             alt="Image Description">
                                         <div class="media-body">
                                             <span>Settings</span>
                                         </div>
@@ -95,7 +133,8 @@
                                 </li>
                                 <li>
                                     <a class="media align-items-center u-sidebar--panel__link py-2 px-5" href="/logout">
-                                        <img class="max-width-4 mr-3" src="/assets/svg/components/cog-dark-icon.svg" alt="Image Description">
+                                        <img class="max-width-4 mr-3" src="/assets/svg/components/cog-dark-icon.svg"
+                                             alt="Image Description">
                                         <div class="media-body">
                                             <span>Logout</span>
                                         </div>
@@ -134,13 +173,16 @@
 </template>
 <script>
     export default {
-        computed:{
-            profileLink(){
-                return window.user.is_transporter?"/transporter/profile":"/customer/profile"
+        computed: {
+            user() {
+                return window.user
+            },
+            profileLink() {
+                return window.user.is_transporter ? "/transporter/profile" : "/customer/profile"
             }
         },
-        methods:{
-            close(){
+        methods: {
+            close() {
                 $("#sidebar").toggleClass("u-unfold--hidden");
             }
         }

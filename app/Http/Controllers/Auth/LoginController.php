@@ -79,7 +79,7 @@ class LoginController extends Controller
         $credentials['deleted_at'] = null;
 
         if (!Auth::attempt($credentials))
-            return redirect()->back();
+            return redirect()->route("login")->withErrors(['Bad credentials']);
 
         $user = $request->user();
 
