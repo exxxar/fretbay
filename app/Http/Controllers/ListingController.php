@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Listing;
+use App\Models\Listing;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
@@ -31,6 +31,11 @@ class ListingController extends Controller
     public function create()
     {
         //
+    }
+
+    public function paginate(Request $request)
+    {
+        $listings = Listing::withoutTrashed()->orderByDesc('created_at')->where('is_active', true)->get();
     }
 
     /**
@@ -120,7 +125,18 @@ class ListingController extends Controller
      */
     public function update(Request $request, Listing $listing)
     {
-        //
+        $param = $request->get("param");
+        $value = $request->get("value");
+
+//        $listing = Listing::withTrashed()->find($listing->id);
+        $listing[$param] = $value;
+        $listing->save();
+
+        return response()
+            ->json([
+                'listing' => $listing,
+                "message" => "",
+            ], 200);
     }
 
     /**

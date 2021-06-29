@@ -10,12 +10,12 @@ class DatabaseSeeder extends Seeder
      * @return void
      */
     public function run()
-    {/*
-        $this->call(CategoryPropertySeeder::class);
+    {
+//        $this->call(CategoryPropertySeeder::class);
         $this->call(CategorySeeder::class);
         $this->call(SubcategorySeeder::class);
         $this->call(ThingSeeder::class);
-      ;*/
+
         $this->call(RoleSeeder::class);
         $this->call(PermissionSeeder::class);
         $this->call(UserSeeder::class);

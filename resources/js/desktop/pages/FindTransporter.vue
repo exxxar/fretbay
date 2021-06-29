@@ -1,9 +1,8 @@
 <template>
     <div>
-        <steps :step="0"/>
+<!--        <steps :step="0"/>-->
 
-        <div class="container">
-
+        <div class="container" >
             <div v-if="step===0">
                 <type-selector v-on:select-type="selectType"/>
             </div>
@@ -25,7 +24,6 @@
             <div v-if="step===3">
                 <finish-page></finish-page>
             </div>
-
         </div>
     </div>
 </template>

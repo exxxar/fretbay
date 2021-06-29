@@ -32,7 +32,8 @@ class Listing extends Model
         'category_id',
         'subcategory_id',
         'thing_id',
-        'summary_volume'
+        'summary_volume',
+        'is_active'
     ];
 
     /**

@@ -205,7 +205,11 @@
 <!--                                </div>-->
                                 <div class="row mx-auto mb-2 w-100 align-items-center">
                                     <div class="col-12 col-sm-9">
-                                        <h5 class="card-title mb-0">{{listing.title}}</h5>
+                                        <h5 class="card-title mb-0">{{listing.category.title}}
+                                            <span v-if="listing.category.mode ==='calculator'">
+                                                  {{listing.summary_volume}}  <em class="volume-unit text-bold">m<sup>3</sup></em>
+                                            </span>
+                                        </h5>
                                     </div>
                                     <div class="col-12 col-sm-3">
                                         <div class="row mx-auto mb-2 w-100 align-items-end justify-content-between justify-content-sm-end" style="font-size:1.85rem">
