@@ -13,6 +13,8 @@
                             <p>And after SignIn to manage your account.</p>
                         </header>
 
+                        <slot name="any-error"></slot>
+
                         <div class="js-form-message mb-3">
                             <div class="js-focus-state form">
                                 <input type="text" class="form-control form__input" name="company_name"

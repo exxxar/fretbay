@@ -114,7 +114,7 @@ class RegisterController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
-        $user->phone = $request->phone;
+       // $user->phone = $request->phone;
         $user->profile_id = $profile->id;
         $user->save();
         $user->roles()->attach($customer);
@@ -130,6 +130,7 @@ class RegisterController extends Controller
 
     public function registerTransporter(TransporterStoreRequest $request)
     {
+
 
         $transporter = Role::where('slug', 'transporter')->first();
 
@@ -151,7 +152,7 @@ class RegisterController extends Controller
         $user->name = $request->username;
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
-        $user->phone = $request->telephone_number_1??$request->telephone_number_2;
+       // $user->phone = $request->telephone_number_1??$request->telephone_number_2;
         $user->profile_id = $profile->id;
         $user->save();
         $user->roles()->attach($transporter);

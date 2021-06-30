@@ -24,16 +24,21 @@ class TransporterUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['required', 'string', 'min:2', 'max:256'],
-            'email' => ['required','unique:post', 'email'],
-          'company_name'=>['required','string','min:2','max:256'],
-          'first_name'=>['required','string','min:2', 'max:256'],
-          'telephone_number'=> ['required','numeric','min:11'],
-          'mobile_number'=>['required','unique:posts','min:11'],
-          'country'=>['required','string','min:2','max:256'],
-          'city'=>['required','string','min:2','max:256'],
-          'region'=>['required','string','min:2','max:256'],
-          'areas_of_expertise'=>['required','string','min:2','max:256'],
+            'username' => ['required', 'string', 'min:2', 'max:256'],
+            'email' => 'required|unique:users|email|required_with:email_confirmation|same:email_confirmation',
+            'email_confirmation' =>  ['required', 'email'],
+            "telephone_number_1" => ['required'],
+            "telephone_number_2" => ['required'],
+            'company_name' => ['required', 'string', 'min:2', 'max:256'],
+            'first_name' => ['required', 'string', 'min:2', 'max:256'],
+            "second_name" => ['required', 'string', 'min:2', 'max:256'],
+            'country' => ['required', 'string', 'min:2', 'max:256'],
+            //'city' => ['required', 'string', 'min:2', 'max:256'],
+            'region' => ['required', 'string', 'min:2', 'max:256'],
+            'postal' => ['required'],
+            'areas_of_expertise' => ['required', 'string', 'min:2', 'max:256'],
+            'password' => 'min:6|required_with:password_confirmation|same:password_confirmation',
+            'password_confirmation' => 'min:6',
 
         ];
     }

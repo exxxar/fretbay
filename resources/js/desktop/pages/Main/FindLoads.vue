@@ -13,7 +13,133 @@
             <div class="row">
                 <div class="col-lg-9 order-lg-2 mb-9 mb-lg-0">
 
-                    <div class="card shadow-sm border-0 mb-4 px-4" v-for="(n, i) in 10">
+               <!--     <div class="row mx-auto my-2 w-100 listing-item" v-for="listing in listings">
+                        <div class="card w-100" style="border: none; border-radius: 20px">
+                            <div class="card-body">
+                                &lt;!&ndash;                                <div class="card-subtitle mb-2 text-muted">&ndash;&gt;
+                                &lt;!&ndash;                                    <div class="bg-success rounded d-flex align-items-center mr-2">&ndash;&gt;
+                                &lt;!&ndash;                                        <span style="padding: 0px; margin:0px" class="px-3 py-2 text-white font-weight-bold">{{listing.category.title}}</span>&ndash;&gt;
+                                &lt;!&ndash;                                    </div>&ndash;&gt;
+                                &lt;!&ndash;                                </div>&ndash;&gt;
+                                <div class="row mx-auto mb-2 w-100 align-items-center">
+                                    <div class="col-12 col-sm-9">
+                                        <h5 class="card-title mb-0">{{listing.category.title}}
+                                            <span v-if="listing.category.mode ==='calculator'">
+                                                  {{listing.summary_volume}}  <em class="volume-unit text-bold">m<sup>3</sup></em>
+                                            </span>
+                                        </h5>
+                                    </div>
+                                    <div class="col-12 col-sm-3">
+                                        <div class="row mx-auto mb-2 w-100 align-items-end justify-content-between justify-content-sm-end" style="font-size:1.85rem">
+                                            <div class="mx-1">{{listing.messages.length}} <i class="fas fa-envelope"></i></div>
+                                            &lt;!&ndash;                                            {{listing.quotes.length}}&ndash;&gt;
+                                            <div class="mx-1"> 0 <i class="fas fa-gavel"></i></div>
+                                            <div class="mx-1">
+                                                <i class="far fa-heart" style="color: #0fb15d"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mx-auto mb-2 w-100 align-items-start">
+                                    <div class="col-12">
+                                        <div class="row w-100 mx-auto my-2">
+                                            <div class="badge rounded-pill px-3 py-2 mx-1" style="background:rgba(15,177,93,0.48);">{{listing.category.title}}</div>
+                                            <div class="badge rounded-pill px-3 py-2 mx-1" style="background:rgba(15,177,93,0.48);"
+                                                 v-if="listing.category.mode ==='calculator'"
+                                            >
+                                                {{listing.summary_volume}}  <em class="volume-unit text-bold">m<sup>3</sup></em>
+                                            </div>
+                                            <div class="badge rounded-pill px-3 py-2 mx-1" style="background:rgba(15,177,93,0.48);"
+                                                 v-if="listing.category.mode ==='article' && listing.articles.length>1"
+                                            >
+                                                {{listing.articles.length}} articles
+                                            </div>
+                                            <div class="badge rounded-pill px-3 py-2 mx-1" style="background:rgba(15,177,93,0.48);"
+                                                 v-if="listing.category.mode ==='article' && listing.articles.length===1"
+                                            >
+                                                {{listing.articles[0].title}}
+                                            </div>
+                                            &lt;!&ndash;                                            <div class="badge rounded-pill px-3 py-2 mx-1" style="background:rgba(15,177,93,0.48);"&ndash;&gt;
+                                            &lt;!&ndash;                                                 v-if="listing.category.mode ==='article' && listing.articles[0] && listing.articles.length===1"&ndash;&gt;
+                                            &lt;!&ndash;                                            >&ndash;&gt;
+                                            &lt;!&ndash;                                                <div  v-for="(property, propertyName, index ) in listing.articles[0].properties" :key="index">&ndash;&gt;
+                                            &lt;!&ndash;                                                     {{propertyName}}:{{property.value}}&ndash;&gt;
+                                            &lt;!&ndash;                                                </div>&ndash;&gt;
+
+                                            &lt;!&ndash;                                            </div>&ndash;&gt;
+                                            <div class="badge rounded-pill px-3 py-2 mx-1" style="background:rgba(15,177,93,0.48);"
+                                                 v-if="listing.category.mode ==='article' && listing.articles.length===1"
+                                                 v-for="property in listing.category.properties"
+                                            >
+                                                {{property.title}}: {{listing.articles[0].properties[property.slug].value}}
+                                            </div>
+                                            <div class="badge rounded-pill px-3 py-2 mx-1" style="background:rgba(15,177,93,0.48);"
+                                                 v-if="listing.category.mode ==='grid'"
+                                            >
+                                                {{listing.subcategory.title}}
+                                            </div>
+                                            <div class="badge rounded-pill px-3 py-2 mx-1" style="background:rgba(15,177,93,0.48);"
+                                                 v-if="listing.category.mode ==='grid'"
+                                            >
+                                                {{listing.thing.title}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-2">
+                                        <p class="mb-0" style="font-size: 12px; color: #8e949a">Publication time</p>
+                                        Since {{listing.updated_at | moment("from", "now", true)}}
+                                    </div>
+                                    <div class="col-12 col-sm-4">
+                                        <p class="mb-0" style="font-size: 12px; color: #8e949a">Place of loading</p>
+                                        <strong>
+                                            {{listing.place_of_loading.place_name}}
+                                        </strong>
+                                        <p class="mb-0">
+                                            <small> Between
+                                                <strong style="color: #0fb15d">
+                                                    {{listing.shipping_date_from | moment('DD.MM')}}
+                                                </strong>
+
+                                                and
+
+                                                <strong style="color: #0fb15d">
+                                                    {{listing.shipping_date_to | moment('DD.MM')}}
+                                                </strong>
+                                            </small>
+                                        </p>
+                                    </div>
+                                    <div class="col-12 col-sm-4">
+                                        <p class="mb-0" style="font-size: 12px; color: #8e949a">Place of delivery</p>
+                                        <strong>
+                                            {{listing.place_of_delivery.place_name}}
+                                        </strong>
+                                        <p class="mb-0">
+                                            <small> Between
+                                                <strong style="color: #0fb15d">
+                                                    {{listing.unshipping_date_from | moment('DD.MM')}}
+                                                </strong> and
+                                                <strong style="color: #0fb15d">
+                                                    {{listing.unshipping_date_to | moment('DD.MM')}}
+                                                </strong>
+                                            </small>
+                                        </p>
+                                    </div>
+                                    <div class="col-12 col-sm-2">
+                                        <p class="mb-0" style="font-size: 12px; color: #8e949a">Expiration</p>
+                                        {{ listing.shipping_date_to | moment("from", "now")}}
+                                        &lt;!&ndash;                                       in {{ listing.expiration_date| duration('asDays')}} days&ndash;&gt;
+                                    </div>
+                                </div>
+                                <div class="row mx-auto w-100 justify-content-end">
+                                    <button class="btn float-right listing-item-btn">
+                                        More
+                                    </button>
+                                </div>
+                                &lt;!&ndash;                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>&ndash;&gt;
+
+                            </div>-->
+
+                    <div class="card shadow-sm border-0 mb-4 px-4" v-for="listing in listings">
                         <div class="card-body d-md-flex justify-content-between align-items-center py-4 px-0">
                             <div class="media align-items-center mb-5 mb-md-0">
                                 <a class="u-md-avatar mr-3" href="#">
@@ -21,7 +147,13 @@
                                 </a>
                                 <div class="media-body text-nowrap">
                                     <a class="small text-uppercase text-secondary letter-spacing-0_06 mb-1" href="#">Mapbox</a>
-                                    <h3 class="h5 mb-0"><a href="#">UI/UX Designer</a></h3>
+                                    <h3 class="h5 mb-0">
+                                        {{listing.category.title}}
+                                        <span v-if="listing.category.mode ==='calculator'">
+                                                  {{listing.summary_volume}}  <em class="volume-unit text-bold">m<sup>3</sup></em>
+                                            </span>
+
+                                    </h3>
                                 </div>
                             </div>
 
