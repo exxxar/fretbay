@@ -103,6 +103,7 @@
                                     <div class="js-form-message mb-3">
                                         <div class="js-focus-state form">
                                             <select id="country" class="form-control form__input" v-model="country_id"
+                                                    :disabled="countries.length===0"
                                                     name="country" v-on:change="loadCity()">
                                                 <option value="" disabled selected>Country</option>
                                                 <option v-for="country in countries" :label="country.title"
@@ -117,9 +118,8 @@
                                 <div class="col-md-6 col-sm-12">
                                     <div class="js-form-message mb-3">
                                         <div class="js-focus-state form">
-                                            <select id="region" name="region" class="form-control form__input">
+                                            <select id="region" name="region" class="form-control form__input" :disabled="regions.length===0">
                                                 <option value="" disabled selected>Region</option>
-                                                <option value="test">test</option>
                                                 <option v-bind=region v-for="region in regions" :label="region.title">
                                                     {{region.id}}
                                                 </option>
@@ -158,11 +158,10 @@
                                     <div class="js-form-message mb-3">
                                         <div class="js-focus-state form">
                                             <select id="area_of_expertise" name="areas_of_expertise"
+                                                    :disabled="categories.length===0"
                                                     class="form-control form__input">
                                                 <option value="" disabled selected>Your area of expertise</option>
-                                                <option value="Home equipment">Home equipment</option>
-                                                <option value="Moving">Moving</option>
-                                                <option value="Vehicle">Vehicle</option>
+                                                <option :value="category" v-for="category in categories">{{category.title}}</option>
                                             </select>
                                         </div>
                                     </div>
@@ -298,15 +297,19 @@
             csrf: function () {
                 return window.csrf;
 
-            }
+            },
+            categories() {
+                return this.$store.getters.categories;
+            },
         },
         created: function () {
-            //this.loadCountries();
+            this.loadCountries();
+            this.$store.dispatch("getCategories");
         },
         methods: {
             loadCountries() {
                 axios
-                    .get('locations/countries')
+                    .get('/api/locations/countries')
                     .then(response => {
                         this.countries = response.data;
 
@@ -314,7 +317,7 @@
             },
             loadCity: function () {
                 axios
-                    .get('/locations/cities/' + this.country_id)
+                    .get('/api/locations/cities/' + this.country_id)
                     .then(response => {
                         this.regions = response.data;
 
@@ -323,6 +326,9 @@
         }
     }
 </script>
+
+
+
 
 
 

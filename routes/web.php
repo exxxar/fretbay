@@ -2,12 +2,13 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
-use Illuminate\Contracts\Session\Session;
+
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use Laravel\Socialite\Facades\Socialite;
 
@@ -21,9 +22,16 @@ use Laravel\Socialite\Facades\Socialite;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/locale/{lang}', function (\Illuminate\Http\Request $request, $lang){
 
+   // Session::forget('lang');
+    Session::put('lang', $lang);
+    Session::save();
 
-Route::get('/locale/{lang?}', 'HomeController@setLocale');
+    App::setLocale($lang);
+
+    return redirect()->route("desktop.index");
+});
 
 Route::get("/storage/listings/{dir}/{name}", function ($dir, $name) {
 

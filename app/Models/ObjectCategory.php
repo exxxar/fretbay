@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Session;
 use Spatie\Translatable\HasTranslations;
 
 class ObjectCategory extends Model
@@ -42,10 +44,11 @@ class ObjectCategory extends Model
         'subcategories_count', 'things_count',  'properties_count'
     ];
 
-    public function getTitleAttribute()
+   /* public function getTitleAttribute()
     {
+
         return $this->getTranslations()["title"][App::getLocale()];
-    }
+    }*/
     public function listings()
     {
         return $this->hasMany(Listing::class);

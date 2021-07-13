@@ -4,6 +4,8 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\DictionaryController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +22,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
 
 
 Route::get("/get-type-of-transport", DictionaryController::class . "@typeOfTransport");
@@ -39,8 +43,8 @@ Route::group(["prefix" => "cars"], function () {
 });
 
 Route::group(["prefix" => "locations"], function () {
-    Route::get("/countries", DictionaryController::class . "@getCountries");
-    Route::get("/cities/{country}", DictionaryController::class . "@getCities");
+    Route::get("/countries", \DictionaryController::class . "@getCountries");
+    Route::get("/cities/{country}", \DictionaryController::class . "@getCities");
 });
 
         Route::group(["prefix"=>"dist"],function(){

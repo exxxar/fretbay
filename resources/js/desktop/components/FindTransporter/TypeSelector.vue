@@ -7,11 +7,12 @@
 
             <div class="col-12 col-md-8 mt-2">
                 <div class="row w-100">
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-12 mb-2" v-for="category in categories" @click="selectType(category)">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-12 mb-2" v-for="category in categories"
+                         @click="selectType(category)">
                         <div class="card text-dark">
                             <img class="card-img " v-lazy="category.image" style="padding: 20px;" alt="Card image">
                             <div class="card-img-overlay">
-                                <h6 class="card-title">{{category.title}}</h6>
+                                <h6 class="card-title">{{langTitle(category.title)}}</h6>
                             </div>
                         </div>
                     </div>
@@ -106,7 +107,8 @@
                         <div id="basicsCollapseFour" class="collapse" aria-labelledby="basicsHeadingFour"
                              data-parent="#basicsAccordion">
                             <div class="card-body card-collapse__body px-0">
-                                Following the move, give your opinion on the mover's service and the quality of the grouped transport of your goods.
+                                Following the move, give your opinion on the mover's service and the quality of the
+                                grouped transport of your goods.
                             </div>
                         </div>
                     </div>
@@ -129,11 +131,18 @@
             categories() {
                 return this.$store.getters.categories;
             },
+
+            lang() {
+                return window.locale
+            }
         },
         methods: {
+            langTitle(title) {
+                return Object.entries(title).find(item=>item[0]===this.lang)[1];
+            },
             selectType(type) {
 
-                console.log("select-type",type )
+                console.log("select-type", type)
 
                 this.selected = type.id;
                 this.$emit("select-type", this.selected)
@@ -143,8 +152,6 @@
     }
 </script>
 <style lang="scss">
-
-
 
 
 </style>

@@ -62,4 +62,29 @@ class MapBoxAPI
         return $tmp_sum;
     }
 
+    public function getRegions($country){
+        $client = new \GuzzleHttp\Client();
+
+        try {
+            $response = $client->request('GET',
+                "https://api.mapbox.com/directions-matrix/v1/mapbox/driving/$x1,$y1;$x2,$y2?approaches=curb;curb&access_token=" . $this->apiKey
+
+            );
+        }catch (\Exception $e){
+            return 0;
+        }
+
+        if($response->getStatusCode()!==200)
+            return 0;
+
+        $distances = json_decode($response->getBody(), true);
+
+        $tmp_sum = 0;
+        if (isset($distances["destinations"]))
+            foreach ($distances["destinations"] as $dist)
+                $tmp_sum += $dist["distance"];
+
+        return $tmp_sum;
+    }
+
 }

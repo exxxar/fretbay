@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Classes\Api\MapBoxAPI;
-use App\Classes\Api\RioAPII;
+use App\Classes\Api\RioApi;
 use App\Classes\CarsAPIManager;
 use App\Classes\CitiesAndCountriesAPIManager;
 use App\Classes\DistanceAPIManager;

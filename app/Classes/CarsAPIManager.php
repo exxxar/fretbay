@@ -5,7 +5,7 @@ namespace App\Classes;
 
 
 use App\Classes\Api\iCarsAPI;
-use App\Classes\Api\RioAPII;
+use App\Classes\Api\RioApi;
 use Illuminate\Support\Facades\App;
 
 class CarsAPIManager
@@ -15,7 +15,7 @@ class CarsAPIManager
     public function __construct()
     {
         $this->carsAPI = [
-            "en" => new RioAPII()
+            "en" => new RioApi()
         ];
     }
 
