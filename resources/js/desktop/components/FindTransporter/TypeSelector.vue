@@ -12,7 +12,7 @@
                         <div class="card text-dark">
                             <img class="card-img " v-lazy="category.image" style="padding: 20px;" alt="Card image">
                             <div class="card-img-overlay">
-                                <h6 class="card-title">{{langTitle(category.title)}}</h6>
+                                <h6 class="card-title">{{category.title}}</h6>
                             </div>
                         </div>
                     </div>
@@ -132,14 +132,10 @@
                 return this.$store.getters.categories;
             },
 
-            lang() {
-                return window.locale
-            }
+
         },
         methods: {
-            langTitle(title) {
-                return Object.entries(title).find(item=>item[0]===this.lang)[1];
-            },
+
             selectType(type) {
 
                 console.log("select-type", type)
