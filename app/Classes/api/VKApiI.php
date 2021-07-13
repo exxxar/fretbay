@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Classes\api;
+namespace App\Classes\Api;
 
 
 use VK\Client\Enums\VKLanguage;
