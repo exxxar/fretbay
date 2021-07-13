@@ -1,6 +1,7 @@
 <template>
     <div style="padding-top: 130px">
-        <steps :step="0"/>
+
+        <steps :step="step"/>
 
         <div v-if="step===0">
             <type-selector v-on:select-type="selectType"/>
@@ -85,7 +86,7 @@
         },
         mounted() {
             this.$store.dispatch('setStep', 0)
-            console.log(window.user)
+
             if (window.user) {
                 this.$store.dispatch('editNewListing', {key: 'user_id', value: window.user.id})
             }

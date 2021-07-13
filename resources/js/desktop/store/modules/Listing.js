@@ -1,10 +1,32 @@
 const state = {
     listings: [],
     deleted_listings: [],
+    paginate: {
+        first_page_url: null,
+        from: 1,
+        last_page: 1,
+        last_page_url: null,
+        next_page_url: null,
+        path: null,
+        per_page: 15,
+        prev_page_url: null,
+        to: 5,
+        total: 5,
+        current_page: 1
+    }
 };
 
 // getters
 const getters = {
+    listingsPaginate: (state, getters, rootState) => {
+        return state.paginate || null
+    },
+    userListings: (state, getters, rootState) => {
+        if (window.user)
+            return state.listings.filter(item => item.user_id === window.user.id)
+        else
+            return [];
+    },
     listings: (state, getters, rootState) => {
         return state.listings;
     },
@@ -15,9 +37,20 @@ const getters = {
 
 // actions
 const actions = {
+    nextListingPage({state, commit}, page) {
+        commit('setListingCurrentPage', page);
+    },
     async getListings({state, commit}) {
         return axios
-            .get('/api/listings')
+            .get(`/api/listings?page=${state.paginate.current_page || 1}`)
+            .then(resp => {
+                commit('setListings', resp.data.listings);
+            })
+    },
+    async getFilteredListings({state, commit}, filter) {
+
+        return axios
+            .post(`/api/listings/filtered?page=${state.paginate.current_page || 1}`, filter)
             .then(resp => {
                 commit('setListings', resp.data.listings);
             })
@@ -79,8 +112,16 @@ const actions = {
 
 // mutations
 const mutations = {
+    setListingCurrentPage(state, payload) {
+        state.paginate.current_page = payload
+    },
     setListings(state, payload) {
-        state.listings=payload
+        state.listings = payload.data
+        state.paginate = payload
+        delete state.paginate.data;
+
+        console.log("listings", state.paginate)
+
     },
     addListing(state, payload) {
         state.listings.push(payload)

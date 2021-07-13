@@ -84,7 +84,7 @@
             return {
                 selected: {},
                 optionsShown: false,
-                searchFilter: '',
+                searchFilter: this.address,
                 options:[],
             }
         },
@@ -92,6 +92,11 @@
             // this.$emit('selected', this.selected);
             // this.selected = this.address;
             // this.searchFilter = this.address.place_name;
+
+            window.eventBus.$on("address_input", () =>{
+               this.searchFilter = null
+                this.selected = {}
+            });
         },
         computed: {
             filteredOptions() {
@@ -106,6 +111,7 @@
             }
         },
         methods: {
+
             handleBlur (value) {
                 this.$emit('blur', value);
                 this.exit();
@@ -170,5 +176,21 @@
 
 
 <style lang="scss" scoped>
+.dropdown-content {
+    position: absolute;
+    background: white;
+    word-break: break-word;
+    z-index: 1000000;
+    border: 1px #21c87a solid;
+    border-radius: 0px 0px 5px 5px;
 
+    .dropdown-item {
+        white-space: inherit;
+        &:hover {
+            background: #21c87a;
+            color: white;
+            cursor:pointer;
+        }
+    }
+}
 </style>

@@ -44,6 +44,8 @@ import "vue-select/dist/vue-select.css";
 
 //components
 Vue.component('preloader-component', require('../desktop/components/Preloader.vue').default);
+Vue.component('listing-item-component', require('./components/ListingItem.vue').default);
+Vue.component('listing-paginate-component', require('./components/ListingPaginate.vue').default);
 Vue.component('footer-component', require('../desktop/components/Footer.vue').default);
 Vue.component('header-component', require('./components/Header.vue').default);
 Vue.component('sidebar-component', require('./components/Sidebar.vue').default);
@@ -68,6 +70,7 @@ Vue.component('register-customer-page', require('../desktop/pages/Auth/RegisterC
 
 //main pages
 Vue.component('index-page', require('./pages/Main/Index.vue').default);
+Vue.component('listing-page', require('./pages/Main/Listing.vue').default);
 Vue.component('find-loads-page', require('./pages/Main/FindLoads.vue').default);
 Vue.component('find-transporter-page', require('./pages/Main/FindTransporter.vue').default);
 Vue.component('how-it-work-page', require('./pages/Support/HowItWork.vue').default);

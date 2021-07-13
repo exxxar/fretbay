@@ -1,25 +1,32 @@
 <template>
     <form>
-        <div class="form-group">
-<!--            <input type="text" class="form-control" aria-describedby="address" placeholder="Address">-->
-            <ValidationProvider :name="address" rules="required" v-slot="{ errors }">
-                <address-input v-model="listing[address]" v-on:selected="selectAddress" :disabled="false" placeholder="Address"></address-input>
-            </ValidationProvider>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group col-12 col-sm-12">
-                <ValidationProvider :name="date1" rules="required" v-slot="{ errors }">
-                    <b-form-datepicker v-model="listing[date1]" :min="min1" @input="changeDate" placeholder=""
-                                       :date-format-options="{ day: '2-digit', month: '2-digit', year: 'numeric'}"
-                    ></b-form-datepicker>
+        <div class="row">
+            <div class="col-12">
+                <ValidationProvider :name="address" rules="required" v-slot="{ errors }">
+                    <address-input v-model="listing[address]" class="mb-2" v-on:selected="selectAddress" :disabled="false" placeholder="Address"></address-input>
                 </ValidationProvider>
             </div>
-            <div class="form-group col-12 col-md-12">
-                <ValidationProvider :name="date2" rules="required" v-slot="{ errors }">
-                    <b-form-datepicker v-model="listing[date2]" :min="min2" @input="changeDate" placeholder=""
+<!--            <input type="text" class="form-control" aria-describedby="address" placeholder="Address">-->
+
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-sm-12">
+                <ValidationProvider :name="date1" rules="required" v-slot="{ errors }">
+                    <date-picker v-model="listing[date1]" :min="min1" @input="changeDate" placeholder="From..."
+                                 class="mb-2 w-100"
+                                 :value-type="'timestamp'"
                                        :date-format-options="{ day: '2-digit', month: '2-digit', year: 'numeric'}"
-                    ></b-form-datepicker>
+                    />
+                </ValidationProvider>
+            </div>
+            <div class="col-12 col-md-12">
+                <ValidationProvider :name="date2" rules="required" v-slot="{ errors }">
+                    <date-picker v-model="listing[date2]" :min="min2" @input="changeDate" placeholder="To..."
+                                 class="mb-2 w-100"
+                                 :value-type="'timestamp'"
+                                       :date-format-options="{ day: '2-digit', month: '2-digit', year: 'numeric'}"
+                   />
                 </ValidationProvider>
             </div>
         </div>
@@ -29,10 +36,13 @@
 <script>
     import moment from 'moment'
     import AddressInput from "./AddressInput";
+    import DatePicker from 'vue2-datepicker';
+    import 'vue2-datepicker/index.css';
+
     export default {
         props:['date1', 'date2'],
         components:{
-            AddressInput
+            AddressInput, DatePicker
         },
         data() {
             return {
@@ -118,8 +128,8 @@
                     this.$store.dispatch('editNewListing', {key:this.date2, value: this.listing[this.date2]});
                 }
 
-                let d1 = new Date(this.listing[this.date1]);
-                let d2 = new Date(this.listing[this.date2]);
+                let d1 = new Date(this.listing[this.date1]).getUTCMilliseconds();
+                let d2 = new Date(this.listing[this.date2]).getUTCMilliseconds();
 
                 if(d1 > d2)
                 {
@@ -127,8 +137,8 @@
                     this.$store.dispatch('editNewListing', {key:this.date2, value: this.listing[this.date2]});
                 }
                 if( this.date1 === 'shipping_date_from') {
-                    let d = new Date(this.listing['unshipping_date_from']);
-                    let d0 = new Date(this.listing['unshipping_date_to']);
+                    let d = new Date(this.listing['unshipping_date_from']).getUTCMilliseconds();
+                    let d0 = new Date(this.listing['unshipping_date_to']).getUTCMilliseconds();
                     if(d < d1)
                     {
                         this.$store.dispatch('editNewListing', {key:'unshipping_date_from', value: this.listing[this.date1]});
@@ -150,6 +160,8 @@
         }
     }
 </script>
-<style>
-
+<style lang="scss">
+.mx-input {
+    height: 50px;
+}
 </style>

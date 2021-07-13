@@ -16,7 +16,7 @@
 
                 <VueSlickCarousel v-bind="settings" v-if="categories.length>0">
                     <div v-for="(sub, index) in categories" class="p-1" :key="sub.id" v-if="sub.subcategories.length>0">
-                        <button class="btn btn-outline-primary w-100" @click="chooseSubcategory(sub.id)" :class="{'btn-primary text-white': active_category.id === sub.id }">{{sub.title}}</button>
+                        <button class="btn btn-outline-primary w-100" style="min-width: 200px" @click="chooseSubcategory(sub.id)" :class="{'btn-primary text-white': active_category.id === sub.id }">{{sub.title}}</button>
                     </div>
                 </VueSlickCarousel>
 
@@ -35,7 +35,7 @@
         </div>
 
         <div class="row w-100 m-auto">
-            <div class="col-3 mb-2"  v-for="thing in filteredThings">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-2"  v-for="thing in filteredThings">
 
                 <div class="card text-white">
                     <img class="card-img" v-lazy="thing.image" alt="Card image">
@@ -87,7 +87,31 @@
                     "speed": 500,
                     "slidesToShow": 5,
                     "slidesToScroll": 3,
-                    "touchThreshold": 5
+                    "touchThreshold": 5,
+                    responsive: [
+                        {
+                            breakpoint: 1200,
+                            settings: {
+                                slidesToShow: 5,
+                                slidesToScroll: 1
+                            }
+                        },
+                        {
+                            breakpoint: 1008,
+                            settings: {
+                                slidesToShow: 2,
+                                slidesToScroll: 1
+                            }
+                        },
+                        {
+                            breakpoint: 800,
+                            settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1
+                            }
+                        }
+
+                    ]
                 },
                 categories:[],
                 subcategories:[],

@@ -104,7 +104,7 @@ class RegisterController extends Controller
 
     public function registerCustomerWithListing(Request $request)
     {
-        $customer = Role::where('slug', 'customer')->first();
+        $customer = Role::where('name', 'customer')->first();
 
         $profile = Profile::create([
             "company_name"=>$request->name,

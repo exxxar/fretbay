@@ -18,10 +18,20 @@
             }
         },
         mounted() {
+
             let timeout = setTimeout(() => {
                 this.is_hidden = true;
                 clearTimeout(timeout);
             }, this.time)
+
+
+            window.eventBus.$on("preloader", () =>{
+                this.is_hidden = false;
+                let timeout = setTimeout(() => {
+                    this.is_hidden = true;
+                    clearTimeout(timeout);
+                }, this.time)
+            });
         },
         name: "Preloader"
     }

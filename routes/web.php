@@ -35,6 +35,7 @@ Route::get("/storage/listings/{dir}/{name}", function ($dir, $name) {
 
 Route::view("/", "desktop.pages.index")->name("desktop.index");
 Route::view("/find-loads", "desktop.pages.find-loads")->name("desktop.find-loads");
+
 Route::view("/pricing", "desktop.pages.pricing")->name("desktop.pricing");
 Route::view("/find-transporter", "desktop.pages.find-transporter")->name("desktop.find-transporter");
 Route::view("/how-it-works", "desktop.pages.how-it-works")->name("desktop.how-it-works");
@@ -57,12 +58,15 @@ Route::view("/register-transporter", "desktop.pages.register-transporter")->name
 Route::view("/register-customer", "desktop.pages.register-customer")->name("desktop.register-customer");
 Route::view("/profile-personal-info", "desktop.pages.profile.profile-personal-info")->name("desktop.profile-personal-info");
 Route::view("/activity-listing", "desktop.pages.profile.customer.activity-listing")->name("desktop.activity-listing");
-Route::view("/listings", "desktop.pages.profile.customer.listings")->name("desktop.listings");
+
+
 
 //Роут на редактирование профиля заказчика
 Route::view("/profile-customer", "desktop.pages.profile.customer.profile")->name("desktop.customer-profile");
 Route::view("/to-be-confirmed-empty", "desktop.pages.profile.customer.to-be-confirmed-empty")->name("desktop.customer-to-be-confirmed-empty");
 Route::view("/to-be-confirmed", "desktop.pages.profile.customer.to-be-confirmed")->name("desktop.customer-to-be-confirmed");
+
+Route::get("/listing/{id}", "ListingController@show")->name("desktop.listing");
 
 Route::group(['middleware' => ['auth', 'role:transporter'], "prefix" => "transporter"], function () {
     Route::group(["prefix" => "profile"], function () {
@@ -87,6 +91,7 @@ Route::group(['middleware' => ['auth', 'role:transporter'], "prefix" => "transpo
 Route::group(['middleware' => ['auth', 'role:customer'], "prefix" => "customer"], function () {
     Route::group(["prefix" => "profile"], function () {
         Route::view("/", "desktop.pages.profile.customer.index")->name("customer-account");
+        Route::view("/listings", "desktop.pages.profile.customer.listings")->name("customer.listings");
         Route::put("/update", "CustomerController@update")->name("customer.update");
     });
 });

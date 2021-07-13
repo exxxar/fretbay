@@ -28,6 +28,12 @@
         rel="stylesheet">
 
 
+    <link
+        href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css"
+        rel="stylesheet"
+    />
+
+
     @if (Auth::check())
         <meta name="user" content="{{ App\User::self() }}"/>
     @endif

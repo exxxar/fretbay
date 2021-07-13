@@ -35,7 +35,6 @@ class Thing extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'volume' => 'double',
         'is_active' => 'boolean',
     ];
 

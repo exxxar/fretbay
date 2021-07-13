@@ -3,7 +3,7 @@
         <ValidationObserver ref="article_form" v-slot="{invalid}" >
 
             <article-form :category="category"></article-form>
-            <div class="row mx-auto d-flex justify-content-end mt-2 w-100">
+            <div class="row mx-auto d-flex justify-content-end mt-2 w-100" v-if="category.mode!='grid'">
                 <div class="col-12 col-sm-2">
                     <button class="btn w-100 btn-outline-blue" @click="prevStep">Back</button>
                 </div>
