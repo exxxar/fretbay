@@ -6,7 +6,7 @@ namespace App\Classes;
 
 use App\Classes\Api\DistanceAPI;
 use App\Classes\Api\iCarsAPI;
-use App\Classes\api\iDistanceAPI;
+use App\Classes\Api\iDistanceAPI;
 use App\Classes\Api\RioAPII;
 use Illuminate\Support\Facades\App;
 
