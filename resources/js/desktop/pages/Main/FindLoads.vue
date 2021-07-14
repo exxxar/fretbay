@@ -503,4 +503,9 @@
         }
     }
 
+    .vue-range-slider.slider-component {
+        width: 100% !important;
+
+    }
+
 </style>
