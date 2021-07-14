@@ -330,6 +330,10 @@
             this.distanceRanger.formatter = value => `${value} km`
             this.volumeRanger.formatter = value => `${value}`
             this.publicationTimeRanger.formatter = value => `${value} day`
+
+            this.filter.distance_range_value = [0, 10000]
+            this.filter.volume_range_value = [0, 1000]
+            this.filter.publication_time_range_value = [0, 31]
         },
         mounted() {
             this.$store.dispatch('getListings');
