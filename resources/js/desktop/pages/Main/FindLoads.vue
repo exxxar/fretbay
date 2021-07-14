@@ -88,36 +88,34 @@
                         <div class="row">
                             <div class="col-12 mt-2">
                                 <h6>Volume, m<sup>2</sup></h6>
-                                <vue-range-slider v-model="filter.volume_range_value"
-                                                  :speed="0"
-                                                  :width="'100%'"
-                                                  :tooltip="'hover'"
-                                                  :min="volumeRanger.min"
-                                                  :max="volumeRanger.max"
-                                                  :formatter="volumeRanger.formatter"
-                                                  :enable-cross="volumeRanger.enableCross"/>
+
+                                <vue-slider
+                                    ref="volumeRanger"
+                                    v-model="filter.volume_range_value"
+                                    v-bind="volumeRanger.options"
+                                ></vue-slider>
+
+
                             </div>
                             <div class="col-12 mt-2">
                                 <h6>Distance, km</h6>
-                                <vue-range-slider v-model="filter.distance_range_value"
-                                                  :speed="0"
-                                                  :tooltip="'hover'"
-                                                  :width="'100%'"
-                                                  :min="distanceRanger.min"
-                                                  :max="distanceRanger.max"
-                                                  :formatter="distanceRanger.formatter"
-                                                  :enable-cross="distanceRanger.enableCross"/>
+                                <vue-slider
+                                    ref="volumeRanger"
+                                    v-model="filter.distance_range_value"
+                                    v-bind="distanceRanger.options"
+                                ></vue-slider>
+
                             </div>
                             <div class="col-12 mt-2">
                                 <h6>Publication time, days</h6>
-                                <vue-range-slider v-model="filter.publication_time_range_value"
-                                                  :speed="0"
-                                                  :tooltip="'hover'"
-                                                  :width="'100%'"
-                                                  :min="publicationTimeRanger.min"
-                                                  :max="publicationTimeRanger.max"
-                                                  :formatter="publicationTimeRanger.formatter"
-                                                  :enable-cross="publicationTimeRanger.enableCross"/>
+
+                                <vue-slider
+                                    ref="volumeRanger"
+                                    v-model="filter.publication_time_range_value"
+                                    v-bind="publicationTimeRanger.options"
+                                ></vue-slider>
+
+
                             </div>
 
                             <div class="col-12 mt-2" v-if="user">
@@ -236,8 +234,8 @@
     import DatePicker from 'vue2-datepicker';
     import 'vue2-datepicker/index.css';
 
-    import 'vue-range-component/dist/vue-range-slider.css'
-    import VueRangeSlider from 'vue-range-component'
+    import VueSlider from 'vue-slider-component'
+    import 'vue-slider-component/theme/antd.css'
 
     import VueSlickCarousel from 'vue-slick-carousel'
     import 'vue-slick-carousel/dist/vue-slick-carousel.css'
@@ -246,7 +244,7 @@
 
     export default {
         components: {
-            AddressInput, DatePicker, VueRangeSlider, VueSlickCarousel
+            AddressInput, DatePicker, VueSlider, VueSlickCarousel
         },
         data() {
             return {
@@ -284,21 +282,137 @@
 
                     ]
                 },
+
+
                 publicationTimeRanger: {
-                    min: 0,
-                    max: 31,
-                    enableCross: false,
+                    options: {
+                        dotSize: 14,
+                        width: 'auto',
+                        height: 4,
+                        contained: false,
+                        direction: 'ltr',
+                        data: null,
+                        dataLabel: 'label',
+                        dataValue: 'value',
+                        min: 0,
+                        max: 31,
+                        interval: 1,
+                        disabled: false,
+                        clickable: true,
+                        duration: 0.5,
+                        adsorb: false,
+                        lazy: false,
+                        tooltip: 'active',
+                        tooltipPlacement: 'top',
+                        tooltipFormatter: void 0,
+                        useKeyboard: false,
+                        keydownHook: null,
+                        dragOnClick: false,
+                        enableCross: false,
+                        fixed: false,
+                        minRange: void 0,
+                        maxRange: void 0,
+                        order: true,
+                        marks: false,
+                        dotOptions: void 0,
+                        dotAttrs: void 0,
+                        process: true,
+                        dotStyle: void 0,
+                        railStyle: void 0,
+                        processStyle: void 0,
+                        tooltipStyle: void 0,
+                        stepStyle: void 0,
+                        stepActiveStyle: void 0,
+                        labelStyle: void 0,
+                        labelActiveStyle: void 0,
+                    },
                 },
                 volumeRanger: {
-                    min: 0,
-                    max: 10000,
-                    enableCross: false,
+                    options: {
+                        dotSize: 14,
+                        width: 'auto',
+                        height: 4,
+                        contained: false,
+                        direction: 'ltr',
+                        data: null,
+                        dataLabel: 'label',
+                        dataValue: 'value',
+                        min: 0,
+                        max: 10000,
+                        interval: 1,
+                        disabled: false,
+                        clickable: true,
+                        duration: 0.5,
+                        adsorb: false,
+                        lazy: false,
+                        tooltip: 'active',
+                        tooltipPlacement: 'top',
+                        tooltipFormatter: void 0,
+                        useKeyboard: false,
+                        keydownHook: null,
+                        dragOnClick: false,
+                        enableCross: false,
+                        fixed: false,
+                        minRange: void 0,
+                        maxRange: void 0,
+                        order: true,
+                        marks: false,
+                        dotOptions: void 0,
+                        dotAttrs: void 0,
+                        process: true,
+                        dotStyle: void 0,
+                        railStyle: void 0,
+                        processStyle: void 0,
+                        tooltipStyle: void 0,
+                        stepStyle: void 0,
+                        stepActiveStyle: void 0,
+                        labelStyle: void 0,
+                        labelActiveStyle: void 0,
+                    },
                 },
 
                 distanceRanger: {
-                    min: 0,
-                    max: 10000,
-                    enableCross: false,
+                    options: {
+                        dotSize: 14,
+                        width: 'auto',
+                        height: 4,
+                        contained: false,
+                        direction: 'ltr',
+                        data: null,
+                        dataLabel: 'label',
+                        dataValue: 'value',
+                        min: 0,
+                        max: 10000,
+                        interval: 1,
+                        disabled: false,
+                        clickable: true,
+                        duration: 0.5,
+                        adsorb: false,
+                        lazy: false,
+                        tooltip: 'active',
+                        tooltipPlacement: 'top',
+                        tooltipFormatter: void 0,
+                        useKeyboard: false,
+                        keydownHook: null,
+                        dragOnClick: false,
+                        enableCross: false,
+                        fixed: false,
+                        minRange: void 0,
+                        maxRange: void 0,
+                        order: true,
+                        marks: false,
+                        dotOptions: void 0,
+                        dotAttrs: void 0,
+                        process: true,
+                        dotStyle: void 0,
+                        railStyle: void 0,
+                        processStyle: void 0,
+                        tooltipStyle: void 0,
+                        stepStyle: void 0,
+                        stepActiveStyle: void 0,
+                        labelStyle: void 0,
+                        labelActiveStyle: void 0,
+                    },
                 },
 
                 filter: {
