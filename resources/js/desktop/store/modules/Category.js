@@ -7,8 +7,6 @@ const state = {
 const getters = {
     categories: (state, getters, rootState) => {
 
-        let tmp = [];
-
         for (let index in state.categories)
         {
             state.categories[index].title = Object.entries(state.categories[index].title).find(item=>item[0]===window.locale)[1];

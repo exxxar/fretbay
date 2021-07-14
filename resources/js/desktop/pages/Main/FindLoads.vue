@@ -90,6 +90,7 @@
                                 <h6>Volume, m<sup>2</sup></h6>
                                 <vue-range-slider v-model="filter.volume_range_value"
                                                   :speed="0"
+                                                  :width="'100%'"
                                                   :tooltip="'hover'"
                                                   :min="volumeRanger.min"
                                                   :max="volumeRanger.max"
@@ -101,6 +102,7 @@
                                 <vue-range-slider v-model="filter.distance_range_value"
                                                   :speed="0"
                                                   :tooltip="'hover'"
+                                                  :width="'100%'"
                                                   :min="distanceRanger.min"
                                                   :max="distanceRanger.max"
                                                   :formatter="distanceRanger.formatter"
@@ -111,6 +113,7 @@
                                 <vue-range-slider v-model="filter.publication_time_range_value"
                                                   :speed="0"
                                                   :tooltip="'hover'"
+                                                  :width="'100%'"
                                                   :min="publicationTimeRanger.min"
                                                   :max="publicationTimeRanger.max"
                                                   :formatter="publicationTimeRanger.formatter"
