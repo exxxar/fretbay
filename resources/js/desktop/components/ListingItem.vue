@@ -34,12 +34,12 @@
 
             <div class="media align-items-center mb-5 mb-md-0">
                 <a class="u-md-avatar custom-avatar mr-3" href="#" v-if="listing.images.length>0">
-                    <img class="img-fluid rounded-circle"  v-lazy="listing.images[0].path"
+                    <img class="img-fluid rounded-circle" v-lazy="listing.images[0].path"
                          :alt="listing.images[0].name">
                 </a>
                 <div class="media-body text-nowrap">
                     <h3 class="h5 mb-0">
-                        {{listing.category.title||"Empty"}}
+                        {{prepareLangTitle(listing.category.title)||"Empty"}}
                         <span v-if="listing.category.mode ==='calculator'">
                                                   {{listing.summary_volume}}  <em
                             class="volume-unit text-bold">m<sup>3</sup></em>
@@ -143,12 +143,12 @@
                    v-if="listing.category.mode ==='article' && listing.articles.length===1"
                    v-for="property in listing.category.properties"
                 >
-                    {{property.title||"Empty"}}: {{listing.articles[0].properties[property.slug].value}}
+                    {{prepareLangTitle(property.title)||"Empty"}}: {{listing.articles[0].properties[property.slug].value}}
                 </a>
 
                 <div class="row w-100 mx-auto my-2">
                     <div class="badge rounded-pill px-3 py-2 mx-1" style="background:rgba(15,177,93,0.48);">
-                        {{listing.category.title||"Empty"}}
+                        {{prepareLangTitle(listing.category.title)||"Empty"}}
                     </div>
                     <div class="badge rounded-pill px-3 py-2 mx-1" style="background:rgba(15,177,93,0.48);"
                          v-if="listing.category.mode ==='calculator'"
@@ -166,10 +166,11 @@
                         <div class="col-3"
                              v-for="property in listing.category.properties"
                         >
-                            <a href="" class="badge badge-warning" v-for="item in listing.articles"> {{item.title||"Empty"}}:
+                            <a href="" class="badge badge-warning" v-for="item in listing.articles">
+                                {{prepareLangTitle(item.title)||"Empty"}}:
                                 <strong>{{item.properties[property.slug].value}}</strong>
                                 <small>
-                                    {{property.title||"Empty"}}
+                                    {{prepareLangTitle(property.title)||"Empty"}}
                                 </small>
                             </a>
                         </div>
@@ -178,12 +179,12 @@
                     <div class="badge rounded-pill px-3 py-2 mx-1" style="background:rgba(15,177,93,0.48);"
                          v-if="listing.category.mode ==='grid'"
                     >
-                        {{listing.subcategory.title||"Empty"}}
+                        {{prepareLangTitle(listing.subcategory.title)||"Empty"}}
                     </div>
                     <div class="badge rounded-pill px-3 py-2 mx-1" style="background:rgba(15,177,93,0.48);"
                          v-if="listing.category.mode ==='grid'&&listing.thing"
                     >
-                       {{listing.thing.title||"Empty"}}
+                        {{prepareLangTitle(listing.thing.title)||"Empty"}}
                     </div>
                 </div>
             </div>
@@ -195,13 +196,22 @@
 <script>
     export default {
         props: ["listing"],
-        computed:{
-            user:function () {
+        computed: {
+            user: function () {
                 return window.user
+            },
+
+        },
+        methods: {
+            prepareLangTitle(title) {
+                console.log("lang=>",Object.entries(title).find(item => item[0] === window.locale)[1])
+                return typeof title === 'object' ?
+                    Object.entries(title).find(item => item[0] === window.locale)[1] :
+                    title;
             }
         },
         mounted() {
-            console.log("listing=>",this.listing)
+            console.log("listing=>", this.listing)
         }
     }
 

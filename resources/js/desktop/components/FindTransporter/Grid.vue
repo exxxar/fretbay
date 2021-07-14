@@ -9,7 +9,7 @@
                         @click="selectSubcategory(subcategory.id)">
                         <div class="card">
                             <div class="card-body d-flex justify-content-center align-items-center">
-                                <p>{{subcategory.title}}</p>
+                                <p>{{prepareLangTitle(subcategory.title)}}</p>
                             </div>
 
                         </div>
@@ -27,7 +27,7 @@
 
                         <div class="card">
                             <div class="card-body d-flex justify-content-center align-items-center">
-                                <p>{{thing.title}}</p>
+                                <p>{{prepareLangTitle(thing.title)}}</p>
                             </div>
 
                         </div>
@@ -78,8 +78,7 @@
             }
         },
         created() {
-            console.log("GRID")
-            this.$store.dispatch('editNewListing', {key: 'title', value: this.category.title})
+            this.$store.dispatch('editNewListing', {key: 'title', value: this.prepareLangTitle(this.category.title)})
             this.subcategories = this.category.subcategories;
             this.things = this.category.things;
             if (this.subcategories.length < 0) {
@@ -94,6 +93,11 @@
             }
         },
         methods: {
+            prepareLangTitle(title) {
+                return typeof title === 'object' ?
+                    Object.entries(title).find(item => item[0] === window.locale)[1] :
+                    title;
+            },
             nextStep() {
                 console.log("this.filteredThings.length",this.filteredThings.length)
                 if (this.$refs.grid_wizard.current_step === 1||this.filteredThings.length===0) {

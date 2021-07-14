@@ -30,7 +30,7 @@ Route::get('/locale/{lang}', function (\Illuminate\Http\Request $request, $lang)
 
     App::setLocale($lang);
 
-    return redirect()->route("desktop.index");
+    return redirect()->back();
 });
 
 Route::get("/storage/listings/{dir}/{name}", function ($dir, $name) {
