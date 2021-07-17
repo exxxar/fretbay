@@ -44,6 +44,7 @@ class ListingController extends Controller
         $distance_range_value = ($request->distance_range_value) ?? null;
         $publication_time_range_value = ($request->publication_time_range_value) ?? null;
         $only_self = $request->only_self;
+        $moving_package = $request->formula??null;
 
         Log::info("self=>".$only_self);
 
@@ -76,6 +77,8 @@ class ListingController extends Controller
         if (!is_null($address_from))
             $listings = $listings->where("place_of_loading->place_name", $address_from->place_name);
 
+        if (!is_null($moving_package))
+            $listings = $listings->whereIn("moving_package", $moving_package);
 
         if (!is_null($address_to))
             $listings = $listings->where("place_of_delivery->place_name", $address_to->place_name);
@@ -122,9 +125,10 @@ class ListingController extends Controller
             'unshipping_date_to' => Carbon::createFromTimestamp($request->get('unshipping_date_to')),
             'messages' => $request->get('messages') ?? [],
             'additional_info' => $request->get('additional_info') ?? '',
+            'moving_package' => $request->get('moving_package') ?? '',
             'images' => [],
             'status' => $request->get('status') ?? '',
-            'distance' => $this->mapbox->getAPI()->getDistance(
+            'distance' => $this->mapbox->getAPI()->getMathDistance(
                 $place_of_loading->center[0] ?? 0,
                 $place_of_loading->center[1] ?? 0,
                 $place_of_delivery->center[0] ?? 0,
@@ -172,9 +176,12 @@ class ListingController extends Controller
      * @param \App\Listing $listing
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
-        return view("desktop.pages.listing");
+        if ($request->ajax())
+            return response()->json(Listing::with(['category', 'subcategory', 'thing'])->where("id",$id)->first());
+
+        return view("desktop.pages.listing",compact("id"));
     }
 
     /**

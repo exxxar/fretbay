@@ -4,7 +4,7 @@
             <div id="logoAndNav" class="container-fluid">
                 <!-- Nav -->
                 <nav
-                    class="js-mega-menu navbar navbar-expand-lg u-header__navbar hs-menu-initialized hs-menu-horizontal">
+                    class="js-mega-menu navbar navbar-expand-lg u-header__navbar hs-menu-initialized hs-menu-horizontal justify-content-center">
                     <!-- Logo -->
                     <div class="u-header__navbar-brand-wrapper">
                         <a class="navbar-brand u-header__navbar-brand" href="/" aria-label="Space">

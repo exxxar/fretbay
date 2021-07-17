@@ -2,6 +2,6 @@
 
 @section("content")
     <header-component></header-component>
-    <listing-page></listing-page>
+    <listing-page listing_id="{{$id}}"></listing-page>
     <footer-component></footer-component>
 @endsection

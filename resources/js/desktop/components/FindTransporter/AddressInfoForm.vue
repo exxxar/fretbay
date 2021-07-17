@@ -164,10 +164,10 @@
             </div>
 
             <div class="row mx-auto d-flex justify-content-end mt-2 w-100">
-                <div class="col-12 col-sm-6 col-lg-2">
+                <div class="col-6 col-sm-6 col-lg-2">
                     <button class="btn btn-outline-blue w-100" @click="prevStep">Back</button>
                 </div>
-                <div class="col-12 col-sm-6 col-lg-3">
+                <div class="col-6 col-sm-6 col-lg-3">
                     <button class="btn btn-outline-primary w-100" @click="nextStep" :disabled="invalid">Next</button>
                 </div>
             </div>

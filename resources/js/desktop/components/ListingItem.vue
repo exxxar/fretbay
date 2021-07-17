@@ -132,6 +132,13 @@
                     <p class="ml-5 p-2">Distance <strong>{{listing.distance}}</strong> km</p>
                 </div>
 
+
+                <div class="col-12" v-if="listing.moving_package">
+                    <p class="ml-5 p-2"><strong>{{listing.moving_package}}</strong></p>
+                </div>
+
+
+
             </div>
         </div>
 
@@ -194,8 +201,12 @@
     </div>
 </template>
 <script>
+
+
+
     export default {
         props: ["listing"],
+
         computed: {
             user: function () {
                 return window.user

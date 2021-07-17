@@ -27,6 +27,7 @@ class CreateListingsTable extends Migration
             $table->longText('additional_info');
             $table->json('images');
             $table->string('status');
+            $table->string('moving_package')->nullable();
             $table->date('expiration_date');
             $table->double('summary_volume', 8,2 );
             $table->unsignedBigInteger('user_id')->nullable();

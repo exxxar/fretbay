@@ -27,6 +27,8 @@
                             </div>
 
                             <div id="map"></div>
+
+                            <listing-item-component :listing="listing"/>
                         </div>
                         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
                         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
@@ -234,9 +236,11 @@
     import mapboxgl from "mapbox-gl";
     export default {
         name: "MapboxMap",
+        props:["listing_id"],
         data() {
             // Set initial data, this.createMap() configures event listeners that update data based on user interaction
             return {
+                listing: null,
                 center: [-93.1247, 44.9323], // St. Paul
                 zoom: 10.5
             };
@@ -244,8 +248,20 @@
         mounted() {
             // create the map after the component is mounted
             this.createMap();
+
+            console.log("listing_id=>",this.listing_id)
+            this.loadListing();
+
+
         },
         methods: {
+            loadListing(){
+                axios.get(`/api/listing/${this.listing_id}`).then(resp=>{
+                    this.listing = resp.data
+
+                    console.log(this.listing)
+                })
+            },
             createMap() {
 
                 mapboxgl.accessToken = 'pk.eyJ1IjoiaW5maW5pdHlzb3VsMTMiLCJhIjoiY2twZnYxNDFrMjl4czJ5b2dlOWphajVvMSJ9.bCoFds-RVlD1TYOwilGfAg';

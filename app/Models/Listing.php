@@ -33,6 +33,7 @@ class Listing extends Model
         'subcategory_id',
         'thing_id',
         'summary_volume',
+        'moving_package',
         'distance'
     ];
 

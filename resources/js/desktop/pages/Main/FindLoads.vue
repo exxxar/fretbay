@@ -82,142 +82,127 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 order-lg-1 ">
+                <div class="col-lg-3 order-lg-1 p-0">
 
                     <div class="sticky-block">
-                        <div class="row">
-                            <div class="col-12 mt-2">
-                                <h6>Volume, m<sup>2</sup></h6>
 
-                                <vue-slider
-                                    ref="volumeRanger"
-                                    v-model="filter.volume_range_value"
-                                    v-bind="volumeRanger.options"
-                                ></vue-slider>
+                        <vue-custom-scrollbar class="scroll-area" :settings="settingsScroll" @ps-scroll-y="scrollHanle">
+                            <div class="row m-0">
+                                <div class="col-12 mt-2">
+                                    <h6>Volume, m<sup>3</sup></h6>
 
+                                    <div class="row m-0">
+                                        <div class="col-sm-6 mb-2 p-1">
+                                            <input type="number" class="form-control"
+                                                   v-model="filter.volume_range_value[0]"
+                                                   min="0"
+                                                   :max="filter.volume_range_value[1]"
+                                                   placeholder="From">
 
-                            </div>
-                            <div class="col-12 mt-2">
-                                <h6>Distance, km</h6>
-                                <vue-slider
-                                    ref="volumeRanger"
-                                    v-model="filter.distance_range_value"
-                                    v-bind="distanceRanger.options"
-                                ></vue-slider>
-
-                            </div>
-                            <div class="col-12 mt-2">
-                                <h6>Publication time, days</h6>
-
-                                <vue-slider
-                                    ref="volumeRanger"
-                                    v-model="filter.publication_time_range_value"
-                                    v-bind="publicationTimeRanger.options"
-                                ></vue-slider>
-
-
-                            </div>
-
-                            <div class="col-12 mt-2" v-if="user">
-                                <div class="custom-control custom-switch">
-                                    <input type="checkbox" id="self-quotes" class="custom-control-input"
-                                           @change="setSelfQuotes">
-                                    <label for="self-quotes" class="custom-control-label">Only self quotes</label>
-                                </div>
-                            </div>
-
-                            <div class="col-12 mt-2">
-                                <button @click="applyFilter" class="btn btn-outline-success w-100 mb-1">Apply filter
-                                </button>
-                                <button @click="resetFilter" class="btn btn-outline-warning w-100">Reset filter
-                                </button>
-                            </div>
-
-
-                        </div>
-
-                        <div id="basicsAccordion">
-                            <div class="card border-0 mb-3">
-                                <div class="card-header card-collapse__header" id="basicsHeadingOne">
-                                    <h5 class="mb-0">
-                                        <button
-                                            class="btn btn-link btn-block font-weight-medium d-flex justify-content-between card-collapse__btn"
-                                            data-toggle="collapse" data-target="#basicsCollapseOne" aria-expanded="true"
-                                            aria-controls="basicsCollapseOne">
-                                            Address <span v-if="filter.address_from||filter.address_to"
-                                                          @click="clearAddress"><i
-                                            class="fas fa-times text-primary cursor-pointer small"></i></span>
-
-                                            <span class="card-collapse__btn-arrow">
-                      <i class="fa fa-arrow-down small"></i>
-                    </span>
-                                        </button>
-                                    </h5>
-                                </div>
-                                <div id="basicsCollapseOne" class="collapse" aria-labelledby="basicsHeadingOne"
-                                     data-parent="#basicsAccordion">
-                                    <div class="card-body card-collapse__body px-0">
-                                        <small>Enter postal code</small>
-                                        <input type="text" class="form-control"
-                                               placeholder="City, Postal code, Region, Country">
-                                        <p class="mt-1">Or</p>
-                                        <div class="mb-1">
-                                            <small> Point A</small>
-                                            <address-input class="mb-2" v-on:selected="selectAddressA"
-                                                           :address="filter.address_from"
-                                                           :disabled="false" placeholder="Address"></address-input>
                                         </div>
-
-
-                                        <div class="mb-1">
-                                            <small>Point B</small>
-                                            <address-input class="mb-2" v-on:selected="selectAddressB"
-                                                           :address="filter.address_to"
-                                                           :disabled="false" placeholder="Address"></address-input>
+                                        <div class="col-sm-6 mb-2 p-1">
+                                            <input type="number" class="form-control"
+                                                   v-model="filter.volume_range_value[1]"
+                                                   :min="filter.volume_range_value[0]"
+                                                   placeholder="To">
                                         </div>
                                     </div>
+
+
+                                    <div class="p-1 w-100">
+                                        <vue-slider
+                                            ref="volumeRanger"
+                                            v-model="filter.volume_range_value"
+                                            v-bind="volumeRanger.options"
+                                        ></vue-slider>
+                                    </div>
+
+
                                 </div>
-                            </div>
+                                <div class="col-12 mt-2">
+                                    <h6>Distance, km</h6>
+                                    <div class="row m-0">
+                                        <div class="col-sm-6 mb-2 p-1">
+                                            <input type="number" class="form-control"
+                                                   v-model="filter.distance_range_value[0]"
+                                                   min="0"
+                                                   :max="filter.distance_range_value[1]"
+                                                   placeholder="From">
 
+                                        </div>
+                                        <div class="col-sm-6 mb-2 p-1">
+                                            <input type="number" class="form-control"
+                                                   v-model="filter.distance_range_value[1]"
+                                                   :min="filter.distance_range_value[0]"
+                                                   placeholder="To">
+                                        </div>
+                                    </div>
 
-                            <div class="card border-0 mb-3">
-                                <div class="card-header card-collapse__header" id="basicsHeadingTwo">
-                                    <h5 class="mb-0">
-                                        <button
-                                            class="btn btn-link btn-block font-weight-medium d-flex justify-content-between card-collapse__btn collapsed"
-                                            data-toggle="collapse" data-target="#basicsCollapseTwo"
-                                            aria-expanded="false"
-                                            aria-controls="basicsCollapseTwo">
-                                            Dates
-                                            <span @click="swapDates" v-if="filter.date_from||filter.date_to"><i
-                                                class="fas fa-sync text-primary cursor-pointer small"></i></span>
-                                            <span @click="clearDates" v-if="filter.date_from||filter.date_to"><i
-                                                class="fas fa-times text-primary cursor-pointer small"></i></span>
+                                    <div class="p-1 w-100">
+                                        <vue-slider
+                                            ref="distanceRanger"
+                                            v-model="filter.distance_range_value"
+                                            v-bind="distanceRanger.options"
+                                        ></vue-slider>
+                                    </div>
 
-                                            <span class="card-collapse__btn-arrow">
-                      <i class="fa fa-arrow-down small"></i>
-                    </span>
-                                        </button>
-                                    </h5>
                                 </div>
-                                <div id="basicsCollapseTwo" class="collapse" aria-labelledby="basicsHeadingTwo"
-                                     data-parent="#basicsAccordion">
-                                    <div class="card-body card-collapse__body px-0">
-                                        <date-picker v-model="filter.date_from" @input="changeDate"
-                                                     placeholder="Date from"
-                                                     class="mb-2 w-100"
-                                                     :value-type="'timestamp'"
-                                        />
-                                        <date-picker v-model="filter.date_to" @input="changeDate" placeholder="Date to"
-                                                     class="mb-2 w-100"
-                                                     :value-type="'timestamp'"
-                                        />
+                                <div class="col-12 mt-2">
+                                    <h6>Publication time, days</h6>
+
+                                    <div class="p-1 w-100">
+                                        <vue-slider
+                                            ref="publicationRanger"
+                                            v-model="filter.publication_time_range_value"
+                                            v-bind="publicationTimeRanger.options"
+                                        ></vue-slider>
+
                                     </div>
                                 </div>
+
+                                <div class="col-12 mt-2">
+
+                                    <div class="custom-control custom-switch" :key="index"
+                                         v-for="(item,index) in formulaList">
+                                        <input type="checkbox" class="custom-control-input" :id="'formula-'+index"
+                                               v-model="filter.formula" :value="item">
+                                        <label :for="'formula-'+index" class="custom-control-label">{{item}}</label>
+                                    </div>
+
+                                </div>
+                                <div class="col-12 mt-2">
+
+                                    <small>Enter postal code</small>
+                                    <input type="text" class="form-control"
+                                           placeholder="City, Postal code, Region, Country">
+
+                                </div>
+
+
+                                <div class="col-12 mt-2">
+                                    .
+                                    <date-picker v-model="filter.date_from" @input="changeDate"
+                                                 placeholder="Date from"
+                                                 class="mb-2 w-100"
+                                                 :value-type="'timestamp'"
+                                    />
+                                    <date-picker v-model="filter.date_to" @input="changeDate" placeholder="Date to"
+                                                 class="mb-2 w-100"
+                                                 :value-type="'timestamp'"
+                                    />
+                                </div>
+                                <div class="col-12 mt-2">
+                                    <button @click="applyFilter" class="btn btn-outline-success w-100 mb-1">Apply filter
+                                    </button>
+                                    <button @click="resetFilter" class="btn btn-outline-warning w-100">Reset filter
+                                    </button>
+                                </div>
+
+
                             </div>
+                        </vue-custom-scrollbar>
 
 
-                        </div>
                     </div>
                 </div>
             </div>
@@ -242,12 +227,26 @@
     // optional style for arrows & dots
     import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 
+    import vueCustomScrollbar from 'vue-custom-scrollbar'
+    import "vue-custom-scrollbar/dist/vueScrollbar.css"
+
     export default {
         components: {
-            AddressInput, DatePicker, VueSlider, VueSlickCarousel
+            AddressInput, DatePicker, VueSlider, VueSlickCarousel, vueCustomScrollbar
         },
         data() {
             return {
+                formulaList: [
+                    "The Economic package",
+                    "Truck with Driver package",
+                    "The Standard package",
+                    "The Complete package"
+                ],
+                settingsScroll: {
+                    suppressScrollY: false,
+                    suppressScrollX: false,
+                    wheelPropagation: false
+                },
                 settings: {
                     "dots": false,
                     "arrows": true,
@@ -425,7 +424,8 @@
                     volume_range_value: [0, 1000],
                     publication_time_range_value: [0, 31],
                     only_self: false,
-                    user_id: null
+                    user_id: null,
+                    formula: []
 
                 }
             }
@@ -441,6 +441,33 @@
             listings: function () {
                 return this.$store.getters.listings;
             },
+            maxDistance() {
+
+                if (this.listings.length===0)
+                    return 0;
+
+                let tmp_max = this.listings[0].distance || 0;
+
+                this.listings.forEach(item => {
+                    if (item.distance > tmp_max)
+                        tmp_max = item.distance
+                });
+                return tmp_max;
+            },
+
+            maxVolume() {
+
+                if (this.listings.length===0)
+                    return 0;
+
+                let tmp_max = this.listings[0].summary_volume || 0;
+
+                this.listings.forEach(item => {
+                    if (item.summary_volume > tmp_max)
+                        tmp_max = item.summary_volume
+                });
+                return tmp_max;
+            },
         },
 
         created() {
@@ -453,12 +480,20 @@
             this.filter.publication_time_range_value = [0, 31]
         },
         mounted() {
-            this.$store.dispatch('getListings');
+            this.$store.dispatch('getListings').then(resp=>{
+                this.filter.distance_range_value = [0, this.maxDistance]
+                this.filter.volume_range_value = [0, this.maxVolume]
+                this.distanceRanger.options.max = this.maxDistance
+                this.volumeRanger.options.max = this.maxVolume
+            })
             this.$store.dispatch("getCategories");
 
 
         },
         methods: {
+            scrollHanle(evt) {
+                console.log(evt)
+            },
             swapAddress() {
                 console.log("swapAddress")
                 let tmp = this.filter.address_from
@@ -513,6 +548,7 @@
                 this.filter.categories.splice(index, 1);
             },
             applyFilter() {
+                console.log(this.filter.formula)
                 window.eventBus.$emit("preloader")
                 this.$store.dispatch('getFilteredListings', this.filter);
             },
@@ -525,6 +561,7 @@
                 this.filter.distance_range_value = [0, 10000]
                 this.filter.volume_range_value = [0, 1000]
                 this.filter.publication_time_range_value = [0, 31]
+                this.filter.formula = []
 
                 this.clearAddress()
                 this.clearDates()
@@ -535,6 +572,15 @@
 </script>
 
 <style lang="scss">
+
+    .scroll-area {
+        position: relative;
+        margin: auto;
+        width: 100%;
+        height: 80vh;
+    }
+
+
     .bg-info {
         width: 50px;
         height: 50px;
@@ -622,6 +668,13 @@
         &.slick-prev {
             left: 0;
         }
+    }
+
+    .vue-slider {
+        padding: 7px 20px !important;
+        width: 100% !important;
+        height: 25px !important;
+        box-sizing: border-box;
     }
 
     .vue-range-slider.slider-component {
