@@ -78,7 +78,7 @@ Route::view("/profile-customer", "desktop.pages.profile.customer.profile")->name
 Route::view("/to-be-confirmed-empty", "desktop.pages.profile.customer.to-be-confirmed-empty")->name("desktop.customer-to-be-confirmed-empty");
 Route::view("/to-be-confirmed", "desktop.pages.profile.customer.to-be-confirmed")->name("desktop.customer-to-be-confirmed");
 
-Route::get("/listing/{id}", "ListingController@show")->name("desktop.listing");
+
 
 Route::group(['middleware' => ['auth', 'role:transporter'], "prefix" => "transporter"], function () {
     Route::group(["prefix" => "profile"], function () {
@@ -101,8 +101,9 @@ Route::group(['middleware' => ['auth', 'role:transporter'], "prefix" => "transpo
 });
 
 Route::group(["prefix" => "listing"], function () {
-    Route::post('/messages/send', 'ListingController@sendMessage')->middleware("auth");
-});
+    Route::get("/{id}", "ListingController@show")->name("desktop.listing");
+    Route::post('/messages/send', 'ListingController@sendMessage');
+})->middleware("auth");
 
 
 Route::group(['middleware' => ['auth', 'role:customer'], "prefix" => "customer"], function () {
