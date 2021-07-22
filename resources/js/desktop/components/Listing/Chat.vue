@@ -112,7 +112,7 @@
                     if (!tmp.includes(item.sender_id)) {
                         tmp.push(item.sender_id);
                         let sender = item.sender
-                        sender.last_message = item.created_at
+                        sender.last_message = item.created_at || new Date()
                         tmp_users.push(item.sender)
                     }
                 })
