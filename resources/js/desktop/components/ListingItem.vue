@@ -2,7 +2,9 @@
     <div class="card shadow-sm border-0 mb-4 px-4">
         <div class="card-header d-flex justify-content-between">
 
+
             <div class="counters">
+                <span class="mr-5 text-bold">№{{preparedId}}</span>
                    <span v-if="listing.messages" class="mr-2">  {{listing.messages.length}} <i
                        class="fas fa-envelope"></i></span>
                 <span v-if="listing.quotes">  {{listing.quotes.length}} <i class="fas fa-gavel"></i></span>
@@ -54,26 +56,9 @@
                 <p class="mb-0" style="font-size: 12px; color: #8e949a">Publication time</p>
                 Since {{listing.updated_at | moment("from", "now", true)}}
 
-                <small> Load between
-                    <strong style="color: #0fb15d">
-                        {{listing.shipping_date_from | moment('DD.MM')}}
-                    </strong>
 
-                    and
 
-                    <strong style="color: #0fb15d">
-                        {{listing.shipping_date_to | moment('DD.MM')}}
-                    </strong>
-                </small>
 
-                <small> Delivered between
-                    <strong style="color: #0fb15d">
-                        {{listing.unshipping_date_from | moment('DD.MM')}}
-                    </strong> and
-                    <strong style="color: #0fb15d">
-                        {{listing.unshipping_date_to | moment('DD.MM')}}
-                    </strong>
-                </small>
             </div>
 
 
@@ -101,6 +86,18 @@
                         {{listing.place_of_loading.place_name}}
 
                     </a>
+
+                    <small> Load between
+                        <strong style="color: #0fb15d">
+                            {{listing.shipping_date_from | moment('DD.MM')}}
+                        </strong>
+
+                        and
+
+                        <strong style="color: #0fb15d">
+                            {{listing.shipping_date_to | moment('DD.MM')}}
+                        </strong>
+                    </small>
                 </div>
 
                 <div class="col-4">
@@ -126,6 +123,15 @@
 
                         {{listing.place_of_delivery.place_name}}
                     </a>
+
+                    <small> Delivered between
+                        <strong style="color: #0fb15d">
+                            {{listing.unshipping_date_from | moment('DD.MM')}}
+                        </strong> and
+                        <strong style="color: #0fb15d">
+                            {{listing.unshipping_date_to | moment('DD.MM')}}
+                        </strong>
+                    </small>
                 </div>
 
                 <div class="col-4" v-if="listing.distance>0">
@@ -212,6 +218,15 @@
                 return window.user
             },
 
+            preparedId:function () {
+                let tmp = ""+this.listing.id;
+
+                while (tmp.length<6)
+                    tmp = "0"+tmp;
+
+                return tmp;
+            }
+
         },
         methods: {
             prepareLangTitle(title) {
@@ -242,4 +257,6 @@
             object-fit: cover;
         }
     }
+
+
 </style>

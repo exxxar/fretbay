@@ -28,178 +28,11 @@
 
                             <div id="map"></div>
 
-                            <listing-item-component :listing="listing"/>
+                            <quotes-component :notfound="true"/>
                         </div>
                         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
                         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                            <div class="messaging">
-                                <div class="inbox_msg">
-                                    <div class="inbox_people">
-                                        <div class="headind_srch">
-                                            <div class="recent_heading">
-                                                <h4>Recent</h4>
-                                            </div>
-                                            <div class="srch_bar">
-                                                <div class="stylish-input-group">
-                                                    <input type="text" class="search-bar" placeholder="Search">
-                                                    <span class="input-group-addon">
-                <button type="button"> <i class="fa fa-search" aria-hidden="true"></i> </button>
-                </span></div>
-                                            </div>
-                                        </div>
-                                        <div class="inbox_chat">
-                                            <div class="chat_list active_chat">
-                                                <div class="chat_people">
-                                                    <div class="chat_img"><img
-                                                        src="https://ptetutorials.com/images/user-profile.png"
-                                                        alt="sunil">
-                                                    </div>
-                                                    <div class="chat_ib">
-                                                        <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
-                                                        <p>Test, which is a new approach to have all solutions
-                                                            astrology under one roof.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="chat_list">
-                                                <div class="chat_people">
-                                                    <div class="chat_img"><img
-                                                        src="https://ptetutorials.com/images/user-profile.png"
-                                                        alt="sunil">
-                                                    </div>
-                                                    <div class="chat_ib">
-                                                        <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
-                                                        <p>Test, which is a new approach to have all solutions
-                                                            astrology under one roof.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="chat_list">
-                                                <div class="chat_people">
-                                                    <div class="chat_img"><img
-                                                        src="https://ptetutorials.com/images/user-profile.png"
-                                                        alt="sunil">
-                                                    </div>
-                                                    <div class="chat_ib">
-                                                        <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
-                                                        <p>Test, which is a new approach to have all solutions
-                                                            astrology under one roof.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="chat_list">
-                                                <div class="chat_people">
-                                                    <div class="chat_img"><img
-                                                        src="https://ptetutorials.com/images/user-profile.png"
-                                                        alt="sunil">
-                                                    </div>
-                                                    <div class="chat_ib">
-                                                        <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
-                                                        <p>Test, which is a new approach to have all solutions
-                                                            astrology under one roof.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="chat_list">
-                                                <div class="chat_people">
-                                                    <div class="chat_img"><img
-                                                        src="https://ptetutorials.com/images/user-profile.png"
-                                                        alt="sunil">
-                                                    </div>
-                                                    <div class="chat_ib">
-                                                        <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
-                                                        <p>Test, which is a new approach to have all solutions
-                                                            astrology under one roof.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="chat_list">
-                                                <div class="chat_people">
-                                                    <div class="chat_img"><img
-                                                        src="https://ptetutorials.com/images/user-profile.png"
-                                                        alt="sunil">
-                                                    </div>
-                                                    <div class="chat_ib">
-                                                        <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
-                                                        <p>Test, which is a new approach to have all solutions
-                                                            astrology under one roof.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="chat_list">
-                                                <div class="chat_people">
-                                                    <div class="chat_img"><img
-                                                        src="https://ptetutorials.com/images/user-profile.png"
-                                                        alt="sunil">
-                                                    </div>
-                                                    <div class="chat_ib">
-                                                        <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
-                                                        <p>Test, which is a new approach to have all solutions
-                                                            astrology under one roof.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="mesgs">
-                                        <div class="msg_history">
-                                            <div class="incoming_msg">
-                                                <div class="incoming_msg_img"><img
-                                                    src="https://ptetutorials.com/images/user-profile.png" alt="sunil">
-                                                </div>
-                                                <div class="received_msg">
-                                                    <div class="received_withd_msg">
-                                                        <p>Test which is a new approach to have all
-                                                            solutions</p>
-                                                        <span class="time_date"> 11:01 AM    |    June 9</span></div>
-                                                </div>
-                                            </div>
-                                            <div class="outgoing_msg">
-                                                <div class="sent_msg">
-                                                    <p>Test which is a new approach to have all
-                                                        solutions</p>
-                                                    <span class="time_date"> 11:01 AM    |    June 9</span></div>
-                                            </div>
-                                            <div class="incoming_msg">
-                                                <div class="incoming_msg_img"><img
-                                                    src="https://ptetutorials.com/images/user-profile.png" alt="sunil">
-                                                </div>
-                                                <div class="received_msg">
-                                                    <div class="received_withd_msg">
-                                                        <p>Test, which is a new approach to have</p>
-                                                        <span class="time_date"> 11:01 AM    |    Yesterday</span></div>
-                                                </div>
-                                            </div>
-                                            <div class="outgoing_msg">
-                                                <div class="sent_msg">
-                                                    <p>Apollo University, Delhi, India Test</p>
-                                                    <span class="time_date"> 11:01 AM    |    Today</span></div>
-                                            </div>
-                                            <div class="incoming_msg">
-                                                <div class="incoming_msg_img"><img
-                                                    src="https://ptetutorials.com/images/user-profile.png" alt="sunil">
-                                                </div>
-                                                <div class="received_msg">
-                                                    <div class="received_withd_msg">
-                                                        <p>We work directly with our designers and suppliers,
-                                                            and sell direct to you, which means quality, exclusive
-                                                            products, at a price anyone can afford.</p>
-                                                        <span class="time_date"> 11:01 AM    |    Today</span></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="type_msg">
-                                            <div class="input_msg_write">
-                                                <input type="text" class="write_msg" placeholder="Type a message"/>
-                                                <button class="msg_send_btn" type="button"><i
-                                                    class="fa fa-paper-plane-o"
-                                                    aria-hidden="true"></i></button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
+                            <chat-component :listing="listing" v-if="listing"/>
                         </div>
                     </div>
 
@@ -234,9 +67,10 @@
 </template>
 <script>
     import mapboxgl from "mapbox-gl";
+
     export default {
         name: "MapboxMap",
-        props:["listing_id"],
+        props: ["listing_id"],
         data() {
             // Set initial data, this.createMap() configures event listeners that update data based on user interaction
             return {
@@ -245,18 +79,23 @@
                 zoom: 10.5
             };
         },
+        computed: {
+            messages: function () {
+                return this.listing ? this.listing.messages : []
+            }
+        },
         mounted() {
             // create the map after the component is mounted
             this.createMap();
 
-            console.log("listing_id=>",this.listing_id)
+            console.log("listing_id=>", this.listing_id)
             this.loadListing();
 
 
         },
         methods: {
-            loadListing(){
-                axios.get(`/api/listing/${this.listing_id}`).then(resp=>{
+            loadListing() {
+                axios.get(`/api/listing/${this.listing_id}`).then(resp => {
                     this.listing = resp.data
 
                     console.log(this.listing)
@@ -311,7 +150,7 @@
                     new mapboxgl.Marker(el)
                         .setLngLat(marker.geometry.coordinates)
                         .setPopup(
-                            new mapboxgl.Popup({ offset: 25 }) // add popups
+                            new mapboxgl.Popup({offset: 25}) // add popups
                                 .setHTML(
                                     '<h3>' +
                                     marker.properties.title +
@@ -562,6 +401,7 @@
         margin: 0 auto;
         border: 1px solid darkgrey;
     }
+
     .text-container {
         max-width: 500px;
         display: flex;
@@ -579,9 +419,11 @@
         border-radius: 50%;
         cursor: pointer;
     }
+
     .mapboxgl-popup {
         max-width: 200px;
     }
+
     .mapboxgl-popup-content {
         text-align: center;
         font-family: 'Open Sans', sans-serif;

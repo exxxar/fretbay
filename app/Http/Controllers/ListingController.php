@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Classes\MapBoxAPIManager;
+use App\Message;
 use App\Models\Listing;
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
@@ -44,14 +47,28 @@ class ListingController extends Controller
         $distance_range_value = ($request->distance_range_value) ?? null;
         $publication_time_range_value = ($request->publication_time_range_value) ?? null;
         $only_self = $request->only_self;
-        $moving_package = $request->formula??null;
-
-        Log::info("self=>".$only_self);
+        $moving_package = $request->formula;
+        $reference = intval($request->reference) ?? null;
+        $region = $request->region ?? null;
 
         $listings = Listing::with(['category', 'subcategory', 'thing']);
 
         if (count($distance_range_value) > 0)
             $listings = $listings->whereBetween("distance", $distance_range_value);
+
+        if (!is_null($reference)&&$reference>0)
+            $listings = $listings->where("id", $reference);
+
+        if (!is_null($region))
+            $listings = $listings
+                ->where(function($query) use ($region) {
+                    $query->orWhere('place_of_loading->id', ((object)$region)->id)
+                        ->orWhere('place_of_delivery->id', ((object)$region)->id)
+                        ->orWhere('place_of_loading->context','like', "%".((object)$region)->id."%")
+                        ->orWhere('place_of_delivery->context','like', "%".((object)$region)->id."%");
+                });
+                //->where("place_of_loading->id", ((object)$region)->id)
+                //->orWhere("place_of_delivery->id", ((object)$region)->id);
 
         if ($only_self)
             $listings = $listings->where("user_id", $request->user_id);
@@ -74,19 +91,22 @@ class ListingController extends Controller
             $listings = $listings->where("shipping_date_to", "<", $date_to)
                 ->orWhere("unshipping_date_to", "<", $date_to);
 
-        if (!is_null($address_from))
+       if (!is_null($address_from))
             $listings = $listings->where("place_of_loading->place_name", $address_from->place_name);
 
-        if (!is_null($moving_package))
+        if (count((array)$moving_package)>0)
             $listings = $listings->whereIn("moving_package", $moving_package);
 
         if (!is_null($address_to))
             $listings = $listings->where("place_of_delivery->place_name", $address_to->place_name);
 
+
         if (count((array)$request->categories) > 0)
             $listings = $listings->whereIn("category_id", $request->categories);
 
-        $listings = $listings->orderByDesc('created_at')->paginate(15);
+        $listings = $listings
+           // ->where("expiration_date", ">", Carbon::now())
+            ->orderByDesc('created_at')->paginate(15);
 
         return response()->json([
             'listings' => $listings
@@ -123,7 +143,6 @@ class ListingController extends Controller
             'shipping_date_to' => Carbon::createFromTimestamp($request->get('shipping_date_to')),
             'unshipping_date_from' => Carbon::createFromTimestamp($request->get('unshipping_date_from')),
             'unshipping_date_to' => Carbon::createFromTimestamp($request->get('unshipping_date_to')),
-            'messages' => $request->get('messages') ?? [],
             'additional_info' => $request->get('additional_info') ?? '',
             'moving_package' => $request->get('moving_package') ?? '',
             'images' => [],
@@ -179,9 +198,9 @@ class ListingController extends Controller
     public function show(Request $request, $id)
     {
         if ($request->ajax())
-            return response()->json(Listing::with(['category', 'subcategory', 'thing'])->where("id",$id)->first());
+            return response()->json(Listing::with(['category', 'subcategory', 'thing',"messages","messages.sender","messages.sender.profile"])->where("id", $id)->first());
 
-        return view("desktop.pages.listing",compact("id"));
+        return view("desktop.pages.listing", compact("id"));
     }
 
     /**
@@ -216,5 +235,43 @@ class ListingController extends Controller
     public function destroy(Listing $listing)
     {
         //
+    }
+
+    public function sendMessage(Request $request)
+    {
+
+        $request->validate([
+            'listing_id' => 'required',
+            'message' => 'required'
+        ]);
+
+
+        if (is_null(Auth::user()->id))
+            return response()->json([
+                "message"=>"User error!"
+            ],400);
+
+        $listing_id = $request->listing_id;
+        $sender_id = Auth::user()->id;
+
+        $message = $request->message;
+
+        $listing = Listing::where("id", $listing_id)->first();
+
+        if (is_null($listing))
+            return response()->json([
+                "message" => "Bad Request"
+            ], 400);
+
+        $sender = User::where("id", $sender_id)->first();
+
+        Message::create([
+            "message" => $message,
+            "listing_id" => $listing_id,
+            "sender_id" => $sender->id
+        ]);
+
+        return response()->noContent();
+
     }
 }

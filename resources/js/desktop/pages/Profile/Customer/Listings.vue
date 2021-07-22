@@ -2,31 +2,7 @@
 
     <main id="content">
         <div class="container space-3-bottom--lg" style="margin-top: 130px;">
-            <h2>Your quotes</h2>
-            <div class="row">
-                <div class="col-lg-12  mb-9 mb-lg-0" v-if="listings.length>0">
-                    <small style="color:lightgray;">Results {{listings.length}}</small>
-                    <listing-item-component :key="index" v-for="(listing,index) in listings" :listing="listing"/>
-
-                    <div class="mb-9"></div>
-
-                    <listing-paginate-component/>
-                </div>
-
-                <div class="col-lg-12 mb-9 mb-lg-0 d-flex justify-content-center flex-wrap" v-else>
-                    <img v-lazy="'/images/tagBackgrounds.png'" style="width: 100%; height:300px; object-fit: contain;" alt="">
-                    <h3 class="text-center">Nothing to display</h3>
-                    <div class="d-flex justify-content-center w-100 row">
-                        <div class="col-12 col-sm-6">
-                            <a href="/find-transporter" class="btn btn-outline-success w-100 mb-1">Request a quote
-                            </a>
-
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
+          <quotes-component :notfoud="true"/>
         </div>
 
     </main>

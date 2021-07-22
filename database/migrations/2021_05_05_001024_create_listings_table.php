@@ -23,7 +23,7 @@ class CreateListingsTable extends Migration
             $table->dateTime('shipping_date_to');
             $table->dateTime('unshipping_date_from');
             $table->dateTime('unshipping_date_to');
-            $table->json('messages');
+          //  $table->json('messages');
             $table->longText('additional_info');
             $table->json('images');
             $table->string('status');

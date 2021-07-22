@@ -60,7 +60,7 @@
         <div class="container space-3-bottom--lg">
             <div class="row">
                 <div class="col-lg-9 order-lg-2 mb-9 mb-lg-0" v-if="listings.length>0">
-                    <small style="color:lightgray;">Results {{listings.length}}</small>
+
                     <listing-item-component :key="index" v-for="(listing,index) in listings" :listing="listing"/>
 
                     <div class="mb-9"></div>
@@ -86,10 +86,18 @@
 
                     <div class="sticky-block">
 
-                        <vue-custom-scrollbar class="scroll-area" :settings="settingsScroll" @ps-scroll-y="scrollHanle">
+                        <vue-custom-scrollbar class="scroll-area" :settings="settingsScroll"
+                                              @ps-scroll-y="scrollHandler">
                             <div class="row m-0">
-                                <div class="col-12 mt-2">
-                                    <h6>Volume, m<sup>3</sup></h6>
+
+                                <div class="col-12 mt-2 mb-2">
+                                    <small style="color:lightgray;">Results {{listings.length}}</small>
+
+                                    <button class="btn btn-link text-danger" style="margin: 0 !important; padding:0px 10px;" v-if="isFilter" @click="resetFilter">Reset filters</button>
+                                </div>
+
+                                <div class="col-12 mt-2 mb-2" v-if="isMovingActive">
+                                    <small>Volume, m<sup>3</sup></small>
 
                                     <div class="row m-0">
                                         <div class="col-sm-6 mb-2 p-1">
@@ -109,7 +117,7 @@
                                     </div>
 
 
-                                    <div class="p-1 w-100">
+                                    <div class="p-1 w-100 mb-2">
                                         <vue-slider
                                             ref="volumeRanger"
                                             v-model="filter.volume_range_value"
@@ -117,10 +125,17 @@
                                         ></vue-slider>
                                     </div>
 
+                                    <div class="custom-control custom-switch " :key="index"
+                                         v-for="(item,index) in formulaList">
+                                        <input type="checkbox" class="custom-control-input" :id="'formula-'+index"
+                                               v-model="filter.formula" :value="item">
+                                        <label :for="'formula-'+index" class="custom-control-label">{{item}}</label>
+                                    </div>
 
                                 </div>
+
                                 <div class="col-12 mt-2">
-                                    <h6>Distance, km</h6>
+                                    <small>Distance, km</small>
                                     <div class="row m-0">
                                         <div class="col-sm-6 mb-2 p-1">
                                             <input type="number" class="form-control"
@@ -148,7 +163,7 @@
 
                                 </div>
                                 <div class="col-12 mt-2">
-                                    <h6>Publication time, days</h6>
+                                    <small>Publication time, days</small>
 
                                     <div class="p-1 w-100">
                                         <vue-slider
@@ -160,21 +175,27 @@
                                     </div>
                                 </div>
 
+
                                 <div class="col-12 mt-2">
 
-                                    <div class="custom-control custom-switch" :key="index"
-                                         v-for="(item,index) in formulaList">
-                                        <input type="checkbox" class="custom-control-input" :id="'formula-'+index"
-                                               v-model="filter.formula" :value="item">
-                                        <label :for="'formula-'+index" class="custom-control-label">{{item}}</label>
-                                    </div>
+                                    <small>Enter ref-number</small>
+                                    <input type="number" class="form-control w-100"
+                                           v-model="filter.reference"
+                                           placeholder="Reference">
 
                                 </div>
+
                                 <div class="col-12 mt-2">
 
                                     <small>Enter postal code</small>
-                                    <input type="text" class="form-control"
-                                           placeholder="City, Postal code, Region, Country">
+
+                                    <small @click="clearAddress()" v-if="this.filter.region"><i
+                                        class="fas fa-times"></i></small>
+                                    <address-input v-model="region" v-on:selected="selectAddress"
+                                                   placeholder="City, Postal code, Region, Country">
+
+                                    </address-input>
+
 
                                 </div>
 
@@ -191,12 +212,12 @@
                                                  :value-type="'timestamp'"
                                     />
                                 </div>
-                                <div class="col-12 mt-2">
-                                    <button @click="applyFilter" class="btn btn-outline-success w-100 mb-1">Apply filter
-                                    </button>
-                                    <button @click="resetFilter" class="btn btn-outline-warning w-100">Reset filter
-                                    </button>
-                                </div>
+                                <!--    <div class="col-12 mt-2">
+                                        <button @click="applyFilter" class="btn btn-outline-success w-100 mb-1">Apply filter
+                                        </button>
+                                        <button @click="resetFilter" class="btn btn-outline-warning w-100">Reset filter
+                                        </button>
+                                    </div>-->
 
 
                             </div>
@@ -236,6 +257,7 @@
         },
         data() {
             return {
+                region: null,
                 formulaList: [
                     "The Economic package",
                     "Truck with Driver package",
@@ -425,13 +447,38 @@
                     publication_time_range_value: [0, 31],
                     only_self: false,
                     user_id: null,
-                    formula: []
+                    formula: [],
+                    region: null,
+                    reference: null,
 
                 }
             }
         },
 
+        watch: {
+            filter: {
+                handler: function (val, oldVal) {
+                    this.applyFilter()
+                },
+                deep: true
+            }
+        },
+
         computed: {
+            isFilter() {
+                let tmp = this.filter;
+
+                return tmp.categories.length > 0 ||
+                    tmp.date_from != null || tmp.date_to != null ||
+                    tmp.user_id != null || tmp.formula.length > 0 ||
+                    tmp.region != null || tmp.reference != null
+                  /*  tmp.distance_range_value[0]!= this.distanceRanger.options.min||
+                    tmp.distance_range_value[1]!= this.distanceRanger.options.max||
+                    tmp.volume_range_value[0]!= this.volumeRanger.options.min||
+                    tmp.volume_range_value[1]!= this.volumeRanger.options.max||
+                    tmp.publication_time_range_value[0]!= this.publicationTimeRanger.options.min||
+                    tmp.publication_time_range_value[1]!= this.publicationTimeRanger.options.max*/
+            },
             categories() {
                 return this.$store.getters.categories;
             },
@@ -443,7 +490,7 @@
             },
             maxDistance() {
 
-                if (this.listings.length===0)
+                if (this.listings.length === 0)
                     return 0;
 
                 let tmp_max = this.listings[0].distance || 0;
@@ -457,7 +504,7 @@
 
             maxVolume() {
 
-                if (this.listings.length===0)
+                if (this.listings.length === 0)
                     return 0;
 
                 let tmp_max = this.listings[0].summary_volume || 0;
@@ -468,6 +515,10 @@
                 });
                 return tmp_max;
             },
+
+            isMovingActive() {
+                return this.filter.categories.filter(item => item === 2) > 0
+            }
         },
 
         created() {
@@ -480,7 +531,7 @@
             this.filter.publication_time_range_value = [0, 31]
         },
         mounted() {
-            this.$store.dispatch('getListings').then(resp=>{
+            this.$store.dispatch('getListings').then(resp => {
                 this.filter.distance_range_value = [0, this.maxDistance]
                 this.filter.volume_range_value = [0, this.maxVolume]
                 this.distanceRanger.options.max = this.maxDistance
@@ -491,7 +542,11 @@
 
         },
         methods: {
-            scrollHanle(evt) {
+            selectAddress(region) {
+                console.log("region=>", region)
+                this.filter.region = region
+            },
+            scrollHandler(evt) {
                 console.log(evt)
             },
             swapAddress() {
@@ -514,6 +569,9 @@
                 window.eventBus.$emit("address_input")
                 this.filter.address_from = null
                 this.filter.address_to = null
+
+                this.filter.region = null;
+                this.region = null
             },
             clearCategories() {
                 console.log("clearCategories")
@@ -549,22 +607,32 @@
             },
             applyFilter() {
                 console.log(this.filter.formula)
-                window.eventBus.$emit("preloader")
+                // window.eventBus.$emit("preloader")
                 this.$store.dispatch('getFilteredListings', this.filter);
             },
+
             resetFilter() {
-                window.eventBus.$emit("preloader")
+
                 this.filter.categories = []
-                this.$store.dispatch('getListings');
 
+                this.filter.distance_range_value = [0, this.maxDistance]
+                this.filter.volume_range_value = [0, this.maxVolume]
+                this.distanceRanger.options.max = this.maxDistance
+                this.volumeRanger.options.max = this.maxVolume
 
-                this.filter.distance_range_value = [0, 10000]
-                this.filter.volume_range_value = [0, 1000]
-                this.filter.publication_time_range_value = [0, 31]
                 this.filter.formula = []
+                this.filter.region = null
+                this.filter.reference = null
+                this.filter.user_id = null
 
                 this.clearAddress()
                 this.clearDates()
+
+                this.$nextTick(()=>{
+                    window.eventBus.$emit("preloader")
+                    this.$store.dispatch('getListings');
+                })
+
             }
         }
 

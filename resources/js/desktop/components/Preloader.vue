@@ -49,5 +49,13 @@
         display:flex;
         justify-content:center;
         align-items:center;
+
+        img {
+            object-fit: contain;
+            max-height: 500px;
+            height:100%;
+            width:100%;
+            padding:20px;
+        }
     }
 </style>

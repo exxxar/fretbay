@@ -64,6 +64,7 @@ Route::group(["prefix" => "listings"], function () {
 Route::group(["prefix" => "listing"], function () {
     Route::post('/', 'ListingController@store');
     Route::get('/{id}', 'ListingController@show');
+    Route::post('/messages/send', 'ListingController@sendMessage')->middleware("auth");
 });
 
 

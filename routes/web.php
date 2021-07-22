@@ -35,9 +35,13 @@ Route::get('/locale/{lang}', function (\Illuminate\Http\Request $request, $lang)
 
 Route::get("/storage/listings/{dir}/{name}", function ($dir, $name) {
 
-    $file = Storage::disk('local')->get("public/listings/$dir/$name");
-    return (new Response($file, 200))
-        ->header('Content-Type', 'image/jpeg');
+    try {
+        $file = Storage::disk('local')->get("public/listings/$dir/$name");
+        return (new Response($file, 200))
+            ->header('Content-Type', 'image/jpeg');
+    }catch (Exception $e){
+        return "/images/common/icons/general/content-loader.gif";
+    }
 
 });
 
@@ -95,6 +99,11 @@ Route::group(['middleware' => ['auth', 'role:transporter'], "prefix" => "transpo
         });
     });
 });
+
+Route::group(["prefix" => "listing"], function () {
+    Route::post('/messages/send', 'ListingController@sendMessage')->middleware("auth");
+});
+
 
 Route::group(['middleware' => ['auth', 'role:customer'], "prefix" => "customer"], function () {
     Route::group(["prefix" => "profile"], function () {

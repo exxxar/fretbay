@@ -52,6 +52,8 @@ Vue.component('sidebar-component', require('./components/Sidebar.vue').default);
 Vue.component('signin-component', require('./components/Modals/SignIn.vue').default);
 Vue.component('signup-transporter-component', require('./components/Modals/SignUpTransporter.vue').default);
 Vue.component('signup-customer-component', require('./components/Modals/SignUpCustomer.vue').default);
+Vue.component('chat-component', require('./components/Listing/Chat.vue').default);
+Vue.component('quotes-component', require('./components/Listing/Quotes.vue').default);
 
 
 Vue.component('header-customer-profile-component', require('../desktop/components/HeaderCustomerProfile.vue').default);

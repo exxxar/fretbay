@@ -115,7 +115,12 @@
 
                 </div>
             </div>
+
+
         </div>
+
+
+       <quotes-cpmponent/>
     </div>
 
 </template>
@@ -133,7 +138,9 @@
             },
 
 
+
         },
+
         methods: {
 
             selectType(type) {
