@@ -100,10 +100,10 @@ Route::group(['middleware' => ['auth', 'role:transporter'], "prefix" => "transpo
     });
 });
 
-Route::group(["prefix" => "listing"], function () {
+Route::group(["prefix" => "listing","middleware"=>"auth"], function () {
     Route::get("/{id}", "ListingController@show")->name("desktop.listing");
     Route::post('/messages/send', 'ListingController@sendMessage');
-})->middleware("auth");
+});
 
 
 Route::group(['middleware' => ['auth', 'role:customer'], "prefix" => "customer"], function () {
