@@ -163,7 +163,7 @@ document.getElementById('cropp-img-save-button').addEventListener('click', this.
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\projects\fretbay\resources\js\admin\coreui\media-cropp.js */"./resources/js/admin/coreui/media-cropp.js");
+module.exports = __webpack_require__(/*! E:\OpenServer\OSPanel\domains\fretbay\resources\js\admin\coreui\media-cropp.js */"./resources/js/admin/coreui/media-cropp.js");
 
 
 /***/ })

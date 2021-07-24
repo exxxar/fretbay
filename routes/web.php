@@ -2,9 +2,11 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\User;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
@@ -64,6 +66,32 @@ Route::view("/profile-customer", "desktop.pages.profile.customer.profile")->name
 Route::view("/to-be-confirmed-empty", "desktop.pages.profile.customer.to-be-confirmed-empty")->name("desktop.customer-to-be-confirmed-empty");
 Route::view("/to-be-confirmed", "desktop.pages.profile.customer.to-be-confirmed")->name("desktop.customer-to-be-confirmed");
 
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/auth/user', function () {
+        $user = User::with(["profile", 'profile.vehicles', 'profile.documents', 'profile.verifications'])->where("id", Auth::id())->first();
+        $profile = $user->profile;
+        return response()->json([
+            'user' => $user,
+            'profile' => $profile,
+            'vehicles' => $profile->vehicles,
+            'documents' => $profile->documents
+        ]);
+    });
+    Route::post('/auth/user/changePassword', "UserController@changePassword");
+});
+
+Route::group(['middleware' => 'auth', "prefix" => "profile"], function () {
+    Route::get("/show/{id}", "ProfileController@show")->name("profile.show");
+    Route::get("/add", "ProfileController@create")->name("profile.create");
+    Route::post("/add", "ProfileController@store")->name("profile.store");
+    Route::post("/save", "ProfileController@save")->name("profile.save");
+    Route::get("/edit/{id}", "ProfileController@edit")->name("profile.edit");
+    Route::put("/edit/{id}", "ProfileController@update")->name("profile.update");
+    Route::get("/restore/{id}", "ProfileController@restore")->name("profile.restore");
+    Route::delete("/delete/{id}", "ProfileController@destory")->name("profile.destroy");
+});
+
+
 Route::group(['middleware' => ['auth', 'role:transporter'], "prefix" => "transporter"], function () {
     Route::group(["prefix" => "profile"], function () {
 
@@ -72,6 +100,23 @@ Route::group(['middleware' => ['auth', 'role:transporter'], "prefix" => "transpo
         Route::view("/legal-documents", "desktop.pages.profile.transporter.legal-documents")->name("transporter-legal-documents");
         Route::view("/my-vehicles", "desktop.pages.profile.transporter.my-vehicles")->name("transporter-vehicles");
         Route::view("/settings", "desktop.pages.profile.transporter.settings")->name("transporter-settings");
+        Route::post("/save", "TransporterController@save")->name("transporter-profile.save");
+        Route::post("/saveWithoutApproval", "TransporterController@saveWithoutApproval")->name("transporter-profile.save-without-approval");
+        Route::post("/saveWithApproval", "TransporterController@saveWithApproval")->name("transporter-profile.save-with-approval");
+        Route::post("/edit", "TransporterController@update")->name("transporter-profile.update");
+
+        Route::group(["prefix" => "vehicle"], function () {
+            Route::post("/create", "TransporterController@storeVehicle")->name("profile.vehicle.store");
+            Route::post("/edit", "TransporterController@updateVehicle")->name("profile.vehicle.update");
+            Route::delete("/delete/{id}", "TransporterController@destroyVehicle")->name("profile.vehicle.destroy");
+        });
+        Route::group(["prefix" => "document"], function () {
+            Route::post("/create", "LegalDocumentController@store")->name("profile.document.store");
+            Route::post("/edit", "LegalDocumentController@update")->name("profile.document.update");
+            Route::post("/restore/{id}", "LegalDocumentController@restore")->name("profile.document.restore");
+            Route::delete("/delete/{id}", "LegalDocumentController@delete")->name("profile.document.delete");
+            Route::delete("/destroy/{id}", "LegalDocumentController@destroy")->name("profile.document.destroy");
+        });
 
         Route::group(["prefix" => "transporter-wizard"], function () {
             Route::view("/start", "desktop.pages.profile.transporter.profile-transporter-wizard-start")->name("desktop.profile-transporter-wizard-start");
@@ -166,7 +211,6 @@ Route::group(['middleware' => ['auth', 'role:admin'], "prefix" => "program-admin
         Route::get("/restore/{id}", "UserController@restore")->name("admin.users.restore");
         Route::delete("/delete/{id}", "UserController@destory")->name("admin.users.destroy");
     });
-
 
     Route::group(["prefix" => "transporters"], function () {
         Route::get("/", "AdminController@getTransporters")->name("admin.transporters");

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Profile;
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\Hash;
+use VK\Actions\Auth;
 
 class UserController extends Controller
 {
@@ -92,8 +94,6 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         try {
-
-
             $user = User::where("id", $id)->first();
             $user->name = $request->user["name"];
             $user->email = $request->user["email"];
@@ -130,5 +130,22 @@ class UserController extends Controller
         User::withTrashed()->find($id)->restore();
 
         return response()->noContent();
+    }
+
+    public function changePassword(Request $request)
+    {
+        $user = User::withTrashed()->with(['profile', 'profile.documents', 'profile.verifications', 'profile.vehicles'])->find(Auth::id());
+        if (Hash::check($request->old_password, $user->password)) {
+            $new_password = Hash::make($request->new_password);
+            $user->password = $new_password;
+            $user->save();
+            return response()->json([
+                "message" => "Password was changed successfully"
+            ], 200);
+
+        }
+        return response()->json([
+            "message" => "Something went wrong"
+        ], 400);
     }
 }

@@ -1,10 +1,10 @@
 <?php
 
-use App\Models\Category;
+use App\Models\ObjectCategory;
 use App\Models\CategoryProperty;
 use Illuminate\Database\Seeder;
 
-class CategorySeeder extends Seeder
+class ObjectCategorySeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,7 +13,7 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        $category = Category::create([
+        $category = ObjectCategory::create([
             'title' => [
                 "en" => "Household equipment",
                 "ru" => "Household equipment",
@@ -35,7 +35,7 @@ class CategorySeeder extends Seeder
         $category->properties()->attach(CategoryProperty::where("slug", "quantity")->first(),['required' => true]);
 
 
-        Category::create([
+        ObjectCategory::create([
             'title' => [
                 "en" => "Moving",
                 "ru" => "Moving",
@@ -49,7 +49,7 @@ class CategorySeeder extends Seeder
             'mode' => 'calculator'
         ]);
 
-        $category = Category::create([
+        $category = ObjectCategory::create([
             'title' => [
                 "en" => "Vehicle",
                 "ru" => "Vehicle",
@@ -71,7 +71,7 @@ class CategorySeeder extends Seeder
         $category->properties()->attach(CategoryProperty::where("slug", "accept_conveyors")->first(),['required' => true]);
 
 
-        $category = Category::create([
+        $category = ObjectCategory::create([
             'title' => [
                 "en" => "Motorcycles and sports vehicles",
                 "ru" => "Motorcycles and sports vehicles",
@@ -92,7 +92,7 @@ class CategorySeeder extends Seeder
         $category->properties()->attach(CategoryProperty::where("slug", "moving_vehicle")->first(),['required' => true]);
         $category->properties()->attach(CategoryProperty::where("slug", "accept_conveyors")->first(),['required' => true]);
 
-        $category = Category::create([
+        $category = ObjectCategory::create([
             'title' => [
                 "en" => "Boats & voluminous",
                 "ru" => "Boats & voluminous",
@@ -117,7 +117,7 @@ class CategorySeeder extends Seeder
         $category->properties()->attach(CategoryProperty::where("slug", "estimated_value")->first(),['required' => true]);
         $category->properties()->attach(CategoryProperty::where("slug", "accept_conveyors")->first(),['required' => true]);
 
-        $category = Category::create([
+        $category = ObjectCategory::create([
             'title' => [
                 "en" => "Fragile goods",
                 "ru" => "Fragile goods",
@@ -138,7 +138,7 @@ class CategorySeeder extends Seeder
         $category->properties()->attach(CategoryProperty::where("slug", "weight")->first(),['required' => true]);
         $category->properties()->attach(CategoryProperty::where("slug", "quantity")->first(),['required' => true]);
 
-        $category = Category::create([
+        $category = ObjectCategory::create([
             'title' => [
                 "en" => "Package/Fold",
                 "ru" => "Package/Fold",
@@ -160,7 +160,7 @@ class CategorySeeder extends Seeder
         $category->properties()->attach(CategoryProperty::where("slug", "quantity")->first(),['required' => true]);
 
 
-        $category = Category::create([
+        $category = ObjectCategory::create([
             'title' => [
                 "en" => "Pallet",
                 "ru" => "Pallet",
@@ -180,7 +180,7 @@ class CategorySeeder extends Seeder
         $category->properties()->attach(CategoryProperty::where("slug", "quantity")->first(),['required' => true]);
         $category->properties()->attach(CategoryProperty::where("slug", "fragile_goods")->first(),['required' => false]);
 
-       $category =  Category::create([
+       $category =  ObjectCategory::create([
             'title' => [
                 "en" => "Animals",
                 "ru" => "Animals",
@@ -205,7 +205,7 @@ class CategorySeeder extends Seeder
         $category->properties()->attach(CategoryProperty::where("slug", "height")->first(),['required' => false]);
 
 
-       $category =  Category::create([
+       $category =  ObjectCategory::create([
             'title' => [
                 "en" => "Agri-food",
                 "ru" => "Agri-food",
@@ -223,7 +223,7 @@ class CategorySeeder extends Seeder
         $category->properties()->attach(CategoryProperty::where("slug", "weight")->first(),['required' => true]);
         $category->properties()->attach(CategoryProperty::where("slug", "quantity")->first(),['required' => true]);
 
-        $category = Category::create([
+        $category = ObjectCategory::create([
             'title' => [
                 "en" => "Commercial goods",
                 "ru" => "Commercial goods",
@@ -245,7 +245,7 @@ class CategorySeeder extends Seeder
         $category->properties()->attach(CategoryProperty::where("slug", "quantity")->first(),['required' => true]);
 
 
-        $category = Category::create([
+        $category = ObjectCategory::create([
             'title' => [
                 "en" => "Miscellaneous",
                 "ru" => "Miscellaneous",

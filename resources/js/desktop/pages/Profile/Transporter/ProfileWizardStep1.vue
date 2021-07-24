@@ -10,7 +10,7 @@
                             </div>
                             <div class="content-box row">
                                 <div class="col-lg-10">
-                                    <span>Get started on FretBay!</span>
+                                    <span>Get started on AlloTrans!</span>
                                     <h2 class="text-bold step-title">Manager's ID</h2>
                                     <p class="info-box"><strong>Requires</strong> : Front / back of the identity document of the manager of the company</p>
                                     <form class="text-left">

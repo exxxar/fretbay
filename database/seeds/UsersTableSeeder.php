@@ -31,7 +31,18 @@ class UsersTableSeeder extends Seeder
             $user->roles()->attach($role->id);
 
             $role = Role::where('name', 'transporter')->firstOrFail();
-            $profile = Profile::create();
+
+//            $payment_methods = (object)[];
+//            $payment_methods->credit_card = false;
+//            $payment_methods->cashier_cheque = false;
+//            $payment_methods->cheque = false;
+//            $payment_methods->cash = false;
+//            $payment_methods->paypal = false;
+
+            $profile = Profile::create([
+                "type" => 'transporter',
+//                "payment_methods" => $payment_methods
+            ]);
 
             $user = User::create([
                 'name'           => 'Transporter',

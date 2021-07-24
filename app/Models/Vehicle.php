@@ -7,19 +7,20 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Vehicle extends Model
 {
-
-
     protected $fillable = [
         "brand",
         "model",
         "plate_number",
         "total_laden_weight",
         "cubing",
-        "profile_id"
+        "profile_id",
+        "images",
+        "type"
     ];
 
     protected $casts = [
         "total_laden_weight" => "integer",
         "cubing" => "integer",
+        "images" => "array",
     ];
 }

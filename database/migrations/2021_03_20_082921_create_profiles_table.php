@@ -36,6 +36,12 @@ class CreateProfilesTable extends Migration
             $table->string("insurance_company")->default('');
             $table->boolean('is_approved')->default(false);
             $table->boolean('is_first_activation')->default(true);
+            $table->json("payment_methods")->nullable();
+            $table->json("spoken_languages")->nullable();
+
+            $table->boolean( "email_notify")->default(true);
+            $table->boolean( "newsletter_notify")->default(true);
+            $table->boolean( "push_notify")->default(true);
 
             $table->softDeletes();
             $table->timestamps();
