@@ -6,7 +6,13 @@ const state = {
 // getters
 const getters = {
     categories: (state, getters, rootState) => {
-        return state.categories;
+
+        for (let index in state.categories)
+        {
+            state.categories[index].title = Object.entries(state.categories[index].title).find(item=>item[0]===window.locale)[1];
+        }
+
+        return state.categories
     },
     deleted_categories: (state, getters, rootState) => {
         return state.deleted_categories;

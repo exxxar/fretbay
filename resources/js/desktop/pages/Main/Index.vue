@@ -77,7 +77,7 @@
 
                     <form class="js-validate w-100" novalidate="novalidate" action="/find-transporter" method="get">
                         <div class="row mb-7">
-                            <div class="col-sm-6 col-lg-4 mb-4 mb-lg-0">
+                     <!--       <div class="col-sm-6 col-lg-4 mb-4 mb-lg-0">
 
                                 <label class="d-block text-white font-weight-medium text-uppercase">Place of
                                     departure</label>
@@ -91,8 +91,8 @@
                                            aria-label="Enter city" aria-describedby="keywordInputAddon">
                                 </div>
 
-                            </div>
-
+                            </div>-->
+<!--
                             <div class="col-sm-6 col-lg-4 mb-4 mb-lg-0">
 
                                 <label class="d-block text-white font-weight-medium text-uppercase">Arrival point</label>
@@ -106,7 +106,7 @@
                                            aria-label="Enter destination" aria-describedby="locationInputAddon">
                                 </div>
 
-                            </div>
+                            </div>-->
 
                             <div class="col-lg-2 align-self-lg-end">
                                 <button type="submit" class="btn btn-block btn-primary transition-3d-hover">Get a Quote

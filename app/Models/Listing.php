@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Message;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -23,7 +24,6 @@ class Listing extends Model
         'shipping_date_to',
         'unshipping_date_from',
         'unshipping_date_to',
-        'messages',
         'additional_info',
         'images',
         'status',
@@ -33,6 +33,8 @@ class Listing extends Model
         'subcategory_id',
         'thing_id',
         'summary_volume',
+        'moving_package',
+        'distance'
         'is_active'
     ];
 
@@ -82,6 +84,11 @@ class Listing extends Model
     public function quotes()
     {
         return $this->hasMany(Quote::class);
+    }
+
+    public function messages()
+    {
+        return $this->hasMany(Message::class,"listing_id","id");
     }
 
     public function user()

@@ -13,6 +13,8 @@
                             <p>And after SignIn to manage your account.</p>
                         </header>
 
+                        <slot name="any-error"></slot>
+
                         <div class="js-form-message mb-3">
                             <div class="js-focus-state form">
                                 <input type="text" class="form-control form__input" name="company_name"
@@ -67,9 +69,10 @@
                         <div class="js-form-message mb-3">
                             <div class="js-focus-state form">
                                 <select id="country" class="form-control form__input" v-model="country_id"
-                                        name="country" v-on:change="loadCity()">
+                                        :disabled="countries.length===0"
+                                        name="country" v-on:change="getRegions()">
                                     <option value="" disabled selected>Country</option>
-                                    <option v-for="country in countries" :label="country.title" :value="country.id">
+                                    <option v-for="country in countries" :label="country.title" :value="country.id" v-model="country_id">
                                         {{country.id}}
                                     </option>
                                 </select>
@@ -92,9 +95,8 @@
 
                         <div class="js-form-message mb-3">
                             <div class="js-focus-state form">
-                                <select id="region" name="region" class="form-control form__input">
+                                <select id="region" name="region" class="form-control form__input" :disabled="regions.length===0">
                                     <option value="" disabled selected>Region</option>
-                                    <option value="test">test</option>
                                     <option v-bind=region v-for="region in regions" :label="region.title">
                                         {{region.id}}
                                     </option>
@@ -105,11 +107,10 @@
                         <div class="js-form-message mb-3">
                             <div class="js-focus-state form">
                                 <select id="area_of_expertise" name="areas_of_expertise"
+                                        :disabled="categories.length===0"
                                         class="form-control form__input">
                                     <option value="" disabled selected>Your area of expertise</option>
-                                    <option value="Home equipment">Home equipment</option>
-                                    <option value="Moving">Moving</option>
-                                    <option value="Vehicle">Vehicle</option>
+                                    <option :value="category" v-for="category in categories">{{category.title}}</option>
                                 </select>
                             </div>
                         </div>
@@ -195,4 +196,36 @@
         </div>
     </div>
 </template>
+<script>
+    export default {
+        data(){
+          return {
+              country_id: null,
+              countries:[],
+              regions:[],
+          }
+        },
+        computed:{
+            categories() {
+                return this.$store.getters.categories;
+            },
+        },
+        mounted(){
+            this.getCountries()
+            this.$store.dispatch("getCategories");
+        },
+        methods:{
+            getRegions(){
+                axios.get("/api/locations/cities/"+this.country_id).then(resp=>{
+                    this.regions = resp.data
+                })
+            },
+            getCountries(){
+                axios.get("/api/locations/countries").then(resp=>{
+                    this.countries = resp.data
+                })
+            }
+        }
+    }
+</script>
 

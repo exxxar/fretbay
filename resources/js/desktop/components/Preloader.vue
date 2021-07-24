@@ -18,10 +18,20 @@
             }
         },
         mounted() {
+
             let timeout = setTimeout(() => {
                 this.is_hidden = true;
                 clearTimeout(timeout);
             }, this.time)
+
+
+            window.eventBus.$on("preloader", () =>{
+                this.is_hidden = false;
+                let timeout = setTimeout(() => {
+                    this.is_hidden = true;
+                    clearTimeout(timeout);
+                }, this.time)
+            });
         },
         name: "Preloader"
     }
@@ -39,5 +49,13 @@
         display:flex;
         justify-content:center;
         align-items:center;
+
+        img {
+            object-fit: contain;
+            max-height: 500px;
+            height:100%;
+            width:100%;
+            padding:20px;
+        }
     }
 </style>

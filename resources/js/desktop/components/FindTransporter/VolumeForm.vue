@@ -34,10 +34,10 @@
         </div>
 
         <div class="row d-flex justify-content-end mt-2 w-100">
-            <div class="col-2">
+            <div class="col-6 col-sm-6 col-lg-2">
                 <button class="btn btn-outline-blue">Back</button>
             </div>
-            <div class="col-3">
+            <div class="col-6 col-sm-6 col-lg-3">
                 <button class="btn btn-outline-primary">Next</button>
             </div>
         </div>

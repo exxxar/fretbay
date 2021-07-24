@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use Laravel\Socialite\Facades\Socialite;
 
@@ -23,15 +24,26 @@ use Laravel\Socialite\Facades\Socialite;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/locale/{lang}', function (\Illuminate\Http\Request $request, $lang){
 
+   // Session::forget('lang');
+    Session::put('lang', $lang);
+    Session::save();
 
-Route::get('/locale/{lang?}', 'HomeController@setLocale');
+    App::setLocale($lang);
+
+    return redirect()->back();
+});
 
 Route::get("/storage/listings/{dir}/{name}", function ($dir, $name) {
 
-    $file = Storage::disk('local')->get("public/listings/$dir/$name");
-    return (new Response($file, 200))
-        ->header('Content-Type', 'image/jpeg');
+    try {
+        $file = Storage::disk('local')->get("public/listings/$dir/$name");
+        return (new Response($file, 200))
+            ->header('Content-Type', 'image/jpeg');
+    }catch (Exception $e){
+        return "/images/common/icons/general/content-loader.gif";
+    }
 
 });
 
@@ -59,7 +71,8 @@ Route::view("/register-transporter", "desktop.pages.register-transporter")->name
 Route::view("/register-customer", "desktop.pages.register-customer")->name("desktop.register-customer");
 Route::view("/profile-personal-info", "desktop.pages.profile.profile-personal-info")->name("desktop.profile-personal-info");
 Route::view("/activity-listing", "desktop.pages.profile.customer.activity-listing")->name("desktop.activity-listing");
-Route::view("/listings", "desktop.pages.profile.customer.listings")->name("desktop.listings");
+
+
 
 //Роут на редактирование профиля заказчика
 Route::view("/profile-customer", "desktop.pages.profile.customer.profile")->name("desktop.customer-profile");
@@ -79,18 +92,6 @@ Route::group(['middleware' => 'auth'], function () {
     });
     Route::post('/auth/user/changePassword', "UserController@changePassword");
 });
-
-Route::group(['middleware' => 'auth', "prefix" => "profile"], function () {
-    Route::get("/show/{id}", "ProfileController@show")->name("profile.show");
-    Route::get("/add", "ProfileController@create")->name("profile.create");
-    Route::post("/add", "ProfileController@store")->name("profile.store");
-    Route::post("/save", "ProfileController@save")->name("profile.save");
-    Route::get("/edit/{id}", "ProfileController@edit")->name("profile.edit");
-    Route::put("/edit/{id}", "ProfileController@update")->name("profile.update");
-    Route::get("/restore/{id}", "ProfileController@restore")->name("profile.restore");
-    Route::delete("/delete/{id}", "ProfileController@destory")->name("profile.destroy");
-});
-
 
 Route::group(['middleware' => ['auth', 'role:transporter'], "prefix" => "transporter"], function () {
     Route::group(["prefix" => "profile"], function () {
@@ -129,9 +130,16 @@ Route::group(['middleware' => ['auth', 'role:transporter'], "prefix" => "transpo
     });
 });
 
+Route::group(["prefix" => "listing","middleware"=>"auth"], function () {
+    Route::get("/{id}", "ListingController@show")->name("desktop.listing");
+    Route::post('/messages/send', 'ListingController@sendMessage');
+});
+
+
 Route::group(['middleware' => ['auth', 'role:customer'], "prefix" => "customer"], function () {
     Route::group(["prefix" => "profile"], function () {
         Route::view("/", "desktop.pages.profile.customer.index")->name("customer-account");
+        Route::view("/listings", "desktop.pages.profile.customer.listings")->name("customer.listings");
         Route::put("/update", "CustomerController@update")->name("customer.update");
     });
 });

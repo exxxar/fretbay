@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ Illuminate\Support\Facades\Session::get("lang")??"en"}}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -26,6 +26,12 @@
     <link
         href="{{ env("APP_DEBUG")?asset('css/desktop/app.css'):asset("css/desktop/app.min.css") }}?version={{env("APP_VERSION")}}"
         rel="stylesheet">
+
+
+    <link
+        href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css"
+        rel="stylesheet"
+    />
 
 
     @if (Auth::check())

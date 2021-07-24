@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Classes\api;
+namespace App\Classes\Api;
 
 
 interface iDistanceAPI

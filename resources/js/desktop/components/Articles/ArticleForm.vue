@@ -196,6 +196,8 @@
             }
         },
         mounted() {
+
+            console.log("ARTICLE FORM", this.category)
             this.listing_title = this.listing.title;
             this.category.properties.forEach((item) => {
                 if(item.type==='checkbox')

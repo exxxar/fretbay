@@ -72,7 +72,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="media align-items-center u-sidebar--panel__link py-2 px-5" href="#">
+                                    <a class="media align-items-center u-sidebar--panel__link py-2 px-5" href="/customer/profile/listings">
                                         <img class="max-width-4 mr-3" src="/assets/svg/components/team-dark-icon.svg"
                                              alt="Image Description">
                                         <div class="media-body">

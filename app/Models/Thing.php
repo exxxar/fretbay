@@ -35,7 +35,6 @@ class Thing extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'volume' => 'double',
         'is_active' => 'boolean',
     ];
 
@@ -62,8 +61,8 @@ class Thing extends Model
 //        return $this->belongsTo(\App\Subcategory::class);
 //    }
 
-    public function getTitleAttribute()
+    /*public function getTitleAttribute()
     {
         return $this->getTranslations()["title"][App::getLocale()];
-    }
+    }*/
 }

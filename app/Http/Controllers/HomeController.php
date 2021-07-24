@@ -22,15 +22,7 @@ class HomeController extends Controller
 
     public function setLocale($lang)
     {
-        Log::info("LOCALE $lang");
-        if (!in_array($lang, (array)config("app.locales"))) {
-            abort(400);
-        }
 
-        session("my_locale",$lang);
-        App::setLocale($lang);
-
-        return redirect()->route("desktop.index");
     }
 
     /**

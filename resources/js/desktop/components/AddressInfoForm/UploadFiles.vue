@@ -13,20 +13,17 @@
                 <button class="btn btn-primary" @click="startUpload">Upload</button>
             </div>
             <div class="col-12 col-md-8">
-                <p>This information can often be found on the Internet. Approximate measures will already allow carriers to offer you a suitable offer.</p>
+                <p>This information can often be found on the Internet. Approximate measures will already allow carriers
+                    to offer you a suitable offer.</p>
             </div>
         </div>
-        <ul class="row w-100 m-auto" @dragenter="dragging=true" v-show="!dragging" v-if="files.length>0">
-            <li v-for="(file, key) in files" class="col-md-3 col-sm-6 col-12 transport-category">
-                <label>
-                    <span class="category-label-inner">
-                        <span class="animated-icon">
-                            <img class="preview" v-bind:ref="'preview'+parseInt( key )" width="75px"
-                                 height="75px" alt="">
-                        </span>
-                        <a class="remove" v-on:click="removeFile( key )">Remove</a>
-                    </span>
-                </label>
+        <ul class="row w-100 p-0" @dragenter="dragging=true" v-show="!dragging" v-if="files.length>0">
+            <li v-for="(file, key) in files" class="col-md-3 col-sm-6 col-12 transport-category d-flex justify-content-around align-items-center flex-wrap">
+                <img class="preview" v-bind:ref="'preview'+parseInt( key )" width="75px"
+                     height="75px" alt="">
+
+                <a class="remove" v-on:click="removeFile( key )">Remove</a>
+
             </li>
         </ul>
     </div>
@@ -34,15 +31,15 @@
 
 <script>
     export default {
-        data(){
+        data() {
             return {
                 dragAndDropCapable: false,
                 // files: [],
-                dragging:false
+                dragging: false
             }
         },
 
-        mounted(){
+        mounted() {
             // this.dragAndDropCapable = this.determineDragAndDropCapable();
             //
             // if( this.dragAndDropCapable ){
@@ -65,11 +62,11 @@
         },
         computed: {
             files: {
-                get () {
+                get() {
                     return this.$store.getters.listing.images
                 },
-                set (value) {
-                    this.$store.commit('editNewListing', {key:'images', value: value})
+                set(value) {
+                    this.$store.commit('editNewListing', {key: 'images', value: value})
                 }
             }
         },
@@ -84,27 +81,26 @@
             //         && 'FileReader' in window;
             // },
 
-            getImagePreviews(){
-                for( let i = 0; i < this.files.length; i++ ){
-                    if ( /\.(jpe?g|png|gif|svg)$/i.test( this.files[i].name ) ) {
+            getImagePreviews() {
+                for (let i = 0; i < this.files.length; i++) {
+                    if (/\.(jpe?g|png|gif|svg)$/i.test(this.files[i].name)) {
                         let reader = new FileReader();
-                        reader.addEventListener("load", function(){
-                            this.$refs['preview'+ i ][0].src = reader.result;
+                        reader.addEventListener("load", function () {
+                            this.$refs['preview' + i][0].src = reader.result;
                         }.bind(this), false);
-                        reader.readAsDataURL( this.files[i] );
+                        reader.readAsDataURL(this.files[i]);
                     }
                 }
             },
-            removeFile( key ){
-                this.files.splice( key, 1 );
+            removeFile(key) {
+                this.files.splice(key, 1);
                 this.getImagePreviews();
                 // this.$store.dispatch('editNewListing', {key:'images', value: this.files})
             },
             handleFiles() {
                 let uploadedFiles = this.$refs['files'].files;
-                for(let i = 0; i < uploadedFiles.length; i++) {
-                    if (/\.(jpe?g|png|gif|svg)$/i.test(uploadedFiles[i].name))
-                    {
+                for (let i = 0; i < uploadedFiles.length; i++) {
+                    if (/\.(jpe?g|png|gif|svg)$/i.test(uploadedFiles[i].name)) {
                         this.files.push(uploadedFiles[i]);
                         this.getImagePreviews();
                     }
@@ -118,6 +114,10 @@
         }
     }
 </script>
-<style>
-
+<style lang="scss">
+    .transport-category {
+        padding: 10px;
+        list-style: none;
+        border: 1px solid lightgrey;
+    }
 </style>

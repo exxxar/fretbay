@@ -81,6 +81,8 @@ const actions = {
 const mutations = {
     pushVolumeItemToCart(state, item) {
         const cartItem = state.volume_items.find(item => item.item.id === item.id)
+
+        console.log(item)
         if (!cartItem)
             state.volume_items.push({
                 item,
@@ -93,8 +95,10 @@ const mutations = {
     },
 
     incrementVolumeItemQuantity(state, id) {
+
         const cartItem = state.volume_items.find(item => item.item.id === id)
         cartItem.quantity++;
+
         // localStorage.setItem('VolumeCart', JSON.stringify(state.volume_items));
     },
 
@@ -111,8 +115,7 @@ const mutations = {
         // localStorage.setItem('VolumeCart', JSON.stringify(state.volume_items));
     },
     removeVolumeItem(state, id) {
-        let tmp = state.volume_items.filter((item) => item.item.id !== id);
-        state.volume_items = tmp
+        state.volume_items = state.volume_items.filter((item) => item.item.id !== id);
         // localStorage.setItem('VolumeCart', JSON.stringify(state.volume_items));
     },
 

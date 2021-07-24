@@ -1,136 +1,125 @@
 <template>
-    <div>
+    <div class="container mb-2">
+        <h2>Vehicles</h2>
         <wizard :steps="2" ref="grid_wizard">
             <template v-slot:step_0>
-                <ul class="row">
-                    <li v-for="subcategory in subcategories" class="col-md-3 col-6 transport-category" v-bind:class="{'active':(selected_subcategory===subcategory.id)}"
+                <ul class="row m-0 p-0">
+                    <li v-for="subcategory in subcategories" class="col-md-3 col-6 custom-grid-list mb-2"
+                        v-bind:class="{'active':(selected_subcategory===subcategory.id)}"
                         @click="selectSubcategory(subcategory.id)">
-                        <label>
-                    <span class="category-label-inner">
-                        <span class="animated-icon">
-                            <img :src="subcategory.image" width="75px"
-                                 height="75px" alt="">
-                        </span>
-                        <span>{{subcategory.title}}</span>
-                    </span>
-                        </label>
+                        <div class="card">
+                            <div class="card-body d-flex justify-content-center align-items-center">
+                                <p>{{prepareLangTitle(subcategory.title)}}</p>
+                            </div>
+
+                        </div>
+
                     </li>
                 </ul>
+
+
             </template>
             <template v-slot:step_1>
-                <ul class="row">
-                    <li v-for="thing in filteredThings" class="col-md-3 col-6 transport-category" v-bind:class="{'active':(selected_thing===thing.id)}"
+                <ul class="row m-0 p-0" v-if="filteredThings.length>0">
+                    <li v-for="thing in filteredThings" class="col-md-3 col-6 custom-grid-list mb-2"
+                        v-bind:class="{'active':(selected_thing===thing.id)}"
                         @click="selectThing(thing.id)">
-                        <label>
-                        <span class="category-label-inner">
-                            <span class="animated-icon">
-                                <img :src="thing.image" width="75px"
-                                     height="75px" alt="">
-                            </span>
-                            <span>{{thing.title}}</span>
-                        </span>
-                        </label>
+
+                        <div class="card">
+                            <div class="card-body d-flex justify-content-center align-items-center">
+                                <p>{{prepareLangTitle(thing.title)}}</p>
+                            </div>
+
+                        </div>
+
                     </li>
                 </ul>
+
+                <article-form-page :category="category" v-else/>
             </template>
+
+            <template v-slot:step_2>
+                <article-form-page :category="category" />
+            </template>
+
             <template v-slot:footer>
                 <div class="row d-flex justify-content-end mt-2 w-100">
-                    <div class="col-12 col-sm-2">
-                        <button class="btn btn-outline-blue" @click="prevStep">Back</button>
+                    <div class="col-6 col-sm-2">
+                        <button class="btn btn-outline-blue w-100" @click="prevStep">Back</button>
                     </div>
-                    <div class="col-12 col-sm-3">
-                        <button class="btn btn-outline-primary" @click="nextStep">Next</button>
+                    <div class="col-6 col-sm-3">
+                        <button class="btn btn-outline-primary w-100" @click="nextStep">Next</button>
                     </div>
                 </div>
             </template>
         </wizard>
-<!--        <ul class="row" v-if="step === 0 && subcategories.length>0">-->
-<!--            <li v-for="subcategory in subcategories" class="col-md-3 col-6 transport-category" v-bind:class="{'active':(selected_subcategory===0)}"-->
-<!--                @click="selectSubcategory(subcategory.id)">-->
-<!--                <label>-->
-<!--                    <span class="category-label-inner">-->
-<!--                        <span class="animated-icon">-->
-<!--                            <img :src="subcategory.image" width="75px"-->
-<!--                                 height="75px" alt="">-->
-<!--                        </span>-->
-<!--                        <span>{{subcategory.title}}</span>-->
-<!--                    </span>-->
-<!--                </label>-->
-<!--            </li>-->
-<!--        </ul>-->
-<!--        <ul class="row" v-if="step === 1">-->
-<!--            <li v-for="thing in things" class="col-md-3 col-6 transport-category" v-bind:class="{'active':(selected_thing===0)}"-->
-<!--                @click="selectThing(thing.id)">-->
-<!--                <label>-->
-<!--                    <span class="category-label-inner">-->
-<!--                        <span class="animated-icon">-->
-<!--                            <img :src="thing.image" width="75px"-->
-<!--                                 height="75px" alt="">-->
-<!--                        </span>-->
-<!--                        <span>{{thing.title}}</span>-->
-<!--                    </span>-->
-<!--                </label>-->
-<!--            </li>-->
-<!--        </ul>-->
+
     </div>
 </template>
 
 <script>
     import Wizard from "./Wizard";
+    import ArticleFormPage from '../../components/FindTransporter/ArticleFormPage'
     export default {
         name: "Grid",
-        components:{
-            Wizard
+        components: {
+            Wizard,ArticleFormPage
         },
-        props:['category'],
+        props: ['category'],
         data() {
             return {
-                selected_subcategory:'',
-                subcategory:'',
-                selected_thing:'',
-                thing:'',
-                subcategories:[],
-                things:[]
+                selected_subcategory: '',
+                subcategory: '',
+                selected_thing: '',
+                thing: '',
+                subcategories: [],
+                things: []
                 // step:0
             }
         },
         created() {
-            this.$store.dispatch('editNewListing', {key:'title', value: this.category.title})
+            this.$store.dispatch('editNewListing', {key: 'title', value: this.prepareLangTitle(this.category.title)})
             this.subcategories = this.category.subcategories;
             this.things = this.category.things;
-            if(this.subcategories.length < 0) {
+            if (this.subcategories.length < 0) {
                 this.$refs.grid_wizard.nextStep();
             }
         },
         computed: {
             filteredThings() {
-                return this.things.filter(item=>
+                return this.things.filter(item =>
                     item.subcategory_id === this.selected_subcategory
                 )
             }
         },
         methods: {
+            prepareLangTitle(title) {
+                return typeof title === 'object' ?
+                    Object.entries(title).find(item => item[0] === window.locale)[1] :
+                    title;
+            },
             nextStep() {
-                if(this.$refs.grid_wizard.current_step === 1)
-                {
+                console.log("this.filteredThings.length",this.filteredThings.length)
+                if (this.$refs.grid_wizard.current_step === 1||this.filteredThings.length===0) {
                     this.$store.dispatch('setStep', 2)
-                }
-                else {
+                } else {
+
                     this.$refs.grid_wizard.nextStep();
                 }
+
+                if (this.filteredThings.length===0)
+                    this.$refs.grid_wizard.nextStep();
             },
             prevStep() {
-                if(this.$refs.grid_wizard.current_step === 0)
-                {
+                if (this.$refs.grid_wizard.current_step === 0) {
                     this.$store.dispatch('setStep', 0)
-                }
-                else {
-                    if(this.subcategories.length > 0) {
+                } else {
+                    this.$refs.grid_wizard.current_step = 0
+                  /*  if (this.subcategories.length > 0) {
                         this.$refs.grid_wizard.prevStep();
-                    }
-                    else {
+                    } else {
                         this.$store.dispatch('setStep', 0)
-                    }
+                    }*/
                 }
                 // if(this.current_step === 0)
                 // {
@@ -148,23 +137,41 @@
             },
             selectSubcategory(id) {
                 // this.step = 1;
-               this.selected_subcategory = id;
-               let index = this.subcategories.findIndex(subcategory => subcategory.id === id);
-               this.subcategory = this.subcategories[index];
-               this.$store.dispatch('editNewListing', {key:'subcategory_id', value: id});
-               this.$store.dispatch('editNewListing', {key:'subcategory', value: this.subcategory});
+                this.selected_subcategory = id;
+                let index = this.subcategories.findIndex(subcategory => subcategory.id === id);
+                this.subcategory = this.subcategories[index];
+                this.$store.dispatch('editNewListing', {key: 'subcategory_id', value: id});
+                this.$store.dispatch('editNewListing', {key: 'subcategory', value: this.subcategory});
             },
             selectThing(id) {
                 this.selected_thing = id;
                 let index = this.things.findIndex(thing => thing.id === id);
                 this.thing = this.things[index];
-                this.$store.dispatch('editNewListing', {key:'thing_id', value: id});
-                this.$store.dispatch('editNewListing', {key:'thing', value: this.thing});
+                this.$store.dispatch('editNewListing', {key: 'thing_id', value: id});
+                this.$store.dispatch('editNewListing', {key: 'thing', value: this.thing});
             }
         }
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+    .custom-grid-list {
 
+        line-height: 100%;
+        list-style: none;
+        text-align: center;
+
+        cursor: pointer;
+
+        &.active {
+            .card {
+                border:2px #21c87a solid;
+            }
+        }
+
+    .card {
+        height: 100px;
+    }
+
+    }
 </style>

@@ -4,10 +4,10 @@
             <div id="logoAndNav" class="container-fluid">
                 <!-- Nav -->
                 <nav
-                    class="js-mega-menu navbar navbar-expand-lg u-header__navbar hs-menu-initialized hs-menu-horizontal">
+                    class="js-mega-menu navbar navbar-expand-lg u-header__navbar hs-menu-initialized hs-menu-horizontal justify-content-center">
                     <!-- Logo -->
                     <div class="u-header__navbar-brand-wrapper">
-                        <a class="navbar-brand u-header__navbar-brand" href="." aria-label="Space">
+                        <a class="navbar-brand u-header__navbar-brand" href="/" aria-label="Space">
                             <img class="u-header__navbar-brand-default w-100" style="object-fit: contain; height:50px;" v-lazy="'/assets/img/logo.png'" alt="Logo">
                             <img class="u-header__navbar-brand-mobile w-100" style="object-fit: contain; height:50px;" v-lazy="'/assets/img/logo.png'" alt="Logo">
                         </a>

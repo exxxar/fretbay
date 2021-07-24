@@ -53,8 +53,8 @@ class Subcategory extends Model
         return $this->hasMany(Listing::class);
     }
 
-    public function getTitleAttribute()
+  /*  public function getTitleAttribute()
     {
         return $this->getTranslations()["title"][App::getLocale()];
-    }
+    }*/
 }
