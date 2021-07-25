@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Profile extends Model
 {
@@ -27,10 +28,16 @@ class Profile extends Model
         "insurance_company",
         "is_approved",
         "is_first_activation",
+        "payment_methods",
+        "spoken_languages",
+        "email_notify",
+        "newsletter_notify",
+        "push_notify"
     ];
 
     protected $appends = [
-        "address"
+        "address",
+//        'legal_documents'
     ];
 
     protected $casts = [
@@ -38,12 +45,14 @@ class Profile extends Model
         "number_of_drivers" => "integer",
         "cargo_insurance_amount" => "integer",
         "is_approved" => "boolean",
-        "is_first_activation" => "boolean"
+        "is_first_activation" => "boolean",
+        "payment_methods" => "array",
+        "spoken_languages" => "array",
     ];
 
     public function getAddressAttribute()
     {
-        return $this->country . ", " . $this->city . ", " . $this->region;
+        return $this->country . ", " . $this->region . ", " . $this->city;
     }
 
     public function vehicles()
@@ -55,4 +64,29 @@ class Profile extends Model
     {
         return $this->hasMany(VerificationApplication::class, "profile_id", "id");
     }
+
+    public function documents()
+    {
+        return $this->hasMany(LegalDocument::class, "profile_id", "id");
+    }
+//    public function getLegalDocumentsAttribute()
+//    {
+//        $legal_documents = LegalDocument::where('profile_id', Auth::id())->get();
+//        $documents = [];
+//        foreach ($legal_documents as $document) {
+//            if($document->type == 1) {
+//                $documents['legal_document']=$document->document;
+//            }
+//            if($document->type == 2) {
+//                $documents['manager_card']=$document->document;
+//            }
+//            if($document->type == 3) {
+//                $documents['transport_license']=$document->document;
+//            }
+//            if($document->type == 4) {
+//                $documents['certificate_insurance']=$document->document;
+//            }
+//        }
+//        return $documents;
+//    }
 }

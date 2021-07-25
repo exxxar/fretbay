@@ -14,7 +14,7 @@
                     <ValidationObserver ref="article" disabled v-slot="observer">
                         <div class="form-group">
                             <ValidationProvider name="Article name" rules="required">
-                                <input v-if="mode===0" v-model="new_article.title" type="text" class="form-control "
+                                <input v-if="mode===0" v-model="new_article.title" type="text" class="form-control"
                                        placeholder="Article name">
                                 <input v-else v-model="edit_article.title" type="text" class="form-control "
                                        placeholder="Article name">

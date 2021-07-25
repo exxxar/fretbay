@@ -83,9 +83,16 @@ class RegisterController extends Controller
 
         $customer = Role::where('slug', 'customer')->first();
 
+//        $payment_methods = (object)[];
+//        $payment_methods->credit_card = false;
+//        $payment_methods->cashier_cheque = false;
+//        $payment_methods->cheque = false;
+//        $payment_methods->cash = false;
+//        $payment_methods->paypal = false;
+
         $profile = Profile::create([
             "company_name"=>$request->company_name,
-
+//            "payment_methods" =>  $payment_methods
         ]);
 
         $user = new User();
@@ -106,10 +113,18 @@ class RegisterController extends Controller
     {
         $customer = Role::where('name', 'customer')->first();
 
+//        $payment_methods = (object)[];
+//        $payment_methods->credit_card = false;
+//        $payment_methods->cashier_cheque = false;
+//        $payment_methods->cheque = false;
+//        $payment_methods->cash = false;
+//        $payment_methods->paypal = false;
+
         $profile = Profile::create([
             "company_name"=>$request->name,
-
+//            "payment_methods" => $payment_methods
         ]);
+
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
@@ -134,6 +149,13 @@ class RegisterController extends Controller
 
         $transporter = Role::where('slug', 'transporter')->first();
 
+//        $payment_methods = (object)[];
+//        $payment_methods->credit_card = false;
+//        $payment_methods->cashier_cheque = false;
+//        $payment_methods->cheque = false;
+//        $payment_methods->cash = false;
+//        $payment_methods->paypal = false;
+
         $profile = Profile::create([
             "type"=>$request->type??'transporter',
             "company_name"=>$request->company_name??'',
@@ -146,6 +168,8 @@ class RegisterController extends Controller
             "region"=>$request->region??'',
             "postal"=>$request->postal??'',
             "areas_of_expertise"=>$request->areas_of_expertise??'',
+            "payment_methods" =>  [],
+            "spoken_languages" =>  [],
         ]);
 
         $user = new User();

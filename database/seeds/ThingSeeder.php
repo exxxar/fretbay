@@ -1,6 +1,5 @@
 <?php
 
-
 use App\Models\Subcategory;
 use App\Models\Thing;
 use Illuminate\Database\Seeder;

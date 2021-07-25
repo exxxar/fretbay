@@ -35,6 +35,7 @@ class Listing extends Model
         'summary_volume',
         'moving_package',
         'distance'
+        'is_active'
     ];
 
     /**

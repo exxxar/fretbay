@@ -18,12 +18,11 @@
                 <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false">Settings</a>
             </li>
         </ul>
-        <div class="tab-content" id="myTabContent">
+        <div class="tab-content" id="myTabContent" v-if="user">
             <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                 <profile-my-account-page/>
             </div>
             <div class="tab-pane fade" id="company" role="tabpanel" aria-labelledby="company-tab">
-
                 <profile-my-company-page/>
             </div>
             <div class="tab-pane fade" id="documents" role="tabpanel" aria-labelledby="documents-tab">
@@ -37,7 +36,25 @@
                 <profile-settings-page/>
             </div>
         </div>
-
+        <div class="row w-100 mx-auto  gutters-sm" v-if="!user">
+            <div class="col-12 col-md-4">
+                <b-card>
+                    <b-skeleton-img></b-skeleton-img>
+                    <div class="mt-3">
+                        <b-skeleton animation="wave" width="85%"></b-skeleton>
+                        <b-skeleton animation="wave" width="55%"></b-skeleton>
+                        <b-skeleton animation="wave" width="70%"></b-skeleton>
+                    </div>
+                </b-card>
+            </div>
+            <div class="col-12 col-md-8">
+                <b-card>
+                    <b-skeleton animation="wave" width="85%"></b-skeleton>
+                    <b-skeleton animation="wave" width="55%"></b-skeleton>
+                    <b-skeleton animation="wave" width="70%"></b-skeleton>
+                </b-card>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -50,9 +67,15 @@
         },
         computed: {
             user() {
-                return JSON.parse(window.user)
+                return this.$store.getters.user
             }
         },
+        created() {
+            this.$store.dispatch('getUser');
+        },
+        mounted() {
+
+        }
     }
 </script>
 

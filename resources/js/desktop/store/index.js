@@ -12,12 +12,13 @@ import ListingModule from "./modules/ListingModule";
 import Listing from "./modules/Listing";
 import Notification from "./modules/Notification";
 import Favorite from "./modules/Favorite";
+import AuthUser from "./modules/AuthUser";
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
     namespaced: true,
     modules: {
-        ArticleCart, VolumeCart, Category, Subcategory, Thing, ListingModule, Listing, Notification, Favorite
+        ArticleCart, VolumeCart, Category, Subcategory, Thing, ListingModule, Listing, AuthUser,  Notification, Favorite
     }
 })

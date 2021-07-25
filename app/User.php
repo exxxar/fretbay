@@ -74,7 +74,7 @@ class User extends \TCG\Voyager\Models\User
 
     public static function self()
     {
-        return User::with(["profile", "profile.vehicles", "profile.verifications", "roles", "reviews","listings", "favorites"])->where("id", Auth::user()->id)->first();
+        return User::with(["profile", "profile.vehicles", "profile.verifications", "roles", "reviews","listings","profile.documents", "favorites"])->where("id", Auth::user()->id)->first();
     }
 
     public function listings()

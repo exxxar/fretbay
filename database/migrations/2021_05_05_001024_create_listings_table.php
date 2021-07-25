@@ -34,6 +34,7 @@ class CreateListingsTable extends Migration
             $table->unsignedBigInteger('category_id')->nullable();
             $table->unsignedBigInteger('subcategory_id')->nullable();
             $table->unsignedBigInteger('thing_id')->nullable();
+            $table->boolean('is_active')->default(false);
             $table->softDeletes();
             $table->timestamps();
         });

@@ -18,7 +18,7 @@ class CategoryController extends Controller
 
         if ($request->ajax()) {
             $categories = ObjectCategory::with(['subcategories', 'things', 'properties'])
-                ->where('additional_menu_title', 'choice_of_category')
+//                ->where('additional_menu_title', 'choice_of_category')
                 ->get();
             return response()->json([
                 'categories' => $categories

@@ -232,7 +232,18 @@ class ListingController extends Controller
      */
     public function update(Request $request, Listing $listing)
     {
-        //
+        $param = $request->get("param");
+        $value = $request->get("value");
+
+//        $listing = Listing::withTrashed()->find($listing->id);
+        $listing[$param] = $value;
+        $listing->save();
+
+        return response()
+            ->json([
+                'listing' => $listing,
+                "message" => "",
+            ], 200);
     }
 
     /**
