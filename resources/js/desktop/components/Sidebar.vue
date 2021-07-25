@@ -75,7 +75,7 @@
 
                                 <li v-if="user.is_transporter">
                                     <a class="media align-items-center u-sidebar--panel__link py-2 px-5"
-                                       href="/profile/transpoter/favorites">
+                                       href="/transporter/profile/favorites">
                                         <img class="max-width-3 mr-3" src="/assets/svg/components/thumbs-up-solid.svg"
                                              alt="Image Description">
                                         <div class="media-body">

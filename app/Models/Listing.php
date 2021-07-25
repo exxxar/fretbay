@@ -34,7 +34,7 @@ class Listing extends Model
         'thing_id',
         'summary_volume',
         'moving_package',
-        'distance'
+        'distance',
         'is_active'
     ];
 

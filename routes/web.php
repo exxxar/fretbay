@@ -136,6 +136,9 @@ Route::group(['middleware' => ['auth', 'role:transporter'], "prefix" => "transpo
         Route::post("/saveWithApproval", "TransporterController@saveWithApproval")->name("transporter-profile.save-with-approval");
         Route::post("/edit", "TransporterController@update")->name("transporter-profile.update");
 
+        Route::view("/notifications", "desktop.pages.profile.notifications")->name("transporter.notifications");
+        Route::view("/favorites", "desktop.pages.profile.favorites")->name("transporter.favorites");
+
         Route::group(["prefix" => "vehicle"], function () {
             Route::post("/create", "TransporterController@storeVehicle")->name("profile.vehicle.store");
             Route::post("/edit", "TransporterController@updateVehicle")->name("profile.vehicle.update");
@@ -148,8 +151,7 @@ Route::group(['middleware' => ['auth', 'role:transporter'], "prefix" => "transpo
             Route::delete("/delete/{id}", "LegalDocumentController@delete")->name("profile.document.delete");
             Route::delete("/destroy/{id}", "LegalDocumentController@destroy")->name("profile.document.destroy");
         });
-        Route::view("/notifications", "desktop.pages.profile.notifications")->name("transporter.notifications");
-        Route::view("/favorites", "desktop.pages.profile.favorites")->name("transporter.favorites");
+
 
         Route::group(["prefix" => "transporter-wizard"], function () {
             Route::view("/start", "desktop.pages.profile.transporter.profile-transporter-wizard-start")->name("desktop.profile-transporter-wizard-start");
