@@ -9,7 +9,7 @@
 
         <div class="row d-flex justify-content-center">
 
-            <div class="col-lg-6 col-md-6 col-12">
+            <div class="col-lg-10 col-md-10 col-12 col-sm-12">
                 <div class="inner-left">
                     <div class="text-center-xs main-h2">
 
@@ -25,91 +25,7 @@
                         <p class="bolder-para">If you have any further questions, please fill out the form
                             below.</p>
                     </div>
-                    <form class="form-horizontal" action="" method="post" name="form" id="form">
-                        <div class="row">
-                            <input type="hidden" name="contactForm" value="1">
-
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Name:</label>
-
-                                        <input type="text" class="form-control" name="Name" id="Name"
-                                               value="">
-
-
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>First name:</label>
-
-                                        <input type="text" class="form-control" name="prenom" id="prenom"
-                                               value="">
-
-
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Email:</label>
-
-                                        <input type="text" class="form-control" name="Email" id="Email"
-                                               value="">
-
-
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Telephone:</label>
-
-                                        <input type="text" class="form-control" name="tel" id="tel">
-
-
-                                </div>
-                            </div>
-                            <div class="clearfix"></div>
-
-
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label >Object:</label>
-
-                                        <input type="text" class="form-control" name="objet" id="objet">
-
-
-                                </div>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label >Message:</label>
-
-                                                    <textarea class="form-control" rows="8" name="Details"
-                                                              id="Details"></textarea>
-
-
-                                </div>
-                            </div>
-                            <!--<div class="col-md-12">
-                                <input type="checkbox" name="requests" id="checkBox01" value="1" checked="checked">
-                                <label for="checkBox01">Je souhaite recevoir des demandes de transport</label>
-                            </div>-->
-                            <div class="col-md-12 col-sm-12">
-                                <input type="checkbox" name="updates" id="checkBox02" value="1"
-                                       checked="checked">
-                                <label for="checkBox02">I would like to be informed of any changes to the
-                                    website</label>
-                            </div>
-                            <div class="col-md-12">
-                                <button type="button" class="btn btn-outline-primary w-100"
-                                        style="margin-left:auto; margin-right:auto;">Send
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-
+                    <text-callback-form-component/>
                     <div class="inner-grey">
                         <p class="margin-bottom-50">Please note that we will also send you information and
                             promotional emails regarding the site <b>FretBay</b> and similar products and

@@ -2,10 +2,16 @@
     <form>
         <div class="row">
             <div class="col-12">
+                <ValidationProvider :name="postal" rules="required" v-slot="{ errors }">
+                    <input type="text" v-model="postal" class="form-control mb-2" placeholder="Postal Code">
+                </ValidationProvider>
+            </div>
+            <div class="col-12" v-if="postal">
                 <ValidationProvider :name="address" rules="required" v-slot="{ errors }">
                     <address-input v-model="listing[address]" class="mb-2" v-on:selected="selectAddress" :disabled="false" placeholder="Address"></address-input>
                 </ValidationProvider>
             </div>
+
 <!--            <input type="text" class="form-control" aria-describedby="address" placeholder="Address">-->
 
         </div>
@@ -47,6 +53,7 @@
         data() {
             return {
                 address: '',
+                postal: null,
                 date_from:'',
                 date_to:''
             }
@@ -150,6 +157,7 @@
                 }
             },
             selectAddress(selection) {
+                selection.postal = this.postal
                 if(this.date1 === 'unshipping_date_from'){
                     this.$store.dispatch('editNewListing', {key:'place_of_delivery', value: selection});
                 }

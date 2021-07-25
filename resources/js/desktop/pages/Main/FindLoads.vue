@@ -187,21 +187,30 @@
 
                                 <div class="col-12 mt-2">
 
-                                    <small>Enter postal code</small>
+                                    <small>Enter Postal code</small>
+
+                                    <input type="text" class="form-control w-100"
+                                           placeholder="Postal code"
+                                           v-model="filter.postal">
+
+                                </div>
+
+                                <div class="col-12 mt-2">
+
+                                    <small>Choose region</small>
 
                                     <small @click="clearAddress()" v-if="this.filter.region"><i
                                         class="fas fa-times"></i></small>
                                     <address-input v-model="region" v-on:selected="selectAddress"
-                                                   placeholder="City, Postal code, Region, Country">
+                                                   placeholder="City, Region, Country">
 
                                     </address-input>
-
-
+                                    
                                 </div>
 
 
                                 <div class="col-12 mt-2">
-                                    .
+                                    <small>Shipping or unshipping date</small>
                                     <date-picker v-model="filter.date_from" @input="changeDate"
                                                  placeholder="Date from"
                                                  class="mb-2 w-100"
@@ -450,6 +459,7 @@
                     formula: [],
                     region: null,
                     reference: null,
+                    postal: null,
 
                 }
             }
@@ -471,7 +481,7 @@
                 return tmp.categories.length > 0 ||
                     tmp.date_from != null || tmp.date_to != null ||
                     tmp.user_id != null || tmp.formula.length > 0 ||
-                    tmp.region != null || tmp.reference != null
+                    tmp.region != null || tmp.reference != null || tmp.postal != null
                   /*  tmp.distance_range_value[0]!= this.distanceRanger.options.min||
                     tmp.distance_range_value[1]!= this.distanceRanger.options.max||
                     tmp.volume_range_value[0]!= this.volumeRanger.options.min||
@@ -624,6 +634,7 @@
                 this.filter.region = null
                 this.filter.reference = null
                 this.filter.user_id = null
+                this.filter.postal = null
 
                 this.clearAddress()
                 this.clearDates()

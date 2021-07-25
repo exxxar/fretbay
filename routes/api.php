@@ -61,6 +61,9 @@ Route::group(["prefix" => "listings"], function () {
     Route::get('/', 'ListingController@index');
     Route::post('/filtered', 'ListingController@filtered');
 });
+
+
+
 Route::group(["prefix" => "listing"], function () {
     Route::post('/', 'ListingController@store');
     Route::get('/{id}', 'ListingController@show');

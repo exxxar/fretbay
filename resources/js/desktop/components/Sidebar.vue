@@ -55,10 +55,31 @@
                                 <li>
                                     <a class="media align-items-center u-sidebar--panel__link py-2 px-5"
                                        :href="profileLink">
-                                        <img class="max-width-4 mr-3" src="/assets/svg/components/finance-dark-icon.svg"
+                                        <img class="max-width-3 mr-3" src="/assets/svg/components/finance-dark-icon.svg"
                                              alt="Image Description">
                                         <div class="media-body">
                                             <span>Profile</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="media align-items-center u-sidebar--panel__link py-2 px-5"
+                                       :href="user.is_transporter?'/transporter/profile/notifications':'/customer/profile/notifications'">
+                                        <img class="max-width-3 mr-3" src="/assets/svg/components/bell-regular.svg"
+                                             alt="Image Description">
+                                        <div class="media-body">
+                                            <span>Notifications</span>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li v-if="user.is_transporter">
+                                    <a class="media align-items-center u-sidebar--panel__link py-2 px-5"
+                                       href="/profile/transpoter/favorites">
+                                        <img class="max-width-3 mr-3" src="/assets/svg/components/thumbs-up-solid.svg"
+                                             alt="Image Description">
+                                        <div class="media-body">
+                                            <span>Favorites</span>
                                         </div>
                                     </a>
                                 </li>

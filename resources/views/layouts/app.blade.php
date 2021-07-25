@@ -44,7 +44,8 @@
 <div id="app">
     <preloader-component></preloader-component>
     @yield('content')
-    <system-notification-component></system-notification-component>
+{{--    <system-notification-component></system-notification-component>--}}
+    <notifications :position="'top left'" :group="'info'"></notifications>
     <modals-component>
 
     </modals-component>

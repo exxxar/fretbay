@@ -1,10 +1,14 @@
 <?php
 
+use App\Enums\NotificationType;
+use App\Events\MyEvent;
+use App\Events\NotificationEvent;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
@@ -22,6 +26,34 @@ use Laravel\Socialite\Facades\Socialite;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get("/event",function (){
+    event(new NotificationEvent(
+        "test",
+        "test info",
+        NotificationType::Info,
+       2));
+
+    event(new NotificationEvent(
+        "test",
+        "test warning",
+        NotificationType::Warning,
+        2));
+
+    event(new NotificationEvent(
+        "test",
+        "test error",
+        NotificationType::Error,
+        2));
+
+    event(new NotificationEvent(
+        "test",
+        "test system",
+        NotificationType::System,
+        2));
+
+});
+
 Route::get('/locale/{lang}', function (\Illuminate\Http\Request $request, $lang){
 
    // Session::forget('lang');
@@ -88,6 +120,8 @@ Route::group(['middleware' => ['auth', 'role:transporter'], "prefix" => "transpo
         Route::view("/legal-documents", "desktop.pages.profile.transporter.legal-documents")->name("transporter-legal-documents");
         Route::view("/my-vehicles", "desktop.pages.profile.transporter.my-vehicles")->name("transporter-vehicles");
         Route::view("/settings", "desktop.pages.profile.transporter.settings")->name("transporter-settings");
+        Route::view("/notifications", "desktop.pages.profile.notifications")->name("transporter.notifications");
+        Route::view("/favorites", "desktop.pages.profile.favorites")->name("transporter.favorites");
 
         Route::group(["prefix" => "transporter-wizard"], function () {
             Route::view("/start", "desktop.pages.profile.transporter.profile-transporter-wizard-start")->name("desktop.profile-transporter-wizard-start");
@@ -103,14 +137,20 @@ Route::group(['middleware' => ['auth', 'role:transporter'], "prefix" => "transpo
 Route::group(["prefix" => "listing","middleware"=>"auth"], function () {
     Route::get("/{id}", "ListingController@show")->name("desktop.listing");
     Route::post('/messages/send', 'ListingController@sendMessage');
+    Route::get('/favorites/get', 'FavoriteController@index')->middleware( ['auth', 'role:transporter']);
+    Route::post('/favorites/add', 'FavoriteController@store')->middleware( ['auth', 'role:transporter']);
+    Route::post('/favorites/remove', 'FavoriteController@destroy')->middleware( ['auth', 'role:transporter']);
 });
 
+Route::get('/notifications/get', 'NotificationController@index')->middleware( ['auth']);
 
 Route::group(['middleware' => ['auth', 'role:customer'], "prefix" => "customer"], function () {
     Route::group(["prefix" => "profile"], function () {
         Route::view("/", "desktop.pages.profile.customer.index")->name("customer-account");
         Route::view("/listings", "desktop.pages.profile.customer.listings")->name("customer.listings");
+        Route::view("/notifications", "desktop.pages.profile.notifications")->name("customer.notifications");
         Route::put("/update", "CustomerController@update")->name("customer.update");
+
     });
 });
 

@@ -5,6 +5,7 @@ namespace App;
 use App\Models\Listing;
 use App\Models\Profile;
 use App\Models\Review;
+use App\Models\Favorite;
 use App\Traits\HasRolesAndPermissions;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -73,12 +74,17 @@ class User extends \TCG\Voyager\Models\User
 
     public static function self()
     {
-        return User::with(["profile", "profile.vehicles", "profile.verifications", "roles", "reviews","listings"])->where("id", Auth::user()->id)->first();
+        return User::with(["profile", "profile.vehicles", "profile.verifications", "roles", "reviews","listings", "favorites"])->where("id", Auth::user()->id)->first();
     }
 
     public function listings()
     {
         return $this->hasMany(Listing::class);
+    }
+
+    public function favorites()
+    {
+        return $this->hasMany(Favorite::class,"user_id","id");
     }
 
 

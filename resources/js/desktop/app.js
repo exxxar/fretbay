@@ -42,6 +42,10 @@ Vue.component("v-select", vSelect);
 
 import "vue-select/dist/vue-select.css";
 
+import VueRecord from '@codekraft-studio/vue-record'
+
+Vue.use(VueRecord)
+
 //components
 Vue.component('preloader-component', require('../desktop/components/Preloader.vue').default);
 Vue.component('listing-item-component', require('./components/ListingItem.vue').default);
@@ -54,7 +58,12 @@ Vue.component('signup-transporter-component', require('./components/Modals/SignU
 Vue.component('signup-customer-component', require('./components/Modals/SignUpCustomer.vue').default);
 Vue.component('chat-component', require('./components/Listing/Chat.vue').default);
 Vue.component('quotes-component', require('./components/Listing/Quotes.vue').default);
+Vue.component('notification-item-component', require('./components/NotificationItem.vue').default);
+Vue.component('notification-paginate-component', require('./components/NotificationPaginate.vue').default);
+Vue.component('favorites-paginate-component', require('./components/FavoritePaginate.vue').default);
 
+Vue.component('text-callback-form-component', require('./components/TextCallbackForm.vue').default);
+Vue.component('voice-callback-form-component', require('./components/VoiceCallbackForm.vue').default);
 
 Vue.component('header-customer-profile-component', require('../desktop/components/HeaderCustomerProfile.vue').default);
 Vue.component('header-transporter-profile-component', require('../desktop/components/HeaderTransporterProfile.vue').default);
@@ -72,6 +81,8 @@ Vue.component('register-customer-page', require('../desktop/pages/Auth/RegisterC
 
 //main pages
 Vue.component('index-page', require('./pages/Main/Index.vue').default);
+Vue.component('notifications-page', require('./pages/Profile/Notifications.vue').default);
+Vue.component('favorites-page', require('./pages/Profile/Transporter/Favorites.vue').default);
 Vue.component('listing-page', require('./pages/Main/Listing.vue').default);
 Vue.component('find-loads-page', require('./pages/Main/FindLoads.vue').default);
 Vue.component('find-transporter-page', require('./pages/Main/FindTransporter.vue').default);

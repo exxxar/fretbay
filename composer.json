@@ -25,7 +25,9 @@
         "socialiteproviders/vkontakte": "^4.2",
         "spatie/laravel-translatable": "^4.6",
         "tcg/voyager": "^1.4",
-        "vkcom/vk-php-sdk": "^5.101"
+        "vkcom/vk-php-sdk": "^5.101",
+        "bensampo/laravel-enum": "^2.2",
+        "pusher/pusher-php-server": "^4.1"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

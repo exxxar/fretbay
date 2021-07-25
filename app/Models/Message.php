@@ -1,8 +1,9 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use App\Models\Listing;
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Message extends Model

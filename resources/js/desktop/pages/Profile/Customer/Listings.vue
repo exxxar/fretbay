@@ -2,7 +2,7 @@
 
     <main id="content">
         <div class="container space-3-bottom--lg" style="margin-top: 130px;">
-          <quotes-component :notfoud="true"/>
+          <quotes-component :notfound="true"/>
         </div>
 
     </main>

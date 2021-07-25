@@ -32,9 +32,9 @@ window.user = document.head.querySelector('meta[name="user"]') != null ?
 
 if (window.user) {
     window.user = JSON.parse(window.user)
-    window.user.is_transporter = window.user.roles.filter(item => item.name === "transporter").length > 0;
-    window.user.is_customer = window.user.roles.filter(item => item.name === "customer").length > 0;
-    window.user.is_admin = window.user.roles.filter(item => item.name === "admin").length > 0;
+    window.user.is_transporter = window.user.roles.filter(item => item.name === "transporter").length > 0 || false;
+    window.user.is_customer = window.user.roles.filter(item => item.name === "customer").length > 0 || false;
+    window.user.is_admin = window.user.roles.filter(item => item.name === "admin").length > 0 || false;
 }
 window.locale = document.documentElement.lang
 
@@ -57,3 +57,14 @@ window.csrf = document.head.querySelector('meta[name="csrf-token"]').content
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+
+var Pusher = require('pusher-js');
+
+Pusher.logToConsole = true;
+
+var pusher = new Pusher('e4a064fd6ecf04afd75e', {
+    cluster: 'eu',
+    forceTLS: true
+});
+window.pusher = pusher;

@@ -8,8 +8,10 @@
                     <!-- Logo -->
                     <div class="u-header__navbar-brand-wrapper">
                         <a class="navbar-brand u-header__navbar-brand" href="/" aria-label="Space">
-                            <img class="u-header__navbar-brand-default w-100" style="object-fit: contain; height:50px;" v-lazy="'/assets/img/logo.png'" alt="Logo">
-                            <img class="u-header__navbar-brand-mobile w-100" style="object-fit: contain; height:50px;" v-lazy="'/assets/img/logo.png'" alt="Logo">
+                            <img class="u-header__navbar-brand-default w-100" style="object-fit: contain; height:50px;"
+                                 v-lazy="'/assets/img/logo.png'" alt="Logo">
+                            <img class="u-header__navbar-brand-mobile w-100" style="object-fit: contain; height:50px;"
+                                 v-lazy="'/assets/img/logo.png'" alt="Logo">
                         </a>
                     </div>
                     <!-- End Logo -->
@@ -64,17 +66,16 @@
                             </li>
 
 
-
-
-
                             <li class="nav-item dropdown u-header__nav-item-btn" v-if="!user">
                                 <a class="btn btn-primary dropdown-toggle" href="#" id="signupDropdown"
                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     SignUp
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="signupDropdown">
-                                    <a class="dropdown-item" data-toggle="modal" data-target="#signUp-transporter">I am a transporter</a>
-                                    <a class="dropdown-item" data-toggle="modal" data-target="#signUp-customer">I am looking for transporter</a>
+                                    <a class="dropdown-item" data-toggle="modal" data-target="#signUp-transporter">I am
+                                        a transporter</a>
+                                    <a class="dropdown-item" data-toggle="modal" data-target="#signUp-customer">I am
+                                        looking for transporter</a>
                                 </div>
                             </li>
 
@@ -92,14 +93,16 @@
                                     {{currentLocale}}
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
-                                    <a class="dropdown-item" v-for="lang in langOptions" :href="'/locale/'+lang.countryCode">{{lang.countryName}}</a>
+                                    <a class="dropdown-item" v-for="lang in langOptions"
+                                       :href="'/locale/'+lang.countryCode">{{lang.countryName}}</a>
 
                                 </div>
                             </li>
 
                             <!-- Search -->
                             <li class="nav-item u-header__navbar-icon u-header__navbar-v-divider">
-                                <a class="btn btn-xs btn-icon btn-text-dark u-header__search-toggle" @click="toggleSearch"
+                                <a class="btn btn-xs btn-icon btn-text-dark u-header__search-toggle"
+                                   @click="toggleSearch"
                                    role="button" aria-haspopup="true" aria-expanded="false" aria-controls="search"
                                    data-unfold-target="#search" data-unfold-hide-on-scroll="false"
                                    data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300"
@@ -174,22 +177,41 @@
             user: function () {
                 return window.user;
             },
-            currentLocale:function(){
-                return this.langOptions.find(item=>item.countryCode===window.locale).countryName
+            currentLocale: function () {
+                return this.langOptions.find(item => item.countryCode === window.locale).countryName
             }
         },
         methods: {
-            toggleSearch(){
-                $("#search").toggleClass("u-unfold--hidden  ");
+            toggleSearch() {
+                $("#search").toggleClass("u-unfold--hidden");
             },
             toggleSidebar() {
                 $("#sidebar").toggleClass("u-unfold--hidden");
             },
-            selectLang(lang){
-                window.location.href=`/locale/${lang}`
-            }
+            selectLang(lang) {
+                window.location.href = `/locale/${lang}`
+            },
+            sendMessage(message, type = 'success') {
+                this.$notify({
+                    group: 'info',
+                    type: type,
+                    title: 'Оповещение',
+                    text: message
+                });
+            },
 
         },
+        mounted() {
+            console.log("header!");
+
+
+            if (this.user)
+                pusher.subscribe('notification-event-channel-' + this.user.id).bind('notification-event', (data) => {
+                    this.sendMessage("Notification")
+                });
+
+
+        }
     }
 </script>
 

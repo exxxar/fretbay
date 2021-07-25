@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Classes\MapBoxAPIManager;
-use App\Message;
+use App\Models\Message;
 use App\Models\Listing;
 use App\User;
 use Carbon\Carbon;
@@ -30,7 +30,7 @@ class ListingController extends Controller
      */
     public function index()
     {
-        $listings = Listing::with(['category', 'subcategory', 'thing'])->orderByDesc('created_at')->paginate(15);
+        $listings = Listing::with(['category', 'subcategory', 'thing','messages'])->orderByDesc('created_at')->paginate(15);
         return response()->json([
             'listings' => $listings
         ]);
@@ -50,6 +50,7 @@ class ListingController extends Controller
         $moving_package = $request->formula;
         $reference = intval($request->reference) ?? null;
         $region = $request->region ?? null;
+        $postal = $request->postal ?? null;
 
         $listings = Listing::with(['category', 'subcategory', 'thing']);
 
@@ -69,6 +70,14 @@ class ListingController extends Controller
                 });
                 //->where("place_of_loading->id", ((object)$region)->id)
                 //->orWhere("place_of_delivery->id", ((object)$region)->id);
+
+
+        if (!is_null($postal))
+            $listings = $listings
+                ->where(function($query) use ($postal) {
+                    $query->orWhere('place_of_loading->postal', $postal)
+                        ->orWhere('place_of_delivery->postal', $postal);
+                });
 
         if ($only_self)
             $listings = $listings->where("user_id", $request->user_id);

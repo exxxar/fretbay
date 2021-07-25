@@ -1,16 +1,23 @@
 <template>
-    <div class="card shadow-sm border-0 mb-4 px-4">
+    <div class="card shadow-sm border-0 mb-4 px-4" >
         <div class="card-header d-flex justify-content-between">
 
 
             <div class="counters">
-                <span class="mr-5 text-bold">№{{preparedId}}</span>
-                   <span v-if="listing.messages" class="mr-2">  {{listing.messages.length}} <i
-                       class="fas fa-envelope"></i></span>
+                <span class="mr-5 text-bold" style="margin-left:-20px;">№{{preparedId}}</span>
+                <span v-if="listing.messages" class="mr-2">  {{listing.messages.length}} <i
+                    class="fas fa-envelope"></i></span>
                 <span v-if="listing.quotes">  {{listing.quotes.length}} <i class="fas fa-gavel"></i></span>
                 <span v-else>  0 <i class="fas fa-gavel"></i></span>
                 <span class="badge badge-primary"><small>{{listing.status||"In progress"}}</small></span>
                 <span class="badge badge-purple" v-if="user&&listing.user_id==user.id"><small>Your</small></span>
+            </div>
+
+            <div class="like">
+                <button class="btn btn-link m-0 p-0" v-if="isTranspoter">
+                    <span v-if="!isLiked"  @click="like"><img v-lazy="'/assets/svg/shapes/heart.svg'" style="width:20px;" alt=""></span>
+                    <span v-if="isLiked"  @click="dislike"><img v-lazy="'/assets/svg/shapes/heart-solid.svg'" style="width:20px;" alt=""></span>
+                </button>
             </div>
             <a class="d-flex align-items-center font-weight-bold" target="_blank" :href="'/listing/'+listing.id">
 
@@ -54,9 +61,7 @@
             <div
                 class="text-md-right text-secondary d-flex flex-column justify-content-center align-items-end">
                 <p class="mb-0" style="font-size: 12px; color: #8e949a">Publication time</p>
-                Since {{listing.updated_at | moment("from", "now", true)}}
-
-
+                Since {{listing.created_at | moment("from", "now", true)}}
 
 
             </div>
@@ -144,7 +149,6 @@
                 </div>
 
 
-
             </div>
         </div>
 
@@ -156,7 +160,8 @@
                    v-if="listing.category.mode ==='article' && listing.articles.length===1"
                    v-for="property in listing.category.properties"
                 >
-                    {{prepareLangTitle(property.title)||"Empty"}}: {{listing.articles[0].properties[property.slug].value}}
+                    {{prepareLangTitle(property.title)||"Empty"}}:
+                    {{listing.articles[0].properties[property.slug].value}}
                 </a>
 
                 <div class="row w-100 mx-auto my-2">
@@ -209,20 +214,40 @@
 <script>
 
 
-
     export default {
         props: ["listing"],
-
+        data() {
+            return {
+                tmp_favorites: []
+            }
+        },
         computed: {
             user: function () {
                 return window.user
             },
 
-            preparedId:function () {
-                let tmp = ""+this.listing.id;
+            isLiked() {
 
-                while (tmp.length<6)
-                    tmp = "0"+tmp;
+                let tmp = [...this.tmp_favorites, ...this.user.favorites]
+
+                if (tmp.length === 0)
+                    return false;
+
+                let t = tmp.filter(item => item.listing_id === this.listing.id);
+                return t.length > 0;
+
+            },
+            isTranspoter() {
+                if (!window.user)
+                    return false
+
+                return this.user.is_transporter || false;
+            },
+            preparedId: function () {
+                let tmp = "" + this.listing.id;
+
+                while (tmp.length < 6)
+                    tmp = "0" + tmp;
 
                 return tmp;
             }
@@ -230,14 +255,40 @@
         },
         methods: {
             prepareLangTitle(title) {
-                console.log("lang=>",Object.entries(title).find(item => item[0] === window.locale)[1])
                 return typeof title === 'object' ?
                     Object.entries(title).find(item => item[0] === window.locale)[1] :
                     title;
+            },
+            like() {
+                axios.post("/listing/favorites/add", {
+                    "listing_id": this.listing.id
+                }).then(resp => {
+                    if (!this.isLiked)
+                        this.tmp_favorites.push({
+                            listing_id: this.listing.id
+                        })
+                })
+            },
+            dislike() {
+                axios.post("/listing/favorites/remove", {
+                    "listing_id": this.listing.id
+                }).then(resp => {
+                    if (this.isLiked) {
+                        this.user.favorites = this.user.favorites.filter((item) => {
+                                return item.listing_id !== this.listing.id
+                            }
+                        )
+
+                        this.tmp_favorites = this.tmp_favorites.filter((item) => {
+                                return item.listing_id !== this.listing.id
+                            }
+                        )
+                    }
+                })
             }
         },
         mounted() {
-            console.log("listing=>", this.listing)
+            console.log("test listing=>", this.listing)
         }
     }
 
