@@ -1,7 +1,7 @@
 @extends("layouts.app")
 
 @section("content")
-    <header-customer-profile-component></header-customer-profile-component>
-    <profile-personal-info-page></profile-personal-info-page>
+    <header-component></header-component>
+    <profile-page :info="{{json_encode($info)}}"></profile-page>
     <footer-component></footer-component>
 @endsection

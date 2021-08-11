@@ -161,14 +161,68 @@
                                     </ValidationProvider>
                                 </div>
                             </div>
+
+                            <div class="js-form-message mb-3">
+                                <div class="js-focus-state form">
+                                    <!--                                <input type="text" class="form-control form__input" name="city"-->
+                                    <!--                                       placeholder="Your city" required>-->
+                                    <ValidationProvider name="City" rules="required" v-slot="{ errors }">
+                                        <multiselect
+                                            :disabled="cities.length===0"
+                                            id="city" name="city"
+                                            v-model="edit_profile.city"
+                                            :options="cities"
+                                            :option-height="25"
+                                            placeholder="Your city"
+                                            :show-labels="false"
+                                            :maxHeight="200"
+                                            label="title"
+                                            track-by="id"
+                                            :allow-empty="false"
+                                            :searchable="true"
+                                            :show-no-results="false"
+                                            :internal-search="true"
+                                            @search-change="getCities"
+                                            :clear-on-select="false"
+                                        >
+                                            <template slot="option" slot-scope="props">
+                                                <span class="option__title">{{ props.option.title }}</span>
+                                                <div class="option__desc" style="font-size: 10px;">
+                                                    <span class="option__title" v-if="props.option.area">{{ props.option.area }}</span>
+                                                    <span v-if="props.option.area&&props.option.region">, </span>
+                                                    <span class="option__small" v-if="props.option.region">{{ props.option.region }}</span>
+                                                </div>
+                                            </template>
+                                        </multiselect>
+                                        <p class="mb-0" style="color:red;font-size:11px">{{errors[0]}}</p>
+                                    </ValidationProvider>
+                                </div>
+                            </div>
                             <div class="row mb-3">
                                 <div class="col-sm-3">
                                     <h6 class="mb-0">Country</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
                                     <ValidationProvider name="Country" rules="" v-slot="{ errors }">
-                                        <input type="text" name="country" class="form-control"
-                                               v-model="edit_profile.country" :disabled="loading">
+<!--                                        <input type="text" name="country" class="form-control"-->
+<!--                                               v-model="edit_profile.country" :disabled="loading">-->
+                                        <multiselect
+                                            :disabled="countries.length==0||loading"
+                                            v-model="edit_profile.country"
+                                            :options="countries"
+                                            :option-height="25"
+                                            placeholder="Country"
+                                            :show-labels="false"
+                                            :maxHeight="200"
+                                            label="title"
+                                            track-by="id"
+                                            :allow-empty="false"
+                                            :searchable="true"
+                                            :loading="countries_loading"
+                                            @input="getRegions"
+                                        >
+                                        </multiselect>
+                                        <p class="mb-0" style="color:red;font-size:11px">{{errors[0]}}</p>
                                     </ValidationProvider>
                                 </div>
                             </div>
@@ -179,8 +233,28 @@
                                 </div>
                                 <div class="col-sm-9 text-secondary">
                                     <ValidationProvider name="Region" rules="" v-slot="{ errors }">
-                                        <input type="text" name="region" class="form-control"
-                                               v-model="edit_profile.region" :disabled="loading">
+<!--                                        <input type="text" name="region" class="form-control"-->
+<!--                                               v-model="edit_profile.region" :disabled="loading">-->
+                                        <input v-if="regionInputMode" type="text" class="form-control" name="region"
+                                               placeholder="Your region" v-model="edit_profile.region.title" required>
+                                        <multiselect
+                                            v-if="!regionInputMode"
+                                            :disabled="regions.length==0||loading"
+                                            v-model="edit_profile.region"
+                                            :options="regions"
+                                            :option-height="25"
+                                            placeholder="Region"
+                                            :show-labels="false"
+                                            :maxHeight="200"
+                                            label="title"
+                                            track-by="id"
+                                            :allow-empty="false"
+                                            :searchable="true"
+                                            :loading="regions_loading"
+                                            @input="chooseRegion"
+                                        >
+                                        </multiselect>
+                                        <p class="mb-0" style="color:red;font-size:11px">{{errors[0]}}</p>
                                     </ValidationProvider>
                                 </div>
                             </div>
@@ -193,6 +267,33 @@
                                     <ValidationProvider name="City" rules="alpha" v-slot="{ errors }">
                                         <input type="text" name="city" class="form-control"
                                                v-model="edit_profile.city" :disabled="loading">
+                                        <multiselect
+                                            :disabled="cities.length===0"
+                                            v-model="edit_profile.city"
+                                            :options="cities"
+                                            :option-height="25"
+                                            placeholder="Your city"
+                                            :show-labels="false"
+                                            :maxHeight="200"
+                                            label="title"
+                                            track-by="id"
+                                            :allow-empty="false"
+                                            :searchable="true"
+                                            :show-no-results="false"
+                                            :internal-search="true"
+                                            @search-change="getCities"
+                                            :clear-on-select="false"
+                                        >
+                                            <template slot="option" slot-scope="props">
+                                                <span class="option__title">{{ props.option.title }}</span>
+                                                <div class="option__desc" style="font-size: 10px;">
+                                                    <span class="option__title" v-if="props.option.area">{{ props.option.area }}</span>
+                                                    <span v-if="props.option.area&&props.option.region">, </span>
+                                                    <span class="option__small" v-if="props.option.region">{{ props.option.region }}</span>
+                                                </div>
+                                            </template>
+                                        </multiselect>
+                                        <p class="mb-0" style="color:red;font-size:11px">{{errors[0]}}</p>
                                     </ValidationProvider>
                                 </div>
                             </div>
@@ -205,6 +306,7 @@
                                     <ValidationProvider name="Postal" rules="" v-slot="{ errors }">
                                         <input type="text" name="postal" class="form-control"
                                                v-model="edit_profile.postal" :disabled="loading">
+                                        <p class="mb-0" style="color:red;font-size:11px">{{errors[0]}}</p>
                                     </ValidationProvider>
                                 </div>
                             </div>
@@ -250,6 +352,13 @@
               },
               loading:false,
               avatar_is_removed:false,
+              countries: [],
+              regions: [],
+              cities:[],
+              countries_loading: false,
+              regions_loading: false,
+              cities_loading: false,
+              regionInputMode: false
           }
         },
         computed: {
@@ -260,13 +369,13 @@
                 return this.$store.getters.profile
             },
             fullAddress() {
-                if(!this.profile.country ||  this.profile.country=='')
+                if(!this.profile.country || this.profile.country==='' || this.profile.country.title==='')
                 {
                     return ''
                 }
-                return this.profile.country + ","
-                    + this.profile.region + ","
-                    + this.profile.city + ","
+                return this.profile.country.title + ","
+                    + this.profile.region.title + ","
+                    + this.profile.city.title + ","
                     + this.profile.postal;
             },
             fullName() {
@@ -339,6 +448,56 @@
             },
             startUpload() {
                 this.$refs.avatar.startUpload();
+            },
+            chooseRegion() {
+                this.edit_profile.city = null;
+                this.getCities()
+            },
+            async getCities(query='null'){
+                if(typeof query === 'object') {
+                    query='null';
+                }
+                this.cities_loading = true;
+                let locale = localStorage.getItem('locale') || 'en';
+                if(query==='null')
+                {
+                    await axios.get("/api/locations/cities/"+this.edit_profile.country.id+'/'+this.edit_profile.region.id+'/'+locale+'/'+query).then(resp=>{
+                        this.cities = resp.data;
+                        this.cities_loading = false;
+                    })
+                }
+                else {
+                    if(query!=='' && query.length>2){
+                        await axios.get("/api/locations/cities/"+this.edit_profile.country.id+'/'+this.edit_profile.region.id+'/'+locale+'/'+query).then(resp=>{
+                            this.cities = resp.data;
+                            this.cities_loading = false;
+                        })
+                    }
+                }
+            },
+            async getRegions(){
+                this.regions_loading = true;
+                let locale = localStorage.getItem('locale') || 'en';
+                this.edit_profile.region = null;
+                this.edit_profile.city = null;
+                await axios.get("/api/locations/regions/"+this.edit_profile.country.id+'/'+locale).then(resp=>{
+                    this.regions = resp.data;
+                    this.regionInputMode = false;
+                    if (this.regions.length === 0) {
+                        this.regionInputMode = true;
+                        this.edit_profile.region = {id:'null', title:''};
+                        this.getCities('null');
+                    }
+                    this.regions_loading = false;
+                })
+            },
+            async getCountries(){
+                this.countries_loading = true;
+                let locale = localStorage.getItem('locale') || 'en';
+                await axios.get("/api/locations/countries/"+locale).then(resp=>{
+                    this.countries = resp.data;
+                    this.countries_loading = false;
+                })
             },
         }
     }

@@ -346,23 +346,29 @@
                             <div class="row" v-if="editManagerCardMode">
                                 <div class="col-sm-12">
                                     <div class="form-group">
-                                        <label for="" class="text-lg">ID card number</label>
-                                        <input type="text" class="form-control-empty form-control"
-                                               v-model="edit_manager_card.id_card_number" placeholder="ID card number">
+                                        <ValidationProvider name="ID card number" rules="required" v-slot="{ errors }">
+                                            <label for="" class="text-lg">ID card number</label>
+                                            <input type="text" class="form-control-empty form-control"
+                                                   v-model="edit_manager_card.id_card_number" placeholder="ID card number">
+                                        </ValidationProvider>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label for="" class="text-lg">Issue date</label>
-                                        <input type="text" class="form-control-empty form-control"
-                                               v-model="edit_manager_card.issue_date" v-mask="'##/##/####'">
+                                        <ValidationProvider name="Issue date" rules="required" v-slot="{ errors }">
+                                            <label for="" class="text-lg">Issue date</label>
+                                            <input type="text" class="form-control-empty form-control"
+                                                   v-model="edit_manager_card.issue_date" v-mask="'##/##/####'">
+                                        </ValidationProvider>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label for="" class="text-lg">Expiry date</label>
-                                        <input type="text" class="form-control-empty form-control"
-                                               v-model="edit_manager_card.expiry_date" v-mask="'##/##/####'">
+                                        <ValidationProvider name="Expiry date" rules="required" v-slot="{ errors }">
+                                            <label for="" class="text-lg">Expiry date</label>
+                                            <input type="text" class="form-control-empty form-control"
+                                                   v-model="edit_manager_card.expiry_date" v-mask="'##/##/####'">
+                                        </ValidationProvider>
                                     </div>
                                 </div>
                                 <div class="col-12">

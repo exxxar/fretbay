@@ -92,7 +92,7 @@
                                     {{currentLocale}}
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
-                                    <a class="dropdown-item" v-for="lang in langOptions" :href="'/locale/'+lang.countryCode">{{lang.countryName}}</a>
+                                    <a class="dropdown-item" v-for="lang in langOptions" @click="selectLang(lang.countryCode)" :href="'/locale/'+lang.countryCode">{{lang.countryName}}</a>
 
                                 </div>
                             </li>
@@ -147,6 +147,7 @@
 
 <script>
     import MainMenu from "./MainMenu";
+    import {localize} from "vee-validate";
 
     export default {
         components: {
@@ -186,6 +187,11 @@
                 $("#sidebar").toggleClass("u-unfold--hidden");
             },
             selectLang(lang){
+                console.log(window)
+                localStorage.setItem('locale', lang)
+                this.$lang.setLocale(lang);
+                this.$moment.locale(lang);
+                localize(lang);
                 window.location.href=`/locale/${lang}`
             }
 

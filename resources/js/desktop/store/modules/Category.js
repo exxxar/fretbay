@@ -7,10 +7,10 @@ const state = {
 const getters = {
     categories: (state, getters, rootState) => {
 
-        for (let index in state.categories)
-        {
-            state.categories[index].title = Object.entries(state.categories[index].title).find(item=>item[0]===window.locale)[1];
-        }
+        // for (let index in state.categories)
+        // {
+        //     state.categories[index].title = Object.entries(state.categories[index].title).find(item=>item[0]===window.locale)[1];
+        // }
 
         return state.categories
     },
@@ -22,8 +22,9 @@ const getters = {
 // actions
 const actions = {
     async getCategories({state, commit}) {
+        let locale = localStorage.getItem('locale') || 'en';
         return axios
-            .get('/api/categories')
+            .get('/api/categories/'+locale)
             .then(resp => {
                 commit('setCategories', resp.data.categories);
             })

@@ -7,10 +7,11 @@
                     <div class="card-body">
                         <h2>Company details</h2>
                         <p class="inform-box">
-                            You wish to change your information?
-                            <br>
-<!--                            Please contact us at <a href="#">transporteur@allotrans.com</a> to make the request.-->
-                            Please be aware that some changes will make your profile status "Not approved"
+                            This information will be on public profile page
+<!--                            You wish to change your information?-->
+<!--                            <br>-->
+<!--&lt;!&ndash;                            Please contact us at <a href="#">transporteur@allotrans.com</a> to make the request.&ndash;&gt;-->
+<!--                            Please be aware that some changes will make your profile status "Not approved"-->
                         </p>
                         <ValidationObserver v-slot="{invalid}">
                             <div class="row m-auto w-100">
@@ -76,7 +77,6 @@
                 </div>
             </div>
         </div>
-
         <div class="row">
             <div class="col-md-12">
                 <div class="card mb-3">
@@ -168,7 +168,6 @@
                 </div>
             </div>
         </div>
-
         <div class="row">
             <div class="col-md-12">
                 <div class="card mb-3">
@@ -184,8 +183,8 @@
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" id="credit_card"
                                                class="custom-control-input"
-                                               :checked="check('payment_methods', 'credit_card')"
-                                               @change="choose('payment_methods','credit_card')"
+                                               :checked="check('payment_methods', 'Credit card')"
+                                               @change="choose('payment_methods','Credit card')"
                                         >
                                         <label class="custom-control-label" for="credit_card">Credit card</label>
                                     </div>
@@ -193,32 +192,32 @@
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" id="cashier_cheque"
                                                class="custom-control-input"
-                                               :checked="check('payment_methods', 'cashier_cheque')"
-                                               @change="choose('payment_methods', 'cashier_cheque')"
+                                               :checked="check('payment_methods', 'Cashier cheque')"
+                                               @change="choose('payment_methods', 'Cashier cheque')"
                                         >
                                         <label class="custom-control-label" for="cashier_cheque">Cashier's cheque</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" id="cheque"
                                                class="custom-control-input"
-                                               :checked="check('payment_methods', 'cheque')"
-                                               @change="choose('payment_methods', 'cheque')"
+                                               :checked="check('payment_methods', 'Cheque')"
+                                               @change="choose('payment_methods', 'Cheque')"
                                         >
                                         <label class="custom-control-label" for="cheque">Cheque</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" id="cash"
                                                class="custom-control-input"
-                                               :checked="check('payment_methods', 'cash')"
-                                               @change="choose('payment_methods', 'cash')"
+                                               :checked="check('payment_methods', 'Cash')"
+                                               @change="choose('payment_methods', 'Cash')"
                                         >
                                         <label class="custom-control-label" for="cash">Cash</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" id="paypal"
                                                class="custom-control-input"
-                                               :checked="check('payment_methods', 'paypal')"
-                                               @change="choose('payment_methods', 'paypal')"
+                                               :checked="check('payment_methods', 'Paypal')"
+                                               @change="choose('payment_methods', 'Paypal')"
                                         >
                                         <label class="custom-control-label" for="paypal">Paypal</label>
                                     </div>

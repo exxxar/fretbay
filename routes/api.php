@@ -41,8 +41,9 @@ Route::group(["prefix" => "cars"], function () {
 });
 
 Route::group(["prefix" => "locations"], function () {
-    Route::get("/countries", \DictionaryController::class . "@getCountries");
-    Route::get("/cities/{country}", \DictionaryController::class . "@getCities");
+    Route::get("/countries/{lang}", \DictionaryController::class . "@getCountries");
+    Route::get("/cities/{country}/{region}/{lang}/{query}", \DictionaryController::class . "@getCities");
+    Route::get("/regions/{country}/{lang}", \DictionaryController::class . "@getRegions");
 });
 
 Route::group(["prefix" => "dist"], function () {
@@ -54,7 +55,7 @@ Route::group(["prefix" => "dist"], function () {
 Route::get("/getAddress/{address}/{lang}", "DictionaryController@getAddress");
 //category
 Route::group(["prefix" => "categories"], function () {
-    Route::get('/', 'CategoryController@index');
+    Route::get('/{lang}', 'CategoryController@index');
 });
 //listing
 Route::group(["prefix" => "listings"], function () {

@@ -80,8 +80,7 @@ class RegisterController extends Controller
 
     public function registerCustomer(CustomerStoreRequest $request)
     {
-
-        $customer = Role::where('slug', 'customer')->first();
+        $customer = Role::where('name', 'customer')->first();
 
 //        $payment_methods = (object)[];
 //        $payment_methods->credit_card = false;
@@ -145,9 +144,7 @@ class RegisterController extends Controller
 
     public function registerTransporter(TransporterStoreRequest $request)
     {
-
-
-        $transporter = Role::where('slug', 'transporter')->first();
+        $transporter = Role::where('name', 'transporter')->first();
 
 //        $payment_methods = (object)[];
 //        $payment_methods->credit_card = false;
@@ -167,9 +164,11 @@ class RegisterController extends Controller
             "city"=>$request->city??'',
             "region"=>$request->region??'',
             "postal"=>$request->postal??'',
-            "areas_of_expertise"=>$request->areas_of_expertise??'',
-            "payment_methods" =>  [],
-            "spoken_languages" =>  [],
+            "areas_of_expertise"=>$request->transport_specialities??[],
+            "transport_specialities"=>$request->transport_specialities??[],
+            "payment_methods" => [],
+            "spoken_languages" => [],
+            'newsletter_notify' => $request->newsletter_notify??true
         ]);
 
         $user = new User();

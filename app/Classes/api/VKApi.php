@@ -4,6 +4,7 @@
 namespace App\Classes\Api;
 
 
+use Illuminate\Support\Facades\Log;
 use VK\Client\Enums\VKLanguage;
 use VK\Client\VKApiClient;
 
@@ -25,10 +26,24 @@ class VKApi implements iCitiesAndCountriesAPI
 
     }
 
-    public function cities($country): array
+    public function cities($country, $region=null, $query=''): array
     {
+        $attributes = ["country_id" => $country, "need_all" => 0];
+        if($region !== null && $region !== 'null' && $region !== '') {
+            $attributes['region_id'] = $region;
+        }
+        if($query !== '' && $query !== 'null') {
+            $attributes['q'] = $query;
+        }
         return $this->vk->database()->getCities(env("VK_SERVICE_KEY"),
-            ["country_id" => $country, "need_all" => 0]
+            $attributes
+        )["items"];
+    }
+
+    public function regions($country): array
+    {
+        return $this->vk->database()->getRegions(env("VK_SERVICE_KEY"),
+            ["country_id" => $country]
         )["items"];
     }
 }

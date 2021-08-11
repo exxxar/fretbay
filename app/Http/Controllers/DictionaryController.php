@@ -12,6 +12,7 @@ use App\Classes\MapBoxAPIManager;
 
 use App\Models\ObjectCategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 class DictionaryController extends Controller
 {
@@ -66,14 +67,22 @@ class DictionaryController extends Controller
         return response()->json($this->cars->getAPI()->getModels($categoryId, $markId));
     }
 
-    public function getCountries()
+    public function getCountries($lang = 'en')
     {
+        App::setLocale($lang);
         return response()->json($this->citiesAndCountries->getAPI()->countries());
     }
 
-    public function getCities($country)
+    public function getRegions($country,$lang = 'en')
     {
-        return response()->json($this->citiesAndCountries->getAPI()->cities($country));
+        App::setLocale($lang);
+        return response()->json($this->citiesAndCountries->getAPI()->regions($country));
+    }
+
+    public function getCities($country, $region=null,$lang = 'en', $query = '')
+    {
+        App::setLocale($lang);
+        return response()->json($this->citiesAndCountries->getAPI()->cities($country, $region, $query));
     }
 
     public function getMathDist(float $fA, float $lA, float $fB, float $lB)
