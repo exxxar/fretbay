@@ -15,6 +15,12 @@
                 <a class="nav-link" id="vehicle-tab" data-toggle="tab" href="#vehicles" role="tab" aria-controls="vehicles" aria-selected="false">Vehicles</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" id="favorites-tab" data-toggle="tab" href="#favorites" role="tab" aria-controls="favorites" aria-selected="false">Favorites</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="notifications-tab" data-toggle="tab" href="#notifications" role="tab" aria-controls="notifications" aria-selected="false">Notifications</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false">Settings</a>
             </li>
         </ul>
@@ -30,6 +36,14 @@
             </div>
             <div class="tab-pane fade" id="vehicles" role="tabpanel" aria-labelledby="vehicles-tab">
                 <profile-my-vehicles-page/>
+            </div>
+
+            <div class="tab-pane fade" id="favorites" role="tabpanel" aria-labelledby="favorites-tab">
+                <favorites-page/>
+            </div>
+
+            <div class="tab-pane fade" id="notifications" role="tabpanel" aria-labelledby="notifications-tab">
+                <notifications-page/>
             </div>
 
             <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="settings-tab">

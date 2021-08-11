@@ -77,7 +77,7 @@ Route::get("/storage/listings/{dir}/{name}", function ($dir, $name) {
 });
 
 Route::view("/", "desktop.pages.index")->name("desktop.index");
-Route::view("/find-loads", "desktop.pages.find-loads")->name("desktop.find-loads");
+
 
 Route::view("/pricing", "desktop.pages.pricing")->name("desktop.pricing");
 Route::view("/find-transporter", "desktop.pages.find-transporter")->name("desktop.find-transporter");
@@ -124,6 +124,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get("/profile/{id}", "UserController@profile");
 });
 
+Route::view("/find-loads", "desktop.pages.find-loads")
+    ->middleware(['auth', 'role:transporter'])
+    ->name("desktop.find-loads");
 
 Route::group(['middleware' => ['auth', 'role:transporter'], "prefix" => "transporter"], function () {
     Route::group(["prefix" => "profile"], function () {

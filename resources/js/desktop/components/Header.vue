@@ -33,7 +33,7 @@
 
                             <!--  Request a quote -->
                             <li class="nav-item hs-has-mega-menu u-header__nav-item">
-                                <a href="/find-transporter" class="nav-link u-header__nav-link">
+                                <a href="/find-transporter" class="nav-link u-header__nav-link" >
                                     Request a quote
                                 </a>
                             </li>
@@ -41,8 +41,8 @@
                             <!-- End  Request a quote -->
 
                             <!--  Find loads -->
-                            <li class="nav-item hs-has-mega-menu u-header__nav-item">
-                                <a href="/find-loads" class="nav-link u-header__nav-link">
+                            <li class="nav-item hs-has-mega-menu u-header__nav-item" v-if="user">
+                                <a href="/find-loads" class="nav-link u-header__nav-link" v-if="user.is_transporter">
                                     Find loads
                                 </a>
                             </li>
@@ -55,7 +55,7 @@
                                     Helps
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="/find-loads">I am a transporter</a>
+                                    <a class="dropdown-item" href="/find-loads" v-if="!user">I am a transporter</a>
                                     <a class="dropdown-item" href="/find-transporter">Search for a transporter</a>
                                     <a class="dropdown-item" href="/how-it-works">How does it work?</a>
                                     <a class="dropdown-item" href="/fequently-asked-questions">F.A.Q.</a>
@@ -64,9 +64,6 @@
                                     <a class="dropdown-item" href="/privacy">Privacy</a>
                                 </div>
                             </li>
-
-
-
 
 
                             <li class="nav-item dropdown u-header__nav-item-btn" v-if="!user">
@@ -103,7 +100,8 @@
 
                             <!-- Search -->
                             <li class="nav-item u-header__navbar-icon u-header__navbar-v-divider">
-                                <a class="btn btn-xs btn-icon btn-text-dark u-header__search-toggle" @click="toggleSearch"
+                                <a class="btn btn-xs btn-icon btn-text-dark u-header__search-toggle"
+                                   @click="toggleSearch"
                                    role="button" aria-haspopup="true" aria-expanded="false" aria-controls="search"
                                    data-unfold-target="#search" data-unfold-hide-on-scroll="false"
                                    data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300"

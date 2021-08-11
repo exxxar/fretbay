@@ -149,6 +149,7 @@
                 </div>
 
 
+
             </div>
         </div>
 
@@ -213,6 +214,8 @@
 </template>
 <script>
 
+
+    import mapboxgl from "mapbox-gl";
 
     export default {
         props: ["listing"],

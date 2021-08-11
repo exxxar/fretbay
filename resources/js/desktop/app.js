@@ -65,8 +65,6 @@ Vue.component('favorites-paginate-component', require('./components/FavoritePagi
 Vue.component('text-callback-form-component', require('./components/TextCallbackForm.vue').default);
 Vue.component('voice-callback-form-component', require('./components/VoiceCallbackForm.vue').default);
 
-Vue.component('header-customer-profile-component', require('../desktop/components/HeaderCustomerProfile.vue').default);
-Vue.component('header-transporter-profile-component', require('../desktop/components/HeaderTransporterProfile.vue').default);
 Vue.component('latest-transactions-component', require('../desktop/components/LatestTransactions.vue').default);
 Vue.component('top-movers-component', require('../desktop/components/TopMovers.vue').default);
 Vue.component('modals-component', require('../desktop/components/Modals.vue').default);

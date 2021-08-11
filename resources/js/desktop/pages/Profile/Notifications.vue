@@ -1,10 +1,9 @@
 <template>
     <main id="content">
         <!-- Description Section -->
-        <div class="container space-1 space-3--md">
+        <div class="container space-1">
             <div class="row">
                 <div class="col-12">
-                    <h2>Notifications</h2>
                     <notification-item-component :key="item.id" :item="item" v-for="item in notifications"/>
                 </div>
                 <div class="col-12 mt-2">

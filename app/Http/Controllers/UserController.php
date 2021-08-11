@@ -155,7 +155,12 @@ class UserController extends Controller
     public function profile(Request $request, $id)
     {
         $user = User::withTrashed()->find($id);
+
+        if (is_null($user))
+            return view("errors.404");
+
         $profile = Profile::with(['vehicles'])->find($user->profile_id);
+
         $categories = [];
         if($profile->transport_specialities !== null) {
             $categories = ObjectCategory::whereIn('id', $profile->transport_specialities)->get();

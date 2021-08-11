@@ -9,7 +9,7 @@
                     <small style="color:lightgray;">Results {{favorites.length}}</small>
 
 
-                    <listing-item-component :listing="favorite.listing" v-for="favorite in favorites" v-if="favorite"/>
+                    <listing-item-component :listing="favorite.listing" :key="favorite.id" v-for="favorite in favorites" v-if="favorite"/>
 
 
                     <div class="mb-9"></div>

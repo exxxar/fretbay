@@ -21,11 +21,6 @@
                     </ul>
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                            <div class="text-container">
-                                <p>Center: {{ center }}</p>
-                                <p>Zoom: {{ zoom }}</p>
-                            </div>
-
                             <div id="map"></div>
 
                             <quotes-component :notfound="true"/>
@@ -86,7 +81,7 @@
         },
         mounted() {
             // create the map after the component is mounted
-            this.createMap();
+
 
             console.log("listing_id=>", this.listing_id)
             this.loadListing();
@@ -98,7 +93,10 @@
                 axios.get(`/api/listing/${this.listing_id}`).then(resp => {
                     this.listing = resp.data
 
-                    console.log(this.listing)
+                    console.log("current listing",this.listing)
+
+
+                    this.createMap();
                 })
             },
             createMap() {
@@ -108,43 +106,28 @@
                 var geojson = {
                     'type': 'FeatureCollection',
                     'features': [
-                        {
-                            'type': 'Feature',
-                            'geometry': {
-                                'type': 'Point',
-                                'coordinates': [-77.032, 38.913]
-                            },
-                            'properties': {
-                                'title': 'Mapbox',
-                                'description': 'Washington, D.C.'
-                            }
-                        },
-                        {
-                            'type': 'Feature',
-                            'geometry': {
-                                'type': 'Point',
-                                'coordinates': [-122.414, 37.776]
-                            },
-                            'properties': {
-                                'title': 'Mapbox',
-                                'description': 'San Francisco, California'
-                            }
-                        }
+                        this.listing.place_of_loading,
+                        this.listing.place_of_delivery
                     ]
                 };
 
                 var map = new mapboxgl.Map({
                     container: 'map',
                     style: 'mapbox://styles/mapbox/outdoors-v11',
-                    center: [-96, 37.8],
-                    zoom: 3
+                    center:  this.listing.place_of_loading.center,
+                    zoom: 5
                 });
 
+
+
 // add markers to map
-                geojson.features.forEach(function (marker) {
+                geojson.features.forEach( (marker, index) => {
 // create a HTML element for each feature
                     var el = document.createElement('div');
-                    el.className = 'marker';
+                    el.className = 'marker '+(index===0?"marker_a":"marker_b");
+                    el.innerHTML = index===0?"A":"B";
+
+
 
 // make a marker for each feature and add it to the map
                     new mapboxgl.Marker(el)
@@ -395,11 +378,10 @@
 
 
     #map {
-        height: 400px;
+        height: 500px;
         width: 100%;
-        max-width: 600px;
         margin: 0 auto;
-        border: 1px solid darkgrey;
+        border: none;
     }
 
     .text-container {
@@ -418,6 +400,25 @@
         height: 50px;
         border-radius: 50%;
         cursor: pointer;
+       // border:2px #000089 solid;
+       // box-shadow: 2px 2px 2px 0px solid;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size:16px;
+        background-color: rgba(244, 244, 244, 0.16);
+        font-weight:bold;
+
+        &.marker_a {
+
+            color: #00006c;
+            border:2px #00006c solid;
+        }
+
+        &.marker_b {
+            border:2px #ad1200 solid;
+            color: #ad1200;
+        }
     }
 
     .mapboxgl-popup {

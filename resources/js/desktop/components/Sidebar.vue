@@ -55,7 +55,7 @@
                                 <li>
                                     <a class="media align-items-center u-sidebar--panel__link py-2 px-5"
                                        :href="profileLink">
-                                        <img class="max-width-3 mr-3" src="/assets/svg/components/finance-dark-icon.svg"
+                                        <img class="max-width-3 mr-3" src="/assets/svg/components/id-card-regular.svg"
                                              alt="Image Description">
                                         <div class="media-body">
                                             <span>Profile</span>
