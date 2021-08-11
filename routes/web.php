@@ -99,7 +99,7 @@ Route::view("/fraud-prevention", "desktop.pages.fraud-prevention")->name("deskto
 Route::view("/register", "desktop.pages.register")->name("desktop.register");
 Route::view("/register-transporter", "desktop.pages.register-transporter")->name("desktop.register-transporter");
 Route::view("/register-customer", "desktop.pages.register-customer")->name("desktop.register-customer");
-Route::view("/profile-personal-info", "desktop.pages.profile.profile-personal-info")->name("desktop.profile-personal-info");
+//Route::view("/profile-personal-info", "desktop.pages.profile.profile-personal-info")->name("desktop.profile-personal-info");
 Route::view("/activity-listing", "desktop.pages.profile.customer.activity-listing")->name("desktop.activity-listing");
 
 
@@ -121,7 +121,9 @@ Route::group(['middleware' => 'auth'], function () {
         ]);
     });
     Route::post('/auth/user/changePassword', "UserController@changePassword");
+    Route::get("/profile/{id}", "UserController@profile");
 });
+
 
 Route::group(['middleware' => ['auth', 'role:transporter'], "prefix" => "transporter"], function () {
     Route::group(["prefix" => "profile"], function () {

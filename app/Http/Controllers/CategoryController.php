@@ -6,6 +6,8 @@ use App\Models\ObjectCategory;
 use App\Http\Requests\CategoryStoreRequest;
 use App\Http\Requests\CategoryUpdateRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Session;
 
 class CategoryController extends Controller
 {
@@ -13,9 +15,9 @@ class CategoryController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index(Request $request, $lang='en')
     {
-
+        App::setLocale($lang);
         if ($request->ajax()) {
             $categories = ObjectCategory::with(['subcategories', 'things', 'properties'])
 //                ->where('additional_menu_title', 'choice_of_category')

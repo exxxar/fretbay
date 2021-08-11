@@ -15969,7 +15969,7 @@ button:focus {
 @media (min-width: 992px) {
     .u-header--sticky-top-lg,
     .u-header--sticky-bottom-lg {
-        position: fixed;
+        position: sticky;
     }
     .u-header--sticky-top-lg {
         bottom: auto;

@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
-use Spatie\Translatable\HasTranslations;
+//use Spatie\Translatable\HasTranslations;
+use App\Traits\HasTranslations;
 
 class ObjectCategory extends Model
 {

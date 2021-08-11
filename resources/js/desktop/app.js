@@ -196,6 +196,9 @@ Vue.use(require('vue-moment'), {
     moment
 });
 
+import Multiselect from 'vue-multiselect'
+Vue.component('multiselect', Multiselect);
+import "vue-multiselect/dist/vue-multiselect.min.css"
 
 const app = new Vue({
     store,
@@ -208,7 +211,7 @@ if (localStorage.getItem('locale')) {
     app.$moment.locale(localStorage.getItem('locale'));
     localize(localStorage.getItem('locale'));
 } else {
-    localStorage.setItem('locale', 'en')
+    localStorage.setItem('locale', 'en');
     app.$lang.setLocale('en');
     app.$moment.locale('en');
     localize('en');

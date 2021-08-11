@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ObjectCategory;
 use App\Models\Profile;
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Hash;
+use TCG\Voyager\Models\Category;
 use VK\Actions\Auth;
 
 class UserController extends Controller
@@ -147,5 +150,40 @@ class UserController extends Controller
         return response()->json([
             "message" => "Something went wrong"
         ], 400);
+    }
+
+    public function profile(Request $request, $id)
+    {
+        $user = User::withTrashed()->find($id);
+        $profile = Profile::with(['vehicles'])->find($user->profile_id);
+        $categories = [];
+        if($profile->transport_specialities !== null) {
+            $categories = ObjectCategory::whereIn('id', $profile->transport_specialities)->get();
+        }
+        $info = (object)[];
+        $info->avatar = $user->avatar;
+        $info->name = $user->name;
+        $info->created_at = $user->created_at;
+        $info->payment_methods = $profile->payment_methods;
+        if($profile->payment_methods === null) {
+            $info->payment_methods = [];
+        }
+        $info->transport_specialities = $categories;
+        $info->spoken_languages = $profile->spoken_languages;
+        if($profile->spoken_languages === null) {
+            $info->spoken_languages = [];
+        }
+        $info->country = $profile->country;
+        $info->region = $profile->region;
+        $info->first_name = $profile->first_name;
+        $info->second_name = $profile->second_name;
+        $info->company_name = $profile->company_name;
+        $info->about_company = $profile->about_company;
+        $info->additional_service = $profile->additional_service;
+        $info->vehicles = $profile->vehicles;
+        $info->vehicles_count = $profile->vehicles->count();
+        $info->is_approved = $profile->is_approved;
+
+        return view("desktop.pages.profile.profile-personal-info", compact("info"));
     }
 }

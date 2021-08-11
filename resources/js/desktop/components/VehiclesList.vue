@@ -1,0 +1,470 @@
+<template>
+    <div>
+        <!-- Modal -->
+        <div class="modal fade" id="add-vehicle" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="newVehicleModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <ValidationObserver v-slot="{invalid}">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="from-group">
+                                        <label class="text-lg">Type</label>
+                                        <div class="custom-select-menu">
+                                            <div class="form-group">
+                                                <select class="form-select form-control form-control-empty input-lg" aria-label="Type select" v-model="new_vehicle.type">
+                                                    <option value="Car">Car</option>
+                                                    <option value="Van">Van</option>
+                                                    <option value="Truck without tailgate">Truck without tailgate</option>
+                                                    <option value="Truck with tailgate">Truck with tailgate</option>
+                                                    <option value="5T Truck">5T Truck</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="from-group">
+                                        <label for="brand" class="text-lg">Brand</label>
+                                        <ValidationProvider name="Brand" rules="required" v-slot="{ errors }">
+                                            <input id="brand" type="text"
+                                                   v-model="new_vehicle.brand" class="form-control form-control-empty input-lg">
+                                        </ValidationProvider>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="from-group">
+                                        <label for="model" class="text-lg">Model</label>
+                                        <ValidationProvider name="Model" rules="required" v-slot="{ errors }">
+                                            <input id="model" type="text"
+                                                   v-model="new_vehicle.model" class="form-control form-control-empty input-lg">
+                                        </ValidationProvider>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="from-group">
+                                        <label for="plate_number" class="text-lg">Plate number</label>
+                                        <ValidationProvider name="Plate number" rules="required" v-slot="{ errors }">
+                                            <input id="plate_number" type="text"
+                                                   v-model="new_vehicle.plate_number" class="form-control form-control-empty input-lg">
+                                        </ValidationProvider>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="from-group">
+                                        <label for="cubing" class="text-lg">Cubing</label>
+                                        <ValidationProvider name="Cubing" rules="required|numeric" v-slot="{ errors }">
+                                            <input id="cubing" type="text"
+                                                   v-model="new_vehicle.cubing" class="form-control form-control-empty input-lg">
+                                        </ValidationProvider>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="from-group">
+                                        <label for="total_laden_weight" class="text-lg">Total laden weight</label>
+                                        <ValidationProvider name="Plate number" rules="required|numeric" v-slot="{ errors }">
+                                            <input id="total_laden_weight" type="text"
+                                                   v-model="new_vehicle.total_laden_weight" class="form-control form-control-empty input-lg">
+                                        </ValidationProvider>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <!--                                    <upload-file v-model="image"></upload-file>-->
+                                    <label class="text-lg">Upload images</label>
+                                    <!--                                    todo: rule to check number of files-->
+                                    <ValidationProvider name="Images" rules="required" v-slot="{ errors }">
+                                        <multi-upload-files ref="new_upload" :files="new_vehicle.images">
+                                            <template v-slot:uploadButton>
+                                                <button class="btn btn-primary w-100" @click="startNewUpload">Click to upload</button>
+                                            </template>
+                                        </multi-upload-files>
+                                    </ValidationProvider>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-outline-blue" data-dismiss="modal" :disabled="loading">Close</button>
+                                <button class="btn btn-primary vehicle-save-button" :disabled="invalid||loading" @click="createVehicle">
+                                    <span v-if="loading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                    Save
+                                </button>
+                            </div>
+                        </ValidationObserver>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="edit-vehicle" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="editVehicleModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <ValidationObserver v-slot="{invalid}">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="from-group">
+                                        <label class="text-lg">Type</label>
+                                        <div class="custom-select-menu">
+                                            <div class="form-group">
+                                                <select class="form-select form-control form-control-empty input-lg" aria-label="Type select" v-model="edit_vehicle.type">
+                                                    <option value="Car">Car</option>
+                                                    <option value="Van">Van</option>
+                                                    <option value="Truck without tailgate">Truck without tailgate</option>
+                                                    <option value="Truck with tailgate">Truck with tailgate</option>
+                                                    <option value="5T Truck">5T Truck</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="from-group">
+                                        <label for="edit_brand" class="text-lg">Brand</label>
+                                        <ValidationProvider name="Brand" rules="required" v-slot="{ errors }">
+                                            <input id="edit_brand" type="text"
+                                                   v-model="edit_vehicle.brand" class="form-control form-control-empty input-lg">
+                                        </ValidationProvider>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="from-group">
+                                        <label for="edit_model" class="text-lg">Model</label>
+                                        <ValidationProvider name="Model" rules="required" v-slot="{ errors }">
+                                            <input id="edit_model" type="text"
+                                                   v-model="edit_vehicle.model" class="form-control form-control-empty input-lg">
+                                        </ValidationProvider>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="from-group">
+                                        <label for="edit_plate_number" class="text-lg">Plate number</label>
+                                        <ValidationProvider name="Plate number" rules="required" v-slot="{ errors }">
+                                            <input id="edit_plate_number" type="text"
+                                                   v-model="edit_vehicle.plate_number" class="form-control form-control-empty input-lg">
+                                        </ValidationProvider>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="from-group">
+                                        <label for="edit_cubing" class="text-lg">Cubing</label>
+                                        <ValidationProvider name="Cubing" rules="required|numeric" v-slot="{ errors }">
+                                            <input id="edit_cubing" type="text"
+                                                   v-model="edit_vehicle.cubing" class="form-control form-control-empty input-lg">
+                                        </ValidationProvider>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="from-group">
+                                        <label for="edit_total_laden_weight" class="text-lg">Total laden weight</label>
+                                        <ValidationProvider name="Plate number" rules="required|numeric" v-slot="{ errors }">
+                                            <input id="edit_total_laden_weight" type="text"
+                                                   v-model="edit_vehicle.total_laden_weight" class="form-control form-control-empty input-lg">
+                                        </ValidationProvider>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <label class="text-lg">Upload images</label>
+                                    <ValidationProvider name="Images" rules="required" v-slot="{ errors }">
+                                        <div class="row w-100 mx-auto mb-2">
+
+                                            <!--                                            <div v-for="(file, key) in edit_vehicle.images" class="col-md-4 col-sm-6 col-12">-->
+                                            <!--                                                <div class="card">-->
+                                            <!--                                                    <div class="card-body px-md-2 text-center">-->
+                                            <!--                                                        <img class="preview mx-auto" v-lazy="file"-->
+                                            <!--                                                             style="width:100%; max-height:300px; object-fit: cover;" alt="">-->
+                                            <!--                                                        <button class="btn btn-outline-blue mt-2 mx-auto w-100" v-on:click="removeFile(key)">Remove</button>-->
+                                            <!--                                                    </div>-->
+                                            <!--                                                </div>-->
+                                            <!--                                            </div>-->
+                                            <multi-upload-files ref="edit_upload" :files="new_images">
+                                                <template v-slot:uploadButton>
+                                                    <button class="btn btn-primary w-100" @click="startUpload">Click to upload</button>
+                                                </template>
+                                                <template v-slot:filesListAdditional>
+                                                    <div v-for="(file, key) in edit_vehicle.images" class="col-md-4 col-sm-6 col-6 px-1 px-sm-2">
+                                                        <div class="card my-2">
+                                                            <img class="card-img-top preview mx-auto" v-lazy="file"
+                                                                 style="width:100%; height:150px; object-fit: cover;" alt="">
+                                                            <div class="card-body px-md-2 text-center">
+                                                                <button class="btn btn-outline-blue mt-2 mx-auto w-100" v-on:click="removeFile(key)">Remove</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </template>
+                                            </multi-upload-files>
+                                        </div>
+                                    </ValidationProvider>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-outline-blue" data-dismiss="modal" :disabled="loading">Close</button>
+                                <button class="btn btn-primary vehicle-save-button" :disabled="invalid||loading" @click="saveVehicle">
+                                    <span v-if="loading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                    Save
+                                </button>
+                            </div>
+                        </ValidationObserver>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row w-100 mx-auto pb-3 pt-3">
+            <div class="col-12 d-flex justify-content-center flex-column align-items-center">
+    <!--            <h2>Your vehicles</h2>-->
+    <!--            <a  data-toggle="modal" data-target="#add-vehicle" style="width: 200px;" href="#">-->
+    <!--                <img class="add-vehicle-icon"-->
+    <!--                     src="https://fretbay.com/fr/frv2/assets/images/common/icons/general/add-vehicle.svg" alt="">-->
+    <!--            </a>-->
+                <slot name="TopAddButton" v-if="buttonPosition=='top'">
+                    <button data-toggle="modal" data-target="#add-vehicle" class="text-center btn btn-primary mt-3">
+                        Add a vehicle
+                    </button>
+                </slot>
+            </div>
+            <div class="col-12 justify-content-center align-items-center">
+                <div class="row mx-auto w-100" v-for="(vehicle, index) in vehicles">
+                    <div class="card w-100 h-100 my-2">
+                        <div class="card-body">
+                            <div class="row mx-auto w-100 align-items-center text-center">
+                                <div class="col-12 col-sm-6 col-md-2 px-0 px-sm-1 px-md-2">
+                                    <img v-if="vehicle.images[0]" v-lazy="vehicle.images[0]" alt="Vehicle" class="rounded-circle" style="width: 100px; height: 100px; object-fit: cover">
+                                    <img v-else v-lazy="" alt="Vehicle" class="rounded-circle" style="width: 100px; height: 100px; object-fit: cover">
+                                </div>
+                                <div class="col-12 col-sm-6 col-md-2 px-0 px-sm-1 px-md-2">
+                                    <p class="d-flex inform-box mb-0 justify-content-center">Brand</p>
+                                    {{vehicle.brand}}
+                                </div>
+                                <div class="col-6 col-md-1 px-0 px-sm-1 px-md-2">
+                                    <p class="d-flex inform-box mb-0 justify-content-center">Model</p>
+                                    {{vehicle.model}}
+                                </div>
+                                <div class="col-6 col-md-2 px-0 px-sm-1 px-md-2">
+                                    <p class="d-flex inform-box mb-0 justify-content-center">Plate number</p>
+                                    {{vehicle.plate_number}}
+                                </div>
+                                <div class="col-6 col-md-2 px-0 px-sm-1 px-md-2">
+                                    <p class="d-flex inform-box mb-0 justify-content-center">Total laden weight</p>
+                                    {{vehicle.total_laden_weight}}
+                                </div>
+                                <div class="col-6 col-md-1 px-0 px-sm-1 px-md-2">
+                                    <p class="d-flex inform-box mb-0 justify-content-center">Cubing</p>
+                                    {{vehicle.cubing}}
+                                </div>
+                                <div class="col-12 col-md-2">
+                                    <div class="row w-100 mx-auto mt-2 justify-content-center">
+                                        <!--                                        data-toggle="modal" data-target="#edit-vehicle"-->
+                                        <button class="btn btn-outline-blue m-1" @click="editVehicle(vehicle.id)"><i class="fa fa-pen"></i></button>
+                                        <button class="btn btn-outline-blue m-1" @click="deleteVehicle(vehicle.id)"><i class="fa fa-trash"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 justify-content-center align-items-center">
+                <slot name="BottomAddButton" v-if="buttonPosition=='bottom'">
+                    <button data-toggle="modal" data-target="#add-vehicle" class="text-center btn btn-primary mt-3">
+                        Add a vehicle
+                    </button>
+                </slot>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+    import MultiUploadFiles from "./MultiUploadFiles";
+    export default {
+        name: "VehiclesList",
+        components:{MultiUploadFiles},
+        props:{
+            buttonPosition: {
+                type: String,
+                default: 'top'
+            }
+        },
+        data() {
+            return {
+                new_vehicle : {
+                    type:'',
+                    brand:'',
+                    model:'',
+                    plate_number:'',
+                    total_laden_weight:'',
+                    cubing:'',
+                    images:[],
+                },
+                edit_vehicle : {
+                    type:'',
+                    brand:'',
+                    model:'',
+                    plate_number:'',
+                    total_laden_weight:'',
+                    cubing:'',
+                    images:[],
+                },
+                new_images:[],
+                deleted_images:[],
+                loading: false
+            }
+        },
+        computed: {
+            user() {
+                return this.$store.getters.user
+            },
+            vehicles() {
+                return this.$store.getters.vehicles;
+            },
+            profile() {
+                return this.$store.getters.profile
+            },
+        },
+        created() {
+            if(this.user=='')
+            {
+                this.$store.dispatch('getUser');
+            }
+        },
+        methods: {
+            async save(key, value) {
+                await axios.post("/profile/save", {id:this.profile.id, key: key, value: value})
+                    .then(resp => {
+                        this.$store.dispatch('setProfile', resp.data.profile);
+                    }).catch(function (error) {
+                        console.log(error);
+                    });
+            },
+            async getVehicles() {
+                await axios.get('/transporter/vehicles/get').then(resp => {
+                    this.$store.dispatch('setProfile', resp.data.profile);
+                }).catch(function (error) {
+                    console.log(error);
+                });
+            },
+            async createVehicle() {
+                this.loading=true;
+                let formData = new FormData();
+                formData.append('profile_id', this.profile.id);
+                let key;
+                for (key in this.new_vehicle) {
+                    if(key !== 'images') {
+                        formData.append(key, this.new_vehicle[key]);
+                    }
+                    else {
+                        for (var i = 0; i < this.new_vehicle.images.length; i++) {
+                            formData.append('files[' + i + ']', this.new_vehicle.images[i]);
+                        }
+                    }
+                }
+
+                await axios.post("/transporter/profile/vehicle/create", formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                })
+                    .then(resp => {
+                        this.$store.dispatch('addVehicle', resp.data.vehicle);
+                        $("#add-vehicle").modal("hide");
+                        this.loading = false;
+                        this.new_vehicle = {
+                            type:'',
+                            brand:'',
+                            model:'',
+                            plate_number:'',
+                            total_laden_weight:'',
+                            cubing:'',
+                            images:[],
+                        };
+                    }).catch(error => {
+                        console.log(error);
+                        this.loading = false;
+                    });
+            },
+            async saveVehicle() {
+                this.loading = true;
+                let formData = new FormData();
+                formData.append('id', this.edit_vehicle.id);
+                formData.append('vehicle', JSON.stringify(this.edit_vehicle));
+                for (var i = 0; i < this.new_images.length; i++) {
+                    let file = this.new_images[i];
+                    formData.append('new_files[' + i + ']', file);
+                }
+                formData.append('deleted_files', JSON.stringify(this.deleted_images));
+                await axios.post("/transporter/profile/vehicle/edit", formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                })
+                    .then(resp => {
+                        this.$store.dispatch('setVehicle', resp.data.vehicle);
+                        this.loading = false;
+                        this.edit_vehicle = {
+                            type:'',
+                            brand:'',
+                            model:'',
+                            plate_number:'',
+                            total_laden_weight:'',
+                            cubing:'',
+                            images:[],
+                        };
+                        $("#edit-vehicle").modal("hide");
+                    }).catch(error => {
+                        console.log(error);
+                        this.loading = false;
+                    });
+            },
+            editVehicle(id) {
+                let index = this.vehicles.findIndex(item => item.id === id);
+                this.edit_vehicle.id = id;
+                this.edit_vehicle.type = this.vehicles[index].type;
+                this.edit_vehicle.brand = this.vehicles[index].brand;
+                this.edit_vehicle.model = this.vehicles[index].model;
+                this.edit_vehicle.plate_number = this.vehicles[index].plate_number;
+                this.edit_vehicle.total_laden_weight = this.vehicles[index].total_laden_weight;
+                this.edit_vehicle.cubing = this.vehicles[index].cubing;
+                this.edit_vehicle.images = [];
+                this.new_images=[];
+                this.deleted_images=[];
+                this.vehicles[index].images.forEach( item =>{
+                    this.edit_vehicle.images.push(item);
+                })
+                $("#edit-vehicle").modal("show");
+            },
+            async deleteVehicle(id) {
+                this.loading = true;
+                await axios.delete("/transporter/profile/vehicle/delete/"+id)
+                    .then(resp => {
+                        this.$store.dispatch('removeVehicle', id);
+                        this.loading = false;
+                    }).catch(error => {
+                        console.log(error);
+                        this.loading = false;
+                    });
+            },
+            removeFile(key) {
+                this.deleted_images.push(this.edit_vehicle.images[key]);
+                this.edit_vehicle.images.splice(key, 1)
+            },
+            startUpload() {
+                this.$refs.edit_upload.startUpload();
+            },
+            startNewUpload() {
+                this.$refs.new_upload.startUpload();
+            }
+        }
+    }
+</script>
+
+<style scoped>
+
+</style>

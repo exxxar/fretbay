@@ -2,6 +2,13 @@ const state = {
     user: '',
     vehicles:[],
     documents:{},
+    first_activation_steps: JSON.parse(localStorage.getItem("first_activation_steps")) || {
+        step1:false,
+        step2:false,
+        step3:false,
+        step4:false,
+        step5:false,
+    }
 };
 
 // getters
@@ -17,6 +24,9 @@ const getters = {
     },
     profile: (state, getters, rootState) => {
         return state.user.profile;
+    },
+    first_activation_steps: (state, getters, rootState) => {
+        return state.first_activation_steps;
     },
 };
 
@@ -62,7 +72,7 @@ const actions = {
 
     setDocuments({state, commit}, payload) {
         commit('setDocuments', payload);
-    }
+    },
     // async saveUser({state, commit}, param) {
     //     return axios
     //         .put(`/listing/${param.id}`, {
@@ -70,6 +80,9 @@ const actions = {
     //             value: param.value
     //         });
     // },
+    setStep({state, commit}, payload) {
+        commit('setStep', payload);
+    }
 }
 
 // mutations
@@ -207,6 +220,11 @@ const mutations = {
                 is_created: false
             }
         }
+    },
+
+    setStep(state, payload) {
+        state.first_activation_steps[payload.key] = payload.value;
+        localStorage.setItem("first_activation_steps", JSON.stringify(state.first_activation_steps));
     },
 }
 

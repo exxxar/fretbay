@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Profile;
 use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -82,9 +83,13 @@ class LoginController extends Controller
             return redirect()->route("login")->withErrors(['Bad credentials']);
 
         $user = $request->user();
-
-        if ($user->hasRole("transporter"))
-            return redirect()->route("transporter-account");
+        if ($user->hasRole("transporter")) {
+            $profile = Profile::find($user->profile_id);
+            if($profile->is_first_activation == false) {
+                return redirect()->route("transporter-account");
+            }
+            return redirect()->route("desktop.profile-transporter-wizard-start");
+        }
 
 
         if ($user->hasRole("admin"))

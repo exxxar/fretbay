@@ -66,6 +66,9 @@
                             </li>
 
 
+
+
+
                             <li class="nav-item dropdown u-header__nav-item-btn" v-if="!user">
                                 <a class="btn btn-primary dropdown-toggle" href="#" id="signupDropdown"
                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -93,16 +96,14 @@
                                     {{currentLocale}}
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
-                                    <a class="dropdown-item" v-for="lang in langOptions"
-                                       :href="'/locale/'+lang.countryCode">{{lang.countryName}}</a>
+                                    <a class="dropdown-item" v-for="lang in langOptions" @click="selectLang(lang.countryCode)" :href="'/locale/'+lang.countryCode">{{lang.countryName}}</a>
 
                                 </div>
                             </li>
 
                             <!-- Search -->
                             <li class="nav-item u-header__navbar-icon u-header__navbar-v-divider">
-                                <a class="btn btn-xs btn-icon btn-text-dark u-header__search-toggle"
-                                   @click="toggleSearch"
+                                <a class="btn btn-xs btn-icon btn-text-dark u-header__search-toggle" @click="toggleSearch"
                                    role="button" aria-haspopup="true" aria-expanded="false" aria-controls="search"
                                    data-unfold-target="#search" data-unfold-hide-on-scroll="false"
                                    data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300"
@@ -177,19 +178,24 @@
             user: function () {
                 return window.user;
             },
-            currentLocale: function () {
-                return this.langOptions.find(item => item.countryCode === window.locale).countryName
+            currentLocale:function(){
+                return this.langOptions.find(item=>item.countryCode===window.locale).countryName
             }
         },
         methods: {
-            toggleSearch() {
-                $("#search").toggleClass("u-unfold--hidden");
+            toggleSearch(){
+                $("#search").toggleClass("u-unfold--hidden  ");
             },
             toggleSidebar() {
                 $("#sidebar").toggleClass("u-unfold--hidden");
             },
-            selectLang(lang) {
-                window.location.href = `/locale/${lang}`
+            selectLang(lang){
+                console.log(window)
+                localStorage.setItem('locale', lang)
+                this.$lang.setLocale(lang);
+                this.$moment.locale(lang);
+                localize(lang);
+                window.location.href=`/locale/${lang}`
             },
             sendMessage(message, type = 'success') {
                 this.$notify({
