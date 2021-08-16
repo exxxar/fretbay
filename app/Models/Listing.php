@@ -83,13 +83,14 @@ class Listing extends Model
 
     public function quotes()
     {
-        return $this->hasMany(Quote::class);
+        return $this->hasMany(Quote::class, "listing_id", "id");
     }
 
     public function messages()
     {
-        return $this->hasMany(Message::class,"listing_id","id");
+        return $this->hasMany(Message::class, "listing_id", "id");
     }
+
 
     public function user()
     {

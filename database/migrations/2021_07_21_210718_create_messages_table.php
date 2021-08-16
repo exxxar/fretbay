@@ -17,6 +17,7 @@ class CreateMessagesTable extends Migration
             $table->id();
             $table->string("message")->default('');
             $table->unsignedInteger("sender_id")->nullable();
+            $table->unsignedInteger("recipient_id")->nullable();
             $table->unsignedInteger("listing_id")->nullable();
             $table->timestamps();
         });

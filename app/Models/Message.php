@@ -12,6 +12,7 @@ class Message extends Model
     protected $fillable = [
         'listing_id',
         'sender_id',
+        'recipient_id',
         'message'
     ];
 
@@ -21,6 +22,10 @@ class Message extends Model
 
     public function sender(){
         return $this->hasOne(User::class,"id","sender_id");
+    }
+
+    public function recipient(){
+        return $this->hasOne(User::class,"id","recipient_id");
     }
 
     public function getOwnerIdAttribute(){

@@ -30,7 +30,7 @@ class ListingController extends Controller
      */
     public function index()
     {
-        $listings = Listing::with(['category', 'subcategory', 'thing','messages'])->orderByDesc('created_at')->paginate(15);
+        $listings = Listing::with(['category', 'subcategory', 'thing','messages','quotes'])->orderByDesc('created_at')->paginate(15);
         return response()->json([
             'listings' => $listings
         ]);
@@ -207,7 +207,7 @@ class ListingController extends Controller
     public function show(Request $request, $id)
     {
         if ($request->ajax())
-            return response()->json(Listing::with(['category', 'subcategory', 'thing',"messages","messages.sender","messages.sender.profile"])->where("id", $id)->first());
+            return response()->json(Listing::with(['category', 'subcategory', 'thing', "quotes","messages","messages.sender","messages.sender.profile"])->where("id", $id)->first());
 
         return view("desktop.pages.listing", compact("id"));
     }
@@ -271,12 +271,13 @@ class ListingController extends Controller
                 "message"=>"User error!"
             ],400);
 
-        $listing_id = $request->listing_id;
+        $listing = Listing::where("id",$request->listing_id)->first();
+
+
         $sender_id = Auth::user()->id;
 
         $message = $request->message;
 
-        $listing = Listing::where("id", $listing_id)->first();
 
         if (is_null($listing))
             return response()->json([
@@ -287,8 +288,9 @@ class ListingController extends Controller
 
         Message::create([
             "message" => $message,
-            "listing_id" => $listing_id,
-            "sender_id" => $sender->id
+            "listing_id" => $listing->id,
+            "sender_id" => $sender->id,
+            "recipient_id"=>$listing->user_id
         ]);
 
         return response()->noContent();

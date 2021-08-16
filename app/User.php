@@ -3,7 +3,9 @@
 namespace App;
 
 use App\Models\Listing;
+use App\Models\Message;
 use App\Models\Profile;
+use App\Models\Quote;
 use App\Models\Review;
 use App\Models\Favorite;
 use App\Traits\HasRolesAndPermissions;
@@ -85,6 +87,21 @@ class User extends \TCG\Voyager\Models\User
     public function favorites()
     {
         return $this->hasMany(Favorite::class,"user_id","id");
+    }
+
+    public function quotes()
+    {
+        return $this->hasMany(Quote::class, "user_id", "id");
+    }
+
+    public function outgoingMessages()
+    {
+        return $this->hasMany(Message::class, "sender_id", "id");
+    }
+
+    public function incomingMessages()
+    {
+        return $this->hasMany(Message::class, "recipient_id", "id");
     }
 
 

@@ -56,7 +56,11 @@ class Profile extends Model
 
     public function getAddressAttribute()
     {
-        return $this->country['title'] . ", " . $this->region['title'] . ", " . $this->city['title'];
+        try {
+            return $this->country['title'] . ", " . $this->region['title'] . ", " . $this->city['title'];
+        }catch(\Exception $e){
+            return '';
+        }
     }
 
     public function vehicles()

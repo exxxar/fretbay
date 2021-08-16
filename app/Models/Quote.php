@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Quote extends Model
 {
-    use SoftDeletes;
+    /*use SoftDeletes;*/
 
     /**
      * The attributes that are mass assignable.
@@ -19,6 +19,8 @@ class Quote extends Model
         'valid_until_date',
         'additional_info',
         'status',
+        'listing_id',
+        'user_id',
     ];
 
     /**
@@ -41,10 +43,10 @@ class Quote extends Model
     ];
 
 
-    public function listing()
+  /*  public function listing()
     {
         return $this->belongsTo(Listing::class);
-    }
+    }*/
 
     public function user()
     {

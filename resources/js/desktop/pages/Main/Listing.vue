@@ -21,11 +21,12 @@
                     </ul>
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <listing-item-component :listing="listing" v-if="listing"/>
                             <div id="map"></div>
-
-                            <quotes-component :notfound="true"/>
                         </div>
-                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            <quotes-component :quotes="listing.quotes" v-if="listing"/>
+                        </div>
                         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                             <chat-component :listing="listing" v-if="listing"/>
                         </div>
@@ -404,7 +405,7 @@
        // box-shadow: 2px 2px 2px 0px solid;
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
         font-size:16px;
         background-color: rgba(244, 244, 244, 0.16);
         font-weight:bold;
@@ -413,6 +414,8 @@
 
             color: #00006c;
             border:2px #00006c solid;
+
+
         }
 
         &.marker_b {
