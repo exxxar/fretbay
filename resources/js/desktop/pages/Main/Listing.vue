@@ -1,7 +1,7 @@
 <template>
     <main id="content">
         <!-- Description Section -->
-        <div class="container space-1 space-3--md">
+        <div class="container space-1 pt-5">
             <div class="row">
                 <div class="col-12">
 
@@ -153,7 +153,7 @@
     .sticky-block {
         position: -webkit-sticky;
         position: sticky;
-        top: 100px;
+       // top: 100px;
     }
 
 

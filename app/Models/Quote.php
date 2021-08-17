@@ -19,6 +19,7 @@ class Quote extends Model
         'valid_until_date',
         'additional_info',
         'status',
+        'currency',
         'listing_id',
         'user_id',
     ];
