@@ -25,7 +25,7 @@
                             <div id="map"></div>
                         </div>
                         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                            <quotes-component :quotes="listing.quotes" v-if="listing"/>
+                            <quotes-component :listing="listing" v-if="listing"/>
                         </div>
                         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                             <chat-component :listing="listing" v-if="listing"/>
@@ -45,15 +45,15 @@
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-between">
                     <li class="page-item col">
-                        <a class="page-link" href="#" tabindex="-1">Previous</a>
+                        <a class="page-link" :href="'/listing/direction/'+listing_id+'/0'" tabindex="-1">Previous</a>
                     </li>
                     <li class="page-item col">
-                        <a class="page-link" href="#">
+                        <a class="page-link" href="/find-loads">
                             <i class="fa fa-th"></i>
                         </a>
                     </li>
                     <li class="page-item col">
-                        <a class="page-link" href="#">Next</a>
+                        <a class="page-link" :href="'/listing/direction/'+listing_id+'/1'">Next</a>
                     </li>
                 </ul>
             </nav>

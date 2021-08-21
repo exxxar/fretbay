@@ -3,8 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Classes\MapBoxAPIManager;
+use App\Enums\NotificationType;
+use App\Events\NotificationEvent;
+use App\Events\NotificationEventBroadcast;
+use App\Events\NotificationQuoteEventBroadcast;
 use App\Models\Message;
 use App\Models\Listing;
+use App\Models\Quote;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -30,7 +35,7 @@ class ListingController extends Controller
      */
     public function index()
     {
-        $listings = Listing::with(['category', 'subcategory', 'thing','messages','quotes'])->orderByDesc('created_at')->paginate(15);
+        $listings = Listing::with(['category', 'subcategory', 'thing', 'messages', 'quotes'])->orderByDesc('created_at')->paginate(15);
         return response()->json([
             'listings' => $listings
         ]);
@@ -57,24 +62,24 @@ class ListingController extends Controller
         if (count($distance_range_value) > 0)
             $listings = $listings->whereBetween("distance", $distance_range_value);
 
-        if (!is_null($reference)&&$reference>0)
+        if (!is_null($reference) && $reference > 0)
             $listings = $listings->where("id", $reference);
 
         if (!is_null($region))
             $listings = $listings
-                ->where(function($query) use ($region) {
+                ->where(function ($query) use ($region) {
                     $query->orWhere('place_of_loading->id', ((object)$region)->id)
                         ->orWhere('place_of_delivery->id', ((object)$region)->id)
-                        ->orWhere('place_of_loading->context','like', "%".((object)$region)->id."%")
-                        ->orWhere('place_of_delivery->context','like', "%".((object)$region)->id."%");
+                        ->orWhere('place_of_loading->context', 'like', "%" . ((object)$region)->id . "%")
+                        ->orWhere('place_of_delivery->context', 'like', "%" . ((object)$region)->id . "%");
                 });
-                //->where("place_of_loading->id", ((object)$region)->id)
-                //->orWhere("place_of_delivery->id", ((object)$region)->id);
+        //->where("place_of_loading->id", ((object)$region)->id)
+        //->orWhere("place_of_delivery->id", ((object)$region)->id);
 
 
         if (!is_null($postal))
             $listings = $listings
-                ->where(function($query) use ($postal) {
+                ->where(function ($query) use ($postal) {
                     $query->orWhere('place_of_loading->postal', $postal)
                         ->orWhere('place_of_delivery->postal', $postal);
                 });
@@ -100,10 +105,10 @@ class ListingController extends Controller
             $listings = $listings->where("shipping_date_to", "<", $date_to)
                 ->orWhere("unshipping_date_to", "<", $date_to);
 
-       if (!is_null($address_from))
+        if (!is_null($address_from))
             $listings = $listings->where("place_of_loading->place_name", $address_from->place_name);
 
-        if (count((array)$moving_package)>0)
+        if (count((array)$moving_package) > 0)
             $listings = $listings->whereIn("moving_package", $moving_package);
 
         if (!is_null($address_to))
@@ -114,7 +119,7 @@ class ListingController extends Controller
             $listings = $listings->whereIn("category_id", $request->categories);
 
         $listings = $listings
-           // ->where("expiration_date", ">", Carbon::now())
+            // ->where("expiration_date", ">", Carbon::now())
             ->orderByDesc('created_at')->paginate(15);
 
         return response()->json([
@@ -207,7 +212,7 @@ class ListingController extends Controller
     public function show(Request $request, $id)
     {
         if ($request->ajax())
-            return response()->json(Listing::with(['category', 'subcategory', 'thing', "quotes","messages","messages.sender","messages.sender.profile"])->where("id", $id)->first());
+            return response()->json(Listing::with(['category', 'subcategory', 'thing', "quotes", "quotes.user", "quotes.user.profile", "messages", "messages.sender", "messages.sender.profile"])->where("id", $id)->first());
 
         return view("desktop.pages.listing", compact("id"));
     }
@@ -257,6 +262,125 @@ class ListingController extends Controller
         //
     }
 
+    public function sendQuote(Request $request)
+    {
+        $request->validate([
+            'price' => "required",
+            /* 'valid_until_date',*/
+            /*'additional_info',*/
+            'type_of_transport' => "required",
+            'quote_validity' => "required",
+            'formula' => "required",
+            'status' => "required",
+            'currency' => "required",
+            'listing_id' => "required",
+            'user_id' => "required",
+        ]);
+
+        $hours = [0, 6, 12, 24, 48, 96, 144];
+
+        $latestQuote = Quote::where("listing_id", $request->listing_id)
+            ->where("status", 0)
+            ->orderBy("created_at", "desc")
+            ->first();
+
+        if (!is_null($latestQuote))
+            if ($latestQuote->price < $request->price) {
+
+                event(new NotificationEvent(
+                    "#quote-" . $latestQuote->id,
+                    "Cannot make a BID! Your price biggest then actual " . $latestQuote->price . " > " . $request->price,
+                    NotificationType::Error,
+                    $latestQuote->user_id));
+
+                return response()->noContent();
+            }
+
+        $quote = Quote::create($request->all());
+        $quote->valid_until_date = Carbon::now()->addHour($hours[$request->quote_validity ?? 3]);
+        $quote->save();
+
+        if (!is_null($latestQuote)) {
+
+            $latestQuote->status = 1;
+            $latestQuote->save();
+
+            event(new NotificationEvent(
+                "#quote-" . $quote->id,
+                "Change quote status, BID expired!",
+                NotificationType::Info,
+                $latestQuote->user_id));
+
+            event(new NotificationQuoteEventBroadcast($latestQuote->user_id));
+        }
+
+        event(new NotificationEvent(
+            "#quote-" . $quote->id,
+            "Add quote to Listing",
+            NotificationType::Info,
+            Auth::user()->id));
+
+        event(new NotificationQuoteEventBroadcast(Auth::user()->id));
+
+        $listing = Listing::where("id", $request->listing_id)->first();
+
+        Message::create([
+            "message" => "Hello! My company add a quote to your Listing!",
+            "listing_id" => $listing->id,
+            "sender_id" => Auth::user()->id,
+            "recipient_id" => $listing->user_id
+        ]);
+
+        return response()->noContent();
+
+    }
+
+    public function removeQuote(Request $request)
+    {
+        $request->validate([
+            "listing_id" => "required",
+            "quote_id" => "required"
+        ]);
+
+        $user_id = Auth::user()->id;
+
+        $quote = Quote::where("id", $request->quote_id)->first();
+
+        if (is_null($quote))
+            return response()->json([
+                "message" => "Not Found"
+            ], 404);
+
+
+        if ($quote->user_id != $user_id)
+            return response()->json([
+                "message" => "You are not owner!"
+            ], 403);
+
+        $quote->status = 3;
+        $quote->save();
+
+        $latestQuote = Quote::where("listing_id", $request->listing_id)
+            ->where("status", 1)
+            ->orderBy("created_at", "desc")->first();
+        if (!is_null($latestQuote)) {
+            $latestQuote->status = 0;
+            $latestQuote->save();
+
+            event(new NotificationEvent(
+                "#quote-" . $quote->id,
+                "Your quote is ACTUAL now!",
+                NotificationType::Info,
+                $latestQuote->user_id));
+
+            event(new NotificationQuoteEventBroadcast($latestQuote->user_id));
+        }
+
+        return response()->noContent();
+
+
+    }
+
     public function sendMessage(Request $request)
     {
 
@@ -265,14 +389,12 @@ class ListingController extends Controller
             'message' => 'required'
         ]);
 
-
         if (is_null(Auth::user()->id))
             return response()->json([
-                "message"=>"User error!"
-            ],400);
+                "message" => "User error!"
+            ], 400);
 
-        $listing = Listing::where("id",$request->listing_id)->first();
-
+        $listing = Listing::where("id", $request->listing_id)->first();
 
         $sender_id = Auth::user()->id;
 
@@ -284,16 +406,35 @@ class ListingController extends Controller
                 "message" => "Bad Request"
             ], 400);
 
-        $sender = User::where("id", $sender_id)->first();
-
         Message::create([
             "message" => $message,
             "listing_id" => $listing->id,
-            "sender_id" => $sender->id,
-            "recipient_id"=>$listing->user_id
+            "sender_id" => $sender_id,
+            "recipient_id" => $listing->user_id
         ]);
 
         return response()->noContent();
+
+    }
+
+    public function goToListing($id, $direction = 1)
+    {
+        $listing = Listing::whereBetween("id", [$id - 1, $id + 1])->get();
+
+        if (count($listing) == 1)
+            return redirect()->route("desktop.listing", $listing[0]->id);
+
+        if (count($listing) == 2) {
+            return $direction == 0?
+                redirect()->route("desktop.listing", $listing[0]->id):
+                redirect()->route("desktop.listing", $listing[1]->id);
+        }
+
+        if (count($listing) == 3) {
+            return $direction == 0?
+                redirect()->route("desktop.listing", $listing[0]->id):
+                redirect()->route("desktop.listing", $listing[2]->id);
+        }
 
     }
 }

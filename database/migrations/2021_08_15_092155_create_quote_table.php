@@ -18,7 +18,10 @@ class CreateQuoteTable extends Migration
             $table->double('price')->default(0);
             $table->timestamp('valid_until_date');
             $table->json('additional_info')->nullable();
+            $table->json('formula')->nullable();
             $table->integer('status')->default(0);
+            $table->integer('type_of_transport')->default(0);
+            $table->integer('quote_validity')->default(0);
             $table->string('currency',2)->default('$');
             $table->unsignedInteger('listing_id')->nullable();
             $table->unsignedInteger('user_id')->nullable();

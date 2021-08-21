@@ -129,6 +129,10 @@ Route::view("/find-loads", "desktop.pages.find-loads")
     ->name("desktop.find-loads");
 
 Route::group(['middleware' => ['auth', 'role:transporter'], "prefix" => "transporter"], function () {
+
+    Route::post('/listing/quotes/add', 'ListingController@sendQuote');
+    Route::post('/listing/quotes/remove', 'ListingController@removeQuote');
+
     Route::group(["prefix" => "profile"], function () {
 
         Route::view("/", "desktop.pages.profile.transporter.index")->name("transporter-account");
@@ -171,6 +175,7 @@ Route::group(['middleware' => ['auth', 'role:transporter'], "prefix" => "transpo
 
 Route::group(["prefix" => "listing","middleware"=>"auth"], function () {
     Route::get("/{id}", "ListingController@show")->name("desktop.listing");
+    Route::get("/direction/{id}/{direction?}", "ListingController@goToListing")->name("desktop.direction");
     Route::post('/messages/send', 'ListingController@sendMessage');
     Route::get('/favorites/get', 'FavoriteController@index')->middleware( ['auth', 'role:transporter']);
     Route::post('/favorites/add', 'FavoriteController@store')->middleware( ['auth', 'role:transporter']);

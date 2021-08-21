@@ -33,7 +33,7 @@
 
                             <!--  Request a quote -->
                             <li class="nav-item hs-has-mega-menu u-header__nav-item">
-                                <a href="/find-transporter" class="nav-link u-header__nav-link" >
+                                <a href="/find-transporter" class="nav-link u-header__nav-link">
                                     Request a quote
                                 </a>
                             </li>
@@ -93,7 +93,8 @@
                                     {{currentLocale}}
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
-                                    <a class="dropdown-item" v-for="lang in langOptions" @click="selectLang(lang.countryCode)" :href="'/locale/'+lang.countryCode">{{lang.countryName}}</a>
+                                    <a class="dropdown-item" v-for="lang in langOptions"
+                                       @click="selectLang(lang.countryCode)" :href="'/locale/'+lang.countryCode">{{lang.countryName}}</a>
 
                                 </div>
                             </li>
@@ -176,24 +177,24 @@
             user: function () {
                 return window.user;
             },
-            currentLocale:function(){
-                return this.langOptions.find(item=>item.countryCode===window.locale).countryName
+            currentLocale: function () {
+                return this.langOptions.find(item => item.countryCode === window.locale).countryName
             }
         },
         methods: {
-            toggleSearch(){
+            toggleSearch() {
                 $("#search").toggleClass("u-unfold--hidden  ");
             },
             toggleSidebar() {
                 $("#sidebar").toggleClass("u-unfold--hidden");
             },
-            selectLang(lang){
+            selectLang(lang) {
                 console.log(window)
                 localStorage.setItem('locale', lang)
                 this.$lang.setLocale(lang);
                 this.$moment.locale(lang);
                 localize(lang);
-                window.location.href=`/locale/${lang}`
+                window.location.href = `/locale/${lang}`
             },
             sendMessage(message, type = 'success') {
                 this.$notify({
@@ -210,9 +211,14 @@
 
 
             if (this.user)
-                pusher.subscribe('notification-event-channel-' + this.user.id).bind('notification-event', (data) => {
-                    this.sendMessage("Notification")
-                });
+                pusher.subscribe('notification-event-channel-' + this.user.id)
+                    .bind('notification-event', (data) => {
+
+                        this.sendMessage(data.event.description, ["success","warning","error"][data.event.type])
+                    })
+                    .bind('notification-quote-event', (data) => {
+                        this.sendMessage("Quote update")
+                    })
 
 
         }

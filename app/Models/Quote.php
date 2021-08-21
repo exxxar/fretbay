@@ -18,6 +18,9 @@ class Quote extends Model
         'price',
         'valid_until_date',
         'additional_info',
+        'type_of_transport',
+        'quote_validity',
+        'formula',
         'status',
         'currency',
         'listing_id',
@@ -32,6 +35,10 @@ class Quote extends Model
     protected $casts = [
         'id' => 'integer',
         'price' => 'double',
+        'type_of_transport' => 'integer',
+        'quote_validity' => 'integer',
+        'status' => 'integer',
+        'formula' => 'array',
     ];
 
     /**

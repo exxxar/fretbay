@@ -7,7 +7,6 @@ use App\Events\NotificationEvent;
 use App\Models\Favorite;
 use App\Models\Listing;
 use App\Models\Notification;
-use http\Client\Curl\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 

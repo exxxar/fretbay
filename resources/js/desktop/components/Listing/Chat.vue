@@ -22,9 +22,9 @@
                                 alt="sunil">
                             </div>
                             <div class="chat_ib">
-                                <h5>{{chat.name}}<span class="chat_date">{{chat.last_message| moment("from", "now", true)}}</span>
+                                <h5>{{chat.profile.company_name || "Some company"}}<span class="chat_date">{{chat.last_message| moment("from", "now", true)}}</span>
                                 </h5>
-                                <p>{{chat.profile.about_company||'Not set'}}</p>
+                                <p>{{chat.profile.about_company||'Some company description'}}</p>
                             </div>
                         </div>
                     </div>
@@ -34,7 +34,15 @@
             <div class="mesgs">
                 <div class="msg_history">
                     <div v-for="message in filteredMessages">
-                        <div class="incoming_msg" v-if="message.sender_id===user.id">
+
+                        <div class="outgoing_msg" v-if="message.sender_id===user.id">
+                            <div class="sent_msg">
+                                <p>{{message.message}}</p>
+                                <span class="time_date"> {{message.created_at| moment("from", "now", true)}}</span>
+                            </div>
+                        </div>
+
+                        <div class="incoming_msg" v-else>
                             <div class="incoming_msg_img"><img
                                 v-lazy="'https://ptetutorials.com/images/user-profile.png'" alt="sunil">
                             </div>
@@ -43,12 +51,6 @@
                                     <p>{{message.message}}</p>
                                     <span class="time_date"> {{message.created_at| moment("from", "now", true)}}</span>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="outgoing_msg" v-else>
-                            <div class="sent_msg">
-                                <p>{{message.message}}</p>
-                                <span class="time_date"> {{message.created_at| moment("from", "now", true)}}</span>
                             </div>
                         </div>
 
@@ -93,7 +95,7 @@
                 if (!this.selected_chat_id)
                     return [];
 
-                return this.prepareMessages.filter(item => item.sender_id === this.selected_chat_id)
+                return this.prepareMessages.filter(item => item.recipient_id === this.selected_chat_id)
             },
             prepareMessages() {
 
@@ -108,12 +110,12 @@
                 let tmp_users = [];
 
                 console.log("prepared=>", this.prepareMessages)
-                this.prepareMessages.forEach(item => {
-                    if (!tmp.includes(item.sender_id)) {
-                        tmp.push(item.sender_id);
-                        let sender = item.sender
+                this.listing.quotes.forEach(item => {
+                    if (!tmp.includes(item.user_id)) {
+                        tmp.push(item.user_id);
+                        let sender = item.user
                         sender.last_message = item.created_at || new Date()
-                        tmp_users.push(item.sender)
+                        tmp_users.push(item.user)
                     }
                 })
 
@@ -149,6 +151,7 @@
                     this.messages.push({
                         "message": this.message,
                         "sender_id": this.user.id,
+                        "recipient_id": this.listing.user_id,
                         "created_at": new Date()
                     })
                     this.message = null;
