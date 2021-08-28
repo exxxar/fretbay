@@ -284,17 +284,17 @@ class ListingController extends Controller
             ->orderBy("created_at", "desc")
             ->first();
 
-        if (!is_null($latestQuote))
-            if ($latestQuote->price < $request->price) {
+        if (!is_null($latestQuote)) // if ($latestQuote->price < $request->price)
+        {
 
-                event(new NotificationEvent(
-                    "#quote-" . $latestQuote->id,
-                    "Cannot make a BID! Your price biggest then actual " . $latestQuote->price . " > " . $request->price,
-                    NotificationType::Error,
-                    $latestQuote->user_id));
+            event(new NotificationEvent(
+                "#quote-" . $latestQuote->id,
+                "Cannot make a BID! Your price biggest then actual " . $latestQuote->price . " > " . $request->price,
+                NotificationType::Error,
+                $latestQuote->user_id));
 
-                return response()->noContent();
-            }
+            return response()->noContent();
+        }
 
         $quote = Quote::create($request->all());
         $quote->valid_until_date = Carbon::now()->addHour($hours[$request->quote_validity ?? 3]);
@@ -425,14 +425,14 @@ class ListingController extends Controller
             return redirect()->route("desktop.listing", $listing[0]->id);
 
         if (count($listing) == 2) {
-            return $direction == 0?
-                redirect()->route("desktop.listing", $listing[0]->id):
+            return $direction == 0 ?
+                redirect()->route("desktop.listing", $listing[0]->id) :
                 redirect()->route("desktop.listing", $listing[1]->id);
         }
 
         if (count($listing) == 3) {
-            return $direction == 0?
-                redirect()->route("desktop.listing", $listing[0]->id):
+            return $direction == 0 ?
+                redirect()->route("desktop.listing", $listing[0]->id) :
                 redirect()->route("desktop.listing", $listing[2]->id);
         }
 

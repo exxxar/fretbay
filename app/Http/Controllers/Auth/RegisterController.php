@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CustomerStoreRequest;
 use App\Http\Requests\TransporterStoreRequest;
+use App\Mail\RegistrationMail;
 use App\Models\Profile;
 use App\Models\Role;
 use App\Providers\RouteServiceProvider;
@@ -13,6 +14,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
@@ -50,7 +52,7 @@ class RegisterController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
@@ -65,7 +67,7 @@ class RegisterController extends Controller
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param array $data
      * @return \App\User
      */
     protected function create(array $data)
@@ -90,7 +92,7 @@ class RegisterController extends Controller
 //        $payment_methods->paypal = false;
 
         $profile = Profile::create([
-            "company_name"=>$request->company_name,
+            "company_name" => $request->company_name,
 //            "payment_methods" =>  $payment_methods
         ]);
 
@@ -98,7 +100,7 @@ class RegisterController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
-        $user->phone = $request->telephone_number_1??$request->telephone_number_2;
+        $user->phone = $request->telephone_number_1 ?? $request->telephone_number_2;
         $user->profile_id = $profile->id;
         $user->save();
         $user->roles()->attach($customer);
@@ -120,7 +122,7 @@ class RegisterController extends Controller
 //        $payment_methods->paypal = false;
 
         $profile = Profile::create([
-            "company_name"=>$request->name,
+            "company_name" => $request->name,
 //            "payment_methods" => $payment_methods
         ]);
 
@@ -128,12 +130,17 @@ class RegisterController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
-       // $user->phone = $request->phone;
+        // $user->phone = $request->phone;
         $user->profile_id = $profile->id;
         $user->save();
         $user->roles()->attach($customer);
 
         Auth::login($user, true);
+
+        Mail::to($user->email)->send(new RegistrationMail(printf("%s %s",
+            $user->name,
+            $user->email
+        )));
 
 //        return redirect()->route("login");
         return response()->json([
@@ -154,33 +161,39 @@ class RegisterController extends Controller
 //        $payment_methods->paypal = false;
 
         $profile = Profile::create([
-            "type"=>$request->type??'transporter',
-            "company_name"=>$request->company_name??'',
-            "first_name"=>$request->first_name??'',
-            "second_name"=>$request->second_name??'',
-            "telephone_number_1"=>$request->telephone_number_1??'',
-            "telephone_number_2"=>$request->telephone_number_2??'',
-            "country"=>$request->country??'',
-            "city"=>$request->city??'',
-            "region"=>$request->region??'',
-            "postal"=>$request->postal??'',
-            "areas_of_expertise"=>$request->transport_specialities??[],
-            "transport_specialities"=>$request->transport_specialities??[],
+            "type" => $request->type ?? 'transporter',
+            "company_name" => $request->company_name ?? '',
+            "first_name" => $request->first_name ?? '',
+            "second_name" => $request->second_name ?? '',
+            "telephone_number_1" => $request->telephone_number_1 ?? '',
+            "telephone_number_2" => $request->telephone_number_2 ?? '',
+            "country" => $request->country ?? '',
+            "city" => $request->city ?? '',
+            "region" => $request->region ?? '',
+            "postal" => $request->postal ?? '',
+            "areas_of_expertise" => $request->transport_specialities ?? [],
+            "transport_specialities" => $request->transport_specialities ?? [],
             "payment_methods" => [],
             "spoken_languages" => [],
-            'newsletter_notify' => $request->newsletter_notify??true
+            'newsletter_notify' => $request->newsletter_notify ?? true
         ]);
 
         $user = new User();
         $user->name = $request->username;
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
-       // $user->phone = $request->telephone_number_1??$request->telephone_number_2;
+        // $user->phone = $request->telephone_number_1??$request->telephone_number_2;
         $user->profile_id = $profile->id;
         $user->save();
         $user->roles()->attach($transporter);
 
         Auth::login($user, true);
+
+
+        Mail::to($user->email)->send(new RegistrationMail(printf("%s %s",
+            $user->name,
+            $user->email
+        )));
 
         return redirect()->route("login");
     }

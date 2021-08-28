@@ -101,21 +101,7 @@
                                        aria-label="Text input with segmented dropdown button" required>
 
                                 <div class="input-group-append">
-                                    <button type="button" class="btn btn-outline-primary">{{currentCurrency}}</button>
-                                    <button type="button"
-                                            class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <span class="sr-only">Toggle Dropdown</span>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <!-- <a class="dropdown-item" href="#dollar" @click="currentCurrency = '$'">$
-                                             (dollars
-                                             USA)</a>-->
-                                        <a class="dropdown-item" href="#euro" @click="currentCurrency = '€'">€
-                                            (Euro)</a>
-                                        <!--<a class="dropdown-item" href="#ruble" @click="currentCurrency = '₽'">₽
-                                            (Ruble)</a>-->
-                                    </div>
+                                    <span class="input-group-text text-primary">{{currentCurrency}}</span>
                                 </div>
                             </div>
                             <div class="col-12">
