@@ -20,7 +20,7 @@ class CategoryController extends Controller
         App::setLocale($lang);
         if ($request->ajax()) {
             $categories = ObjectCategory::with(['subcategories', 'things', 'properties'])
-//                ->where('additional_menu_title', 'choice_of_category')
+                ->where('mode', 'article')
                 ->get();
             return response()->json([
                 'categories' => $categories
