@@ -21,6 +21,8 @@ class CategoryController extends Controller
         if ($request->ajax()) {
             $categories = ObjectCategory::with(['subcategories', 'things', 'properties'])
                 ->where('mode', 'article')
+                ->orWhere('mode', 'calculator')
+                ->orWhere('mode', 'grid')
                 ->get();
             return response()->json([
                 'categories' => $categories
