@@ -119,8 +119,6 @@
 
         </div>
 
-
-       <quotes-cpmponent/>
     </div>
 
 </template>

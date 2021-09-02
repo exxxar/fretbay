@@ -72,10 +72,16 @@ Vue.component('system-notification-component', require('../desktop/components/Sy
 
 Vue.component('how-it-work-slider-component', require('../desktop/components/Slider/HowItWorkSlider.vue').default);
 
+Vue.component('customer-reviews-component', require('../desktop/components/Reviews/CustomersReviews.vue').default);
+Vue.component('transporter-reviews-component', require('../desktop/components/Reviews/TransporterReviews.vue').default);
+Vue.component('review-item-component', require('../desktop/components/Reviews/ReviewItem.vue').default);
+
 //auth
 Vue.component('login-page', require('./pages/Auth/Login.vue').default);
 Vue.component('register-transporter-page', require('./pages/Auth/RegisterTransporter.vue').default);
 Vue.component('register-customer-page', require('../desktop/pages/Auth/RegisterCustomer.vue').default);
+
+Vue.component('reviews-page', require('../desktop/pages/Profile/Reviews.vue').default);
 
 //main pages
 Vue.component('index-page', require('./pages/Main/Index.vue').default);

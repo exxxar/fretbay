@@ -1,7 +1,7 @@
 <template>
-    <div style="padding-top: 130px">
+    <div style="padding-top: 30px">
 
-        <steps :step="step"/>
+        <steps/>
 
         <div v-if="step===0">
             <type-selector v-on:select-type="selectType"/>
@@ -22,7 +22,7 @@
             <address-info-form/>
         </div>
         <div v-if="step===3">
-            <finish-page></finish-page>
+            <finish-pag/>
         </div>
 
 
@@ -71,6 +71,7 @@
                 login_mode: false,
             }
         },
+
         computed: {
             categories() {
                 return this.$store.getters.categories;

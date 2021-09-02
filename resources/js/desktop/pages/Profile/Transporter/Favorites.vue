@@ -33,6 +33,9 @@
                     </div>
                 </div>
             </div>
+            <div class="row pb-5 pt-5" v-else>
+                <h1>Empty list</h1>
+            </div>
         </div>
     </main>
 </template>

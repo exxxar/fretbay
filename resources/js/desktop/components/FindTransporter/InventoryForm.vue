@@ -14,10 +14,11 @@
             <div class="col-12 col-sm-8" v-if="!search_mode">
 <!--                v-if="category.subcategories.length>0"-->
 
-                <VueSlickCarousel v-bind="settings" v-if="categories.length>0">
-                    <div v-for="(sub, index) in categories" class="p-1" :key="sub.id" v-if="sub.subcategories.length>0">
+
+               <VueSlickCarousel v-bind="settings" v-if="categories.length>0">
+                    <div v-for="(sub, index) in categories" class="p-1" :key="index" v-if="sub.subcategories.length>0">
                         <button class="btn btn-outline-primary w-100" style="min-width: 200px" @click="chooseSubcategory(sub.id)"
-                                :class="{'btn-primary text-white': active_category.id === sub.id }">{{prepareLangTitle(sub.title)}}</button>
+                                :class="{'btn-primary text-white': active_category.id === sub.id }">{{sub.title}}</button>
                     </div>
                 </VueSlickCarousel>
 
@@ -35,13 +36,13 @@
             </div>
         </div>
 
-        <div class="row w-100 m-auto">
-            <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-2"  v-for="thing in filteredThings">
+        <div class="row w-100 m-auto" v-if="filteredThings">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-2" :key="thing.id" v-for="thing in filteredThings">
 
-                <div class="card text-white">
+                <div class="card text-white" v-if="thing">
                     <img class="card-img" v-lazy="thing.image" alt="Card image">
                     <div class="card-img-overlay">
-                        <h5 class="card-title text-dark">{{prepareLangTitle(thing.title)}}</h5>
+                        <h5 class="card-title text-dark">{{(thing.title)}}</h5>
 
                     </div>
                     <div class="card-footer text-muted">
@@ -133,7 +134,7 @@
                 let tmpThings = [];
                 this.categories.forEach(category=>{
                     category.subcategories.forEach(sub=>{
-                        if ( this.prepareLangTitle(sub.title).trim().toLowerCase().indexOf(this.search.trim().toLowerCase())!==-1)
+                        if ( sub.title.trim().toLowerCase().indexOf(this.search.trim().toLowerCase())!==-1)
                             tmpThings.push(sub);
                     })
                 })
@@ -144,16 +145,10 @@
             this.loadCategories();
         },
         methods: {
-            prepareLangTitle(title) {
-                console.log("lang=>",Object.entries(title).find(item => item[0] === window.locale)[1])
-                return typeof title === 'object' ?
-                    Object.entries(title).find(item => item[0] === window.locale)[1] :
-                    title;
-            },
+
             loadCategories(){
               axios.get('/api/get-volume-categories')
               .then(response=>{
-                  console.log(response)
                   this.categories = response.data.categories
                   this.active_category = this.categories[0];
                   this.things =  this.active_category.subcategories;
@@ -165,11 +160,11 @@
 
 
 
-                  this.active_category = this.subcategories[0].id;
+                  /*this.active_category = this.subcategories[0].id;*/
               })
             },
             chooseSubcategory(id) {
-                this.active_category =  this.categories.find(item=>item.id===id);
+               this.active_category =  this.categories.find(item=>item.id===id);
                 this.things =  this.active_category.subcategories;
             },
 

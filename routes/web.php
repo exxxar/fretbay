@@ -4,6 +4,7 @@ use App\Enums\NotificationType;
 use App\Events\NotificationEvent;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Models\ObjectCategory;
 use App\User;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\App;
@@ -25,6 +26,10 @@ use Laravel\Socialite\Facades\Socialite;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get("/test", function (){
+   dd( ObjectCategory::where("title->en","Household equipment")->first()->id);
+
+});
 
 Route::get("/event",function (){
     event(new NotificationEvent(

@@ -17,10 +17,15 @@ class CreateReviewsTable extends Migration
             $table->id();
             $table->string('title')->default('');
             $table->longText('text')->nullable();
-            $table->integer('type')->default(0)->comment("Раздел, для которого отзыв");
+            $table->integer('type')->default(0)->comment("тип комментария");
             $table->boolean("is_visible")->default(false)->comment("флаг модерации");
+
             $table->unsignedInteger('user_id')->nullable();
+            $table->unsignedInteger('order_id')->nullable();
+            $table->unsignedInteger('transporter_id')->nullable();
+            $table->unsignedInteger('verified_by_id')->nullable()->comment("идентификатор проверяющего администратора");
             $table->unsignedInteger('review_id')->nullable()->comment("комментарий на комментарий");
+
             $table->timestamps();
             $table->softDeletes();
         });

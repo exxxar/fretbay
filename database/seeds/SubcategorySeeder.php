@@ -4,13 +4,15 @@
 use App\Models\ObjectCategory;
 use App\Models\Subcategory;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Log;
 
 class SubcategorySeeder extends Seeder
 {
 
     public function getCategoryIdByTitle($title)
     {
-        return ObjectCategory::where("title->en", $title)->first()->id ?? null;
+        $tmp = ObjectCategory::where("title->en","$title")->first()->id ?? null;
+        return $tmp;
     }
 
     /**
@@ -23,19 +25,6 @@ class SubcategorySeeder extends Seeder
 
 
         //Entrance
-        Subcategory::create([
-            "title" => [
-                "en" => "TV stand",
-                "ru" => "TV stand",
-                'fr' => "TV stand",
-            ],
-
-            "image" => "/images/common/icons/volume/132h.svg",
-            "object_category_id" => $this->getCategoryIdByTitle("Entrance"),
-
-            'position' => 0,
-            "volume" => 0,
-            'is_active' => true]);
 
         Subcategory::create([
             "title" => [

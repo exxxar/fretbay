@@ -266,5 +266,123 @@ class ObjectCategorySeeder extends Seeder
         $category->properties()->attach(CategoryProperty::where("slug", "weight")->first(),['required' => true]);
         $category->properties()->attach(CategoryProperty::where("slug", "quantity")->first(),['required' => true]);
 
+
+        ////////////////////////////////////////////
+        ///
+
+
+        ObjectCategory::create([
+            'title' => [
+                "en" => "Entrance",
+                "ru" => "Entrance",
+                'fr' => "Entrance",
+            ],
+            'min_price' => 0,
+            'additional_menu_title' => 'volume',
+            'image' => null,
+            'position' => 0,
+            'is_active' => true,
+            'mode' => ''
+        ]);
+
+
+        ObjectCategory::create([
+            'title' => [
+                "en" => "Bathroom",
+                "ru" => "Bathroom",
+                'fr' => "Bathroom",
+            ],
+            'min_price' => 0,
+            'additional_menu_title' => 'volume',
+            'image' => null,
+            'position' => 0,
+            'is_active' => true,
+            'mode' => ''
+        ]);
+
+        ObjectCategory::create([
+            'title' => [
+                "en" => "Living room",
+                "ru" => "Living room",
+                'fr' => "Living room",
+            ],
+            'min_price' => 0,
+            'additional_menu_title' => 'volume',
+            'image' => null,
+            'position' => 0,
+            'is_active' => true,
+            'mode' => ''
+        ]);
+
+        ObjectCategory::create([
+            'title' => [
+                "en" => "Kitchen",
+                "ru" => "Kitchen",
+                'fr' => "Kitchen",
+            ],
+            'min_price' => 0,
+            'additional_menu_title' => 'volume',
+            'image' => null,
+            'position' => 0,
+            'is_active' => true,
+            'mode' => ''
+        ]);
+
+        ObjectCategory::create([
+            'title' => [
+                "en" => "Dining room",
+                "ru" => "Dining room",
+                'fr' => "Dining room",
+            ],
+            'min_price' => 0,
+            'additional_menu_title' => 'volume',
+            'image' => null,
+            'position' => 0,
+            'is_active' => true,
+            'mode' => ''
+        ]);
+
+        ObjectCategory::create([
+            'title' => [
+                "en" => "Chamber",
+                "ru" => "Chamber",
+                'fr' => "Chamber",
+            ],
+            'min_price' => 0,
+            'additional_menu_title' => 'volume',
+            'image' => null,
+            'position' => 0,
+            'is_active' => true,
+            'mode' => ''
+        ]);
+
+        ObjectCategory::create([
+            'title' => [
+                "en" => "Garden",
+                "ru" => "Garden",
+                'fr' => "Garden",
+            ],
+            'min_price' => 0,
+            'additional_menu_title' => 'volume',
+            'image' => null,
+            'position' => 0,
+            'is_active' => true,
+            'mode' => ''
+        ]);
+
+        ObjectCategory::create([
+            'title' => [
+                "en" => "Miscellaneous",
+                "ru" => "Miscellaneous",
+                'fr' => "Miscellaneous",
+            ],
+            'min_price' => 0,
+            'additional_menu_title' => 'volume',
+            'image' => null,
+            'position' => 0,
+            'is_active' => true,
+            'mode' => ''
+        ]);
+
     }
 }

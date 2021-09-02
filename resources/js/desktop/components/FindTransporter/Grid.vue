@@ -3,13 +3,13 @@
         <h2>Vehicles</h2>
         <wizard :steps="2" ref="grid_wizard">
             <template v-slot:step_0>
-                <ul class="row m-0 p-0">
+                <ul class="row m-0 p-0" v-if="subcategories">
                     <li v-for="subcategory in subcategories" class="col-md-3 col-6 custom-grid-list mb-2"
                         v-bind:class="{'active':(selected_subcategory===subcategory.id)}"
                         @click="selectSubcategory(subcategory.id)">
                         <div class="card">
                             <div class="card-body d-flex justify-content-center align-items-center">
-                                <p>{{prepareLangTitle(subcategory.title)}}</p>
+                                <p>{{subcategory.title}}</p>
                             </div>
 
                         </div>
@@ -20,14 +20,14 @@
 
             </template>
             <template v-slot:step_1>
-                <ul class="row m-0 p-0" v-if="filteredThings.length>0">
+                <ul class="row m-0 p-0" v-if="filteredThings">
                     <li v-for="thing in filteredThings" class="col-md-3 col-6 custom-grid-list mb-2"
                         v-bind:class="{'active':(selected_thing===thing.id)}"
                         @click="selectThing(thing.id)">
 
                         <div class="card">
                             <div class="card-body d-flex justify-content-center align-items-center">
-                                <p>{{prepareLangTitle(thing.title)}}</p>
+                                <p>{{thing.title}}</p>
                             </div>
 
                         </div>
@@ -78,7 +78,7 @@
             }
         },
         created() {
-            this.$store.dispatch('editNewListing', {key: 'title', value: this.prepareLangTitle(this.category.title)})
+            this.$store.dispatch('editNewListing', {key: 'title', value: this.category.title})
             this.subcategories = this.category.subcategories;
             this.things = this.category.things;
             if (this.subcategories.length < 0) {
@@ -93,11 +93,7 @@
             }
         },
         methods: {
-            prepareLangTitle(title) {
-                return typeof title === 'object' ?
-                    Object.entries(title).find(item => item[0] === window.locale)[1] :
-                    title;
-            },
+
             nextStep() {
                 console.log("this.filteredThings.length",this.filteredThings.length)
                 if (this.$refs.grid_wizard.current_step === 1||this.filteredThings.length===0) {

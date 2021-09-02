@@ -23,6 +23,10 @@
             <li class="nav-item">
                 <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false">Settings</a>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link" id="reviews-tab" data-toggle="tab" href="#reviews" role="tab" aria-controls="reviews" aria-selected="false">Reviews</a>
+            </li>
         </ul>
         <div class="tab-content" id="myTabContent" v-if="user">
             <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
@@ -49,6 +53,12 @@
             <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="settings-tab">
                 <profile-settings-page/>
             </div>
+
+            <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
+                <transporter-reviews-component/>
+            </div>
+
+
         </div>
         <div class="row w-100 mx-auto  gutters-sm" v-if="!user">
             <div class="col-12 col-md-4">

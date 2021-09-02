@@ -23,6 +23,7 @@
                                     </div>
                                     <p class="text-secondary mb-1 text-uppercase letter-spacing-0_06" style="font-size: 10px"><strong>Member since</strong></p>
                                     <p class="mb-1 text-dark">{{info.created_at | moment("DD.MM.YYYY")}}</p>
+                                    <p class="mb-1 text-dark">  <star-rating v-model="user.computed_rating" :show-rating="false" :read-only="true"/></p>
                                     <p class="text-secondary mb-1 text-uppercase letter-spacing-0_06" style="font-size: 10px" v-if="info.payment_methods.length>0"><strong>Accepted payment methods</strong></p>
                                     <div class="row w-100 m-auto" v-if="info.payment_methods.length>0">
                                         <span class="u-label u-label--xs u-label--primary text-uppercase letter-spacing-0_06 mr-2 mb-2" v-for="pay in info.payment_methods">
@@ -151,9 +152,7 @@
                                             </div>
                                         </div>
                                         <div class="tab-pane fade" id="pills-reviews" role="tabpanel" aria-labelledby="pills-reviews-tab">
-                                            <div class="row w-100 m-auto align-items-center justify-content-center" style="min-height: 100px">
-                                                <p class="mb-0">This transporter doesn't have reviews yet.</p>
-                                            </div>
+                                            <transporter-reviews-component/>
                                         </div>
                                     </div>
                                 </div>
@@ -509,15 +508,24 @@
 
 </template>
 <script>
+
+    import StarRating from "vue-star-rating";
+
     export default {
+
         props:['info'],
+        components: { StarRating},
         data() {
             return {
                 // section: 1
             }
         },
         created() {
-            this.$store.dispatch('getUser');
+            this.$store.dispatch('getUser').then(reps=>{
+                console.log("USER=>",this.user)
+            })
+
+
         },
         computed: {
             user() {

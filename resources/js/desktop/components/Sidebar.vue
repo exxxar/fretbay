@@ -12,6 +12,16 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
+
+                    <div class="d-flex align-items-center border-bottom py-4 px-5 flex-wrap">
+                        <p>{{user.name}}</p>
+                        <em class="text-uppercase text-muted font-size-13 mb-0 mt-0" v-if="user.is_admin">You are Admin</em>
+                        <em class="text-uppercase text-muted font-size-13 mb-0 mt-0" v-if="user.is_customer">You are Customer</em>
+                        <em class="text-uppercase text-muted font-size-13 mb-0 mt-0" v-if="user.is_transporter">You are Transporter</em>
+                    </div>
+
+
+
                     <!-- End Toggle Button -->
 
                     <!-- Content -->

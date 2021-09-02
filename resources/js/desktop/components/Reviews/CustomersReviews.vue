@@ -1,0 +1,262 @@
+<template>
+    <div class="row pb-5 d-flex justify-content-center">
+
+
+        <div class="col-lg-6 mb-9 mb-lg-0 " v-if="filteredReviews.length>0">
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group row d-flex justify-content-center mb-0">
+
+                        <label class=" ml-2 mb-2"
+                               :for="'review'+item.id"
+
+                               :key="item.id" v-for="item in review_types"
+                        >
+                    <span class="btn btn-outline-primary"
+                          v-bind:class="{'btn-primary text-white':filter.selected_review_types.includes(item.id)}"
+                          v-html="item.data"></span>
+                            <input type="checkbox" :name="'review'+item.id" :id="'review'+item.id" :value="item.id"
+                                   v-model="filter.selected_review_types" style="display: none">
+                        </label>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="comment-list p-2">
+                <review-item-component :key="index" v-for="(item,index) in filteredReviews" :item="item"/>
+            </div>
+        </div>
+
+        <div class="col-lg-6 mb-9 mb-lg-0" v-else>
+            <p>Reviews list is Empty</p>
+        </div>
+
+        <div class="col-lg-6 mb-9 mb-lg-0" v-if="filteredReviews">
+            <div class="card">
+                <div class="card-body">
+
+                    <form v-on:submit.prevent="submit">
+
+                        <div class="form-group">
+                            <input type="email" class="form-control mb-0"
+                                   placeholder="Review title"
+                                   v-model="title"
+                                   maxlength="100" required>
+                            <span class="text-gray-700" v-if="title.length>0"><small>
+                                Characters left {{100-title.length}}</small></span>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea class="form-control mb-0"
+                                      placeholder="Text review"
+                                      v-model="text"
+                                      maxlength="255" required></textarea>
+                            <span class="text-gray-700" v-if="text.length>0"><small>
+                                Characters left {{255-text.length}}</small></span>
+                        </div>
+                        <h6 class="text-center">Choose your reaction (emoji)</h6>
+                        <div class="form-group row d-flex justify-content-center mb-0">
+                            <button class="btn ml-2 mb-2"
+                                    type="button"
+                                    v-bind:class="{'btn-primary':selected_review_type.id===item.id,'btn-outline-primary':selected_review_type.id!==item.id}"
+                                    :key="item.id" v-for="item in review_types"
+                                    @click="selected_review_type = item" v-html="item.data">
+                            </button>
+
+                        </div>
+                        <div class="row d-flex justify-content-center mb-2">
+
+                            <small v-if="selected_review_type"><em>{{selected_review_type.description}}</em></small>
+
+                        </div>
+
+                        <h6 class="text-center">Choose order to comment</h6>
+                        <div class="form-group row d-flex justify-content-center"
+                             v-if="completed_orders_without_comment.length>0">
+
+                            <div class="col-12 col-sm-6 ">
+                                <div class="input-group mb-3">
+                                    <select class="custom-select" v-model="selected_order" reqired>
+                                        <option :key="item.id" v-for="item in completed_orders_without_comment"
+                                                :value="item">{{item.title}}
+                                        </option>
+                                    </select>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" v-else>
+                            <p>You have no orders without a review</p>
+                        </div>
+                        <div class="form-group row d-flex justify-content-center">
+                            <div class="col-sm-6">
+                                <button class="btn btn-primary w-100"
+                                        :disbaled="completed_orders_without_comment.length===0">
+                                    Send review
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</template>
+<script>
+    export default {
+        computed: {
+
+            user: function () {
+                return window.user;
+            },
+            filteredReviews: function () {
+                return this.filter.selected_review_types.length === 0 ? this.reviews :
+                    this.reviews.filter(item => this.filter.selected_review_types.includes(item.type))
+            },
+
+        },
+        data: function () {
+            return {
+                filter: {
+                    selected_review_types: []
+                },
+                title: '',
+                text: '',
+                selected_review_type: 1,
+                selected_order: null,
+                review_types: [
+                    {
+                        id: 0,
+                        data: '<i class="far fa-angry"></i>',
+                        description: 'You were dissatisfied with the work of the carrier'
+                    },
+                    {
+                        id: 1,
+                        data: '<i class="far fa-meh"></i>',
+                        description: 'You are neutral about the work of the carrier'
+                    },
+                    {
+                        id: 2,
+                        data: '<i class="far fa-smile"></i>',
+                        description: 'You liked the quality of the carrier\'s services'
+                    }
+                ],
+                completed_orders_without_comment: [
+                    {
+                        id: 1,
+                        title: 'Order 1'
+                    },
+                    {
+                        id: 2,
+                        title: 'Order 2'
+                    }
+                ],
+                reviews: [
+                    {
+                        id: 1,
+                        title: 'Bad service',
+                        text: 'This transporter is bad',
+                        type: 0,
+                        is_visible: true,
+                        user_id: 1,
+                        order_id: 1,
+                        transporter_id: 1,
+                        review_id: null,
+                        created_at:'2021-07-12 21:37:34',
+                        transporter: {
+                            profile: {
+                                company_name: 'Test company'
+                            }
+                        }
+                    },
+                    {
+                        id: 2,
+                        title: 'Neutral service',
+                        text: 'This transporter is Neutral',
+                        type: 1,
+                        is_visible: true,
+                        user_id: 1,
+                        order_id: 2,
+                        transporter_id: 1,
+                        review_id: null,
+                        created_at:'2021-07-12 21:37:34',
+                        transporter: {
+                            profile: {
+                                company_name: 'Test company'
+                            }
+                        }
+                    },
+                    {
+                        id: 3,
+                        title: 'Good service',
+                        text: 'This transporter is Good',
+                        type: 2,
+                        is_visible: true,
+                        user_id: 1,
+                        order_id: 2,
+                        transporter_id: 1,
+                        review_id: null,
+                        created_at:'2021-07-12 21:37:34',
+                        transporter: {
+                            profile: {
+                                company_name: 'Test company'
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+
+        mounted() {
+
+        }
+        ,
+        methods: {
+
+            submit() {
+
+                axios.post('/transporter/listing/quotes/add', {
+                    price: this.bidPrice,
+                    type_of_transport: this.type_of_transport,
+                    quote_validity: this.quote_validity,
+                    status: 0,
+                    currency: this.currentCurrency,
+                    listing_id: this.listing.id,
+                    user_id: this.user.id,
+                    formula: this.selected_formula
+                }).then(resp => {
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 1000)
+                })
+            },
+
+        }
+
+
+    }
+</script>
+<style lang="scss">
+    .comment-list {
+        max-height: 500px;
+        overflow-y: auto;
+    }
+
+    .btn-custom-checker {
+        font-size: 8px;
+        padding: 5px 11px;
+        border-radius: 5px;
+        margin: 5px;
+    }
+
+    .prepared-formula-text {
+        text-overflow: ellipsis;
+        word-break: break-all;
+        font-size: 10px;
+    }
+</style>

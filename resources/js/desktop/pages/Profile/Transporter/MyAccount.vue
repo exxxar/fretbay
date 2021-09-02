@@ -13,6 +13,9 @@
                                 <p class="text-muted font-size-sm" v-if="profile.company_name.length>0">
                                     {{profile.company_name}}
                                 </p>
+                                <div class="d-flex justify-content-center">
+                                    <star-rating v-model="user.computed_rating" :show-rating="false" :read-only="true"/>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -331,9 +334,10 @@
 </template>
 
 <script>
+    import StarRating from 'vue-star-rating'
     import UploadFile from "../../../components/UploadFile";
     export default {
-        components: {UploadFile},
+        components: {UploadFile, StarRating},
         data(){
           return {
               editMode:false,
