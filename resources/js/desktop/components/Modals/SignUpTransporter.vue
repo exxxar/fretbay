@@ -321,7 +321,7 @@
                                             <div class="js-focus-state form">
                                                 <!-- Checkbox -->
                                                 <div class="custom-control custom-checkbox d-flex align-items-center text-muted">
-                                                    <input type="checkbox" class="custom-control-input" v-model="new_user.newsletter_notify" id="iAgree">
+                                                    <input type="checkbox" class="custom-control-input" v-model="new_user.newsletter_notify" id="iAgree" required>
                                                     <label class="custom-control-label" for="iAgree">
                                                         I agree to receive commercial offers from AlloTrans and its partners.
                                                     </label>
@@ -343,13 +343,13 @@
                                 </div>
 
                                 <!-- Divider -->
-                                <div class="text-center u-divider-wrapper my-3">
-                                    <span class="u-divider u-divider--xs u-divider--text">OR</span>
-                                </div>
+                               <!-- <div class="text-center u-divider-wrapper my-3">
+                                    <span class="u-divider u-divider&#45;&#45;xs u-divider&#45;&#45;text">OR</span>
+                                </div>-->
                                 <!-- End Divider -->
 
                                 <!-- Signin Social Buttons -->
-                                <div class="row mx-gutters-2 mb-4">
+                                <!--<div class="row mx-gutters-2 mb-4">
                                     <div class="col-sm-6 mb-2 mb-sm-0">
                                         <a href="/social/facebook" class="btn btn-block btn-facebook text-nowrap">
                                             <i class="fab fa-facebook-f mr-2"></i>
@@ -362,7 +362,7 @@
                                             Signin with Twitter
                                         </a>
                                     </div>
-                                </div>
+                                </div>-->
                                 <!-- End Signin Social Buttons -->
                             </div>
                         </div>

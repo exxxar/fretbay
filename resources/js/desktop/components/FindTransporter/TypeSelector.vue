@@ -7,7 +7,7 @@
 
             <div class="col-12 col-md-8 mt-2">
                 <div class="row w-100">
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-12 mb-2" v-for="category in categories"
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-6 mb-2" v-for="category in categories"
                          @click="selectType(category)">
                         <div class="card text-dark">
                             <img class="card-img " v-lazy="category.image" style="padding: 20px;" alt="Card image">
@@ -138,15 +138,16 @@
 
 
         },
-
         methods: {
 
             selectType(type) {
 
-                console.log("select-type", type)
+
 
                 this.selected = type.id;
                 this.$emit("select-type", this.selected)
+
+                window.scrollTo(0, 0);
             }
         }
 

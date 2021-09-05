@@ -18,20 +18,13 @@ class CreateOrdersTable extends Migration
             $table->string("title")->comment("Название заказа");
             $table->text("description")->comment("Описание заказа");
             $table->double("price")->default(0)->comment("Сумма заказа");
-            $table->double("summary_delivery_range")
-                ->default(0)
-                ->comment("Суммарное расстояние доставки");
 
-            $table->json("properties")->comment("Параметры груза");
-            $table->dateTime("shipping_date_from")->comment("Дата погрузки c");
-            $table->dateTime("shipping_date_to")->comment("Дата погрузки по");
-            $table->dateTime("unshipping_date_from")->comment("Дата разгрузки с");
-            $table->dateTime("unshipping_date_to")->comment("Дата разгрузки по");
-            $table->text("comment")->comment("Комментарий к заказу");
-            $table->json("shipping_points_from")->comment("Точки, с которых груз забрать");
-            $table->json("shipping_delivery_address")->comment("Точка, на которую груз выгрузить");
+            $table->integer("status")->default(0);
 
-            $table->json("additional_properties")->comment("Дополнительные параметры");
+            $table->unsignedInteger("listing_id")->nullable();
+            $table->unsignedInteger("user_id")->nullable();
+            $table->unsignedInteger("transporter_id")->nullable();
+
             $table->timestamps();
             $table->softDeletes();
         });

@@ -3,7 +3,7 @@
         <div class="row">
 
             <div class="col-12">
-                <ol class="breadcrumb p-0" style="background: transparent;">
+                <ol class="row breadcrumb p-0" style="background: transparent;">
                     <li class="breadcrumb-item" v-bind:class="{'active':(step>=0)}"><a href="#" @click="setStep(0)">Choice
                         of Category</a></li>
                     <li class="breadcrumb-item" v-bind:class="{'active':(step>=1)}"><a href="#" @click="setStep(1)">Add
@@ -26,8 +26,10 @@
         },
         methods: {
             setStep(step) {
-                if (this.step >= step)
+                if (this.step >= step) {
                     this.$store.dispatch("setStep", step)
+                    window.scrollTo(0, 0);
+                }
             }
         }
     }

@@ -41,6 +41,40 @@ class ListingController extends Controller
         ]);
     }
 
+    public function loadActive()
+    {
+        $listings = Listing::with(['category', 'subcategory', 'thing', 'messages', 'quotes'])
+            ->where('is_active', true)
+            ->where("user_id",   Auth::user()->id)
+            ->orderByDesc('created_at')
+            ->paginate(15);
+
+        return response()->json([
+            'listings' => $listings
+        ]);
+    }
+
+    public function loadArchive()
+    {
+
+        $listings = Listing::with(['category', 'subcategory', 'thing', 'messages', 'quotes'])
+            ->withTrashed()
+            ->where(function ($query) {
+                $query->whereNotNull("deleted_at")
+                    ->orWhere('is_active', false);
+            })
+            ->where("user_id",   Auth::user()->id)
+            ->orderByDesc('created_at')->paginate(15);
+
+        return response()->json([
+            'listings' => $listings
+        ]);
+    }
+
+    public function addToArchive(){
+
+    }
+
     public function filtered(Request $request)
     {
         $date_from = isset($request->date_from) ? Carbon::createFromTimestamp($request->date_from) : null;

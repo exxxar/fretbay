@@ -22,7 +22,7 @@
             <address-info-form/>
         </div>
         <div v-if="step===3">
-            <finish-pag/>
+            <finish-page/>
         </div>
 
 
@@ -107,6 +107,8 @@
                 this.$store.dispatch('editNewListing', {key: 'category', value: this.category})
                 this.$store.dispatch('editNewListing', {key: 'category_id', value: id})
                 this.$store.dispatch('editNewListing', {key: 'mode', value: this.category.mode})
+
+                window.scrollTo(0, 0);
                 // if(this.category.mode === 'calculator') {
                 //     this.component_name = 'inventory-form';
                 // }
@@ -121,6 +123,8 @@
             },
             prevStep(step) {
                 this.$store.dispatch('setStep', step)
+
+                window.scrollTo(0, 0);
             },
             nextStep() {
 

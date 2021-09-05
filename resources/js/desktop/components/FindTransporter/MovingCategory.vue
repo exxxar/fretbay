@@ -113,6 +113,8 @@
                 } else {
                     this.$refs.wizard.nextStep();
                 }
+
+                window.scrollTo(0, 0);
                 // if(this.current_step === 1)
                 // {
                 //     this.$store.dispatch('setStep', 2)
@@ -131,6 +133,8 @@
                 } else {
                     this.$refs.wizard.prevStep();
                 }
+
+                window.scrollTo(0, 0);
                 // if(this.current_step === 0)
                 // {
                 //     if(this.inventory_mode === true)

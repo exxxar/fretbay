@@ -14,10 +14,12 @@
                     </div>
 
                     <div class="d-flex align-items-center border-bottom py-4 px-5 flex-wrap">
-                        <p>{{user.name}}</p>
+                        <p><a v-if="user.is_transporter" :href="'/profile/'+user.id">{{user.name}} </a></p>
+
                         <em class="text-uppercase text-muted font-size-13 mb-0 mt-0" v-if="user.is_admin">You are Admin</em>
                         <em class="text-uppercase text-muted font-size-13 mb-0 mt-0" v-if="user.is_customer">You are Customer</em>
-                        <em class="text-uppercase text-muted font-size-13 mb-0 mt-0" v-if="user.is_transporter">You are Transporter</em>
+                        <em class="text-uppercase text-muted font-size-13 mb-0 mt-0" v-if="user.is_transporter">
+                            You are Transporter</em>
                     </div>
 
 
@@ -27,13 +29,7 @@
                     <!-- Content -->
                     <div class="js-scrollbar u-sidebar__body" >
                         <div class="u-sidebar__content py-5">
-                            <!-- Title -->
-                            <div class="py-2 px-5">
-                                <h4 class="text-uppercase text-muted font-size-13 mb-0" v-if="user.is_admin">Admin menu</h4>
-                                <h4 class="text-uppercase text-muted font-size-13 mb-0" v-if="user.is_customer">Customer menu</h4>
-                                <h4 class="text-uppercase text-muted font-size-13 mb-0" v-if="user.is_transporter">Transporter menu</h4>
-                            </div>
-                            <!-- End Title -->
+
 
                             <ul class="list-unstyled font-size-14 mb-5" v-if="user.is_admin">
                                 <li>
@@ -93,69 +89,11 @@
                                         </div>
                                     </a>
                                 </li>
-                                <li>
-                                    <a class="media align-items-center u-sidebar--panel__link py-2 px-5" href="#">
-                                        <img class="max-width-4 mr-3" src="/assets/svg/components/touch-dark-icon.svg"
-                                             alt="Image Description">
-                                        <div class="media-body">
-                                            <span>My company</span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="media align-items-center u-sidebar--panel__link py-2 px-5" href="/customer/profile/listings">
-                                        <img class="max-width-4 mr-3" src="/assets/svg/components/team-dark-icon.svg"
-                                             alt="Image Description">
-                                        <div class="media-body">
-                                            <span>My quotes </span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="media align-items-center u-sidebar--panel__link py-2 px-5" href="#">
-                                        <img class="max-width-4 mr-3" src="/assets/svg/components/email-dark-icon.svg"
-                                             alt="Image Description">
-                                        <div class="media-body">
-                                            <span>My messages</span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="media align-items-center u-sidebar--panel__link py-2 px-5" href="#">
-                                        <img class="max-width-4 mr-3"
-                                             src="/assets/svg/components/projects-dark-icon.svg"
-                                             alt="Image Description">
-                                        <div class="media-body">
-                                            <span>My loadings</span>
-                                        </div>
-                                    </a>
-                                </li>
 
                                 <li>
                                     <a class="media align-items-center u-sidebar--panel__link py-2 px-5" href="#">
                                         <img class="max-width-4 mr-3"
-                                             src="/assets/svg/components/projects-dark-icon.svg"
-                                             alt="Image Description">
-                                        <div class="media-body">
-                                            <span>My evaluations</span>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                            <!-- End List -->
-
-                            <!-- Title -->
-                            <div class="py-2 px-5">
-                                <h4 class="text-uppercase text-muted font-size-13 mb-0">Other</h4>
-                            </div>
-                            <!-- End Title -->
-
-                            <!-- List -->
-                            <ul class="list-unstyled font-size-14 mb-0">
-                                <li>
-                                    <a class="media align-items-center u-sidebar--panel__link py-2 px-5" href="#">
-                                        <img class="max-width-4 mr-3"
-                                             src="/assets/svg/components/calendar-dark-icon.svg"
+                                             src="/assets/svg/components/cogs-solid.svg"
                                              alt="Image Description">
                                         <div class="media-body">
                                             <span>Settings</span>
@@ -164,7 +102,7 @@
                                 </li>
                                 <li>
                                     <a class="media align-items-center u-sidebar--panel__link py-2 px-5" href="/logout">
-                                        <img class="max-width-4 mr-3" src="/assets/svg/components/cog-dark-icon.svg"
+                                        <img class="max-width-4 mr-3" src="/assets/svg/components/sign-out-alt-solid.svg"
                                              alt="Image Description">
                                         <div class="media-body">
                                             <span>Logout</span>
@@ -173,6 +111,7 @@
                                 </li>
                             </ul>
                             <!-- End List -->
+
                         </div>
                     </div>
                     <!-- End Content -->

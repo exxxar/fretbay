@@ -5,6 +5,7 @@
                 <!-- Nav -->
                 <nav
                     class="js-mega-menu navbar navbar-expand-lg u-header__navbar hs-menu-initialized hs-menu-horizontal justify-content-center">
+
                     <!-- Logo -->
                     <div class="u-header__navbar-brand-wrapper">
                         <a class="navbar-brand u-header__navbar-brand" href="/" aria-label="Space">
@@ -22,8 +23,8 @@
                             data-toggle="collapse" data-target="#navBar">
                         <span class="d-none d-sm-inline-block">Menu</span>
                         <span id="hamburgerTrigger" class="u-hamburger__box ml-3">
-              <span class="u-hamburger__inner"></span>
-            </span>
+                                <span class="u-hamburger__inner"></span>
+                        </span>
                     </button>
                     <!-- End Responsive Toggle Button -->
 
@@ -128,14 +129,15 @@
                     </div>
                     <!-- End Navigation -->
 
-                    <ul class="navbar-nav flex-row u-header__secondary-nav" v-if="user">
+                    <ul class="navbar-nav u-header__secondary-nav" v-if="user">
 
                         <!-- Account Signin -->
-                        <li class="nav-item u-header__navbar-icon">
+                        <li class="nav-item u-header__navbar-icon text-center">
                             <!-- Account Sidebar Toggle Button -->
                             <a class="btn btn-xs btn-icon btn-text-dark target-of-invoker-has-unfolds"
                                @click="toggleSidebar">
-                                <i class="fa fa-bars btn-icon__inner font-size-13"></i>
+                                <i class="far fa-user-circle btn-icon__inner font-size-base"></i>
+
                             </a>
                             <!-- End Account Sidebar Toggle Button -->
                         </li>
@@ -214,7 +216,7 @@
                 pusher.subscribe('notification-event-channel-' + this.user.id)
                     .bind('notification-event', (data) => {
 
-                        this.sendMessage(data.event.description, ["success","warning","error"][data.event.type])
+                        this.sendMessage(data.event.description, ["success", "warning", "error"][data.event.type])
                     })
                     .bind('notification-quote-event', (data) => {
                         this.sendMessage("Quote update")

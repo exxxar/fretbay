@@ -35,9 +35,13 @@
         methods: {
             nextStep() {
                 this.$store.dispatch('setStep', 2)
+
+                window.scrollTo(0, 0);
             },
             prevStep() {
                 this.$store.dispatch('setStep', 0)
+
+                window.scrollTo(0, 0);
             },
             saveListingTitle() {
                 this.$store.dispatch('editNewListing', {key:'title', value: this.listing_title})

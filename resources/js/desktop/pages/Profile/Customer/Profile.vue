@@ -13,12 +13,12 @@
                        aria-controls="reviews" aria-selected="true">Reviews</a>
                 </li>
 
-                <li class="nav-item">
+                <li class="nav-item" @click="loadActiveListing">
                     <a class="nav-link" id="listings-active-tab" data-toggle="tab" href="#listings-active" role="tab"
                        aria-controls="listings-active" aria-selected="true">Active listings</a>
                 </li>
 
-                <li class="nav-item">
+                <li class="nav-item" @click="loadArchiveListing">
                     <a class="nav-link" id="listings-archive-tab" data-toggle="tab" href="#listings-archive" role="tab"
                        aria-controls="listings-archive" aria-selected="true">Archive listings</a>
                 </li>
@@ -241,11 +241,24 @@
                 </div>
 
                 <div class="tab-pane fade" id="listings-active" role="tabpanel" aria-labelledby="listings-active-tab">
-                   Active Listings
+                    <p>Count results: {{listings.length}}</p>
+
+                    <listing-item-component :key="index" v-for="(listing,index) in listings" :listing="listing"/>
+
+                    <div class="mb-9"></div>
+
+                    <listing-paginate-component/>
                 </div>
 
                 <div class="tab-pane fade" id="listings-archive" role="tabpanel" aria-labelledby="listings-archive-tab">
-                    archive Listings
+
+                    <p>Count results: {{listings.length}}</p>
+
+                    <listing-item-component :key="index" v-for="(listing,index) in listings" :listing="listing"/>
+
+                    <div class="mb-9"></div>
+
+                    <listing-paginate-component/>
                 </div>
 
                 <div class="tab-pane fade" id="orders" role="tabpanel" aria-labelledby="orders-tab">
@@ -253,7 +266,7 @@
                 </div>
 
                 <div class="tab-pane fade" id="notifications" role="tabpanel" aria-labelledby="notifications-tab">
-                    Notifications
+                    <notifications-page/>
                 </div>
             </div>
 
@@ -270,6 +283,9 @@
             }
         },
         computed: {
+            listings: function () {
+                return this.$store.getters.listings;
+            },
             fullAddress() {
                 return this.profile.country + ","
                     + this.profile.region + ","
@@ -290,6 +306,14 @@
                 return window.user
             }
         },
+        methods:{
+            loadActiveListing(){
+                this.$store.dispatch('getActiveListings');
+            },
+            loadArchiveListing(){
+                this.$store.dispatch('getArchiveListings');
+            }
+        }
     }
 </script>
 

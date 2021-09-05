@@ -30,19 +30,7 @@
 
             </div>
 
-            <div class="col-12">
 
-
-                <h3>Certified Trustpilot reviews</h3>
-                <p>We pay special attention to your <a
-                    href="https://fretbay.com/en/reviews-shippers-FretBay.html" title="">satisfaction</a>.
-                    That's why we regularly solicit our <a href="https://fretbay.com/en/quality-charter.php"
-                                                           title="">users</a> so they can give us their
-                    impressions. For maximum reliability we do <a href="https://fretbay.com/en/connect.php"
-                                                                  title="">authenticate</a> these reviews
-                    with <a href="https://trustpilot.com/review/www.fretbay.com" title="">Truspilot</a>.</p>
-
-            </div>
         </div>
 
 
@@ -68,8 +56,7 @@
                 <ul class="listing">
                     <li><img src="/images/listicon5.png" alt=""> <span>Safeguarding the environment with the eco-shared use of trucks</span>
                     </li>
-                    <li><img src="/images/listicon6.png" alt=""> <span>A quality of service certified by <a
-                        target="_blank" href="#" class="h3 bold">Truspilot</a></span></li>
+                    <li><img src="/images/listicon6.png" alt=""> <span>A quality of service certified</span></li>
                     <li><img src="/images/listicon7.png" alt=""> <span>Available throughout Europe</span>
                     </li>
                 </ul>

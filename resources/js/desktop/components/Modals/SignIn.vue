@@ -74,13 +74,13 @@
                             </div>
 
                             <!-- Divider -->
-                            <div class="text-center u-divider-wrapper my-3">
-                                <span class="u-divider u-divider--xs u-divider--text">OR</span>
-                            </div>
+                           <!-- <div class="text-center u-divider-wrapper my-3">
+                                <span class="u-divider u-divider&#45;&#45;xs u-divider&#45;&#45;text">OR</span>
+                            </div>-->
                             <!-- End Divider -->
 
                             <!-- Signin Social Buttons -->
-                            <div class="row mx-gutters-2 mb-4">
+                            <!--<div class="row mx-gutters-2 mb-4">
                                 <div class="col-sm-6 mb-2 mb-sm-0">
                                     <a href="/social/facebook" class="btn btn-block btn-facebook text-nowrap">
                                         <i class="fab fa-facebook-f mr-2"></i>
@@ -93,7 +93,7 @@
                                         Signin with Twitter
                                     </a>
                                 </div>
-                            </div>
+                            </div>-->
                             <!-- End Signin Social Buttons -->
                         </div>
                         <!-- End Signin -->

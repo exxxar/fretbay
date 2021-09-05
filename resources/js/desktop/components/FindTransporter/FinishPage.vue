@@ -106,6 +106,8 @@
         methods: {
             prevStep(step) {
                 this.$store.dispatch('setStep', step)
+
+                window.scrollTo(0, 0);
             },
             nextStep() {
 

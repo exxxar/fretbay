@@ -221,9 +221,13 @@
                 } else {
                     this.$store.dispatch('setStep', 3)
                 }
+
+                window.scrollTo(0, 0);
             },
             prevStep() {
                 this.$store.dispatch('setStep', 1)
+
+                window.scrollTo(0, 0);
             },
             saveAdditionalInfo() {
                 this.$store.dispatch('editNewListing', {key: 'additional_info', value: this.additional_info})

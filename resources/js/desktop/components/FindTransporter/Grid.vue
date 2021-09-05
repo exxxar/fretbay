@@ -105,12 +105,18 @@
 
                 if (this.filteredThings.length===0)
                     this.$refs.grid_wizard.nextStep();
+
+
+                window.scrollTo(0, 0);
             },
             prevStep() {
                 if (this.$refs.grid_wizard.current_step === 0) {
                     this.$store.dispatch('setStep', 0)
                 } else {
                     this.$refs.grid_wizard.current_step = 0
+
+
+                    window.scrollTo(0, 0);
                   /*  if (this.subcategories.length > 0) {
                         this.$refs.grid_wizard.prevStep();
                     } else {

@@ -1,5 +1,5 @@
 <template>
-    <div class="container" style="padding-top:130px;">
+    <div class="container" style="padding-top:50px;">
 
         <h1 class="text-center">
             Privacy Policy

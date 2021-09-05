@@ -21,6 +21,16 @@ class OrderController extends Controller
     }
 
 
+    public function acceptOrder(Request $request){
+
+    }
+
+    public function changeOrderStatus(Request $request){
+            //start mission
+    }
+
+
+
     public function create(Request $request)
     {
         return view('admin.pages.orders.create');

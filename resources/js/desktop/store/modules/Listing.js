@@ -40,6 +40,21 @@ const actions = {
     nextListingPage({state, commit}, page) {
         commit('setListingCurrentPage', page);
     },
+    async getActiveListings({state, commit}) {
+        return axios
+            .get(`/listing/active?page=${state.paginate.current_page || 1}`)
+            .then(resp => {
+                console.log("Test",resp)
+                commit('setListings', resp.data.listings || []);
+            })
+    },
+    async getArchiveListings({state, commit}) {
+        return axios
+            .get(`/listing/archive?page=${state.paginate.current_page || 1}`)
+            .then(resp => {
+                commit('setListings', resp.data.listings || []);
+            })
+    },
     async getListings({state, commit}) {
         return axios
             .get(`/api/listings?page=${state.paginate.current_page || 1}`)

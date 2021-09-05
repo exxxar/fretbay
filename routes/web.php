@@ -179,12 +179,17 @@ Route::group(['middleware' => ['auth', 'role:transporter'], "prefix" => "transpo
 });
 
 Route::group(["prefix" => "listing","middleware"=>"auth"], function () {
-    Route::get("/{id}", "ListingController@show")->name("desktop.listing");
+
+    Route::get('/active', 'ListingController@loadActive');
+    Route::get('/archive', 'ListingController@loadArchive');
+
+    Route::get("/{id}", "ListingController@show")->where(["id"=>"[0-9]+"])->name("desktop.listing");
     Route::get("/direction/{id}/{direction?}", "ListingController@goToListing")->name("desktop.direction");
     Route::post('/messages/send', 'ListingController@sendMessage');
     Route::get('/favorites/get', 'FavoriteController@index')->middleware( ['auth', 'role:transporter']);
     Route::post('/favorites/add', 'FavoriteController@store')->middleware( ['auth', 'role:transporter']);
     Route::post('/favorites/remove', 'FavoriteController@destroy')->middleware( ['auth', 'role:transporter']);
+
 });
 
 Route::get('/notifications/get', 'NotificationController@index')->middleware( ['auth']);

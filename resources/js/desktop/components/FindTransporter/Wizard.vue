@@ -46,12 +46,16 @@
                 if(this.current_step !== this.step_count-1)
                 {
                     this.current_step++
+                    window.scrollTo(0, 0);
+
                 }
             },
             prevStep() {
                 if(this.current_step !== 0)
                 {
                     this.current_step--
+
+                    window.scrollTo(0, 0);
                 }
             },
         }

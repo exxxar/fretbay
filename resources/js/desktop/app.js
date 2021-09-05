@@ -48,8 +48,8 @@ Vue.use(VueRecord)
 
 //components
 Vue.component('preloader-component', require('../desktop/components/Preloader.vue').default);
-Vue.component('listing-item-component', require('./components/ListingItem.vue').default);
-Vue.component('listing-paginate-component', require('./components/ListingPaginate.vue').default);
+Vue.component('listing-item-component', require('./components/Listing/ListingItem.vue').default);
+Vue.component('listing-paginate-component', require('./components/Listing/ListingPaginate.vue').default);
 Vue.component('footer-component', require('../desktop/components/Footer.vue').default);
 Vue.component('header-component', require('./components/Header.vue').default);
 Vue.component('sidebar-component', require('./components/Sidebar.vue').default);
@@ -58,8 +58,8 @@ Vue.component('signup-transporter-component', require('./components/Modals/SignU
 Vue.component('signup-customer-component', require('./components/Modals/SignUpCustomer.vue').default);
 Vue.component('chat-component', require('./components/Listing/Chat.vue').default);
 Vue.component('quotes-component', require('./components/Listing/Quotes.vue').default);
-Vue.component('notification-item-component', require('./components/NotificationItem.vue').default);
-Vue.component('notification-paginate-component', require('./components/NotificationPaginate.vue').default);
+Vue.component('notification-item-component', require('./components/Notifications/NotificationItem.vue').default);
+Vue.component('notification-paginate-component', require('./components/Notifications/NotificationPaginate.vue').default);
 Vue.component('favorites-paginate-component', require('./components/FavoritePaginate.vue').default);
 
 Vue.component('text-callback-form-component', require('./components/TextCallbackForm.vue').default);
@@ -68,7 +68,7 @@ Vue.component('voice-callback-form-component', require('./components/VoiceCallba
 Vue.component('latest-transactions-component', require('../desktop/components/LatestTransactions.vue').default);
 Vue.component('top-movers-component', require('../desktop/components/TopMovers.vue').default);
 Vue.component('modals-component', require('../desktop/components/Modals.vue').default);
-Vue.component('system-notification-component', require('../desktop/components/SystemNotification.vue').default);
+Vue.component('system-notification-component', require('./components/Notifications/SystemNotification.vue').default);
 
 Vue.component('how-it-work-slider-component', require('../desktop/components/Slider/HowItWorkSlider.vue').default);
 

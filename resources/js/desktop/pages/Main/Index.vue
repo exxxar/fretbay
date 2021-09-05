@@ -1,75 +1,15 @@
 <template>
     <main id="content">
-       <!--  Hero Section
-        <div class="d-lg-flex bg-img-hero gradient-overlay-half-dark-v3"
-             style="background-image: url('/assets/img/1920x1080/img36.jpg');">
-            <div
-                class="container d-lg-flex align-items-lg-center flex-lg-wrap height-100vh&#45;&#45;lg space-2 space-4-top&#45;&#45;md space-3-bottom&#45;&#45;md">
-                <div class="w-md-60 mb-9">
-                    <span class="d-block lead text-white mb-2">Thinking the way forward with affordable price.</span>
-                    <h1 class="display-4 font-size-48&#45;&#45;md-down text-white font-weight-medium">
-                        Delivering the world what matters,
-                        <span class="border-bottom border-3 pb-1">
-              <strong class="u-text-animation u-text-animation&#45;&#45;typing">conveniently.</strong><span class="typed-cursor"
-                                                                                                    style="animation-iteration-count: infinite;">|</span>
-            </span>
-                    </h1>
-                </div>
 
-                 Search Form
-                <form class="js-validate w-100" novalidate="novalidate" action="/find-transporter" method="get">
-                    <div class="row mb-7">
-                        <div class="col-sm-6 col-lg-4 mb-4 mb-lg-0">
-                             Input
-                            <label class="d-block text-white font-weight-medium text-uppercase">Place of
-                                departure</label>
-                            <div class="input-group form">
-                                <div class="input-group-prepend form__prepend">
-                  <span class="input-group-text form__text">
-                    <i class="fas fa-map-marker-alt text-purple" id="keywordInputAddon"></i>
-                  </span>
-                                </div>
-                                <input type="text" class="form-control form__input" placeholder="Enter city"
-                                       aria-label="Enter city" aria-describedby="keywordInputAddon">
-                            </div>
-                             End Input
-                        </div>
 
-                        <div class="col-sm-6 col-lg-4 mb-4 mb-lg-0">
-                             Input
-                            <label class="d-block text-white font-weight-medium text-uppercase">Arrival point</label>
-                            <div class="input-group form">
-                                <div class="input-group-prepend form__prepend">
-                  <span class="input-group-text form__text">
-                    <i class="fas fa-map-marker-alt text-primary" id="locationInputAddon"></i>
-                  </span>
-                                </div>
-                                <input type="text" class="form-control form__input" placeholder="Enter destination"
-                                       aria-label="Enter destination" aria-describedby="locationInputAddon">
-                            </div>
-                             End Input
-                        </div>
-
-                        <div class="col-lg-2 align-self-lg-end">
-                            <button type="submit" class="btn btn-block btn-primary transition-3d-hover">Get a Quote
-                            </button>
-                        </div>
-                    </div>
-
-                    <p class="small text-white">or just call us at +1 707 112 82 82</p>
-                </form>
-                 End Search Form
-            </div>
-        </div>
-         End Hero Section -->
-
-        <div class="gradient-overlay-half-dark-v1 bg-img-hero" style="background-image: url(/assets/img/1920x1080/img5.jpg);">
+        <div class="gradient-overlay-half-dark-v1 bg-img-hero"
+             style="background-image: url(/assets/img/1920x1080/img5.jpg);">
             <div class="d-lg-flex align-items-lg-center flex-lg-column">
                 <div class="container space-3 space-4-top--lg">
                     <!-- Title -->
                     <div class="w-md-50">
                         <h1 class="display-4 font-size-48--md-down text-white">The easiest way to manage business</h1>
-                        <p class="lead text-white">Grow your business with the top HTML5 template.</p>
+                        <p class="lead text-white">Grow your business with AlloTrans</p>
 
 
                     </div>
@@ -77,36 +17,7 @@
 
                     <form class="js-validate w-100" novalidate="novalidate" action="/find-transporter" method="get">
                         <div class="row mb-7">
-                     <!--       <div class="col-sm-6 col-lg-4 mb-4 mb-lg-0">
 
-                                <label class="d-block text-white font-weight-medium text-uppercase">Place of
-                                    departure</label>
-                                <div class="input-group form">
-                                    <div class="input-group-prepend form__prepend">
-                  <span class="input-group-text form__text">
-                    <i class="fas fa-map-marker-alt text-purple" id="keywordInputAddon"></i>
-                  </span>
-                                    </div>
-                                    <input type="text" class="form-control form__input" placeholder="Enter city"
-                                           aria-label="Enter city" aria-describedby="keywordInputAddon">
-                                </div>
-
-                            </div>-->
-<!--
-                            <div class="col-sm-6 col-lg-4 mb-4 mb-lg-0">
-
-                                <label class="d-block text-white font-weight-medium text-uppercase">Arrival point</label>
-                                <div class="input-group form">
-                                    <div class="input-group-prepend form__prepend">
-                  <span class="input-group-text form__text">
-                    <i class="fas fa-map-marker-alt text-primary" id="locationInputAddon"></i>
-                  </span>
-                                    </div>
-                                    <input type="text" class="form-control form__input" placeholder="Enter destination"
-                                           aria-label="Enter destination" aria-describedby="locationInputAddon">
-                                </div>
-
-                            </div>-->
 
                             <div class="col-lg-2 align-self-lg-end">
                                 <button type="submit" class="btn btn-block btn-primary transition-3d-hover">Get a Quote
@@ -119,21 +30,6 @@
                 </div>
             </div>
 
-            <div class="container space-1-bottom">
-                <!-- Fancybox -->
-                <div class="d-inline-block">
-                    <a class="js-fancybox u-media-player media align-items-center text-white" href="javascript:;" data-src="//vimeo.com/167434033" data-speed="700" data-animate-in="zoomIn" data-animate-out="zoomOut" data-caption="Space - Responsive Website Template">
-            <span class="u-media-player__icon mr-3">
-              <i class="fa fa-play u-media-player__icon-inner"></i>
-            </span>
-                        <span class="media-body">
-              <small class="d-block text-uppercase">Watch</small>
-              Intro Video
-            </span>
-                    </a>
-                </div>
-                <!-- End Fancybox -->
-            </div>
 
         </div>
 
@@ -158,7 +54,8 @@
         </div>
 
         <div class="container space-2-bottom space-3-bottom--lg">
-            <div class="gradient-overlay-half-dark-v1 bg-img-hero-center" style="background-image: url(/assets/img/1200x600/img1.jpg);">
+            <div class="gradient-overlay-half-dark-v1 bg-img-hero-center"
+                 style="background-image: url(/assets/img/1200x600/img1.jpg);">
                 <div class="w-lg-50 p-9">
                     <!-- Title -->
                     <div class="mb-7">
@@ -199,22 +96,30 @@
             <div class="row">
                 <div class="col-md-6">
                     <!-- Card -->
-                    <article class="card shadow-sm h-md-100 px-4 py-7 border-top-0 border-left-0 border-right-0 border-bottom border-3 border-primary mb-4 mb-md-0">
+                    <article
+                        class="card shadow-sm h-md-100 px-4 py-7 border-top-0 border-left-0 border-right-0 border-bottom border-3 border-primary mb-4 mb-md-0">
                         <div class="w-md-70 mx-md-auto">
                 <span class="u-icon u-icon--lg u-icon--primary-soft rounded-circle mb-4">
                   <i class="svg-icon svg-icon-sm text-primary u-icon__inner">
-                    <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                         xmlns:xlink="http://www.w3.org/1999/xlink">
                       <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                         <rect x="0" y="0" width="24" height="24"></rect>
-                        <path d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z" fill="#000000"></path>
-                        <path d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z" fill="#000000"></path>
+                        <path
+                            d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z"
+                            fill="#000000"></path>
+                        <path
+                            d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z"
+                            fill="#000000"></path>
                       </g>
                     </svg>
                   </i>
                 </span>
 
-                            <h3 class="text-lh-xs mb-3">Looking for a Transpoerter?<br class="d-none d-lg-inline-block"> or want to move somthing?</h3>
-                            <p class="text-muted mb-5">We guarantee you every aspect that you like on<br class="d-none d-lg-inline-block"> your property is available in here</p>
+                            <h3 class="text-lh-xs mb-3">Looking for a Transpoerter?<br class="d-none d-lg-inline-block">
+                                or want to move somthing?</h3>
+                            <p class="text-muted mb-5">We guarantee you every aspect that you like on<br
+                                class="d-none d-lg-inline-block"> your property is available in here</p>
                             <a class="btn btn-sm btn-primary" href="/find-transporter">Give it a try now</a>
                         </div>
                     </article>
@@ -223,21 +128,26 @@
 
                 <div class="col-md-6">
                     <!-- Card -->
-                    <article class="card shadow-sm h-md-100 px-4 py-7 border-top-0 border-left-0 border-right-0 border-bottom border-3 border-primary">
+                    <article
+                        class="card shadow-sm h-md-100 px-4 py-7 border-top-0 border-left-0 border-right-0 border-bottom border-3 border-primary">
                         <div class="w-md-70 mx-md-auto">
                 <span class="u-icon u-icon--lg u-icon--primary-soft rounded-circle mb-4">
                   <i class="svg-icon svg-icon-sm text-primary u-icon__inner">
-                    <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                         xmlns:xlink="http://www.w3.org/1999/xlink">
                       <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                         <rect x="0" y="0" width="24" height="24"></rect>
-                        <path d="M3.95709826,8.41510662 L11.47855,3.81866389 C11.7986624,3.62303967 12.2013376,3.62303967 12.52145,3.81866389 L20.0429,8.41510557 C20.6374094,8.77841684 21,9.42493654 21,10.1216692 L21,19.0000642 C21,20.1046337 20.1045695,21.0000642 19,21.0000642 L4.99998155,21.0000673 C3.89541205,21.0000673 2.99998155,20.1046368 2.99998155,19.0000673 L2.99999828,10.1216672 C2.99999935,9.42493561 3.36258984,8.77841732 3.95709826,8.41510662 Z M10,13 C9.44771525,13 9,13.4477153 9,14 L9,17 C9,17.5522847 9.44771525,18 10,18 L14,18 C14.5522847,18 15,17.5522847 15,17 L15,14 C15,13.4477153 14.5522847,13 14,13 L10,13 Z" fill="#000000"></path>
+                        <path
+                            d="M3.95709826,8.41510662 L11.47855,3.81866389 C11.7986624,3.62303967 12.2013376,3.62303967 12.52145,3.81866389 L20.0429,8.41510557 C20.6374094,8.77841684 21,9.42493654 21,10.1216692 L21,19.0000642 C21,20.1046337 20.1045695,21.0000642 19,21.0000642 L4.99998155,21.0000673 C3.89541205,21.0000673 2.99998155,20.1046368 2.99998155,19.0000673 L2.99999828,10.1216672 C2.99999935,9.42493561 3.36258984,8.77841732 3.95709826,8.41510662 Z M10,13 C9.44771525,13 9,13.4477153 9,14 L9,17 C9,17.5522847 9.44771525,18 10,18 L14,18 C14.5522847,18 15,17.5522847 15,17 L15,14 C15,13.4477153 14.5522847,13 14,13 L10,13 Z"
+                            fill="#000000"></path>
                       </g>
                     </svg>
                   </i>
                 </span>
 
                             <h3 class="text-lh-xs mb-3">Looking for a<br class="d-none d-lg-inline-block"> loads?</h3>
-                            <p class="text-muted mb-5">Sell your property in a quick time and<br class="d-none d-lg-inline-block"> less effort than ever</p>
+                            <p class="text-muted mb-5">Sell your property in a quick time and<br
+                                class="d-none d-lg-inline-block"> less effort than ever</p>
                             <a class="btn btn-sm btn-primary" href="/find-loads">Let's get started</a>
                         </div>
                     </article>

@@ -1,42 +1,15 @@
 <template>
 
     <main id="content">
-        <!-- Hero Section -->
-        <div class="container space-2 space-3-top--lg">
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="step">
-                        <span class="step-num">1</span>
-                        <h5 class="text-uppercase">FIND CUSTOMERS</h5>
-                        <p>To optimize your tours.</p>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="step">
-                        <span class="step-num">2</span>
-                        <h5 class="text-uppercase">SUBMIT YOUR QUOTE</h5>
-                        <p>in just two minutes!</p>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="step">
-                        <span class="step-num">3</span>
-                        <h5 class="text-uppercase">INCREASE YOUR SALES REVENUE</h5>
-                        <p>More than 20 Million in business volume</p>
-                    </div>
-                </div>
 
-            </div>
-        </div>
-        <!-- End Hero Section -->
 
-        <div class="container mb-2">
+        <div class="container mb-2 mt-2">
             <div class="row">
                 <div class="col-12">
 
 
                     <VueSlickCarousel v-bind="settings" v-if="categories.length>0">
-                        <div v-for="category in categories" @click="selectType(category.id)">
+                        <div v-for="category in categories" @click="selectType(category.id)" class="p-2">
 
                             <div class="card filter-card"
                                  :class="{'text-primary font-weight-bold card-primary':inSelectedType(category.id),'text-secondary':!inSelectedType(category.id)}">
@@ -205,7 +178,7 @@
                                                    placeholder="City, Region, Country">
 
                                     </address-input>
-                                    
+
                                 </div>
 
 
@@ -238,6 +211,35 @@
             </div>
         </div>
         <!-- End News Blog Content -->
+
+        <!-- Hero Section -->
+        <div class="container space-2 space-3-top&#45;&#45;lg">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="step">
+                        <span class="step-num">1</span>
+                        <h5 class="text-uppercase">FIND CUSTOMERS</h5>
+                        <p>To optimize your tours.</p>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="step">
+                        <span class="step-num">2</span>
+                        <h5 class="text-uppercase">SUBMIT YOUR QUOTE</h5>
+                        <p>in just two minutes!</p>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="step">
+                        <span class="step-num">3</span>
+                        <h5 class="text-uppercase">INCREASE YOUR SALES REVENUE</h5>
+                        <p>More than 20 Million in business volume</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- End Hero Section -->
     </main>
 
 </template>
@@ -305,7 +307,7 @@
                         {
                             breakpoint: 800,
                             settings: {
-                                slidesToShow: 1,
+                                slidesToShow: 2,
                                 slidesToScroll: 1
                             }
                         }
