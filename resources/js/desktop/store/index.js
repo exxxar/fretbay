@@ -10,6 +10,7 @@ import Subcategory from "./modules/Subcategory";
 import Thing from "./modules/Thing";
 import ListingModule from "./modules/ListingModule";
 import Listing from "./modules/Listing";
+import Order from "./modules/Order";
 import Notification from "./modules/Notification";
 import Favorite from "./modules/Favorite";
 import AuthUser from "./modules/AuthUser";
@@ -19,6 +20,6 @@ Vue.use(Vuex);
 export default new Vuex.Store({
     namespaced: true,
     modules: {
-        ArticleCart, VolumeCart, Category, Subcategory, Thing, ListingModule, Listing, AuthUser,  Notification, Favorite
+        ArticleCart, VolumeCart, Category, Subcategory, Thing, ListingModule, Listing, AuthUser,  Notification, Favorite, Order
     }
 })

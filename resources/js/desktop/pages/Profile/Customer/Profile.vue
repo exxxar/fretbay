@@ -23,7 +23,7 @@
                        aria-controls="listings-archive" aria-selected="true">Archive listings</a>
                 </li>
 
-                <li class="nav-item">
+                <li class="nav-item" @click="loadOrders">
                     <a class="nav-link" id="orders-tab" data-toggle="tab" href="#orders" role="tab"
                        aria-controls="orders" aria-selected="true">Orders</a>
                 </li>
@@ -241,7 +241,12 @@
                 </div>
 
                 <div class="tab-pane fade" id="listings-active" role="tabpanel" aria-labelledby="listings-active-tab">
-                    <p>Count results: {{listings.length}}</p>
+                    <div class="row d-flex justify-content-center" v-if="listings.length===0">
+                        <div class="col-md-4">
+                            <a class="btn btn-outline-primary" href="/find-transporter">Find transporter</a>
+                        </div>
+                    </div>
+                    <p v-else>Count results: {{listings.length}}</p>
 
                     <listing-item-component :key="index" v-for="(listing,index) in listings" :listing="listing"/>
 
@@ -252,7 +257,12 @@
 
                 <div class="tab-pane fade" id="listings-archive" role="tabpanel" aria-labelledby="listings-archive-tab">
 
-                    <p>Count results: {{listings.length}}</p>
+                    <div class="row d-flex justify-content-center" v-if="listings.length===0">
+                        <div class="col-md-4">
+                            <a class="btn btn-outline-primary" href="/find-transporter">Find transporter</a>
+                        </div>
+                    </div>
+                    <p v-else>Count results: {{listings.length}}</p>
 
                     <listing-item-component :key="index" v-for="(listing,index) in listings" :listing="listing"/>
 
@@ -262,7 +272,17 @@
                 </div>
 
                 <div class="tab-pane fade" id="orders" role="tabpanel" aria-labelledby="orders-tab">
-                    Orders
+
+                    <div class="row d-flex justify-content-center" v-if="userOrders.length===0">
+                        <div class="col-md-4">
+                            <a class="btn btn-outline-primary" href="/find-transporter">Find transporter</a>
+                        </div>
+                    </div>
+                    <p v-else>Count results: {{userOrders.length}}</p>
+
+                    <order-item-component  :key="index" v-for="(order,index) in userOrders" :order="order"/>
+
+                    <order-paginate-component/>
                 </div>
 
                 <div class="tab-pane fade" id="notifications" role="tabpanel" aria-labelledby="notifications-tab">
@@ -283,9 +303,14 @@
             }
         },
         computed: {
-            listings: function () {
-                return this.$store.getters.listings;
+                listings: function () {
+                    return this.$store.getters.listings;
+                },
+
+            userOrders: function () {
+                return this.$store.getters.userOrders;
             },
+
             fullAddress() {
                 return this.profile.country + ","
                     + this.profile.region + ","
@@ -307,6 +332,9 @@
             }
         },
         methods:{
+            loadOrders(){
+                this.$store.dispatch('getOrders');
+            },
             loadActiveListing(){
                 this.$store.dispatch('getActiveListings');
             },

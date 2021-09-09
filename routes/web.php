@@ -178,6 +178,24 @@ Route::group(['middleware' => ['auth', 'role:transporter'], "prefix" => "transpo
     });
 });
 
+
+Route::group(["prefix" => "reviews","middleware"=>"auth"], function () {
+
+    Route::get('/list', 'ReviewController@getReviews');
+
+
+});
+
+Route::group(["prefix" => "orders","middleware"=>"auth"], function () {
+
+    Route::get('/list', 'OrderController@index');
+    Route::get('/filtered', 'OrderController@filtered');
+    Route::get('/without_review', 'OrderController@getOrdersWithoutReview');
+    Route::post('/status', 'OrderController@changeOrderStatus');
+    Route::post('/accept', 'OrderController@acceptOrder');
+
+});
+
 Route::group(["prefix" => "listing","middleware"=>"auth"], function () {
 
     Route::get('/active', 'ListingController@loadActive');

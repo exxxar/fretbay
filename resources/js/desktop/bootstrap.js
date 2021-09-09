@@ -61,7 +61,7 @@ window.csrf = document.head.querySelector('meta[name="csrf-token"]').content
 
 var Pusher = require('pusher-js');
 
-Pusher.logToConsole = true;
+Pusher.logToConsole = false;
 
 var pusher = new Pusher('e4a064fd6ecf04afd75e', {
     cluster: 'eu',

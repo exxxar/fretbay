@@ -24,15 +24,13 @@ class Order extends Model
     ];
 
     protected $casts = [
-        "price" => "double",
-        "summary_delivery_range" => "double",
-        "properties" => "array",
-        "shipping_date_from" => "datetime",
-        "shipping_date_to" => "datetime",
-        "unshipping_date_from" => "datetime",
-        "unshipping_date_to" => "datetime",
-        "additional_properties" => "array",
+        "price" => "double"
     ];
+
+
+    public function review(){
+        return $this->hasOne(Review::class, "order_id","id");
+    }
 
     public function user()
     {

@@ -34,7 +34,7 @@
 
                             <!--  Request a quote -->
                             <li class="nav-item hs-has-mega-menu u-header__nav-item">
-                                <a href="/find-transporter" class="nav-link u-header__nav-link">
+                                <a href="/find-transporter" class="nav-link u-header__nav-link btn-link">
                                     Request a quote
                                 </a>
                             </li>
@@ -51,7 +51,7 @@
 
 
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                                <a class="nav-link dropdown-toggle " href="#" id="navbarDropdownMenuLink"
                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Helps
                                 </a>
@@ -60,7 +60,7 @@
                                     <a class="dropdown-item" href="/find-transporter">Search for a transporter</a>
                                     <a class="dropdown-item" href="/how-it-works">How does it work?</a>
                                     <a class="dropdown-item" href="/fequently-asked-questions">F.A.Q.</a>
-                                    <a class="dropdown-item" href="/recruitment">Recruitment</a>
+                            <!--        <a class="dropdown-item" href="/recruitment">Recruitment</a>-->
                                     <a class="dropdown-item" href="/contact-us">Contact Us</a>
                                     <a class="dropdown-item" href="/privacy">Privacy</a>
                                 </div>
@@ -68,7 +68,7 @@
 
 
                             <li class="nav-item dropdown u-header__nav-item-btn" v-if="!user">
-                                <a class="btn btn-primary dropdown-toggle" href="#" id="signupDropdown"
+                                <a class="btn btn-primary dropdown-toggle text-white" href="#" id="signupDropdown"
                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     SignUp
                                 </a>
@@ -113,11 +113,14 @@
 
                                 <!-- Input -->
                                 <form id="search"
+                                      target="_blank"
+                                      :action="'https://www.google.com/search?q=site:allotrans.com '+searchText"
+                                      method="get"
                                       class="js-focus-state input-group form u-header__search u-unfold--css-animation u-unfold--hidden fadeOut"
                                       style="animation-duration: 300ms;">
-                                    <input class="form-control form__input" type="search" placeholder="Search Space">
+                                    <input class="form-control form__input" type="search" placeholder="Search Space" v-model="searchText">
                                     <div class="input-group-addon u-header__search-addon p-0">
-                                        <button class="btn btn-primary u-header__search-addon-btn" type="button">
+                                        <button class="btn btn-primary u-header__search-addon-btn" type="submit">
                                             <i class="fa fa-search"></i>
                                         </button>
                                     </div>
@@ -159,6 +162,7 @@
         },
         data() {
             return {
+                searchText: null,
                 langOptions: [
                     {
                         countryCode: "en",
@@ -226,5 +230,7 @@
         }
     }
 </script>
+
+
 
 

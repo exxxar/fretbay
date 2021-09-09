@@ -71,9 +71,29 @@ class ListingController extends Controller
         ]);
     }
 
-    public function addToArchive(){
+    public function addToArchive($id){
 
+        $user_id = Auth::user()->id;
+
+        $listing = Listing::where("id",$id)
+            ->where("user_id",$user_id)
+            ->first();
+
+        if (is_null($listing))
+            return response()->json([
+                "message" => "Error!"
+            ], 404);
+
+
+        event(new NotificationEvent(
+            "#listing-" . $listing->id,
+            "Listing add to archive",
+            NotificationType::Warning,
+            Auth::user()->id));
+
+        return response()->noContent();
     }
+
 
     public function filtered(Request $request)
     {
@@ -201,6 +221,8 @@ class ListingController extends Controller
                 $place_of_delivery->center[0] ?? 0,
                 $place_of_delivery->center[1] ?? 0
             ),
+
+            'is_active'=>"true",
             'expiration_date' => Carbon::createFromTimestamp($request->get('unshipping_date_to')),
             'category_id' => $request->get('category_id') ?? null,
             'subcategory_id' => $request->get('subcategory_id') ?? null,

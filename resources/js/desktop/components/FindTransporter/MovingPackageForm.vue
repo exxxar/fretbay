@@ -1,7 +1,7 @@
 <template>
     <div class="mt-2 item-moving-container">
         <div class="row">
-            <div class="col-12 col-md-6 col-lg-3 mb-2">
+            <div class="col-6 col-md-6 col-lg-3 mb-2">
 
                 <div class="card choose-card w-100 cursor-pointer"
                      @click="chooseMovingPackage('Truck with Driver package')"
@@ -37,7 +37,7 @@
 
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-3 mb-2">
+            <div class="col-6 col-md-6 col-lg-3 mb-2">
                 <div class="card choose-card w-100 cursor-pointer"
                      @click="chooseMovingPackage('The Economic package')"
                      :class="{'active': selected_package ==='The Economic package'}">
@@ -69,7 +69,7 @@
 
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-3 mb-2">
+            <div class="col-6 col-md-6 col-lg-3 mb-2">
                 <div class="card choose-card w-100 cursor-pointer"
                      @click="chooseMovingPackage('The Standard package')"
                      :class="{'active': selected_package ==='The Standard package'}">
@@ -106,7 +106,7 @@
 
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-3 mb-2">
+            <div class="col-6 col-md-6 col-lg-3 mb-2">
                 <div class="card choose-card w-100 cursor-pointer"
                      @click="chooseMovingPackage('The Complete package')"
                      :class="{'active': selected_package ==='The Complete package'}"

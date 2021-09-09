@@ -10,10 +10,10 @@
                         <a class="list-group-item list-group-item-action" href="/who-we-are">Who we are</a>
                         <a class="list-group-item list-group-item-action" href="/how-it-works">How does it work?</a>
                         <a class="list-group-item list-group-item-action" href="/fequently-asked-questions">Frequently asked questions</a>
-                        <a class="list-group-item list-group-item-action" href="/find-transporter">Search for a transporter</a>
+        <!--                <a class="list-group-item list-group-item-action" href="/find-transporter">Search for a transporter</a>
                         <a class="list-group-item list-group-item-action" href="/find-loads">Search for a loads</a>
                         <a class="list-group-item list-group-item-action" href="/benefits-transporter-mover-carrier">I am a transporter</a>
-                        <a class="list-group-item list-group-item-action" href="/recruitment">Recruitment</a>
+                        <a class="list-group-item list-group-item-action" href="/recruitment">Recruitment</a>-->
                     </div>
                     <!-- End List Group -->
                 </div>
@@ -23,18 +23,18 @@
 
                     <!-- List Group -->
                     <div class="list-group list-group-flush list-group-transparent">
-                        <a class="list-group-item list-group-item-action" href="/reviews">Customer testimonials</a>
-                        <a class="list-group-item list-group-item-action" href="/quality-charte">Quality charter</a>
+             <!--           <a class="list-group-item list-group-item-action" href="/reviews">Customer testimonials</a>
+                        <a class="list-group-item list-group-item-action" href="/quality-charte">Quality charter</a>-->
                         <a class="list-group-item list-group-item-action" href="/privacy">Privacy</a>
                         <a class="list-group-item list-group-item-action" href="/contact-us">Contact us</a>
                     </div>
                     <!-- End List Group -->
                 </div>
 
-                <div class="col-6 col-md-3 col-lg-2 order-lg-5 mb-7 mb-lg-0">
+               <!-- <div class="col-6 col-md-3 col-lg-2 order-lg-5 mb-7 mb-lg-0">
                     <h3 class="h6 text-white mb-3">Our tips</h3>
 
-                    <!-- List Group -->
+                    &lt;!&ndash; List Group &ndash;&gt;
                     <div class="list-group list-group-flush list-group-transparent">
                         <a class="list-group-item list-group-item-action" href="/tips-moving">Moving advices</a>
                         <a class="list-group-item list-group-item-action" href="/company-move">Company move</a>
@@ -42,8 +42,8 @@
                         <a class="list-group-item list-group-item-action" href="/ebay-sellers">eBay Sellers</a>
                         <a class="list-group-item list-group-item-action" href="/fraud-prevention">Scam Prevention</a>
                     </div>
-                    <!-- End List Group -->
-                </div>
+                    &lt;!&ndash; End List Group &ndash;&gt;
+                </div>-->
 
                 <div class="col-6 col-md-3 col-lg-2 order-lg-6 mb-7 mb-lg-0">
                     <h3 class="h6 text-white mb-3">Social</h3>
@@ -54,7 +54,7 @@
                             <i class="fab fa-facebook-f min-width-3 text-center mr-2"></i>
                             Facebook
                         </a>
-                        <a class="list-group-item list-group-item-action" href="#">
+                       <!-- <a class="list-group-item list-group-item-action" href="#">
                             <i class="fab fa-twitter min-width-3 text-center mr-2"></i>
                             Twitter
                         </a>
@@ -65,7 +65,7 @@
                         <a class="list-group-item list-group-item-action" href="#">
                             <i class="fab fa-github min-width-3 text-center mr-2"></i>
                             GitHub
-                        </a>
+                        </a>-->
                     </div>
                     <!-- End List -->
                 </div>

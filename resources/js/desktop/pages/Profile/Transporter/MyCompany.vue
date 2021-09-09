@@ -251,11 +251,19 @@
                                     <label class="custom-control-label" for="german-lang">German</label>
                                 </div>
 
+
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" class="custom-control-input" id="franch-lang"
                                            :checked="check('spoken_languages', 'fr')"
                                            @change="choose('spoken_languages', 'fr')">
                                     <label class="custom-control-label" for="franch-lang">Francai</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="epspan-lang"
+                                           :checked="check('spoken_languages', 'es')"
+                                           @change="choose('spoken_languages', 'es')">
+                                    <label class="custom-control-label" for="epspan-lang">Español</label>
                                 </div>
 
     <!--                            <div class="form-group text-center">-->

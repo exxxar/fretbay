@@ -2,14 +2,19 @@
     <main id="content">
 
 
+
+
+
+
+
         <div class="gradient-overlay-half-dark-v1 bg-img-hero"
              style="background-image: url(/assets/img/1920x1080/img5.jpg);">
             <div class="d-lg-flex align-items-lg-center flex-lg-column">
                 <div class="container space-3 space-4-top--lg">
                     <!-- Title -->
                     <div class="w-md-50">
-                        <h1 class="display-4 font-size-48--md-down text-white">The easiest way to manage business</h1>
-                        <p class="lead text-white">Grow your business with AlloTrans</p>
+                        <h1 class="display-4 font-size-48--md-down text-white">La façon la plus simple de gérer les affaires</h1>
+                        <p class="lead text-white">Développez votre entreprise avec AlloTrans</p>
 
 
                     </div>
@@ -20,12 +25,13 @@
 
 
                             <div class="col-lg-2 align-self-lg-end">
-                                <button type="submit" class="btn btn-block btn-primary transition-3d-hover">Get a Quote
+                                <button type="submit" class="btn btn-block btn-primary transition-3d-hover">
+                                    Obtenez un devis
                                 </button>
                             </div>
                         </div>
 
-                        <p class="small text-white">or just call us at +1 707 112 82 82</p>
+                        <p class="small text-white">ou appelez-nous simplement au +1 707 112 82 82</p>
                     </form>
                 </div>
             </div>
@@ -33,66 +39,8 @@
 
         </div>
 
-        <div class="container space-2 space-3--md">
-            <!-- Title -->
-            <div class="w-md-80 w-lg-60 text-center mx-md-auto mb-9">
-                <span class="u-label u-label--sm u-label--purple mb-3">Latest transactions</span>
-                <h2>Work we do and service we provide</h2>
-                <p>We put at your disposal a wide range of services that can solve the logistics needs of your company,
-                    regardless of the size and sector to which it belongs.</p>
-            </div>
-            <!-- End Title -->
-            <div class="row">
-                <div class="col-lg-4">
-                    <top-movers-component/>
-                </div>
-                <div class="col-lg-8">
-                    <latest-transactions-component/>
-                </div>
-            </div>
 
-        </div>
-
-        <div class="container space-2-bottom space-3-bottom--lg">
-            <div class="gradient-overlay-half-dark-v1 bg-img-hero-center"
-                 style="background-image: url(/assets/img/1200x600/img1.jpg);">
-                <div class="w-lg-50 p-9">
-                    <!-- Title -->
-                    <div class="mb-7">
-                        <span class="u-label u-label--sm u-label--light mb-2">Space on the go</span>
-                        <h2 class="text-white">Space on mobile</h2>
-                        <p class="text-white">Don't miss anything out because you're on the move. Stay connected.</p>
-                    </div>
-                    <!-- End Title -->
-
-                    <!-- Button -->
-                    <button type="button" class="btn btn-xs btn-dark text-left mb-2 mb-md-0 mr-md-2">
-            <span class="media align-items-center">
-              <i class="fab fa-apple fa-3x mr-3"></i>
-              <span class="d-block">
-                <span class="d-block">Download on the</span>
-                <strong class="d-block font-size-14">App Store</strong>
-              </span>
-            </span>
-                    </button>
-                    <!-- End Button -->
-
-                    <!-- Button -->
-                    <button type="button" class="btn btn-xs btn-dark text-left mb-2 mb-md-0">
-            <span class="media align-items-center">
-              <i class="fab fa-google-play fa-3x mr-3"></i>
-              <span class="d-block">
-                <span class="d-block">Get it on</span>
-                <strong class="d-block font-size-14">Google Play</strong>
-              </span>
-            </span>
-                    </button>
-                    <!-- End Button -->
-                </div>
-            </div>
-        </div>
-
-        <div class="container text-center">
+        <div class="container text-center space-3--md">
             <div class="row">
                 <div class="col-md-6">
                     <!-- Card -->
@@ -116,11 +64,15 @@
                   </i>
                 </span>
 
-                            <h3 class="text-lh-xs mb-3">Looking for a Transpoerter?<br class="d-none d-lg-inline-block">
-                                or want to move somthing?</h3>
-                            <p class="text-muted mb-5">We guarantee you every aspect that you like on<br
-                                class="d-none d-lg-inline-block"> your property is available in here</p>
-                            <a class="btn btn-sm btn-primary" href="/find-transporter">Give it a try now</a>
+                            <h3 class="text-lh-xs mb-3">
+                                Vous cherchez un transporteur ?<br class="d-none d-lg-inline-block">
+                                ou envie de bouger quelque chose ?</h3>
+                            <p class="text-muted mb-5">
+                                Nous vous garantissons tous les aspects que vous aimez sur<br
+                                class="d-none d-lg-inline-block">
+                                votre bien est disponible ici</p>
+                            <a class="btn btn-sm btn-primary" href="/find-transporter">
+                                Essayez-le maintenant</a>
                         </div>
                     </article>
                     <!-- End Card -->
@@ -145,16 +97,83 @@
                   </i>
                 </span>
 
-                            <h3 class="text-lh-xs mb-3">Looking for a<br class="d-none d-lg-inline-block"> loads?</h3>
-                            <p class="text-muted mb-5">Sell your property in a quick time and<br
-                                class="d-none d-lg-inline-block"> less effort than ever</p>
-                            <a class="btn btn-sm btn-primary" href="/find-loads">Let's get started</a>
+                            <h3 class="text-lh-xs mb-3">
+                                La recherche d'un<br class="d-none d-lg-inline-block">
+                                charges?</h3>
+                            <p class="text-muted mb-5">
+                                Vendez votre propriété rapidement et<br
+                                class="d-none d-lg-inline-block"> moins d'efforts que jamais</p>
+                            <a class="btn btn-sm btn-primary" href="/find-loads">
+                                Commençons</a>
                         </div>
                     </article>
                     <!-- End Card -->
                 </div>
             </div>
         </div>
+ <!--       <div class="container space-2 space-3&#45;&#45;md">
+            &lt;!&ndash; Title &ndash;&gt;
+            <div class="w-md-80 w-lg-60 text-center mx-md-auto mb-9">
+                <span class="u-label u-label&#45;&#45;sm u-label&#45;&#45;purple mb-3">Latest transactions</span>
+                <h2>Work we do and service we provide</h2>
+                <p>We put at your disposal a wide range of services that can solve the logistics needs of your company,
+                    regardless of the size and sector to which it belongs.</p>
+            </div>
+            &lt;!&ndash; End Title &ndash;&gt;
+            <div class="row">
+                <div class="col-lg-4">
+                    <top-movers-component/>
+                </div>
+                <div class="col-lg-8">
+                    <latest-transactions-component/>
+                </div>
+            </div>
+
+        </div>-->
+
+        <div class="container space-2-bottom space-3--md">
+            <div class="gradient-overlay-half-dark-v1 bg-img-hero-center"
+                 style="background-image: url(/assets/img/1200x600/img1.jpg);">
+                <div class="w-lg-50 p-9">
+                    <!-- Title -->
+                    <div class="mb-7">
+                        <span class="u-label u-label--sm u-label--light mb-2">
+De l'espace en déplacement</span>
+                        <h2 class="text-white">Espace sur mobile</h2>
+                        <p class="text-white">Ne manquez rien parce que vous êtes en mouvement. Rester connecté.</p>
+                    </div>
+                    <!-- End Title -->
+
+                    <!-- Button -->
+                    <button type="button" class="btn btn-xs btn-dark text-left mb-2 mb-md-0 mr-md-2">
+            <span class="media align-items-center">
+              <i class="fab fa-apple fa-3x mr-3"></i>
+              <span class="d-block">
+                <span class="d-block">Télécharger sur le</span>
+                <strong class="d-block font-size-14">
+Magasin d'applications</strong>
+              </span>
+            </span>
+                    </button>
+                    <!-- End Button -->
+
+                    <!-- Button -->
+                    <button type="button" class="btn btn-xs btn-dark text-left mb-2 mb-md-0">
+            <span class="media align-items-center">
+              <i class="fab fa-google-play fa-3x mr-3"></i>
+              <span class="d-block">
+                <span class="d-block">
+Mettez-le sur</span>
+                <strong class="d-block font-size-14">jeu de Google</strong>
+              </span>
+            </span>
+                    </button>
+                    <!-- End Button -->
+                </div>
+            </div>
+        </div>
+
+
 
         <!-- Our Work Section -->
         <div class="container space-2 space-3--md">
@@ -669,7 +688,7 @@
         <!-- End FAQ Section -->
 
         <!-- CTA Section -->
-        <div class="bg-purple text-white">
+        <!--<div class="bg-purple text-white">
             <div class="container space-1">
                 <div class="row justify-content-lg-between align-items-lg-center">
                     <div class="col-lg-5">
@@ -678,7 +697,7 @@
                     </div>
 
                     <div class="col-lg-5">
-                        <!-- Input -->
+                        &lt;!&ndash; Input &ndash;&gt;
                         <div class="input-group form">
                             <div class="input-group-prepend form__prepend">
                                 <span class="input-group-text form__text">
@@ -688,11 +707,11 @@
                             <input type="text" class="form-control form__input" placeholder="1283791HJK128"
                                    aria-label="1283791HJK128" aria-describedby="keywordInputAddon">
                         </div>
-                        <!-- End Input -->
+                        &lt;!&ndash; End Input &ndash;&gt;
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
         <!-- End CTA Section -->
     </main>
 </template>

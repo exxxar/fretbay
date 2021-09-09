@@ -44,7 +44,6 @@ const actions = {
         return axios
             .get(`/listing/active?page=${state.paginate.current_page || 1}`)
             .then(resp => {
-                console.log("Test",resp)
                 commit('setListings', resp.data.listings || []);
             })
     },
@@ -134,8 +133,6 @@ const mutations = {
         state.listings = payload.data
         state.paginate = payload
         delete state.paginate.data;
-
-        console.log("listings", state.paginate)
 
     },
     addListing(state, payload) {

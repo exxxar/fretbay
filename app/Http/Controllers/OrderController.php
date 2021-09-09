@@ -2,33 +2,125 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\NotificationType;
+use App\Events\NotificationEvent;
 use App\Http\Requests\CategoryProperyStoreRequest;
 use App\Http\Requests\CategoryProperyUpdateRequest;
 use App\Http\Requests\OrderStoreRequest;
 use App\Http\Requests\OrderUpdateRequest;
 use App\Models\CategoryProperty;
+use App\Models\Listing;
 use App\Models\Order;
+use App\Models\Quote;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
     public function index()
     {
-        $orders = Order::all();
+        $orders = Order::with(["listing"])
+            ->where("user_id", Auth::user()->id)
+            ->orWhere("transporter_id", Auth::user()->id)
+            ->paginate(15);
+
         return response()->json([
-            'order' => $orders
-        ])->paginate(15);
+            'orders' => $orders
+        ]);
     }
 
 
-    public function acceptOrder(Request $request){
+    public function getOrdersWithoutReview()
+    {
+        $orders = Order::with(["review"])
+            ->where("user_id", Auth::user()->id)
+            ->orWhere("transporter_id", Auth::user()->id)
+            ->get();
+
+        $tmp = [];
+
+        foreach ($orders as $order)
+            if (is_null($order->review))
+                array_push($tmp, $order);
+
+        return response()->json(["orders" => $tmp]);
+    }
+
+    public function acceptOrder(Request $request)
+    {
+
+        $request->validate([
+            "quote_id"
+        ]);
+
+        $user_id = Auth::user()->id;
+
+        $quote = Quote::where("id", $request->quote_id)->first();
+
+        if (is_null($quote))
+            return response()->json([
+                "message" => "Error!"
+            ], 404);
+
+        $listing = Listing::where("id", $quote->listing_id)->first();
+
+        if (is_null($listing))
+            return response()->json([
+                "message" => "Error!"
+            ], 404);
+
+        $order = Order::create([
+            "title" => $listing->title,
+            "description" => $listing->description,//Описание заказа
+            "price" => $quote->price,//Сумма заказа
+            "status" => 0,
+            "user_id" => $user_id,
+            "listing_id" => $listing->id,
+            "transporter_id" => $quote->user_id,
+        ]);
+
+        event(new NotificationEvent(
+            "#order-" . $order->id,
+            "Create order",
+            NotificationType::Info,
+            Auth::user()->id));
+
+        return response()->json([
+            "order" => $order
+        ]);
 
     }
 
-    public function changeOrderStatus(Request $request){
-            //start mission
-    }
+    public function changeOrderStatus(Request $request)
+    {
+        $request->validate([
+            "order_id"=>"required",
+            "status"=>"required"
+        ]);
 
+        $order = Order::where("id",$request->order_id)->first();
+
+        if (is_null($order))
+            return response()->json([
+                "message" => "Error!"
+            ], 404);
+
+
+        $order->status = $request->status;
+        $order->save();
+
+        event(new NotificationEvent(
+            "#order-" . $order->id,
+            "Change order status",
+            NotificationType::Info,
+            Auth::user()->id));
+
+        return response()->json([
+            "order" => $order
+        ]);
+
+        //start mission
+    }
 
 
     public function create(Request $request)

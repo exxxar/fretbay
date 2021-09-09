@@ -2,9 +2,8 @@
 
     <main id="content">
         <!-- Description Section -->
-        <div class="container space-1 space-3--md">
-            <div class="row pb-5 pt-5" v-if="favorites.length>0">
-                <h2>Your favorite quotes</h2>
+        <div class="container">
+            <div class="row pb-5 pt-2" v-if="favorites.length>0">
                 <div class="col-lg-12  mb-9 mb-lg-0">
                     <small style="color:lightgray;">Results {{favorites.length}}</small>
 

@@ -1,14 +1,15 @@
 <template>
-    <div class="card shadow-sm border-0 mb-4 px-4">
+    <div class="card shadow-sm border-0 mb-4 px-4" v-if="listing">
         <div class="card-header d-flex justify-content-between">
 
 
             <div class="counters">
                 <span class="mr-5 text-bold" style="margin-left:-20px;">№{{preparedId}}</span>
-                <span v-if="listing.messages" class="mr-2">  {{listing.messages.length}} <i
-                    class="fas fa-envelope"></i></span>
-                <span v-if="listing.quotes">  {{listing.quotes.length}} <i class="fas fa-gavel"></i></span>
-                <span v-else>  0 <i class="fas fa-gavel"></i></span>
+                <span class="mr-2">  {{ this.listing.message_count}}
+                <i class="fas fa-envelope"></i></span>
+
+                <span>  {{ listing.quote_count}}<i class="fas fa-gavel"></i></span>
+
                 <span class="badge badge-primary"><small>{{listing.status||"In progress"}}</small></span>
                 <span class="badge badge-purple" v-if="user&&listing.user_id==user.id"><small>Your</small></span>
             </div>
@@ -192,6 +193,7 @@
                     <div class="badge rounded-pill px-3 py-2 mx-1" style="background:rgba(15,177,93,0.48);">
                         {{prepareLangTitle(listing.category.title)||"Empty"}}
                     </div>
+
                     <div class="badge rounded-pill px-3 py-2 mx-1" style="background:rgba(15,177,93,0.48);"
                          v-if="listing.category.mode ==='calculator'"
                     >
@@ -203,12 +205,12 @@
                         articles:</strong>
 
 
-                    <div class="row mt-2 w-100" v-if="listing.category.mode ==='article' && listing.articles.length>=1">
+                    <div class="d-flex space-between flex-wrap mt-2 w-100" v-if="listing.category.mode ==='article' && listing.articles.length>=1">
 
-                        <div class="col-3"
+                        <div
                              v-for="property in listing.category.properties"
                         >
-                            <a href="" class="badge badge-warning" v-for="item in listing.articles">
+                            <a href="" class="badge badge-primary mr-2 mb-2" v-for="item in listing.articles">
                                 {{prepareLangTitle(item.title)||"Empty"}}:
                                 <strong>{{item.properties[property.slug].value}}</strong>
                                 <small>
@@ -237,9 +239,6 @@
 </template>
 <script>
 
-
-    import mapboxgl from "mapbox-gl";
-
     import VueSlickCarousel from 'vue-slick-carousel'
     import 'vue-slick-carousel/dist/vue-slick-carousel.css'
     // optional style for arrows & dots
@@ -254,6 +253,7 @@
         data() {
             return {
                 imageIndex: null,
+
                 tmp_favorites: [],
                 settings: {
                     "dots": false,
@@ -292,6 +292,7 @@
             }
         },
         computed: {
+
             user: function () {
                 return window.user
             },
@@ -366,7 +367,9 @@
             }
         },
         mounted() {
-            console.log("test listing=>", this.listing)
+            console.log("listing=>", this.listing)
+            console.log("listing.messages.length =>", this.listing.messages.length)
+            console.log("listing.quotes.length =>", this.listing.quotes.length)
         }
     }
 

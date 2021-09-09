@@ -1,7 +1,7 @@
 <template>
-    <main id="content">
+    <main id="content" >
         <!-- Description Section -->
-        <div class="container space-1">
+        <div class="container space-1" v-if="notifications.length>0">
             <div class="row">
                 <div class="col-12">
                     <notification-item-component :key="item.id" :item="item" v-for="item in notifications"/>
@@ -10,6 +10,9 @@
                     <notification-paginate-component/>
                 </div>
             </div>
+        </div>
+        <div class="container space-1" v-else>
+            <h1>Empty list</h1>
         </div>
     </main>
 </template>

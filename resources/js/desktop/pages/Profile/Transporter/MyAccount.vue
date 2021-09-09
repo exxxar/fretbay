@@ -1,7 +1,7 @@
 <template>
     <div class="main-body mt-3">
         <div class="row gutters-sm">
-            <div class="col-12 col-md-4 mb-3">
+            <div class="col-12 col-lg-4 mb-3">
                 <div class="card">
                     <div class="card-body">
                         <div class="d-flex flex-column align-items-center text-center">
@@ -22,7 +22,7 @@
                 </div>
             </div>
 
-            <div class="col-12 col-md-8">
+            <div class="col-12 col-lg-8">
                 <slot name="any-error"></slot>
                 <div class="card mb-3" v-if="!editMode">
                     <div class="card-body">

@@ -216,7 +216,7 @@
                     }
                     this.$store.dispatch('addListing', formData).then(resp => {
                         this.$store.commit('addListing', resp.data.listing);
-                        window.location = '/find-loads'
+                        window.location = '/customer/profile'
                     })
                 } else {
                     this.$store.dispatch('setStep', 3)

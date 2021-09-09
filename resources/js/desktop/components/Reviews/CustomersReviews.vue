@@ -89,11 +89,16 @@
                         </div>
 
                         <div class="row" v-else>
-                            <p>You have no orders without a review</p>
+                            <div class="col-12">
+                                <p class="text-center text-primary">You have no orders without a review</p>
+                            </div>
+
                         </div>
                         <div class="form-group row d-flex justify-content-center">
                             <div class="col-sm-6">
-                                <button class="btn btn-primary w-100"
+                                <button class="btn w-100"
+                                        v-bind:class="{'btn-custom-gray':completed_orders_without_comment.length===0,
+                                        'btn-primary':completed_orders_without_comment.length>0}"
                                         :disbaled="completed_orders_without_comment.length===0">
                                     Send review
                                 </button>
@@ -110,7 +115,6 @@
 <script>
     export default {
         computed: {
-
             user: function () {
                 return window.user;
             },
@@ -146,78 +150,30 @@
                         description: 'You liked the quality of the carrier\'s services'
                     }
                 ],
-                completed_orders_without_comment: [
-                    {
-                        id: 1,
-                        title: 'Order 1'
-                    },
-                    {
-                        id: 2,
-                        title: 'Order 2'
-                    }
-                ],
-                reviews: [
-                    {
-                        id: 1,
-                        title: 'Bad service',
-                        text: 'This transporter is bad',
-                        type: 0,
-                        is_visible: true,
-                        user_id: 1,
-                        order_id: 1,
-                        transporter_id: 1,
-                        review_id: null,
-                        created_at:'2021-07-12 21:37:34',
-                        transporter: {
-                            profile: {
-                                company_name: 'Test company'
-                            }
-                        }
-                    },
-                    {
-                        id: 2,
-                        title: 'Neutral service',
-                        text: 'This transporter is Neutral',
-                        type: 1,
-                        is_visible: true,
-                        user_id: 1,
-                        order_id: 2,
-                        transporter_id: 1,
-                        review_id: null,
-                        created_at:'2021-07-12 21:37:34',
-                        transporter: {
-                            profile: {
-                                company_name: 'Test company'
-                            }
-                        }
-                    },
-                    {
-                        id: 3,
-                        title: 'Good service',
-                        text: 'This transporter is Good',
-                        type: 2,
-                        is_visible: true,
-                        user_id: 1,
-                        order_id: 2,
-                        transporter_id: 1,
-                        review_id: null,
-                        created_at:'2021-07-12 21:37:34',
-                        transporter: {
-                            profile: {
-                                company_name: 'Test company'
-                            }
-                        }
-                    }
-                ]
+                completed_orders_without_comment: [],
+                reviews: [],
+                tmp_reviews: []
             }
         },
 
         mounted() {
-
+            this.loadOrdersWithoutReviews()
+            this.loadReviews()
         }
         ,
         methods: {
 
+            loadReviews() {
+                axios.get("/reviews/list").then(resp => {
+                    this.reviews = resp.data.reviews
+                })
+            },
+
+            loadOrdersWithoutReviews() {
+                axios.get("/orders/without_review").then(resp => {
+                    this.completed_orders_without_comment = resp.data.orders
+                })
+            },
             submit() {
 
                 axios.post('/transporter/listing/quotes/add', {
@@ -258,5 +214,10 @@
         text-overflow: ellipsis;
         word-break: break-all;
         font-size: 10px;
+    }
+
+    .btn-custom-gray {
+        background: lightgrey;
+        color: gray;
     }
 </style>

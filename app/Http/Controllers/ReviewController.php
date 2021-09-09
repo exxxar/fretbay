@@ -9,12 +9,24 @@ use App\Http\Requests\ReviewUpdateRequest;
 use App\Models\Order;
 use  App\Models\Review;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ReviewController extends Controller
 {
 
     public function index()
     {
+    }
+
+    public function getReviews()
+    {
+
+
+        $reviews = Review::with(["transporter","transporter.profile"])->where("user_id", Auth::user()->id)->get();
+
+        return response()->json([
+            "reviews" => $reviews
+        ]);
     }
 
     public function create(Request $request)

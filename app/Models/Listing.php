@@ -65,6 +65,17 @@ class Listing extends Model
         'expiration_date',
     ];
 
+    protected $appends = [
+      'quote_count','message_count'
+    ];
+
+    public function getQuoteCountAttribute(){
+        return $this->quotes()->count();
+    }
+
+    public function getMessageCountAttribute(){
+        return $this->messages()->count();
+    }
 
     public function category()
     {

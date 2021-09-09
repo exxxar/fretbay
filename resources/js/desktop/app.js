@@ -1,4 +1,5 @@
 /**
+/**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
@@ -9,6 +10,12 @@ import '@fortawesome/fontawesome-free/js/all.js'
 require('./bootstrap');
 
 window.Vue = require('vue');
+
+import VueMaterial from 'vue-material'
+import 'vue-material/dist/vue-material.min.css'
+import 'vue-material/dist/theme/black-green-dark.css'
+
+Vue.use(VueMaterial)
 
 import Vuex from 'vuex';
 
@@ -46,10 +53,17 @@ import VueRecord from '@codekraft-studio/vue-record'
 
 Vue.use(VueRecord)
 
+
+
+
+
+
 //components
 Vue.component('preloader-component', require('../desktop/components/Preloader.vue').default);
 Vue.component('listing-item-component', require('./components/Listing/ListingItem.vue').default);
+Vue.component('order-item-component', require('./components/Orders/OrderItem.vue').default);
 Vue.component('listing-paginate-component', require('./components/Listing/ListingPaginate.vue').default);
+Vue.component('order-paginate-component', require('./components/Orders/OrderPaginate.vue').default);
 Vue.component('footer-component', require('../desktop/components/Footer.vue').default);
 Vue.component('header-component', require('./components/Header.vue').default);
 Vue.component('sidebar-component', require('./components/Sidebar.vue').default);
