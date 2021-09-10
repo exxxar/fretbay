@@ -19,10 +19,10 @@
                                     <div class="col-md-12 col-sm-12">
                                         <div class="js-form-message mb-3">
                                             <div class="js-focus-state form">
-                                                <ValidationProvider name="Company name" rules="required|alpha" v-slot="{ errors }">
+                                                <ValidationProvider name="Account name" rules="required|alpha_num" v-slot="{ errors }">
                                                     <input type="text" class="form-control form__input" name="company_name"
                                                            v-model="new_user.company_name"
-                                                           placeholder="Name of your company" required>
+                                                           placeholder="Account name" required>
                                                     <p class="mb-0" style="color:red;font-size:11px">{{errors[0]}}</p>
                                                 </ValidationProvider>
                                             </div>
@@ -324,6 +324,23 @@
                                                     <input type="checkbox" class="custom-control-input" v-model="new_user.newsletter_notify" id="iAgree" required>
                                                     <label class="custom-control-label" for="iAgree">
                                                         I agree to receive commercial offers from AlloTrans and its partners.
+
+                                                    </label>
+                                                </div>
+                                                <!-- End Checkbox -->
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 col-sm-12">
+                                        <div class="js-form-message mb-3">
+                                            <div class="js-focus-state form">
+                                                <!-- Checkbox -->
+                                                <div class="custom-control custom-checkbox d-flex align-items-center text-muted">
+                                                    <input type="checkbox" class="custom-control-input" v-model="new_user.privacy_agree" id="iAgreePrivacy" required>
+                                                    <label class="custom-control-label" for="iAgreePrivacy">
+                                                        I <a href="/privacy" target="_blank">read ang agree</a> with a privacy police
+
                                                     </label>
                                                 </div>
                                                 <!-- End Checkbox -->
@@ -335,7 +352,9 @@
 
                                 <div class="js-form-message mb-3">
                                     <div class="js-focus-state form">
-                                        <button class="btn btn-primary w-100" :disabled="invalid||loading" @click="register">
+                                        <button class="btn w-100  " :disabled="invalid||loading"
+                                                v-bind:class="{'bg-gray-100 cursor-disabled':invalid||loading,'btn-primary cursor-pointer':!invalid&&!loading}"
+                                                @click="register">
                                             <span v-if="loading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                                             Register
                                         </button>
@@ -416,6 +435,7 @@
                     transport_specialities:[],
                     areas_of_expertise: [],
                     newsletter_notify: false,
+                    privacy_agree: false,
                 },
             }
         },
@@ -498,8 +518,9 @@
     }
 </script>
 
-
-
-
-
+<style lang="scss">
+    .cursor-disabled {
+        cursor: not-allowed;
+    }
+</style>
 

@@ -158,7 +158,7 @@ import translations from '../vue-translations.js';
 Vue.use(VueLang, {
     messages: translations, // Provide locale file
     // locale: 'en', // Set locale
-    fallback: 'en' // Set fallback locale
+    fallback: 'fr' // Set fallback locale
 });
 
 // import VueSlickCarousel from 'vue-slick-carousel'
@@ -229,10 +229,10 @@ if (localStorage.getItem('locale')) {
     app.$moment.locale(localStorage.getItem('locale'));
     localize(localStorage.getItem('locale'));
 } else {
-    localStorage.setItem('locale', 'en');
-    app.$lang.setLocale('en');
-    app.$moment.locale('en');
-    localize('en');
+    localStorage.setItem('locale', 'fr');
+    app.$lang.setLocale('fr');
+    app.$moment.locale('fr');
+    localize('fr');
 }
 
 

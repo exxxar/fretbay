@@ -10,7 +10,7 @@
         <div class="gradient-overlay-half-dark-v1 bg-img-hero"
              style="background-image: url(/assets/img/1920x1080/img5.jpg);">
             <div class="d-lg-flex align-items-lg-center flex-lg-column">
-                <div class="container space-3 space-4-top--lg">
+                <div class="container space-sm-3 space-1 space-4-top--lg">
                     <!-- Title -->
                     <div class="w-md-50">
                         <h1 class="display-4 font-size-48--md-down text-white">La façon la plus simple de gérer les affaires</h1>
@@ -190,17 +190,17 @@ Mettez-le sur</span>
                 <div class="col-md-7">
                     <!-- Gallery -->
                     <div class="row mx-gutters-2 mb-9 mb-md-0">
-                        <div class="col-6 mb-3">
+                        <div class="col-sm-6 col-12 mb-3">
                             <img class="img-fluid" src="/assets/img/700x700/img5.jpg" alt="Image Description">
                         </div>
 
-                        <div class="col-4 align-self-end mb-3">
+                        <div class="col-sm-4 col-12 align-self-end mb-3">
                             <img class="img-fluid" src="/assets/img/500x450/img4.jpg" alt="Image Description">
                         </div>
 
                         <div class="w-100"></div>
 
-                        <div class="col-10 offset-2">
+                        <div class="col-sm-10 col-12 offset-sm-2 offset-0">
                             <img class="img-fluid" src="/assets/img/900x450/img11.jpg" alt="Image Description">
                         </div>
                     </div>

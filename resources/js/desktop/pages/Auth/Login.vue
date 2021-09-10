@@ -28,7 +28,7 @@
                                       </span>
                                 </div>
 
-                                <input type="email" class="form-control form__input" name="email"  placeholder="Email">
+                                <input type="email" class="form-control form__input" name="email"  placeholder="Email" required>
                             </div>
                         </div>
                         <!-- End Input -->
@@ -41,7 +41,7 @@
                                     <i class="fa fa-lock form__text-inner"></i>
                                   </span>
                                 </div>
-                                <input type="password" class="form-control form__input" name="password"  placeholder="Password">
+                                <input type="password" class="form-control form__input" name="password"  placeholder="Password" required>
                             </div>
                         </div>
                         <!-- End Input -->

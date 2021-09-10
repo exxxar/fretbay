@@ -1,13 +1,12 @@
 <template>
 
     <div class="container">
-        <h3 class="mt-0 text-uppercase text-black content-box-title">Categories</h3>
-        <div class="row pb-5 pt-5">
+        <h3 class="mt-0 text-uppercase text-black content-box-title mb-0">Categories</h3>
+        <div class="row pb-5">
 
-
-            <div class="col-12 col-md-8 mt-2">
-                <div class="row w-100">
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-6 mb-2" v-for="category in categories"
+            <div class="col-12 col-md-8 mt-2 p-0">
+                <div class="row w-100 m-0">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-6 mb-1 category-card p-1" v-for="category in categories"
                          @click="selectType(category)">
                         <div class="card text-dark">
                             <img class="card-img " v-lazy="category.image" style="padding: 20px;" alt="Card image">
@@ -18,6 +17,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-12 col-md-4">
                 <div id="basicsAccordion">
                     <div class="card border-0 mb-3">
@@ -116,7 +116,6 @@
                 </div>
             </div>
 
-
         </div>
 
     </div>
@@ -136,12 +135,10 @@
             },
 
 
-
         },
         methods: {
 
             selectType(type) {
-
 
 
                 this.selected = type.id;
@@ -154,6 +151,16 @@
     }
 </script>
 <style lang="scss">
+    .category-card {
+        cursor: pointer;
 
+        .card {
+            border:2px #e3e6f0 solid;
+            &:hover {
+                border: 2px #21c87a solid;
+            }
+
+        }
+    }
 
 </style>

@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <div class="row">
+        <div class="row m-0">
 
             <div class="col-12">
                 <ol class="row breadcrumb p-0" style="background: transparent;">

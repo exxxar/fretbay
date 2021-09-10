@@ -4,15 +4,19 @@
             <div id="logoAndNav" class="container-fluid">
                 <!-- Nav -->
                 <nav
-                    class="js-mega-menu navbar navbar-expand-lg u-header__navbar hs-menu-initialized hs-menu-horizontal justify-content-center">
+                    class="js-mega-menu navbar navbar-expand-lg u-header__navbar hs-menu-initialized hs-menu-horizontal justify-content-sm-center justify-content-between">
 
                     <!-- Logo -->
-                    <div class="u-header__navbar-brand-wrapper">
-                        <a class="navbar-brand u-header__navbar-brand" href="/" aria-label="Space">
+                    <div class="u-header__navbar-brand-wrapper d-flex d-sm-block justify-content-sm-center "
+                        v-bind:class="{'justify-content-end':!user,'justify-content-center':user}"
+                    >
+                        <a class="navbar-brand u-header__navbar-brand p-2" href="/" aria-label="Space" style="max-width: 100px;">
                             <img class="u-header__navbar-brand-default w-100" style="object-fit: contain; height:50px;"
                                  v-lazy="'/assets/img/logo.png'" alt="Logo">
                             <img class="u-header__navbar-brand-mobile w-100" style="object-fit: contain; height:50px;"
                                  v-lazy="'/assets/img/logo.png'" alt="Logo">
+
+
                         </a>
                     </div>
                     <!-- End Logo -->
@@ -34,7 +38,7 @@
 
                             <!--  Request a quote -->
                             <li class="nav-item hs-has-mega-menu u-header__nav-item">
-                                <a href="/find-transporter" class="nav-link u-header__nav-link btn-link">
+                                <a href="/find-transporter" class="nav-link u-header__nav-link btn-link w-100 ">
                                     Request a quote
                                 </a>
                             </li>
@@ -43,7 +47,7 @@
 
                             <!--  Find loads -->
                             <li class="nav-item hs-has-mega-menu u-header__nav-item" v-if="user">
-                                <a href="/find-loads" class="nav-link u-header__nav-link" v-if="user.is_transporter">
+                                <a href="/find-loads" class="nav-link u-header__nav-link w-100 " v-if="user.is_transporter">
                                     Find loads
                                 </a>
                             </li>
@@ -51,37 +55,37 @@
 
 
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle " href="#" id="navbarDropdownMenuLink"
+                                <a class="nav-link dropdown-toggle w-100 " href="#" id="navbarDropdownMenuLink"
                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Helps
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="/find-loads" v-if="!user">I am a transporter</a>
-                                    <a class="dropdown-item" href="/find-transporter">Search for a transporter</a>
-                                    <a class="dropdown-item" href="/how-it-works">How does it work?</a>
-                                    <a class="dropdown-item" href="/fequently-asked-questions">F.A.Q.</a>
+                                    <a class="dropdown-item cursor-pointer" href="/find-loads" v-if="!user">I am a transporter</a>
+                                    <a class="dropdown-item cursor-pointer" href="/find-transporter">Search for a transporter</a>
+                                    <a class="dropdown-item cursor-pointer" href="/how-it-works">How does it work?</a>
+                                    <a class="dropdown-item cursor-pointer" href="/fequently-asked-questions">F.A.Q.</a>
                             <!--        <a class="dropdown-item" href="/recruitment">Recruitment</a>-->
-                                    <a class="dropdown-item" href="/contact-us">Contact Us</a>
-                                    <a class="dropdown-item" href="/privacy">Privacy</a>
+                                    <a class="dropdown-item cursor-pointer" href="/contact-us">Contact Us</a>
+                                    <a class="dropdown-item cursor-pointer" href="/privacy">Privacy</a>
                                 </div>
                             </li>
 
 
                             <li class="nav-item dropdown u-header__nav-item-btn" v-if="!user">
-                                <a class="btn btn-primary dropdown-toggle text-white" href="#" id="signupDropdown"
+                                <a class="btn btn-primary dropdown-toggle text-white w-100 " href="#" id="signupDropdown"
                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     SignUp
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="signupDropdown">
-                                    <a class="dropdown-item" data-toggle="modal" data-target="#signUp-transporter">I am
+                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#signUp-transporter">I am
                                         a transporter</a>
-                                    <a class="dropdown-item" data-toggle="modal" data-target="#signUp-customer">I am
+                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#signUp-customer">I am
                                         looking for transporter</a>
                                 </div>
                             </li>
 
                             <li class="nav-item u-header__nav-item-btn" v-if="!user">
-                                <button type="button" class="btn btn-link" data-toggle="modal"
+                                <button type="button" class="btn btn-link w-100 " data-toggle="modal"
                                         data-target="#signIn">
                                     Sign In
                                 </button>

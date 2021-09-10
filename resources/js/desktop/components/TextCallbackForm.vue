@@ -57,7 +57,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-6 mb-2">
+                <div class="col-12 col-sm-6 mb-2">
                     <voice-callback-form-component :phone="phone" :name="name" :cansend="cansend"/>
                 </div>
             </div>
@@ -65,7 +65,7 @@
 
             <div class="row d-flex justify-content-center mb-2">
 
-                <div class="col-6">
+                <div class="col-sm-6 col-12">
                     <button type="submit"
                             class="btn btn-outline-primary p-3 text-uppercase font-weight-bold mr-1 mb-1 w-100">
                         <i class="icon ion-md-mail"></i>

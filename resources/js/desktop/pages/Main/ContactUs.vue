@@ -1,5 +1,5 @@
 <template>
-    <section class="container" style="padding-top: 130px;">
+    <section class="container" style="padding-top: 30px;">
         <div class="row">
             <div class="col-12 text-center">
                     <h1>Contact us</h1>
@@ -17,8 +17,7 @@
                             transport services.</h2>
                         <div class="inner-grey">
                             <p><span class="imprtntLbl">IMPORTANT</span>: You have questions about the site
-                                and how it works? <br>Consult the Frequently Asked Questions first <a
-                                    href="https://fretbay.com/en/frequently-asked-questions?idsess="> </a>
+                                and how it works? <br><a href="https://AlloTrans.com/frequently-asked-questions">Consult the Frequently Asked Questions first  </a>
                             </p>
                         </div>
                         <hr>
@@ -28,13 +27,13 @@
                     <text-callback-form-component/>
                     <div class="inner-grey">
                         <p class="margin-bottom-50">Please note that we will also send you information and
-                            promotional emails regarding the site <b>FretBay</b> and similar products and
-                            services provided by <b>FretBay</b>. If you do not wish to receive some of these
-                            emails, you can change your notification preferences in the <b>My FretBay</b>
+                            promotional emails regarding the site <b>AlloTrans</b> and similar products and
+                            services provided by <b>AlloTrans</b>. If you do not wish to receive some of these
+                            emails, you can change your notification preferences in the <b>My AlloTrans</b>
                             section.</p>
                         <p class="bold">You have the right to access, modify, rectify, and delete data
-                            concerning you by contacting us at:<a href="mailto:support@fretbay.com"
-                                                                  title="">support@fretbay.com</a></p>
+                            concerning you by contacting us at:<a href="mailto:support@AlloTrans.com"
+                                                                  title="">support@AlloTrans.com</a></p>
                     </div>
                     <hr>
                 </div>

@@ -2,7 +2,7 @@
     <footer class="bg-dark">
         <div class="container space-2">
             <div class="row justify-content-md-between">
-                <div class="col-6 col-md-3 col-lg-2 order-lg-3 mb-7 mb-lg-0">
+                <div class="col-sm-6 col-12 col-md-3 col-lg-2 order-lg-3 mb-7 mb-lg-0">
                     <h3 class="h6 text-white mb-3">About</h3>
 
                     <!-- List Group -->
@@ -18,7 +18,7 @@
                     <!-- End List Group -->
                 </div>
 
-                <div class="col-6 col-md-3 col-lg-2 order-lg-4 mb-7 mb-lg-0">
+                <div class="col-sm-6 col-12 col-md-3 col-lg-2 order-lg-4 mb-7 mb-lg-0">
                     <h3 class="h6 text-white mb-3"> Customer Service</h3>
 
                     <!-- List Group -->
@@ -45,7 +45,7 @@
                     &lt;!&ndash; End List Group &ndash;&gt;
                 </div>-->
 
-                <div class="col-6 col-md-3 col-lg-2 order-lg-6 mb-7 mb-lg-0">
+                <div class="col-sm-6 col-12 col-md-3 col-lg-2 order-lg-6 mb-7 mb-lg-0">
                     <h3 class="h6 text-white mb-3">Social</h3>
 
                     <!-- List -->
@@ -70,10 +70,11 @@
                     <!-- End List -->
                 </div>
 
-                <div class="col-lg-4 order-lg-1 d-flex align-items-start flex-column">
+                <div class="col-lg-4 order-lg-1  d-flex align-items-sm-start align-items-center flex-column">
                     <!-- Logo -->
                     <a class="d-inline-block mb-5" href="/" aria-label="AlloTrans">
-                        <img src="/assets/img/logo-white.png" alt="Logo" style="width: 100px; max-width: 100%;">
+                        <img src="/assets/img/logo-white.png" class="d-none d-sm-block" alt="Logo" style="width: 100px; max-width: 100%;">
+                        <img src="/assets/img/logo-white.png" class="d-block d-sm-none" alt="Logo" style="width: 100%; max-width: 100%; max-height:100px;">
                     </a>
                     <!-- End Logo -->
 

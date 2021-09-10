@@ -1,5 +1,5 @@
 <template>
-    <div class="container" style="padding-top:50px;">
+    <div class="container" style="padding-top:30px;">
 
         <h1 class="text-center">
             Frequently asked questions
