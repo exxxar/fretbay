@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container p-1">
         <div class="row w-100 m-auto align-items-center justify-content-center">
             <div class="col-12" v-if="message">
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -9,7 +9,7 @@
                     </button>
                 </div>
             </div>
-            <div class="col-12 col-sm-8">
+            <div class="col-12 col-sm-8 p-0">
                 <ValidationObserver v-slot="{invalid}">
                     <h3 class="mt-0 text-uppercase text-black content-box-title text-center">Your FretBay account</h3>
                     <div class="row w-100 m-auto align-items-center justify-content-center" v-if="login_mode">
@@ -30,7 +30,7 @@
                         <butto class="btn btn-primary" @click="login_mode=false"> I do not have account yet</butto>
                     </div>
                     <div class="row w-100 m-auto align-items-center justify-content-center" v-else>
-                        <div class="col-12">
+                        <div class="col-12 p-0">
                             <ValidationProvider name="Email" rules="required|email" v-slot="{ errors }">
                                 <input v-model="email" type="email" class="form-control mb-2"
                                        name="email" placeholder="Your email">
@@ -58,14 +58,14 @@
                         <div class="row w-100 m-auto d-flex justify-content-center mb-2">
                             <button class="btn btn-primary w-100" @click="register" :disabled="invalid">Register</button>
                         </div>
-                        <button class="btn btn-outline-secondary w-100 mt-2" @click="login_mode=true"> I already have account
+                        <button class="btn btn-info text-white w-100 mt-2" @click="login_mode=true"> I already have account
                         </button>
                     </div>
                 </ValidationObserver>
             </div>
-            <div class="col-12">
-                <div class="row d-flex justify-content-end mt-2 mb-2 w-100">
-                    <div class="col-12 col-sm-4">
+            <div class="col-12 p-0">
+                <div class="row d-flex justify-content-end mt-2 mb-2 w-100 p-0">
+                    <div class="col-12 col-sm-4 p-0">
                         <button class="btn btn-outline-primary w-100" @click="prevStep(2)">Back</button>
                     </div>
                     <!--            <div class="col-12 col-sm-3">-->

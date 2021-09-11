@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Enums\NotificationType;
+use App\Events\NotificationEvent;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CustomerStoreRequest;
 use App\Http\Requests\TransporterStoreRequest;
@@ -137,10 +139,17 @@ class RegisterController extends Controller
 
         Auth::login($user, true);
 
-        Mail::to($user->email)->send(new RegistrationMail(printf("%s %s",
-            $user->name,
-            $user->email
-        )));
+        event(new NotificationEvent(
+            "#user-" . $user->id,
+            "Success registration for user  " . $user->id,
+            NotificationType::Info,
+            $user->id));
+
+        if (!is_null($user->email))
+            Mail::to($user->email)->send(new RegistrationMail(printf("%s %s",
+                $user->name,
+                $user->email
+            )));
 
 //        return redirect()->route("login");
         return response()->json([
