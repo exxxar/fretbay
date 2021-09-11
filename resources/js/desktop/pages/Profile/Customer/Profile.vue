@@ -404,7 +404,6 @@
 
     .customer-menu {
         overflow-x: auto;
-        height: 61px;
         position: sticky;
         top: 3px;
         background: white;
