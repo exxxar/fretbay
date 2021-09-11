@@ -2,7 +2,7 @@
     <div class="container" style="padding-top: 20px;min-height:100vh;">
         <div class="main-body">
 
-            <ul class="nav nav-tabs mb-2 w-100 d-flex flex-nowrap" id="myTab" style="overflow-x: auto;" role="tablist">
+            <ul class="nav nav-tabs mb-2 w-100 d-flex flex-nowrap customer-menu" id="myTab"  role="tablist">
                 <li class="nav-item profile-nav-item">
                     <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
                        aria-controls="profile" aria-selected="true">Profile</a>
@@ -400,5 +400,18 @@
         min-width: 141px;
         text-align: center;
         margin-bottom: 0;
+    }
+
+    .customer-menu {
+        overflow-x: auto;
+        height: 61px;
+        position: sticky;
+        top: 3px;
+        background: white;
+        z-index: 1000;
+    }
+
+    .nav-link.active {
+        color: #21c87a !important;
     }
 </style>
