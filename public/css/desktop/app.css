@@ -20444,3 +20444,6 @@ button:focus {
 /*
 // Bootstrap
 @import '../../../node_modules/bootstrap/scss/bootstrap';*/
+.u-sidebar {
+  z-index: 1002;
+}
