@@ -44,7 +44,7 @@
 
 <body>
 
-<div id="app">
+<div id="app" style="padding-top: 50px;">
     <preloader-component></preloader-component>
     @yield('content')
 {{--    <system-notification-component></system-notification-component>--}}
