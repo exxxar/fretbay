@@ -11,8 +11,8 @@
                         <div class="card text-dark">
 
                             <img class="card-img filtered-img" v-lazy="category.image" style="padding: 20px;" alt="Card image">
-                            <div class="card-img-overlay">
-                                <h6 class="card-title">{{category.title}}</h6>
+                            <div class="card-footer">
+                                <p class="card-title p-0 m-0 custom-card-title">{{category.title}}</p>
                             </div>
                         </div>
                     </div>
@@ -168,6 +168,11 @@
 
     .filtered-img {
         filter: drop-shadow(1px 4px 0px #21c87a);
+    }
+
+    .custom-card-title {
+        text-transform: uppercase;
+        font-size: 10px;
     }
 
 </style>
