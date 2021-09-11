@@ -1,5 +1,5 @@
 <template>
-    <div class="container pb-5">
+    <div class="container pb-5 p-0">
         <wizard :steps="2" ref="wizard">
             <template v-slot:step_0>
                 <div class="col-12" v-if="!inventory_mode">
@@ -50,7 +50,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12" v-else>
+                <div class="col-12 p-0" v-else>
                     <inventory-form :category="category"/>
                 </div>
             </template>
