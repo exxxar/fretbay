@@ -408,6 +408,8 @@
         top: 3px;
         background: white;
         z-index: 1000;
+        height: 60px;
+        padding: 8px;
     }
 
     .nav-link.active {
