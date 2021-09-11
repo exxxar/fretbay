@@ -191,7 +191,7 @@ class ObjectCategorySeeder extends Seeder
             'image' => '/images/common/icons/category/default/11.svg',
             'position' => 0,
             'is_active' => true,
-            'mode' => ''
+           'mode' => 'article'
         ]);
 
         //$category->properties()->attach(CategoryProperty::where("slug", "article_name")->first(),['required' => true]);
