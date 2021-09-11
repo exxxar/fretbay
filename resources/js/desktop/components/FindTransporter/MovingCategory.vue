@@ -16,7 +16,7 @@
                                             it.</h6>
 
                                         <div class="input-group mb-3 d-flex justify-content-center">
-                                            <input v-model="listing.summary_volume" type="text"
+                                            <input v-model="listing.summary_volume" type="number"
                                                    class="form-control" style="max-width: 200px" @blur="editVolume"
                                                    placeholder="Your volume">
                                             <div class="input-group-append">
