@@ -131,47 +131,7 @@
 
         </div>-->
 
-        <div class="container space-2-bottom space-3--md">
-            <div class="gradient-overlay-half-dark-v1 bg-img-hero-center"
-                 style="background-image: url(/assets/img/1200x600/img1.jpg);">
-                <div class="w-lg-50 p-9">
-                    <!-- Title -->
-                    <div class="mb-7">
-                        <span class="u-label u-label--sm u-label--light mb-2">
-De l'espace en déplacement</span>
-                        <h2 class="text-white">Espace sur mobile</h2>
-                        <p class="text-white">Ne manquez rien parce que vous êtes en mouvement. Rester connecté.</p>
-                    </div>
-                    <!-- End Title -->
 
-                    <!-- Button -->
-                    <button type="button" class="btn btn-xs btn-dark text-left mb-2 mb-md-0 mr-md-2">
-            <span class="media align-items-center">
-              <i class="fab fa-apple fa-3x mr-3"></i>
-              <span class="d-block">
-                <span class="d-block">Télécharger sur le</span>
-                <strong class="d-block font-size-14">
-Magasin d'applications</strong>
-              </span>
-            </span>
-                    </button>
-                    <!-- End Button -->
-
-                    <!-- Button -->
-                    <button type="button" class="btn btn-xs btn-dark text-left mb-2 mb-md-0">
-            <span class="media align-items-center">
-              <i class="fab fa-google-play fa-3x mr-3"></i>
-              <span class="d-block">
-                <span class="d-block">
-Mettez-le sur</span>
-                <strong class="d-block font-size-14">jeu de Google</strong>
-              </span>
-            </span>
-                    </button>
-                    <!-- End Button -->
-                </div>
-            </div>
-        </div>
 
 
 
@@ -328,19 +288,19 @@ Mettez-le sur</span>
         <!-- End Features -->
 
         <!-- Service Section -->
-        <div class="container space-2 space-3--md">
+      <!--  <div class="container space-2 space-3&#45;&#45;md">
             <div class="row justify-content-lg-between">
                 <div class="col-md-6 col-lg-5 mb-7 mb-md-0">
-                    <!-- Title -->
+                    &lt;!&ndash; Title &ndash;&gt;
                     <div class="mb-9">
-                        <span class="u-label u-label--sm u-label--purple mb-3">We are a family, not a workforce.</span>
+                        <span class="u-label u-label&#45;&#45;sm u-label&#45;&#45;purple mb-3">We are a family, not a workforce.</span>
                         <h2>Space International</h2>
                         <p>Global services using any means of transport, with regular lines or customized projects,
                             customs management and logistics.</p>
                     </div>
-                    <!-- End Title -->
+                    &lt;!&ndash; End Title &ndash;&gt;
 
-                    <!-- Icon Blocks -->
+                    &lt;!&ndash; Icon Blocks &ndash;&gt;
                     <div class="media mb-6">
                         <img class="max-width-8 mr-3" src="/assets/svg/components/return-dark-icon.svg"
                              alt="Image Description">
@@ -349,9 +309,9 @@ Mettez-le sur</span>
                             <p>Track your item online in your account and using the handy notification system.</p>
                         </div>
                     </div>
-                    <!-- End Icon Blocks -->
+                    &lt;!&ndash; End Icon Blocks &ndash;&gt;
 
-                    <!-- Icon Blocks -->
+                    &lt;!&ndash; Icon Blocks &ndash;&gt;
                     <div class="media mb-6">
                         <img class="max-width-8 mr-3" src="/assets/svg/components/rocket-dark-icon.svg"
                              alt="Image Description">
@@ -360,11 +320,11 @@ Mettez-le sur</span>
                             <p>Find out the final price online and place an order in less than a minute.</p>
                         </div>
                     </div>
-                    <!-- End Icon Blocks -->
+                    &lt;!&ndash; End Icon Blocks &ndash;&gt;
                 </div>
 
                 <div class="col-md-6 col-lg-5">
-                    <!-- Card -->
+                    &lt;!&ndash; Card &ndash;&gt;
                     <div class="card bg-img-hero py-7 px-5 mb-4 ie-d-block"
                          style="background-image: url(/assets/svg/shapes/shape4.svg);">
                         <div class="media align-items-center">
@@ -376,9 +336,9 @@ Mettez-le sur</span>
                             </div>
                         </div>
                     </div>
-                    <!-- End Card -->
+                    &lt;!&ndash; End Card &ndash;&gt;
 
-                    <!-- Card -->
+                    &lt;!&ndash; Card &ndash;&gt;
                     <div class="card bg-img-hero py-7 px-5 mb-4 ie-d-block"
                          style="background-image: url(/assets/svg/shapes/shape5.svg);">
                         <div class="media align-items-center">
@@ -390,9 +350,9 @@ Mettez-le sur</span>
                             </div>
                         </div>
                     </div>
-                    <!-- End Card -->
+                    &lt;!&ndash; End Card &ndash;&gt;
 
-                    <!-- Card -->
+                    &lt;!&ndash; Card &ndash;&gt;
                     <div class="card bg-img-hero py-7 px-5 ie-d-block"
                          style="background-image: url(/assets/svg/shapes/shape6.svg);">
                         <div class="media align-items-center">
@@ -404,10 +364,10 @@ Mettez-le sur</span>
                             </div>
                         </div>
                     </div>
-                    <!-- End Card -->
+                    &lt;!&ndash; End Card &ndash;&gt;
                 </div>
             </div>
-        </div>
+        </div>-->
         <!-- End Service Section -->
 
         <!-- Testimonials Section -->
@@ -515,17 +475,17 @@ Mettez-le sur</span>
         <!-- End Testimonials Section -->
 
         <!-- FAQ Section -->
-        <div class="container space-2 space-3--md">
+      <!--  <div class="container space-2 space-3&#45;&#45;md">
             <div class="row justify-content-lg-between">
                 <div class="col-md-6 col-lg-5 mb-7 mb-md-0">
-                    <!-- Title -->
+                    &lt;!&ndash; Title &ndash;&gt;
                     <div class="mb-9">
-                        <span class="u-label u-label--sm u-label--purple mb-3">FAQ</span>
+                        <span class="u-label u-label&#45;&#45;sm u-label&#45;&#45;purple mb-3">FAQ</span>
                         <h2>Have a question about your next move?</h2>
                     </div>
-                    <!-- End Title -->
+                    &lt;!&ndash; End Title &ndash;&gt;
 
-                    <!-- Contact Info -->
+                    &lt;!&ndash; Contact Info &ndash;&gt;
                     <div class="media align-items-center mb-5">
                         <img class="max-width-7 mr-3" src="/assets/svg/components/contacts-dark-icon.svg"
                              alt="Image Description">
@@ -534,9 +494,9 @@ Mettez-le sur</span>
                             <a class="text-dark" href="mailto:hello@example.com">+1 122 899 00 00</a>
                         </div>
                     </div>
-                    <!-- End Contact Info -->
+                    &lt;!&ndash; End Contact Info &ndash;&gt;
 
-                    <!-- Contact Info -->
+                    &lt;!&ndash; Contact Info &ndash;&gt;
                     <div class="media align-items-center">
                         <img class="max-width-7 mr-3" src="/assets/svg/components/email-dark-icon.svg"
                              alt="Image Description">
@@ -545,11 +505,11 @@ Mettez-le sur</span>
                             <a class="text-dark" href="mailto:hello@example.com">hello@example.com</a>
                         </div>
                     </div>
-                    <!-- End Contact Info -->
+                    &lt;!&ndash; End Contact Info &ndash;&gt;
                 </div>
 
                 <div class="col-md-6">
-                    <!-- Accordion -->
+                    &lt;!&ndash; Accordion &ndash;&gt;
                     <div id="basicsAccordion">
                         <div class="card border-0 mb-3">
                             <div class="card-header card-collapse__header" id="basicsHeadingOne">
@@ -681,7 +641,49 @@ Mettez-le sur</span>
                             </div>
                         </div>
                     </div>
-                    <!-- End Accordion -->
+                    &lt;!&ndash; End Accordion &ndash;&gt;
+                </div>
+            </div>
+        </div>-->
+
+        <div class="container space-2-bottom space-3--md">
+            <div class="gradient-overlay-half-dark-v1 bg-img-hero-center"
+                 style="background-image: url(/assets/img/1200x600/img1.jpg);">
+                <div class="w-lg-50 p-9">
+                    <!-- Title -->
+                    <div class="mb-7">
+                        <span class="u-label u-label--sm u-label--light mb-2">
+De l'espace en déplacement</span>
+                        <h2 class="text-white">Espace sur mobile</h2>
+                        <p class="text-white">Ne manquez rien parce que vous êtes en mouvement. Rester connecté.</p>
+                    </div>
+                    <!-- End Title -->
+
+                    <!-- Button -->
+                    <button type="button" class="btn btn-xs btn-dark text-left mb-2 mb-md-0 mr-md-2">
+            <span class="media align-items-center">
+              <i class="fab fa-apple fa-3x mr-3"></i>
+              <span class="d-block">
+                <span class="d-block">Télécharger sur le</span>
+                <strong class="d-block font-size-14">
+Magasin d'applications</strong>
+              </span>
+            </span>
+                    </button>
+                    <!-- End Button -->
+
+                    <!-- Button -->
+                    <button type="button" class="btn btn-xs btn-dark text-left mb-2 mb-md-0">
+            <span class="media align-items-center">
+              <i class="fab fa-google-play fa-3x mr-3"></i>
+              <span class="d-block">
+                <span class="d-block">
+Mettez-le sur</span>
+                <strong class="d-block font-size-14">jeu de Google</strong>
+              </span>
+            </span>
+                    </button>
+                    <!-- End Button -->
                 </div>
             </div>
         </div>

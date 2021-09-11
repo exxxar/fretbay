@@ -408,7 +408,7 @@
         top: 3px;
         background: white;
         z-index: 1000;
-        height: 60px;
+        height: 90px;
         padding: 8px;
     }
 
