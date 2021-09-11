@@ -9,9 +9,9 @@
             </p>
         </div>
         <div class="row w-100 m-auto" @dragenter="dragging=true" v-show="!dragging">
-            <div class="col-12 px-0">
+            <div class="col-12 px-0 mb-1">
                 <slot name="uploadButton">
-                    <button class="btn btn-primary" @click="startUpload">Upload</button>
+                    <button class="btn btn-primary w-100" @click="startUpload">Upload</button>
                 </slot>
             </div>
         </div>
@@ -31,6 +31,9 @@
 </template>
 
 <script>
+
+
+
     export default {
         name: "UploadFile",
         props:['file'],
@@ -42,7 +45,8 @@
             return {
                 dragAndDropCapable: false,
                 dragging:false,
-                upload_file:''
+                upload_file:'',
+
             }
         },
         mounted(){

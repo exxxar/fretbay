@@ -1,5 +1,5 @@
 <template>
-    <div class="container p-2 mt-5">
+    <div class="container p-2 mt-1">
         <ValidationObserver v-slot="{ invalid }">
 
 
@@ -132,7 +132,7 @@
                     <h4>Increase your chances of being solicited, insert a photo!</h4>
                 </div>
                 <div class="card-body">
-                    <upload-files></upload-files>
+                    <upload-files/>
                 </div>
             </div>
 
@@ -163,12 +163,13 @@
                 </div>
             </div>
 
-            <div class="row mx-auto d-flex justify-content-end mt-2 w-100">
-                <div class="col-6 col-sm-6 col-lg-2">
-                    <button class="btn btn-outline-blue w-100" @click="prevStep">Back</button>
+
+            <div class="row d-flex justify-content-end mt-2 p-3 m-0">
+                <div class="col-12 mb-1 mb-sm-0 col-sm-2">
+                    <button class="btn btn-outline-blue  w-100" @click="prevStep">Back</button>
                 </div>
-                <div class="col-6 col-sm-6 col-lg-3">
-                    <button class="btn btn-outline-primary w-100" @click="nextStep" :disabled="invalid">Next</button>
+                <div class="col-12 col-sm-3">
+                    <button class="btn btn-outline-primary  w-100" @click="nextStep" :disabled="invalid">Next</button>
                 </div>
             </div>
         </ValidationObserver>

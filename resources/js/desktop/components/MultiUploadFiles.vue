@@ -11,10 +11,11 @@
         <div class="row w-100 m-auto" @dragenter="dragging=true" v-show="!dragging">
             <div class="col-12 p-0">
                 <slot name="uploadButton">
-                    <button class="btn btn-primary" @click="startUpload"><slot name="inButton">Upload</slot></button>
+                    <button class="btn btn-primary w-100 mb-1" @click="startUpload"><slot name="inButton">Upload</slot></button>
                 </slot>
             </div>
         </div>
+
 <!--        <div class="row w-100 mt-2 mx-auto" @dragenter="dragging=true" v-show="!dragging&&carousel&&files.length>0">-->
 <!--                <slot name="filesListAdditional">-->
 <!--                </slot>-->
@@ -37,7 +38,8 @@
             <slot name="filesListAdditional">
             </slot>
             <slot name="filesList">
-                <div v-for="(file, key) in files" class="col-md-4 col-sm-6 col-6 px-1 px-sm-2">
+                <VueSlickCarousel class="p-1" v-bind="settings" >
+                <div v-for="(file, key) in files" class="px-1 px-sm-2">
                     <div class="card my-2">
                         <img class="card-img-top preview mx-auto" v-bind:ref="'preview'+parseInt( key )"
                              style="width:100%; height:150px; object-fit: cover;" alt="">
@@ -46,16 +48,18 @@
                         </div>
                     </div>
                 </div>
+                </VueSlickCarousel>
             </slot>
         </div>
     </div>
 </template>
 
 <script>
-    // import VueSlickCarousel from 'vue-slick-carousel'
-    // import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-    // // optional style for arrows & dots
-    // import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+    import VueSlickCarousel from 'vue-slick-carousel'
+    import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+    // optional style for arrows & dots
+    import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+
     export default {
         name: "MultiUploadFiles",
         // props:['files', 'carousel'],
@@ -76,6 +80,40 @@
             return {
                 dragAndDropCapable: false,
                 dragging:false,
+                settings:{
+                    "dots": false,
+                    "arrows": true,
+                    "focusOnSelect": true,
+                    "infinite": true,
+                    "speed": 500,
+                    "slidesToShow": 4,
+                    "slidesToScroll": 3,
+                    "touchThreshold":4,
+                    responsive: [
+                        {
+                            breakpoint: 1200,
+                            settings: {
+                                slidesToShow: 4,
+                                slidesToScroll: 1
+                            }
+                        },
+                        {
+                            breakpoint: 1008,
+                            settings: {
+                                slidesToShow: 2,
+                                slidesToScroll: 1
+                            }
+                        },
+                        {
+                            breakpoint: 800,
+                            settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1
+                            }
+                        }
+
+                    ]
+                },
                 // settings:{
                 //     "dots": false,
                 //     "arrows": true,
@@ -154,6 +192,9 @@
             startUpload() {
                 this.$refs.files.click();
             }
+        },
+        components:{
+            VueSlickCarousel
         }
     }
 </script>

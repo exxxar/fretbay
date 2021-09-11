@@ -10,19 +10,19 @@
         </div>
         <div class="row w-100 m-auto" @dragenter="dragging=true" v-show="!dragging">
             <div class="col-12 col-md-4">
-                <button class="btn btn-primary" @click="startUpload">Upload</button>
+                <button class="btn btn-primary w-100 mb-1" @click="startUpload">Upload</button>
             </div>
             <div class="col-12 col-md-8">
                 <p>This information can often be found on the Internet. Approximate measures will already allow carriers
                     to offer you a suitable offer.</p>
             </div>
         </div>
-        <ul class="row w-100 p-0" @dragenter="dragging=true" v-show="!dragging" v-if="files.length>0">
+        <ul class="d-flex w-100 p-0" @dragenter="dragging=true" v-show="!dragging" v-if="files.length>0" style="overflow-x: auto;">
             <li v-for="(file, key) in files" class="col-md-3 col-sm-6 col-12 transport-category d-flex justify-content-around align-items-center flex-wrap">
                 <img class="preview" v-bind:ref="'preview'+parseInt( key )" width="75px"
                      height="75px" alt="">
 
-                <a class="remove" v-on:click="removeFile( key )">Remove</a>
+                <a class="remove cursor-pointer" v-on:click="removeFile( key )">Remove</a>
 
             </li>
         </ul>
