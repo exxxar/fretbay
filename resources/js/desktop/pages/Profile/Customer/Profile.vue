@@ -4,33 +4,33 @@
 
             <ul class="nav nav-tabs mb-2 w-100 d-flex flex-nowrap customer-menu" id="myTab"  role="tablist">
                 <li class="nav-item profile-nav-item">
-                    <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                    <a class="btn btn-outline-primary active d-block" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
                        aria-controls="profile" aria-selected="true">Profile</a>
                 </li>
 
 
                 <li class="nav-item profile-nav-item">
-                    <a class="nav-link" id="reviews-tab" data-toggle="tab" href="#reviews" role="tab"
+                    <a class="btn btn-outline-primary d-block" id="reviews-tab" data-toggle="tab" href="#reviews" role="tab"
                        aria-controls="reviews" aria-selected="true">Reviews</a>
                 </li>
 
                 <li class="nav-item profile-nav-item" @click="loadActiveListing">
-                    <a class="nav-link" id="listings-active-tab" data-toggle="tab" href="#listings-active" role="tab"
+                    <a class="btn btn-outline-primary d-block" id="listings-active-tab" data-toggle="tab" href="#listings-active" role="tab"
                        aria-controls="listings-active" aria-selected="true">Active listings</a>
                 </li>
 
                 <li class="nav-item profile-nav-item" @click="loadArchiveListing">
-                    <a class="nav-link" id="listings-archive-tab" data-toggle="tab" href="#listings-archive" role="tab"
+                    <a class="btn btn-outline-primary d-block" id="listings-archive-tab" data-toggle="tab" href="#listings-archive" role="tab"
                        aria-controls="listings-archive" aria-selected="true">Archive listings</a>
                 </li>
 
                 <li class="nav-item profile-nav-item" @click="loadOrders">
-                    <a class="nav-link" id="orders-tab" data-toggle="tab" href="#orders" role="tab"
+                    <a class="btn btn-outline-primary d-block" id="orders-tab" data-toggle="tab" href="#orders" role="tab"
                        aria-controls="orders" aria-selected="true">Orders</a>
                 </li>
 
                 <li class="nav-item profile-nav-item">
-                    <a class="nav-link" id="notifications-tab" data-toggle="tab" href="#notifications" role="tab"
+                    <a class="btn btn-outline-primary" id="notifications-tab" data-toggle="tab" href="#notifications" role="tab"
                        aria-controls="notifications" aria-selected="true">Notifications</a>
                 </li>
 
@@ -397,19 +397,20 @@
     }
 
     .profile-nav-item {
-        min-width: 141px;
+        min-width: 159px;
         text-align: center;
+        /* width: auto; */
         margin-bottom: 0;
+        padding: 5px;
     }
 
     .customer-menu {
         overflow-x: auto;
         position: sticky;
-        top: 3px;
+        top: 65px;
         background: white;
-        z-index: 1000;
-        height: 90px;
-        padding: 8px;
+        z-index: 100;
+        padding: 8px 0px;
     }
 
     .nav-link.active {
