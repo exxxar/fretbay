@@ -2,16 +2,16 @@
     <div>
         <div class="row w-100 m-auto">
             <div class="col-12 col-sm-7">
-                <h4>Volume calculator </h4>
+                <h4 class="text-sm-left text-center">Volume calculator </h4>
             </div>
 
             <div class="col-12 col-sm-5">
-                <p class="mt-2" style="float: right">Total volume  {{volumeCartTotalVolume.toFixed(2)}} <em class="text-bold">m<sup>3</sup></em></p>
+                <p class="mt-2 text-sm-right text-center">Total volume  {{volumeCartTotalVolume.toFixed(2)}} <em class="text-bold">m<sup>3</sup></em></p>
             </div>
         </div>
 
         <div class="row w-100 m-auto">
-            <div class="col-12 col-sm-8" v-if="!search_mode">
+            <div class="col-12 col-sm-8 m-0 mb-2" v-if="!search_mode">
 <!--                v-if="category.subcategories.length>0"-->
 
 
@@ -26,7 +26,7 @@
 
             <div class="col-12" :class="{'col-sm-4':!search_mode}">
                 <div class="form-group w-100">
-                    <div class="input-has-icon-right position-relative w-100">
+                    <div class="input-has-icon-right position-relative w-100 p-1">
                         <input v-model="search"
                                type="text"
                                class="form-control w-100"
@@ -37,7 +37,7 @@
         </div>
 
         <div class="row w-100 m-auto" v-if="filteredThings">
-            <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-2" :key="thing.id" v-for="thing in filteredThings">
+            <div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-2 p-1" :key="thing.id" v-for="thing in filteredThings">
 
                 <div class="card text-white" v-if="thing">
                     <img class="card-img" v-lazy="thing.image" alt="Card image">
@@ -108,7 +108,7 @@
                         {
                             breakpoint: 800,
                             settings: {
-                                slidesToShow: 1,
+                                slidesToShow: 2,
                                 slidesToScroll: 1
                             }
                         }

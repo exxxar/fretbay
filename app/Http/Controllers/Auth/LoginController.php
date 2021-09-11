@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
+use Symfony\Component\Console\Input\Input;
 
 class LoginController extends Controller
 {
@@ -73,11 +74,15 @@ class LoginController extends Controller
         ]);
 
         Log::info("TEST");
-        Log::info($request->get("email")." ".$request->get("password"));
+        Log::info($request->get("email") . " " . $request->get("password"));
+
+        $remember = $request->remember ? true : false;
 
         $credentials = request(['password']);
         $credentials['email'] = $request->email;
         $credentials['deleted_at'] = null;
+        if ($remember)
+            $credentials['remember'] = $remember;
 
         if (!Auth::attempt($credentials))
             return redirect()->route("login")->withErrors(['Bad credentials']);
@@ -85,7 +90,7 @@ class LoginController extends Controller
         $user = $request->user();
         if ($user->hasRole("transporter")) {
             $profile = Profile::find($user->profile_id);
-            if($profile->is_first_activation == false) {
+            if ($profile->is_first_activation == false) {
                 return redirect()->route("transporter-account");
             }
             return redirect()->route("desktop.profile-transporter-wizard-start");

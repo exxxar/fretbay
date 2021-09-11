@@ -45,7 +45,7 @@
                                 <div class="col-6">
                                     <!-- Checkbox -->
                                     <div class="custom-control custom-checkbox d-flex align-items-center text-muted">
-                                        <input type="checkbox" class="custom-control-input" id="rememberMeCheckbox">
+                                        <input type="checkbox" name="remember" class="custom-control-input" id="rememberMeCheckbox" >
                                         <label class="custom-control-label" for="rememberMeCheckbox">
                                             Remember Me
                                         </label>

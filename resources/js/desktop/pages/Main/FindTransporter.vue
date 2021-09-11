@@ -32,7 +32,7 @@
     import Steps from '../../components/FindTransporter/Steps'
     import TypeSelector from '../../components/FindTransporter/TypeSelector'
     import ArticleFormPage from '../../components/FindTransporter/ArticleFormPage'
-    import VolumeForm from '../../components/FindTransporter/VolumeForm'
+
     import InventoryForm from '../../components/FindTransporter/InventoryForm'
     import TypeOfTransport from '../../components/FindTransporter/TypeOfTransport'
     import MovingPackageForm from '../../components/FindTransporter/MovingPackageForm'
@@ -47,7 +47,6 @@
             Steps,
             TypeSelector,
             ArticleFormPage,
-            VolumeForm,
             InventoryForm,
             TypeOfTransport,
             MovingPackageForm,

@@ -1,6 +1,52 @@
 <template>
-    <div class="container" style="padding-top: 20px;">
+    <div class="container" style="padding-top: 20px;min-height:100vh;">
         <div class="main-body">
+     <!--       <div class="row mb-2">
+                <div class="col-12">
+                    <VueSlickCarousel class="display-md-none display-block" v-bind="settings">
+                        <div class="w-100 p-1">
+                            <a class="btn btn-outline-primary w-100" id="profile-tab"
+                               data-toggle="tab" href="#profile" role="tab"
+                               aria-controls="profile" aria-selected="true">Profile</a>
+                        </div>
+                        <div class="w-100 p-1">
+                            <a class="btn btn-outline-primary w-100" id="reviews-tab"
+                               data-toggle="tab" href="#reviews" role="tab"
+                               aria-controls="reviews" aria-selected="true">Reviews</a>
+                        </div>
+                        <div class="w-100 p-1" @click="loadActiveListing">
+                            <a class="btn btn-outline-primary w-100"
+                               id="listings-active-tab" data-toggle="tab"
+                               href="#listings-active" role="tab"
+                               aria-controls="listings-active"
+                               aria-selected="true">Active listings</a>
+                        </div>
+                        <div class="w-100 p-1" @click="loadArchiveListing">
+                            <a class="btn btn-outline-primary w-100"
+                               id="listings-archive-tab"
+                               data-toggle="tab" href="#listings-archive"
+                               role="tab"
+                               aria-controls="listings-archive"
+                               aria-selected="true">Archive listings</a>
+                        </div>
+                        <div class="w-100 p-1" @click="loadOrders">
+                            <a class="btn btn-outline-primary w-100"
+                               id="orders-tab" data-toggle="tab" href="#orders"
+                               role="tab"
+                               aria-controls="orders"
+                               aria-selected="true">Orders</a></div>
+                        <div class="w-100 p-1">
+                            <a class="btn btn-outline-primary w-100" id="notifications-tab"
+                               data-toggle="tab" href="#notifications" role="tab"
+                               aria-controls="notifications" aria-selected="true">Notifications</a>
+                        </div>
+
+                    </VueSlickCarousel>
+                </div>
+            </div>-->
+
+
+
             <ul class="nav nav-tabs mb-2" id="myTab" role="tablist">
                 <li class="nav-item">
                     <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
@@ -32,7 +78,9 @@
                     <a class="nav-link" id="notifications-tab" data-toggle="tab" href="#notifications" role="tab"
                        aria-controls="notifications" aria-selected="true">Notifications</a>
                 </li>
+
             </ul>
+
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                     <div class="row gutters-sm">
@@ -296,10 +344,49 @@
 </template>
 
 <script>
+    import VueSlickCarousel from 'vue-slick-carousel'
+    import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+    // optional style for arrows & dots
+    import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+
     export default {
         data() {
             return {
-                editMode: false
+                editMode: false,
+                settings:{
+                    "dots": false,
+                    "arrows": true,
+                    "focusOnSelect": true,
+                    "infinite": true,
+                    "speed": 500,
+                    "slidesToShow": 5,
+                    "slidesToScroll": 3,
+                    "touchThreshold": 5,
+                    responsive: [
+                        {
+                            breakpoint: 1200,
+                            settings: {
+                                slidesToShow: 5,
+                                slidesToScroll: 1
+                            }
+                        },
+                        {
+                            breakpoint: 1008,
+                            settings: {
+                                slidesToShow: 2,
+                                slidesToScroll: 1
+                            }
+                        },
+                        {
+                            breakpoint: 800,
+                            settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1
+                            }
+                        }
+
+                    ]
+                },
             }
         },
         computed: {
@@ -341,6 +428,9 @@
             loadArchiveListing(){
                 this.$store.dispatch('getArchiveListings');
             }
+        },
+        components:{
+            VueSlickCarousel
         }
     }
 </script>

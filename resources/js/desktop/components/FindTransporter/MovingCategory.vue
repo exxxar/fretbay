@@ -31,7 +31,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-12 col-md-6">
+                            <div class="col-12 col-md-6 mt-2">
                                 <div class="card" style="min-height: 300px;">
                                     <div class="card-body d-flex align-items-center justify-content-center flex-wrap">
                                         <h3 class="box-title text-center">I don’t know my volume</h3>
@@ -56,15 +56,15 @@
             </template>
             <template v-slot:step_1>
                 <div class="mt-2 item-moving-container">
-                    <moving-package-form></moving-package-form>
+                    <moving-package-form/>
                 </div>
             </template>
             <template v-slot:footer>
-                <div class="row d-flex justify-content-end mt-2">
-                    <div class="col-6 col-sm-2">
+                <div class="row d-flex justify-content-end mt-2 p-3">
+                    <div class="col-12 mb-1 mb-sm-0 col-sm-2">
                         <button class="btn btn-outline-blue  w-100" @click="prevStep">Back</button>
                     </div>
-                    <div class="col-6 col-sm-3">
+                    <div class="col-12 col-sm-3">
                         <button class="btn btn-outline-primary  w-100" @click="nextStep" :disabled="listing.summary_volume<=0">Next</button>
                     </div>
                 </div>
