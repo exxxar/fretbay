@@ -1,7 +1,7 @@
 <template>
     <div>
 
-        <div style="position:sticky; top:-40px;z-index:1000;background:white;">
+        <div style="position:sticky; top:30px;z-index:100;background:white;">
             <div class="row w-100 m-auto">
                 <div class="col-12 col-sm-7">
                     <h4 class="text-sm-left text-center">Volume calculator </h4>
