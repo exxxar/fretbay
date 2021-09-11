@@ -146,7 +146,8 @@ class RegisterController extends Controller
             $user->id));
 
         if (!is_null($user->email))
-            Mail::to($user->email)->send(new RegistrationMail(printf("%s %s",
+            Mail::to($user->email)
+                ->send(new RegistrationMail(printf("%s %s",
                 $user->name,
                 $user->email
             )));

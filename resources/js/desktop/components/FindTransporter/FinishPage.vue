@@ -58,20 +58,16 @@
                         <div class="row w-100 m-auto d-flex justify-content-center mb-2">
                             <button class="btn btn-primary w-100" @click="register" :disabled="invalid">Register</button>
                         </div>
-                        <button class="btn btn-info text-white w-100 mt-2" @click="login_mode=true"> I already have account
+                        <button class="btn btn-warning w-100 mt-2" @click="login_mode=true"> I already have account
                         </button>
                     </div>
                 </ValidationObserver>
             </div>
-            <div class="col-12 p-0">
-                <div class="row d-flex justify-content-end mt-2 mb-2 w-100 p-0">
-                    <div class="col-12 col-sm-4 p-0">
-                        <button class="btn btn-outline-primary w-100" @click="prevStep(2)">Back</button>
-                    </div>
-                    <!--            <div class="col-12 col-sm-3">-->
-                    <!--                <button class="btn btn-custom-white" @click="nextStep">Finish</button>-->
-                    <!--            </div>-->
-                </div>
+            <div class="col-12 p-0 mt-2">
+
+                <button class="btn btn-outline-primary w-100" @click="prevStep(2)">Back</button>
+
+
             </div>
         </div>
     </div>
