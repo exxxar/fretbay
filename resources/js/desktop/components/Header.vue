@@ -1,5 +1,5 @@
 <template>
-    <header id="header" class="u-header u-header--modern u-header--bordered u-header--sticky-top-lg">
+    <header id="header" class="u-header fixed-top  u-header--modern u-header--bordered u-header--sticky-top-sm">
         <div class="u-header__section">
             <div id="logoAndNav" class="container-fluid">
                 <!-- Nav -->
