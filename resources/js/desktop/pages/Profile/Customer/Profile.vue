@@ -1,80 +1,35 @@
 <template>
     <div class="container" style="padding-top: 20px;min-height:100vh;">
         <div class="main-body">
-     <!--       <div class="row mb-2">
-                <div class="col-12">
-                    <VueSlickCarousel class="display-md-none display-block" v-bind="settings">
-                        <div class="w-100 p-1">
-                            <a class="btn btn-outline-primary w-100" id="profile-tab"
-                               data-toggle="tab" href="#profile" role="tab"
-                               aria-controls="profile" aria-selected="true">Profile</a>
-                        </div>
-                        <div class="w-100 p-1">
-                            <a class="btn btn-outline-primary w-100" id="reviews-tab"
-                               data-toggle="tab" href="#reviews" role="tab"
-                               aria-controls="reviews" aria-selected="true">Reviews</a>
-                        </div>
-                        <div class="w-100 p-1" @click="loadActiveListing">
-                            <a class="btn btn-outline-primary w-100"
-                               id="listings-active-tab" data-toggle="tab"
-                               href="#listings-active" role="tab"
-                               aria-controls="listings-active"
-                               aria-selected="true">Active listings</a>
-                        </div>
-                        <div class="w-100 p-1" @click="loadArchiveListing">
-                            <a class="btn btn-outline-primary w-100"
-                               id="listings-archive-tab"
-                               data-toggle="tab" href="#listings-archive"
-                               role="tab"
-                               aria-controls="listings-archive"
-                               aria-selected="true">Archive listings</a>
-                        </div>
-                        <div class="w-100 p-1" @click="loadOrders">
-                            <a class="btn btn-outline-primary w-100"
-                               id="orders-tab" data-toggle="tab" href="#orders"
-                               role="tab"
-                               aria-controls="orders"
-                               aria-selected="true">Orders</a></div>
-                        <div class="w-100 p-1">
-                            <a class="btn btn-outline-primary w-100" id="notifications-tab"
-                               data-toggle="tab" href="#notifications" role="tab"
-                               aria-controls="notifications" aria-selected="true">Notifications</a>
-                        </div>
 
-                    </VueSlickCarousel>
-                </div>
-            </div>-->
-
-
-
-            <ul class="nav nav-tabs mb-2" id="myTab" role="tablist">
-                <li class="nav-item">
+            <ul class="nav nav-tabs mb-2 w-100 d-flex flex-nowrap" id="myTab" style="overflow-x: auto;" role="tablist">
+                <li class="nav-item profile-nav-item">
                     <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
                        aria-controls="profile" aria-selected="true">Profile</a>
                 </li>
 
 
-                <li class="nav-item">
+                <li class="nav-item profile-nav-item">
                     <a class="nav-link" id="reviews-tab" data-toggle="tab" href="#reviews" role="tab"
                        aria-controls="reviews" aria-selected="true">Reviews</a>
                 </li>
 
-                <li class="nav-item" @click="loadActiveListing">
+                <li class="nav-item profile-nav-item" @click="loadActiveListing">
                     <a class="nav-link" id="listings-active-tab" data-toggle="tab" href="#listings-active" role="tab"
                        aria-controls="listings-active" aria-selected="true">Active listings</a>
                 </li>
 
-                <li class="nav-item" @click="loadArchiveListing">
+                <li class="nav-item profile-nav-item" @click="loadArchiveListing">
                     <a class="nav-link" id="listings-archive-tab" data-toggle="tab" href="#listings-archive" role="tab"
                        aria-controls="listings-archive" aria-selected="true">Archive listings</a>
                 </li>
 
-                <li class="nav-item" @click="loadOrders">
+                <li class="nav-item profile-nav-item" @click="loadOrders">
                     <a class="nav-link" id="orders-tab" data-toggle="tab" href="#orders" role="tab"
                        aria-controls="orders" aria-selected="true">Orders</a>
                 </li>
 
-                <li class="nav-item">
+                <li class="nav-item profile-nav-item">
                     <a class="nav-link" id="notifications-tab" data-toggle="tab" href="#notifications" role="tab"
                        aria-controls="notifications" aria-selected="true">Notifications</a>
                 </li>
@@ -439,5 +394,11 @@
     .avatar-img {
         min-height: 200px;
         object-fit: contain;
+    }
+
+    .profile-nav-item {
+        min-width: 141px;
+        text-align: center;
+        margin-bottom: 0;
     }
 </style>
