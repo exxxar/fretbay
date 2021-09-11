@@ -52,6 +52,7 @@
                 <div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-2 p-1" :key="thing.id" v-for="thing in filteredThings">
 
                     <div class="card text-white" v-if="thing">
+
                         <img class="card-img" v-lazy="thing.image" alt="Card image">
                         <div class="card-img-overlay">
                             <h5 class="card-title text-dark">{{(thing.title)}}</h5>

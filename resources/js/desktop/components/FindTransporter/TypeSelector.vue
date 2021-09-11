@@ -9,7 +9,8 @@
                     <div class="col-lg-4 col-md-6 col-sm-6 col-6 mb-1 category-card p-1" v-for="category in categories"
                          @click="selectType(category)">
                         <div class="card text-dark">
-                            <img class="card-img " v-lazy="category.image" style="padding: 20px;" alt="Card image">
+
+                            <img class="card-img filtered-img" v-lazy="category.image" style="padding: 20px;" alt="Card image">
                             <div class="card-img-overlay">
                                 <h6 class="card-title">{{category.title}}</h6>
                             </div>
@@ -160,7 +161,13 @@
                 border: 2px #21c87a solid;
             }
 
+
+
         }
+    }
+
+    .filtered-img {
+        filter: drop-shadow(1px 4px 0px #21c87a);
     }
 
 </style>
