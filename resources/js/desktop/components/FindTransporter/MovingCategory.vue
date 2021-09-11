@@ -60,7 +60,7 @@
                 </div>
             </template>
             <template v-slot:footer>
-                <div class="row d-flex justify-content-end mt-2 p-3">
+                <div class="row d-flex justify-content-end mt-2 p-3 m-0">
                     <div class="col-12 mb-1 mb-sm-0 col-sm-2">
                         <button class="btn btn-outline-blue  w-100" @click="prevStep">Back</button>
                     </div>
