@@ -73,6 +73,7 @@ Vue.component('signup-customer-component', require('./components/Modals/SignUpCu
 Vue.component('chat-component', require('./components/Listing/Chat.vue').default);
 Vue.component('quotes-component', require('./components/Listing/Quotes.vue').default);
 Vue.component('notification-item-component', require('./components/Notifications/NotificationItem.vue').default);
+Vue.component('simple-notification-item-component', require('./components/Notifications/SimpleNotificationItem.vue').default);
 Vue.component('notification-paginate-component', require('./components/Notifications/NotificationPaginate.vue').default);
 Vue.component('favorites-paginate-component', require('./components/FavoritePaginate.vue').default);
 

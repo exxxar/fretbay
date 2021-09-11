@@ -26,17 +26,17 @@ use Laravel\Socialite\Facades\Socialite;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get("/test", function (){
-   dd( ObjectCategory::where("title->en","Household equipment")->first()->id);
+Route::get("/test", function () {
+    dd(ObjectCategory::where("title->en", "Household equipment")->first()->id);
 
 });
 
-Route::get("/event",function (){
+Route::get("/event", function () {
     event(new NotificationEvent(
         "test",
         "test info",
         NotificationType::Info,
-       2));
+        2));
 
     event(new NotificationEvent(
         "test",
@@ -58,9 +58,9 @@ Route::get("/event",function (){
 
 });
 
-Route::get('/locale/{lang}', function (\Illuminate\Http\Request $request, $lang){
+Route::get('/locale/{lang}', function (\Illuminate\Http\Request $request, $lang) {
 
-   // Session::forget('lang');
+    // Session::forget('lang');
     Session::put('lang', $lang);
     Session::save();
 
@@ -75,13 +75,30 @@ Route::get("/storage/listings/{dir}/{name}", function ($dir, $name) {
         $file = Storage::disk('local')->get("public/listings/$dir/$name");
         return (new Response($file, 200))
             ->header('Content-Type', 'image/jpeg');
-    }catch (Exception $e){
+    } catch (Exception $e) {
         return "/images/common/icons/general/content-loader.gif";
     }
 
 });
 
-Route::view("/", "desktop.pages.index")->name("desktop.index");
+
+Route::get("/", function (\Illuminate\Http\Request $request) {
+
+    if (is_null(Auth::user()))
+        return view("desktop.pages.index");
+
+    $user = User::self();
+
+    if ($user->hasRole("admin"))
+        return redirect()->route("admin.index");
+
+    if ($user->hasRole("transporter")) {
+        return redirect()->route("transporter-account");
+    }
+
+    return redirect()->route("customer-account");
+
+})->name("desktop.index");
 
 
 Route::view("/pricing", "desktop.pages.pricing")->name("desktop.pricing");
@@ -106,7 +123,6 @@ Route::view("/register-transporter", "desktop.pages.register-transporter")->name
 Route::view("/register-customer", "desktop.pages.register-customer")->name("desktop.register-customer");
 //Route::view("/profile-personal-info", "desktop.pages.profile.profile-personal-info")->name("desktop.profile-personal-info");
 Route::view("/activity-listing", "desktop.pages.profile.customer.activity-listing")->name("desktop.activity-listing");
-
 
 
 //Роут на редактирование профиля заказчика
@@ -179,14 +195,14 @@ Route::group(['middleware' => ['auth', 'role:transporter'], "prefix" => "transpo
 });
 
 
-Route::group(["prefix" => "reviews","middleware"=>"auth"], function () {
+Route::group(["prefix" => "reviews", "middleware" => "auth"], function () {
 
     Route::get('/list', 'ReviewController@getReviews');
 
 
 });
 
-Route::group(["prefix" => "orders","middleware"=>"auth"], function () {
+Route::group(["prefix" => "orders", "middleware" => "auth"], function () {
 
     Route::get('/list', 'OrderController@index');
     Route::get('/filtered', 'OrderController@filtered');
@@ -196,21 +212,21 @@ Route::group(["prefix" => "orders","middleware"=>"auth"], function () {
 
 });
 
-Route::group(["prefix" => "listing","middleware"=>"auth"], function () {
+Route::group(["prefix" => "listing", "middleware" => "auth"], function () {
 
     Route::get('/active', 'ListingController@loadActive');
     Route::get('/archive', 'ListingController@loadArchive');
 
-    Route::get("/{id}", "ListingController@show")->where(["id"=>"[0-9]+"])->name("desktop.listing");
+    Route::get("/{id}", "ListingController@show")->where(["id" => "[0-9]+"])->name("desktop.listing");
     Route::get("/direction/{id}/{direction?}", "ListingController@goToListing")->name("desktop.direction");
     Route::post('/messages/send', 'ListingController@sendMessage');
-    Route::get('/favorites/get', 'FavoriteController@index')->middleware( ['auth', 'role:transporter']);
-    Route::post('/favorites/add', 'FavoriteController@store')->middleware( ['auth', 'role:transporter']);
-    Route::post('/favorites/remove', 'FavoriteController@destroy')->middleware( ['auth', 'role:transporter']);
+    Route::get('/favorites/get', 'FavoriteController@index')->middleware(['auth', 'role:transporter']);
+    Route::post('/favorites/add', 'FavoriteController@store')->middleware(['auth', 'role:transporter']);
+    Route::post('/favorites/remove', 'FavoriteController@destroy')->middleware(['auth', 'role:transporter']);
 
 });
 
-Route::get('/notifications/get', 'NotificationController@index')->middleware( ['auth']);
+Route::get('/notifications/get', 'NotificationController@index')->middleware(['auth']);
 
 Route::group(['middleware' => ['auth', 'role:customer'], "prefix" => "customer"], function () {
     Route::group(["prefix" => "profile"], function () {

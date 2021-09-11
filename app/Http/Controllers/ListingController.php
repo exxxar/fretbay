@@ -202,6 +202,8 @@ class ListingController extends Controller
         $place_of_loading = json_decode($request->get('place_of_loading'));
         $place_of_delivery = json_decode($request->get('place_of_delivery'));
 
+        $user_id = $request->get('user_id') ?? Auth::user()->id??null;
+
         $listing = Listing::create([
             'title' => $request->get('title') ?? '',
             'articles' => json_decode($request->get('articles')) ?? [],
@@ -222,14 +224,20 @@ class ListingController extends Controller
                 $place_of_delivery->center[1] ?? 0
             ),
 
-            'is_active'=>"true",
+            'is_active'=>true,
             'expiration_date' => Carbon::createFromTimestamp($request->get('unshipping_date_to')),
             'category_id' => $request->get('category_id') ?? null,
             'subcategory_id' => $request->get('subcategory_id') ?? null,
             'thing_id' => $request->get('thing_id') ?? null,
-            'user_id' => $request->get('user_id') ?? null,
+            'user_id' => $user_id,
             'summary_volume' => $request->get('summary_volume') ?? 0,
         ]);
+
+        event(new NotificationEvent(
+            "#listing-" . $listing->id,
+            "Create new listing  " . $listing->id,
+            NotificationType::Info,
+            $user_id));
 
 
         $images = [];

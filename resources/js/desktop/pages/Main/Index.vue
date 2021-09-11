@@ -768,7 +768,21 @@ Mettez-le sur</span>
 
 
             }
-        }
+        },
+        computed: {
+            user() {
+                return window.user
+            },
+            profileLink() {
+                return window.user.is_transporter ? "/transporter/profile" : "/customer/profile"
+            },
+            notifications: function () {
+                return this.$store.getters.notifications;
+            },
+        },
+        mounted() {
+            this.$store.dispatch('loadNotifications')
+        },
     }
 </script>
 <style>

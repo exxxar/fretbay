@@ -6,6 +6,8 @@
                 <div class="u-sidebar--panel__footer-offset">
                     <!-- Toggle Button -->
                     <div class="d-flex align-items-center border-bottom py-4 px-5">
+                        <img v-lazy="user.avatar" class="mr-5" style="width:50px;height:50px; border-radius: 50%; object-fit: cover;" alt="">
+
                         <h4 class="h5 mb-0">Account</h4>
 
                         <button type="button" class="close u-sidebar__close ml-auto" @click="close()">
@@ -16,18 +18,19 @@
                     <div class="d-flex align-items-center border-bottom py-4 px-5 flex-wrap">
                         <p><a v-if="user.is_transporter" :href="'/profile/'+user.id">{{user.name}} </a></p>
 
-                        <em class="text-uppercase text-muted font-size-13 mb-0 mt-0" v-if="user.is_admin">You are Admin</em>
-                        <em class="text-uppercase text-muted font-size-13 mb-0 mt-0" v-if="user.is_customer">You are Customer</em>
+                        <em class="text-uppercase text-muted font-size-13 mb-0 mt-0" v-if="user.is_admin">You are
+                            Admin</em>
+                        <em class="text-uppercase text-muted font-size-13 mb-0 mt-0" v-if="user.is_customer">You are
+                            Customer</em>
                         <em class="text-uppercase text-muted font-size-13 mb-0 mt-0" v-if="user.is_transporter">
                             You are Transporter</em>
                     </div>
 
 
-
                     <!-- End Toggle Button -->
 
                     <!-- Content -->
-                    <div class="js-scrollbar u-sidebar__body" >
+                    <div class="js-scrollbar u-sidebar__body">
                         <div class="u-sidebar__content py-5">
 
 
@@ -102,15 +105,29 @@
                                 </li>
                                 <li>
                                     <a class="media align-items-center u-sidebar--panel__link py-2 px-5" href="/logout">
-                                        <img class="max-width-4 mr-3" src="/assets/svg/components/sign-out-alt-solid.svg"
+                                        <img class="max-width-4 mr-3"
+                                             src="/assets/svg/components/sign-out-alt-solid.svg"
                                              alt="Image Description">
                                         <div class="media-body">
                                             <span>Logout</span>
                                         </div>
                                     </a>
                                 </li>
+
+
+
+
+
                             </ul>
+
                             <!-- End List -->
+
+                           <!-- <ul class="list-unstyled font-size-14 mb-5" v-if="notifications.length>0">
+
+                                <simple-notification-item-component :key="item.id" :item="item"
+                                                                    v-for="item in notifications"/>
+
+                            </ul>-->
 
                         </div>
                     </div>
@@ -149,7 +166,13 @@
             },
             profileLink() {
                 return window.user.is_transporter ? "/transporter/profile" : "/customer/profile"
-            }
+            },
+            notifications: function () {
+                return this.$store.getters.notifications;
+            },
+        },
+        mounted() {
+            this.$store.dispatch('loadNotifications')
         },
         methods: {
             close() {

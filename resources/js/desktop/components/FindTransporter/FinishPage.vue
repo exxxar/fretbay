@@ -56,9 +56,9 @@
                             </ValidationProvider>
                         </div>
                         <div class="row w-100 m-auto d-flex justify-content-center mb-2">
-                            <button class="btn btn-primary" @click="register" :disabled="invalid">Register</button>
+                            <button class="btn btn-primary w-100" @click="register" :disabled="invalid">Register</button>
                         </div>
-                        <button class="btn btn-outline-primary mt-2" @click="login_mode=true"> I already have account
+                        <button class="btn btn-outline-secondary w-100 mt-2" @click="login_mode=true"> I already have account
                         </button>
                     </div>
                 </ValidationObserver>
