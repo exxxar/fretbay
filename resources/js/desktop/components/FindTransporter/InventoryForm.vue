@@ -8,8 +8,9 @@
                 </div>
 
                 <div class="col-12 col-sm-5">
-                    <p class="mt-2 text-sm-right text-center">Total volume {{volumeCartTotalVolume.toFixed(2)}} <em
-                        class="text-bold">m<sup>3</sup></em></p>
+                    <p class="mt-2 text-sm-right text-center" style="line-height: 200%;">Total volume {{volumeCartTotalVolume.toFixed(2)}} <em
+                        class="text-bold">m<sup>3</sup></em>  <a href="#reset" v-if="volumeCartTotalVolume>0" class="btn btn-link color-primary p-0 ml-2" @click="resetVolume"><i class="far fa-trash-alt"></i></a></p>
+
                 </div>
             </div>
 
@@ -60,14 +61,14 @@
                             <div class="row">
 
                                 <div class="col-5">
-                                    <button class="btn btn-outline-primary w-100" @click="decrement(thing.id)">-
+                                    <button class="btn btn-outline-primary w-100 p-1" @click="decrement(thing.id)">-
                                     </button>
                                 </div>
-                                <div class="col-2  d-flex justify-content-center align-items-center">
+                                <div class="col-2  d-flex justify-content-center align-items-center p-0">
                                     <span><strong>{{getQuantity(thing.id)}}</strong></span>
                                 </div>
                                 <div class="col-5">
-                                    <button class="btn btn-outline-primary w-100" @click="increment(thing)">+</button>
+                                    <button class="btn btn-outline-primary w-100 p-1" @click="increment(thing)">+</button>
                                 </div>
                             </div>
                         </div>
@@ -164,7 +165,9 @@
             this.loadCategories();
         },
         methods: {
-
+            resetVolume(){
+                this.$store.dispatch("clearVolumeCart")
+            },
             loadCategories() {
                 axios.get('/api/get-volume-categories')
                     .then(response => {
