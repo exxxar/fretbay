@@ -10,8 +10,8 @@
                          @click="selectType(category)">
                         <div class="card text-dark">
 
-                            <img class="card-img filtered-img" v-lazy="category.image" style="padding: 20px;" alt="Card image">
-                            <div class="card-footer">
+                            <img class="card-img filtered-img mt-5" v-lazy="category.image+'?v=1'" style="padding: 20px;" alt="Card image">
+                            <div class="card-img-overlay">
                                 <p class="card-title p-0 m-0 custom-card-title">{{category.title}}</p>
                             </div>
                         </div>
@@ -170,9 +170,6 @@
         filter: drop-shadow(1px 4px 0px #21c87a);
     }
 
-    .custom-card-title {
-        text-transform: uppercase;
-        font-size: 10px;
-    }
+
 
 </style>
