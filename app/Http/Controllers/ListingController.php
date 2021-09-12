@@ -202,7 +202,7 @@ class ListingController extends Controller
         $place_of_loading = json_decode($request->get('place_of_loading'));
         $place_of_delivery = json_decode($request->get('place_of_delivery'));
 
-        $user_id = $request->get('user_id') ?? Auth::user()->id??null;
+        $user_id = $request->get('user_id') ?? null;
 
         $listing = Listing::create([
             'title' => $request->get('title') ?? '',

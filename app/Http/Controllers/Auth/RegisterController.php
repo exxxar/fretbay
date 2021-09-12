@@ -147,10 +147,10 @@ class RegisterController extends Controller
 
         if (!is_null($user->email))
             Mail::to($user->email)
-                ->send(new RegistrationMail(printf("%s %s",
-                $user->name,
+                ->send(new RegistrationMail(
+                $user->name." ".
                 $user->email
-            )));
+            ));
 
 //        return redirect()->route("login");
         return response()->json([

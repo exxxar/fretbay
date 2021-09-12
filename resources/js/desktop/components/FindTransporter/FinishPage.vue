@@ -63,7 +63,7 @@
                     </div>
                 </ValidationObserver>
             </div>
-            <div class="col-12 p-0 mt-2">
+            <div class="col-12 col-sm-6 p-0 mt-2">
 
                 <button class="btn btn-outline-primary w-100" @click="prevStep(2)">Back</button>
 
@@ -117,6 +117,8 @@
                 };
                 this.message = null;
                 axios.post('/register-customer-with-listing', user).then(resp => {
+
+                    console.log(resp.data)
                     this.$store.dispatch('editNewListing', {key: 'user_id', value: resp.data.user_id});
                     // this.$store.dispatch('editNewListing', {key:'articles', value:this.articles});
 
