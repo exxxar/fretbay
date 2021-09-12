@@ -71,7 +71,7 @@
                             </li>
 
 
-                            <li class="nav-item dropdown u-header__nav-item-btn" v-if="!user">
+                            <li class="nav-item dropdown u-header__nav-item-btn p-0 mb-1 mb-sm-0 mr-0 mr-sm-1" v-if="!user">
                                 <a class="btn btn-primary dropdown-toggle text-white w-100 " href="#" id="signupDropdown"
                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     SignUp
@@ -84,8 +84,8 @@
                                 </div>
                             </li>
 
-                            <li class="nav-item u-header__nav-item-btn" v-if="!user">
-                                <button type="button" class="btn btn-link w-100 " data-toggle="modal"
+                            <li class="nav-item u-header__nav-item-btn p-0" v-if="!user">
+                                <button type="button" class="btn btn-link w-100 btn-outline-primary" data-toggle="modal"
                                         data-target="#signIn">
                                     Sign In
                                 </button>
@@ -117,12 +117,11 @@
 
                                 <!-- Input -->
                                 <form id="search"
-                                      target="_blank"
-                                      :action="'https://www.google.com/search?q=site:allotrans.com '+searchText"
+                                      action="/find-transporter"
                                       method="get"
                                       class="js-focus-state input-group form u-header__search u-unfold--css-animation u-unfold--hidden fadeOut"
                                       style="animation-duration: 300ms;">
-                                    <input class="form-control form__input" type="search" placeholder="Search Space" v-model="searchText">
+                                    <input class="form-control form__input" type="search" name="search" placeholder="Search inventory" >
                                     <div class="input-group-addon u-header__search-addon p-0">
                                         <button class="btn btn-primary u-header__search-addon-btn" type="submit">
                                             <i class="fa fa-search"></i>

@@ -59,6 +59,33 @@
 
                             </ul>
 
+                            <ul class="list-unstyled font-size-14 mb-5" v-if="user.is_transporter">
+                                <li>
+                                    <a class="media align-items-center u-sidebar--panel__link py-2 px-5"
+                                       href="/find-loads">
+                                        <img class="max-width-3 mr-3" src="/assets/svg/components/id-card-regular.svg"
+                                             alt="Image Description">
+                                        <div class="media-body">
+                                            <span>Find loads</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+
+
+                            <ul class="list-unstyled font-size-14 mb-5" v-if="user.is_customer">
+                                <li>
+                                    <a class="media align-items-center u-sidebar--panel__link py-2 px-5"
+                                       href="/find-transporter">
+                                        <img class="max-width-3 mr-3" src="/assets/svg/components/id-card-regular.svg"
+                                             alt="Image Description">
+                                        <div class="media-body">
+                                            <span>Find transporter</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+
                             <!-- List -->
                             <ul class="list-unstyled font-size-14 mb-5" v-if="!user.is_admin">
                                 <li>
@@ -119,15 +146,6 @@
 
 
                             </ul>
-
-                            <!-- End List -->
-
-                           <!-- <ul class="list-unstyled font-size-14 mb-5" v-if="notifications.length>0">
-
-                                <simple-notification-item-component :key="item.id" :item="item"
-                                                                    v-for="item in notifications"/>
-
-                            </ul>-->
 
                         </div>
                     </div>

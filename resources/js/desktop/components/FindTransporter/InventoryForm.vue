@@ -45,8 +45,7 @@
         </div>
 
 
-        <vue-custom-scrollbar class="scroll-area" :settings="settingsScroll">
-            <div class="row w-100 m-auto" v-if="filteredThings">
+         <div class="row w-100 m-auto" v-if="filteredThings">
 
 
                 <div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-2 p-1" :key="thing.id" v-for="thing in filteredThings">
@@ -79,7 +78,7 @@
 
 
             </div>
-        </vue-custom-scrollbar>
+
     </div>
 </template>
 <script>
@@ -163,7 +162,16 @@
             }
         },
         created() {
-            this.loadCategories();
+            this.loadCategories()
+
+            if (window.location.search) {
+                this.search = window.location.search.split('=')[1]
+                setTimeout(()=>{
+                    window.scrollTo(0, 0);
+                }, 1000)
+
+            }
+
         },
         methods: {
             resetVolume(){

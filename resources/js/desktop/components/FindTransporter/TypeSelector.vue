@@ -10,7 +10,8 @@
                          @click="selectType(category)">
                         <div class="card text-dark">
 
-                            <img class="card-img filtered-img mt-5" v-lazy="category.image+'?v=1'" style="padding: 20px;" alt="Card image">
+                            <img class="card-img filtered-img mt-5" v-lazy="category.image+'?v=1'"
+                                 style="padding: 20px;" alt="Card image">
                             <div class="card-img-overlay">
                                 <p class="card-title p-0 m-0 custom-card-title">{{category.title}}</p>
                             </div>
@@ -137,6 +138,15 @@
 
 
         },
+        mounted() {
+
+            if (window.location.search)
+                setTimeout(() => {
+                    this.$emit("select-type", 2)
+                    this.$store.dispatch("setStep", 1)
+                }, 2000)
+
+        },
         methods: {
 
             selectType(type) {
@@ -144,7 +154,6 @@
 
                 this.selected = type.id;
                 this.$emit("select-type", this.selected)
-
                 window.scrollTo(0, 0);
             }
         }
@@ -156,11 +165,11 @@
         cursor: pointer;
 
         .card {
-            border:2px #e3e6f0 solid;
+            border: 2px #e3e6f0 solid;
+
             &:hover {
                 border: 2px #21c87a solid;
             }
-
 
 
         }
@@ -169,7 +178,6 @@
     .filtered-img {
         filter: drop-shadow(1px 4px 0px #21c87a);
     }
-
 
 
 </style>

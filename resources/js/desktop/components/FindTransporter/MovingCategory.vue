@@ -102,6 +102,12 @@
                 return this.$store.getters.volumeCartTotalVolume;
             }
         },
+        mounted(){
+            if (window.location.search)
+            {
+                this.inventory_mode = true
+            }
+        },
         methods: {
             nextStep() {
                 this.$store.dispatch('editNewListing', {
