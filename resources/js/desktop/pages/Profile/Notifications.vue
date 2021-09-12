@@ -1,9 +1,9 @@
 <template>
     <main id="content" >
         <!-- Description Section -->
-        <div class="container space-1" v-if="notifications.length>0">
-            <div class="row">
-                <div class="col-12">
+        <div class="container p-0" v-if="notifications.length>0">
+            <div class="row m-0">
+                <div class="col-12 p-1">
                     <notification-item-component :key="item.id" :item="item" v-for="item in notifications"/>
                 </div>
                 <div class="col-12 mt-2">
@@ -11,8 +11,11 @@
                 </div>
             </div>
         </div>
-        <div class="container space-1" v-else>
-            <h1>Empty list</h1>
+        <div class="container" v-else>
+            <div class="d-flex p-5 justify-content-center"  v-if="notifications.length===0">
+                <img v-lazy="'/images/empty.png'" alt="" class="w-100 w-sm-auto" style="filter: drop-shadow(8px 4px 0px #21c87a);">
+            </div>
+            <h4 class="text-center" v-if="notifications.length===0">No notifications yet!</h4>
         </div>
     </main>
 </template>

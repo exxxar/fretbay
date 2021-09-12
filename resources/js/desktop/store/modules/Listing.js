@@ -122,6 +122,11 @@ const actions = {
                 },
             });
     },
+
+    clearListing({state, commit}) {
+        commit('clearListing');
+        /// localStorage.setItem('vuejs__store_go', JSON.stringify(state.go_items));
+    }
 }
 
 // mutations
@@ -141,6 +146,11 @@ const mutations = {
     saveListing(state, payload) {
         let listing = state.listings.findIndex(x => x.id === payload.id)
         state.listings[listing] = payload;
+    },
+    clearListing(state) {
+        state.listings = [];
+        // localStorage.setItem('VolumeCart', JSON.stringify(state.volume_items));
+        //commit('setCartItems',tmp)
     },
 }
 

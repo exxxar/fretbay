@@ -33,7 +33,7 @@
 
                 <li class="nav-item profile-nav-item">
                     <a class="btn btn-outline-primary d-block" id="notifications-tab" data-toggle="tab" href="#notifications" role="tab"
-                       aria-controls="notifications" aria-selected="true"><i class="far fa-flag"></i> Notifications</a>
+                       aria-controls="notifications" aria-selected="true"><i class="far fa-flag"></i> Notifications </a>
                 </li>
 
             </ul>
@@ -392,13 +392,16 @@
           this.loadActiveListing()
         },
         methods:{
+
             loadOrders(){
                 this.$store.dispatch('getOrders');
             },
             loadActiveListing(){
+                this.$store.dispatch('clearListing')
                 this.$store.dispatch('getActiveListings');
             },
             loadArchiveListing(){
+                this.$store.dispatch('clearListing')
                 this.$store.dispatch('getArchiveListings');
             }
         },

@@ -1,22 +1,23 @@
 <template>
     <div class="card mb-2 " v-bind:class="getClassByType()">
-        <div class="card-body">
-            <div class="row">
-                <div class="col-2 d-flex justify-content-center align-item-center  font-size-32">
+        <div class="card-body p-2">
+            <div class="row m-0 d-flex align-items-center">
+                <div class="col-2 d-flex justify-content-center  font-size-32 h-100">
                     <i class="fas fa-info-circle text-primary" v-if="this.item.type===0"></i>
                     <i class="fas fa-exclamation-circle text-white" v-if="this.item.type===1"></i>
                     <i class="fas fa-exclamation-circle text-primary" v-if="this.item.type===2"></i>
                     <i class="fab fa-ubuntu text-white" v-if="this.item.type===3"></i>
                 </div>
-                <div class="col-4">
-                    <p>{{item.title}}</p>
+                <div class="col-10">
+
+                    <div class="row">
+                        <div class="col-12"> <p>{{item.title}}</p></div>
+                        <div class="col-12">  <p>{{item.description}}</p></div>
+                        <div class="col-12"><p class="mb-0">{{item.created_at | moment("from", "now", true) }}</p></div>
+                    </div>
+
                 </div>
-                <div class="col-4">
-                    <p>{{item.description}}</p>
-                </div>
-                <div class="col-2">
-                    <p>{{item.created_at | moment("from", "now", true) }}</p>
-                </div>
+
             </div>
         </div>
     </div>
