@@ -73,9 +73,6 @@ class LoginController extends Controller
             'password' => 'required|string',
         ]);
 
-        Log::info("TEST");
-        Log::info($request->get("email") . " " . $request->get("password"));
-
         $remember = $request->remember ? true : false;
 
         $credentials = request(['password']);
