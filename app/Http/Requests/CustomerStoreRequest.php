@@ -28,7 +28,7 @@ class CustomerStoreRequest extends FormRequest
             'name' => ['required', 'string', 'min:2', 'max:256'],
             'email' => 'required|unique:users|email|required_with:email_confirmation|same:email_confirmation',
             'email_confirmation' =>  ['required', 'email'],
-            "telephone_number_1" => ['required','unique:users,phone'],
+            "telephone_number_1" => ['required'],
             "telephone_number_2" => ['required'],
             'password' => 'min:6|required_with:password_confirmation|same:password_confirmation',
             'password_confirmation' => 'min:6',

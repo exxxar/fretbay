@@ -93,6 +93,7 @@ Vue.component('review-item-component', require('../desktop/components/Reviews/Re
 
 //auth
 Vue.component('login-page', require('./pages/Auth/Login.vue').default);
+Vue.component('recovery-page', require('./pages/Auth/Recovery.vue').default);
 Vue.component('register-transporter-page', require('./pages/Auth/RegisterTransporter.vue').default);
 Vue.component('register-customer-page', require('../desktop/pages/Auth/RegisterCustomer.vue').default);
 
@@ -111,6 +112,13 @@ Vue.component('who-we-are-page', require('./pages/Support/WhoWeAre.vue').default
 Vue.component('profile-page', require('./pages/Main/Profile.vue').default);
 Vue.component('pricing-page', require('./pages/Support/Pricing.vue').default);
 Vue.component('profile-transporter-page', require('./pages/Profile/Transporter/Profile.vue').default);
+
+
+Vue.component('transporter-registration-form-component', require('./components/Auth/TransporterRegistrationForm.vue').default);
+Vue.component('customer-registration-form-component', require('./components/Auth/CustomerRegistrationForm.vue').default);
+Vue.component('login-form-component', require('./components/Auth/LoginForm.vue').default);
+Vue.component('recovery-form-component', require('./components/Auth/RecoveryPasswordForm.vue').default);
+
 
 Vue.component('profile-personal-info-page', require('./pages/Profile/PersonalInfo.vue').default);
 Vue.component('profile-customer-activity-listing-page', require('../desktop/pages/Profile/Customer/ActivityListing.vue').default);

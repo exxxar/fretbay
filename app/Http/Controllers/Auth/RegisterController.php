@@ -16,6 +16,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
@@ -82,7 +83,7 @@ class RegisterController extends Controller
     }
 
 
-    public function registerCustomer(CustomerStoreRequest $request)
+    public function registerCustomer(Request $request)
     {
         $customer = Role::where('name', 'customer')->first();
 
@@ -94,18 +95,31 @@ class RegisterController extends Controller
 //        $payment_methods->paypal = false;
 
         $profile = Profile::create([
-            "company_name" => $request->company_name,
+            "company_name" => $request->company_name??$request->name??$request->first_name,
+            "telephone_number_1" => $request->telephone_number_1,
+            "telephone_number_2" => $request->telephone_number_2,
+            "first_name" => $request->first_name,
+            "second_name" => $request->second_name,
 //            "payment_methods" =>  $payment_methods
         ]);
 
+
         $user = new User();
-        $user->name = $request->name;
+        $user->name = $request->company_name??$request->name??$request->first_name;
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
-        $user->phone = $request->telephone_number_1 ?? $request->telephone_number_2;
+       // $user->phone = $request->telephone_number_1 ?? $request->telephone_number_2;
         $user->profile_id = $profile->id;
         $user->save();
         $user->roles()->attach($customer);
+
+
+        if (!is_null($user->email))
+            Mail::to($user->email)
+                ->send(new RegistrationMail(
+                    $user->name." ".
+                    $user->email
+                ));
 
         Auth::login($user, true);
 
@@ -124,7 +138,7 @@ class RegisterController extends Controller
 //        $payment_methods->paypal = false;
 
         $profile = Profile::create([
-            "company_name" => $request->name,
+            "company_name" =>  $request->name,
 //            "payment_methods" => $payment_methods
         ]);
 

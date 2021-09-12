@@ -419,6 +419,7 @@ Route::group(['middleware' => ['auth', 'role:admin'], "prefix" => "program-admin
 Route::view("/404", "errors.404")->name("errors.404");
 
 Route::view("/login", "auth.login")->name("login");
+Route::view("/recovery-password", "auth.recovery")->name("recovery");
 Route::post("/login", "Auth\LoginController@login");
 
 Route::post('/register-customer', \Auth\RegisterController::class . '@registerCustomer')->name("register-customer");

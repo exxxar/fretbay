@@ -154,9 +154,9 @@
                 </div>
 
 
-                <div class="col-12 pl-0 pr-0 d-flex justify-content-between" v-if="listing.user_id===user.id">
+                <div class="col-12 pl-0 pr-0 d-flex justify-content-between" >
 
-                    <div class="btn-group">
+                    <div class="btn-group" v-if="listing.user_id===user.id">
                         <button class="btn btn-outline-danger" v-if="!listing.deleted_at"><i class="far fa-trash-alt"></i>
                         </button>
                         <button class="btn btn-outline-danger" v-if="listing.is_active"><i class="fas fa-archive"></i>

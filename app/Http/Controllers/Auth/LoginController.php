@@ -85,15 +85,26 @@ class LoginController extends Controller
             $credentials['remember'] = $remember;
 
         if (!Auth::attempt($credentials))
-            return redirect()->route("login")->withErrors(['Bad credentials']);
+            return response()->json([
+                'message' => "Error!",
+            ], 400);
 
         $user = $request->user();
         if ($user->hasRole("transporter")) {
             $profile = Profile::find($user->profile_id);
             if ($profile->is_first_activation == false) {
-                return redirect()->route("transporter-account");
+                return response()->json([
+                    'user_id' => $user->id,
+                    'need_wizard'=>false,
+                ]);
+
             }
-            return redirect()->route("desktop.profile-transporter-wizard-start");
+
+            return response()->json([
+                'user_id' => $user->id,
+                'need_wizard'=>true,
+            ]);
+
         }
 
 
@@ -101,7 +112,10 @@ class LoginController extends Controller
             return redirect()->route("admin.index");
 
 
-        return redirect()->route("customer-account");
+        return response()->json([
+            'user_id' => $user->id,
+            'need_wizard'=>false,
+        ]);
     }
 
     public function logout(Request $request)
