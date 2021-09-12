@@ -52,7 +52,7 @@
 
                     <div class="card text-white" v-if="thing">
 
-                        <img class="card-img" v-lazy="thing.image" alt="Card image">
+                        <img class="card-img inverted-img mt-7" v-lazy="thing.image" alt="Card image">
                         <div class="card-img-overlay">
                             <h5 class="card-title text-dark">{{(thing.title)}}</h5>
 
@@ -238,6 +238,15 @@
         margin: auto;
         width: 100%;
         height: 500px;
+    }
+
+    .inverted-img {
+        //filter: drop-shadow(4px 4px 0px #ca3b72 ) invert(1);
+
+        //filter: drop-shadow(4px 4px 0px #8a3bca) invert(1) hue-rotate(45deg);
+
+        filter: drop-shadow(4px 4px 0px #0e7100) invert(1) hue-rotate(
+                113deg);
     }
 
 </style>
