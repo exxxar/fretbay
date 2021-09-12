@@ -3,35 +3,37 @@
         <div class="main-body">
 
             <ul class="nav nav-tabs mb-2 w-100 d-flex flex-nowrap customer-menu" id="myTab"  role="tablist">
+                <li class="nav-item profile-nav-item" @click="loadActiveListing">
+                    <a class="btn btn-outline-primary d-block active" id="listings-active-tab" data-toggle="tab" href="#listings-active" role="tab"
+                       aria-controls="listings-active" aria-selected="true"><i class="fas fa-boxes"></i> Active listings</a>
+                </li>
+
                 <li class="nav-item profile-nav-item">
                     <a class="btn btn-outline-primary  d-block" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
-                       aria-controls="profile" aria-selected="true">Profile</a>
+                       aria-controls="profile" aria-selected="true"><i class="fas fa-user"></i> Profile</a>
                 </li>
 
 
                 <li class="nav-item profile-nav-item">
                     <a class="btn btn-outline-primary d-block" id="reviews-tab" data-toggle="tab" href="#reviews" role="tab"
-                       aria-controls="reviews" aria-selected="true">Reviews</a>
+                       aria-controls="reviews" aria-selected="true"><i class="far fa-comment-dots"></i> Reviews</a>
                 </li>
 
-                <li class="nav-item profile-nav-item" @click="loadActiveListing">
-                    <a class="btn btn-outline-primary d-block active" id="listings-active-tab" data-toggle="tab" href="#listings-active" role="tab"
-                       aria-controls="listings-active" aria-selected="true">Active listings</a>
-                </li>
+
 
                 <li class="nav-item profile-nav-item" @click="loadArchiveListing">
                     <a class="btn btn-outline-primary d-block" id="listings-archive-tab" data-toggle="tab" href="#listings-archive" role="tab"
-                       aria-controls="listings-archive" aria-selected="true">Archive listings</a>
+                       aria-controls="listings-archive" aria-selected="true"><i class="fas fa-archive"></i> Archive listings</a>
                 </li>
 
                 <li class="nav-item profile-nav-item" @click="loadOrders">
                     <a class="btn btn-outline-primary d-block" id="orders-tab" data-toggle="tab" href="#orders" role="tab"
-                       aria-controls="orders" aria-selected="true">Orders</a>
+                       aria-controls="orders" aria-selected="true"><i class="far fa-handshake"></i> Orders</a>
                 </li>
 
                 <li class="nav-item profile-nav-item">
-                    <a class="btn btn-outline-primary" id="notifications-tab" data-toggle="tab" href="#notifications" role="tab"
-                       aria-controls="notifications" aria-selected="true">Notifications</a>
+                    <a class="btn btn-outline-primary d-block" id="notifications-tab" data-toggle="tab" href="#notifications" role="tab"
+                       aria-controls="notifications" aria-selected="true"><i class="far fa-flag"></i> Notifications</a>
                 </li>
 
             </ul>
@@ -252,6 +254,10 @@
                     <p v-if="listings.length>0">Count results: {{listings.length}} <i class="fas fa-boxes"></i></p>
                     <hr>
                     <listing-item-component :key="index" v-for="(listing,index) in listings" :listing="listing"/>
+                    <div class="d-flex p-5 justify-content-center"  v-if="listings.length===0">
+                        <img v-lazy="'/images/empty.png'" alt="" class="w-100 w-sm-auto" style="filter: drop-shadow(8px 4px 0px #21c87a);">
+                    </div>
+                    <h4 class="text-center" v-if="listings.length===0">No listing yet!</h4>
 
                     <div class="mb-9"></div>
 
@@ -268,6 +274,10 @@
                     <p v-if="listings.length>0">Count results: {{listings.length}} <i class="fas fa-boxes"></i></p>
                     <hr>
                     <listing-item-component :key="index" v-for="(listing,index) in listings" :listing="listing"/>
+                    <div class="d-flex p-5 justify-content-center"  v-if="listings.length===0">
+                        <img v-lazy="'/images/empty.png'" alt="" class="w-100 w-sm-auto" style="filter: drop-shadow(8px 4px 0px #21c87a);">
+                    </div>
+                    <h4 class="text-center" v-if="listings.length===0">No listing yet!</h4>
 
                     <div class="mb-9"></div>
 
@@ -276,14 +286,19 @@
 
                 <div class="tab-pane fade" id="orders" role="tabpanel" aria-labelledby="orders-tab">
 
-                    <div class="row d-flex justify-content-center" v-if="userOrders.length===0">
+                    <div class="row d-flex">
                         <div class="col-md-4">
-                            <a class="btn btn-outline-primary" href="/find-transporter">Find transporter</a>
+                            <a class="btn btn-link p-0" href="/find-transporter"><i class="fas fa-dolly"></i> Try to <strong>find a transporter!</strong></a>
                         </div>
                     </div>
-                    <p v-else>Count results: {{userOrders.length}}</p>
-
+                    <p v-if="userOrders.length>0">Count results: {{userOrders.length}} <i class="fas fa-boxes"></i></p>
+                    <hr>
                     <order-item-component  :key="index" v-for="(order,index) in userOrders" :order="order"/>
+
+                    <div class="d-flex p-5 justify-content-center"  v-if="userOrders.length===0">
+                        <img v-lazy="'/images/empty.png'" alt="" class="w-100 w-sm-auto" style="filter: drop-shadow(8px 4px 0px #21c87a);">
+                    </div>
+                    <h4 class="text-center" v-if="userOrders.length===0">No orders yet!</h4>
 
                     <order-paginate-component/>
                 </div>
@@ -373,6 +388,9 @@
                 return window.user
             }
         },
+        mounted(){
+          this.loadActiveListing()
+        },
         methods:{
             loadOrders(){
                 this.$store.dispatch('getOrders');
@@ -401,7 +419,10 @@
         text-align: center;
         /* width: auto; */
         margin-bottom: 0;
-        padding: 5px;
+        padding: 3px;
+        a {
+            font-size: 12px;
+        }
     }
 
     .customer-menu {

@@ -10,7 +10,7 @@
                          @click="selectType(category)">
                         <div class="card text-dark">
 
-                            <img class="card-img filtered-img mt-5" v-lazy="category.image+'?v=1'"
+                            <img class="card-img filtered-img mt-5" v-lazy="category.image+'?v=2'"
                                  style="padding: 20px;" alt="Card image">
                             <div class="card-img-overlay">
                                 <p class="card-title p-0 m-0 custom-card-title">{{category.title}}</p>
@@ -176,7 +176,7 @@
     }
 
     .filtered-img {
-        filter: drop-shadow(1px 4px 0px #21c87a);
+        filter: drop-shadow(2px 2px 0px #21c87a);
     }
 
 
