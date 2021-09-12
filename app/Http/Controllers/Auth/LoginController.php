@@ -93,18 +93,9 @@ class LoginController extends Controller
         if ($user->hasRole("transporter")) {
             $profile = Profile::find($user->profile_id);
             if ($profile->is_first_activation == false) {
-                return response()->json([
-                    'user_id' => $user->id,
-                    'need_wizard'=>false,
-                ]);
-
+                return redirect()->route("transporter-account");
             }
-
-            return response()->json([
-                'user_id' => $user->id,
-                'need_wizard'=>true,
-            ]);
-
+            return redirect()->route("desktop.profile-transporter-wizard-start");
         }
 
 
@@ -112,10 +103,7 @@ class LoginController extends Controller
             return redirect()->route("admin.index");
 
 
-        return response()->json([
-            'user_id' => $user->id,
-            'need_wizard'=>false,
-        ]);
+        return redirect()->route("customer-account");
     }
 
     public function logout(Request $request)
