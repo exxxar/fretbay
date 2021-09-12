@@ -28,6 +28,12 @@
                        role="tab" aria-controls="favorites" aria-selected="false"><i class="fas fa-thumbs-up"></i>
                         Favorites</a>
                 </li>
+
+                <li class="nav-item profile-nav-item" @click="loadOrders">
+                    <a class="btn btn-outline-primary d-block" id="orders-tab" data-toggle="tab" href="#orders"
+                       role="tab" aria-controls="orders" aria-selected="false"><i class="fas fa-truck"></i>
+                        Orders</a>
+                </li>
                 <li class="nav-item profile-nav-item">
                     <a class="btn btn-outline-primary d-block" id="notifications-tab" data-toggle="tab"
                        href="#notifications" role="tab" aria-controls="notifications" aria-selected="false"><i
@@ -62,6 +68,28 @@
 
             <div class="tab-pane fade" id="favorites" role="tabpanel" aria-labelledby="favorites-tab">
                 <favorites-page/>
+            </div>
+
+
+            <div class="tab-pane fade" id="orders" role="tabpanel" aria-labelledby="orders-tab">
+
+                <div class="row d-flex">
+                    <div class="col-md-4">
+                        <a class="btn btn-link p-0" href="/find-loads"><i class="fas fa-dolly"></i> Try to
+                            <strong>find loads!</strong></a>
+                    </div>
+                </div>
+                <p v-if="userOrders.length>0">Count results: {{userOrders.length}} <i class="fas fa-boxes"></i></p>
+                <hr>
+                <order-item-component :key="index" v-for="(order,index) in userOrders" :order="order"/>
+
+                <div class="d-flex p-5 justify-content-center" v-if="userOrders.length===0">
+                    <img v-lazy="'/images/empty.png'" alt="" class="w-100 w-sm-auto"
+                         style="filter: drop-shadow(8px 4px 0px #21c87a);">
+                </div>
+                <h4 class="text-center" v-if="userOrders.length===0">No orders yet!</h4>
+
+                <order-paginate-component/>
             </div>
 
             <div class="tab-pane fade" id="notifications" role="tabpanel" aria-labelledby="notifications-tab">
@@ -125,13 +153,23 @@
         computed: {
             user() {
                 return this.$store.getters.user
-            }
+            },
+            userOrders: function () {
+                return this.$store.getters.userOrders;
+            },
+
         },
         created() {
             this.$store.dispatch('getUser');
         },
         mounted() {
 
+        },
+        methods: {
+            loadOrders()
+            {
+                this.$store.dispatch('getOrders');
+            },
         }
     }
 </script>

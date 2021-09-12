@@ -29,7 +29,7 @@
                                 </ValidationProvider>
                             </div>
                             <div class="form-group text-center">
-                                <button class="btn btn-success btn-standard" @click="savePassword" :disabled="invalid||loadingPassword">Save</button>
+                                <button class="btn btn-success btn-standard w-100" @click="savePassword" :disabled="invalid||loadingPassword">Save</button>
                             </div>
                         </ValidationObserver>
                     </div>

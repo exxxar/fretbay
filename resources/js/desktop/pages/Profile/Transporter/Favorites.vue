@@ -3,9 +3,17 @@
     <main id="content">
         <!-- Description Section -->
         <div class="container">
+            <div class="row d-flex">
+                <div class="col-12 mt-2 p-0">
+                    <a class="btn btn-link p-0" href="/find-loads"><i class="fas fa-dolly"></i> Try to
+                        <strong>find a loads!</strong></a>
+                </div>
+            </div>
+            <p v-if="favorites.length>0">Count results: {{listings.length}} <i class="fas fa-boxes"></i></p>
+
             <div class="row pb-5 pt-2" v-if="favorites.length>0">
                 <div class="col-lg-12  mb-9 mb-lg-0">
-                    <small style="color:lightgray;">Results {{favorites.length}}</small>
+
 
 
                     <listing-item-component :listing="favorite.listing" :key="favorite.id" v-for="favorite in favorites" v-if="favorite"/>
@@ -32,8 +40,11 @@
                     </div>
                 </div>
             </div>
-            <div class="row pb-5 pt-5" v-else>
-                <h1>Empty list</h1>
+            <div class="d-flex flex-wrap justify-content-center pb-5 pt-5" v-else>
+                <div class="d-flex p-5 justify-content-center"  v-if="favorites.length===0">
+                    <img v-lazy="'/images/empty.png'" alt="" class="w-100 w-sm-auto" style="filter: drop-shadow(8px 4px 0px #21c87a);">
+                </div>
+                <h4 class="text-center w-100">No Favorite listings yet!</h4>
             </div>
         </div>
     </main>

@@ -15,7 +15,7 @@
                         </button>
                     </div>
 
-                    <div class="d-flex align-items-center border-bottom py-4 px-5 flex-wrap">
+                    <div class="border-bottom py-4 px-5">
                         <p><a v-if="user.is_transporter" :href="'/profile/'+user.id">{{user.name}} </a></p>
 
                         <em class="text-uppercase text-muted font-size-13 mb-0 mt-0" v-if="user.is_admin">You are

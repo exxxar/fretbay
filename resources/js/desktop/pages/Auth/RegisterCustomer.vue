@@ -1,34 +1,29 @@
 <template>
     <div class="container">
-        <div class="row d-flex justify-content-center align-items-center" style="min-height: 100vh;padding:100px 0px;">
+        <div class="row d-flex justify-content-center mt-5" >
             <div class="col-md-6 col-12 col-sm-12">
                 <form class="js-validate form-signin" action="/register-customer" method="post">
 
                     <slot name="any-errors"></slot>
                     <slot name="csrf"></slot>
                     <div id="signin" data-target-group="idForm">
-                        <!-- Title -->
-                        <header class="text-center mb-5">
-                            <img src="/assets/img/logo.png" alt="Logo" style="width: 100px;">
-                            <h2 class="h4 mb-0">Please sign up as Customer</h2>
-                            <p>And after SignIn to manage your account.</p>
-                        </header>
-
 
                         <div class="row">
-                            <div class="col-sm-12">
-                                <div class="js-form-message mb-3">
-                                    <div class="js-focus-state form signUpForm1-radio">
-                                        <input type="radio" name="type" class="suf1-radio" id="radioBox01"
-                                               value="individual"
-                                               v-model="userType" checked>
-                                        <label for="radioBox01">You are an individual</label>
-                                        <input type="radio" name="type" class="suf1-radio" id="radioBox02"
-                                               v-model="userType"
-                                               value="professional">
-                                        <label for="radioBox02">You are a professional</label>
-                                    </div>
-                                </div>
+                            <div class="col-12">
+
+
+                                <input type="radio" name="type" class="suf1-radio" id="radioBox01"
+                                       value="individual"
+                                       v-model="userType" checked>
+                                <label for="radioBox01">You are an individual</label>
+
+
+                            </div>
+                            <div class="col-12">
+                                <input type="radio" name="type" class="suf1-radio" id="radioBox02"
+                                       v-model="userType"
+                                       value="professional">
+                                <label for="radioBox02">You are a professional</label>
                             </div>
                         </div>
 
@@ -139,11 +134,36 @@
 
                     <div class="js-form-message mb-3">
                         <div class="js-focus-state form">
+                            <!-- Checkbox -->
+                            <div class="custom-control custom-checkbox d-flex align-items-center text-muted">
+                                <input type="checkbox" class="custom-control-input" id="iAgreePrivacy" required>
+                                <label class="custom-control-label" for="iAgreePrivacy">
+                                    I <a href="/privacy" target="_blank">read ang agree</a> with a privacy police
+
+                                </label>
+                            </div>
+                            <!-- End Checkbox -->
+                        </div>
+
+                    </div>
+
+
+                    <div class="js-form-message mb-1">
+                        <div class="js-focus-state form">
                             <button type="submit" class="btn btn-primary w-100">
                                 Register
                             </button>
                         </div>
                     </div>
+
+                    <div class="js-form-message mb-3">
+                        <div class="js-focus-state form">
+                            <a class="btn btn-outline-primary w-100" href="/register-transporter">
+                                I am a Transporter
+                            </a>
+                        </div>
+                    </div>
+
 
                     <!-- Divider -->
                     <!--<div class="text-center u-divider-wrapper my-3">
@@ -152,20 +172,20 @@
                     <!-- End Divider -->
 
                     <!-- Signin Social Buttons -->
-                 <!--   <div class="row mx-gutters-2 mb-4">
-                        <div class="col-sm-6 mb-2 mb-sm-0">
-                            <a href="/social/facebook" class="btn btn-block btn-facebook text-nowrap">
-                                <i class="fab fa-facebook-f mr-2"></i>
-                                Signin with Facebook
-                            </a>
-                        </div>
-                        <div class="col-sm-6">
-                            <a href="/social/twitter" class="btn btn-block btn-twitter">
-                                <i class="fab fa-twitter mr-2"></i>
-                                Signin with Twitter
-                            </a>
-                        </div>
-                    </div>-->
+                    <!--   <div class="row mx-gutters-2 mb-4">
+                           <div class="col-sm-6 mb-2 mb-sm-0">
+                               <a href="/social/facebook" class="btn btn-block btn-facebook text-nowrap">
+                                   <i class="fab fa-facebook-f mr-2"></i>
+                                   Signin with Facebook
+                               </a>
+                           </div>
+                           <div class="col-sm-6">
+                               <a href="/social/twitter" class="btn btn-block btn-twitter">
+                                   <i class="fab fa-twitter mr-2"></i>
+                                   Signin with Twitter
+                               </a>
+                           </div>
+                       </div>-->
                     <!-- End Signin Social Buttons -->
 
                 </form>
@@ -176,7 +196,7 @@
 
 <script>
     export default {
-        data(){
+        data() {
             return {
                 userType: 0,
             }

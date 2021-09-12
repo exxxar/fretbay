@@ -9,11 +9,7 @@
 
                             <input type="hidden" name="_token" :value="csrf">
                             <div id="signin" data-target-group="idForm">
-                                <!-- Title -->
-                                <header class="text-center mb-5">
-                                    <h2 class="h4 mb-0">Sign up with Transporter</h2>
-                                    <p>And after SignIn to manage your account.</p>
-                                </header>
+
 
                                 <div class="row">
                                     <div class="col-md-12 col-sm-12">

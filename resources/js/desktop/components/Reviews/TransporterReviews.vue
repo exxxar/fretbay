@@ -30,7 +30,10 @@
         </div>
 
         <div class="col-lg-12 mb-9 mb-lg-0" v-else>
-            <p>Reviews list is Empty</p>
+            <div class="d-flex p-5 justify-content-center"  v-if="filteredReviews.length===0">
+                <img v-lazy="'/images/empty.png'" alt="" class="w-100 w-sm-auto" style="filter: drop-shadow(8px 4px 0px #21c87a);">
+            </div>
+            <h4 class="text-center">No reviews yet!</h4>
         </div>
 
 

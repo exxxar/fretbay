@@ -9,12 +9,6 @@
 
                         <input type="hidden" name="_token" :value="csrf">
 
-                        <!-- Title -->
-                        <header class="text-center mb-5">
-                            <h2 class="h4 mb-0">Please sign up as Customer</h2>
-                            <p>And after SignIn to manage your account.</p>
-                        </header>
-
                         <div class="js-form-message mb-3">
                             <div class="js-focus-state form signUpForm1-radio">
                                 <input type="radio" name="type" class="suf1-radio" id="radioBox01"
@@ -126,7 +120,25 @@
                                 </div>
                             </div>
 
+                            <div class="col-md-12 col-sm-12">
+                                <div class="js-form-message mb-3">
+                                    <div class="js-focus-state form">
+                                        <!-- Checkbox -->
+                                        <div class="custom-control custom-checkbox d-flex align-items-center text-muted">
+                                            <input type="checkbox" class="custom-control-input" id="iAgreePrivacy" required>
+                                            <label class="custom-control-label" for="iAgreePrivacy">
+                                                I <a href="/privacy" target="_blank">read ang agree</a> with a privacy police
+
+                                            </label>
+                                        </div>
+                                        <!-- End Checkbox -->
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
+
+
 
 
                         <div class="js-form-message mb-3">
