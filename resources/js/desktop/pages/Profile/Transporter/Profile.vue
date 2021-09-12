@@ -1,34 +1,51 @@
 <template>
     <div class="container mt-2" style="min-height: 100vh;">
 
-        <vue-custom-scrollbar class="nav nav-tabs mb-2 w-100 d-flex flex-nowrap customer-menu" :settings="settingsScroll">
+        <vue-custom-scrollbar class="w-100 mt-2 customer-menu" :settings="settingsScroll">
 
-            <li class="nav-item profile-nav-item">
-                <a class="btn btn-outline-primary d-block active " id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="true"><i class="fas fa-user"></i> Profile</a>
-            </li>
-            <li class="nav-item profile-nav-item">
-                <a class="btn btn-outline-primary d-block" id="company-tab" data-toggle="tab" href="#company" role="tab" aria-controls="company" aria-selected="false"><i class="far fa-building"></i> Company</a>
-            </li>
-            <li class="nav-item profile-nav-item">
-                <a class="btn btn-outline-primary d-block" id="documents-tab" data-toggle="tab" href="#documents" role="tab" aria-controls="documents" aria-selected="false"><i class="far fa-file-word"></i> Documents</a>
-            </li>
-            <li class="nav-item profile-nav-item">
-                <a class="btn btn-outline-primary d-block" id="vehicle-tab" data-toggle="tab" href="#vehicles" role="tab" aria-controls="vehicles" aria-selected="false"><i class="fas fa-truck"></i> Vehicles</a>
-            </li>
-            <li class="nav-item profile-nav-item">
-                <a class="btn btn-outline-primary d-block" id="favorites-tab" data-toggle="tab" href="#favorites" role="tab" aria-controls="favorites" aria-selected="false"><i class="fas fa-thumbs-up"></i> Favorites</a>
-            </li>
-            <li class="nav-item profile-nav-item">
-                <a class="btn btn-outline-primary d-block" id="notifications-tab" data-toggle="tab" href="#notifications" role="tab" aria-controls="notifications" aria-selected="false"><i class="far fa-bell"></i> Notifications</a>
-            </li>
-            <li class="nav-item profile-nav-item">
-                <a class="btn btn-outline-primary d-block" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false"><i class="fas fa-user-cog"></i> Settings</a>
-            </li>
+            <ul class="nav nav-tabs mb-2 w-100 d-flex flex-nowrap ">
+                <li class="nav-item profile-nav-item">
+                    <a class="btn btn-outline-primary d-block active " id="profile-tab" data-toggle="tab"
+                       href="#profile" role="tab" aria-controls="profile" aria-selected="true"><i
+                        class="fas fa-user"></i> Profile</a>
+                </li>
+                <li class="nav-item profile-nav-item">
+                    <a class="btn btn-outline-primary d-block" id="company-tab" data-toggle="tab" href="#company"
+                       role="tab" aria-controls="company" aria-selected="false"><i class="far fa-building"></i> Company</a>
+                </li>
+                <li class="nav-item profile-nav-item">
+                    <a class="btn btn-outline-primary d-block" id="documents-tab" data-toggle="tab" href="#documents"
+                       role="tab" aria-controls="documents" aria-selected="false"><i class="far fa-file-word"></i>
+                        Documents</a>
+                </li>
+                <li class="nav-item profile-nav-item">
+                    <a class="btn btn-outline-primary d-block" id="vehicle-tab" data-toggle="tab" href="#vehicles"
+                       role="tab" aria-controls="vehicles" aria-selected="false"><i class="fas fa-truck"></i>
+                        Vehicles</a>
+                </li>
+                <li class="nav-item profile-nav-item">
+                    <a class="btn btn-outline-primary d-block" id="favorites-tab" data-toggle="tab" href="#favorites"
+                       role="tab" aria-controls="favorites" aria-selected="false"><i class="fas fa-thumbs-up"></i>
+                        Favorites</a>
+                </li>
+                <li class="nav-item profile-nav-item">
+                    <a class="btn btn-outline-primary d-block" id="notifications-tab" data-toggle="tab"
+                       href="#notifications" role="tab" aria-controls="notifications" aria-selected="false"><i
+                        class="far fa-bell"></i> Notifications</a>
+                </li>
+                <li class="nav-item profile-nav-item">
+                    <a class="btn btn-outline-primary d-block" id="settings-tab" data-toggle="tab" href="#settings"
+                       role="tab" aria-controls="settings" aria-selected="false"><i class="fas fa-user-cog"></i>
+                        Settings</a>
+                </li>
 
-            <li class="nav-item profile-nav-item">
-                <a class="btn btn-outline-primary d-block" id="reviews-tab" data-toggle="tab" href="#reviews" role="tab" aria-controls="reviews" aria-selected="false"><i class="far fa-comment"></i> Reviews</a>
-            </li>
-        </vue-custom-scrollbar >
+                <li class="nav-item profile-nav-item">
+                    <a class="btn btn-outline-primary d-block" id="reviews-tab" data-toggle="tab" href="#reviews"
+                       role="tab" aria-controls="reviews" aria-selected="false"><i class="far fa-comment"></i>
+                        Reviews</a>
+                </li>
+            </ul>
+        </vue-custom-scrollbar>
         <div class="tab-content" id="myTabContent" v-if="user">
             <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                 <profile-my-account-page/>
@@ -93,9 +110,9 @@
 
     export default {
         components: {
-           vueCustomScrollbar
+            vueCustomScrollbar
         },
-        data(){
+        data() {
             return {
                 settingsScroll: {
                     suppressScrollY: false,
@@ -130,6 +147,7 @@
         /* width: auto; */
         margin-bottom: 0;
         padding: 3px;
+
         a {
             font-size: 12px;
         }

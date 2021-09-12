@@ -2,40 +2,49 @@
     <div class="container" style="padding-top: 20px;min-height:100vh;">
         <div class="main-body">
 
-            <vue-custom-scrollbar class="nav nav-tabs mb-2 w-100 d-flex flex-nowrap customer-menu" :settings="settingsScroll">
-                <li class="nav-item profile-nav-item" @click="loadActiveListing">
-                    <a class="btn btn-outline-primary d-block active" id="listings-active-tab" data-toggle="tab" href="#listings-active" role="tab"
-                       aria-controls="listings-active" aria-selected="true"><i class="fas fa-boxes"></i> Active listings</a>
-                </li>
+            <vue-custom-scrollbar class="w-100 customer-menu mt-2" :settings="settingsScroll">
+                <ul class="nav nav-tabs mb-2 w-100 d-flex flex-nowrap ">
+                    <li class="nav-item profile-nav-item" @click="loadActiveListing">
+                        <a class="btn btn-outline-primary d-block active" id="listings-active-tab" data-toggle="tab"
+                           href="#listings-active" role="tab"
+                           aria-controls="listings-active" aria-selected="true"><i class="fas fa-boxes"></i> Active
+                            listings</a>
+                    </li>
 
-                <li class="nav-item profile-nav-item">
-                    <a class="btn btn-outline-primary  d-block" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
-                       aria-controls="profile" aria-selected="true"><i class="fas fa-user"></i> Profile</a>
-                </li>
-
-
-                <li class="nav-item profile-nav-item">
-                    <a class="btn btn-outline-primary d-block" id="reviews-tab" data-toggle="tab" href="#reviews" role="tab"
-                       aria-controls="reviews" aria-selected="true"><i class="far fa-comment-dots"></i> Reviews</a>
-                </li>
+                    <li class="nav-item profile-nav-item">
+                        <a class="btn btn-outline-primary  d-block" id="profile-tab" data-toggle="tab" href="#profile"
+                           role="tab"
+                           aria-controls="profile" aria-selected="true"><i class="fas fa-user"></i> Profile</a>
+                    </li>
 
 
+                    <li class="nav-item profile-nav-item">
+                        <a class="btn btn-outline-primary d-block" id="reviews-tab" data-toggle="tab" href="#reviews"
+                           role="tab"
+                           aria-controls="reviews" aria-selected="true"><i class="far fa-comment-dots"></i> Reviews</a>
+                    </li>
 
-                <li class="nav-item profile-nav-item" @click="loadArchiveListing">
-                    <a class="btn btn-outline-primary d-block" id="listings-archive-tab" data-toggle="tab" href="#listings-archive" role="tab"
-                       aria-controls="listings-archive" aria-selected="true"><i class="fas fa-archive"></i> Archive listings</a>
-                </li>
 
-                <li class="nav-item profile-nav-item" @click="loadOrders">
-                    <a class="btn btn-outline-primary d-block" id="orders-tab" data-toggle="tab" href="#orders" role="tab"
-                       aria-controls="orders" aria-selected="true"><i class="far fa-handshake"></i> Orders</a>
-                </li>
+                    <li class="nav-item profile-nav-item" @click="loadArchiveListing">
+                        <a class="btn btn-outline-primary d-block" id="listings-archive-tab" data-toggle="tab"
+                           href="#listings-archive" role="tab"
+                           aria-controls="listings-archive" aria-selected="true"><i class="fas fa-archive"></i> Archive
+                            listings</a>
+                    </li>
 
-                <li class="nav-item profile-nav-item">
-                    <a class="btn btn-outline-primary d-block" id="notifications-tab" data-toggle="tab" href="#notifications" role="tab"
-                       aria-controls="notifications" aria-selected="true"><i class="far fa-flag"></i> Notifications </a>
-                </li>
+                    <li class="nav-item profile-nav-item" @click="loadOrders">
+                        <a class="btn btn-outline-primary d-block" id="orders-tab" data-toggle="tab" href="#orders"
+                           role="tab"
+                           aria-controls="orders" aria-selected="true"><i class="far fa-handshake"></i> Orders</a>
+                    </li>
 
+                    <li class="nav-item profile-nav-item">
+                        <a class="btn btn-outline-primary d-block" id="notifications-tab" data-toggle="tab"
+                           href="#notifications" role="tab"
+                           aria-controls="notifications" aria-selected="true"><i class="far fa-flag"></i> Notifications
+                        </a>
+                    </li>
+                </ul>
             </vue-custom-scrollbar>
 
             <div class="tab-content" id="myTabContent">
@@ -245,17 +254,20 @@
                     <customer-reviews-component/>
                 </div>
 
-                <div class="tab-pane fade  show active" id="listings-active" role="tabpanel" aria-labelledby="listings-active-tab">
+                <div class="tab-pane fade  show active" id="listings-active" role="tabpanel"
+                     aria-labelledby="listings-active-tab">
                     <div class="row d-flex">
                         <div class="col-md-4">
-                            <a class="btn btn-link p-0" href="/find-transporter"><i class="fas fa-dolly"></i> Try to <strong>find a transporter!</strong></a>
+                            <a class="btn btn-link p-0" href="/find-transporter"><i class="fas fa-dolly"></i> Try to
+                                <strong>find a transporter!</strong></a>
                         </div>
                     </div>
                     <p v-if="listings.length>0">Count results: {{listings.length}} <i class="fas fa-boxes"></i></p>
                     <hr>
                     <listing-item-component :key="index" v-for="(listing,index) in listings" :listing="listing"/>
-                    <div class="d-flex p-5 justify-content-center"  v-if="listings.length===0">
-                        <img v-lazy="'/images/empty.png'" alt="" class="w-100 w-sm-auto" style="filter: drop-shadow(8px 4px 0px #21c87a);">
+                    <div class="d-flex p-5 justify-content-center" v-if="listings.length===0">
+                        <img v-lazy="'/images/empty.png'" alt="" class="w-100 w-sm-auto"
+                             style="filter: drop-shadow(8px 4px 0px #21c87a);">
                     </div>
                     <h4 class="text-center" v-if="listings.length===0">No listing yet!</h4>
 
@@ -268,14 +280,16 @@
 
                     <div class="row d-flex">
                         <div class="col-md-4">
-                            <a class="btn btn-link p-0" href="/find-transporter"><i class="fas fa-dolly"></i> Try to <strong>find a transporter!</strong></a>
+                            <a class="btn btn-link p-0" href="/find-transporter"><i class="fas fa-dolly"></i> Try to
+                                <strong>find a transporter!</strong></a>
                         </div>
                     </div>
                     <p v-if="listings.length>0">Count results: {{listings.length}} <i class="fas fa-boxes"></i></p>
                     <hr>
                     <listing-item-component :key="index" v-for="(listing,index) in listings" :listing="listing"/>
-                    <div class="d-flex p-5 justify-content-center"  v-if="listings.length===0">
-                        <img v-lazy="'/images/empty.png'" alt="" class="w-100 w-sm-auto" style="filter: drop-shadow(8px 4px 0px #21c87a);">
+                    <div class="d-flex p-5 justify-content-center" v-if="listings.length===0">
+                        <img v-lazy="'/images/empty.png'" alt="" class="w-100 w-sm-auto"
+                             style="filter: drop-shadow(8px 4px 0px #21c87a);">
                     </div>
                     <h4 class="text-center" v-if="listings.length===0">No listing yet!</h4>
 
@@ -288,15 +302,17 @@
 
                     <div class="row d-flex">
                         <div class="col-md-4">
-                            <a class="btn btn-link p-0" href="/find-transporter"><i class="fas fa-dolly"></i> Try to <strong>find a transporter!</strong></a>
+                            <a class="btn btn-link p-0" href="/find-transporter"><i class="fas fa-dolly"></i> Try to
+                                <strong>find a transporter!</strong></a>
                         </div>
                     </div>
                     <p v-if="userOrders.length>0">Count results: {{userOrders.length}} <i class="fas fa-boxes"></i></p>
                     <hr>
-                    <order-item-component  :key="index" v-for="(order,index) in userOrders" :order="order"/>
+                    <order-item-component :key="index" v-for="(order,index) in userOrders" :order="order"/>
 
-                    <div class="d-flex p-5 justify-content-center"  v-if="userOrders.length===0">
-                        <img v-lazy="'/images/empty.png'" alt="" class="w-100 w-sm-auto" style="filter: drop-shadow(8px 4px 0px #21c87a);">
+                    <div class="d-flex p-5 justify-content-center" v-if="userOrders.length===0">
+                        <img v-lazy="'/images/empty.png'" alt="" class="w-100 w-sm-auto"
+                             style="filter: drop-shadow(8px 4px 0px #21c87a);">
                     </div>
                     <h4 class="text-center" v-if="userOrders.length===0">No orders yet!</h4>
 
@@ -331,7 +347,7 @@
                     suppressScrollX: false,
                     wheelPropagation: false
                 },
-                settings:{
+                settings: {
                     "dots": false,
                     "arrows": true,
                     "focusOnSelect": true,
@@ -368,9 +384,9 @@
             }
         },
         computed: {
-                listings: function () {
-                    return this.$store.getters.listings;
-                },
+            listings: function () {
+                return this.$store.getters.listings;
+            },
 
             userOrders: function () {
                 return this.$store.getters.userOrders;
@@ -396,24 +412,24 @@
                 return window.user
             }
         },
-        mounted(){
-          this.loadActiveListing()
+        mounted() {
+            this.loadActiveListing()
         },
-        methods:{
+        methods: {
 
-            loadOrders(){
+            loadOrders() {
                 this.$store.dispatch('getOrders');
             },
-            loadActiveListing(){
+            loadActiveListing() {
                 this.$store.dispatch('clearListing')
                 this.$store.dispatch('getActiveListings');
             },
-            loadArchiveListing(){
+            loadArchiveListing() {
                 this.$store.dispatch('clearListing')
                 this.$store.dispatch('getArchiveListings');
             }
         },
-        components:{
+        components: {
             VueSlickCarousel, vueCustomScrollbar
         }
     }
@@ -431,6 +447,7 @@
         /* width: auto; */
         margin-bottom: 0;
         padding: 3px;
+
         a {
             font-size: 12px;
         }
