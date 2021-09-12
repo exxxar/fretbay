@@ -55,7 +55,9 @@
     @if (Auth::check())
         <sidebar-component></sidebar-component>
     @endif
+
 </div>
+
 
 <script
     src="{{ env("APP_DEBUG")?asset('js/desktop/app.js'):asset("js/desktop/app.min.js") }}?version={{env("APP_VERSION")}}"

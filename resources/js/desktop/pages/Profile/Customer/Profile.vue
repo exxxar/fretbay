@@ -2,7 +2,7 @@
     <div class="container" style="padding-top: 20px;min-height:100vh;">
         <div class="main-body">
 
-            <ul class="nav nav-tabs mb-2 w-100 d-flex flex-nowrap customer-menu" id="myTab"  role="tablist">
+            <vue-custom-scrollbar class="nav nav-tabs mb-2 w-100 d-flex flex-nowrap customer-menu" :settings="settingsScroll">
                 <li class="nav-item profile-nav-item" @click="loadActiveListing">
                     <a class="btn btn-outline-primary d-block active" id="listings-active-tab" data-toggle="tab" href="#listings-active" role="tab"
                        aria-controls="listings-active" aria-selected="true"><i class="fas fa-boxes"></i> Active listings</a>
@@ -36,7 +36,7 @@
                        aria-controls="notifications" aria-selected="true"><i class="far fa-flag"></i> Notifications </a>
                 </li>
 
-            </ul>
+            </vue-custom-scrollbar>
 
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade " id="profile" role="tabpanel" aria-labelledby="profile-tab">
@@ -319,10 +319,18 @@
     // optional style for arrows & dots
     import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 
+    import vueCustomScrollbar from 'vue-custom-scrollbar'
+    import "vue-custom-scrollbar/dist/vueScrollbar.css"
+
     export default {
         data() {
             return {
                 editMode: false,
+                settingsScroll: {
+                    suppressScrollY: false,
+                    suppressScrollX: false,
+                    wheelPropagation: false
+                },
                 settings:{
                     "dots": false,
                     "arrows": true,
@@ -406,7 +414,7 @@
             }
         },
         components:{
-            VueSlickCarousel
+            VueSlickCarousel, vueCustomScrollbar
         }
     }
 </script>
