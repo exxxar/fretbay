@@ -1,18 +1,18 @@
 <template>
-    <div class="card shadow-sm border-0 mb-4 px-4" v-if="listing">
+    <div class="card shadow-sm border-0 mb-2 px-2" v-if="listing">
         <div class="card-header d-flex justify-content-between">
 
 
             <div class="counters">
-                <span class="mr-5 text-bold" style="margin-left:-20px;">№{{preparedId}}</span>
+                <span class="mr-5 text-bold">№{{preparedId}}</span>
                 <span class="mr-2">  {{ this.listing.message_count}}
                 <i class="fas fa-envelope"></i></span>
 
                 <span>  {{ listing.quote_count}}<i class="fas fa-gavel"></i></span>
 
-                <span class="badge badge-primary"><small>{{listing.status||"In progress"}}</small></span>
-                <span class="badge badge-purple" v-if="user&&listing.user_id==user.id"><small>Your</small></span>
+
             </div>
+
 
             <div class="like">
                 <button class="btn btn-link m-0 p-0" v-if="isTranspoter">
@@ -22,29 +22,17 @@
                                                                style="width:20px;" alt=""></span>
                 </button>
             </div>
-            <a class="d-flex align-items-center font-weight-bold" :href="'/listing/'+listing.id">
 
-                <span>Details</span>
-                <i class="svg-icon svg-icon-xs text-primary mt-n1 ml-2">
-                    <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"
-                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                            <polygon points="0 0 24 0 24 24 0 24"></polygon>
-                            <rect fill="#000000" opacity="0.3"
-                                  transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000) "
-                                  x="11" y="5" width="2" height="14" rx="1"></rect>
-                            <path
-                                d="M9.70710318,15.7071045 C9.31657888,16.0976288 8.68341391,16.0976288 8.29288961,15.7071045 C7.90236532,15.3165802 7.90236532,14.6834152 8.29288961,14.2928909 L14.2928896,8.29289093 C14.6714686,7.914312 15.281055,7.90106637 15.675721,8.26284357 L21.675721,13.7628436 C22.08284,14.136036 22.1103429,14.7686034 21.7371505,15.1757223 C21.3639581,15.5828413 20.7313908,15.6103443 20.3242718,15.2371519 L15.0300721,10.3841355 L9.70710318,15.7071045 Z"
-                                fill="#000000"
-                                transform="translate(14.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-14.999999, -11.999997) "></path>
-                        </g>
-                    </svg>
-                </i>
-            </a>
+            <div class="counters">
+                <span class="badge badge-primary"><small>{{listing.status||"In progress"}}</small></span>
+                <span class="badge badge-purple" v-if="user&&listing.user_id==user.id"><small>Your</small></span>
+            </div>
+
+
         </div>
-        <div class="card-body d-md-flex justify-content-between align-items-center py-4 px-0 flex-wrap">
+        <div class="card-body d-md-flex justify-content-between align-items-center py-1 px-1 flex-wrap" >
 
-            <div class="media align-items-center mb-5 mb-md-0">
+            <div class="media align-items-center mb-1 mb-md-0">
                 <a class="u-md-avatar custom-avatar mr-3" href="#" v-if="listing.images.length>0">
                     <img class="img-fluid rounded-circle" v-lazy="listing.images[0].path"
                          :alt="listing.images[0].name">
@@ -62,7 +50,7 @@
             </div>
 
             <div
-                class="text-md-right text-secondary d-flex flex-column justify-content-center align-items-end">
+                class="text-md-right text-left align-items-sm-end text-secondary d-flex flex-column justify-content-center align-items-start">
                 <p class="mb-0" style="font-size: 12px; color: #8e949a">Publication time</p>
                 Since {{listing.created_at | moment("from", "now", true)}}
 
@@ -70,8 +58,8 @@
             </div>
 
 
-            <div class="row w-100 mt-5">
-                <div class="col-4">
+            <div class="row w-100 mt-1 m-0">
+                <div class="col-sm-4 col-12 mt-2 mt-sm-0 p-0">
                     <i class="svg-icon svg-icon-xs text-secondary mt-n1 mr-2">
                         <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"
                              xmlns="http://www.w3.org/2000/svg"
@@ -85,9 +73,9 @@
                         </svg>
                     </i>
 
-                    <strong>Place of loading:</strong>
+                    <strong >Place of loading:</strong>
                 </div>
-                <div class="col-8">
+                <div class="col-sm-8 col-12 p-0">
                     <a class="d-flex align-items-center text-secondary" href="#">
 
 
@@ -108,9 +96,9 @@
                     </small>
                 </div>
 
-                <div class="col-4">
+                <div class="col-sm-4 col-12 mt-2 mt-sm-0 p-0">
 
-                    <i class="svg-icon svg-icon-xs text-secondary mt-n1 mr-2">
+                    <i class="svg-icon svg-icon-xs text-secondary mt-n1 mr-2 ">
                         <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"
                              xmlns="http://www.w3.org/2000/svg"
                              xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -125,7 +113,7 @@
 
                     <strong>Place of delivery:</strong>
                 </div>
-                <div class="col-8">
+                <div class="col-sm-8 col-12 p-0">
                     <a class="d-flex align-items-center text-secondary" href="#">
 
 
@@ -142,13 +130,13 @@
                     </small>
                 </div>
 
-                <div class="col-4" v-if="listing.distance>0">
-                    <p class="ml-5 p-2">Distance <strong>{{listing.distance}}</strong> km</p>
+                <div class="col-sm-4 col-12 pl-0" v-if="listing.distance>0">
+                    <p class="ml-sm-5 ml-0 p-sm-2 p-0 mt-2 mt-sm-0">Distance <strong>{{listing.distance}}</strong> km</p>
                 </div>
 
 
-                <div class="col-12" v-if="listing.moving_package">
-                    <p class="ml-5 p-2"><strong>{{listing.moving_package}}</strong></p>
+                <div class="col-12 pl-0" v-if="listing.moving_package">
+                    <p class="ml-sm-5 ml-0 p-sm-2 p-0 mt-2 mt-sm-0"><strong>{{listing.moving_package}}</strong></p>
                 </div>
 
                 <div class="col-12 p-2" v-if="listing.images">
@@ -166,12 +154,22 @@
                 </div>
 
 
-                <div class="col-12" v-if="listing.user_id===user.id">
+                <div class="col-12 pl-0 pr-0 d-flex justify-content-between" v-if="listing.user_id===user.id">
 
-                    <button class="btn btn-outline-danger" v-if="!listing.deleted_at"><i class="far fa-trash-alt"></i>
-                    </button>
-                    <button class="btn btn-outline-primary" v-if="listing.is_active"><i class="fas fa-archive"></i>
-                    </button>
+                    <div class="btn-group">
+                        <button class="btn btn-outline-danger" v-if="!listing.deleted_at"><i class="far fa-trash-alt"></i>
+                        </button>
+                        <button class="btn btn-outline-danger" v-if="listing.is_active"><i class="fas fa-archive"></i>
+                        </button>
+                    </div>
+
+
+                    <a class="btn btn-outline-primary" :href="'/listing/'+listing.id"> <i class="fas fa-angle-double-right"></i>
+                    </a>
+
+
+
+
                 </div>
 
             </div>
