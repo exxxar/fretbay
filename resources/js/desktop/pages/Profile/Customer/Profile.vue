@@ -4,7 +4,7 @@
 
             <ul class="nav nav-tabs mb-2 w-100 d-flex flex-nowrap customer-menu" id="myTab"  role="tablist">
                 <li class="nav-item profile-nav-item">
-                    <a class="btn btn-outline-primary active d-block" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                    <a class="btn btn-outline-primary  d-block" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
                        aria-controls="profile" aria-selected="true">Profile</a>
                 </li>
 
@@ -15,7 +15,7 @@
                 </li>
 
                 <li class="nav-item profile-nav-item" @click="loadActiveListing">
-                    <a class="btn btn-outline-primary d-block" id="listings-active-tab" data-toggle="tab" href="#listings-active" role="tab"
+                    <a class="btn btn-outline-primary d-block active" id="listings-active-tab" data-toggle="tab" href="#listings-active" role="tab"
                        aria-controls="listings-active" aria-selected="true">Active listings</a>
                 </li>
 
@@ -37,7 +37,7 @@
             </ul>
 
             <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <div class="tab-pane fade " id="profile" role="tabpanel" aria-labelledby="profile-tab">
                     <div class="row gutters-sm">
                         <div class="col-md-4 mb-3">
 
@@ -243,14 +243,14 @@
                     <customer-reviews-component/>
                 </div>
 
-                <div class="tab-pane fade" id="listings-active" role="tabpanel" aria-labelledby="listings-active-tab">
-                    <div class="row d-flex justify-content-center" v-if="listings.length===0">
+                <div class="tab-pane fade  show active" id="listings-active" role="tabpanel" aria-labelledby="listings-active-tab">
+                    <div class="row d-flex">
                         <div class="col-md-4">
-                            <a class="btn btn-outline-primary" href="/find-transporter">Find transporter</a>
+                            <a class="btn btn-link p-0" href="/find-transporter"><i class="fas fa-dolly"></i> Try to <strong>find a transporter!</strong></a>
                         </div>
                     </div>
-                    <p v-else>Count results: {{listings.length}}</p>
-
+                    <p v-if="listings.length>0">Count results: {{listings.length}} <i class="fas fa-boxes"></i></p>
+                    <hr>
                     <listing-item-component :key="index" v-for="(listing,index) in listings" :listing="listing"/>
 
                     <div class="mb-9"></div>
@@ -260,13 +260,13 @@
 
                 <div class="tab-pane fade" id="listings-archive" role="tabpanel" aria-labelledby="listings-archive-tab">
 
-                    <div class="row d-flex justify-content-center" v-if="listings.length===0">
+                    <div class="row d-flex">
                         <div class="col-md-4">
-                            <a class="btn btn-outline-primary" href="/find-transporter">Find transporter</a>
+                            <a class="btn btn-link p-0" href="/find-transporter"><i class="fas fa-dolly"></i> Try to <strong>find a transporter!</strong></a>
                         </div>
                     </div>
-                    <p v-else>Count results: {{listings.length}}</p>
-
+                    <p v-if="listings.length>0">Count results: {{listings.length}} <i class="fas fa-boxes"></i></p>
+                    <hr>
                     <listing-item-component :key="index" v-for="(listing,index) in listings" :listing="listing"/>
 
                     <div class="mb-9"></div>

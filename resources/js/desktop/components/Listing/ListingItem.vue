@@ -22,7 +22,7 @@
                                                                style="width:20px;" alt=""></span>
                 </button>
             </div>
-            <a class="d-flex align-items-center font-weight-bold" target="_blank" :href="'/listing/'+listing.id">
+            <a class="d-flex align-items-center font-weight-bold" :href="'/listing/'+listing.id">
 
                 <span>Details</span>
                 <i class="svg-icon svg-icon-xs text-primary mt-n1 ml-2">
@@ -391,5 +391,8 @@
         }
     }
 
+    .vgs__container__img {
+        height: 100% !important;
+    }
 
 </style>
