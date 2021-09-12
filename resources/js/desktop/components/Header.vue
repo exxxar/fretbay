@@ -10,11 +10,14 @@
                     <div class="u-header__navbar-brand-wrapper d-flex d-sm-block justify-content-sm-center "
                         v-bind:class="{'justify-content-end':!user,'justify-content-center':user}"
                     >
-                        <a class="navbar-brand u-header__navbar-brand p-2" href="/" aria-label="Space" style="max-width: 100px;">
-                            <img class="u-header__navbar-brand-default w-100" style="object-fit: contain; height:50px;"
+                        <a @click="loading=true" class="navbar-brand u-header__navbar-brand p-2" href="/" aria-label="Space" style="max-width: 100px;">
+                            <img class="u-header__navbar-brand-default w-100" v-if="!loading" style="object-fit: contain; height:50px;"
                                  v-lazy="'/assets/img/logo.png'" alt="Logo">
-                            <img class="u-header__navbar-brand-mobile w-100" style="object-fit: contain; height:50px;"
+                            <img class="u-header__navbar-brand-mobile w-100" v-if="!loading" style="object-fit: contain; height:50px;"
                                  v-lazy="'/assets/img/logo.png'" alt="Logo">
+
+                            <span v-if="loading" class="spinner-border spinner-border-sm" role="status"
+                                  aria-hidden="true"></span>
 
 
                         </a>
@@ -165,6 +168,7 @@
         },
         data() {
             return {
+                loading:false,
                 searchText: null,
                 langOptions: [
                     {

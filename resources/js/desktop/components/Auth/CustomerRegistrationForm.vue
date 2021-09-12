@@ -195,7 +195,7 @@
                                     <input type="checkbox" class="custom-control-input" v-model="new_user.privacy_agree"
                                            id="iAgree_customer_Privacy" required>
                                     <label class="custom-control-label" for="iAgree_customer_Privacy">
-                                        I <a href="/privacy" target="_blank">read ang agree</a> with a privacy police
+                                        I <a href="/privacy">read ang agree</a> with a privacy police
 
                                     </label>
                                 </div>
@@ -218,7 +218,7 @@
                 </div>
 
 
-                <div class="js-form-message mb-3">
+                <div class="js-form-message mb-1">
                     <div class="js-focus-state form">
                         <button class="btn btn-primary w-100">
                             <span v-if="loading" class="spinner-border spinner-border-sm" role="status"
