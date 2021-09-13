@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Models\ObjectCategory;
 use App\User;
+use Illuminate\Http\Response;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
@@ -26,10 +27,9 @@ use Laravel\Socialite\Facades\Socialite;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get("/test", function () {
-    dd(ObjectCategory::where("title->en", "Household equipment")->first()->id);
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Password;
 
-});
 
 Route::get("/event", function () {
     event(new NotificationEvent(
@@ -426,6 +426,16 @@ Route::post('/register-customer', \Auth\RegisterController::class . '@registerCu
 Route::post('/register-customer-with-listing', \Auth\RegisterController::class . '@registerCustomerWithListing')->name("register-customer-with-listing");
 Route::post('/register-transporter', \Auth\RegisterController::class . '@registerTransporter')->name("register-transporter");
 Route::get('/logout', \Auth\LoginController::class . '@logout')->name("logout");
+
+Route::post('/forgot-password', \Auth\ResetPasswordController::class . '@askForgotPassword')->middleware('guest')->name('password.email');
+
+
+Route::get('/reset-password/{token}', function ($token) {
+    return view('auth.passwords.reset', ['token' => $token]);
+})->middleware('guest')->name('password.reset');
+
+
+Route::post('/reset-password', \Auth\ResetPasswordController::class . '@storeResetPassword')->middleware('guest')->name('password.update');
 
 
 Route::resource('category', 'CategoryController');

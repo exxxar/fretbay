@@ -18,6 +18,20 @@
                 </div>
                 <!-- End Input -->
 
+
+
+                <div class="js-form-message mb-3" v-if="success_message">
+                    <div class="js-focus-state form">
+
+                        <div class="alert alert-info alert-dismissible fade show" role="alert">
+                            {{success_message}}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="js-form-message mb-3" v-if="error_message">
                     <div class="js-focus-state form">
 
@@ -59,6 +73,7 @@
         data() {
             return {
                 error_message: null,
+                success_message: null,
                 loading: false,
 
 
@@ -80,10 +95,12 @@
 
             login() {
                 this.error_message = null;
+                this.success_message = null;
                 this.loading = true;
 
-                axios.post('/recovery', this.recovery_form).then(resp => {
+                axios.post('/forgot-password', this.recovery_form).then(resp => {
                     this.loading = false;
+                    this.success_message = 'We sent reset link to your email!';
                 }).catch(error => {
                     this.error_message = 'Bad account!';
                     this.loading = false;

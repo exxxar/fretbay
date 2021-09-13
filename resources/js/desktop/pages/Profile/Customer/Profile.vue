@@ -44,6 +44,13 @@
                            aria-controls="notifications" aria-selected="true"><i class="far fa-flag"></i> Notifications
                         </a>
                     </li>
+
+                    <li class="nav-item profile-nav-item">
+                        <a class="btn btn-outline-primary d-block" id="settings-tab" data-toggle="tab"
+                           href="#settings" role="tab"
+                           aria-controls="settings" aria-selected="true"><i class="fas fa-user-cog"></i> Settings
+                        </a>
+                    </li>
                 </ul>
             </vue-custom-scrollbar>
 
@@ -321,6 +328,10 @@
 
                 <div class="tab-pane fade" id="notifications" role="tabpanel" aria-labelledby="notifications-tab">
                     <notifications-page/>
+                </div>
+
+                <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+                    <profile-settings-page/>
                 </div>
             </div>
 

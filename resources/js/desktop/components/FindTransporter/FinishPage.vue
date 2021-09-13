@@ -9,54 +9,44 @@
                     </button>
                 </div>
             </div>
-            <div class="col-12 col-sm-8 p-0">
-                <ValidationObserver v-slot="{invalid}">
-                    <h3 class="mt-0 text-uppercase text-black content-box-title text-center">Your FretBay account</h3>
-                    <div class="row w-100 m-auto align-items-center justify-content-center" v-if="login_mode">
-                        <div class="col-12">
-                            <ValidationProvider name="Email" rules="required|email" v-slot="{ errors }">
-                                <input v-model="email" type="email" class="form-control mb-2"
-                                       name="email" placeholder="Your email">
-                            </ValidationProvider>
-                            <ValidationProvider name="Password" rules="required" v-slot="{ errors }">
-                                <input v-model="password" type="password" class="form-control mb-2" name="password"
-                                       placeholder="Your password">
-                                <span>{{ errors[0] }}</span>
-                            </ValidationProvider>
-                        </div>
-                        <div class="row w-100 m-auto">
-                            <button class="btn btn-primary" @click="login" :disabled="invalid">Login</button>
-                        </div>
-                        <butto class="btn btn-primary" @click="login_mode=false"> I do not have account yet</butto>
-                    </div>
-                    <div class="row w-100 m-auto align-items-center justify-content-center" v-else>
+            <div class="col-12 col-sm-8 p-0" v-if="login_mode">
+                <login-form-component/>
+            </div>
+            <div class="col-12 col-sm-8 p-0" v-if="!login_mode">
+                <ValidationObserver v-slot="{invalid}" tag="form" @submit.prevent="register">
+
+                    <div class="row w-100 m-auto align-items-center justify-content-center">
                         <div class="col-12 p-0">
                             <ValidationProvider name="Email" rules="required|email" v-slot="{ errors }">
-                                <input v-model="email" type="email" class="form-control mb-2"
-                                       name="email" placeholder="Your email">
+                                <input v-model="email" type="email" class="form-control mb-2" autocomplete="off"
+                                       name="email" placeholder="Your email" required>
                             </ValidationProvider>
                             <ValidationProvider name="Username" rules="required" v-slot="{ errors }">
-                                <input v-model="username" type="text" class="form-control mb-2" name="name"
-                                       placeholder="Your Username">
+                                <input v-model="username" type="text" class="form-control mb-2" name="name" autocomplete="off"
+                                       placeholder="Your Username" required>
                             </ValidationProvider>
                             <ValidationProvider name="Phone" rules="required" v-slot="{ errors }">
-                                <input v-model="phone" type="tel" class="form-control mb-2"
-                                       v-mask="'+ ### ### #######'" name="telephone_number_1" placeholder="Your phone">
+                                <input v-model="phone" type="tel" class="form-control mb-2" autocomplete="off"
+                                       v-mask="'+ ### ### #######'" name="telephone_number_1" placeholder="Your phone" required>
                             </ValidationProvider>
                             <ValidationProvider name="Password" rules="required" vid="password" v-slot="{ errors }">
-                                <input v-model="password" type="password" class="form-control mb-2" name="password"
-                                       placeholder="Your password">
+                                <input v-model="password" type="password" class="form-control mb-2" name="password" autocomplete="off"
+                                       placeholder="Your password" required>
                                 <span>{{ errors[0] }}</span>
                             </ValidationProvider>
-                            <ValidationProvider name="Password confirmation" rules="required|confirmed:password"
+                            <ValidationProvider name="Password confirmation" rules="required|confirmed:password" autocomplete="off"
                                                 v-slot="{ errors }">
                                 <input v-model="password_confirmation" type="password" class="form-control mb-2"
-                                       name="password_confirmation" placeholder="Confirm your password">
+                                       name="password_confirmation" placeholder="Confirm your password" required>
                                 <span>{{ errors[0] }}</span>
                             </ValidationProvider>
                         </div>
                         <div class="row w-100 m-auto d-flex justify-content-center mb-2">
-                            <button class="btn btn-primary w-100" @click="register" :disabled="invalid">Register</button>
+                            <button class="btn btn-primary w-100" type="submit">
+                                 <span v-if="loading" class="spinner-border spinner-border-sm" role="status"
+                                       aria-hidden="true"></span>
+                                Register
+                            </button>
                         </div>
                         <button class="btn btn-warning w-100 mt-2" @click="login_mode=true"> I already have account
                         </button>
@@ -78,6 +68,7 @@
         name: "FinishPage",
         data() {
             return {
+                loading: false,
                 message: null,
                 email: "",
                 phone: "",
@@ -116,6 +107,7 @@
                     password: this.password,
                 };
                 this.message = null;
+                this.loading = true;
                 axios.post('/register-customer-with-listing', user).then(resp => {
 
                     console.log(resp.data)
@@ -136,10 +128,12 @@
                     }
                     this.$store.dispatch('addListing', formData).then(resp => {
                         this.$store.commit('addListing', resp.data.listing)
+                        this.loading = false;
                         window.location = '/customer/profile'
                     })
                 }).catch(resp => {
-                    this.message = "Error!"
+                    this.message = "Somthing went wrong!This email is already in our System!!"
+                    this.loading = false;
                 })
             },
             login() {
