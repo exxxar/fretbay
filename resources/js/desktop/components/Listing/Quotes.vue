@@ -2,9 +2,9 @@
     <div class="row pb-5 d-flex justify-content-center">
 
         <div class="col-12">
-            <button class="btn btn-custom-checker"
-                    @click="onlyActual = !onlyActual"
-                    v-bind:class="{'btn-danger':onlyActual,'btn-outline-danger':!onlyActual}">Only Actual bids
+            <button class="btn btn-link" @click="onlyActual = !onlyActual">
+                <span v-if="onlyActual"><i class="fas fa-sort-down"></i> Only Actual bids ({{filteredQuotes.length}})</span>
+                <span v-if="!onlyActual"><i class="fas fa-sort-up"></i> All bids ({{filteredQuotes.length}})</span>
             </button>
         </div>
         <div class="col-lg-6 mb-9 mb-lg-0 quote-list" v-if="filteredQuotes.length>0">
@@ -84,7 +84,11 @@
         </div>
 
         <div class="col-lg-6 mb-9 mb-lg-0" v-else>
-            <p>Quote list is Empty</p>
+            <div class="d-flex p-5 justify-content-center">
+                <img v-lazy="'/images/empty.png'" alt="" class="w-100 w-sm-auto"
+                     style="filter: drop-shadow(8px 4px 0px #21c87a);">
+            </div>
+            <h4 class="text-center">No Quotes yet!</h4>
         </div>
 
         <div class="col-lg-6 mb-9 mb-lg-0" v-if="filteredQuotes">

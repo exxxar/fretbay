@@ -161,12 +161,16 @@
                         </button>
                         <button class="btn btn-outline-danger" v-if="listing.is_active"><i class="fas fa-archive"></i>
                         </button>
+
+
                     </div>
 
 
-                    <a class="btn btn-outline-primary" :href="'/listing/'+listing.id"> <i class="fas fa-angle-double-right"></i>
-                    </a>
 
+
+
+                        <a class="btn btn-outline-primary" :href="'/listing/'+listing.id"> <i class="fas fa-angle-double-right"></i>
+                        </a>
 
 
 

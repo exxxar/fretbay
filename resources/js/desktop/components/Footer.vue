@@ -73,8 +73,8 @@
                 <div class="col-lg-4 order-lg-1  d-flex align-items-sm-start align-items-center flex-column">
                     <!-- Logo -->
                     <a class="d-inline-block mb-5" href="/" aria-label="AlloTrans">
-                        <img src="/assets/img/logo-white.png" class="d-none d-sm-block" alt="Logo" style="width: 100px; max-width: 100%;">
-                        <img src="/assets/img/logo-white.png" class="d-block d-sm-none" alt="Logo" style="width: 100%; max-width: 100%; max-height:100px;">
+                        <img src="/assets/img/logo-white.png" class="d-none d-sm-block" alt="Logo" style="width: 100px; max-width: 100%;object-fit: cover;">
+                        <img src="/assets/img/logo-white.png" class="d-block d-sm-none" alt="Logo" style="width: 100%; max-width: 100%; max-height:100px;object-fit: cover;">
                     </a>
                     <!-- End Logo -->
 

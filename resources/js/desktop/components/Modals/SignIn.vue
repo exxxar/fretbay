@@ -1,9 +1,9 @@
 <template>
-    <div class="modal fade" id="signIn" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <div class="modal fade pt-5" id="signIn" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
          aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content border-0">
-                <div class="modal-body p-5">
+                <div class="modal-body p-5 mt-5">
 
                     <login-form-component/>
                 </div>

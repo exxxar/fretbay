@@ -41,7 +41,7 @@
 
 
             <div class="col-md-6">
-                <ul class="listing">
+                <ul class="listing p-2">
                     <li><img src="/images/listicon1.png" alt=""> <span>Competitive prices thanks to grouped transport and empty returns</span>
                     </li>
                     <li><img src="/images/listicon2.png" alt=""> <span>The implementation of systematic evaluations of carriers</span>
@@ -53,7 +53,7 @@
                 </ul>
             </div>
             <div class="col-md-6">
-                <ul class="listing">
+                <ul class="listing p-2">
                     <li><img src="/images/listicon5.png" alt=""> <span>Safeguarding the environment with the eco-shared use of trucks</span>
                     </li>
                     <li><img src="/images/listicon6.png" alt=""> <span>A quality of service certified</span></li>

@@ -20450,3 +20450,10 @@ button:focus {
     z-index: 1002;
 }
 */
+.custom-control-label:before {
+  top: 0.15rem;
+}
+
+.custom-control-label:after {
+  top: 0.15rem;
+}

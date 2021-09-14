@@ -3,7 +3,7 @@
          aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content border-0">
-                <div class="modal-body p-5">
+                <div class="modal-body p-5 mt-5">
                     <customer-registration-form-component/>
                 </div>
 

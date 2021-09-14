@@ -1,6 +1,6 @@
 <template>
 
-    <div class="container" style="padding:130px;">
+    <div class="container p-2">
         <h1 class="text-center mb-2">Movers evaluated by our customers</h1>
 
         <VueSlickCarousel v-bind="slickOptions">

@@ -1,27 +1,45 @@
 <template>
     <main id="content">
         <!-- Description Section -->
-        <div class="container space-1 pt-5">
-            <div class="row">
+        <div class="container space-1 pt-2 pb-2">
+            <div class="row ">
                 <div class="col-12">
 
-                    <ul class="nav nav-tabs" id="myTab" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
-                               aria-controls="home" aria-selected="true">Info</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
-                               aria-controls="profile" aria-selected="false">Quotes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
-                               aria-controls="contact" aria-selected="false">Messages</a>
-                        </li>
-                    </ul>
+                    <vue-custom-scrollbar class="w-100 listing-menu mt-2" :settings="settingsScroll">
+
+                        <ul class="nav nav-tabs w-100 d-flex flex-nowrap" id="myTab" role="tablist">
+                            <li class="nav-item listing-nav-item">
+                                <a class="btn btn-outline-primary d-block active" id="home-tab" data-toggle="tab"
+                                   href="#home" role="tab"
+                                   aria-controls="home" aria-selected="true"><i class="fas fa-info-circle"></i> Info</a>
+                            </li>
+
+                            <li class="nav-item listing-nav-item">
+                                <a class="btn btn-outline-primary d-block" id="maps-tab" data-toggle="tab"
+                                   href="#maps" role="tab"
+                                   aria-controls="maps" aria-selected="true"><i class="fas fa-map-marked-alt"></i> Map</a>
+                            </li>
+
+
+                            <li class="nav-item listing-nav-item">
+                                <a class="btn btn-outline-primary d-block" id="profile-tab" data-toggle="tab"
+                                   href="#profile" role="tab"
+                                   aria-controls="profile" aria-selected="false"><i class="fas fa-gavel"></i> Quotes</a>
+                            </li>
+                            <li class="nav-item listing-nav-item">
+                                <a class="btn btn-outline-primary d-block" id="contact-tab" data-toggle="tab"
+                                   href="#contact" role="tab"
+                                   aria-controls="contact" aria-selected="false"><i class="fas fa-comments"></i> Messages</a>
+                            </li>
+                        </ul>
+
+                    </vue-custom-scrollbar>
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                             <listing-item-component :listing="listing" v-if="listing"/>
+
+                        </div>
+                        <div class="tab-pane fade" id="maps" role="tabpanel" aria-labelledby="maps-tab">
                             <div id="map"></div>
                         </div>
                         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
@@ -37,11 +55,8 @@
         </div>
         <!-- End Description Section -->
 
-        <!-- Sticky Block End Point -->
-        <div id="stickyBlockEndPoint"></div>
-
         <!-- Pagination -->
-        <div class="container space-2-bottom">
+        <div class="container mb-2">
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-between">
                     <li class="page-item col">
@@ -59,20 +74,38 @@
             </nav>
         </div>
         <!-- End Pagination -->
+
+        <div class="row ml-0 mr-0 mb-5 d-flex justify-content-center">
+            <div class="col-12 col-sm-6">
+                <a href="/find-loads" class="btn btn-outline-primary w-100">Back to Find loads</a>
+            </div>
+        </div>
     </main>
 </template>
 <script>
     import mapboxgl from "mapbox-gl";
 
+    import vueCustomScrollbar from 'vue-custom-scrollbar'
+    import "vue-custom-scrollbar/dist/vueScrollbar.css"
+
     export default {
         name: "MapboxMap",
         props: ["listing_id"],
+        components: {
+            vueCustomScrollbar
+        },
         data() {
-            // Set initial data, this.createMap() configures event listeners that update data based on user interaction
+
             return {
                 listing: null,
                 center: [-93.1247, 44.9323], // St. Paul
-                zoom: 10.5
+                zoom: 10.5,
+                map:null,
+                settingsScroll: {
+                    suppressScrollY: false,
+                    suppressScrollX: false,
+                    wheelPropagation: false
+                },
             };
         },
         computed: {
@@ -81,10 +114,7 @@
             }
         },
         mounted() {
-            // create the map after the component is mounted
 
-
-            console.log("listing_id=>", this.listing_id)
             this.loadListing();
 
 
@@ -94,16 +124,11 @@
                 axios.get(`/api/listing/${this.listing_id}`).then(resp => {
                     this.listing = resp.data
 
-                    console.log("current listing",this.listing)
-
-
                     this.createMap();
                 })
             },
             createMap() {
-
                 mapboxgl.accessToken = 'pk.eyJ1IjoiaW5maW5pdHlzb3VsMTMiLCJhIjoiY2twZnYxNDFrMjl4czJ5b2dlOWphajVvMSJ9.bCoFds-RVlD1TYOwilGfAg';
-
                 var geojson = {
                     'type': 'FeatureCollection',
                     'features': [
@@ -112,25 +137,19 @@
                     ]
                 };
 
-                var map = new mapboxgl.Map({
+                let map = new mapboxgl.Map({
                     container: 'map',
                     style: 'mapbox://styles/mapbox/outdoors-v11',
-                    center:  this.listing.place_of_loading.center,
+                    center: this.listing.place_of_loading.center,
                     zoom: 5
                 });
 
+                geojson.features.forEach((marker, index) => {
 
-
-// add markers to map
-                geojson.features.forEach( (marker, index) => {
-// create a HTML element for each feature
                     var el = document.createElement('div');
-                    el.className = 'marker '+(index===0?"marker_a":"marker_b");
-                    el.innerHTML = index===0?"A":"B";
+                    el.className = 'marker ' + (index === 0 ? "marker_a" : "marker_b");
+                    el.innerHTML = index === 0 ? "A" : "B";
 
-
-
-// make a marker for each feature and add it to the map
                     new mapboxgl.Marker(el)
                         .setLngLat(marker.geometry.coordinates)
                         .setPopup(
@@ -145,6 +164,10 @@
                         )
                         .addTo(map);
                 });
+
+                this.map = map
+
+                console.log(this.map)
             }
         }
     };
@@ -153,9 +176,33 @@
     .sticky-block {
         position: -webkit-sticky;
         position: sticky;
-       // top: 100px;
+        // top: 100px;
     }
 
+    .listing-nav-item {
+        min-width: 159px;
+        text-align: center;
+        /* width: auto; */
+        margin-bottom: 0;
+        padding: 3px;
+
+        a {
+            font-size: 12px;
+        }
+    }
+
+    .listing-menu {
+        overflow-x: auto;
+        position: sticky;
+        top: 65px;
+        background: white;
+        z-index: 100;
+        padding: 8px 0px;
+    }
+
+    .nav-link.active {
+        color: #21c87a !important;
+    }
 
     .inbox_people {
         background: #f8f8f8 none repeat scroll 0 0;
@@ -401,25 +448,25 @@
         height: 50px;
         border-radius: 50%;
         cursor: pointer;
-       // border:2px #000089 solid;
-       // box-shadow: 2px 2px 2px 0px solid;
+        // border:2px #000089 solid;
+        // box-shadow: 2px 2px 2px 0px solid;
         display: flex;
         justify-content: center;
         align-items: flex-start;
-        font-size:16px;
+        font-size: 16px;
         background-color: rgba(244, 244, 244, 0.16);
-        font-weight:bold;
+        font-weight: bold;
 
         &.marker_a {
 
             color: #00006c;
-            border:2px #00006c solid;
+            border: 2px #00006c solid;
 
 
         }
 
         &.marker_b {
-            border:2px #ad1200 solid;
+            border: 2px #ad1200 solid;
             color: #ad1200;
         }
     }
