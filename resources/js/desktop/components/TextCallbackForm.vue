@@ -126,7 +126,7 @@
                 e.preventDefault();
                 this.cansend = true;
                 axios
-                    .post('../api/v2/obedy/wish', {
+                    .post('/send/message', {
                         from: this.name,
                         phone: this.phone,
                         address: this.address,

@@ -58,13 +58,25 @@ class ListingController extends Controller
     {
 
         $listings = Listing::with(['category', 'subcategory', 'thing', 'messages', 'quotes'])
-            ->withTrashed()
-            ->where(function ($query) {
-                $query->whereNotNull("deleted_at")
-                    ->orWhere('is_active', false);
-            })
+            ->where('is_active', false)
             ->where("user_id",   Auth::user()->id)
-            ->orderByDesc('created_at')->paginate(15);
+            ->orderByDesc('created_at')
+            ->paginate(15);
+
+        return response()->json([
+            'listings' => $listings
+        ]);
+    }
+
+    public function loadRemoved()
+    {
+
+        $listings = Listing::with(['category', 'subcategory', 'thing', 'messages', 'quotes'])
+            ->withTrashed()
+            ->whereNotNull("deleted_at")
+            ->where("user_id",   Auth::user()->id)
+            ->orderByDesc('deleted_at')
+            ->paginate(15);
 
         return response()->json([
             'listings' => $listings
@@ -84,6 +96,9 @@ class ListingController extends Controller
                 "message" => "Error!"
             ], 404);
 
+
+        $listing->is_active = false;
+        $listing->save();
 
         event(new NotificationEvent(
             "#listing-" . $listing->id,
@@ -321,9 +336,34 @@ class ListingController extends Controller
      * @param \App\Listing $listing
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Listing $listing)
+    public function destroy($id)
     {
-        //
+        Listing::where("id",$id)->first()->delete();
+
+        event(new NotificationEvent(
+            "#listing-" . $id,
+            "Remove listing  " . $id,
+            NotificationType::Warning,
+            Auth::user()->id));
+
+
+        return response()->noContent();
+    }
+
+    public function restore($id)
+    {
+        Listing::withTrashed()
+            ->where("id",$id)
+            ->first()
+            ->restore();
+
+        event(new NotificationEvent(
+            "#listing-" . $id,
+            "Restore listing  " . $id,
+            NotificationType::Info,
+            Auth::user()->id));
+
+        return response()->noContent();
     }
 
     public function sendQuote(Request $request)

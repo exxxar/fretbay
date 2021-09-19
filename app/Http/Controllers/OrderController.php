@@ -173,4 +173,21 @@ class OrderController extends Controller
 
         return response()->noContent();
     }
+
+    public function loadActive(){
+        return response()->noContent();
+    }
+
+    public function loadArchive(){
+        return response()->noContent();
+    }
+
+    public function loadRemoved(){
+        return response()->noContent();
+    }
+
+    public function addToArchive($id){
+        return response()->noContent();
+    }
+
 }

@@ -14,19 +14,23 @@
                                    aria-controls="home" aria-selected="true"><i class="fas fa-info-circle"></i> Info</a>
                             </li>
 
-                            <li class="nav-item listing-nav-item">
+                            <li class="nav-item listing-nav-item"
+                                @click="initMap"
+                                v-if="user.is_transporter||user.id===listing.user_id">
                                 <a class="btn btn-outline-primary d-block" id="maps-tab" data-toggle="tab"
                                    href="#maps" role="tab"
                                    aria-controls="maps" aria-selected="true"><i class="fas fa-map-marked-alt"></i> Map</a>
                             </li>
 
 
-                            <li class="nav-item listing-nav-item">
+                            <li class="nav-item listing-nav-item" v-if="user.is_transporter||user.id===listing.user_id">
                                 <a class="btn btn-outline-primary d-block" id="profile-tab" data-toggle="tab"
                                    href="#profile" role="tab"
                                    aria-controls="profile" aria-selected="false"><i class="fas fa-gavel"></i> Quotes</a>
                             </li>
-                            <li class="nav-item listing-nav-item">
+                            <li class="nav-item listing-nav-item" v-if="user.is_transporter||user.id===listing.user_id"
+                            @click="loadListing"
+                            >
                                 <a class="btn btn-outline-primary d-block" id="contact-tab" data-toggle="tab"
                                    href="#contact" role="tab"
                                    aria-controls="contact" aria-selected="false"><i class="fas fa-comments"></i> Messages</a>
@@ -39,13 +43,13 @@
                             <listing-item-component :listing="listing" v-if="listing"/>
 
                         </div>
-                        <div class="tab-pane fade" id="maps" role="tabpanel" aria-labelledby="maps-tab">
+                        <div class="tab-pane fade"  id="maps" role="tabpanel" aria-labelledby="maps-tab" v-if="user.is_transporter||user.id===listing.user_id">
                             <div id="map"></div>
                         </div>
-                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab" v-if="user.is_transporter||user.id===listing.user_id">
                             <quotes-component :listing="listing" v-if="listing"/>
                         </div>
-                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab" v-if="user.is_transporter||user.id===listing.user_id">
                             <chat-component :listing="listing" v-if="listing"/>
                         </div>
                     </div>
@@ -74,12 +78,6 @@
             </nav>
         </div>
         <!-- End Pagination -->
-
-        <div class="row ml-0 mr-0 mb-5 d-flex justify-content-center">
-            <div class="col-12 col-sm-6">
-                <a href="/find-loads" class="btn btn-outline-primary w-100">Back to Find loads</a>
-            </div>
-        </div>
     </main>
 </template>
 <script>
@@ -111,20 +109,30 @@
         computed: {
             messages: function () {
                 return this.listing ? this.listing.messages : []
-            }
+            },
+            user: function () {
+                return window.user
+            },
         },
         mounted() {
 
             this.loadListing();
 
-
+            $(document).on("click",".nav-item", ()=>{
+                window.scroll(0,0)
+            })
         },
         methods: {
+            initMap(){
+                this.createMap();
+            },
             loadListing() {
                 axios.get(`/api/listing/${this.listing_id}`).then(resp => {
                     this.listing = resp.data
 
                     this.createMap();
+
+
                 })
             },
             createMap() {
@@ -137,7 +145,7 @@
                     ]
                 };
 
-                let map = new mapboxgl.Map({
+                this.map = new mapboxgl.Map({
                     container: 'map',
                     style: 'mapbox://styles/mapbox/outdoors-v11',
                     center: this.listing.place_of_loading.center,
@@ -162,12 +170,10 @@
                                     '</p>'
                                 )
                         )
-                        .addTo(map);
+                        .addTo(this.map);
                 });
 
-                this.map = map
 
-                console.log(this.map)
             }
         }
     };

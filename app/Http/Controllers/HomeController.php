@@ -2,14 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Classes\Utilites;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
+use Telegram\Bot\Laravel\Facades\Telegram;
 
 class HomeController extends Controller
 {
+
+    use Utilites;
     /**
      * Create a new controller instance.
      *
@@ -17,7 +22,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+       // $this->middleware('auth');
     }
 
     public function setLocale($lang)
@@ -34,4 +39,73 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function sendMessage(Request $request)
+
+    {
+        $request->validate([
+            'phone' => "required",
+            'email' => "nullable|email",
+            "from" => "string|required",
+            "message" => "required"
+        ]);
+
+        $phone = $request->get("phone") ?? '';
+        $email = $request->get("email") ?? '';
+        $from = $request->get("from") ?? '';
+        $address = $request->get("address") ?? '';
+        $message = $request->get("message") ?? '';
+
+
+        $tmp_message = sprintf("<b>Заявка:</b>\nТелефон: %s\nПочта: %s\nФ.И.О.: %s\nАдресс: %s\nСообщение: %s",
+            $phone,
+            $email,
+            $from,
+            $address,
+            $message
+        );
+
+        $this->sendMessageToTelegramChannel(env("TELEGRAM_ALLOTRANS_CHANNEL"), $tmp_message);
+        if ($request->ajax())
+            return response()
+                ->json([
+                    "message" => "success",
+                    "status" => 200
+                ]);
+
+        return redirect()
+            ->back()
+            ->with("message", "Сообщение отправлено!");
+
+    }
+
+    public function sendVoice(Request $request)
+    {
+
+        $phone = $request->phone ?? "+380710000000";
+        $username = $request->name ?? "-";
+
+        $files = $request->file('files');
+
+        array_map('unlink', glob(storage_path("app/public/uploads/*")));
+
+        if ($request->hasFile('files')) {
+            foreach ($files as $file) {
+                $name = "record-allotrans-" . time() . ".mp3";
+                $file->storeAs( "/public/uploads/", $name);
+                Telegram::sendAudio([
+                    'chat_id' => env("TELEGRAM_ALLOTRANS_CHANNEL"),
+                    "caption" => "<b>Голосовая заявка от пользователя [$username]</b>\nНомер телефона:<i> $phone </i>",
+                    'parse_mode' => 'HTML',
+                    'audio' => \Telegram\Bot\FileUpload\InputFile::create(storage_path('app/public') . "/uploads/$name"),
+                ]);
+
+                Storage::delete("/uploads/$name");
+            }
+        }
+
+
+        return "success";
+    }
+
 }

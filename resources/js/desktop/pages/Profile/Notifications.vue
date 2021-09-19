@@ -13,7 +13,7 @@
         </div>
         <div class="container" v-else>
             <div class="d-flex p-5 justify-content-center"  v-if="notifications.length===0">
-                <img v-lazy="'/images/empty.png'" alt="" class="w-100 w-sm-auto" style="filter: drop-shadow(8px 4px 0px #21c87a);">
+                <img v-lazy="'/images/empty.png'" alt="" class="w-100 w-sm-auto" style="max-width:300px;">
             </div>
             <h4 class="text-center" v-if="notifications.length===0">No notifications yet!</h4>
         </div>

@@ -68,7 +68,7 @@
                                     <a class="dropdown-item cursor-pointer" href="/how-it-works">How does it work?</a>
                                     <a class="dropdown-item cursor-pointer" href="/fequently-asked-questions">F.A.Q.</a>
                             <!--        <a class="dropdown-item" href="/recruitment">Recruitment</a>-->
-                                    <a class="dropdown-item cursor-pointer" href="/contact-us">Contact Us</a>
+                                 <!--   <a class="dropdown-item cursor-pointer" href="/contact-us">Contact Us</a>-->
                                     <a class="dropdown-item cursor-pointer" href="/privacy">Privacy</a>
                                 </div>
                             </li>

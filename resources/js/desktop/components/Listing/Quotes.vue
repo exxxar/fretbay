@@ -86,12 +86,12 @@
         <div class="col-lg-6 mb-9 mb-lg-0" v-else>
             <div class="d-flex p-5 justify-content-center">
                 <img v-lazy="'/images/empty.png'" alt="" class="w-100 w-sm-auto"
-                     style="filter: drop-shadow(8px 4px 0px #21c87a);">
+                     style="max-width:300px;">
             </div>
             <h4 class="text-center">No Quotes yet!</h4>
         </div>
 
-        <div class="col-lg-6 mb-9 mb-lg-0" v-if="filteredQuotes">
+        <div class="col-lg-6 mb-9 mb-lg-0" v-if="filteredQuotes&&user.is_transporter">
             <div class="card">
                 <div class="card-body">
 
@@ -170,6 +170,9 @@
         props: ["listing"],
         computed: {
             minBid() {
+                if (!this.filteredQuotes[0])
+                    return 0;
+
                 let min = this.filteredQuotes[0].price || 0;
 
                 this.quotes.forEach(item => {
@@ -180,6 +183,9 @@
                 return min;
             },
             maxBid() {
+                if (!this.filteredQuotes[0])
+                    return 0;
+
                 let max = this.filteredQuotes[0].price || 0;
 
                 this.quotes.forEach(item => {

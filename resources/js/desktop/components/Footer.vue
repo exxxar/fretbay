@@ -26,7 +26,7 @@
              <!--           <a class="list-group-item list-group-item-action" href="/reviews">Customer testimonials</a>
                         <a class="list-group-item list-group-item-action" href="/quality-charte">Quality charter</a>-->
                         <a class="list-group-item list-group-item-action" href="/privacy">Privacy</a>
-                        <a class="list-group-item list-group-item-action" href="/contact-us">Contact us</a>
+                      <!--  <a class="list-group-item list-group-item-action" href="/contact-us">Contact us</a>-->
                     </div>
                     <!-- End List Group -->
                 </div>

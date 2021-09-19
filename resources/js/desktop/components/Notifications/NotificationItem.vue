@@ -48,9 +48,7 @@
             }
         },
         methods: {
-
             getClassByType() {
-                console.log("item notify=>", this.item.type)
                 let tmp = this.types.find(item => item.type === this.item.type)
 
                 if (!tmp)

@@ -146,10 +146,10 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 Route::view("/find-loads", "desktop.pages.find-loads")
-    ->middleware(['auth', 'role:transporter'])
+    ->middleware(['auth' , 'role:transporter'])
     ->name("desktop.find-loads");
 
-Route::group(['middleware' => ['auth', 'role:transporter'], "prefix" => "transporter"], function () {
+Route::group(['middleware' => ['auth', 'verified','role:transporter'], "prefix" => "transporter"], function () {
 
     Route::post('/listing/quotes/add', 'ListingController@sendQuote');
     Route::post('/listing/quotes/remove', 'ListingController@removeQuote');
@@ -195,14 +195,14 @@ Route::group(['middleware' => ['auth', 'role:transporter'], "prefix" => "transpo
 });
 
 
-Route::group(["prefix" => "reviews", "middleware" => "auth"], function () {
+Route::group(["prefix" => "reviews", "middleware" => ["auth"]], function () {
 
     Route::get('/list', 'ReviewController@getReviews');
 
 
 });
 
-Route::group(["prefix" => "orders", "middleware" => "auth"], function () {
+Route::group(["prefix" => "orders", "middleware" => ["auth"]], function () {
 
     Route::get('/list', 'OrderController@index');
     Route::get('/filtered', 'OrderController@filtered');
@@ -210,12 +210,24 @@ Route::group(["prefix" => "orders", "middleware" => "auth"], function () {
     Route::post('/status', 'OrderController@changeOrderStatus');
     Route::post('/accept', 'OrderController@acceptOrder');
 
+
+    Route::get('/active', 'OrderController@loadActive');
+    Route::get('/archive', 'OrderController@loadArchive');
+    Route::get('/removed', 'OrderController@loadRemoved');
+    Route::delete('/{id}', 'OrderController@destroy');
+    Route::get('/restore/{id}', 'OrderController@restore');
+    Route::get('/archive/{id}', 'OrderController@addToArchive');
+
 });
 
-Route::group(["prefix" => "listing", "middleware" => "auth"], function () {
+Route::group(["prefix" => "listing", "middleware" => ["auth"]], function () {
 
     Route::get('/active', 'ListingController@loadActive');
     Route::get('/archive', 'ListingController@loadArchive');
+    Route::get('/removed', 'ListingController@loadRemoved');
+    Route::delete('/{id}', 'ListingController@destroy');
+    Route::get('/restore/{id}', 'ListingController@restore');
+    Route::get('/archive/{id}', 'ListingController@addToArchive');
 
     Route::get("/{id}", "ListingController@show")->where(["id" => "[0-9]+"])->name("desktop.listing");
     Route::get("/direction/{id}/{direction?}", "ListingController@goToListing")->name("desktop.direction");
@@ -429,11 +441,20 @@ Route::get('/logout', \Auth\LoginController::class . '@logout')->name("logout");
 
 Route::post('/forgot-password', \Auth\ResetPasswordController::class . '@askForgotPassword')->middleware('guest')->name('password.email');
 
+/*Auth::routes(['verify' => true]);*/
+
+
 
 Route::get('/reset-password/{token}', function ($token) {
     return view('auth.passwords.reset', ['token' => $token]);
 })->middleware('guest')->name('password.reset');
 
+Route::group(["prefix" => "send"], function () {
+    Route::post('/message', 'HomeController@sendMessage')
+        ->name('send.message');
+    Route::post('/voice', 'HomeController@sendVoice')
+        ->name('send.voice');
+});
 
 Route::post('/reset-password', \Auth\ResetPasswordController::class . '@storeResetPassword')->middleware('guest')->name('password.update');
 

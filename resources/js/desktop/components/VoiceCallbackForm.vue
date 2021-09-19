@@ -51,7 +51,7 @@
                     console.log(file);
                     formData.append('files[' + i + ']', file);
                 }
-                axios.post('../api/v2/obedy/voice', formData, {
+                axios.post('/send/voice', formData, {
                         headers: {
                             'Content-Type': 'multipart/form-data'
                         },
@@ -78,6 +78,7 @@
                 this.$refs.Video.src = window.URL.createObjectURL(data)
             },
             onResult(data) {
+
                 this.recordings.push({
                     src: window.URL.createObjectURL(data),
                     data: data

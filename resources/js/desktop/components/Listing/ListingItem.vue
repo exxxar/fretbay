@@ -30,7 +30,7 @@
 
 
         </div>
-        <div class="card-body d-md-flex justify-content-between align-items-center py-1 px-1 flex-wrap" >
+        <div class="card-body d-md-flex justify-content-between align-items-center py-1 px-1 flex-wrap">
 
             <div class="media align-items-center mb-1 mb-md-0">
                 <a class="u-md-avatar custom-avatar mr-3" href="#" v-if="listing.images.length>0">
@@ -73,7 +73,7 @@
                         </svg>
                     </i>
 
-                    <strong >Place of loading:</strong>
+                    <strong>Place of loading:</strong>
                 </div>
                 <div class="col-sm-8 col-12 p-0">
                     <a class="d-flex align-items-center text-secondary" href="#">
@@ -131,7 +131,8 @@
                 </div>
 
                 <div class="col-sm-4 col-12 pl-0" v-if="listing.distance>0">
-                    <p class="ml-sm-5 ml-0 p-sm-2 p-0 mt-2 mt-sm-0">Distance <strong>{{listing.distance}}</strong> km</p>
+                    <p class="ml-sm-5 ml-0 p-sm-2 p-0 mt-2 mt-sm-0">Distance <strong>{{listing.distance}}</strong> km
+                    </p>
                 </div>
 
 
@@ -139,17 +140,21 @@
                     <p class="ml-sm-5 ml-0 p-sm-2 p-0 mt-2 mt-sm-0"><strong>{{listing.moving_package}}</strong></p>
                 </div>
 
-                <div class="col-12 p-2" v-if="listing.images">
+                <div class="col-12 p-2" v-if="images.length>0">
                     <VueSlickCarousel v-bind="settings">
-                        <div :key="index" v-for="(item, index) in listing.images" class="p-2" @click="imageIndex=index">
-                            <div class="card">
+                        <div :key="index" v-for="(item, index) in images" class="gallery-img p-2" @click="imageIndex=index">
+                            <div class="card" style="max-width: 150px;">
                                 <div class="card-body p-2">
-                                    <img v-lazy="item.path" alt="" class="w-100">
+                                    <img v-lazy="item" alt="" class="w-100">
                                 </div>
                             </div>
                         </div>
                     </VueSlickCarousel>
-                    <vue-gallery-slideshow :images="images" :index="imageIndex" @close="imageIndex = null"/>
+                    <vue-gallery-slideshow
+                        v-if="images"
+                        :images="images"
+                        :index="imageIndex"
+                        @close="imageIndex = null"/>
 
                 </div>
 
@@ -157,21 +162,30 @@
                 <div class="col-12 pl-0 pr-0 d-flex justify-content-between" >
 
                     <div class="btn-group" v-if="listing.user_id===user.id">
-                        <button class="btn btn-outline-danger" v-if="!listing.deleted_at"><i class="far fa-trash-alt"></i>
+                        <button class="btn btn-outline-danger" v-if="!listing.deleted_at"
+                            @click="removeListing"
+                            ><i
+                            class="far fa-trash-alt"></i>
                         </button>
-                        <button class="btn btn-outline-danger" v-if="listing.is_active"><i class="fas fa-archive"></i>
+                        <button class="btn btn-outline-danger"
+                                @click="archiveListing"
+                                v-if="listing.is_active&&!listing.deleted_at">
+                            <i class="fas fa-archive"></i>
                         </button>
-
+                        <button class="btn btn-outline-danger"
+                                @click="restoreListing"
+                                v-if="listing.deleted_at">
+                            <i class="fas fa-trash-restore"></i>
+                        </button>
 
                     </div>
 
+                    <a class="btn btn-outline-primary" v-if="user.is_transporter||user.id===listing.user_id"
+                       :href="'/listing/'+listing.id"
 
-
-
-
-                        <a class="btn btn-outline-primary" :href="'/listing/'+listing.id"> <i class="fas fa-angle-double-right"></i>
-                        </a>
-
+                    > <i
+                        class="fas fa-angle-double-right"></i>
+                    </a>
 
 
                 </div>
@@ -207,10 +221,11 @@
                         articles:</strong>
 
 
-                    <div class="d-flex space-between flex-wrap mt-2 w-100" v-if="listing.category.mode ==='article' && listing.articles.length>=1">
+                    <div class="d-flex space-between flex-wrap mt-2 w-100"
+                         v-if="listing.category.mode ==='article' && listing.articles.length>=1">
 
                         <div
-                             v-for="property in listing.category.properties"
+                            v-for="property in listing.category.properties"
                         >
                             <a href="" class="badge badge-primary mr-2 mb-2" v-for="item in listing.articles">
                                 {{prepareLangTitle(item.title)||"Empty"}}:
@@ -301,6 +316,9 @@
             images() {
                 let tmp = []
 
+                if (!this.listing.images)
+                    return tmp;
+
                 this.listing.images.forEach(item => {
                     tmp.push(item.path)
                 })
@@ -335,6 +353,21 @@
 
         },
         methods: {
+            removeListing(){
+                axios.delete("/listing/"+this.listing.id).then(resp => {
+                    this.$emit("update")
+                });
+            },
+            archiveListing(){
+                axios.get("/listing/archive/"+this.listing.id).then(resp => {
+                    this.$emit("update")
+                });
+            },
+            restoreListing(){
+                axios.get("/listing/restore/"+this.listing.id).then(resp => {
+                    this.$emit("update")
+                });
+            },
             prepareLangTitle(title) {
                 return typeof title === 'object' ?
                     Object.entries(title).find(item => item[0] === window.locale)[1] :
@@ -368,11 +401,6 @@
                 })
             }
         },
-        mounted() {
-            console.log("listing=>", this.listing)
-            console.log("listing.messages.length =>", this.listing.messages.length)
-            console.log("listing.quotes.length =>", this.listing.quotes.length)
-        }
     }
 
 
@@ -395,6 +423,17 @@
 
     .vgs__container__img {
         height: 100% !important;
+    }
+
+    .slick-slide
+    {
+        .gallery-img {
+            img {
+                display: block;
+                max-height: 200px;
+                object-fit: cover;
+            }
+        }
     }
 
 </style>

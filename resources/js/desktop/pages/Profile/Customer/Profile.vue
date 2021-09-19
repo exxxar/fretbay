@@ -3,7 +3,7 @@
         <div class="main-body">
 
             <vue-custom-scrollbar class="w-100 customer-menu mt-2" :settings="settingsScroll">
-                <ul class="nav nav-tabs mb-2 w-100 d-flex flex-nowrap ">
+                <ul class="nav nav-tabs mb-2 w-100 d-flex flex-nowrap " >
                     <li class="nav-item profile-nav-item" @click="loadActiveListing">
                         <a class="btn btn-outline-primary d-block active" id="listings-active-tab" data-toggle="tab"
                            href="#listings-active" role="tab"
@@ -32,10 +32,23 @@
                             listings</a>
                     </li>
 
-                    <li class="nav-item profile-nav-item" @click="loadOrders">
-                        <a class="btn btn-outline-primary d-block" id="orders-tab" data-toggle="tab" href="#orders"
+                    <li class="nav-item profile-nav-item" @click="loadRemovedListing">
+                        <a class="btn btn-outline-primary d-block" id="listings-removed-tab" data-toggle="tab"
+                           href="#listings-removed" role="tab"
+                           aria-controls="listings-active" aria-selected="true"><i class="fas fa-trash-alt"></i> Removed
+                            listings</a>
+                    </li>
+
+                    <li class="nav-item profile-nav-item" @click="loadActiveOrders">
+                        <a class="btn btn-outline-primary d-block" id="orders-active-tab" data-toggle="tab" href="#orders-active"
                            role="tab"
-                           aria-controls="orders" aria-selected="true"><i class="far fa-handshake"></i> Orders</a>
+                           aria-controls="orders-active" aria-selected="true"><i class="far fa-handshake"></i>Active Orders</a>
+                    </li>
+
+                    <li class="nav-item profile-nav-item" @click="loadArchiveOrders">
+                        <a class="btn btn-outline-primary d-block" id="orders-archive-tab" data-toggle="tab" href="#orders-archive"
+                           role="tab"
+                           aria-controls="orders-archive" aria-selected="true"><i class="fas fa-archive"></i>Archive Orders</a>
                     </li>
 
                     <li class="nav-item profile-nav-item">
@@ -58,17 +71,16 @@
                 <div class="tab-pane fade " id="profile" role="tabpanel" aria-labelledby="profile-tab">
                     <div class="row gutters-sm">
                         <div class="col-md-4 mb-3">
-
-
                             <div class="card">
                                 <div class="card-body">
                                     <div class="d-flex flex-column align-items-center text-center">
-                                        <img v-lazy="user.avatar" alt="Admin" class="rounded-circle avatar-img"
+                                        <img v-lazy="user.avatar" alt="Admin" class=" avatar-img"
+                                             style="border-radius: 5px;"
                                              width="150">
                                         <div class="mt-3">
                                             <h4>{{user.name}}</h4>
                                             <p class="text-secondary mb-1">{{user.created_at}}</p>
-                                            <p class="text-muted font-size-sm">{{fullAddress}}</p>
+                                            <p class="text-muted font-size-sm" v-if="fullAddress">{{fullAddress}}</p>
                                             <p class="text-muted font-size-sm" v-if="profile.company_name.length>0">
                                                 {{profile.company_name}}</p>
                                         </div>
@@ -263,67 +275,23 @@
 
                 <div class="tab-pane fade  show active" id="listings-active" role="tabpanel"
                      aria-labelledby="listings-active-tab">
-                    <div class="row d-flex">
-                        <div class="col-md-4">
-                            <a class="btn btn-link p-0" href="/find-transporter"><i class="fas fa-dolly"></i> Try to
-                                <strong>find a transporter!</strong></a>
-                        </div>
-                    </div>
-                    <p v-if="listings.length>0">Count results: {{listings.length}} <i class="fas fa-boxes"></i></p>
-                    <hr>
-                    <listing-item-component :key="index" v-for="(listing,index) in listings" :listing="listing"/>
-                    <div class="d-flex p-5 justify-content-center" v-if="listings.length===0">
-                        <img v-lazy="'/images/empty.png'" alt="" class="w-100 w-sm-auto"
-                             style="filter: drop-shadow(8px 4px 0px #21c87a);">
-                    </div>
-                    <h4 class="text-center" v-if="listings.length===0">No listing yet!</h4>
-
-                    <div class="mb-9"></div>
-
-                    <listing-paginate-component/>
+                    <listing-component v-on:update="loadActiveListing"/>
                 </div>
 
                 <div class="tab-pane fade" id="listings-archive" role="tabpanel" aria-labelledby="listings-archive-tab">
-
-                    <div class="row d-flex">
-                        <div class="col-md-4">
-                            <a class="btn btn-link p-0" href="/find-transporter"><i class="fas fa-dolly"></i> Try to
-                                <strong>find a transporter!</strong></a>
-                        </div>
-                    </div>
-                    <p v-if="listings.length>0">Count results: {{listings.length}} <i class="fas fa-boxes"></i></p>
-                    <hr>
-                    <listing-item-component :key="index" v-for="(listing,index) in listings" :listing="listing"/>
-                    <div class="d-flex p-5 justify-content-center" v-if="listings.length===0">
-                        <img v-lazy="'/images/empty.png'" alt="" class="w-100 w-sm-auto"
-                             style="filter: drop-shadow(8px 4px 0px #21c87a);">
-                    </div>
-                    <h4 class="text-center" v-if="listings.length===0">No listing yet!</h4>
-
-                    <div class="mb-9"></div>
-
-                    <listing-paginate-component/>
+                    <listing-component v-on:update="loadArchiveListing"/>
                 </div>
 
-                <div class="tab-pane fade" id="orders" role="tabpanel" aria-labelledby="orders-tab">
+                <div class="tab-pane fade" id="listings-removed" role="tabpanel" aria-labelledby="listings-removed-tab">
+                    <listing-component v-on:update="loadRemovedListing"/>
+                </div>
 
-                    <div class="row d-flex">
-                        <div class="col-md-4">
-                            <a class="btn btn-link p-0" href="/find-transporter"><i class="fas fa-dolly"></i> Try to
-                                <strong>find a transporter!</strong></a>
-                        </div>
-                    </div>
-                    <p v-if="userOrders.length>0">Count results: {{userOrders.length}} <i class="fas fa-boxes"></i></p>
-                    <hr>
-                    <order-item-component :key="index" v-for="(order,index) in userOrders" :order="order"/>
+                <div class="tab-pane fade" id="orders-active" role="tabpanel" aria-labelledby="orders-active-tab">
+                    <orders-component v-on:update="loadActiveOrders"/>
+                </div>
 
-                    <div class="d-flex p-5 justify-content-center" v-if="userOrders.length===0">
-                        <img v-lazy="'/images/empty.png'" alt="" class="w-100 w-sm-auto"
-                             style="filter: drop-shadow(8px 4px 0px #21c87a);">
-                    </div>
-                    <h4 class="text-center" v-if="userOrders.length===0">No orders yet!</h4>
-
-                    <order-paginate-component/>
+                <div class="tab-pane fade" id="orders-archive" role="tabpanel" aria-labelledby="orders-archive-tab">
+                    <orders-component v-on:update="loadActiveOrders"/>
                 </div>
 
                 <div class="tab-pane fade" id="notifications" role="tabpanel" aria-labelledby="notifications-tab">
@@ -331,7 +299,7 @@
                 </div>
 
                 <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="settings-tab">
-                    <profile-settings-page/>
+                    <profile-customer-settings-page/>
                 </div>
             </div>
 
@@ -395,18 +363,13 @@
             }
         },
         computed: {
-            listings: function () {
-                return this.$store.getters.listings;
-            },
 
-            userOrders: function () {
-                return this.$store.getters.userOrders;
-            },
 
             fullAddress() {
-                return this.profile.country + ","
-                    + this.profile.region + ","
-                    + this.profile.address;
+
+                return this.profile.postal  + "," +
+                    +this.profile.country  + "," +
+                    +this.profile.city;
 
             },
 
@@ -424,12 +387,25 @@
             }
         },
         mounted() {
-            this.loadActiveListing()
+            this.$nextTick(()=>{
+                this.loadActiveListing()
+            })
+
+            $(document).on("click",".nav-item", ()=>{
+                window.scroll(0,0)
+            })
         },
         methods: {
 
-            loadOrders() {
-                this.$store.dispatch('getOrders');
+            loadActiveOrders() {
+                this.$store.dispatch('getActiveOrders');
+            },
+            loadArchiveOrders() {
+                this.$store.dispatch('getArchiveOrders');
+            },
+            loadRemovedListing(){
+                this.$store.dispatch('clearListing')
+                this.$store.dispatch('getRemovedListings');
             },
             loadActiveListing() {
                 this.$store.dispatch('clearListing')

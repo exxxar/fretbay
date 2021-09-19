@@ -56,11 +56,14 @@ Vue.use(VueRecord)
 
 
 
-
+Vue.component('listing-component', require('./components/Listing/Listing.vue').default);
+Vue.component('orders-component', require('./components/Orders/Orders.vue').default);
 
 //components
 Vue.component('preloader-component', require('../desktop/components/Preloader.vue').default);
+Vue.component('audio-player-component', require('../desktop/components/AudioPlayer.vue').default);
 Vue.component('listing-item-component', require('./components/Listing/ListingItem.vue').default);
+
 Vue.component('order-item-component', require('./components/Orders/OrderItem.vue').default);
 Vue.component('listing-paginate-component', require('./components/Listing/ListingPaginate.vue').default);
 Vue.component('order-paginate-component', require('./components/Orders/OrderPaginate.vue').default);
@@ -92,6 +95,9 @@ Vue.component('transporter-reviews-component', require('../desktop/components/Re
 Vue.component('review-item-component', require('../desktop/components/Reviews/ReviewItem.vue').default);
 
 //auth
+
+
+
 Vue.component('login-page', require('./pages/Auth/Login.vue').default);
 Vue.component('recovery-page', require('./pages/Auth/Recovery.vue').default);
 Vue.component('register-transporter-page', require('./pages/Auth/RegisterTransporter.vue').default);
@@ -121,8 +127,7 @@ Vue.component('recovery-form-component', require('./components/Auth/RecoveryPass
 
 
 Vue.component('profile-personal-info-page', require('./pages/Profile/PersonalInfo.vue').default);
-Vue.component('profile-customer-activity-listing-page', require('../desktop/pages/Profile/Customer/ActivityListing.vue').default);
-Vue.component('profile-customer-listings-page', require('../desktop/pages/Profile/Customer/Listings.vue').default);
+
 
 Vue.component('profile-transporter-wizard-start-page', require('./pages/Profile/Transporter/ProfileWizardStart.vue').default);
 Vue.component('profile-transporter-wizard-step-1-page', require('./pages/Profile/Transporter/ProfileWizardStep1.vue').default);
@@ -135,11 +140,11 @@ Vue.component('profile-my-account-page', require('./pages/Profile/Transporter/My
 Vue.component('profile-my-company-page', require('./pages/Profile/Transporter/MyCompany.vue').default);
 Vue.component('profile-legal-documents-page', require('./pages/Profile/Transporter/LegalDocuments.vue').default);
 Vue.component('profile-my-vehicles-page', require('./pages/Profile/Transporter/MyVehicles.vue').default);
-Vue.component('profile-settings-page', require('./pages/Profile/Transporter/Settings.vue').default);
+Vue.component('profile-transporter-settings-page', require('./pages/Profile/Transporter/Settings.vue').default);
+Vue.component('profile-customer-settings-page', require('./pages/Profile/Customer/Settings.vue').default);
 //Профиль заказчика
 Vue.component('profile-customer-page', require('./pages/Profile/Customer/Profile.vue').default);
-Vue.component('to-be-confirmed-empty-page', require('./pages/Profile/Customer/ToBeConfirmedEmpty.vue').default);
-Vue.component('to-be-confirmed-page', require('./pages/Profile/Customer/ToBeConfirmed.vue').default);
+
 
 //other pages (not needed)
 Vue.component('contact-us-page', require('./pages/Main/ContactUs.vue').default);

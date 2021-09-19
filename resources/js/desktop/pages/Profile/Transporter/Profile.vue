@@ -97,7 +97,7 @@
             </div>
 
             <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="settings-tab">
-                <profile-settings-page/>
+                <profile-transporter-settings-page/>
             </div>
 
             <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
