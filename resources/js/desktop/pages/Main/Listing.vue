@@ -44,7 +44,7 @@
 
                         </div>
                         <div class="tab-pane fade"  id="maps" role="tabpanel" aria-labelledby="maps-tab" v-if="user.is_transporter||user.id===listing.user_id">
-                            <div id="map"></div>
+                            <div id="map" v-if="showMap" style="width:100%; height:500px;"></div>
                         </div>
                         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab" v-if="user.is_transporter||user.id===listing.user_id">
                             <quotes-component :listing="listing" v-if="listing"/>
@@ -81,20 +81,27 @@
     </main>
 </template>
 <script>
-    import mapboxgl from "mapbox-gl";
+
 
     import vueCustomScrollbar from 'vue-custom-scrollbar'
     import "vue-custom-scrollbar/dist/vueScrollbar.css"
+
+    import Mapbox from "mapbox-gl";
+    import mapboxgl  from "mapbox-gl";
+    import { MglMap, MglMarker } from "vue-mapbox";
 
     export default {
         name: "MapboxMap",
         props: ["listing_id"],
         components: {
-            vueCustomScrollbar
+            vueCustomScrollbar, MglMap, MglMarker
         },
         data() {
 
             return {
+                showMap:true,
+                accessToken: "pk.eyJ1IjoiaW5maW5pdHlzb3VsMTMiLCJhIjoiY2twZnYxNDFrMjl4czJ5b2dlOWphajVvMSJ9.bCoFds-RVlD1TYOwilGfAg", // your access token. Needed if you using Mapbox maps
+                mapStyle: 'mapbox://styles/mapbox/outdoors-v11', // your map style
                 listing: null,
                 center: [-93.1247, 44.9323], // St. Paul
                 zoom: 10.5,
@@ -114,23 +121,40 @@
                 return window.user
             },
         },
+        created() {
+            // We need to set mapbox-gl library here in order to use it in template
+            this.mapbox = null;
+        },
         mounted() {
 
             this.loadListing();
 
+            this.mapbox = Mapbox;
+
             $(document).on("click",".nav-item", ()=>{
                 window.scroll(0,0)
+
+                window.resizeTo(100, 100)
             })
         },
         methods: {
+
             initMap(){
-                this.createMap();
+                this.showMap = false;
+
+                this.$nextTick(()=>{
+                    this.showMap = true
+                })
+
+                setTimeout(()=>{
+                    this.createMap();
+                }, 1000)
             },
             loadListing() {
                 axios.get(`/api/listing/${this.listing_id}`).then(resp => {
                     this.listing = resp.data
 
-                    this.createMap();
+                   this.createMap();
 
 
                 })
@@ -171,6 +195,8 @@
                                 )
                         )
                         .addTo(this.map);
+
+                    this.map.resize();
                 });
 
 
@@ -484,5 +510,17 @@
     .mapboxgl-popup-content {
         text-align: center;
         font-family: 'Open Sans', sans-serif;
+    }
+
+
+    .mapboxgl-canvas-container {
+
+        height: 100vh;
+
+    }
+
+    .mapboxgl-canvas {
+        width:100% !important;
+        height: 500px !important;
     }
 </style>

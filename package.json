@@ -54,7 +54,7 @@
         "lazysizes": "^5.2.2",
         "libphonenumber-js": "^1.9.22",
         "luxon": "^1.24.1",
-        "mapbox-gl": "^2.3.1",
+        "mapbox-gl": "^2.4.1",
         "node-sass": "^4.14.1",
         "perfect-scrollbar": "1.5.0",
         "postcode-validator": "^3.5.3",
