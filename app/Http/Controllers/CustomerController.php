@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\NotificationType;
+use App\Events\NotificationEvent;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -35,6 +37,13 @@ class CustomerController extends Controller
 
         $user->email = $request->email ?? $user->email;
         $user->profile->update($request->all());
+
+
+        event(new NotificationEvent(
+            "#account-" . $user->id,
+            "Update user account",
+            NotificationType::Info,
+            Auth::user()->id));
 
         return redirect()->back()->withErrors(["success"]);
 

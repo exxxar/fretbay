@@ -36,12 +36,25 @@
             <div class="mesgs w-100 " v-bind:class="{'w-100':!showUsers,'w-md-60':showUsers}">
                 <div class="msg_history">
                     <div v-for="message in filteredMessages">
-                        <div class="card">
+                        <div class="card mb-1">
 
                             <div class="card-body">
                                 <p> {{message.message}} </p>
-                                <span class="badge badge-purple" v-if="message.sender_id===user.id">Your sender</span>
-                                <span class="badge badge-primary" v-if="message.recipient_id===selected_chat_id">Your recipient</span>
+
+
+                                <div class="btn-group" v-if="user.is_transporter">
+
+                                    <span class="badge badge-purple" v-if="message.sender_id===user.id">Sender</span>
+                                    <span class="badge badge-primary" v-else>Recipient</span>
+                                </div>
+
+                                <div class="btn-group" v-else>
+
+                                    <span class="badge badge-primary" v-if="message.sender_id===user.id">Recipient</span>
+                                    <span class="badge badge-purple" v-else>Sender</span>
+
+                                </div>
+
                             </div>
 
 
@@ -150,6 +163,8 @@
                     return [];
 
                 return this.prepareMessages.filter(item => item.recipient_id === this.selected_chat_id || item.sender_id === this.selected_chat_id)
+
+
             },
             prepareMessages() {
                 return this.listing.messages
@@ -222,13 +237,15 @@
             sendMessage() {
                 axios.post("/listing/messages/send", {
                     "message": this.message,
-                    "listing_id": this.listing.id
+                    "listing_id": this.listing.id,
+                    'recipient_id':this.selected_chat_id,
+                    'user_id':this.user.id
                 }).then(resp => {
 
                     this.listing.messages.push({
                         "message": this.message,
                         "sender_id": this.user.id,
-                        "recipient_id": this.listing.user_id,
+                        "recipient_id": this.selected_chat_id,
                         "created_at": new Date()
                     })
                     this.message = null;

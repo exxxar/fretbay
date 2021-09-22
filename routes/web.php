@@ -241,6 +241,10 @@ Route::group(["prefix" => "listing", "middleware" => ["auth"]], function () {
 Route::get('/notifications/get', 'NotificationController@index')->middleware(['auth']);
 
 Route::group(['middleware' => ['auth', 'role:customer'], "prefix" => "customer"], function () {
+
+    Route::post('/listing/quotes/accept', 'ListingController@acceptQuote');
+    Route::post('/listing/quotes/decline', 'ListingController@declineQuote');
+
     Route::group(["prefix" => "profile"], function () {
         Route::view("/", "desktop.pages.profile.customer.index")->name("customer-account");
         Route::view("/listings", "desktop.pages.profile.customer.listings")->name("customer.listings");

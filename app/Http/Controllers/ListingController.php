@@ -374,7 +374,7 @@ class ListingController extends Controller
             /*'additional_info',*/
             'type_of_transport' => "required",
             'quote_validity' => "required",
-            'formula' => "required",
+            //'formula' => "required",
             'status' => "required",
             'currency' => "required",
             'listing_id' => "required",
@@ -388,7 +388,7 @@ class ListingController extends Controller
             ->orderBy("created_at", "desc")
             ->first();
 
-        if (!is_null($latestQuote)) // if ($latestQuote->price < $request->price)
+    /*    if (!is_null($latestQuote)) // if ($latestQuote->price < $request->price)
         {
 
             event(new NotificationEvent(
@@ -398,7 +398,7 @@ class ListingController extends Controller
                 $latestQuote->user_id));
 
             return response()->noContent();
-        }
+        }*/
 
         $quote = Quote::create($request->all());
         $quote->valid_until_date = Carbon::now()->addHour($hours[$request->quote_validity ?? 3]);
@@ -484,12 +484,74 @@ class ListingController extends Controller
 
 
     }
+    public function acceptQuote(Request $request){
+
+        $request->validate([
+            "listing_id"=>"required",
+            "quote_id"=>"required"
+        ]);
+
+        $user_id = Auth::user()->id;
+
+        $latestQuote = Quote::where("listing_id", $request->listing_id)
+            ->where("id", $request->quote_id)
+            ->first();
+
+        $latestQuote->status = 2;
+        $latestQuote->save();
+
+        event(new NotificationEvent(
+            "#accept quote-" . $request->quote_id,
+            "Accept quote #$request->quote_id!",
+            NotificationType::Info,
+            $latestQuote->user_id));
+
+        event(new NotificationEvent(
+            "#accept quote-" . $request->quote_id,
+            "Accept quote #$request->quote_id!",
+            NotificationType::Info,
+            $user_id));
+
+
+        return response()->noContent();
+    }
+
+    public function declineQuote(Request $request){
+        $request->validate([
+            "listing_id"=>"required",
+            "quote_id"=>"required"
+        ]);
+
+        $user_id = Auth::user()->id;
+
+        $latestQuote = Quote::where("listing_id", $request->listing_id)
+            ->where("id", $request->quote_id)
+            ->first();
+
+        $latestQuote->status = 3;
+        $latestQuote->save();
+
+        event(new NotificationEvent(
+            "#Decline quote-" . $request->quote_id,
+            "Decline quote #$request->quote_id!",
+            NotificationType::Info,
+            $latestQuote->user_id));
+
+        event(new NotificationEvent(
+            "#Decline quote-" . $request->quote_id,
+            "Decline quote #$request->quote_id!",
+            NotificationType::Info,
+            $user_id));
+
+        return response()->noContent();
+    }
 
     public function sendMessage(Request $request)
     {
 
         $request->validate([
             'listing_id' => 'required',
+            'recipient_id'=>'required',
             'message' => 'required'
         ]);
 
@@ -514,8 +576,20 @@ class ListingController extends Controller
             "message" => $message,
             "listing_id" => $listing->id,
             "sender_id" => $sender_id,
-            "recipient_id" => $listing->user_id
+            "recipient_id" => $request->recipient_id
         ]);
+
+        event(new NotificationEvent(
+            "#message-" . $sender_id,
+            "New message to user #".$listing->recipient_id,
+            NotificationType::Info,
+            $sender_id));
+
+        event(new NotificationEvent(
+            "#message-" . $sender_id,
+            "New message to user #".$listing->recipient_id,
+            NotificationType::Info,
+            $listing->recipient_id));
 
         return response()->noContent();
 

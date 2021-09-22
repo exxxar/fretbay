@@ -34,7 +34,7 @@
                        role="tab" aria-controls="orders" aria-selected="false"><i class="fas fa-truck"></i>
                         Orders</a>
                 </li>
-                <li class="nav-item profile-nav-item">
+                <li class="nav-item profile-nav-item" @click="loadNotifications">
                     <a class="btn btn-outline-primary d-block" id="notifications-tab" data-toggle="tab"
                        href="#notifications" role="tab" aria-controls="notifications" aria-selected="false"><i
                         class="far fa-bell"></i> Notifications</a>
@@ -169,6 +169,10 @@
             loadOrders()
             {
                 this.$store.dispatch('getOrders');
+            },
+
+            loadNotifications(){
+                this.$store.dispatch('loadNotifications')
             },
         }
     }

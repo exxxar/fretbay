@@ -3,7 +3,7 @@
         <div class="main-body">
 
             <vue-custom-scrollbar class="w-100 customer-menu mt-2" :settings="settingsScroll">
-                <ul class="nav nav-tabs mb-2 w-100 d-flex flex-nowrap " >
+                <ul class="nav nav-tabs mb-2 w-100 d-flex flex-nowrap ">
                     <li class="nav-item profile-nav-item" @click="loadActiveListing">
                         <a class="btn btn-outline-primary d-block active" id="listings-active-tab" data-toggle="tab"
                            href="#listings-active" role="tab"
@@ -40,18 +40,23 @@
                     </li>
 
                     <li class="nav-item profile-nav-item" @click="loadActiveOrders">
-                        <a class="btn btn-outline-primary d-block" id="orders-active-tab" data-toggle="tab" href="#orders-active"
+                        <a class="btn btn-outline-primary d-block" id="orders-active-tab" data-toggle="tab"
+                           href="#orders-active"
                            role="tab"
-                           aria-controls="orders-active" aria-selected="true"><i class="far fa-handshake"></i>Active Orders</a>
+                           aria-controls="orders-active" aria-selected="true"><i class="far fa-handshake"></i>Active
+                            Orders</a>
                     </li>
 
                     <li class="nav-item profile-nav-item" @click="loadArchiveOrders">
-                        <a class="btn btn-outline-primary d-block" id="orders-archive-tab" data-toggle="tab" href="#orders-archive"
+                        <a class="btn btn-outline-primary d-block" id="orders-archive-tab" data-toggle="tab"
+                           href="#orders-archive"
                            role="tab"
-                           aria-controls="orders-archive" aria-selected="true"><i class="fas fa-archive"></i>Archive Orders</a>
+                           aria-controls="orders-archive" aria-selected="true"><i class="fas fa-archive"></i>Archive
+                            Orders</a>
                     </li>
 
-                    <li class="nav-item profile-nav-item">
+                    <li class="nav-item profile-nav-item"
+                        @click="loadNotifications">
                         <a class="btn btn-outline-primary d-block" id="notifications-tab" data-toggle="tab"
                            href="#notifications" role="tab"
                            aria-controls="notifications" aria-selected="true"><i class="far fa-flag"></i> Notifications
@@ -367,8 +372,8 @@
 
             fullAddress() {
 
-                return this.profile.postal  + "," +
-                    +this.profile.country  + "," +
+                return this.profile.postal + "," +
+                    +this.profile.country + "," +
                     +this.profile.city;
 
             },
@@ -387,23 +392,28 @@
             }
         },
         mounted() {
-            this.$nextTick(()=>{
+
+
+            this.$nextTick(() => {
                 this.loadActiveListing()
             })
 
-            $(document).on("click",".nav-item", ()=>{
-                window.scroll(0,0)
+            $(document).on("click", ".nav-item", () => {
+                window.scroll(0, 0)
             })
         },
         methods: {
 
+            loadNotifications(){
+                this.$store.dispatch('loadNotifications')
+            },
             loadActiveOrders() {
                 this.$store.dispatch('getActiveOrders');
             },
             loadArchiveOrders() {
                 this.$store.dispatch('getArchiveOrders');
             },
-            loadRemovedListing(){
+            loadRemovedListing() {
                 this.$store.dispatch('clearListing')
                 this.$store.dispatch('getRemovedListings');
             },

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\NotificationType;
+use App\Events\NotificationEvent;
 use App\Http\Requests\VehicleStoreRequest;
 use App\Http\Requests\VehicleUpdateRequest;
 use App\Models\Profile;
@@ -55,6 +57,13 @@ class TransporterController extends Controller
         $user->email = $request->email ?? $user->email;
         $user->save();
 //        return redirect()->back()->withErrors(["success"]);
+
+        event(new NotificationEvent(
+            "#account-" . $user->id,
+            "Update user account",
+            NotificationType::Info,
+            Auth::user()->id));
+
         return response()->json([
             'user' => $user,
             'profile' => $profile

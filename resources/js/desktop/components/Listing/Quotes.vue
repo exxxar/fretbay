@@ -1,5 +1,5 @@
 <template>
-    <div class="row pb-5 d-flex justify-content-center">
+    <div class="row pb-5 d-flex justify-content-center" v-if="user&&listing">
 
         <div class="col-12">
             <button class="btn btn-link" @click="onlyActual = !onlyActual">
@@ -7,7 +7,9 @@
                 <span v-if="!onlyActual"><i class="fas fa-sort-up"></i> All bids ({{filteredQuotes.length}})</span>
             </button>
         </div>
-        <div class="col-lg-6 mb-9 mb-lg-0 quote-list" v-if="filteredQuotes.length>0">
+        <div class="col-12 mb-lg-0 quote-list"
+             v-bind:class="{'col-lg-6 mb-9':user.is_transporter}"
+             v-if="filteredQuotes.length>0">
 
             <div class="card mb-2" v-for="(item,index) in filteredQuotes"
                  @click="form.quote = item"
@@ -51,9 +53,6 @@
                                v-if="user.id===item.user_id&&item.status===0"
                                @click="removeQuote(item.id)"
                             ><small>Remove a quote</small></a>
-                            <!-- <a href="#" class="btn btn-primary">Remove a quote</a>-->
-                            <!--     <button class="btn btn-outline-warning w-100">Remove a quote</button>
-                               -->
 
 
                         </div>
@@ -61,8 +60,8 @@
 
                 </div>
                 <div class="card-footer" v-if="user.id===listing.user_id">
-                    <button class="btn btn-primary" :disabled="item.status>0">Accept</button>
-                    <button class="btn btn-danger" :disabled="item.status>0">Decline</button>
+                    <button class="btn btn-primary"   @click="acceptQuote(item.id)">Accept</button>
+                    <button class="btn btn-danger"   @click="declineQuote(item.id)">Decline</button>
                     <!--<button class="btn btn-outline-primary">Message to Transporter</button>-->
                     <hr>
                     <form v-on:submit.prevent="sendMessage"
@@ -358,6 +357,26 @@
                         sender_id: this.user.id
                     })
                     this.form.message = null;
+                })
+            },
+            acceptQuote(id){
+                axios.post('/customer/listing/quotes/accept', {
+                    listing_id: this.listing.id,
+                    quote_id: id
+                }).then(resp => {
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 1000)
+                })
+            },
+            declineQuote(id){
+                axios.post('/customer/listing/quotes/decline', {
+                    listing_id: this.listing.id,
+                    quote_id: id
+                }).then(resp => {
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 1000)
                 })
             },
             removeQuote(id) {
