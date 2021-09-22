@@ -180,7 +180,7 @@
 
                     </div>
 
-                    <a class="btn btn-outline-primary" v-if="user.is_transporter||user.id===listing.user_id"
+                    <a class="btn btn-outline-primary" v-if="(user.is_transporter||user.id===listing.user_id)&&details"
                        :href="'/listing/'+listing.id"
 
                     > <i
@@ -263,7 +263,16 @@
     import VueGallerySlideshow from 'vue-gallery-slideshow'
 
     export default {
-        props: ["listing"],
+        props: {
+            listing: Object,
+            details: {
+                type: Boolean,
+                required: false,
+                default: true
+            },
+        },
+
+
         components: {
             VueSlickCarousel, VueGallerySlideshow
         },

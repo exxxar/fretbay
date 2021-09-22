@@ -1,52 +1,36 @@
 <template>
     <main id="content">
         <!-- Description Section -->
-        <div class="container space-1 pt-2 pb-2">
+        <div class="container space-1 pt-5 pb-2">
             <div class="row ">
                 <div class="col-12">
+
+                    <listing-item-component :listing="listing" :details="false" v-if="listing"/>
+
+                    <div id="map" v-if="showMap" style="width:100%; height:500px;"></div>
 
                     <vue-custom-scrollbar class="w-100 listing-menu mt-2" :settings="settingsScroll">
 
                         <ul class="nav nav-tabs w-100 d-flex flex-nowrap" id="myTab" role="tablist">
-                            <li class="nav-item listing-nav-item">
-                                <a class="btn btn-outline-primary d-block active" id="home-tab" data-toggle="tab"
-                                   href="#home" role="tab"
-                                   aria-controls="home" aria-selected="true"><i class="fas fa-info-circle"></i> Info</a>
-                            </li>
 
-                            <li class="nav-item listing-nav-item"
-                                @click="initMap"
-                                v-if="user.is_transporter||user.id===listing.user_id">
-                                <a class="btn btn-outline-primary d-block" id="maps-tab" data-toggle="tab"
-                                   href="#maps" role="tab"
-                                   aria-controls="maps" aria-selected="true"><i class="fas fa-map-marked-alt"></i> Map</a>
-                            </li>
-
-
-                            <li class="nav-item listing-nav-item" v-if="user.is_transporter||user.id===listing.user_id">
-                                <a class="btn btn-outline-primary d-block" id="profile-tab" data-toggle="tab"
-                                   href="#profile" role="tab"
-                                   aria-controls="profile" aria-selected="false"><i class="fas fa-gavel"></i> Quotes</a>
+                            <li class="nav-item listing-nav-item " v-if="user.is_transporter||user.id===listing.user_id">
+                                <a class="btn btn-outline-primary d-block active" id="quotes-tab" data-toggle="tab"
+                                   data-target="#quotes"
+                                   aria-controls="quotes" aria-selected="true"><i class="fas fa-gavel"></i> Quotes</a>
                             </li>
                             <li class="nav-item listing-nav-item" v-if="user.is_transporter||user.id===listing.user_id"
                             @click="loadListing"
                             >
                                 <a class="btn btn-outline-primary d-block" id="contact-tab" data-toggle="tab"
-                                   href="#contact" role="tab"
+                                   data-target="#messages"
                                    aria-controls="contact" aria-selected="false"><i class="fas fa-comments"></i> Messages</a>
                             </li>
                         </ul>
 
                     </vue-custom-scrollbar>
                     <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                            <listing-item-component :listing="listing" v-if="listing"/>
 
-                        </div>
-                        <div class="tab-pane fade"  id="maps" role="tabpanel" aria-labelledby="maps-tab" v-if="user.is_transporter||user.id===listing.user_id">
-                            <div id="map" v-if="showMap" style="width:100%; height:500px;"></div>
-                        </div>
-                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab" v-if="user.is_transporter||user.id===listing.user_id">
+                        <div class="tab-pane fade show active" id="quotes" role="tabpanel" aria-labelledby="quotes-tab" v-if="user.is_transporter||user.id===listing.user_id">
                             <quotes-component :listing="listing" v-if="listing"/>
                         </div>
                         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab" v-if="user.is_transporter||user.id===listing.user_id">
@@ -92,7 +76,11 @@
 
     export default {
         name: "MapboxMap",
-        props: ["listing_id"],
+        props: {
+
+            listing_id: Number
+
+        },
         components: {
             vueCustomScrollbar, MglMap, MglMarker
         },
@@ -154,7 +142,7 @@
                 axios.get(`/api/listing/${this.listing_id}`).then(resp => {
                     this.listing = resp.data
 
-                   this.createMap();
+                   this.initMap();
 
 
                 })

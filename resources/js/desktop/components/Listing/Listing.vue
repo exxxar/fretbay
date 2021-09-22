@@ -27,7 +27,8 @@
     export default {
         computed: {
             listings: function () {
-                return this.$store.getters.listings;
+                return this
+                    .$store.getters.listings;
             },
         },
         methods:{
