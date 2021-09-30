@@ -40,6 +40,7 @@ const actions = {
     nextListingPage({state, commit}, page) {
         commit('setListingCurrentPage', page);
     },
+
     async getRemovedListings({state, commit}) {
         return axios
             .get(`/listing/removed?page=${state.paginate.current_page || 1}`)

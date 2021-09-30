@@ -61,11 +61,13 @@
                 </div>
                 <div class="card-footer" v-if="user.id===listing.user_id">
                     <button class="btn btn-primary"   @click="acceptQuote(item.id)">Accept</button>
-                    <button class="btn btn-danger"   @click="declineQuote(item.id)">Decline</button>
+                    <button class="btn btn-danger" data-toggle="modal" data-target="#declineMessage">Decline</button>
                     <!--<button class="btn btn-outline-primary">Message to Transporter</button>-->
                     <hr>
+
                     <form v-on:submit.prevent="sendMessage"
                           v-if="form.quote">
+                        <h6>Fast message for Transporter</h6>
                         <div v-if="form.quote.id===item.id" class="row">
                             <div class="col-sm-8">
                                 <input type="text" class="form-control" placeholder="Your short message" maxlength="255"
@@ -162,6 +164,30 @@
         </div>
 
 
+        <!-- Modal -->
+        <div class="modal fade" id="declineMessage" tabindex="-1" role="dialog" aria-labelledby="declineMessageLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="declineMessageLabel">Decline message</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <select class="form-control" name="" id="" v-model="declineMessage">
+                            <option :value="message" v-for="message in declineMessages">{{message}}</option>
+                        </select>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" @click="declineQuote()">Send decline</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </template>
 <script>
@@ -214,6 +240,13 @@
         },
         data() {
             return {
+                declineMessage:'',
+                declineMessages: [
+                    "Message 1",
+                    "Message 2",
+                    "Message 3",
+                    "Message 4"
+                ],
                 form: {
                     quote: null,
                     message: '',
@@ -225,11 +258,6 @@
                 type_of_transport: 2,
                 selected_formula: [],
                 quote_validity_list: [
-                    /*   {
-                           id: 1,
-                           title: '6 hours'
-
-                       },*/
                     {
                         id: 2,
                         title: '12 hours'
@@ -344,7 +372,9 @@
             sendMessage(index) {
                 axios.post("/listing/messages/send", {
                     "message": this.form.message,
-                    "listing_id": this.listing.id
+                    "listing_id": this.listing.id,
+                    'recipient_id': this.form.quote.user_id,
+                    'user_id': this.user.id
                 }).then(resp => {
 
                     this.listing.messages.push({
@@ -369,15 +399,23 @@
                     }, 1000)
                 })
             },
-            declineQuote(id){
+            declineQuote(){
+                let id = this.form.quote.id
                 axios.post('/customer/listing/quotes/decline', {
                     listing_id: this.listing.id,
                     quote_id: id
                 }).then(resp => {
-                    setTimeout(() => {
+         /*           setTimeout(() => {
                         window.location.reload();
-                    }, 1000)
+                    }, 1000)*/
                 })
+
+                axios.post("/listing/messages/send", {
+                    "message": this.declineMessage,
+                    "listing_id": this.listing.id,
+                    'recipient_id': this.form.quote.user_id,
+                    'user_id': this.user.id
+                });
             },
             removeQuote(id) {
                 axios.post('/transporter/listing/quotes/remove', {

@@ -8,12 +8,15 @@
 
                     <!-- Logo -->
                     <div class="u-header__navbar-brand-wrapper d-flex d-sm-block justify-content-sm-center "
-                        v-bind:class="{'justify-content-end':!user,'justify-content-center':user}"
+                         v-bind:class="{'justify-content-end':!user,'justify-content-center':user}"
                     >
-                        <a @click="loading=true" class="navbar-brand u-header__navbar-brand p-2" href="/" aria-label="Space" style="max-width: 100px;">
-                            <img class="u-header__navbar-brand-default w-100" v-if="!loading" style="object-fit: contain; height:50px;"
+                        <a @click="loading=true" class="navbar-brand u-header__navbar-brand p-2" href="/"
+                           aria-label="Space" style="max-width: 100px;">
+                            <img class="u-header__navbar-brand-default w-100" v-if="!loading"
+                                 style="object-fit: contain; height:50px;"
                                  v-lazy="'/assets/img/logo.png'" alt="Logo">
-                            <img class="u-header__navbar-brand-mobile w-100" v-if="!loading" style="object-fit: contain; height:50px;"
+                            <img class="u-header__navbar-brand-mobile w-100" v-if="!loading"
+                                 style="object-fit: contain; height:50px;"
                                  v-lazy="'/assets/img/logo.png'" alt="Logo">
 
                             <span v-if="loading" class="spinner-border spinner-border-sm" role="status"
@@ -50,7 +53,8 @@
 
                             <!--  Find loads -->
                             <li class="nav-item hs-has-mega-menu u-header__nav-item" v-if="user">
-                                <a href="/find-loads" class="nav-link u-header__nav-link w-100 " v-if="user.is_transporter">
+                                <a href="/find-loads" class="nav-link u-header__nav-link w-100 "
+                                   v-if="user.is_transporter">
                                     Find loads
                                 </a>
                             </li>
@@ -63,26 +67,32 @@
                                     Helps
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item cursor-pointer" href="/find-loads" v-if="!user">I am a transporter</a>
-                                    <a class="dropdown-item cursor-pointer" href="/find-transporter">Search for a transporter</a>
+                                    <a class="dropdown-item cursor-pointer" href="/find-loads" v-if="!user">I am a
+                                        transporter</a>
+                                    <a class="dropdown-item cursor-pointer" href="/find-transporter">Search for a
+                                        transporter</a>
                                     <a class="dropdown-item cursor-pointer" href="/how-it-works">How does it work?</a>
                                     <a class="dropdown-item cursor-pointer" href="/fequently-asked-questions">F.A.Q.</a>
-                            <!--        <a class="dropdown-item" href="/recruitment">Recruitment</a>-->
-                                 <!--   <a class="dropdown-item cursor-pointer" href="/contact-us">Contact Us</a>-->
+                                    <!--        <a class="dropdown-item" href="/recruitment">Recruitment</a>-->
+                                    <!--   <a class="dropdown-item cursor-pointer" href="/contact-us">Contact Us</a>-->
                                     <a class="dropdown-item cursor-pointer" href="/privacy">Privacy</a>
                                 </div>
                             </li>
 
 
-                            <li class="nav-item dropdown u-header__nav-item-btn p-0 mb-1 mb-sm-0 mr-0 mr-sm-1" v-if="!user">
-                                <a class="btn btn-primary dropdown-toggle text-white w-100 " href="#" id="signupDropdown"
+                            <li class="nav-item dropdown u-header__nav-item-btn p-0 mb-1 mb-sm-0 mr-0 mr-sm-1"
+                                v-if="!user">
+                                <a class="btn btn-primary dropdown-toggle text-white w-100 " href="#"
+                                   id="signupDropdown"
                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     SignUp
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="signupDropdown">
-                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#signUp-transporter">I am
+                                    <a class="dropdown-item cursor-pointer" data-toggle="modal"
+                                       data-target="#signUp-transporter">I am
                                         a transporter</a>
-                                    <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#signUp-customer">I am
+                                    <a class="dropdown-item cursor-pointer" data-toggle="modal"
+                                       data-target="#signUp-customer">I am
                                         looking for transporter</a>
                                 </div>
                             </li>
@@ -124,7 +134,8 @@
                                       method="get"
                                       class="js-focus-state input-group form u-header__search u-unfold--css-animation u-unfold--hidden fadeOut"
                                       style="animation-duration: 300ms;">
-                                    <input class="form-control form__input" type="search" name="search" placeholder="Search inventory" >
+                                    <input class="form-control form__input" type="search" name="search"
+                                           placeholder="Search inventory">
                                     <div class="input-group-addon u-header__search-addon p-0">
                                         <button class="btn btn-primary u-header__search-addon-btn" type="submit">
                                             <i class="fa fa-search"></i>
@@ -168,7 +179,7 @@
         },
         data() {
             return {
-                loading:false,
+                loading: false,
                 searchText: null,
                 langOptions: [
                     {
@@ -226,7 +237,6 @@
             if (this.user)
                 pusher.subscribe('notification-event-channel-' + this.user.id)
                     .bind('notification-event', (data) => {
-
                         this.sendMessage(data.event.description, ["success", "warning", "error"][data.event.type])
                     })
                     .bind('notification-quote-event', (data) => {

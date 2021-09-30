@@ -4,7 +4,12 @@
 
 
             <div class="counters">
-                <span class="mr-5 text-bold">№{{preparedId}}</span>
+                <a class="btn btn-link m-0 p-0" v-if="(user.is_transporter||user.id===listing.user_id)&&details"
+                   :href="'/listing/'+listing.id"
+
+                > <span class="mr-5 text-bold">№{{preparedId}}</span>
+                </a>
+                <span class="mr-5 text-bold" v-else>№{{preparedId}}</span>
                 <span class="mr-2">  {{ this.listing.message_count}}
                 <i class="fas fa-envelope"></i></span>
 
@@ -33,13 +38,21 @@
         <div class="card-body d-md-flex justify-content-between align-items-center py-1 px-1 flex-wrap">
 
             <div class="media align-items-center mb-1 mb-md-0">
+
+
                 <a class="u-md-avatar custom-avatar mr-3" href="#" v-if="listing.images.length>0">
                     <img class="img-fluid rounded-circle" v-lazy="listing.images[0].path"
                          :alt="listing.images[0].name">
                 </a>
                 <div class="media-body text-nowrap">
                     <h3 class="h5 mb-0">
-                        {{prepareLangTitle(listing.category.title)||"Empty"}}
+                        <a class="btn btn-link"
+                           v-if="(user.is_transporter||user.id===listing.user_id)&&details"
+                           :href="'/listing/'+listing.id"
+
+                        > {{prepareLangTitle(listing.category.title)||"Empty"}}
+                        </a>
+                        <span v-else>      {{prepareLangTitle(listing.category.title)||"Empty"}}</span>
                         <span v-if="listing.category.mode ==='calculator'">
                                                   {{listing.summary_volume}}  <em
                             class="volume-unit text-bold">m<sup>3</sup></em>
@@ -79,7 +92,7 @@
                     <a class="d-flex align-items-center text-secondary" href="#">
 
 
-                        {{listing.place_of_loading.place_name}}
+                        <strong class="mr-2">{{listing.place_of_loading.postal}},</strong> {{listing.place_of_loading.place_name}}
 
                     </a>
 
@@ -117,7 +130,7 @@
                     <a class="d-flex align-items-center text-secondary" href="#">
 
 
-                        {{listing.place_of_delivery.place_name}}
+                        <strong class="mr-2"> {{listing.place_of_delivery.postal}},</strong> {{listing.place_of_delivery.place_name}}
                     </a>
 
                     <small> Delivered between
@@ -142,7 +155,8 @@
 
                 <div class="col-12 p-2" v-if="images.length>0">
                     <VueSlickCarousel v-bind="settings">
-                        <div :key="index" v-for="(item, index) in images" class="gallery-img p-2" @click="imageIndex=index">
+                        <div :key="index" v-for="(item, index) in images" class="gallery-img p-2"
+                             @click="imageIndex=index">
                             <div class="card" style="max-width: 150px;">
                                 <div class="card-body p-2">
                                     <img v-lazy="item" alt="" class="w-100">
@@ -159,12 +173,12 @@
                 </div>
 
 
-                <div class="col-12 pl-0 pr-0 d-flex justify-content-between" >
+                <div class="col-12 pl-0 pr-0 d-flex justify-content-between">
 
                     <div class="btn-group" v-if="listing.user_id===user.id">
                         <button class="btn btn-outline-danger" v-if="!listing.deleted_at"
-                            @click="removeListing"
-                            ><i
+                                @click="removeListing"
+                        ><i
                             class="far fa-trash-alt"></i>
                         </button>
                         <button class="btn btn-outline-danger"
@@ -362,18 +376,18 @@
 
         },
         methods: {
-            removeListing(){
-                axios.delete("/listing/"+this.listing.id).then(resp => {
+            removeListing() {
+                axios.delete("/listing/" + this.listing.id).then(resp => {
                     this.$emit("update")
                 });
             },
-            archiveListing(){
-                axios.get("/listing/archive/"+this.listing.id).then(resp => {
+            archiveListing() {
+                axios.get("/listing/archive/" + this.listing.id).then(resp => {
                     this.$emit("update")
                 });
             },
-            restoreListing(){
-                axios.get("/listing/restore/"+this.listing.id).then(resp => {
+            restoreListing() {
+                axios.get("/listing/restore/" + this.listing.id).then(resp => {
                     this.$emit("update")
                 });
             },
@@ -434,8 +448,7 @@
         height: 100% !important;
     }
 
-    .slick-slide
-    {
+    .slick-slide {
         .gallery-img {
             img {
                 display: block;

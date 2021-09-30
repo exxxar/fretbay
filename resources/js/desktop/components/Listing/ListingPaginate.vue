@@ -51,7 +51,7 @@
             }
         },
         mounted() {
-            this.$store.dispatch("getListings")
+           /// this.$store.dispatch("getListings")
             //this.goToPage(1)
         },
         methods: {

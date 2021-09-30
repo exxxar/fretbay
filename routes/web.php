@@ -232,6 +232,9 @@ Route::group(["prefix" => "listing", "middleware" => ["auth"]], function () {
     Route::get("/{id}", "ListingController@show")->where(["id" => "[0-9]+"])->name("desktop.listing");
     Route::get("/direction/{id}/{direction?}", "ListingController@goToListing")->name("desktop.direction");
     Route::post('/messages/send', 'ListingController@sendMessage');
+    Route::get('/messages/{id}', 'ListingController@loadMessages');
+    Route::delete('/messages/remove/{id}', 'ListingController@removeMessage');
+
     Route::get('/favorites/get', 'FavoriteController@index')->middleware(['auth', 'role:transporter']);
     Route::post('/favorites/add', 'FavoriteController@store')->middleware(['auth', 'role:transporter']);
     Route::post('/favorites/remove', 'FavoriteController@destroy')->middleware(['auth', 'role:transporter']);

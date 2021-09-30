@@ -5,35 +5,37 @@
             <div class="row ">
                 <div class="col-12">
 
+
                     <listing-item-component :listing="listing" :details="false" v-if="listing"/>
 
-                    <div id="map" v-if="showMap" style="width:100%; height:500px;"></div>
+                    <div id="map" v-if="showMap" style="width:100%; height:250px;"></div>
 
-                    <vue-custom-scrollbar class="w-100 listing-menu mt-2" :settings="settingsScroll">
 
-                        <ul class="nav nav-tabs w-100 d-flex flex-nowrap" id="myTab" role="tablist">
-
-                            <li class="nav-item listing-nav-item " v-if="user.is_transporter||user.id===listing.user_id">
-                                <a class="btn btn-outline-primary d-block active" id="quotes-tab" data-toggle="tab"
-                                   data-target="#quotes"
-                                   aria-controls="quotes" aria-selected="true"><i class="fas fa-gavel"></i> Quotes</a>
-                            </li>
-                            <li class="nav-item listing-nav-item" v-if="user.is_transporter||user.id===listing.user_id"
-                            @click="loadListing"
+                    <div class="row mt-5 d-flex justify-content-start">
+                        <div class="col-lg-3 col-sm-6 col-12 mb-2" v-if="user.is_transporter||user.id===listing.user_id">
+                            <button class="btn btn-outline-primary w-100"
+                                    v-bind:class="{'active':activePart===0}"
+                                    @click="activePart=0"
                             >
-                                <a class="btn btn-outline-primary d-block" id="contact-tab" data-toggle="tab"
-                                   data-target="#messages"
-                                   aria-controls="contact" aria-selected="false"><i class="fas fa-comments"></i> Messages</a>
-                            </li>
-                        </ul>
+                                Quotes
+                            </button>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 col-12" v-if="user.is_transporter||user.id===listing.user_id">
+                            <button class="btn btn-outline-primary w-100"
+                                    v-bind:class="{'active':activePart===1}"
+                                    @click="activePart=1"
+                            >
+                                Messages
+                            </button>
+                        </div>
+                    </div>
 
-                    </vue-custom-scrollbar>
-                    <div class="tab-content" id="myTabContent">
 
-                        <div class="tab-pane fade show active" id="quotes" role="tabpanel" aria-labelledby="quotes-tab" v-if="user.is_transporter||user.id===listing.user_id">
+                    <div class="row">
+                        <div class="col-12" v-if="activePart===0">
                             <quotes-component :listing="listing" v-if="listing"/>
                         </div>
-                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab" v-if="user.is_transporter||user.id===listing.user_id">
+                        <div class="col-12" v-if="activePart===1">
                             <chat-component :listing="listing" v-if="listing"/>
                         </div>
                     </div>
@@ -71,14 +73,14 @@
     import "vue-custom-scrollbar/dist/vueScrollbar.css"
 
     import Mapbox from "mapbox-gl";
-    import mapboxgl  from "mapbox-gl";
-    import { MglMap, MglMarker } from "vue-mapbox";
+    import mapboxgl from "mapbox-gl";
+    import {MglMap, MglMarker} from "vue-mapbox";
 
     export default {
         name: "MapboxMap",
         props: {
 
-            listing_id: Number
+            listing_id: String
 
         },
         components: {
@@ -87,13 +89,14 @@
         data() {
 
             return {
-                showMap:true,
+                activePart: 0,
+                showMap: true,
                 accessToken: "pk.eyJ1IjoiaW5maW5pdHlzb3VsMTMiLCJhIjoiY2twZnYxNDFrMjl4czJ5b2dlOWphajVvMSJ9.bCoFds-RVlD1TYOwilGfAg", // your access token. Needed if you using Mapbox maps
                 mapStyle: 'mapbox://styles/mapbox/outdoors-v11', // your map style
                 listing: null,
                 center: [-93.1247, 44.9323], // St. Paul
                 zoom: 10.5,
-                map:null,
+                map: null,
                 settingsScroll: {
                     suppressScrollY: false,
                     suppressScrollX: false,
@@ -117,32 +120,43 @@
 
             this.loadListing();
 
+            eventBus.$on("updateListing", () => {
+                this.loadListing().then(() => {
+                    /*this.$nextTick(() => {
+                        document.querySelector('.msg_history').scrollTo(0, document.querySelector('.msg_history').scrollHeight);
+                    })*/
+                })
+
+
+            })
+
             this.mapbox = Mapbox;
 
-            $(document).on("click",".nav-item", ()=>{
-                window.scroll(0,0)
+            $(document).on("click", ".nav-item", () => {
+                window.scroll(0, 0)
 
                 window.resizeTo(100, 100)
             })
         },
         methods: {
 
-            initMap(){
+            initMap() {
                 this.showMap = false;
 
-                this.$nextTick(()=>{
+                this.$nextTick(() => {
                     this.showMap = true
                 })
 
-                setTimeout(()=>{
+                setTimeout(() => {
                     this.createMap();
                 }, 1000)
             },
+
             loadListing() {
-                axios.get(`/api/listing/${this.listing_id}`).then(resp => {
+                return axios.get(`/api/listing/${this.listing_id}`).then(resp => {
                     this.listing = resp.data
 
-                   this.initMap();
+                    this.initMap();
 
 
                 })
@@ -446,7 +460,7 @@
 
 
     #map {
-        height: 500px;
+        height: 250px;
         width: 100%;
         margin: 0 auto;
         border: none;
@@ -508,7 +522,7 @@
     }
 
     .mapboxgl-canvas {
-        width:100% !important;
-        height: 500px !important;
+        width: 100% !important;
+        height: 250px !important;
     }
 </style>

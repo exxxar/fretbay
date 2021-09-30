@@ -45,7 +45,7 @@ class ListingController extends Controller
     {
         $listings = Listing::with(['category', 'subcategory', 'thing', 'messages', 'quotes'])
             ->where('is_active', true)
-            ->where("user_id",   Auth::user()->id)
+            ->where("user_id", Auth::user()->id)
             ->orderByDesc('created_at')
             ->paginate(15);
 
@@ -59,7 +59,7 @@ class ListingController extends Controller
 
         $listings = Listing::with(['category', 'subcategory', 'thing', 'messages', 'quotes'])
             ->where('is_active', false)
-            ->where("user_id",   Auth::user()->id)
+            ->where("user_id", Auth::user()->id)
             ->orderByDesc('created_at')
             ->paginate(15);
 
@@ -74,7 +74,7 @@ class ListingController extends Controller
         $listings = Listing::with(['category', 'subcategory', 'thing', 'messages', 'quotes'])
             ->withTrashed()
             ->whereNotNull("deleted_at")
-            ->where("user_id",   Auth::user()->id)
+            ->where("user_id", Auth::user()->id)
             ->orderByDesc('deleted_at')
             ->paginate(15);
 
@@ -83,12 +83,13 @@ class ListingController extends Controller
         ]);
     }
 
-    public function addToArchive($id){
+    public function addToArchive($id)
+    {
 
         $user_id = Auth::user()->id;
 
-        $listing = Listing::where("id",$id)
-            ->where("user_id",$user_id)
+        $listing = Listing::where("id", $id)
+            ->where("user_id", $user_id)
             ->first();
 
         if (is_null($listing))
@@ -239,7 +240,7 @@ class ListingController extends Controller
                 $place_of_delivery->center[1] ?? 0
             ),
 
-            'is_active'=>true,
+            'is_active' => true,
             'expiration_date' => Carbon::createFromTimestamp($request->get('unshipping_date_to')),
             'category_id' => $request->get('category_id') ?? null,
             'subcategory_id' => $request->get('subcategory_id') ?? null,
@@ -338,7 +339,7 @@ class ListingController extends Controller
      */
     public function destroy($id)
     {
-        Listing::where("id",$id)->first()->delete();
+        Listing::where("id", $id)->first()->delete();
 
         event(new NotificationEvent(
             "#listing-" . $id,
@@ -353,7 +354,7 @@ class ListingController extends Controller
     public function restore($id)
     {
         Listing::withTrashed()
-            ->where("id",$id)
+            ->where("id", $id)
             ->first()
             ->restore();
 
@@ -388,17 +389,17 @@ class ListingController extends Controller
             ->orderBy("created_at", "desc")
             ->first();
 
-    /*    if (!is_null($latestQuote)) // if ($latestQuote->price < $request->price)
-        {
+        /*    if (!is_null($latestQuote)) // if ($latestQuote->price < $request->price)
+            {
 
-            event(new NotificationEvent(
-                "#quote-" . $latestQuote->id,
-                "Cannot make a BID! Your price biggest then actual " . $latestQuote->price . " > " . $request->price,
-                NotificationType::Error,
-                $latestQuote->user_id));
+                event(new NotificationEvent(
+                    "#quote-" . $latestQuote->id,
+                    "Cannot make a BID! Your price biggest then actual " . $latestQuote->price . " > " . $request->price,
+                    NotificationType::Error,
+                    $latestQuote->user_id));
 
-            return response()->noContent();
-        }*/
+                return response()->noContent();
+            }*/
 
         $quote = Quote::create($request->all());
         $quote->valid_until_date = Carbon::now()->addHour($hours[$request->quote_validity ?? 3]);
@@ -484,11 +485,13 @@ class ListingController extends Controller
 
 
     }
-    public function acceptQuote(Request $request){
+
+    public function acceptQuote(Request $request)
+    {
 
         $request->validate([
-            "listing_id"=>"required",
-            "quote_id"=>"required"
+            "listing_id" => "required",
+            "quote_id" => "required"
         ]);
 
         $user_id = Auth::user()->id;
@@ -516,10 +519,11 @@ class ListingController extends Controller
         return response()->noContent();
     }
 
-    public function declineQuote(Request $request){
+    public function declineQuote(Request $request)
+    {
         $request->validate([
-            "listing_id"=>"required",
-            "quote_id"=>"required"
+            "listing_id" => "required",
+            "quote_id" => "required"
         ]);
 
         $user_id = Auth::user()->id;
@@ -546,12 +550,41 @@ class ListingController extends Controller
         return response()->noContent();
     }
 
+    public function removeMessage($id)
+    {
+        if (is_null(Auth::user()->id))
+            return response()->json([
+                "message" => "User error!"
+            ], 400);
+
+        $message = Message::where("sender_id", Auth::user()->id)
+            ->where("id", $id)
+            ->first();
+
+        $message->delete();
+
+        event(new NotificationEvent(
+            "#message-" . $id,
+            "Message $id was deleted",
+            NotificationType::Info,
+            Auth::user()->id));
+
+        return response()->noContent();
+    }
+
+    public function loadMessages($id)
+    {
+        $messages = Message::with(["sender","recipient"])->where("listing_id",$id)->get();
+
+        return response()->json(["messages" => $messages]);
+    }
+
     public function sendMessage(Request $request)
     {
 
         $request->validate([
             'listing_id' => 'required',
-            'recipient_id'=>'required',
+            'recipient_id' => 'required',
             'message' => 'required'
         ]);
 
@@ -572,7 +605,7 @@ class ListingController extends Controller
                 "message" => "Bad Request"
             ], 400);
 
-        Message::create([
+        $message = Message::create([
             "message" => $message,
             "listing_id" => $listing->id,
             "sender_id" => $sender_id,
@@ -581,17 +614,19 @@ class ListingController extends Controller
 
         event(new NotificationEvent(
             "#message-" . $sender_id,
-            "New message to user #".$listing->recipient_id,
+            "New message to user #" . $listing->recipient_id,
             NotificationType::Info,
             $sender_id));
 
         event(new NotificationEvent(
             "#message-" . $sender_id,
-            "New message to user #".$listing->recipient_id,
+            "New message to user #" . $listing->recipient_id,
             NotificationType::Info,
             $listing->recipient_id));
 
-        return response()->noContent();
+        return response()->json([
+            "id" => $message->id
+        ]);
 
     }
 

@@ -393,11 +393,13 @@
         },
         mounted() {
 
+/*
 
-            this.$nextTick(() => {
-                this.loadActiveListing()
-            })
-
+           setTimeout(()=>{
+               this.loadActiveListing()
+           }, 1500)
+*/
+            this.loadActiveListing()
             $(document).on("click", ".nav-item", () => {
                 window.scroll(0, 0)
             })
