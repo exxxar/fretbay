@@ -1,5 +1,6 @@
 window._ = require('lodash');
 
+
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
  * for JavaScript based Bootstrap features such as modals and tabs. This
@@ -68,3 +69,63 @@ var pusher = new Pusher('e4a064fd6ecf04afd75e', {
     forceTLS: true
 });
 window.pusher = pusher;
+
+
+
+if (window.user)
+{
+
+    var firebaseConfig = {
+        apiKey: "AIzaSyCARQA652wHZLjeRHWXqULVKtkWzbPIzjA",
+        authDomain: "allotrans-ba936.firebaseapp.com",
+        projectId: "allotrans-ba936",
+        storageBucket: "allotrans-ba936.appspot.com",
+        messagingSenderId: "575849939548",
+        appId: "1:575849939548:web:aefcdc86afe3f9916ddc99"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const messaging = firebase.messaging();
+
+    function startFCM() {
+        messaging
+            .requestPermission()
+            .then(function () {
+                return messaging.getToken()
+            })
+            .then(function (response) {
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': window.csrf
+                    }
+                });
+                $.ajax({
+                    url: '/fcm-token',
+                    type: 'POST',
+                    data: {
+                        token: response
+                    },
+                    dataType: 'JSON',
+                    success: function (response) {
+                        //alert('Token stored.');
+                    },
+                    error: function (error) {
+                        //alert(error);
+                    },
+                });
+
+            }).catch(function (error) {
+            alert(error);
+        });
+    }
+
+    messaging.onMessage(function (payload) {
+        const title = payload.notification.title;
+        const options = {
+            body: payload.notification.body,
+            icon: payload.notification.icon,
+        };
+        console.log("TTTTTTTTT")
+        new Notification(title, options);
+    });
+}

@@ -12,7 +12,8 @@
 
 
                     <div class="row mt-5 d-flex justify-content-start">
-                        <div class="col-lg-3 col-sm-6 col-12 mb-2" v-if="user.is_transporter||user.id===listing.user_id">
+                        <div class="col-lg-3 col-sm-6 col-12 mb-2"
+                             v-if="user.is_transporter||user.id===listing.user_id">
                             <button class="btn btn-outline-primary w-100"
                                     v-bind:class="{'active':activePart===0}"
                                     @click="activePart=0"
@@ -95,7 +96,6 @@
                 mapStyle: 'mapbox://styles/mapbox/outdoors-v11', // your map style
                 listing: null,
                 center: [-93.1247, 44.9323], // St. Paul
-                zoom: 25,
                 map: null,
                 settingsScroll: {
                     suppressScrollY: false,
@@ -171,11 +171,36 @@
                     ]
                 };
 
+                let dynamicCenter = [
+                    (this.listing.place_of_loading.center[0]+this.listing.place_of_delivery.center[0])/2,
+                    (this.listing.place_of_loading.center[1]+this.listing.place_of_delivery.center[1])/2
+                    ]
+
+
+                let dynamicZoom = 3
+                let dist = this.listing.distance
+
+
+
+                if (dist > 0 && dist <= 400)
+                    dynamicZoom = 7
+
+                if (dist > 400 && dist <= 700)
+                    dynamicZoom = 5
+
+                if (dist > 700 && dist <= 900)
+                    dynamicZoom = 2
+
+                if (dist > 900 )
+                    dynamicZoom = 1
+
+
+
                 this.map = new mapboxgl.Map({
                     container: 'map',
                     style: 'mapbox://styles/mapbox/outdoors-v11',
-                    center: this.listing.place_of_loading.center,
-                    zoom: 1
+                    center: dynamicCenter,
+                    zoom: dynamicZoom
                 });
 
                 geojson.features.forEach((marker, index) => {
@@ -480,7 +505,7 @@
         height: 50px;
         cursor: pointer;
 
-        border-radius: 50%;
+
         // box-shadow: 2px 2px 2px 0px solid;
         display: flex;
         justify-content: center;
@@ -488,18 +513,18 @@
         font-weight: bold;
 
         &.marker_a {
-            border:2px #000089 solid;
-                img {
-                    position:relative;
-                    margin-top: -45px;
-                    margin-right: -35px;
-                }
+
+            img {
+                position: relative;
+                margin-top: -45px;
+                margin-right: -35px;
+            }
         }
 
         &.marker_b {
-            border:2px #018909 solid;
+
             img {
-                position:relative;
+                position: relative;
                 margin-top: -45px;
                 margin-right: -35px;
             }

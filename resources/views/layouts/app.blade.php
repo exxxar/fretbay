@@ -81,6 +81,17 @@
         s0.parentNode.insertBefore(s1,s0);
     })();
 </script>
+
 <!--End of Tawk.to Script-->
+
+@if (Auth::check())
+
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase.js"></script>
+
+    <script>
+
+    </script>
+@endif
+
 </body>
 </html>

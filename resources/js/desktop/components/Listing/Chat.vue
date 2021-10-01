@@ -76,8 +76,10 @@
                 </div>
                 <div class="control_row mt-2 mb-2 d-flex align-items-end">
 
-                    <span class="input_type_counter ml-2" style="color: lightgrey;" v-if="message"><small>{{message.length}}/255</small>
+                    <span class="input_type_counter ml-2 mr-2" style="color: lightgrey;" v-if="message"><small>{{message.length}}/255</small>
                     </span>
+
+                    <span class="badge badge-danger" v-if="isPhone">Your message include phone number!</span>
 
                 </div>
                 <div class="type_msg">
@@ -89,6 +91,8 @@
                                v-on:keypress.enter="sendMessage"
                         />
                         <button class="msg_send_btn" type="button"
+                                :disabled="isPhone"
+                                v-bind:class="{'btn-danger':isPhone}"
                                 @click="sendMessage"
                         >
                             <i class="far fa-envelope"></i>
@@ -103,7 +107,7 @@
 </template>
 <script>
 
-    import parsePhoneNumber from 'libphonenumber-js'
+    import {parsePhoneNumber, findPhoneNumbersInText} from 'libphonenumber-js'
 
     export default {
         props: ["listing"],
@@ -142,12 +146,28 @@
         },
         watch: {
             message: function () {
+
                 if (this.message === null) {
                     this.isPhone = false;
                     return;
                 }
-                const phoneNumber = parsePhoneNumber(this.message, window.locale)
-                this.isPhone = !!phoneNumber
+
+                let tmp = this.message.split('')
+
+                let counter = 0;
+                console.log(tmp)
+
+                let hasNum = false;
+                tmp.forEach(item=>{
+                    if (!!parseInt(item))
+                        counter++;
+
+                    if (counter>=5)
+                        hasNum = true;
+                })
+
+                this.isPhone = findPhoneNumbersInText(this.message).length > 0 || parseInt(this.message) || hasNum
+
             }
         },
         methods: {
@@ -172,6 +192,9 @@
             },
             sendMessage() {
 
+                if (this.isPhone)
+                    return;
+
                 let messageIndex = (this.messages.push({
                     "id": null,
                     "message": this.message,
@@ -182,7 +205,7 @@
                 })) - 1;
 
                 let message = this.message
-                this.message = null;
+
 
                 this.$nextTick(() => {
                     document.querySelector('.msg_history').scrollTo(0, document.querySelector('.msg_history').scrollHeight);
@@ -200,6 +223,7 @@
                     this.loadMessages();
 
 
+                    this.message = null;
                 })
             }
         }

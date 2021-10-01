@@ -8,7 +8,7 @@
             </div>
             <div class="col-12" v-if="postal">
                 <ValidationProvider :name="address" rules="required" v-slot="{ errors }">
-                    <address-input v-model="listing[address]" class="mb-2" v-on:selected="selectAddress" :disabled="false" placeholder="Address"></address-input>
+                    <address-input v-model="listing[address]" class="mb-2" v-on:selected="selectAddress" :disabled="false" placeholder="City"></address-input>
                 </ValidationProvider>
             </div>
 
