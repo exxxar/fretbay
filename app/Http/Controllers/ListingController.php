@@ -636,8 +636,8 @@ class ListingController extends Controller
         $data = [
             "registration_ids" => $FcmToken,
             "notification" => [
-                "title" => $request->title??"asdasdas",
-                "body" => $request->body??"adadasda",
+                "title" => $request->title??"Message",
+                "body" => $request->message,
             ]
         ];
         $encodedData = json_encode($data);

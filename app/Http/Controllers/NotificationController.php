@@ -108,31 +108,48 @@ class NotificationController extends Controller
     }
 
     public function notification(Request $request){
-        $request->validate([
-            'title'=>'required',
-            'message'=>'required'
-        ]);
+        $url = 'https://fcm.googleapis.com/fcm/send';
+        $FcmToken = User::whereNotNull('fcm_token')->pluck('fcm_token')->all();
 
-        try{
-            $fcmTokens = User::whereNotNull('fcm_token')->pluck('fcm_token')->toArray();
+        $serverKey = 'AAAAhhNUwlw:APA91bF6PpA5J641e58K2JkqZav7-L779VlvTja7lZwZAXN3ugN6GzxZcTm8yG2_4DSZdnrmd54Ze0sblMSJZg075lV8HitxoieQLmUHcQQ-PppkwKMZpH6rlf7GWhpBa4gwJdI1z1D8';
 
-            Notification::send(null,new SendPushNotification($request->title,$request->message,$fcmTokens));
+        $data = [
+            "registration_ids" => $FcmToken,
+            "notification" => [
+                "title" => $request->title,
+                "body" => $request->body,
+            ]
+        ];
+        $encodedData = json_encode($data);
 
-            /* or */
+        $headers = [
+            'Authorization:key=' . $serverKey,
+            'Content-Type: application/json',
+        ];
 
-            //auth()->user()->notify(new SendPushNotification($title,$message,$fcmTokens));
+        $ch = curl_init();
 
-            /* or */
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+        curl_setopt($ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
+        // Disabling SSL Certificate support temporarly
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $encodedData);
 
-            Larafirebase::withTitle($request->title)
-                ->withBody($request->message)
-                ->sendMessage($fcmTokens);
+        // Execute post
+        $result = curl_exec($ch);
 
-            return redirect()->back()->with('success','Notification Sent Successfully!!');
-
-        }catch(\Exception $e){
-            report($e);
-            return redirect()->back()->with('error','Something goes wrong while sending notification.');
+        if ($result === FALSE) {
+            die('Curl failed: ' . curl_error($ch));
         }
+
+        // Close connection
+        curl_close($ch);
+
+        // FCM response
+        dd($result);
     }
 }

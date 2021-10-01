@@ -145,8 +145,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get("/profile/{id}", "UserController@profile");
 });
 
+Route::view('/push-notificaiton', 'home')->name('push-notificaiton');
 Route::post('/fcm-token', [\App\Http\Controllers\NotificationController::class, 'updateToken'])->name('fcmToken');
-Route::post('/send-notification',[\App\Http\Controllers\NotificationController::class,'notification'])->name('notification');
+Route::post('/send-notification',[\App\Http\Controllers\NotificationController::class,'notification'])->name('send.web-notification');
 
 Route::view("/find-loads", "desktop.pages.find-loads")
     ->middleware(['auth' , 'role:transporter'])
