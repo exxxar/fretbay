@@ -86,7 +86,7 @@
         // },
         methods:{
             async save(key, value) {
-                await axios.post("/transporter/profile/save", {id:this.profile.id, key: key, value: value})
+                await axios.post("/transporter/profile/save", {id:this.profile.id, key: key, value: value, finish: true})
                     .then(resp => {
                         this.$store.dispatch('setProfile', resp.data.profile)
                     }).catch(error => {

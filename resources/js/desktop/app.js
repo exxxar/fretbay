@@ -53,6 +53,10 @@ import VueRecord from '@codekraft-studio/vue-record'
 
 Vue.use(VueRecord)
 
+import UUID from "vue-uuid";
+
+Vue.use(UUID);
+
 
 
 

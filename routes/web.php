@@ -156,7 +156,7 @@ Route::group(['middleware' => ['auth', 'verified','role:transporter'], "prefix" 
 
     Route::group(["prefix" => "profile"], function () {
 
-        Route::view("/", "desktop.pages.profile.transporter.index")->name("transporter-account");
+        Route::get("/","TransporterController@profile")->name("transporter-account");
         Route::view("/my-company", "desktop.pages.profile.transporter.my-company")->name("transporter-company");
         Route::view("/legal-documents", "desktop.pages.profile.transporter.legal-documents")->name("transporter-legal-documents");
         Route::view("/my-vehicles", "desktop.pages.profile.transporter.my-vehicles")->name("transporter-vehicles");

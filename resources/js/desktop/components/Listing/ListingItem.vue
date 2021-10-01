@@ -92,7 +92,8 @@
                     <a class="d-flex align-items-center text-secondary" href="#">
 
 
-                        <strong class="mr-2">{{listing.place_of_loading.postal}},</strong> {{listing.place_of_loading.place_name}}
+                        <strong class="mr-2">{{listing.place_of_loading.postal}},</strong>
+                        {{listing.place_of_loading.place_name}}
 
                     </a>
 
@@ -130,7 +131,8 @@
                     <a class="d-flex align-items-center text-secondary" href="#">
 
 
-                        <strong class="mr-2"> {{listing.place_of_delivery.postal}},</strong> {{listing.place_of_delivery.place_name}}
+                        <strong class="mr-2"> {{listing.place_of_delivery.postal}},</strong>
+                        {{listing.place_of_delivery.place_name}}
                     </a>
 
                     <small> Delivered between
@@ -397,19 +399,16 @@
                     title;
             },
             like() {
+                if (!this.isLiked)
+                    this.tmp_favorites.push({
+                        listing_id: this.listing.id
+                    })
+
                 axios.post("/listing/favorites/add", {
                     "listing_id": this.listing.id
                 }).then(resp => {
-                    if (!this.isLiked)
-                        this.tmp_favorites.push({
-                            listing_id: this.listing.id
-                        })
-                })
-            },
-            dislike() {
-                axios.post("/listing/favorites/remove", {
-                    "listing_id": this.listing.id
-                }).then(resp => {
+
+                }).catch(()=>{
                     if (this.isLiked) {
                         this.user.favorites = this.user.favorites.filter((item) => {
                                 return item.listing_id !== this.listing.id
@@ -421,6 +420,26 @@
                             }
                         )
                     }
+                })
+            },
+            dislike() {
+
+                if (this.isLiked) {
+                    this.user.favorites = this.user.favorites.filter((item) => {
+                            return item.listing_id !== this.listing.id
+                        }
+                    )
+
+                    this.tmp_favorites = this.tmp_favorites.filter((item) => {
+                            return item.listing_id !== this.listing.id
+                        }
+                    )
+                }
+
+                axios.post("/listing/favorites/remove", {
+                    "listing_id": this.listing.id
+                }).then(resp => {
+
                 })
             }
         },

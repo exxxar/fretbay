@@ -1,6 +1,6 @@
 <template>
 
-    <main id="content">
+    <main id="content" style="padding-top: 30px;">
         <!-- Description Section -->
         <div class="container">
             <div class="row d-flex">
@@ -9,7 +9,7 @@
                         <strong>find a loads!</strong></a>
                 </div>
             </div>
-            <p v-if="favorites.length>0">Count results: {{listings.length}} <i class="fas fa-boxes"></i></p>
+            <p v-if="favorites.length>0">Count results: {{favorites.length}} <i class="fas fa-boxes"></i></p>
 
             <div class="row pb-5 pt-2" v-if="favorites.length>0">
                 <div class="col-lg-12  mb-9 mb-lg-0">
@@ -42,9 +42,9 @@
             </div>
             <div class="d-flex flex-wrap justify-content-center pb-5 pt-5" v-else>
                 <div class="d-flex p-5 justify-content-center"  v-if="favorites.length===0">
-                    <img v-lazy="'/images/empty.png'" alt="" class="w-100 w-sm-auto" style="filter: drop-shadow(8px 4px 0px #21c87a);">
+                    <img v-lazy="'/images/empty.png'" alt="" class="w-100 w-sm-auto" style="max-width:300px;">
                 </div>
-                <h4 class="text-center w-100">No Favorite listings yet!</h4>
+                <h4 class="text-center" v-if="favorites.length===0">No favorites yet!</h4>
             </div>
         </div>
     </main>

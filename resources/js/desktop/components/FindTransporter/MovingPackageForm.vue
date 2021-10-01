@@ -25,14 +25,15 @@
                 </div>
 
 
-                <div class="card-footer d-flex justify-content-center">
+             <!--   <div class="card-footer d-flex justify-content-center">
                     <button
+
                         :class="{'active': selected_package ==='Truck with Driver package','btn btn-outline-primary w-100':true}"
                         @click="chooseMovingPackage('Truck with Driver package')"
                     >
                         Choose
                     </button>
-                </div>
+                </div>-->
 
             </div>
             <div class="card choose-card w-100 cursor-pointer"
@@ -56,13 +57,13 @@
 
                 </div>
 
-                <div class="card-footer d-flex justify-content-center">
+              <!--  <div class="card-footer d-flex justify-content-center">
                     <button
                         :class="{'active': selected_package ==='The Economic package','btn btn-outline-primary w-100':true}"
                         @click="chooseMovingPackage('The Economic package')"
                     >Choose
                     </button>
-                </div>
+                </div>-->
 
             </div>
             <div class="card choose-card w-100 cursor-pointer"
@@ -91,13 +92,13 @@
 
                 </div>
 
-                <div class="card-footer d-flex justify-content-center">
+             <!--   <div class="card-footer d-flex justify-content-center">
                     <button
                         :class="{'active': selected_package ==='The Standard package','btn btn-outline-primary w-100':true}"
                         @click="chooseMovingPackage('The Standard package')"
                     >Choose
                     </button>
-                </div>
+                </div>-->
 
             </div>
             <div class="card choose-card w-100 cursor-pointer"
@@ -126,13 +127,13 @@
 
                 </div>
 
-                <div class="card-footer d-flex justify-content-center">
+                <!--<div class="card-footer d-flex justify-content-center">
                     <button
                         :class="{'active': selected_package ==='The Complete package','btn btn-outline-primary w-100':true}"
                         @click="chooseMovingPackage('The Complete package')"
                     >Choose
                     </button>
-                </div>
+                </div>-->
             </div>
         </VueSlickCarousel>
 

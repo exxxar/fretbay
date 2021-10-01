@@ -11,17 +11,33 @@ use App\Models\Vehicle;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 
 class TransporterController extends Controller
 {
+
+    public function profile(Request $request)
+    {
+        $user = $request->user();
+
+        $profile = Profile::find($user->profile_id);
+
+        if ($profile->is_first_activation == 0) {
+
+            return view("desktop.pages.profile.transporter.index");
+        }
+        return redirect()->route("desktop.profile-transporter-wizard-start");
+
+    }
+
     //
     public function update(Request $request)
     {
 //        $user->profile->update($request->all());
 
 //        $edit_profile = json_decode($request->profile, false);
-        $profile = Profile::with(["vehicles","documents","verifications"])->where("id", $request->profile_id)->first();
+        $profile = Profile::with(["vehicles", "documents", "verifications"])->where("id", $request->profile_id)->first();
         $profile->first_name = $request->get('first_name') ?? '';
         $profile->second_name = $request->get('second_name');
         $profile->telephone_number_1 = $request->get('telephone_number_1');
@@ -41,12 +57,11 @@ class TransporterController extends Controller
                     'new_avatar' => 'mimes:jpeg,png,svg,jpg|max:1014',
                 ]);
                 $extension = $request->new_avatar->extension();
-                $request->new_avatar->storeAs('/public',$request->file('new_avatar')->getClientOriginalName().".".$extension);
-                $url = Storage::url($request->file('new_avatar')->getClientOriginalName().".".$extension);
+                $request->new_avatar->storeAs('/public', $request->file('new_avatar')->getClientOriginalName() . "." . $extension);
+                $url = Storage::url($request->file('new_avatar')->getClientOriginalName() . "." . $extension);
 
                 $user->avatar = $url;
-                if(!empty($request->deleted_avatar) || $request->deleted_avatar != '')
-                {
+                if (!empty($request->deleted_avatar) || $request->deleted_avatar != '') {
                     //todo: delete previous avatar
 //                $rest = substr($request->deleted_avatar, 8);
 //                Storage::delete($rest);
@@ -78,6 +93,11 @@ class TransporterController extends Controller
         $value = $request->get("value");
 
         $profile[$key] = $value;
+        if ($request->has("finish"))
+        {
+
+            $profile->is_first_activation = false;
+        }
         $profile->save();
 
         return response()->json([
@@ -117,21 +137,22 @@ class TransporterController extends Controller
             'vehicles' => $vehicles,
         ]);
     }
+
     public function storeVehicle(Request $request)
     {
         $images = [];
         if ($request->hasFile('files')) {
             $files = $request->file('files');
             foreach ($files as $key => $file) {
-                $extension =  $file->extension();
-                $file->storeAs('/public', $file->getClientOriginalName().".".$extension);
-                $url = Storage::url( $file->getClientOriginalName().".".$extension);
+                $extension = $file->extension();
+                $file->storeAs('/public', $file->getClientOriginalName() . "." . $extension);
+                $url = Storage::url($file->getClientOriginalName() . "." . $extension);
                 array_push($images, $url);
             }
         }
         $vehicle = Vehicle::create([
-           'profile_id' => intval($request->profile_id),
-           'type' => $request->type,
+            'profile_id' => intval($request->profile_id),
+            'type' => $request->type,
             'brand' => $request->brand,
             'model' => $request->model,
             'plate_number' => $request->plate_number,
@@ -145,6 +166,7 @@ class TransporterController extends Controller
             'vehicle' => $vehicle,
         ]);
     }
+
     public function updateVehicle(Request $request)
     {
         $edit_vehicle = json_decode($request->vehicle, false);
@@ -160,16 +182,15 @@ class TransporterController extends Controller
         $new_files = $request->file('new_files');
         if ($request->hasFile('new_files')) {
             foreach ($new_files as $key => $file) {
-                $extension =  $file->extension();
-                $file->storeAs('/public', $file->getClientOriginalName().".".$extension);
-                $url = Storage::url( $file->getClientOriginalName().".".$extension);
+                $extension = $file->extension();
+                $file->storeAs('/public', $file->getClientOriginalName() . "." . $extension);
+                $url = Storage::url($file->getClientOriginalName() . "." . $extension);
                 array_push($images, $url);
             }
         }
         $delete_files = json_decode($request->delete_files, true);
-        if(!empty($delete_files))
-        {
-            foreach ( $delete_files as $file) {
+        if (!empty($delete_files)) {
+            foreach ($delete_files as $file) {
 //                $rest = substr($file['path'], 8);
 //                Storage::delete($rest);
             }
@@ -182,6 +203,7 @@ class TransporterController extends Controller
             'vehicle' => $vehicle,
         ]);
     }
+
     public function destroyVehicle(Request $request, $id)
     {
         $vehicle = Vehicle::find($id);

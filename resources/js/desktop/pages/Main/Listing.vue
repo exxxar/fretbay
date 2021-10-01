@@ -95,7 +95,7 @@
                 mapStyle: 'mapbox://styles/mapbox/outdoors-v11', // your map style
                 listing: null,
                 center: [-93.1247, 44.9323], // St. Paul
-                zoom: 10.5,
+                zoom: 25,
                 map: null,
                 settingsScroll: {
                     suppressScrollY: false,
@@ -175,14 +175,14 @@
                     container: 'map',
                     style: 'mapbox://styles/mapbox/outdoors-v11',
                     center: this.listing.place_of_loading.center,
-                    zoom: 5
+                    zoom: 1
                 });
 
                 geojson.features.forEach((marker, index) => {
 
                     var el = document.createElement('div');
                     el.className = 'marker ' + (index === 0 ? "marker_a" : "marker_b");
-                    el.innerHTML = index === 0 ? "A" : "B";
+                    el.innerHTML = index === 0 ? "<img src='/images/point_a.png'>" : "<img src='/images/point_b.png'>";
 
                     new mapboxgl.Marker(el)
                         .setLngLat(marker.geometry.coordinates)
@@ -476,32 +476,33 @@
     }
 
     .marker {
-        background-color: red;
-        background-size: cover;
         width: 50px;
         height: 50px;
-        border-radius: 50%;
         cursor: pointer;
-        // border:2px #000089 solid;
+
+        border-radius: 50%;
         // box-shadow: 2px 2px 2px 0px solid;
         display: flex;
         justify-content: center;
         align-items: flex-start;
-        font-size: 16px;
-        background-color: rgba(244, 244, 244, 0.16);
         font-weight: bold;
 
         &.marker_a {
-
-            color: #00006c;
-            border: 2px #00006c solid;
-
-
+            border:2px #000089 solid;
+                img {
+                    position:relative;
+                    margin-top: -45px;
+                    margin-right: -35px;
+                }
         }
 
         &.marker_b {
-            border: 2px #ad1200 solid;
-            color: #ad1200;
+            border:2px #018909 solid;
+            img {
+                position:relative;
+                margin-top: -45px;
+                margin-right: -35px;
+            }
         }
     }
 

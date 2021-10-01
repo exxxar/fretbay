@@ -4,8 +4,9 @@
             <div class="inbox_people w-100 w-md-60">
                 <div class="headind_srch row">
 
-                    <div class="col-md-3 col-4 recent_heading"><h4>Recent</h4></div>
-                    <div class="col-md-3 col-8">
+                    <div class="col-12"
+                         v-bind:class="{'col-md-6':user.is_transporter}"
+                         v-if="user.is_transporter">
                         <div class="custom-control custom-switch">
                             <input type="checkbox" id="forMe" class="custom-control-input">
                             <label for="forMe" class="custom-control-label" @click="forMe = !forMe">
@@ -13,7 +14,9 @@
                             </label>
                         </div>
                     </div>
-                    <div class="col-md-6 col-12 srch_bar">
+                    <div class="col-12 srch_bar"
+                         v-bind:class="{'col-md-6':user.is_transporter}"
+                    >
                         <div class="stylish-input-group w-100">
                             <input type="text" class="search-bar w-100" placeholder="Search" v-model="search">
                             <span class="input-group-addon">
@@ -36,7 +39,7 @@
                              v-if="message.sender_id===user.id&&(user.is_transporter||user.is_customer)">
                             <div class="sent_msg w-100 w-md-45 ">
                                 <p
-                                    v-bind:class="{'bg-danger':message.deleted_at}"
+                                    v-bind:class="{'bg-danger':message.deleted_at||message.temporary}"
                                     class="d-flex justify-content-between">{{message.message}} <a href="#remove"
                                                                                                   @click="removeMessage(message.id)"><i
                                     class="fas fa-times"></i></a></p>
@@ -86,7 +89,6 @@
                                v-on:keypress.enter="sendMessage"
                         />
                         <button class="msg_send_btn" type="button"
-                                v-if="message"
                                 @click="sendMessage"
                         >
                             <i class="far fa-envelope"></i>
@@ -169,26 +171,34 @@
 
             },
             sendMessage() {
-                axios.post("/listing/messages/send", {
+
+                let messageIndex = (this.messages.push({
+                    "id": null,
                     "message": this.message,
+                    "sender_id": this.user.id,
+                    "recipient_id": this.listing.user_id,
+                    "created_at": new Date(),
+                    "temporary": true
+                })) - 1;
+
+                let message = this.message
+                this.message = null;
+
+                this.$nextTick(() => {
+                    document.querySelector('.msg_history').scrollTo(0, document.querySelector('.msg_history').scrollHeight);
+                })
+
+                axios.post("/listing/messages/send", {
+                    "message": message,
                     "listing_id": this.listing.id,
                     'recipient_id': this.listing.user_id,
                     'user_id': this.user.id
                 }).then(resp => {
 
-                    this.messages.push({
-                        "id": resp.data.id,
-                        "message": this.message,
-                        "sender_id": this.user.id,
-                        "recipient_id": this.listing.user_id,
-                        "created_at": new Date()
-                    })
-                    this.message = null;
-
+                    this.messages[messageIndex].temporary = false;
+                    this.messages[messageIndex].id = resp.data.id
                     this.loadMessages();
-                    this.$nextTick(() => {
-                        document.querySelector('.msg_history').scrollTo(0, document.querySelector('.msg_history').scrollHeight);
-                    })
+
 
                 })
             }

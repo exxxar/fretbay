@@ -121,16 +121,6 @@
                                 </li>
 
                                 <li>
-                                    <a class="media align-items-center u-sidebar--panel__link py-2 px-5" href="#">
-                                        <img class="max-width-4 mr-3"
-                                             src="/assets/svg/components/cogs-solid.svg"
-                                             alt="Image Description">
-                                        <div class="media-body">
-                                            <span>Settings</span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
                                     <a class="media align-items-center u-sidebar--panel__link py-2 px-5" href="/logout">
                                         <img class="max-width-4 mr-3"
                                              src="/assets/svg/components/sign-out-alt-solid.svg"

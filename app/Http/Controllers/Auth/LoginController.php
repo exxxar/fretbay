@@ -87,9 +87,16 @@ class LoginController extends Controller
             ], 400);
 
         $user = $request->user();
+        Log::info("TEST1");
         if ($user->hasRole("transporter")) {
+            Log::info("TEST1 IS TRANSPORTER");
+            Log::info("TEST1 PROFILE ID $user->profile_id");
             $profile = Profile::find($user->profile_id);
-            if ($profile->is_first_activation == false) {
+
+            Log::info("TEST1 PROFILE IS FIRST ACTIVATION $profile->is_first_activation");
+
+            if ($profile->is_first_activation == 0) {
+
                 return redirect()->route("transporter-account");
             }
             return redirect()->route("desktop.profile-transporter-wizard-start");
