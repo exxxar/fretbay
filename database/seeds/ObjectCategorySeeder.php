@@ -176,6 +176,7 @@ class ObjectCategorySeeder extends Seeder
 
         //$category->properties()->attach(CategoryProperty::where("slug", "article_name")->first(),['required' => true]);
         $category->properties()->attach(CategoryProperty::where("slug", "height")->first(),['required' => true]);
+        $category->properties()->attach(CategoryProperty::where("slug", "width")->first(),['required' => true]);
         $category->properties()->attach(CategoryProperty::where("slug", "weight")->first(),['required' => true]);
         $category->properties()->attach(CategoryProperty::where("slug", "quantity")->first(),['required' => true]);
         $category->properties()->attach(CategoryProperty::where("slug", "fragile_goods")->first(),['required' => false]);

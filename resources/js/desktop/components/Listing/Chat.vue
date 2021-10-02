@@ -1,38 +1,10 @@
 <template>
     <div class="messaging">
         <div class="inbox_msg">
-            <div class="inbox_people w-100 w-md-60">
-                <div class="headind_srch row">
 
-                    <div class="col-12"
-                         v-bind:class="{'col-md-6':user.is_transporter}"
-                         v-if="user.is_transporter">
-                        <div class="custom-control custom-switch">
-                            <input type="checkbox" id="forMe" class="custom-control-input">
-                            <label for="forMe" class="custom-control-label" @click="forMe = !forMe">
-                                Only for me
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-12 srch_bar"
-                         v-bind:class="{'col-md-6':user.is_transporter}"
-                    >
-                        <div class="stylish-input-group w-100">
-                            <input type="text" class="search-bar w-100" placeholder="Search" v-model="search">
-                            <span class="input-group-addon">
-                <button type="button"> <i class="fa fa-search" aria-hidden="true"></i> </button>
-                </span></div>
-                    </div>
-
-
-                </div>
-
-            </div>
             <div class="mesgs w-100 ">
                 <div class="msg_history" v-if="user">
                     <div v-for="message in filteredMessages">
-
-
                         <div class="outgoing_msg "
                              style="padding:5px;"
 
@@ -79,13 +51,28 @@
                     <span class="input_type_counter ml-2 mr-2" style="color: lightgrey;" v-if="message"><small>{{message.length}}/255</small>
                     </span>
 
-                    <span class="badge badge-danger" v-if="isPhone">Your message include phone number!</span>
+                    <span class="badge badge-primary mr-2 ml-2 cursor-pointer" data-dismiss="modal" aria-label="Close">
+                        <strong>Close</strong>
+                    </span>
+                    <span class="badge mr-2 cursor-pointer"
+                          v-if="user.is_transporter"
+                          v-bind:class="{'badge-secondary':!forMe,'badge-purple':forMe}"
+                          @click="forMe = !forMe"
+                    >
+                        <strong v-if="forMe">Any</strong>
+                        <strong v-if="!forMe">Only for me</strong>
+                    </span>
+                    <span class="badge badge-danger mr-2" v-if="isPhone">Your message include phone number!</span>
+
+
+                    <input type="search" style="border:none;" placeholder="Search" v-model="search">
+
 
                 </div>
                 <div class="type_msg">
 
                     <div class="input_msg_write">
-                        <input type="text" class="write_msg" placeholder="Type a message"
+                        <input type="text" class="write_msg p-2" placeholder="Type a message"
                                v-model="message"
                                maxlength="255"
                                v-on:keypress.enter="sendMessage"
@@ -99,6 +86,7 @@
                         </button>
                     </div>
                 </div>
+
             </div>
         </div>
 
@@ -158,11 +146,11 @@
                 console.log(tmp)
 
                 let hasNum = false;
-                tmp.forEach(item=>{
+                tmp.forEach(item => {
                     if (!!parseInt(item))
                         counter++;
 
-                    if (counter>=5)
+                    if (counter >= 5)
                         hasNum = true;
                 })
 
@@ -234,6 +222,47 @@
     .sent_msg {
         word-break: break-all;
     }
+
+    .inbox_msg {
+        border: none !important;
+    }
+
+    .type_msg {
+        border: none !important;
+    }
+
+    .messaging {
+        padding: 0px !important;
+        border: none !important;
+    }
+
+    .mesgs {
+        padding: 0 0 0 0 !important;
+    }
+
+    .outgoing_msg {
+        margin: 5px 0 5px !important;
+    }
+
+    .inbox_msg {
+        border: none;
+    }
+
+    .msg_history {
+        height: 85vh !important;
+        border-bottom: 2px #21c87a solid;
+
+    }
+
+    .msg_send_btn {
+        border-radius: 0 !important;
+        height: 50px !important;
+        right: 0 !important;
+        top: 0 !important;
+        width: 50px !important;
+    }
+
+
 
 
 </style>

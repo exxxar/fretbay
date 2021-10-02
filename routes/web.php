@@ -32,29 +32,9 @@ use Illuminate\Support\Facades\Password;
 
 
 Route::get("/event", function () {
-    event(new NotificationEvent(
-        "test",
-        "test info",
-        NotificationType::Info,
-        2));
+    echo ("t1=". \Carbon\Carbon::createFromTimestampUTC(intval("1633208400000")/1000));
+    echo ("t2=1633208400000");
 
-    event(new NotificationEvent(
-        "test",
-        "test warning",
-        NotificationType::Warning,
-        2));
-
-    event(new NotificationEvent(
-        "test",
-        "test error",
-        NotificationType::Error,
-        2));
-
-    event(new NotificationEvent(
-        "test",
-        "test system",
-        NotificationType::System,
-        2));
 
 });
 

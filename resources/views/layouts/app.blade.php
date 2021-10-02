@@ -92,7 +92,7 @@
 <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-messaging.js"></script>
 
     <script>
-
+        navigator.serviceWorker.register('firebase-messaging-sw.js');
 
         var firebaseConfig = {
             apiKey: "AIzaSyCARQA652wHZLjeRHWXqULVKtkWzbPIzjA",

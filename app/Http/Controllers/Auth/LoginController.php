@@ -78,22 +78,27 @@ class LoginController extends Controller
         $credentials = request(['password']);
         $credentials['email'] = $request->email;
         $credentials['deleted_at'] = null;
-        if ($remember)
-            $credentials['remember'] = $remember;
 
-        if (!Auth::attempt($credentials))
+/*
+        if (Auth::viaRemember())
+        {
+            Auth::login($user, $remember);
+        }*/
+
+        if (!Auth::attempt($credentials, $remember))
             return response()->json([
                 'message' => "Error!",
             ], 400);
 
+
+
         $user = $request->user();
-        Log::info("TEST1");
+
         if ($user->hasRole("transporter")) {
-            Log::info("TEST1 IS TRANSPORTER");
-            Log::info("TEST1 PROFILE ID $user->profile_id");
+
             $profile = Profile::find($user->profile_id);
 
-            Log::info("TEST1 PROFILE IS FIRST ACTIVATION $profile->is_first_activation");
+
 
             if ($profile->is_first_activation == 0) {
 

@@ -123,6 +123,9 @@
                 this.$store.dispatch('editNewListing', {key:this.date1, value: this.listing[this.date1]});
                 this.$store.dispatch('editNewListing', {key:this.date2, value: this.listing[this.date2]});
 
+                console.log('data1=>'+this.listing[this.date1])
+                console.log('data2=>'+this.listing[this.date2])
+
                 if(this.listing[this.date1] === '' && this.listing[this.date2] !== '')
                 {
                     this.listing[this.date1] = this.listing[this.date2];

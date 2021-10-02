@@ -14,32 +14,27 @@
                     <div class="row mt-5 d-flex justify-content-start">
                         <div class="col-lg-3 col-sm-6 col-12 mb-2"
                              v-if="user.is_transporter||user.id===listing.user_id">
-                            <button class="btn btn-outline-primary w-100"
-                                    v-bind:class="{'active':activePart===0}"
-                                    @click="activePart=0"
-                            >
+                            <button type="button" class="btn btn-primary w-100" data-toggle="modal" data-target="#quoteModal">
                                 Quotes
                             </button>
                         </div>
                         <div class="col-lg-3 col-sm-6 col-12" v-if="user.is_transporter||user.id===listing.user_id">
-                            <button class="btn btn-outline-primary w-100"
+                           <!-- <button class="btn btn-outline-primary w-100"
                                     v-bind:class="{'active':activePart===1}"
                                     @click="activePart=1"
                             >
                                 Messages
+                            </button>-->
+                            <button type="button" class="btn btn-primary w-100" data-toggle="modal" data-target="#chatModal">
+                            Chat
                             </button>
-                        </div>
+
+
+                             </div>
                     </div>
 
 
-                    <div class="row">
-                        <div class="col-12" v-if="activePart===0">
-                            <quotes-component :listing="listing" v-if="listing"/>
-                        </div>
-                        <div class="col-12" v-if="activePart===1">
-                            <chat-component :listing="listing" v-if="listing"/>
-                        </div>
-                    </div>
+
 
                 </div>
             </div>
@@ -65,6 +60,42 @@
             </nav>
         </div>
         <!-- End Pagination -->
+
+        <!-- Modal -->
+        <div class="modal modal-fullscreen fade" id="quoteModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="quoteModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="quoteModalHeader">New message</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <quotes-component :listing="listing" v-if="listing"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal modal-fullscreen fade" id="chatModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="chatModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="chatModalHeader">New message</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <chat-component :listing="listing" v-if="listing"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </main>
 </template>
 <script>
@@ -550,5 +581,28 @@
     .mapboxgl-canvas {
         width: 100% !important;
         height: 250px !important;
+    }
+
+    #chatModal {
+        z-index: 10000000000;
+
+    }
+    .modal.modal-fullscreen .modal-dialog {
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        max-width: none;
+    }
+
+    .modal.modal-fullscreen .modal-content {
+        height: auto;
+        height: 100vh;
+        border-radius: 0;
+        border: none;
+    }
+
+    .modal.modal-fullscreen .modal-body {
+        overflow-y: auto;
     }
 </style>

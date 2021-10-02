@@ -228,10 +228,10 @@ class ListingController extends Controller
             'articles' => json_decode($request->get('articles')) ?? [],
             'place_of_loading' => $place_of_loading,
             'place_of_delivery' => $place_of_delivery,
-            'shipping_date_from' => Carbon::createFromTimestamp($request->get('shipping_date_from')),
-            'shipping_date_to' => Carbon::createFromTimestamp($request->get('shipping_date_to')),
-            'unshipping_date_from' => Carbon::createFromTimestamp($request->get('unshipping_date_from')),
-            'unshipping_date_to' => Carbon::createFromTimestamp($request->get('unshipping_date_to')),
+            'shipping_date_from' => Carbon::createFromTimestampUTC(intval($request->get('shipping_date_from')) / 1000),
+            'shipping_date_to' => Carbon::createFromTimestampUTC(intval($request->get('shipping_date_to')) / 1000),
+            'unshipping_date_from' => Carbon::createFromTimestampUTC(intval($request->get('unshipping_date_from')) / 1000),
+            'unshipping_date_to' => Carbon::createFromTimestampUTC(intval($request->get('unshipping_date_to')) / 1000),
             'additional_info' => $request->get('additional_info') ?? '',
             'moving_package' => $request->get('moving_package') ?? '',
             'images' => [],
@@ -244,7 +244,7 @@ class ListingController extends Controller
             ),
 
             'is_active' => true,
-            'expiration_date' => Carbon::createFromTimestamp($request->get('unshipping_date_to')),
+            'expiration_date' => Carbon::createFromTimestampUTC(intval($request->get('unshipping_date_to')) / 1000),
             'category_id' => $request->get('category_id') ?? null,
             'subcategory_id' => $request->get('subcategory_id') ?? null,
             'thing_id' => $request->get('thing_id') ?? null,
@@ -577,7 +577,7 @@ class ListingController extends Controller
 
     public function loadMessages($id)
     {
-        $messages = Message::with(["sender","recipient"])->where("listing_id",$id)->get();
+        $messages = Message::with(["sender", "recipient"])->where("listing_id", $id)->get();
 
         return response()->json(["messages" => $messages]);
     }
@@ -636,7 +636,7 @@ class ListingController extends Controller
         $data = [
             "registration_ids" => $FcmToken,
             "notification" => [
-                "title" => $request->title??"Message",
+                "title" => $request->title ?? "Message",
                 "body" => $request->message,
             ]
         ];

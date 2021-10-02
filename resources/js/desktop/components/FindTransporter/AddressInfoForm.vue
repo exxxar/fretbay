@@ -142,16 +142,16 @@
                     <div class="row w-100 m-auto">
                         <div class="col-12">
                             <div class="custom-control custom-switch">
-                                <input type="checkbox" id="commercial" class="custom-control-input">
-                                <label for="commercial" class="custom-control-label">I agree to receive commercial offers from
+                                <input type="checkbox" id="commercial" class="custom-control-input"  @change="isOffers=!isOffers">
+                                <label for="commercial" class="custom-control-label" >I agree to receive commercial offers from
                                     AlloTrans and its partners</label>
                             </div>
                         </div>
 
                         <div class="col-12">
                             <div class="custom-control custom-switch">
-                                <input type="checkbox" id="terms" class="custom-control-input">
-                                <label for="terms" class="custom-control-label">I accept AlloTrans's Terms of Use </label>
+                                <input type="checkbox" id="terms" class="custom-control-input" @change="isTerms=!isTerms">
+                                <label for="terms" class="custom-control-label" >I accept AlloTrans's Terms of Use </label>
                             </div>
                         </div>
 
@@ -168,7 +168,7 @@
                 <div class="col-12 mb-1 mb-sm-0 col-sm-2">
                     <button class="btn btn-outline-blue  w-100" @click="prevStep">Back</button>
                 </div>
-                <div class="col-12 col-sm-3">
+                <div class="col-12 col-sm-3" v-if="isOffers&&isTerms">
                     <button class="btn btn-outline-primary  w-100" @click="nextStep" :disabled="invalid">Next</button>
                 </div>
             </div>
@@ -186,6 +186,8 @@
         },
         data() {
             return {
+                isOffers: false,
+                isTerms: false,
                 additional_info: ''
             }
         },
