@@ -13,7 +13,8 @@ firebase.initializeApp({
     projectId: "allotrans-ba936",
     storageBucket: "allotrans-ba936.appspot.com",
     messagingSenderId: "575849939548",
-    appId: "1:575849939548:web:aefcdc86afe3f9916ddc99"
+    appId: "1:575849939548:web:aefcdc86afe3f9916ddc99",
+    measurementId: "G-3YNBERNJYC"
 });
 
 

@@ -86,16 +86,22 @@
 
 @if (Auth::check())
 
-    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase.js"></script>
+{{--    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase.js"></script>--}}
+
+<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-messaging.js"></script>
 
     <script>
+
+
         var firebaseConfig = {
             apiKey: "AIzaSyCARQA652wHZLjeRHWXqULVKtkWzbPIzjA",
             authDomain: "allotrans-ba936.firebaseapp.com",
             projectId: "allotrans-ba936",
             storageBucket: "allotrans-ba936.appspot.com",
             messagingSenderId: "575849939548",
-            appId: "1:575849939548:web:aefcdc86afe3f9916ddc99"
+            appId: "1:575849939548:web:aefcdc86afe3f9916ddc99",
+            measurementId: "G-3YNBERNJYC"
         };
 
         firebase.initializeApp(firebaseConfig);
