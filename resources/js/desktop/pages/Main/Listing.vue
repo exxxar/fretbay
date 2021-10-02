@@ -214,10 +214,10 @@
 
 
 
-                if (dist > 0 && dist <= 400)
+                if (dist > 0 && dist <= 200)
                     dynamicZoom = 7
 
-                if (dist > 400 && dist <= 700)
+                if (dist > 200 && dist <= 700)
                     dynamicZoom = 5
 
                 if (dist > 700 && dist <= 900)

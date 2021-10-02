@@ -179,12 +179,14 @@
 
                     <div class="btn-group" v-if="listing.user_id===user.id">
                         <button class="btn btn-outline-danger" v-if="!listing.deleted_at"
-                                @click="removeListing"
+                                data-toggle="modal" :data-target="'#removeModal-'+listing.id"
+
                         ><i
                             class="far fa-trash-alt"></i>
                         </button>
                         <button class="btn btn-outline-danger"
-                                @click="archiveListing"
+                                data-toggle="modal" :data-target="'#archiveModal-'+listing.id"
+
                                 v-if="listing.is_active&&!listing.deleted_at">
                             <i class="fas fa-archive"></i>
                         </button>
@@ -268,6 +270,47 @@
 
 
         </div>
+
+        <!-- Modal -->
+        <div class="modal fade" :id="'removeModal-'+listing.id" data-backdrop="static" data-keyboard="false" tabindex="-1" :aria-labelledby="'removeModal-'+listing.id" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="quoteModalHeader">Remove listing?</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-4"><button class="btn btn-danger w-100" data-dismiss="modal" @click="removeListing">Remove</button></div>
+                            <div class="col-4"><button data-dismiss="modal" aria-label="Close" class="btn btn-secondary w-100">Cancel</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" :id="'archiveModal-'+listing.id" data-backdrop="static" data-keyboard="false" tabindex="-1" :aria-labelledby="'archiveModal-'+listing.id" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="quoteModalHeader2">Add listing to Archive?</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-4"><button class="btn btn-danger w-100" data-dismiss="modal" @click="archiveListing">To Archive</button></div>
+                            <div class="col-4"><button data-dismiss="modal" aria-label="Close" class="btn btn-secondary w-100">Cancel</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </template>
 <script>

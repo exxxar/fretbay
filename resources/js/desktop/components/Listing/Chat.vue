@@ -62,7 +62,7 @@
                         <strong v-if="forMe">Any</strong>
                         <strong v-if="!forMe">Only for me</strong>
                     </span>
-                    <span class="badge badge-danger mr-2" v-if="isPhone">Your message include phone number!</span>
+                    <span class="badge badge-danger mr-2" v-if="isPhone" @click="reset">Remove number!</span>
 
 
                     <input type="search" style="border:none;" placeholder="Search" v-model="search">
@@ -159,6 +159,22 @@
             }
         },
         methods: {
+            reset() {
+                let tmp = this.message.split('')
+
+                let counter = 0;
+
+                let message = '';
+
+                tmp.forEach(item => {
+                    if (!parseInt(item))
+                        message += item
+
+
+                })
+
+                this.message = message
+            },
             loadMessages() {
 
                 axios.get("/listing/messages/" + this.listing.id).then(resp => {
@@ -261,8 +277,6 @@
         top: 0 !important;
         width: 50px !important;
     }
-
-
 
 
 </style>

@@ -9,7 +9,6 @@
 
     <title>{{ config('app.name', 'Fretbay') }}</title>
 
-    <!-- Scripts -->
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -92,7 +91,7 @@
 <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-messaging.js"></script>
 
     <script>
-        navigator.serviceWorker.register('firebase-messaging-sw.js');
+        navigator.serviceWorker.register('/firebase-messaging-sw.js');
 
         var firebaseConfig = {
             apiKey: "AIzaSyCARQA652wHZLjeRHWXqULVKtkWzbPIzjA",

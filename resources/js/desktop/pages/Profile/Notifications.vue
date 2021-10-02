@@ -1,5 +1,5 @@
 <template>
-    <main id="content" >
+    <main id="content" style="padding-top: 30px;">
         <!-- Description Section -->
         <div class="container p-0" v-if="notifications.length>0">
             <div class="row m-0">
