@@ -53,12 +53,6 @@ import VueRecord from '@codekraft-studio/vue-record'
 
 Vue.use(VueRecord)
 
-import UUID from "vue-uuid";
-
-Vue.use(UUID);
-
-
-
 
 Vue.component('listing-component', require('./components/Listing/Listing.vue').default);
 Vue.component('orders-component', require('./components/Orders/Orders.vue').default);
