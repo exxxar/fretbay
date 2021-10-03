@@ -85,7 +85,7 @@ class LoginController extends Controller
             Auth::login($user, $remember);
         }*/
 
-        if (!Auth::attempt($credentials, $remember))
+        if (!Auth::attempt($credentials, true))
             return response()->json([
                 'message' => "Error!",
             ], 400);

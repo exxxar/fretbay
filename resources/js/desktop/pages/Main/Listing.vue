@@ -11,7 +11,7 @@
                     <div id="map" v-if="showMap" style="width:100%; height:250px;"></div>
 
 
-                    <div class="row mt-5 d-flex justify-content-start">
+             <!--       <div class="row mt-5 d-flex justify-content-start">
                         <div class="col-lg-3 col-sm-6 col-12 mb-2"
                              v-if="user.is_transporter||user.id===listing.user_id">
                             <button type="button" class="btn btn-primary w-100" data-toggle="modal" data-target="#quoteModal">
@@ -19,19 +19,19 @@
                             </button>
                         </div>
                         <div class="col-lg-3 col-sm-6 col-12" v-if="user.is_transporter||user.id===listing.user_id">
-                           <!-- <button class="btn btn-outline-primary w-100"
+                           &lt;!&ndash; <button class="btn btn-outline-primary w-100"
                                     v-bind:class="{'active':activePart===1}"
                                     @click="activePart=1"
                             >
                                 Messages
-                            </button>-->
+                            </button>&ndash;&gt;
                             <button type="button" class="btn btn-primary w-100" data-toggle="modal" data-target="#chatModal">
                             Chat
                             </button>
 
 
                              </div>
-                    </div>
+                    </div>-->
 
 
 
@@ -61,7 +61,7 @@
         </div>
         <!-- End Pagination -->
 
-        <!-- Modal -->
+      <!--  &lt;!&ndash; Modal &ndash;&gt;
         <div class="modal modal-fullscreen fade" id="quoteModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="quoteModal" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -79,7 +79,7 @@
             </div>
         </div>
 
-        <!-- Modal -->
+        &lt;!&ndash; Modal &ndash;&gt;
         <div class="modal modal-fullscreen fade" id="chatModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="chatModal" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -96,7 +96,7 @@
                 </div>
             </div>
         </div>
-
+-->
     </main>
 </template>
 <script>
@@ -588,22 +588,5 @@
         z-index: 10000000000;
 
     }
-    .modal.modal-fullscreen .modal-dialog {
-        width: 100vw;
-        height: 100vh;
-        margin: 0;
-        padding: 0;
-        max-width: none;
-    }
 
-    .modal.modal-fullscreen .modal-content {
-        height: auto;
-        height: 100vh;
-        border-radius: 0;
-        border: none;
-    }
-
-    .modal.modal-fullscreen .modal-body {
-        overflow-y: auto;
-    }
 </style>

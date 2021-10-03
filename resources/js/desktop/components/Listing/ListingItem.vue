@@ -196,14 +196,39 @@
                             <i class="fas fa-trash-restore"></i>
                         </button>
 
+
+
                     </div>
 
-                    <a class="btn btn-outline-primary" v-if="(user.is_transporter||user.id===listing.user_id)&&details"
+                    <div class="btn-group" >
+                        <button type="button" class="btn btn-outline-primary w-100"
+                                v-if="user.is_transporter||user.id===listing.user_id"
+                                data-toggle="modal" :data-target="'#quoteModal-'+listing.id">
+                            <i class="fas fa-gavel"></i>
+                        </button>
+
+
+                        <button type="button" class="btn btn-outline-primary w-100"
+                                v-if="user.is_transporter||user.id===listing.user_id"
+                                data-toggle="modal" :data-target="'#chatModal-'+listing.id">
+                            <i class="far fa-comments"></i>
+                        </button>
+
+                      <!--  <button type="button" class="btn btn-outline-primary w-100"
+                                v-if="user.is_transporter||user.id===listing.user_id"
+                                data-toggle="modal" :data-target="'#chatModal-'+listing.id">
+                            <i class="fas fa-route"></i>
+                        </button>-->
+
+
+<!--
+                    <a class="btn btn-primary" v-if="(user.is_transporter||user.id===listing.user_id)&&details"
                        :href="'/listing/'+listing.id"
 
                     > <i
                         class="fas fa-angle-double-right"></i>
-                    </a>
+                    </a>-->
+                    </div>
 
 
                 </div>
@@ -283,8 +308,8 @@
                     </div>
                     <div class="modal-body">
                         <div class="row d-flex justify-content-center">
-                            <div class="col-4"><button class="btn btn-danger w-100" data-dismiss="modal" @click="removeListing">Remove</button></div>
-                            <div class="col-4"><button data-dismiss="modal" aria-label="Close" class="btn btn-secondary w-100">Cancel</button></div>
+                            <div class="col-6"><button class="btn btn-danger w-100" data-dismiss="modal" @click="removeListing">Remove</button></div>
+                            <div class="col-6"><button data-dismiss="modal" aria-label="Close" class="btn btn-secondary w-100">Cancel</button></div>
                         </div>
                     </div>
                 </div>
@@ -303,14 +328,49 @@
 
                     <div class="modal-body">
                         <div class="row d-flex justify-content-center">
-                            <div class="col-4"><button class="btn btn-danger w-100" data-dismiss="modal" @click="archiveListing">To Archive</button></div>
-                            <div class="col-4"><button data-dismiss="modal" aria-label="Close" class="btn btn-secondary w-100">Cancel</button></div>
+                            <div class="col-6"><button class="btn btn-danger w-100" data-dismiss="modal" @click="archiveListing">To Archive</button></div>
+                            <div class="col-6"><button data-dismiss="modal" aria-label="Close" class="btn btn-secondary w-100">Cancel</button></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- Modal -->
+        <div class="modal modal-fullscreen fade" :id="'quoteModal-'+listing.id" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="quoteModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="quoteModalHeader1">Quotes</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <quotes-component :listing="listing" v-if="listing"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal modal-fullscreen fade" :id="'chatModal-'+listing.id" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="chatModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="chatModalHeader1">Messenger</h5>
+
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <chat-component :listing="listing" v-if="listing"/>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 <script>

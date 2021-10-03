@@ -31,6 +31,16 @@
 
         <!-- News Blog Content -->
         <div class="container space-3-bottom--lg">
+            <div class="row d-block d-sm-none mb-2">
+                <div class="col-12 mt-2">
+
+                    <small>Enter ref-number</small>
+                    <input type="number" class="form-control w-100"
+                           v-model="filter.reference"
+                           placeholder="Reference">
+
+                </div>
+            </div>
             <div class="row">
                 <div class="col-lg-9 order-lg-2 mb-9 mb-lg-0" v-if="listings.length>0">
 
@@ -209,11 +219,12 @@
                     </div>
                 </div>
             </div>
+
         </div>
         <!-- End News Blog Content -->
 
         <!-- Hero Section -->
-        <div class="container space-2 space-3-top&#45;&#45;lg">
+        <div class="container space-2">
             <div class="row">
                 <div class="col-sm-4">
                     <div class="step">
