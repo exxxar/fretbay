@@ -59,6 +59,7 @@
                             <div class="js-focus-state form">
                                 <ValidationProvider name="Email" rules="required|email" v-slot="{ errors }">
                                     <input type="email" class="form-control form__input" name="email"
+                                           autocomplete="username"
                                            placeholder="Email" v-model="new_user.email" required>
                                     <p class="mb-0" style="color:red;font-size:11px">{{errors[0]}}</p>
                                 </ValidationProvider>
@@ -288,6 +289,7 @@
                                 <ValidationProvider name="Password" rules="required|min:6" vid="password"
                                                     v-slot="{ errors }">
                                     <input type="password" class="form-control form__input"
+                                           autocomplete="new-password"
                                            name="password" placeholder="Password" required
                                            v-model="new_user.password">
                                     <p class="mb-0" style="color: red;font-size:11px">{{errors[0]}}</p>
@@ -303,6 +305,7 @@
                                 <ValidationProvider name="Confirm password" rules="required|confirmed:password"
                                                     v-slot="{ errors }">
                                     <input type="password" class="form-control form__input" name="password_confirmation"
+                                           autocomplete="current-password"
                                            placeholder="Confirm password" required v-model="new_user.confirm_password">
                                     <p class="mb-0" style="color: red;font-size:11px">{{errors[0]}}</p>
                                 </ValidationProvider>

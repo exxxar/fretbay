@@ -11,6 +11,7 @@
                     <div class="js-focus-state form">
                         <ValidationProvider name="Email" rules="required|email" vid="email" v-slot="{ errors }">
                             <input type="email" class="form-control form__input" name="email"
+                                   autocomplete="username"
                                    placeholder="Email" v-model="login_form.email" required>
                             <p class="mb-0" style="color:red;font-size:11px">{{errors[0]}}</p>
                         </ValidationProvider>
@@ -24,6 +25,7 @@
                         <ValidationProvider name="Password" rules="required|min:6" vid="password"
                                             v-slot="{ errors }">
                             <input type="password" class="form-control form__input"
+                                   autocomplete="new-password"
                                    name="password" placeholder="Password" required
                                    v-model="login_form.password">
                             <p class="mb-0" style="color: red;font-size:11px">{{errors[0]}}</p>

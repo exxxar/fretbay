@@ -49,17 +49,13 @@ Vue.component("v-select", vSelect);
 
 import "vue-select/dist/vue-select.css";
 
-import VueRecord from '@codekraft-studio/vue-record'
-
-Vue.use(VueRecord)
-
 
 Vue.component('listing-component', require('./components/Listing/Listing.vue').default);
 Vue.component('orders-component', require('./components/Orders/Orders.vue').default);
 
 //components
 Vue.component('preloader-component', require('../desktop/components/Preloader.vue').default);
-Vue.component('audio-player-component', require('../desktop/components/AudioPlayer.vue').default);
+
 Vue.component('listing-item-component', require('./components/Listing/ListingItem.vue').default);
 
 Vue.component('order-item-component', require('./components/Orders/OrderItem.vue').default);

@@ -11,7 +11,7 @@
                              v-if="message.sender_id===user.id&&(user.is_transporter||user.is_customer)">
                             <div class="sent_msg w-100 w-md-45 ">
                                 <p
-                                    v-bind:class="{'bg-danger':message.deleted_at||message.temporary}"
+                                    v-bind:class="{'bg-danger':message.deleted_at||message.id==null}"
                                     class="d-flex justify-content-between">{{message.message}}
                                     <a href="#remove" @click="selected_message_id=message.id">
                                         <i class="fas fa-times"></i>
@@ -27,7 +27,8 @@
                                         </button>
                                     </div>
                                     <div class="col-6">
-                                        <button data-dismiss="modal"  @click="selected_message_id=null" class="btn btn-secondary w-100">Cancel
+                                        <button data-dismiss="modal" @click="selected_message_id=null"
+                                                class="btn btn-secondary w-100">Cancel
                                         </button>
                                     </div>
                                 </div>
@@ -62,8 +63,7 @@
                 <div class="bottom-controls">
                     <div class="control_row mt-2 mb-2 d-flex align-items-end">
 
-                    <span class="input_type_counter ml-2 mr-2" style="color: lightgrey;" v-if="message"><small>{{message.length}}/255</small>
-                    </span>
+
 
                         <!--<span class="badge badge-primary mr-2 ml-2 cursor-pointer" data-dismiss="modal" aria-label="Close">
                         <strong>Close</strong>
@@ -73,31 +73,55 @@
                               v-bind:class="{'badge-secondary':!forMe,'badge-purple':forMe}"
                               @click="forMe = !forMe"
                         >
+
                         <strong v-if="forMe">Any</strong>
                         <strong v-if="!forMe">Only for me</strong>
                     </span>
+
+                        <span class="badge mr-2 cursor-pointer"
+                              v-bind:class="{'badge-secondary':!searchMode,'badge-purple':searchMode}"
+                              @click="searchMode=!searchMode"
+                        >
+                           <strong v-if="searchMode">Message</strong>
+                           <strong v-if="!searchMode">Search</strong>
+                        </span>
                         <span class="badge badge-danger mr-2" v-if="isPhone" @click="reset">Remove number!</span>
-
-
-                        <input type="search" style="border:none;" placeholder="Search" v-model="search">
-
+                        <span class="input_type_counter mr-2" style="color: lightgrey;" v-if="message"><small>{{message.length}}/255</small>
+                    </span>
 
                     </div>
                     <div class="type_msg">
 
                         <div class="input_msg_write">
-                            <input type="text" class="write_msg p-2" placeholder="Type a message"
-                                   v-model="message"
-                                   maxlength="255"
-                                   v-on:keypress.enter="sendMessage"
-                            />
-                            <button class="msg_send_btn" type="button"
-                                    :disabled="isPhone"
-                                    v-bind:class="{'btn-danger':isPhone}"
-                                    @click="sendMessage"
-                            >
-                                <i class="far fa-envelope"></i>
-                            </button>
+
+                            <div class="row">
+                                <div class="col-10">
+                                    <input type="text" class="write_msg p-2" placeholder="Type a message"
+                                           v-model="message"
+                                           v-if="!searchMode"
+                                           maxlength="255"
+                                           v-on:keypress.enter="sendMessage"
+                                    />
+
+                                    <input type="search" class="write_msg p-2" placeholder="Search" v-if="searchMode"
+                                           v-model="search">
+
+                                </div>
+                                <div class="col-2">
+                                    <div class="btn-group w-100">
+
+                                        <button class="btn" type="button"
+                                                :disabled="isPhone"
+                                                v-bind:class="{'btn-danger':isPhone,'btn-primary':!isPhone}"
+                                                @click="sendMessage"
+                                        >
+                                            <i class="far fa-envelope"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+
                         </div>
                     </div>
                 </div>
@@ -105,7 +129,6 @@
 
             </div>
         </div>
-
 
 
     </div>
@@ -121,7 +144,7 @@
                 forMe: false,
                 isPhone: false,
                 message: '',
-
+                searchMode: false,
                 selected_message_id: null,
                 messages: [],
                 search: '',
@@ -221,36 +244,36 @@
                 if (this.isPhone)
                     return;
 
+
+
                 let messageIndex = (this.messages.push({
                     "id": null,
                     "message": this.message,
                     "sender_id": this.user.id,
                     "recipient_id": this.listing.user_id,
                     "created_at": new Date(),
-                    "temporary": true
                 })) - 1;
 
-                let message = this.message
 
-
-                this.message = null
 
                 this.$nextTick(() => {
                     document.querySelector('.msg_history').scrollTo(0, document.querySelector('.msg_history').scrollHeight);
                 })
 
                 axios.post("/listing/messages/send", {
-                    "message": message,
+                    "message": this.message,
                     "listing_id": this.listing.id,
                     'recipient_id': this.listing.user_id,
                     'user_id': this.user.id
                 }).then(resp => {
 
-                    this.messages[messageIndex].temporary = false;
+                    ///this.messages[messageIndex].temporary = false;
                     this.messages[messageIndex].id = resp.data.id
                     this.loadMessages();
 
                 })
+
+                this.message = null
             }
         }
     }
@@ -304,7 +327,7 @@
         position: fixed;
         bottom: 0px;
         width: 100%;
-        height: 89px;
+        height: 105px;
         left: 0;
         background: white;
         border-top: 2px #00a600 solid;
