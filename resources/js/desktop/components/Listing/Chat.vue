@@ -13,9 +13,9 @@
                                 <p
                                     v-bind:class="{'bg-danger':message.deleted_at||message.id==null}"
                                     class="d-flex justify-content-between">{{message.message}}
-                                    <a href="#remove" @click="selected_message_id=message.id">
+                                 <!--   <a href="#remove" @click="selected_message_id=message.id">
                                         <i class="fas fa-times"></i>
-                                    </a>
+                                    </a>-->
                                 </p>
 
                                 <span class="time_date"> {{message.created_at| moment("from", "now", true)}}</span>
