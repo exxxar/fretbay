@@ -12,12 +12,25 @@
                             <div class="sent_msg w-100 w-md-45 ">
                                 <p
                                     v-bind:class="{'bg-danger':message.deleted_at||message.temporary}"
-                                    class="d-flex justify-content-between">{{message.message}} <a href="#remove"
-                                                                                                  @click="removeMessage(message.id)"><i
-                                    class="fas fa-times"></i></a></p>
+                                    class="d-flex justify-content-between">{{message.message}}
+                                    <a href="#remove" @click="selected_message_id=message.id">
+                                        <i class="fas fa-times"></i>
+                                    </a>
+                                </p>
 
                                 <span class="time_date"> {{message.created_at| moment("from", "now", true)}}</span>
 
+                                <div class="row d-flex justify-content-center" v-if="selected_message_id===message.id">
+                                    <div class="col-6">
+                                        <button class="btn btn-danger w-100" @click="removeMessage">
+                                            Remove
+                                        </button>
+                                    </div>
+                                    <div class="col-6">
+                                        <button data-dismiss="modal"  @click="selected_message_id=null" class="btn btn-secondary w-100">Cancel
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -46,49 +59,53 @@
                     </div>
 
                 </div>
-                <div class="control_row mt-2 mb-2 d-flex align-items-end">
+                <div class="bottom-controls">
+                    <div class="control_row mt-2 mb-2 d-flex align-items-end">
 
                     <span class="input_type_counter ml-2 mr-2" style="color: lightgrey;" v-if="message"><small>{{message.length}}/255</small>
                     </span>
 
-                    <span class="badge badge-primary mr-2 ml-2 cursor-pointer" data-dismiss="modal" aria-label="Close">
+                        <!--<span class="badge badge-primary mr-2 ml-2 cursor-pointer" data-dismiss="modal" aria-label="Close">
                         <strong>Close</strong>
-                    </span>
-                    <span class="badge mr-2 cursor-pointer"
-                          v-if="user.is_transporter"
-                          v-bind:class="{'badge-secondary':!forMe,'badge-purple':forMe}"
-                          @click="forMe = !forMe"
-                    >
+                    </span>-->
+                        <span class="badge mr-2 ml-2 cursor-pointer"
+                              v-if="user.is_transporter"
+                              v-bind:class="{'badge-secondary':!forMe,'badge-purple':forMe}"
+                              @click="forMe = !forMe"
+                        >
                         <strong v-if="forMe">Any</strong>
                         <strong v-if="!forMe">Only for me</strong>
                     </span>
-                    <span class="badge badge-danger mr-2" v-if="isPhone" @click="reset">Remove number!</span>
+                        <span class="badge badge-danger mr-2" v-if="isPhone" @click="reset">Remove number!</span>
 
 
-                    <input type="search" style="border:none;" placeholder="Search" v-model="search">
+                        <input type="search" style="border:none;" placeholder="Search" v-model="search">
 
 
-                </div>
-                <div class="type_msg">
+                    </div>
+                    <div class="type_msg">
 
-                    <div class="input_msg_write">
-                        <input type="text" class="write_msg p-2" placeholder="Type a message"
-                               v-model="message"
-                               maxlength="255"
-                               v-on:keypress.enter="sendMessage"
-                        />
-                        <button class="msg_send_btn" type="button"
-                                :disabled="isPhone"
-                                v-bind:class="{'btn-danger':isPhone}"
-                                @click="sendMessage"
-                        >
-                            <i class="far fa-envelope"></i>
-                        </button>
+                        <div class="input_msg_write">
+                            <input type="text" class="write_msg p-2" placeholder="Type a message"
+                                   v-model="message"
+                                   maxlength="255"
+                                   v-on:keypress.enter="sendMessage"
+                            />
+                            <button class="msg_send_btn" type="button"
+                                    :disabled="isPhone"
+                                    v-bind:class="{'btn-danger':isPhone}"
+                                    @click="sendMessage"
+                            >
+                                <i class="far fa-envelope"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
+
             </div>
         </div>
+
 
 
     </div>
@@ -105,6 +122,7 @@
                 isPhone: false,
                 message: '',
 
+                selected_message_id: null,
                 messages: [],
                 search: '',
 
@@ -143,7 +161,6 @@
                 let tmp = this.message.split('')
 
                 let counter = 0;
-                console.log(tmp)
 
                 let hasNum = false;
                 tmp.forEach(item => {
@@ -182,16 +199,21 @@
                 })
 
             },
-            removeMessage(id) {
-                axios.delete("/listing/messages/remove/" + id).then(resp => {
-                    this.messages.find(item => {
-                        if (item.id === id) {
-                            item.deleted_at = new Date();
+            removeMessage() {
+                if (!this.selected_message_id)
+                    return;
 
-                        }
-                    })
+                this.messages.find(item => {
+                    if (item.id === this.selected_message_id) {
+                        item.deleted_at = new Date();
+                    }
                 })
 
+                axios.delete("/listing/messages/remove/" + this.selected_message_id).then(resp => {
+
+                })
+
+                this.selected_message_id = null
 
             },
             sendMessage() {
@@ -211,6 +233,8 @@
                 let message = this.message
 
 
+                this.message = null
+
                 this.$nextTick(() => {
                     document.querySelector('.msg_history').scrollTo(0, document.querySelector('.msg_history').scrollHeight);
                 })
@@ -226,8 +250,6 @@
                     this.messages[messageIndex].id = resp.data.id
                     this.loadMessages();
 
-
-                    this.message = null;
                 })
             }
         }
@@ -265,8 +287,7 @@
     }
 
     .msg_history {
-        height: 85vh !important;
-        border-bottom: 2px #21c87a solid;
+        height: 75vh !important;
 
     }
 
@@ -279,4 +300,13 @@
     }
 
 
+    .bottom-controls {
+        position: fixed;
+        bottom: 0px;
+        width: 100%;
+        height: 89px;
+        left: 0;
+        background: white;
+        border-top: 2px #00a600 solid;
+    }
 </style>

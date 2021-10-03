@@ -2,36 +2,36 @@
     <main id="content">
         <!-- Description Section -->
         <div class="container space-1 pt-5 pb-2">
+            <div class="row mb-2">
+                <div class="col-12">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-outline-primary w-100"
+                                v-if="user.is_transporter||user.id===listing.user_id"
+                                data-toggle="modal" data-target="#quoteModal">
+                            <i class="fas fa-gavel"></i>
+                        </button>
+
+
+                        <button type="button" class="btn btn-outline-primary w-100"
+                                v-if="user.is_transporter||user.id===listing.user_id"
+                                data-toggle="modal" data-target="#chatModal">
+                            <i class="far fa-comments"></i>
+                        </button>
+
+                         <button type="button" class="btn btn-outline-primary w-100"
+                             v-if="user.is_transporter||user.id===listing.user_id"
+                                 @click="initMap"
+                             data-toggle="modal" data-target="#mapModal">
+                         <i class="fas fa-route"></i>
+                     </button>
+                    </div>
+                </div>
+            </div>
             <div class="row ">
                 <div class="col-12">
 
 
                     <listing-item-component :listing="listing" :details="false" v-if="listing"/>
-
-                    <div id="map" v-if="showMap" style="width:100%; height:250px;"></div>
-
-
-             <!--       <div class="row mt-5 d-flex justify-content-start">
-                        <div class="col-lg-3 col-sm-6 col-12 mb-2"
-                             v-if="user.is_transporter||user.id===listing.user_id">
-                            <button type="button" class="btn btn-primary w-100" data-toggle="modal" data-target="#quoteModal">
-                                Quotes
-                            </button>
-                        </div>
-                        <div class="col-lg-3 col-sm-6 col-12" v-if="user.is_transporter||user.id===listing.user_id">
-                           &lt;!&ndash; <button class="btn btn-outline-primary w-100"
-                                    v-bind:class="{'active':activePart===1}"
-                                    @click="activePart=1"
-                            >
-                                Messages
-                            </button>&ndash;&gt;
-                            <button type="button" class="btn btn-primary w-100" data-toggle="modal" data-target="#chatModal">
-                            Chat
-                            </button>
-
-
-                             </div>
-                    </div>-->
 
 
 
@@ -61,8 +61,9 @@
         </div>
         <!-- End Pagination -->
 
-      <!--  &lt;!&ndash; Modal &ndash;&gt;
-        <div class="modal modal-fullscreen fade" id="quoteModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="quoteModal" aria-hidden="true">
+        <!-- Modal -->
+        <div class="modal modal-fullscreen fade" id="quoteModal" data-backdrop="static" data-keyboard="false"
+             tabindex="-1" aria-labelledby="quoteModal" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -79,8 +80,29 @@
             </div>
         </div>
 
-        &lt;!&ndash; Modal &ndash;&gt;
-        <div class="modal modal-fullscreen fade" id="chatModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="chatModal" aria-hidden="true">
+
+        <div class="modal modal-fullscreen fade" id="mapModal" data-backdrop="static" data-keyboard="false"
+             tabindex="-1" aria-labelledby="mapModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="mapModalHeader">Map</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div id="map" v-if="showMap" style="width:100%; height:100vh;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Modal -->
+        <div class="modal modal-fullscreen fade" id="chatModal" data-backdrop="static" data-keyboard="false"
+             tabindex="-1" aria-labelledby="chatModal" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -90,13 +112,13 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body p-0">
                         <chat-component :listing="listing" v-if="listing"/>
                     </div>
                 </div>
             </div>
         </div>
--->
+
     </main>
 </template>
 <script>
@@ -204,14 +226,13 @@
                 };
 
                 let dynamicCenter = [
-                    (this.listing.place_of_loading.center[0]+this.listing.place_of_delivery.center[0])/2,
-                    (this.listing.place_of_loading.center[1]+this.listing.place_of_delivery.center[1])/2
-                    ]
+                    (this.listing.place_of_loading.center[0] + this.listing.place_of_delivery.center[0]) / 2,
+                    (this.listing.place_of_loading.center[1] + this.listing.place_of_delivery.center[1]) / 2
+                ]
 
 
                 let dynamicZoom = 3
                 let dist = this.listing.distance
-
 
 
                 if (dist > 0 && dist <= 200)
@@ -223,9 +244,8 @@
                 if (dist > 700 && dist <= 900)
                     dynamicZoom = 2
 
-                if (dist > 900 )
+                if (dist > 900)
                     dynamicZoom = 1
-
 
 
                 this.map = new mapboxgl.Map({
@@ -581,7 +601,7 @@
 
     .mapboxgl-canvas {
         width: 100% !important;
-        height: 250px !important;
+        height: 100vh !important;
     }
 
     #chatModal {

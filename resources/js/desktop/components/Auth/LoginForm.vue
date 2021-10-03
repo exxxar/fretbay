@@ -36,7 +36,7 @@
                     <div class="col-6">
                         <!-- Checkbox -->
                         <div class="custom-control custom-checkbox d-flex align-items-center text-muted">
-                            <input type="checkbox" name="remember" class="custom-control-input" id="rememberMeCheckbox" >
+                            <input type="checkbox" name="remember" class="custom-control-input" id="rememberMeCheckbox" checked v-model="login_form.remember">
                             <label class="custom-control-label" for="rememberMeCheckbox">
                                 Remember Me
                             </label>
@@ -98,6 +98,7 @@
                 login_form: {
                     email: '',
                     password: '',
+                    remember: true,
                     newsletter_notify: false,
                     privacy_agree: false,
                 },

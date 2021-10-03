@@ -73,19 +73,13 @@ class LoginController extends Controller
             'password' => 'required|string',
         ]);
 
-        $remember = $request->remember ? true : false;
+        $remember_me = $request->has('remember') ? true : false;
 
         $credentials = request(['password']);
         $credentials['email'] = $request->email;
         $credentials['deleted_at'] = null;
 
-/*
-        if (Auth::viaRemember())
-        {
-            Auth::login($user, $remember);
-        }*/
-
-        if (!Auth::attempt($credentials, true))
+        if (!Auth::attempt($credentials, $remember_me))
             return response()->json([
                 'message' => "Error!",
             ], 400);

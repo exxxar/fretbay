@@ -200,7 +200,7 @@
 
                     </div>
 
-                    <div class="btn-group" >
+                  <!--  <div class="btn-group" >
                         <button type="button" class="btn btn-outline-primary w-100"
                                 v-if="user.is_transporter||user.id===listing.user_id"
                                 data-toggle="modal" :data-target="'#quoteModal-'+listing.id">
@@ -214,21 +214,21 @@
                             <i class="far fa-comments"></i>
                         </button>
 
-                      <!--  <button type="button" class="btn btn-outline-primary w-100"
+                      &lt;!&ndash;  <button type="button" class="btn btn-outline-primary w-100"
                                 v-if="user.is_transporter||user.id===listing.user_id"
                                 data-toggle="modal" :data-target="'#chatModal-'+listing.id">
                             <i class="fas fa-route"></i>
-                        </button>-->
+                        </button>&ndash;&gt;
 
 
-<!--
+&lt;!&ndash;
                     <a class="btn btn-primary" v-if="(user.is_transporter||user.id===listing.user_id)&&details"
                        :href="'/listing/'+listing.id"
 
                     > <i
                         class="fas fa-angle-double-right"></i>
-                    </a>-->
-                    </div>
+                    </a>&ndash;&gt;
+                    </div>-->
 
 
                 </div>
@@ -335,43 +335,7 @@
                 </div>
             </div>
         </div>
-
-        <!-- Modal -->
-        <div class="modal modal-fullscreen fade" :id="'quoteModal-'+listing.id" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="quoteModal" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="quoteModalHeader1">Quotes</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-
-                    <div class="modal-body">
-                        <quotes-component :listing="listing" v-if="listing"/>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Modal -->
-        <div class="modal modal-fullscreen fade" :id="'chatModal-'+listing.id" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="chatModal" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="chatModalHeader1">Messenger</h5>
-
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <chat-component :listing="listing" v-if="listing"/>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+   </div>
 </template>
 <script>
 
