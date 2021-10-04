@@ -32,10 +32,28 @@ use Illuminate\Support\Facades\Password;
 
 
 Route::get("/event", function () {
-    echo ("t1=". \Carbon\Carbon::createFromTimestampUTC(intval("1633208400000")/1000));
-    echo ("t2=1633208400000");
+    $client = new \GuzzleHttp\Client();
+
+    try {
+        $response = $client->request('GET',
+            "https://router.project-osrm.org/route/v1/driving/30.4721233,50.4851493;31.4721233,47.4851493?steps=false&geometries=geojson"
+
+        );
+    } catch (\Exception $e) {
+        return 0;
+    }
+
+    if ($response->getStatusCode() !== 200)
+        return 0;
+
+    $distances = json_decode($response->getBody(), true);
 
 
+    $tmp_sum = 0;
+    if (isset($distances["routes"][0]["distance"]))
+        $tmp_sum = $distances["routes"][0]["distance"];
+
+    dd( $tmp_sum);
 });
 
 Route::get('/locale/{lang}', function (\Illuminate\Http\Request $request, $lang) {
