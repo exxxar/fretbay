@@ -38,6 +38,7 @@
         rel="stylesheet"
     />
 
+    <link rel="manifest" href="/manifest.json">
 
     @if (Auth::check())
         <meta name="user" content="{{ App\User::self() }}"/>
@@ -91,7 +92,14 @@
 <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-messaging.js"></script>
 
     <script>
-        navigator.serviceWorker.register('/firebase-messaging-sw.js');
+
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/firebase-messaging-sw.js')
+                .then(initialiseState);
+        } else {
+            console.warn('Service workers aren\'t supported in this browser.');
+        }
+
 
         var firebaseConfig = {
             apiKey: "AIzaSyCARQA652wHZLjeRHWXqULVKtkWzbPIzjA",

@@ -1,43 +1,171 @@
 <template>
     <div class="card shadow-sm border-0 mb-4 px-4">
-        <div class="card-header d-flex justify-content-between">
+        <div class="card-header">
+            <h4 class="text-primary">{{order.title}} </h4>
+            <p><em>{{order.description}}</em></p>
+            <hr>
+            <p class="text-primary">{{status}}</p>
+            <hr>
+            <h5>Customer contact details:</h5>
+            <div class="row">
+                <div class="col-sm-6 col-12">
+                    <p>Name: <strong>{{order.user.name}}</strong></p>
+                    <p>Email: <strong>{{order.user.email}}</strong></p>
+                </div>
+                <div class="col-sm-6 col-12">
+                    <p>Phone 1: <strong>{{order.user.profile.telephone_number_1}}</strong></p>
+                    <p>Phone 2: <strong>{{order.user.profile.telephone_number_2}}</strong></p>
+                </div>
+            </div>
+
 
         </div>
         <div class="card-body d-md-flex justify-content-between align-items-center py-4 px-0 flex-wrap">
-            <md-steppers :md-active-step.sync="status" md-vertical md-linear>
-                <md-step id="first" md-label="Begin mission" md-description="Optional" :md-editable="false"
+            <md-steppers :md-active-step.sync="currentStep" md-vertical md-linear>
+                <md-step id="first" md-label="Begin mission & Loading" md-description="Optional" :md-editable="false"
                          :md-done.sync="first">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias doloribus eveniet quaerat modi
-                        cumque quos sed, temporibus nemo eius amet aliquid, illo minus blanditiis tempore, dolores
-                        voluptas dolore placeat nulla.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias doloribus eveniet quaerat modi
-                        cumque quos sed, temporibus nemo eius amet aliquid, illo minus blanditiis tempore, dolores
-                        voluptas dolore placeat nulla.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias doloribus eveniet quaerat modi
-                        cumque quos sed, temporibus nemo eius amet aliquid, illo minus blanditiis tempore, dolores
-                        voluptas dolore placeat nulla.</p>
+
+                    <div class="row w-100 mt-1 m-0">
+                        <div class="col-sm-4 col-12 mt-2 mt-sm-0 p-0">
+                            <i class="svg-icon svg-icon-xs text-secondary mt-n1 mr-2">
+                                <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"
+                                     xmlns="http://www.w3.org/2000/svg"
+                                     xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <rect x="0" y="0" width="24" height="24"></rect>
+                                        <path
+                                            d="M5,10.5 C5,6 8,3 12.5,3 C17,3 20,6.75 20,10.5 C20,12.8325623 17.8236613,16.03566 13.470984,20.1092932 C12.9154018,20.6292577 12.0585054,20.6508331 11.4774555,20.1594925 C7.15915182,16.5078313 5,13.2880005 5,10.5 Z M12.5,12 C13.8807119,12 15,10.8807119 15,9.5 C15,8.11928813 13.8807119,7 12.5,7 C11.1192881,7 10,8.11928813 10,9.5 C10,10.8807119 11.1192881,12 12.5,12 Z"
+                                            fill="#000000"></path>
+                                    </g>
+                                </svg>
+                            </i>
+
+                            <strong>Place of loading:</strong>
+                        </div>
+                        <div class="col-sm-8 col-12 p-0">
+                            <a class="d-flex align-items-center text-secondary" href="#">
+
+
+                                <strong class="mr-2">{{listing.place_of_loading.postal}},</strong>
+                                {{listing.place_of_loading.place_name}}
+
+                            </a>
+
+                            <small> Load between
+                                <strong style="color: #0fb15d">
+                                    {{listing.shipping_date_from | moment('DD.MM')}}
+                                </strong>
+
+                                and
+
+                                <strong style="color: #0fb15d">
+                                    {{listing.shipping_date_to | moment('DD.MM')}}
+                                </strong>
+                            </small>
+                        </div>
+
+                        <div class="col-sm-4 col-12 mt-2 mt-sm-0 p-0">
+
+                            <i class="svg-icon svg-icon-xs text-secondary mt-n1 mr-2 ">
+                                <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"
+                                     xmlns="http://www.w3.org/2000/svg"
+                                     xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <rect x="0" y="0" width="24" height="24"></rect>
+                                        <path
+                                            d="M5,10.5 C5,6 8,3 12.5,3 C17,3 20,6.75 20,10.5 C20,12.8325623 17.8236613,16.03566 13.470984,20.1092932 C12.9154018,20.6292577 12.0585054,20.6508331 11.4774555,20.1594925 C7.15915182,16.5078313 5,13.2880005 5,10.5 Z M12.5,12 C13.8807119,12 15,10.8807119 15,9.5 C15,8.11928813 13.8807119,7 12.5,7 C11.1192881,7 10,8.11928813 10,9.5 C10,10.8807119 11.1192881,12 12.5,12 Z"
+                                            fill="#000000"></path>
+                                    </g>
+                                </svg>
+                            </i>
+
+                            <strong>Place of delivery:</strong>
+                        </div>
+                        <div class="col-sm-8 col-12 p-0">
+                            <a class="d-flex align-items-center text-secondary" href="#">
+
+
+                                <strong class="mr-2"> {{listing.place_of_delivery.postal}},</strong>
+                                {{listing.place_of_delivery.place_name}}
+                            </a>
+
+                            <small> Delivered between
+                                <strong style="color: #0fb15d">
+                                    {{listing.unshipping_date_from | moment('DD.MM')}}
+                                </strong> and
+                                <strong style="color: #0fb15d">
+                                    {{listing.unshipping_date_to | moment('DD.MM')}}
+                                </strong>
+                            </small>
+                        </div>
+
+                        <div class="col-sm-4 col-12 pl-0" v-if="listing.distance>0">
+                            <p class="ml-sm-5 ml-0 p-sm-2 p-0 mt-2 mt-sm-0">Distance
+                                <strong>{{listing.distance}}</strong> km
+                            </p>
+                        </div>
+
+
+                        <div class="col-12 pl-0" v-if="listing.moving_package">
+                            <p class="ml-sm-5 ml-0 p-sm-2 p-0 mt-2 mt-sm-0"><strong>{{listing.moving_package}}</strong>
+                            </p>
+                        </div>
+
+
+                    </div>
+
+
                     <md-button class="md-raised md-primary" @click="setDone('first', 'second')">Continue</md-button>
                 </md-step>
 
-                <md-step id="second" md-label="Loading" md-description="Optional" :md-error="secondStepError"
+                <md-step id="second" md-label="Shipping & Unloading & Complete" md-description="Optional"
+                         :md-error="secondStepError"
                          :md-editable="false" :md-done.sync="second">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias doloribus eveniet quaerat modi
-                        cumque quos sed, temporibus nemo eius amet aliquid, illo minus blanditiis tempore, dolores
-                        voluptas dolore placeat nulla.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias doloribus eveniet quaerat modi
-                        cumque quos sed, temporibus nemo eius amet aliquid, illo minus blanditiis tempore, dolores
-                        voluptas dolore placeat nulla.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias doloribus eveniet quaerat modi
-                        cumque quos sed, temporibus nemo eius amet aliquid, illo minus blanditiis tempore, dolores
-                        voluptas dolore placeat nulla.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias doloribus eveniet quaerat modi
-                        cumque quos sed, temporibus nemo eius amet aliquid, illo minus blanditiis tempore, dolores
-                        voluptas dolore placeat nulla.</p>
-                    <md-button class="md-raised md-primary" @click="setDone('second', 'third')">Continue</md-button>
-                    <md-button class="md-raised md-primary" @click="setError()">Set error!</md-button>
+
+                    <div class="row">
+                        <div class="col-sm-4 col-12 mt-2 mt-sm-0 p-0">
+
+                            <i class="svg-icon svg-icon-xs text-secondary mt-n1 mr-2 ">
+                                <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"
+                                     xmlns="http://www.w3.org/2000/svg"
+                                     xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <rect x="0" y="0" width="24" height="24"></rect>
+                                        <path
+                                            d="M5,10.5 C5,6 8,3 12.5,3 C17,3 20,6.75 20,10.5 C20,12.8325623 17.8236613,16.03566 13.470984,20.1092932 C12.9154018,20.6292577 12.0585054,20.6508331 11.4774555,20.1594925 C7.15915182,16.5078313 5,13.2880005 5,10.5 Z M12.5,12 C13.8807119,12 15,10.8807119 15,9.5 C15,8.11928813 13.8807119,7 12.5,7 C11.1192881,7 10,8.11928813 10,9.5 C10,10.8807119 11.1192881,12 12.5,12 Z"
+                                            fill="#000000"></path>
+                                    </g>
+                                </svg>
+                            </i>
+
+                            <strong>Place of delivery:</strong>
+                        </div>
+                        <div class="col-sm-8 col-12 p-0">
+                            <a class="d-flex align-items-center text-secondary" href="#">
+
+
+                                <strong class="mr-2"> {{listing.place_of_delivery.postal}},</strong>
+                                {{listing.place_of_delivery.place_name}}
+                            </a>
+
+                            <small> Delivered between
+                                <strong style="color: #0fb15d">
+                                    {{listing.unshipping_date_from | moment('DD.MM')}}
+                                </strong> and
+                                <strong style="color: #0fb15d">
+                                    {{listing.unshipping_date_to | moment('DD.MM')}}
+                                </strong>
+                            </small>
+                        </div>
+                    </div>
+
+
+                    <md-button class="md-raised md-primary" @click="setDone('second', 'third')">Complete</md-button>
+                    <md-button class="md-raised md-primary" @click="setError()">Not delivered!</md-button>
                 </md-step>
 
-                <md-step id="third" md-label="Shipping" md-description="Optional" :md-editable="false"
+
+                <md-step id="third" md-label="Complete" md-description="Optional" :md-editable="false"
                          :md-done.sync="third">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias doloribus eveniet quaerat modi
                         cumque quos sed, temporibus nemo eius amet aliquid, illo minus blanditiis tempore, dolores
@@ -45,30 +173,8 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias doloribus eveniet quaerat modi
                         cumque quos sed, temporibus nemo eius amet aliquid, illo minus blanditiis tempore, dolores
                         voluptas dolore placeat nulla.</p>
-                    <md-button class="md-raised md-primary" @click="setDone('third', 'four')">Continue</md-button>
                 </md-step>
 
-                <md-step id="four" md-label="Unloading" md-description="Optional" :md-editable="false"
-                         :md-done.sync="four">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias doloribus eveniet quaerat modi
-                        cumque quos sed, temporibus nemo eius amet aliquid, illo minus blanditiis tempore, dolores
-                        voluptas dolore placeat nulla.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias doloribus eveniet quaerat modi
-                        cumque quos sed, temporibus nemo eius amet aliquid, illo minus blanditiis tempore, dolores
-                        voluptas dolore placeat nulla.</p>
-                    <md-button class="md-raised md-primary" @click="setDone('four', 'five')">Continue</md-button>
-                </md-step>
-
-                <md-step id="five" md-label="Complete" md-description="Optional" :md-editable="false"
-                         :md-done.sync="five">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias doloribus eveniet quaerat modi
-                        cumque quos sed, temporibus nemo eius amet aliquid, illo minus blanditiis tempore, dolores
-                        voluptas dolore placeat nulla.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias doloribus eveniet quaerat modi
-                        cumque quos sed, temporibus nemo eius amet aliquid, illo minus blanditiis tempore, dolores
-                        voluptas dolore placeat nulla.</p>
-                    <md-button class="md-raised md-primary" @click="setDone('five')">Done</md-button>
-                </md-step>
             </md-steppers>
         </div>
 
@@ -87,19 +193,37 @@
 
         data() {
             return {
-                active: 'third',
+                active: 'first',
                 first: true,
-                second: true,
+                second: false,
                 third: false,
-                four: false,
-                five: false,
                 secondStepError: null
             }
         },
         computed: {
 
+            listing() {
+                return this.order.listing
+            },
             status() {
-                return ["first", "second", "third", "four", "five"][this.order.status] || "first"
+                return ["Begin mission", "Loading", "Shipping", "Unloading", "Complete", "Stopped"][this.order.status] || "Begin mission"
+            },
+            currentStep() {
+                if (this.order.status >= 0 && this.order.status <= 2) {
+                    this.first = true;
+                    return "first";
+                }
+                if (this.order.status === 3) {
+                    this.first = true;
+                    this.second = true
+                    return "second";
+                }
+                if (this.order.status === 4) {
+                    this.first = true;
+                    this.second = true
+                    this.third = true;
+                    return "third";
+                }
             },
             user: function () {
                 return window.user
@@ -109,21 +233,43 @@
         },
         methods: {
 
+            changeOrderStatus(status) {
+                axios.post('/orders/status', {
+                    order_id: this.order.id,
+                    status: status
+                }).then(() => {
+                    window.location.reload()
+                })
+            },
             setDone(id, index) {
                 this[id] = true
 
                 this.secondStepError = null
 
+                switch (id) {
+                    default:
+                    case "first":
+                        this.changeOrderStatus(3);
+                        break;
+                    case "second":
+                        this.changeOrderStatus(4);
+                        break;
+                }
+
+
                 if (index) {
                     this.active = index
+
                 }
+
             },
             setError() {
                 this.secondStepError = 'This is an error!'
+                this.changeOrderStatus(5)
             }
         },
         mounted() {
-
+            console.log("order", this.order)
         }
     }
 

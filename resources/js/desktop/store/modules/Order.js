@@ -22,10 +22,12 @@ const getters = {
         return state.paginate || null
     },
     userOrders: (state, getters, rootState) => {
-        if (window.user)
+       /* if (window.user)
             return state.orders.filter(item => item.user_id === window.user.id)
         else
-            return [];
+            return [];*/
+
+       return state.orders
     },
     orders: (state, getters, rootState) => {
         return state.orders;

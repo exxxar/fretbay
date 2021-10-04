@@ -291,12 +291,16 @@
                     <listing-component v-on:update="loadRemovedListing"/>
                 </div>
 
-                <div class="tab-pane fade" id="orders-active" role="tabpanel" aria-labelledby="orders-active-tab">
+                <div class="tab-pane fade" id="orders-active" role="tabpanel" aria-labelledby="orders-active-tab"
+                @click="loadActiveOrders"
+                >
                     <orders-component v-on:update="loadActiveOrders"/>
                 </div>
 
-                <div class="tab-pane fade" id="orders-archive" role="tabpanel" aria-labelledby="orders-archive-tab">
-                    <orders-component v-on:update="loadActiveOrders"/>
+                <div class="tab-pane fade" id="orders-archive" role="tabpanel" aria-labelledby="orders-archive-tab"
+                     @click="loadArchiveOrders"
+                >
+                    <orders-component v-on:update="loadArchiveOrders"/>
                 </div>
 
                 <div class="tab-pane fade" id="notifications" role="tabpanel" aria-labelledby="notifications-tab">

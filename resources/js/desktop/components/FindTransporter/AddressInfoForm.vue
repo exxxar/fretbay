@@ -1,6 +1,6 @@
 <template>
     <div class="container p-2 mt-1">
-        <ValidationObserver v-slot="{ invalid }">
+        <ValidationObserver v-slot="{ invalid }" tag="form" @submit.prevent="nextStep">
 
 
             <div class="card  mb-2">
@@ -142,16 +142,20 @@
                     <div class="row w-100 m-auto">
                         <div class="col-12">
                             <div class="custom-control custom-switch">
-                                <input type="checkbox" id="commercial" class="custom-control-input"  @change="isOffers=!isOffers">
+                                <ValidationProvider :name="commercial" rules="required" v-slot="{ errors }">
+                                <input type="checkbox" id="commercial" class="custom-control-input"  @change="isOffers=!isOffers" required>
                                 <label for="commercial" class="custom-control-label" >I agree to receive commercial offers from
                                     AlloTrans and its partners</label>
+                                </ValidationProvider>
                             </div>
                         </div>
 
                         <div class="col-12">
                             <div class="custom-control custom-switch">
-                                <input type="checkbox" id="terms" class="custom-control-input" @change="isTerms=!isTerms">
+                                <ValidationProvider :name="terms" rules="required" v-slot="{ errors }">
+                                <input type="checkbox" id="terms" class="custom-control-input" @change="isTerms=!isTerms" required>
                                 <label for="terms" class="custom-control-label" >I accept AlloTrans's Terms of Use </label>
+                                </ValidationProvider>
                             </div>
                         </div>
 
@@ -168,8 +172,11 @@
                 <div class="col-12 mb-1 mb-sm-0 col-sm-2">
                     <button class="btn btn-outline-blue  w-100" @click="prevStep">Back</button>
                 </div>
-                <div class="col-12 col-sm-3" v-if="isOffers&&isTerms">
-                    <button class="btn btn-outline-primary  w-100" @click="nextStep" :disabled="invalid">Next</button>
+                <div class="col-12 col-sm-3">
+                    <button class="btn  w-100"
+                            type="submit"
+                            v-bind:class="{'btn-danger':invalid||!isOffers||!isTerms, 'btn-outline-primary':!invalid&&isOffers&&isTerms}"
+                            >Send</button>
                 </div>
             </div>
         </ValidationObserver>

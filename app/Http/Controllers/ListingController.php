@@ -238,7 +238,7 @@ class ListingController extends Controller
             'moving_package' => $request->get('moving_package') ?? '',
             'images' => [],
             'status' => $request->get('status') ?? '',
-            'distance' => $this->mapbox->getAPI()->getMathDistance(
+            'distance' => $this->mapbox->getAPI()->getDistanceOSM(
                 $place_of_loading->center[0] ?? 0,
                 $place_of_loading->center[1] ?? 0,
                 $place_of_delivery->center[0] ?? 0,
@@ -491,6 +491,7 @@ class ListingController extends Controller
 
     }
 
+    //todo: remove this method
     public function acceptQuote(Request $request)
     {
 
@@ -507,6 +508,8 @@ class ListingController extends Controller
 
         $latestQuote->status = 2;
         $latestQuote->save();
+
+
 
         event(new NotificationEvent(
             "#accept quote-" . $request->quote_id,

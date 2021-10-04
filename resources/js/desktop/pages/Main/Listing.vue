@@ -18,12 +18,12 @@
                             <i class="far fa-comments"></i>
                         </button>
 
-                         <button type="button" class="btn btn-outline-primary w-100"
+                       <!--  <button type="button" class="btn btn-outline-primary w-100"
                              v-if="user.is_transporter||user.id===listing.user_id"
                                  @click="initMap"
                              data-toggle="modal" data-target="#mapModal">
                          <i class="fas fa-route"></i>
-                     </button>
+                     </button>-->
                     </div>
                 </div>
             </div>
@@ -36,6 +36,9 @@
 
 
 
+                </div>
+                <div class="col-12 mt-2">
+                    <div id="map" v-if="showMap" style="width:100%; height:100vh;"></div>
                 </div>
             </div>
         </div>
@@ -81,7 +84,7 @@
         </div>
 
 
-        <div class="modal modal-fullscreen fade" id="mapModal" data-backdrop="static" data-keyboard="false"
+     <!--   <div class="modal modal-fullscreen fade" id="mapModal" data-backdrop="static" data-keyboard="false"
              tabindex="-1" aria-labelledby="mapModal" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -97,7 +100,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
 
 
         <!-- Modal -->

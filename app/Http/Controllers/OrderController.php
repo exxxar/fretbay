@@ -19,7 +19,7 @@ class OrderController extends Controller
 {
     public function index()
     {
-        $orders = Order::with(["listing"])
+        $orders = Order::with(["listing", "user", "user.profile"])
             ->where("user_id", Auth::user()->id)
             ->orWhere("transporter_id", Auth::user()->id)
             ->paginate(15);
@@ -69,9 +69,19 @@ class OrderController extends Controller
                 "message" => "Error!"
             ], 404);
 
+        $order = Order::where("listing_id", $listing->id)->first();
+        if (!is_null($order))
+            return response()->json([
+                "message" => "Error!"
+            ], 400);
+
+
+        $quote->status = 2;
+        $quote->save();
+
         $order = Order::create([
             "title" => $listing->title,
-            "description" => $listing->description,//Описание заказа
+            "description" => $listing->additional_info ?? "no description",//Описание заказа
             "price" => $quote->price,//Сумма заказа
             "status" => 0,
             "user_id" => $user_id,
@@ -94,11 +104,11 @@ class OrderController extends Controller
     public function changeOrderStatus(Request $request)
     {
         $request->validate([
-            "order_id"=>"required",
-            "status"=>"required"
+            "order_id" => "required",
+            "status" => "required"
         ]);
 
-        $order = Order::where("id",$request->order_id)->first();
+        $order = Order::where("id", $request->order_id)->first();
 
         if (is_null($order))
             return response()->json([
@@ -174,19 +184,45 @@ class OrderController extends Controller
         return response()->noContent();
     }
 
-    public function loadActive(){
+    public function loadActive()
+    {
+        $orders = Order::with(["listing", "user", "user.profile"])
+            ->where(function($query) {
+                $query->where('user_id', Auth::user()->id)
+                    ->orWhere('transporter_id',  Auth::user()->id);
+            })
+            ->where("status","<",4)
+            ->paginate(15);
+
+        return response()->json([
+            'orders' => $orders
+        ]);
+
+    }
+
+    public function loadArchive()
+    {
+        $orders = Order::with(["listing", "user", "user.profile"])
+            ->where(function($query) {
+                $query
+                    ->where('user_id', Auth::user()->id)
+                    ->orWhere('transporter_id',  Auth::user()->id);
+            })
+            ->where("status","=",4)
+            ->paginate(15);
+
+        return response()->json([
+            'orders' => $orders
+        ]);
+    }
+
+    public function loadRemoved()
+    {
         return response()->noContent();
     }
 
-    public function loadArchive(){
-        return response()->noContent();
-    }
-
-    public function loadRemoved(){
-        return response()->noContent();
-    }
-
-    public function addToArchive($id){
+    public function addToArchive($id)
+    {
         return response()->noContent();
     }
 

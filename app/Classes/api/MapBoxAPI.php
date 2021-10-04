@@ -63,8 +63,35 @@ class MapBoxAPI
         $ad = atan2($y, $x);
         $dist = $ad * $this->earth_radius;
 
-        return round($dist/1000);
+        return round($dist / 1000);
 
+    }
+
+    public function getDistanceOSM($x1, $y1, $x2, $y2): int
+    {
+
+
+        $client = new \GuzzleHttp\Client();
+
+        try {
+            $response = $client->request('GET',
+                " https://router.project-osrm.org/route/v1/driving/$y1,$x1;$y2,$x2?steps=false&geometries=geojson"
+
+            );
+        } catch (\Exception $e) {
+            return 0;
+        }
+
+        if ($response->getStatusCode() !== 200)
+            return 0;
+
+        $distances = json_decode($response->getBody(), true);
+
+        $tmp_sum = 0;
+        if (isset($distances["routes"][0]["distance"]))
+            $tmp_sum = $distances["routes"][0]["distance"];
+
+        return $tmp_sum;
     }
 
     public function getDistance($x1, $y1, $x2, $y2): int
@@ -77,11 +104,11 @@ class MapBoxAPI
                 "https://api.mapbox.com/directions-matrix/v1/mapbox/driving/$x1,$y1;$x2,$y2?approaches=curb;curb&access_token=" . $this->apiKey
 
             );
-        }catch (\Exception $e){
+        } catch (\Exception $e) {
             return 0;
         }
 
-        if($response->getStatusCode()!==200)
+        if ($response->getStatusCode() !== 200)
             return 0;
 
         $distances = json_decode($response->getBody(), true);
@@ -94,7 +121,8 @@ class MapBoxAPI
         return $tmp_sum;
     }
 
-    public function getRegions($country){
+    public function getRegions($country)
+    {
         $client = new \GuzzleHttp\Client();
 
         try {
@@ -102,11 +130,11 @@ class MapBoxAPI
                 "https://api.mapbox.com/directions-matrix/v1/mapbox/driving/$x1,$y1;$x2,$y2?approaches=curb;curb&access_token=" . $this->apiKey
 
             );
-        }catch (\Exception $e){
+        } catch (\Exception $e) {
             return 0;
         }
 
-        if($response->getStatusCode()!==200)
+        if ($response->getStatusCode() !== 200)
             return 0;
 
         $distances = json_decode($response->getBody(), true);

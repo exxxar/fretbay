@@ -28,7 +28,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-4"><a class="w-100 text-center d-block"
+                        <div class="col-12 col-sm-4"><a class="w-100 text-center d-block"
                                               target="_blank"
                                               v-if="item.user"
                                               :href="'/profile/'+item.user_id">
@@ -39,15 +39,14 @@
 
                             <p class="prepared-formula-text">{{prepareFormula(item.formula)}}</p>
                         </div>
-                        <div class="col-4">
+                        <div class="col-12 col-sm-4">
                             <p class="text-center text-uppercase m-0 p-0">
                                 <small><strong>Bid price</strong></small>
                             </p>
                             <p class="text-center m-0"><i class="fas fa-gavel ml-2"></i> {{item.price}}
                                 {{item.currency}}</p>
-                            <a href="#" class="w-100 text-center d-block"><small>See details</small></a>
                         </div>
-                        <div class="col-4">
+                        <div class="col-12 col-sm-4">
                             <p class="text-center m-0"> {{preparedQuoteStatus(item.status)}}</p>
                             <a href="#" class="w-100 btn btn-primary m-0 p-0 d-block"
                                v-if="user.id===item.user_id&&item.status===0"
@@ -390,7 +389,8 @@
                 })
             },
             acceptQuote(id){
-                axios.post('/customer/listing/quotes/accept', {
+                ///customer/listing/quotes/accept
+                axios.post('/orders/accept', {
                     listing_id: this.listing.id,
                     quote_id: id
                 }).then(resp => {

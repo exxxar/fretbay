@@ -154,9 +154,20 @@
 
         mounted() {
 
+            let length = 0;
             this.loadMessages()
             setInterval(() => {
                 this.loadMessages();
+
+                if (this.messages.length>length)
+                {
+                    length = this.messages.length
+
+                    this.$nextTick(() => {
+                        document.querySelector('.msg_history').scrollTo(0, document.querySelector('.msg_history').scrollHeight);
+                    })
+
+                }
             }, 5000)
         },
         computed: {

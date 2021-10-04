@@ -43,7 +43,7 @@
                     <form v-on:submit.prevent="submit">
 
                         <div class="form-group">
-                            <input type="email" class="form-control mb-0"
+                            <input type="text" class="form-control mb-0"
                                    placeholder="Review title"
                                    v-model="title"
                                    maxlength="100" required>

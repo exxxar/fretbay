@@ -73,23 +73,7 @@
 
             <div class="tab-pane fade" id="orders" role="tabpanel" aria-labelledby="orders-tab">
 
-                <div class="row d-flex">
-                    <div class="col-md-4">
-                        <a class="btn btn-link p-0" href="/find-loads"><i class="fas fa-dolly"></i> Try to
-                            <strong>find loads!</strong></a>
-                    </div>
-                </div>
-                <p v-if="userOrders.length>0">Count results: {{userOrders.length}} <i class="fas fa-boxes"></i></p>
-                <hr>
-                <order-item-component :key="index" v-for="(order,index) in userOrders" :order="order"/>
-
-                <div class="d-flex p-5 justify-content-center" v-if="userOrders.length===0">
-                    <img v-lazy="'/images/empty.png'" alt="" class="w-100 w-sm-auto"
-                         style="filter: drop-shadow(8px 4px 0px #21c87a);">
-                </div>
-                <h4 class="text-center" v-if="userOrders.length===0">No orders yet!</h4>
-
-                <order-paginate-component/>
+                <orders-component/>
             </div>
 
             <div class="tab-pane fade" id="notifications" role="tabpanel" aria-labelledby="notifications-tab">
@@ -154,9 +138,6 @@
             user() {
                 return this.$store.getters.user
             },
-            userOrders: function () {
-                return this.$store.getters.userOrders;
-            },
 
         },
         created() {
@@ -164,6 +145,9 @@
         },
         mounted() {
 
+            $(".nav-item").click(()=>{
+                window.scrollTo(0,0)
+            })
         },
         methods: {
             loadOrders()
