@@ -238,12 +238,12 @@ class ListingController extends Controller
             'moving_package' => $request->get('moving_package') ?? '',
             'images' => [],
             'status' => $request->get('status') ?? '',
-            'distance' => $this->mapbox->getAPI()->getDistanceOSM(
-                $place_of_loading->center[1] ?? 0,
+            'distance' => round($this->mapbox->getAPI()->getDistanceOSM(
                 $place_of_loading->center[0] ?? 0,
-                $place_of_delivery->center[1] ?? 0,
-                $place_of_delivery->center[0] ?? 0
-            ),
+                $place_of_loading->center[1] ?? 0,
+                $place_of_delivery->center[0] ?? 0,
+                $place_of_delivery->center[1] ?? 0
+            )/1000),
 
             'is_active' => true,
             'expiration_date' => Carbon::createFromTimestampUTC(intval($request->get('unshipping_date_to')) / 1000),
