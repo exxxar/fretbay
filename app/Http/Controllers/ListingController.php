@@ -239,10 +239,10 @@ class ListingController extends Controller
             'images' => [],
             'status' => $request->get('status') ?? '',
             'distance' => $this->mapbox->getAPI()->getDistanceOSM(
-                $place_of_loading->center[0] ?? 0,
                 $place_of_loading->center[1] ?? 0,
-                $place_of_delivery->center[0] ?? 0,
-                $place_of_delivery->center[1] ?? 0
+                $place_of_loading->center[0] ?? 0,
+                $place_of_delivery->center[1] ?? 0,
+                $place_of_delivery->center[0] ?? 0
             ),
 
             'is_active' => true,
