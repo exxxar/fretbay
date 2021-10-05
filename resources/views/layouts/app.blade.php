@@ -95,7 +95,6 @@
 
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('/firebase-messaging-sw.js')
-                .then(initialiseState);
         } else {
             console.warn('Service workers aren\'t supported in this browser.');
         }

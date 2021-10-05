@@ -200,6 +200,9 @@ Route::group(['middleware' => ['auth', 'verified','role:transporter'], "prefix" 
 Route::group(["prefix" => "reviews", "middleware" => ["auth"]], function () {
 
     Route::get('/list', 'ReviewController@getReviews');
+    Route::post('/add', 'ReviewController@store');
+    Route::post('/attach', 'ReviewController@attach');
+    Route::delete('/remove/{id}', 'ReviewController@destroy');
 
 
 });

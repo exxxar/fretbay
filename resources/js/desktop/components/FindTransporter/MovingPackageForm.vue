@@ -10,11 +10,12 @@
                 <img class="choose-img"
                      src="https://fretbay.com/en/assets/images/shipper/postJob/formula-icon1-w.svg" alt="">
 
-                <div class="card-body">
+                <vue-custom-scrollbar class="card-body" :settings="settingsScroll">
                     <h3>Truck with Driver package</h3>
                     <p>
                         No deposit to pay, no schedule to change for the trip, the driver drives for you!
                     </p>
+
                     <ul>
                         <li> A truck adapted to your volume</li>
                         <li> A professional driver who helps to secure the truck</li>
@@ -22,7 +23,7 @@
                         <li> All road-related costs (fuel, possible tolls, insurance)</li>
                     </ul>
 
-                </div>
+                </vue-custom-scrollbar>
 
 
              <!--   <div class="card-footer d-flex justify-content-center">
@@ -43,11 +44,13 @@
                 <img class="choose-img"
                      src="https://fretbay.com/en/assets/images/shipper/postJob/formula-icon2-w.svg" alt="">
 
-                <div class="card-body">
+                <vue-custom-scrollbar class="card-body" :settings="settingsScroll">
                     <h3>The Economic package</h3>
                     <p>
                         Protection of property by special equipment (blankets, straps)
                     </p>
+
+
                     <ul>
                         <li> A truck adapted to your volume</li>
                         <li> The number of movers required to load and unload the truck</li>
@@ -55,7 +58,7 @@
                         <li> All road-related costs (fuel, possible tolls, insurance)</li>
                     </ul>
 
-                </div>
+                </vue-custom-scrollbar>
 
               <!--  <div class="card-footer d-flex justify-content-center">
                     <button
@@ -73,12 +76,13 @@
                 <img class="choose-img"
                      src="https://fretbay.com/en/assets/images/shipper/postJob/formula-icon3-w.svg" alt="">
 
+                <vue-custom-scrollbar class="card-body" :settings="settingsScroll">
 
-                <div class="card-body">
                     <h3>The Standard package</h3>
                     <p>
                         No fatigue, no waste of time, you're just packing!
                     </p>
+
                     <ul>
                         <li> A truck adapted to your volume</li>
                         <li> The number of movers required to load and unload the truck</li>
@@ -90,8 +94,9 @@
 
 
 
-                </div>
 
+
+                </vue-custom-scrollbar>
              <!--   <div class="card-footer d-flex justify-content-center">
                     <button
                         :class="{'active': selected_package ==='The Standard package','btn btn-outline-primary w-100':true}"
@@ -108,12 +113,13 @@
                 <img class="choose-img"
                      src="https://fretbay.com/en/assets/images/shipper/postJob/formula-icon4-w.svg" alt="">
 
+                <vue-custom-scrollbar class="card-body" :settings="settingsScroll">
 
-                <div class="card-body">
                     <h3>The Complete package</h3>
                     <p>
                         No fatigue, no stress: your move is 100% covered
                     </p>
+
                     <ul>
                         <li> A truck adapted to your volume</li>
                         <li> The number of movers required to load and unload the truck</li>
@@ -125,8 +131,8 @@
 
 
 
-                </div>
 
+                </vue-custom-scrollbar>
                 <!--<div class="card-footer d-flex justify-content-center">
                     <button
                         :class="{'active': selected_package ==='The Complete package','btn btn-outline-primary w-100':true}"
@@ -146,11 +152,18 @@
     // optional style for arrows & dots
     import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 
+    import vueCustomScrollbar from 'vue-custom-scrollbar'
+    import "vue-custom-scrollbar/dist/vueScrollbar.css"
 
     export default {
         data() {
             return {
                 selected_package: 'Truck with Driver package',
+                settingsScroll: {
+                    suppressScrollY: false,
+                    suppressScrollX: true,
+                    wheelPropagation: false
+                },
                 settings:{
                     "dots": false,
                     "arrows": true,
@@ -197,7 +210,7 @@
             }
         },
         components:{
-            VueSlickCarousel
+            VueSlickCarousel, vueCustomScrollbar
         }
     }
 </script>
@@ -220,6 +233,7 @@
         .card-body {
             height: 250px;
             overflow-y: auto;
+            padding:10px;
 
 
         }

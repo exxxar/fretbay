@@ -31,7 +31,7 @@
 
         <div class="col-lg-12 mb-9 mb-lg-0" v-else>
             <div class="d-flex p-5 justify-content-center"  v-if="filteredReviews.length===0">
-                <img v-lazy="'/images/empty.png'" alt="" class="w-100 w-sm-auto" style="filter: drop-shadow(8px 4px 0px #21c87a);">
+                <img v-lazy="'/images/empty.png'" alt="" class="w-100 w-sm-auto" style="max-width:300px;">
             </div>
             <h4 class="text-center">No reviews yet!</h4>
         </div>
@@ -89,85 +89,21 @@
                     }
                 ],
                 reviews: [
-                    {
-                        id: 1,
-                        title: 'Bad service',
-                        text: 'This transporter is bad',
-                        type: 0,
-                        is_visible: true,
-                        user_id: 1,
-                        order_id: 1,
-                        transporter_id: 1,
-                        review_id: null,
-                        created_at:'2021-07-12 21:37:34',
-                        transporter: {
-                            profile: {
-                                company_name: 'Test company'
-                            }
-                        }
-                    },
-                    {
-                        id: 2,
-                        title: 'Neutral service',
-                        text: 'This transporter is Neutral',
-                        type: 1,
-                        is_visible: true,
-                        user_id: 1,
-                        order_id: 2,
-                        transporter_id: 1,
-                        review_id: null,
-                        created_at:'2021-07-12 21:37:34',
-                        transporter: {
-                            profile: {
-                                company_name: 'Test company'
-                            }
-                        }
-                    },
-                    {
-                        id: 3,
-                        title: 'Good service',
-                        text: 'This transporter is Good',
-                        type: 2,
-                        is_visible: true,
-                        user_id: 1,
-                        order_id: 2,
-                        transporter_id: 1,
-                        review_id: null,
-                        created_at:'2021-07-12 21:37:34',
-                        transporter: {
-                            profile: {
-                                company_name: 'Test company'
-                            }
-                        }
-                    }
                 ]
             }
         },
 
         mounted() {
-
+             this.loadReviews()
         }
         ,
         methods: {
 
-            submit() {
-
-                axios.post('/transporter/listing/quotes/add', {
-                    price: this.bidPrice,
-                    type_of_transport: this.type_of_transport,
-                    quote_validity: this.quote_validity,
-                    status: 0,
-                    currency: this.currentCurrency,
-                    listing_id: this.listing.id,
-                    user_id: this.user.id,
-                    formula: this.selected_formula
-                }).then(resp => {
-                    setTimeout(() => {
-                        window.location.reload();
-                    }, 1000)
+            loadReviews() {
+                axios.get("/reviews/list").then(resp => {
+                    this.reviews = resp.data.reviews
                 })
             },
-
         }
 
 

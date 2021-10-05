@@ -48,9 +48,9 @@ class Review extends Model
         return $this->hasOne(User::class, "id", "verified_by_id");
     }
 
-    public function reviews()
+    public function review()
     {
-        return $this->hasMany(Review::class, "review_id", "id");
+        return $this->hasOne(Review::class, "id", "review_id");
     }
 
 

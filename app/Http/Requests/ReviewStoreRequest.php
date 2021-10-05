@@ -27,9 +27,7 @@ class ReviewStoreRequest extends FormRequest
             'title' => "required|string|max:255",
             'text' => "required|string|max:1000",
             'type' => "required",
-            "is_visible" => "required",//флаг модерации
-            'user_id' => "required|integer",
-            'review_id' => "nullable",
+            'order_id' => "required",
         ];
     }
 }

@@ -38,7 +38,7 @@
 
                 </div>
                 <div class="col-12 mt-2">
-                    <div id="map" v-if="showMap" style="width:100%; height:100vh;"></div>
+                    <div id="map" v-if="showMap" style="width:100%; height:300px;"></div>
                 </div>
             </div>
         </div>
@@ -595,16 +595,13 @@
         font-family: 'Open Sans', sans-serif;
     }
 
-
     .mapboxgl-canvas-container {
-
-        height: 100vh;
-
+        height: 300px;
     }
 
     .mapboxgl-canvas {
         width: 100% !important;
-        height: 100vh !important;
+        height: 300px !important;
     }
 
     #chatModal {

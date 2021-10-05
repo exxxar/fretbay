@@ -26,6 +26,7 @@
 
             <div class="comment-list p-2">
                 <review-item-component :key="index" v-for="(item,index) in filteredReviews" :item="item"/>
+
             </div>
         </div>
 
@@ -100,6 +101,7 @@
                         <div class="form-group row d-flex justify-content-center">
                             <div class="col-sm-6">
                                 <button class="btn w-100"
+                                        type="submit"
                                         v-bind:class="{'btn-custom-gray':completed_orders_without_comment.length===0,
                                         'btn-primary':completed_orders_without_comment.length>0}"
                                         :disbaled="completed_orders_without_comment.length===0">
@@ -177,17 +179,15 @@
                     this.completed_orders_without_comment = resp.data.orders
                 })
             },
-            submit() {
 
-                axios.post('/transporter/listing/quotes/add', {
-                    price: this.bidPrice,
-                    type_of_transport: this.type_of_transport,
-                    quote_validity: this.quote_validity,
-                    status: 0,
-                    currency: this.currentCurrency,
-                    listing_id: this.listing.id,
-                    user_id: this.user.id,
-                    formula: this.selected_formula
+            submit() {
+                console.log("Test", this.selected_review_type.id);
+                axios.post('/reviews/add', {
+                    title: this.title,
+                    text: this.text,
+                    type: this.selected_review_type.id,//тип отзыва
+                    is_visible: false,//флаг модерации
+                    order_id: this.selected_order.id,
                 }).then(resp => {
                     setTimeout(() => {
                         window.location.reload();

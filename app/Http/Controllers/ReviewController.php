@@ -21,8 +21,13 @@ class ReviewController extends Controller
     public function getReviews()
     {
 
-
-        $reviews = Review::with(["transporter","transporter.profile"])->where("user_id", Auth::user()->id)->get();
+        $reviews = Review::with(["transporter", "transporter.profile", "review"])
+            ->where(function ($quote){
+                $quote->where("user_id", Auth::user()->id)
+                    ->orWhere("transporter_id", Auth::user()->id);
+            })
+            ->where("is_visible", true)
+            ->get();
 
         return response()->json([
             "reviews" => $reviews
@@ -35,17 +40,58 @@ class ReviewController extends Controller
     }
 
 
+    public function attach(Request $request)
+    {
+        $request->validate([
+            "review_id" => "required",
+            "message" => "required",
+        ]);
+
+        $review = Review::where("id", $request->review_id)->first();
+
+        $attachedReview = Review::create([
+            'title' => "Answer to Review #" . $request->review_id,
+            'text' => $request->message,
+            'type' => 1,
+            'user_id' => Auth::user()->id,
+            'order_id' => null,
+            'transporter_id' => Auth::user()->id,
+            'is_visible' => false,
+        ]);
+
+        $review->review_id = $attachedReview->id;
+        $review->save();
+
+
+        return response()->json([
+            "id" => $review->id
+        ]);
+    }
+
+
     public function store(ReviewStoreRequest $request)
     {
-        Review::create($request->validated());
+        $review = Review::create($request->validated());
+        $review->user_id = Auth::user()->id;
 
-        return response()->noContent();
+        $order = Order::where("id", $review->order_id)->first();
+
+        $review->transporter_id = $order->transporter_id;
+        $review->is_visible = true;
+        $review->save();
+
+
+        return response()->json([
+            "id" => $review->id
+        ]);
     }
 
 
     public function show(Request $request, $id)
     {
         $review = Review::find($id);
+
+
         return view('admin.pages.reviews.show', compact('review'));
     }
 
@@ -68,7 +114,13 @@ class ReviewController extends Controller
 
     public function destroy(Request $request, $id)
     {
-        Review::find($id)->delete();
+        $review = Review::find($id);
+
+        if (is_null($review->review_id)) {
+            $subReview = Review::find($review->review_id);
+            $subReview->delete();
+        }
+        $review->delete();
 
         return response()->noContent();
     }
