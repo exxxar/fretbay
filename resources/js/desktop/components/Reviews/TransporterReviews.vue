@@ -11,7 +11,7 @@
                         <label class=" ml-2 mb-2"
                                :for="'review'+item.id"
 
-                               :key="item.id" v-for="item in review_types"
+                               :key="item.id" v-for="item in reviewTypes"
                         >
                     <span class="btn btn-outline-primary"
                           v-bind:class="{'btn-primary text-white':filter.selected_review_types.includes(item.id)}"
@@ -50,7 +50,15 @@
                 return this.filter.selected_review_types.length === 0 ? this.reviews :
                     this.reviews.filter(item => this.filter.selected_review_types.includes(item.type))
             },
-
+            completedOrdersWithoutComment: function () {
+                return this.$store.getters.completedOrdersWithoutComment
+            },
+            reviewTypes: function () {
+                return this.$store.getters.reviewTypes
+            },
+            reviews: function () {
+                return this.$store.getters.reviews
+            }
         },
         data: function () {
             return {
@@ -61,35 +69,8 @@
                 text: '',
                 selected_review_type: 1,
                 selected_order: null,
-                review_types: [
-                    {
-                        id: 0,
-                        data: '<i class="far fa-angry"></i>',
-                        description: 'You were dissatisfied with the work of the carrier'
-                    },
-                    {
-                        id: 1,
-                        data: '<i class="far fa-meh"></i>',
-                        description: 'You are neutral about the work of the carrier'
-                    },
-                    {
-                        id: 2,
-                        data: '<i class="far fa-smile"></i>',
-                        description: 'You liked the quality of the carrier\'s services'
-                    }
-                ],
-                completed_orders_without_comment: [
-                    {
-                        id: 1,
-                        title: 'Order 1'
-                    },
-                    {
-                        id: 2,
-                        title: 'Order 2'
-                    }
-                ],
-                reviews: [
-                ]
+
+
             }
         },
 
@@ -100,9 +81,7 @@
         methods: {
 
             loadReviews() {
-                axios.get("/reviews/list").then(resp => {
-                    this.reviews = resp.data.reviews
-                })
+                this.$store.dispatch("loadReviews")
             },
         }
 

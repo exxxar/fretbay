@@ -11,7 +11,7 @@
                         <label class=" ml-2 mb-2"
                                :for="'review'+item.id"
 
-                               :key="item.id" v-for="item in review_types"
+                               :key="item.id" v-for="item in reviewTypes"
                         >
                     <span class="btn btn-outline-primary"
                           v-bind:class="{'btn-primary text-white':filter.selected_review_types.includes(item.id)}"
@@ -31,7 +31,7 @@
         </div>
 
         <div class="col-lg-6 mb-2 mb-lg-0" v-else>
-            <div class="d-flex p-5 justify-content-center"  v-if="filteredReviews.length===0">
+            <div class="d-flex p-5 justify-content-center" v-if="filteredReviews.length===0">
                 <img v-lazy="'/images/empty.png'" alt="" class="w-100 w-sm-auto" style="max-width:300px;">
             </div>
             <h4 class="text-center">No reviews yet!</h4>
@@ -65,7 +65,7 @@
                             <button class="btn ml-2 mb-2"
                                     type="button"
                                     v-bind:class="{'btn-primary':selected_review_type.id===item.id,'btn-outline-primary':selected_review_type.id!==item.id}"
-                                    :key="item.id" v-for="item in review_types"
+                                    :key="item.id" v-for="item in reviewTypes"
                                     @click="selected_review_type = item" v-html="item.data">
                             </button>
 
@@ -78,12 +78,12 @@
 
                         <h6 class="text-center">Choose order to comment</h6>
                         <div class="form-group row d-flex justify-content-center"
-                             v-if="completed_orders_without_comment.length>0">
+                             v-if="completedOrdersWithoutComment.length>0">
 
                             <div class="col-12 col-sm-6 ">
                                 <div class="input-group mb-3">
                                     <select class="custom-select" v-model="selected_order" reqired>
-                                        <option :key="item.id" v-for="item in completed_orders_without_comment"
+                                        <option :key="item.id" v-for="item in completedOrdersWithoutComment"
                                                 :value="item">{{item.title}}
                                         </option>
                                     </select>
@@ -102,9 +102,9 @@
                             <div class="col-sm-6">
                                 <button class="btn w-100"
                                         type="submit"
-                                        v-bind:class="{'btn-custom-gray':completed_orders_without_comment.length===0,
-                                        'btn-primary':completed_orders_without_comment.length>0}"
-                                        :disbaled="completed_orders_without_comment.length===0">
+                                        v-bind:class="{'btn-custom-gray':completedOrdersWithoutComment.length===0,
+                                        'btn-primary':completedOrdersWithoutComment.length>0}"
+                                        :disbaled="completedOrdersWithoutComment.length===0">
                                     Send review
                                 </button>
                             </div>
@@ -127,7 +127,15 @@
                 return this.filter.selected_review_types.length === 0 ? this.reviews :
                     this.reviews.filter(item => this.filter.selected_review_types.includes(item.type))
             },
-
+            completedOrdersWithoutComment: function () {
+                return this.$store.getters.completedOrdersWithoutComment
+            },
+            reviewTypes: function () {
+                return this.$store.getters.reviewTypes
+            },
+            reviews: function () {
+                return this.$store.getters.reviews
+            }
         },
         data: function () {
             return {
@@ -138,26 +146,7 @@
                 text: '',
                 selected_review_type: 1,
                 selected_order: null,
-                review_types: [
-                    {
-                        id: 0,
-                        data: '<i class="far fa-angry"></i>',
-                        description: 'You were dissatisfied with the work of the carrier'
-                    },
-                    {
-                        id: 1,
-                        data: '<i class="far fa-meh"></i>',
-                        description: 'You are neutral about the work of the carrier'
-                    },
-                    {
-                        id: 2,
-                        data: '<i class="far fa-smile"></i>',
-                        description: 'You liked the quality of the carrier\'s services'
-                    }
-                ],
-                completed_orders_without_comment: [],
-                reviews: [],
-                tmp_reviews: []
+
             }
         },
 
@@ -167,22 +156,14 @@
         }
         ,
         methods: {
-
             loadReviews() {
-                axios.get("/reviews/list").then(resp => {
-                    this.reviews = resp.data.reviews
-                })
+                this.$store.dispatch("loadReviews")
             },
-
             loadOrdersWithoutReviews() {
-                axios.get("/orders/without_review").then(resp => {
-                    this.completed_orders_without_comment = resp.data.orders
-                })
+                this.$store.dispatch("getOrdersWithoutReviews")
             },
-
             submit() {
-                console.log("Test", this.selected_review_type.id);
-                axios.post('/reviews/add', {
+                this.$store.dispatch("addReview", {
                     title: this.title,
                     text: this.text,
                     type: this.selected_review_type.id,//тип отзыва

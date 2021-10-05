@@ -19,7 +19,9 @@
 
 
                     <li class="nav-item profile-nav-item">
-                        <a class="btn btn-outline-primary d-block" id="reviews-tab" data-toggle="tab" href="#reviews"
+                        <a class="btn btn-outline-primary d-block" id="reviews-tab" data-toggle="tab"
+                           @click="loadReviews"
+                           href="#reviews"
                            role="tab"
                            aria-controls="reviews" aria-selected="true"><i class="far fa-comment-dots"></i> Reviews</a>
                     </li>
@@ -291,15 +293,11 @@
                     <listing-component v-on:update="loadRemovedListing"/>
                 </div>
 
-                <div class="tab-pane fade" id="orders-active" role="tabpanel" aria-labelledby="orders-active-tab"
-                @click="loadActiveOrders"
-                >
+                <div class="tab-pane fade" id="orders-active" role="tabpanel" aria-labelledby="orders-active-tab">
                     <orders-component v-on:update="loadActiveOrders"/>
                 </div>
 
-                <div class="tab-pane fade" id="orders-archive" role="tabpanel" aria-labelledby="orders-archive-tab"
-                     @click="loadArchiveOrders"
-                >
+                <div class="tab-pane fade" id="orders-archive" role="tabpanel" aria-labelledby="orders-archive-tab">
                     <orders-component v-on:update="loadArchiveOrders"/>
                 </div>
 
@@ -397,12 +395,12 @@
         },
         mounted() {
 
-/*
+            /*
 
-           setTimeout(()=>{
-               this.loadActiveListing()
-           }, 1500)
-*/
+                       setTimeout(()=>{
+                           this.loadActiveListing()
+                       }, 1500)
+            */
             this.loadActiveListing()
             $(document).on("click", ".nav-item", () => {
                 window.scroll(0, 0)
@@ -410,7 +408,7 @@
         },
         methods: {
 
-            loadNotifications(){
+            loadNotifications() {
                 this.$store.dispatch('loadNotifications')
             },
             loadActiveOrders() {
@@ -418,6 +416,9 @@
             },
             loadArchiveOrders() {
                 this.$store.dispatch('getArchiveOrders');
+            },
+            loadReviews() {
+                this.$store.dispatch('loadReviews');
             },
             loadRemovedListing() {
                 this.$store.dispatch('clearListing')
