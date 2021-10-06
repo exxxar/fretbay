@@ -19,7 +19,7 @@ class OrderController extends Controller
 {
     public function index()
     {
-        $orders = Order::with(["listing", "user", "user.profile","review"])
+        $orders = Order::with(["listing", "user", "user.profile", "review"])
             ->where("user_id", Auth::user()->id)
             ->orWhere("transporter_id", Auth::user()->id)
             ->paginate(15);
@@ -33,8 +33,11 @@ class OrderController extends Controller
     public function getOrdersWithoutReview()
     {
         $orders = Order::with(["review"])
-            ->where("user_id", Auth::user()->id)
-            ->orWhere("transporter_id", Auth::user()->id)
+            ->where(function ($query) {
+                $query->where("user_id", Auth::user()->id)
+                    ->orWhere("transporter_id", Auth::user()->id);
+            })
+            ->where("type", ">=", 4)
             ->get();
 
         $tmp = [];
@@ -187,11 +190,11 @@ class OrderController extends Controller
     public function loadActive()
     {
         $orders = Order::with(["listing", "user", "user.profile"])
-            ->where(function($query) {
+            ->where(function ($query) {
                 $query->where('user_id', Auth::user()->id)
-                    ->orWhere('transporter_id',  Auth::user()->id);
+                    ->orWhere('transporter_id', Auth::user()->id);
             })
-            ->where("status","<",4)
+            ->where("status", "<", 4)
             ->paginate(15);
 
         return response()->json([
@@ -203,12 +206,12 @@ class OrderController extends Controller
     public function loadArchive()
     {
         $orders = Order::with(["listing", "user", "user.profile"])
-            ->where(function($query) {
+            ->where(function ($query) {
                 $query
                     ->where('user_id', Auth::user()->id)
-                    ->orWhere('transporter_id',  Auth::user()->id);
+                    ->orWhere('transporter_id', Auth::user()->id);
             })
-            ->where("status","=",4)
+            ->where("status", "=", 4)
             ->paginate(15);
 
         return response()->json([
