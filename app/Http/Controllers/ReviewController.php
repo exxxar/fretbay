@@ -116,7 +116,7 @@ class ReviewController extends Controller
     {
         $review = Review::find($id);
 
-        if (is_null($review->review_id)) {
+        if (!is_null($review->review_id)) {
             $subReview = Review::find($review->review_id);
             $subReview->delete();
         }
