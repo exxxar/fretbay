@@ -37,7 +37,7 @@ class OrderController extends Controller
                 $query->where("user_id", Auth::user()->id)
                     ->orWhere("transporter_id", Auth::user()->id);
             })
-            ->where("status", ">=", 4)
+            //->where("status", ">=", 4)
             ->get();
 
         $tmp = [];
