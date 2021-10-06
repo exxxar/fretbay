@@ -64,7 +64,8 @@
                         <div class="form-group row d-flex justify-content-center mb-0">
                             <button class="btn ml-2 mb-2"
                                     type="button"
-                                    v-bind:class="{'btn-primary':selected_review_type.id===item.id,'btn-outline-primary':selected_review_type.id!==item.id}"
+                                    v-bind:class="{'btn-primary':selected_review_type.id===item.id,
+                                    'btn-outline-primary':selected_review_type.id!==item.id}"
                                     :key="item.id" v-for="item in reviewTypes"
                                     @click="selected_review_type = item" v-html="item.data">
                             </button>

@@ -19,7 +19,7 @@ class OrderController extends Controller
 {
     public function index()
     {
-        $orders = Order::with(["listing", "user", "user.profile"])
+        $orders = Order::with(["listing", "user", "user.profile","review"])
             ->where("user_id", Auth::user()->id)
             ->orWhere("transporter_id", Auth::user()->id)
             ->paginate(15);
