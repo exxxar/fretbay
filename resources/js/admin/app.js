@@ -9,7 +9,6 @@ import VTooltip from 'v-tooltip'
 Vue.use(VTooltip);
 
 import {BootstrapVue, IconsPlugin} from 'bootstrap-vue'
-// Import Bootstrap an BootstrapVue CSS files (order is important)
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 Vue.use(BootstrapVue);
@@ -27,19 +26,25 @@ Vue.use(VueLazyload, {
 })
 
 import VJsoneditor from 'v-jsoneditor'
-
-Vue.use(VJsoneditor)
+Vue.use(VJsoneditor);
 
 import JsonViewer from 'vue-json-viewer'
-
-// Import JsonViewer as a Vue.js plugin
-Vue.use(JsonViewer)
-
+Vue.use(JsonViewer);
 
 import Multiselect from 'vue-multiselect';
 Vue.component('multiselect', Multiselect);
 
+import store from './store';
 
+import {ValidationProvider, extend, ValidationObserver, localize} from 'vee-validate';
+import * as rules from 'vee-validate/dist/rules';
+import ru from 'vee-validate/dist/locale/ru.json';
+Object.keys(rules).forEach(rule => {
+    extend(rule, rules[rule]);
+});
+localize('ru', ru);
+Vue.component('ValidationProvider', ValidationProvider);
+Vue.component('ValidationObserver', ValidationObserver);
 
 //component
 Vue.component('header-component', require('./components/Header.vue').default);
@@ -49,12 +54,7 @@ Vue.component('index-page', require('./pages/Index.vue').default);
 Vue.component('login-page', require('./pages/Login.vue').default);
 
 Vue.component('languages-page', require('./pages/Languages/Index.vue').default);
-Vue.component('languages-create-page', require('./pages/Languages/Create.vue').default);
-Vue.component('languages-edit-page', require('./pages/Languages/Edit.vue').default);
-
 Vue.component('translations-page', require('./pages/Translations/Index.vue').default);
-Vue.component('translations-create-page', require('./pages/Translations/Create.vue').default);
-Vue.component('translations-edit-page', require('./pages/Translations/Edit.vue').default);
 
 Vue.component('objects-categories', require('./components/Objects/Categories.vue').default);
 Vue.component('objects-types', require('./components/Objects/Types.vue').default);
@@ -66,7 +66,6 @@ Vue.component('users-list', require('./components/Users/List.vue').default);
 Vue.component('users-profiles', require('./components/Users/Profiles.vue').default);
 Vue.component('users-roles', require('./components/Users/Roles.vue').default);
 Vue.component('users-permissions', require('./components/Users/Permissions.vue').default);
-
 
 
 //Section for Pages
@@ -172,5 +171,6 @@ Vue.component('quotes-show-page', require('./pages/Quotes/Show.vue').default);
 Vue.component('quotes-debug-component', require('./components/Quotes/DebugQuotesComponent.vue').default);
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    store
 });

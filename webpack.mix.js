@@ -17,7 +17,8 @@ const WebpackShellPlugin = require('webpack-shell-plugin');
 mix.webpackConfig({
     plugins:
         [
-            new WebpackShellPlugin({onBuildStart:['php artisan lang:js resources/js/vue-translations.js --no-lib --quiet'], onBuildEnd:[]})
+            // new WebpackShellPlugin({onBuildStart:['php artisan lang:js resources/js/vue-translations.js --no-lib --quiet'], onBuildEnd:[]})
+            new WebpackShellPlugin({onBuildStart:['php artisan lang:js resources/js/vue-translations.json --json --quiet'], onBuildEnd:[]})
         ]
 });
 

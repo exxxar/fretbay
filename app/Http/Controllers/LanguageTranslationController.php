@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use App\Drivers\Translation;
 use App\Http\Requests\TranslationRequest;
+use Illuminate\Support\Facades\Artisan;
+
 
 class LanguageTranslationController extends Controller
 {
@@ -18,89 +21,13 @@ class LanguageTranslationController extends Controller
         $this->translation = $translation;
     }
 
-    public function index()
+    public function index($language='en')
     {
-        // dd($this->translation->getSingleTranslationsFor('en'));
-//        if ($request->has('language') && $request->get('language') !== $language) {
-//            return redirect()
-//                ->route('admin.pages.languages.translations.index', ['language' => $request->get('language'), 'group' => $request->get('group'), 'filter' => $request->get('filter')]);
-//        }
-//
-        $all_languages = $this->translation->allLanguages();
-        $languages_array = [];
-        foreach ($all_languages as $language => $name)
-        {
-            $lang = (object)[];
-            $lang->name = $name;
-            $lang->locale_name = $language;
-            array_push( $languages_array, $lang);
-        }
-        $groups = $this->translation->getGroupsFor(config('app.locale'))->merge('single');
-//        $translations = $this->translation->filterTranslationsFor($language, $request->get('filter'));
-//
-//        if ($request->has('group') && $request->get('group')) {
-//            if ($request->get('group') === 'single') {
-//                $translations = $translations->get('single');
-//                $translations = new Collection(['single' => $translations]);
-//            } else {
-//                $translations = $translations->get('group')->filter(function ($values, $group) use ($request) {
-//                    return $group === $request->get('group');
-//                });
-//
-//                $translations = new Collection(['group' => $translations]);
-//            }
-//        }
-        $translations_by_groups = $this->translation->getAllTranslations();
-        $translations = [];
-        foreach ($translations_by_groups as $group=>$keys)
-        {
-            foreach ($keys as $key=>$languages) {
-                $record = (object)[];
-                $record->group = $group;
-                $record->key = $key;
-                foreach ($languages as $language=>$translation) {
-                    $record->{$language} = $translation;
-                }
-                array_push($translations, $record);
-            }
-        }
-
-        return view('admin.pages.languages.translations.index', compact( 'languages_array', 'groups', 'translations'));
+        return view('admin.pages.languages.translations.index', compact( 'language'));
     }
 
-    public function create(Request $request, $language)
+    public function getTranslations()
     {
-        return view('admin.pages.languages.translations.create', compact('language'));
-    }
-
-    public function store(TranslationRequest $request, $language)
-    {
-        if ($request->filled('group')) {
-            $namespace = $request->has('namespace') && $request->get('namespace') ? "{$request->get('namespace')}::" : '';
-            $this->translation->addGroupTranslation($language, "{$namespace}{$request->get('group')}", $request->get('key'), $request->get('value') ?: '');
-        } else {
-            $this->translation->addSingleTranslation($language, 'single', $request->get('key'), $request->get('value') ?: '');
-        }
-
-        return redirect()
-            ->route('admin.pages.languages.translations.index', $language)
-            ->with('success', __('translation.translation_added'));
-    }
-
-    public function update(Request $request, $language)
-    {
-        if (! Str::contains($request->get('group'), 'single')) {
-            $this->translation->addGroupTranslation($language, $request->get('group'), $request->get('key'), $request->get('value') ?: '');
-        } else {
-            $this->translation->addSingleTranslation($language, $request->get('group'), $request->get('key'), $request->get('value') ?: '');
-        }
-
-        return ['success' => true];
-    }
-
-    public function translations()
-    {
-//        $this->translation->saveMissingTranslations();
         $translations_by_groups = $this->translation->getAllTranslations();
         $records = [];
         foreach ($translations_by_groups as $group=>$keys)
@@ -115,6 +42,136 @@ class LanguageTranslationController extends Controller
                 array_push($records, $record);
             }
         }
-        return $records;
+        return response()->json([
+            'translations' => $records,
+            'message' => 'Список ключей переводов успешно получен'
+        ]);
     }
+
+    public function store(TranslationRequest $request)
+    {
+        try {
+            $language = $request->get('language');
+            $group = $request->get('group');
+
+//            if ($request->filled('group')) {
+                $namespace = $request->has('namespace') && $request->get('namespace') ? "{$request->get('namespace')}::" : '';
+                $this->translation->addGroupTranslation($language, "{$namespace}{$group}", $request->get('key'), $request->get('value') ?: '');
+//            } else {
+//                $this->translation->addSingleTranslation($language , 'single', $request->get('key'), $request->get('value') ?: '');
+//            }
+
+            $storage = resource_path("/js/vue-translations.json");
+            $file = file_get_contents($storage);
+            $object = json_decode($file, true);
+            $initial_key = $language.'.'.$group;
+            $translations = $this->translation->getGroupTranslationsFor($language);
+            $group_translations = $translations->get($group);
+            $object[$initial_key] = collect($group_translations);
+            file_put_contents($storage, json_encode($object));
+
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => 'error'
+            ]);
+        }
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Ключ перевода успешно создан'
+        ]);
+    }
+
+    public function update(Request $request)
+    {
+        $language = $request->get('language');
+        $group = $request->get('group');
+
+//        if (! Str::contains($request->get('group'), 'single')) {
+            $this->translation->addGroupTranslation(  $language ,$group, $request->get('key'), $request->get('value') ?: '');
+//        } else {
+//            $this->translation->addSingleTranslation( $language , $group, $request->get('key'), $request->get('value') ?: '');
+//        }
+
+        $storage = resource_path("/js/vue-translations.json");
+        $file = file_get_contents($storage);
+        $object = json_decode($file, true);
+        $initial_key = $language.'.'.$group;
+        $translations = $this->translation->getGroupTranslationsFor($language);
+        $group_translations = $translations->get($group);
+        $object[$initial_key] = collect($group_translations);
+        file_put_contents($storage, json_encode($object));
+
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Ключ перевода успешно обновлён'
+        ]);
+    }
+
+    public function removeTranslationKey(Request $request) {
+        try {
+//             $language = $request->get('language');
+            $group = $request->get('group');
+            $all_languages = $this->translation->allLanguages();
+            $storage = resource_path("/js/vue-translations.json");
+            $file = file_get_contents($storage);
+            $object = json_decode($file, true);
+            foreach ($all_languages as $language => $name)
+            {
+                if ($request->filled('group')) {
+                    $namespace = $request->has('namespace') && $request->get('namespace') ? "{$request->get('namespace')}::" : '';
+                    $this->translation->removeGroupTranslation( $language , "{$namespace}{$group}", $request->get('key'));
+                } else {
+                    $this->translation->removeGroupTranslation( $language , 'single', $request->get('key'));
+                }
+
+                $initial_key = $language.'.'.$group;
+                $translations = $this->translation->getGroupTranslationsFor($language);
+                $group_translations = $translations->get($group);
+                $object[$initial_key] = collect($group_translations);
+            }
+            file_put_contents($storage, json_encode($object));
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => 'error'
+            ]);
+        }
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Ключ перевода успешно удалён'
+        ]);
+    }
+
+    public function updateVueTranslations() {
+        try {
+            $exitCode = Artisan::call('lang:js resources/js/vue-translations.js --no-lib --quiet');
+            $exitCode = Artisan::call('lang:js resources/js/vue-translations.json --quiet');
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => 'error'
+            ]);
+        }
+        return response()->json([
+            'status' => 'success'
+        ]);
+    }
+
+    public function syncTranslations(Request $request) {
+        $language = $request->get('language') ?: false;
+
+        try {
+            // if we have a language, pass it in, if not the method will
+            // automagically sync all languages
+            $this->translation->saveMissingTranslations($language);
+            return response()->json([
+                'status' => 'success',
+                'message' => 'Список ключей переводов успешно синхронизирован'
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => 'error'
+            ],500);
+        }
+    }
+
 }

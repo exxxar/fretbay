@@ -66,6 +66,8 @@ Route::get('/locale/{lang}', function (\Illuminate\Http\Request $request, $lang)
 
     return redirect()->back();
 });
+Route::get('/locales', 'LanguageController@getActiveLanguages')
+    ->name('languages.getActiveLanguages');
 
 Route::get("/storage/listings/{dir}/{name}", function ($dir, $name) {
 
@@ -262,7 +264,7 @@ Route::group(['middleware' => ['auth', 'role:customer'], "prefix" => "customer"]
     });
 });
 
-Route::group(['middleware' => ['auth', 'role:admin'], "prefix" => "program-admin"], function () {
+Route::group(['middleware' => ['auth', 'role:admin'], "prefix" => "admin"], function () {
     Route::get("/", "AdminController@index")->name("admin.index");
 
     Route::group(["prefix" => "orders"], function () {
@@ -411,31 +413,39 @@ Route::group(['middleware' => ['auth', 'role:admin'], "prefix" => "program-admin
         //GET /languages/{language}/translations/create
         //POST /languages/{language}/translations
         //PUT /languages/{language}/translations
-        Route::get('/', 'LanguageController@index')
-            ->name('languages.index');
 
-        Route::get('/create', 'LanguageController@create')
-            ->name('languages.create');
-
-        Route::post('/', 'LanguageController@store')
-            ->name('languages.store');
-
+        //views
+        Route::view("/", "admin.pages.languages.index")->name("languages.index");
         Route::get('/{language}/translations', 'LanguageTranslationController@index')
             ->name('languages.translations.index');
 
-        Route::post('/{language}', 'LanguageTranslationController@update')
+        //actions
+        Route::get('/get', 'LanguageController@getLanguages')
+                    ->name('languages.getLanguages');
+        Route::post('/update', 'LanguageController@update')
+            ->name('languages.update');
+        Route::post('/store', 'LanguageController@store')
+            ->name('languages.store');
+        Route::post('/remove', 'LanguageController@remove')
+            ->name('languages.remove');
+        Route::post('/sync', 'LanguageController@syncLanguages')
+            ->name('languages.sync');
+        Route::get('/groups', 'LanguageController@getGroups')
+            ->name('languages.getGroups');
+
+        Route::get('/translations', 'LanguageTranslationController@getTranslations')
+            ->name('languages.translations.translations');
+        Route::post('/translations/update', 'LanguageTranslationController@update')
             ->name('languages.translations.update');
-
-        Route::get('/{language}/translations/create', 'LanguageTranslationController@create')
-            ->name('languages.translations.create');
-
-        Route::post('/{language}/translations', 'LanguageTranslationController@store')
+        Route::post('/translations/store', 'LanguageTranslationController@store')
             ->name('languages.translations.store');
+        Route::post('/translations/remove', 'LanguageTranslationController@removeTranslationKey')
+            ->name('languages.translations.remove');
+        Route::post('/translations/sync', 'LanguageTranslationController@syncTranslations')
+            ->name('languages.translations.sync');
 
-        Route::get('/translations', 'LanguageTranslationController@index');
-
-        Route::get('/', 'LanguageController@index')
-            ->name('languages.index');
+//        Route::get('/', 'LanguageController@index')
+//            ->name('languages.index');
     });
 });
 

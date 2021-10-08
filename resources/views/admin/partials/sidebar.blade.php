@@ -1,6 +1,6 @@
 <div class="c-sidebar c-sidebar-dark c-sidebar-fixed c-sidebar-lg-show" id="sidebar">
-    <div class="c-sidebar-brand">
-        <img class="c-sidebar-brand-full main-logo" src="/images/logo.svg" width="118" height="46" alt="AlloTrans Logo">
+    <div class="c-sidebar-brand" style="background: #151b26">
+        <img class="c-sidebar-brand-full main-logo" src="/assets/img/logo.png" width="118" height="46" alt="AlloTrans Logo">
     </div>
     <ul class="c-sidebar-nav">
         <li class="c-sidebar-nav-item">
@@ -10,10 +10,11 @@
             </a>
         </li>
 
-        <li class="c-sidebar-nav-item c-sidebar-nav-dropdown c-show"><a
-                class="c-sidebar-nav-link c-sidebar-nav-dropdown-toggle c-active" href="#">
+        <li class="c-sidebar-nav-item c-sidebar-nav-dropdown">
+            <div class="c-sidebar-nav-link c-sidebar-nav-dropdown-toggle c-active">
                 <i class="far fa-plus-square c-sidebar-nav-icon"></i>
-                Categories</a>
+                Categories
+            </div>
             <ul class="c-sidebar-nav-dropdown-items">
 
                 <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{{route("admin.categories")}}"><span
@@ -33,28 +34,30 @@
         <li class="c-sidebar-nav-item">
             <a class="c-sidebar-nav-link" href="{{route('admin.orders')}}">
                 <i class="fas fa-file-invoice c-sidebar-nav-icon"></i>
-                Orders</a>
-
+                Orders
+            </a>
         </li>
 
         <li class="c-sidebar-nav-item">
             <a class="c-sidebar-nav-link" href="{{route('admin.listings')}}">
                 <i class="fas fa-file-alt c-sidebar-nav-icon"></i>
-                Listings</a>
+                Listings
+            </a>
         </li>
 
         <li class="c-sidebar-nav-item">
             <a class="c-sidebar-nav-link" href="{{route('admin.reviews')}}">
                 <i class="far fa-comments c-sidebar-nav-icon"></i>
-                Reviews</a>
+                Reviews
+            </a>
 
         </li>
 
-
-        <li class="c-sidebar-nav-item c-sidebar-nav-dropdown c-show"><a
-                class="c-sidebar-nav-link c-sidebar-nav-dropdown-toggle c-active" href="#">
+        <li class="c-sidebar-nav-item c-sidebar-nav-dropdown">
+            <div class="c-sidebar-nav-link c-sidebar-nav-dropdown-toggle c-active">
                 <i class="fas fa-users c-sidebar-nav-icon"></i>
-                Users</a>
+                Users
+            </div>
 
             <ul class="c-sidebar-nav-dropdown-items">
                 <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{{route("admin.users")}}"><span
@@ -73,26 +76,32 @@
                             class="c-sidebar-nav-icon"></span>Permissions</a></li>
             </ul>
         </li>
-        <li class="c-sidebar-nav-item c-sidebar-nav-dropdown c-show">
-            <a class="c-sidebar-nav-link c-sidebar-nav-dropdown-toggle c-active" href="#">
-                <i class="fab fa-amazon c-sidebar-nav-icon"></i>
-                Locale
+        <li class="c-sidebar-nav-item">
+            <a class="c-sidebar-nav-link" href="/admin/languages">
+                <span class="c-sidebar-nav-icon fas fa-globe"></span>
+                Languages
             </a>
-            <ul class="c-sidebar-nav-dropdown-items">
-                <li class="c-sidebar-nav-item">
-                    <a class="c-sidebar-nav-link" href="/admin/languages">
-                        <span class="c-sidebar-nav-icon fas fa-globe"></span>
-                        Langs
-                    </a>
-                </li>
-                <li class="c-sidebar-nav-item">
-                    <a class="c-sidebar-nav-link" href="/admin/languages/translations">
-                        <span class="c-sidebar-nav-icon fas fa-language"></span>
-                        Transaltions
-                    </a>
-                </li>
-            </ul>
         </li>
+{{--        <li class="c-sidebar-nav-item c-sidebar-nav-dropdown c-show">--}}
+{{--            <div class="c-sidebar-nav-link c-sidebar-nav-dropdown-toggle c-active">--}}
+{{--                <i class="fab fa-amazon c-sidebar-nav-icon"></i>--}}
+{{--                Locale--}}
+{{--            </div>--}}
+{{--            <ul class="c-sidebar-nav-dropdown-items">--}}
+{{--                <li class="c-sidebar-nav-item">--}}
+{{--                    <a class="c-sidebar-nav-link" href="/admin/languages">--}}
+{{--                        <span class="c-sidebar-nav-icon fas fa-globe"></span>--}}
+{{--                        Langs--}}
+{{--                    </a>--}}
+{{--                </li>--}}
+{{--                <li class="c-sidebar-nav-item">--}}
+{{--                    <a class="c-sidebar-nav-link" href="/admin/languages/translations">--}}
+{{--                        <span class="c-sidebar-nav-icon fas fa-language"></span>--}}
+{{--                        Transaltions--}}
+{{--                    </a>--}}
+{{--                </li>--}}
+{{--            </ul>--}}
+{{--        </li>--}}
 
     </ul>
     <button class="c-sidebar-minimizer c-class-toggler" type="button" data-target="_parent"

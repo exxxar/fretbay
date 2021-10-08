@@ -85,7 +85,7 @@
                                 {{currentLocale}}
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" v-for="lang in langOptions" :href="'/locale/'+lang.countryCode">{{lang.countryName}}</a>
+                                <a class="dropdown-item" v-for="lang in langOptions" :href="'/locale/'+lang.locale_name">{{lang.name}}</a>
 
                             </div>
                         </div>
@@ -100,33 +100,54 @@
     </footer>
 </template>
 <script>
+    import {localeChanged, localize} from "vee-validate";
+
     export default {
         data() {
             return {
                 langOptions: [
                     {
-                        countryCode: "en",
-                        countryName: "English"
+                        locale_name: "en",
+                        name: "English"
                     },
                     {
-                        countryCode: "fr",
-                        countryName: "Français"
+                        locale_name: "fr",
+                        name: "Français"
                     },
                     {
-                        countryCode: "ru",
-                        countryName: "Русский"
+                        locale_name: "ru",
+                        name: "Русский"
                     }
                 ]
             }
         },
+        mounted() {
+            axios({
+                method: 'get',
+                url: '/locales',
+                data: {},
+            }).then((response) => {
+                this.langOptions = response.data.languages;
+            });
+        },
         computed:{
           currentLocale:function(){
-              return this.langOptions.find(item=>item.countryCode===window.locale).countryName
+              let index = this.langOptions.findIndex(item => item.locale_name === window.locale);
+              if (index < 0) {
+                  this.selectLang(this.langOptions[0].locale_name);
+                  return this.langOptions[0].name;
+              }
+              return this.langOptions[index].name
           }
         },
         methods:{
             selectLang(lang){
-                window.location.href=`/setlocal/${lang}`
+                localStorage.setItem('locale', lang)
+                this.$lang.setLocale(lang);
+                this.$moment.locale(lang);
+                localize(lang);
+                localeChanged();
+                window.location.href = `/locale/${lang}`
             }
         }
     }

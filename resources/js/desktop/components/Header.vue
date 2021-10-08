@@ -5,7 +5,6 @@
                 <!-- Nav -->
                 <nav
                     class="js-mega-menu navbar navbar-expand-lg u-header__navbar hs-menu-initialized hs-menu-horizontal justify-content-sm-center justify-content-between">
-
                     <!-- Logo -->
                     <div class="u-header__navbar-brand-wrapper d-flex d-sm-block justify-content-sm-center "
                          v-bind:class="{'justify-content-end':!user,'justify-content-center':user}"
@@ -112,7 +111,7 @@
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
                                     <a class="dropdown-item" v-for="lang in langOptions"
-                                       @click="selectLang(lang.countryCode)" :href="'/locale/'+lang.countryCode">{{lang.countryName}}</a>
+                                       @click="selectLang(lang.locale_name)">{{lang.name}}</a>
 
                                 </div>
                             </li>
@@ -172,7 +171,7 @@
 
 <script>
     import MainMenu from "./MainMenu";
-
+    import { localize, localeChanged } from "vee-validate";
     export default {
         components: {
             MainMenu
@@ -183,16 +182,16 @@
                 searchText: null,
                 langOptions: [
                     {
-                        countryCode: "en",
-                        countryName: "English"
+                        locale_name: "en",
+                        name: "English"
                     },
                     {
-                        countryCode: "fr",
-                        countryName: "Français"
+                        locale_name: "fr",
+                        name: "Français"
                     },
                     {
-                        countryCode: "ru",
-                        countryName: "Русский"
+                        locale_name: "ru",
+                        name: "Русский"
                     }
                 ]
             }
@@ -202,7 +201,12 @@
                 return window.user;
             },
             currentLocale: function () {
-                return this.langOptions.find(item => item.countryCode === window.locale).countryName
+                let index = this.langOptions.findIndex(item => item.locale_name === window.locale);
+                if (index < 0) {
+                    this.selectLang(this.langOptions[0].locale_name);
+                    return this.langOptions[0].name;
+                }
+                return this.langOptions[index].name
             }
         },
         methods: {
@@ -213,11 +217,11 @@
                 $("#sidebar").toggleClass("u-unfold--hidden");
             },
             selectLang(lang) {
-                console.log(window)
                 localStorage.setItem('locale', lang)
                 this.$lang.setLocale(lang);
                 this.$moment.locale(lang);
                 localize(lang);
+                localeChanged();
                 window.location.href = `/locale/${lang}`
             },
             sendMessage(message, type = 'success') {
@@ -231,9 +235,13 @@
 
         },
         mounted() {
-            console.log("header!");
-
-
+            axios({
+                method: 'get',
+                url: '/locales',
+                data: {},
+            }).then((response) => {
+                    this.langOptions = response.data.languages;
+            });
             if (this.user)
                 pusher.subscribe('notification-event-channel-' + this.user.id)
                     .bind('notification-event', (data) => {

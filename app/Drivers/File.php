@@ -5,6 +5,7 @@ namespace App\Drivers;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 use App\Exceptions\LanguageExistsException;
 
@@ -89,7 +90,7 @@ class File extends Translation implements DriverInterface
     {
         return Collection::make([
             'group' => $this->getGroupTranslationsFor($language),
-            'single' => $this->getSingleTranslationsFor($language),
+//            'single' => $this->getSingleTranslationsFor($language),
         ]);
     }
 
@@ -107,9 +108,9 @@ class File extends Translation implements DriverInterface
         }
 
         $this->disk->makeDirectory("{$this->languageFilesPath}".DIRECTORY_SEPARATOR."$language");
-        if (! $this->disk->exists("{$this->languageFilesPath}".DIRECTORY_SEPARATOR."{$language}.json")) {
-            $this->saveSingleTranslations($language, collect(['single' => collect()]));
-        }
+//        if (! $this->disk->exists("{$this->languageFilesPath}".DIRECTORY_SEPARATOR."{$language}.json")) {
+//            $this->saveSingleTranslations($language, collect(['single' => collect()]));
+//        }
     }
 
     /**
@@ -135,6 +136,23 @@ class File extends Translation implements DriverInterface
 
         $values = $translations->get($group);
         $values[$key] = $value;
+        $translations->put($group, collect($values));
+
+        $this->saveGroupTranslations($language, $group, $translations->get($group));
+    }
+    /**
+     * Delete group type translation.
+     *
+     * @param string $language
+     * @param string $key
+     * @return void
+     */
+    public function removeGroupTranslation($language, $group, $key)
+    {
+        $translations = $this->getGroupTranslationsFor($language);
+
+        $values = $translations->get($group);
+        $values = Arr::except($values,[$key]);
         $translations->put($group, collect($values));
 
         $this->saveGroupTranslations($language, $group, $translations->get($group));
@@ -430,6 +448,8 @@ class File extends Translation implements DriverInterface
     public function getAllTranslations() {
         $records = [];
         $directories = $this->disk->directories($this->languageFilesPath);
+        Log::info('$this->languageFilesPath '.$this->languageFilesPath);
+        Log::info('$directories ', $directories);
         $languages = [];
         foreach ($directories as $directory) {
             array_push($languages, basename($directory));

@@ -10,7 +10,7 @@
                     <div class="w-md-50">
                         <h1 class="display-4 font-size-48--md-down text-white">La façon la plus simple de gérer les
                             affaires</h1>
-                        <p class="lead text-white">Développez votre entreprise avec AlloTrans</p>
+                        <p class="lead text-white">Développez votre entreprise avec AlloTrans {{$trans('cars-categories.type.7')}}</p>
 
 
                     </div>
