@@ -18,7 +18,7 @@ trait HasTranslations
         $attributes = parent::toArray();
         $locale1 = App::getLocale();
         $locale = Session::get('lang');
-        $lang = 'en';
+        $lang = 'fr';
         if($locale == null) {
             if($locale1 !== null) {
                 $lang = $locale1;
@@ -27,12 +27,9 @@ trait HasTranslations
         else {
             $lang = $locale;
         }
-        Log::info('Это локализация '.$locale.' 1'.$locale1);
         foreach ($this->getTranslatableAttributes() as $field) {
             $attributes[$field] = $this->getTranslation($field, $lang);
         }
-//        Session::put('lang', $lang);
-        Log::info('Получилась локализация '.$locale.' 1'.$locale1);
         return $attributes;
     }
 }
