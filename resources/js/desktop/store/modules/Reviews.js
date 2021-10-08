@@ -132,13 +132,7 @@ const actions = {
     },
 
     async addReview({state, commit}, review) {
-        return await axios.post('/reviews/add', {
-            title: review.title,
-            text: review.text,
-            type: review.selected_review_type.id,//тип отзыва
-            is_visible: false,//флаг модерации
-            order_id: review.selected_order.id,
-        })
+        return await axios.post('/reviews/add', review)
     },
 }
 

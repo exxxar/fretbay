@@ -64,15 +64,16 @@
                         <div class="form-group row d-flex justify-content-center mb-0">
                             <button class="btn ml-2 mb-2"
                                     type="button"
-                                    v-bind:class="{'btn-primary':selected_review_type.id===item.id,'btn-outline-primary':selected_review_type.id!==item.id}"
+                                    v-bind:class="{'btn-primary':selected_review_type===item.id,
+                                    'btn-outline-primary':selected_review_type!==item.id}"
                                     :key="item.id" v-for="item in reviewTypes"
-                                    @click="selected_review_type = item" v-html="item.data">
+                                    @click="selected_review_type = item.id" v-html="item.data">
                             </button>
 
                         </div>
                         <div class="row d-flex justify-content-center mb-2">
 
-                            <small v-if="selected_review_type"><em>{{selected_review_type.description}}</em></small>
+                            <small v-if="selected_review_type"><em>{{prepareReviewType(selected_review_type).description}}</em></small>
 
                         </div>
 
@@ -156,6 +157,9 @@
         }
         ,
         methods: {
+            prepareReviewType(type) {
+                return this.reviewTypes.find(item => item.id === type)
+            },
             loadReviews() {
                 this.$store.dispatch("loadReviews")
             },
@@ -163,10 +167,12 @@
                 this.$store.dispatch("getOrdersWithoutReviews")
             },
             submit() {
+                console.log("this.selected_review_type=>",this.selected_review_type)
+                console.log("this.selected_order=>",this.selected_order)
                 this.$store.dispatch("addReview", {
                     title: this.title,
                     text: this.text,
-                    type: this.selected_review_type.id,//тип отзыва
+                    type: this.selected_review_type,//тип отзыва
                     is_visible: false,//флаг модерации
                     order_id: this.selected_order.id,
                 }).then(resp => {

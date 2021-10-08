@@ -47,9 +47,10 @@ class NotificationListener
 
 
         $url = 'https://fcm.googleapis.com/fcm/send';
-        $FcmToken = User::where("id", $event->user_id)
-            ->whereNotNull('fcm_token')
+        $FcmToken = User::whereNotNull('fcm_token')
             ->pluck('fcm_token')->all();
+
+        /*where("id", $event->user_id)*/
 
         $serverKey = 'AAAAhhNUwlw:APA91bF6PpA5J641e58K2JkqZav7-L779VlvTja7lZwZAXN3ugN6GzxZcTm8yG2_4DSZdnrmd54Ze0sblMSJZg075lV8HitxoieQLmUHcQQ-PppkwKMZpH6rlf7GWhpBa4gwJdI1z1D8';
 

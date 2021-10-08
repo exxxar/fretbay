@@ -167,6 +167,28 @@
 
                 <md-step id="third" md-label="Complete" md-description="Optional" :md-editable="false"
                          :md-done.sync="third">
+
+                    <div class="row" v-if="order.review">
+                        <div class="col-12">
+                            <h4>Customer review <span
+                                class="p-2 font-size-28"
+                                v-bind:class="{
+                                            'text-danger':order.review.type===0,
+                                            'text-warning':order.review.type===1,
+                                            'text-primary':order.review.type===2,
+                                        }"
+                                v-html="prepareReviewType(order.review.type).data">
+                                </span> </h4>
+                            <hr>
+                            <h5>{{order.review.title}}</h5>
+                            <p>{{order.review.text}}</p>
+                            <h6>Customer reaction</h6>
+
+
+                            <p><em   v-html="prepareReviewType(order.review.type).description"></em></p>
+                            <hr>
+                        </div>
+                    </div>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias doloribus eveniet quaerat modi
                         cumque quos sed, temporibus nemo eius amet aliquid, illo minus blanditiis tempore, dolores
                         voluptas dolore placeat nulla.</p>
@@ -201,7 +223,9 @@
             }
         },
         computed: {
-
+            reviewTypes: function () {
+                return this.$store.getters.reviewTypes
+            },
             listing() {
                 return this.order.listing
             },
@@ -232,7 +256,9 @@
 
         },
         methods: {
-
+            prepareReviewType(type) {
+                return this.reviewTypes.find(item => item.id === type)
+            },
             changeOrderStatus(status) {
                 axios.post('/orders/status', {
                     order_id: this.order.id,
