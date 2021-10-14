@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Classes\MapBoxAPIManager;
+use App\Enums\NotificationObjectType;
 use App\Enums\NotificationType;
 use App\Events\NotificationEvent;
 use App\Events\NotificationEventBroadcast;
@@ -258,7 +259,10 @@ class ListingController extends Controller
             "#listing-" . $listing->id,
             "Create new listing  " . $listing->id,
             NotificationType::Info,
-            $user_id));
+            $user_id,
+            $listing->id,
+            NotificationObjectType::Listing
+        ));
 
 
         $images = [];
@@ -350,7 +354,10 @@ class ListingController extends Controller
             "#listing-" . $id,
             "Remove listing  " . $id,
             NotificationType::Warning,
-            Auth::user()->id));
+            Auth::user()->id,
+            $id,
+            NotificationObjectType::Listing
+        ));
 
 
         return response()->noContent();
@@ -367,7 +374,10 @@ class ListingController extends Controller
             "#listing-" . $id,
             "Restore listing  " . $id,
             NotificationType::Info,
-            Auth::user()->id));
+            Auth::user()->id,
+            $id,
+            NotificationObjectType::Listing
+        ));
 
         return response()->noContent();
     }
@@ -419,7 +429,10 @@ class ListingController extends Controller
                 "#quote-" . $quote->id,
                 "Change quote status, BID expired!",
                 NotificationType::Info,
-                $latestQuote->user_id));
+                $latestQuote->user_id,
+                $quote->id,
+                NotificationObjectType::Quote
+            ));
 
             event(new NotificationQuoteEventBroadcast($latestQuote->user_id));
         }
@@ -428,18 +441,30 @@ class ListingController extends Controller
             "#quote-" . $quote->id,
             "Add quote to Listing",
             NotificationType::Info,
-            Auth::user()->id));
+            Auth::user()->id,
+            $quote->id,
+            NotificationObjectType::Quote
+        ));
 
         event(new NotificationQuoteEventBroadcast(Auth::user()->id));
 
         $listing = Listing::where("id", $request->listing_id)->first();
 
-        Message::create([
+        $message = Message::create([
             "message" => "Hello! My company add a quote to your Listing!",
             "listing_id" => $listing->id,
             "sender_id" => Auth::user()->id,
             "recipient_id" => $listing->user_id
         ]);
+
+        event(new NotificationEvent(
+            "#Message-" . $message->id,
+            "Add message to Listing",
+            NotificationType::Info,
+            $listing->user_id,
+            $message->id,
+            NotificationObjectType::Message
+        ));
 
         return response()->noContent();
 
@@ -481,7 +506,10 @@ class ListingController extends Controller
                 "#quote-" . $quote->id,
                 "Your quote is ACTUAL now!",
                 NotificationType::Info,
-                $latestQuote->user_id));
+                $latestQuote->user_id,
+                $quote->id,
+                NotificationObjectType::Quote
+            ));
 
             event(new NotificationQuoteEventBroadcast($latestQuote->user_id));
         }
@@ -515,13 +543,19 @@ class ListingController extends Controller
             "#accept quote-" . $request->quote_id,
             "Accept quote #$request->quote_id!",
             NotificationType::Info,
-            $latestQuote->user_id));
+            $latestQuote->user_id,
+            $request->quote_id,
+            NotificationObjectType::Quote
+        ));
 
         event(new NotificationEvent(
             "#accept quote-" . $request->quote_id,
             "Accept quote #$request->quote_id!",
             NotificationType::Info,
-            $user_id));
+            $user_id,
+            $request->quote_id,
+            NotificationObjectType::Quote
+        ));
 
 
         return response()->noContent();
@@ -547,14 +581,20 @@ class ListingController extends Controller
             "#Decline quote-" . $request->quote_id,
             "Decline quote #$request->quote_id!",
             NotificationType::Info,
-            $latestQuote->user_id));
+            $latestQuote->user_id,
+            $request->quote_id,
+            NotificationObjectType::Quote
+        ));
 
 
         event(new NotificationEvent(
             "#Decline quote-" . $request->quote_id,
             "Decline quote #$request->quote_id!",
             NotificationType::Info,
-            $user_id));
+            $user_id,
+            $request->quote_id,
+            NotificationObjectType::Quote
+        ));
 
         $latest = User::find($latestQuote->user_id);
 
@@ -580,7 +620,10 @@ class ListingController extends Controller
             "#message-" . $id,
             "Message $id was deleted",
             NotificationType::Info,
-            Auth::user()->id));
+            Auth::user()->id,
+            $id,
+            NotificationObjectType::Message
+        ));
 
         return response()->noContent();
     }
@@ -626,16 +669,22 @@ class ListingController extends Controller
         ]);
 
         event(new NotificationEvent(
-            "#message-" . $sender_id,
+            "#message-" . $message->id,
             "New message to user #" . $listing->recipient_id,
             NotificationType::Info,
-            $sender_id));
+            $sender_id,
+            $message->id,
+            NotificationObjectType::Message
+        ));
 
         event(new NotificationEvent(
             "#message-" . $sender_id,
             "New message to user #" . $listing->recipient_id,
             NotificationType::Info,
-            $listing->recipient_id));
+            $listing->recipient_id,
+            $message->id,
+            NotificationObjectType::Message
+        ));
 
 
         return response()->json([

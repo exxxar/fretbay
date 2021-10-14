@@ -75,7 +75,7 @@ class MapBoxAPI
 
         try {
             $response = $client->request('GET',
-                "https://router.project-osrm.org/route/v1/driving/$y1,$x1;$y2,$x2?steps=false&geometries=geojson"
+                "https://router.project-osrm.org/route/v1/driving/$x1,$y1;$x2,$y2?steps=false&geometries=geojson"
 
             );
         } catch (\Exception $e) {

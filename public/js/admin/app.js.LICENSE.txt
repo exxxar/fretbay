@@ -86,6 +86,12 @@
  * @date    2020-09-23
  */
 
+/*!
+ * vuex v3.6.2
+ * (c) 2021 Evan You
+ * @license MIT
+ */
+
 /*! 
   * portal-vue © Thorsten Lünborg, 2019 
   * 
@@ -96,6 +102,12 @@
   * https://github.com/linusborg/portal-vue
   * 
  */
+
+/**
+  * vee-validate v3.4.8
+  * (c) 2021 Abdelrahman Awad
+  * @license MIT
+  */
 
 /**
  * @license

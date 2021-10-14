@@ -1,37 +1,31 @@
-// Give the service worker access to Firebase Messaging.
-// Note that you can only use Firebase Messaging here. Other Firebase libraries
-// are not available in the service worker.importScripts('https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js');
-importScripts('https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js');
-importScripts('https://www.gstatic.com/firebasejs/8.3.2/firebase-messaging.js');
+importScripts('https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js');
+importScripts('https://www.gstatic.com/firebasejs/8.3.0/firebase-messaging.js');
 
-/*
-Initialize the Firebase app in the service worker by passing in the messagingSenderId.
-*/
 firebase.initializeApp({
-    apiKey: "AIzaSyCARQA652wHZLjeRHWXqULVKtkWzbPIzjA",
-    authDomain: "allotrans-ba936.firebaseapp.com",
-    projectId: "allotrans-ba936",
-    storageBucket: "allotrans-ba936.appspot.com",
-    messagingSenderId: "575849939548",
-    appId: "1:575849939548:web:aefcdc86afe3f9916ddc99",
-    measurementId: "G-3YNBERNJYC"
+    apiKey: "AIzaSyACrIDLXDuzVHE9rTvIG6mg6qM4YMIF3MU",
+    authDomain: "allot-f0cdb.firebaseapp.com",
+    projectId: "allot-f0cdb",
+    storageBucket: "allot-f0cdb.appspot.com",
+    messagingSenderId: "661229456156",
+    appId: "1:661229456156:web:b6045f61b3625b399008d9",
+    measurementId: 'G-1MH9VQW03S'
 });
 
-
-// Retrieve an instance of Firebase Messaging so that it can handle background
-// messages.
 const messaging = firebase.messaging();
-messaging.setBackgroundMessageHandler(function (payload) {
-    console.log("Message received.", payload);
+messaging.setBackgroundMessageHandler(function(payload) {
+    console.log(
+        "[firebase-messaging-sw.js] Received background message ",
+        payload,
+    );
 
-    const title = "Hello world is awesome";
-    const options = {
-        body: "Your notificaiton message .",
-        icon: "/firebase-logo.png",
+    const notificationTitle = payload.data.title;
+    const notificationOptions = {
+        body: payload.data.body,
+        icon: payload.data.image,
     };
 
     return self.registration.showNotification(
-        title,
-        options,
+        notificationTitle,
+        notificationOptions,
     );
 });

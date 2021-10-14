@@ -22,7 +22,7 @@
 
                             <div class="col-lg-2 align-self-lg-end">
                                 <button type="submit" class="btn btn-block btn-primary transition-3d-hover">
-                                    Obtenez un devis
+                                    {{$trans('cars-categories.type.7')}}
                                 </button>
                             </div>
                         </div>

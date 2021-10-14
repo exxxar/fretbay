@@ -44,7 +44,7 @@ class DistanceAPI implements iDistanceAPI
     {
         $content = null;
         try {
-            $content = file_get_contents("http://router.project-osrm.org/trip/v1/driving/$fA,$lA;$fB,$lB");
+            $content = file_get_contents("http://router.project-osrm.org/trip/v1/driving/$fA,$lA;$fB,$lB?steps=false&geometries=geojson");
         } catch (\Exception $e) {
         }
 
@@ -63,7 +63,7 @@ class DistanceAPI implements iDistanceAPI
     {
         $content = null;
         try {
-            $content = file_get_contents("http://router.project-osrm.org/trip/v1/driving/$fA,$lA;$fB,$lB?steps=true");
+            $content = file_get_contents("http://router.project-osrm.org/trip/v1/driving/$fA,$lA;$fB,$lB?steps=true&geometries=geojson");
         } catch (\Exception $e) {
 
 

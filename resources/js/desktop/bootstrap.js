@@ -70,5 +70,3 @@ var pusher = new Pusher('e4a064fd6ecf04afd75e', {
 });
 window.pusher = pusher;
 
-
-

@@ -2,6 +2,7 @@
 
 namespace App\Events;
 
+use App\Enums\NotificationObjectType;
 use App\Enums\NotificationType;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
@@ -20,17 +21,25 @@ class NotificationEvent
     public $description;
     public $type;
     public $user_id;
+    public $object_id;
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct($title,$description = "",$type = NotificationType::Info, $user_id = null)
+    public function __construct($title,$description = "",
+                                $type = NotificationType::Info,
+                                $user_id = null,
+                                $object_id = null,
+                                $object_type = NotificationObjectType::Empty
+    )
     {
         $this->title = $title;
         $this->description = $description;
         $this->type = $type;
         $this->user_id = $user_id;
+        $this->object_id = $object_id;
+        $this->object_type = $object_type;
     }
 
 

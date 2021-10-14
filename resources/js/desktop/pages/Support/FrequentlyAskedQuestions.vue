@@ -61,7 +61,7 @@
                             <h5 class="mb-0">
                                 <button
                                     class="btn btn-link btn-block font-weight-medium d-flex justify-content-between card-collapse__btn collapsed"
-                                    data-toggle="collapse" data-target="#basicsCollapseThree" aria-expanded="false"
+                                    data-toggle="collapse" data-target="#basicsCollapseThree1" aria-expanded="false"
                                     aria-controls="basicsCollapseThree">
                                     What type of goods/objects can I advertise on FretBay?
 
@@ -71,7 +71,7 @@
                                 </button>
                             </h5>
                         </div>
-                        <div id="basicsCollapseThree" class="collapse" aria-labelledby="basicsHeadingThree"
+                        <div id="basicsCollapseThree1" class="collapse" aria-labelledby="basicsHeadingThree"
                              data-parent="#basicsAccordion">
                             <div class="card-body card-collapse__body px-0">
                                 <p>R: Whether it is movable goods for a move, the transport of fragile goods (piano), vehicles (motorcycle, boat, car), specific (animals, plants...), household appliances, FretBay is the ideal tool for all those who have transport needs whether in terms of place, goods or time!</p>
@@ -85,7 +85,7 @@
                             <h5 class="mb-0">
                                 <button
                                     class="btn btn-link btn-block font-weight-medium d-flex justify-content-between card-collapse__btn collapsed"
-                                    data-toggle="collapse" data-target="#basicsCollapseFour" aria-expanded="false"
+                                    data-toggle="collapse" data-target="#basicsCollapseFour1" aria-expanded="false"
                                     aria-controls="basicsCollapseFour">
                                     Is FretBay a free service?
 
@@ -95,7 +95,7 @@
                                 </button>
                             </h5>
                         </div>
-                        <div id="basicsCollapseFour" class="collapse" aria-labelledby="basicsHeadingFour"
+                        <div id="basicsCollapseFour1" class="collapse" aria-labelledby="basicsHeadingFour"
                              data-parent="#basicsAccordion">
                             <div class="card-body card-collapse__body px-0">
                                 <p>A: Yes, just register to create your username and start publishing your ads and receiving offers for free online. Of course, you only pay the amount of the offer you have chosen.</p>
@@ -109,7 +109,7 @@
                             <h5 class="mb-0">
                                 <button
                                     class="btn btn-link btn-block font-weight-medium d-flex justify-content-between card-collapse__btn collapsed"
-                                    data-toggle="collapse" data-target="#basicsCollapseFive" aria-expanded="false"
+                                    data-toggle="collapse" data-target="#basicsCollapseFive1" aria-expanded="false"
                                     aria-controls="basicsCollapseFive">
                                     What is the role of the site www.fretbay.com?
 
@@ -119,7 +119,7 @@
                                 </button>
                             </h5>
                         </div>
-                        <div id="basicsCollapseFive" class="collapse" aria-labelledby="basicsHeadingFive"
+                        <div id="basicsCollapseFive1" class="collapse" aria-labelledby="basicsHeadingFive"
                              data-parent="#basicsAccordion">
                             <div class="card-body card-collapse__body px-0">
                                 <p>R: FretBay's role is to offer you a secure platform to connect with carriers. FretBay does not intervene in any way in the negotiation of offers. It positions itself as a trusted intermediary.</p>
@@ -134,7 +134,7 @@
                             <h5 class="mb-0">
                                 <button
                                     class="btn btn-link btn-block font-weight-medium d-flex justify-content-between card-collapse__btn"
-                                    data-toggle="collapse" data-target="#basicsCollapseSix" aria-expanded="true"
+                                    data-toggle="collapse" data-target="#basicsCollapseSix1" aria-expanded="true"
                                     aria-controls="basicsCollapseSix">
                                     When I accept an offer from a carrier, do I pay the carrier directly?
 
@@ -144,7 +144,7 @@
                                 </button>
                             </h5>
                         </div>
-                        <div id="basicsCollapseSix" class="collapse show" aria-labelledby="basicsCollapseSix"
+                        <div id="basicsCollapseSix1" class="collapse show" aria-labelledby="basicsCollapseSix"
                              data-parent="#basicsAccordion">
                             <div class="card-body card-collapse__body px-0">
 
@@ -159,7 +159,7 @@
                             <h5 class="mb-0">
                                 <button
                                     class="btn btn-link btn-block font-weight-medium d-flex justify-content-between card-collapse__btn"
-                                    data-toggle="collapse" data-target="#basicsHeadingSeven" aria-expanded="true"
+                                    data-toggle="collapse" data-target="#basicsHeadingSeven1" aria-expanded="true"
                                     aria-controls="basicsHeadingSeven">
                                     I need more information about the proposed offer, how do I contact the carrier?
 
@@ -169,7 +169,7 @@
                                 </button>
                             </h5>
                         </div>
-                        <div id="basicsHeadingSeven" class="collapse show" aria-labelledby="basicsHeadingSeven"
+                        <div id="basicsHeadingSeven1" class="collapse show" aria-labelledby="basicsHeadingSeven"
                              data-parent="#basicsAccordion">
                             <div class="card-body card-collapse__body px-0">
 
@@ -184,7 +184,7 @@
                             <h5 class="mb-0">
                                 <button
                                     class="btn btn-link btn-block font-weight-medium d-flex justify-content-between card-collapse__btn"
-                                    data-toggle="collapse" data-target="#basicsHeadingEigth" aria-expanded="true"
+                                    data-toggle="collapse" data-target="#basicsHeadingEigth1" aria-expanded="true"
                                     aria-controls="basicsHeadingEigth">
                                     Is the payment secure on www.fretbay.com?
 
@@ -194,7 +194,7 @@
                                 </button>
                             </h5>
                         </div>
-                        <div id="basicsHeadingEigth" class="collapse show" aria-labelledby="basicsHeadingEigth"
+                        <div id="basicsHeadingEigth1" class="collapse show" aria-labelledby="basicsHeadingEigth"
                              data-parent="#basicsAccordion">
                             <div class="card-body card-collapse__body px-0">
                                 <p>R: Payment is made via the system of one of the leaders in secure Internet payment. Fretbay is a Paypal certified partner.
@@ -210,7 +210,7 @@
                             <h5 class="mb-0">
                                 <button
                                     class="btn btn-link btn-block font-weight-medium d-flex justify-content-between card-collapse__btn"
-                                    data-toggle="collapse" data-target="#basicsHeadingNine" aria-expanded="true"
+                                    data-toggle="collapse" data-target="#basicsHeadingNine1" aria-expanded="true"
                                     aria-controls="basicsHeadingNine">
                                     How is www.fretbay.com different from other sites?
 
@@ -220,7 +220,7 @@
                                 </button>
                             </h5>
                         </div>
-                        <div id="basicsHeadingNine" class="collapse show" aria-labelledby="basicsHeadingNine"
+                        <div id="basicsHeadingNine1" class="collapse show" aria-labelledby="basicsHeadingNine"
                              data-parent="#basicsAccordion">
                             <div class="card-body card-collapse__body px-0">
                                 <p>R: FretBay positions itself as a trusted intermediary and offers you a unique and innovative service by:

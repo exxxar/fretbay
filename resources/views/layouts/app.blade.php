@@ -45,7 +45,6 @@
     @endif
 
 
-
 </head>
 
 <body>
@@ -54,7 +53,7 @@
     <notifications :position="'top left'" :group="'info'"></notifications>
     <preloader-component></preloader-component>
     @yield('content')
-{{--    <system-notification-component></system-notification-component>--}}
+    {{--    <system-notification-component></system-notification-component>--}}
 
     <modals-component>
 
@@ -68,18 +67,18 @@
 
 <script
     src="{{ env("APP_DEBUG")?asset('js/desktop/app.js'):asset("js/desktop/app.min.js") }}?version={{env("APP_VERSION")}}"
-    defer></script>
+    ></script>
 
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-        s1.async=true;
-        s1.src='https://embed.tawk.to/613d22be25797d7a89fe7bc0/1ffbcveaj';
-        s1.charset='UTF-8';
-        s1.setAttribute('crossorigin','*');
-        s0.parentNode.insertBefore(s1,s0);
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/613d22be25797d7a89fe7bc0/1ffbcveaj';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
     })();
 </script>
 
@@ -87,12 +86,12 @@
 
 @if (Auth::check())
 
-{{--    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase.js"></script>--}}
+   {{-- <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase.js" defer></script>--}}
 
-<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js" ></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-messaging.js" ></script>
 
-    <script>
+    <script >
 
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('/firebase-messaging-sw.js')
@@ -100,51 +99,52 @@
             console.warn('Service workers aren\'t supported in this browser.');
         }
 
-
         var firebaseConfig = {
-            apiKey: "AIzaSyCARQA652wHZLjeRHWXqULVKtkWzbPIzjA",
-            authDomain: "allotrans-ba936.firebaseapp.com",
-            projectId: "allotrans-ba936",
-            storageBucket: "allotrans-ba936.appspot.com",
-            messagingSenderId: "575849939548",
-            appId: "1:575849939548:web:aefcdc86afe3f9916ddc99",
-            measurementId: "G-3YNBERNJYC"
+            apiKey: "AIzaSyACrIDLXDuzVHE9rTvIG6mg6qM4YMIF3MU",
+            authDomain: "allot-f0cdb.firebaseapp.com",
+            projectId: "allot-f0cdb",
+            storageBucket: "allot-f0cdb.appspot.com",
+            messagingSenderId: "661229456156",
+            appId: "1:661229456156:web:b6045f61b3625b399008d9",
+            measurementId: 'G-1MH9VQW03S'
         };
 
         firebase.initializeApp(firebaseConfig);
         const messaging = firebase.messaging();
 
-        function startFCM() {
-            messaging
-                .requestPermission()
-                .then(function () {
-                    return messaging.getToken()
-                })
-                .then(function (response) {
-                    window.$.ajaxSetup({
-                        headers: {
-                            'X-CSRF-TOKEN': window.csrf
-                        }
-                    });
-                    window.$.ajax({
-                        url: '/fcm-token',
-                        type: 'POST',
-                        data: {
-                            token: response
-                        },
-                        dataType: 'JSON',
-                        success: function (response) {
-                            //alert('Token stored.');
-                        },
-                        error: function (error) {
-                            //alert(error);
-                        },
-                    });
 
-                }).catch(function (error) {
-                alert(error);
-            });
-        }
+        messaging
+            .requestPermission()
+            .then(function () {
+                return messaging.getToken()
+            })
+            .then(function (response) {
+
+                window.$.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': '{{csrf_token()}}'
+                    }
+                });
+
+                window.$.ajax({
+                    url: '/fcm-token',
+                    type: 'POST',
+                    data: {
+                        token: response
+                    },
+                    dataType: 'JSON',
+                    success: function (response) {
+                        alert('Token stored.');
+                    },
+                    error: function (error) {
+                        alert(error);
+                    },
+                });
+
+            }).catch(function (error) {
+            alert(error);
+        });
+
 
         messaging.onMessage(function (payload) {
             const title = payload.notification.title;
