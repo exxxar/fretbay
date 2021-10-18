@@ -3,19 +3,19 @@
         <!-- Description Section -->
         <div class="container space-1 pt-5 pb-2">
             <div class="row mb-2">
-                <div class="col-12">
-                    <div class="btn-group">
+                <div class="col-md-4 col-12">
+                    <div class="btn-group d-flex">
                         <button type="button" class="btn btn-outline-primary w-100"
                                 v-if="user.is_transporter||user.id===listing.user_id"
                                 data-toggle="modal" data-target="#quoteModal">
-                            <i class="fas fa-gavel"></i>
+                            <span>Quotes <i class="fas fa-gavel"></i></span>
                         </button>
 
 
                         <button type="button" class="btn btn-outline-primary w-100"
                                 v-if="user.is_transporter||user.id===listing.user_id"
                                 data-toggle="modal" data-target="#chatModal">
-                            <i class="far fa-comments"></i>
+                            <span>Messages <i class="far fa-comments"></i></span>
                         </button>
 
                        <!--  <button type="button" class="btn btn-outline-primary w-100"

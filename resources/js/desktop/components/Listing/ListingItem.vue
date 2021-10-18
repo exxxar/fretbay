@@ -148,6 +148,8 @@
                 <div class="col-sm-4 col-12 pl-0" v-if="listing.distance>0">
                     <p class="ml-sm-5 ml-0 p-sm-2 p-0 mt-2 mt-sm-0">Distance <strong>{{listing.distance}}</strong> km
                     </p>
+                    <p class="ml-sm-5 ml-0 p-sm-2 p-0 mt-2 mt-sm-0" v-if="listing.additional_info">Description: <em>{{listing.additional_info}}</em>
+                    </p>
                 </div>
 
 

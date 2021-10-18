@@ -7,7 +7,6 @@
                     <div v-for="message in filteredMessages">
                         <div class="outgoing_msg "
                              style="padding:5px;"
-
                              v-if="message.sender_id===user.id&&(user.is_transporter||user.is_customer)">
                             <div class="sent_msg w-100 w-md-45 ">
                                 <p
@@ -41,7 +40,7 @@
                             <div class="incoming_msg_img"><img v-if="message.sender"
                                                                v-lazy="message.sender.avatar" alt="sunil">
                             </div>
-                            <div class="received_msg ">
+                            <div class="received_msg " @click="selectUser(message.sender)">
                                 <div class="received_withd_msg w-100 w-md-55 ">
                                     <h6>#{{message.sender.id}} {{message.sender.name}}</h6>
                                     <p>{{message.message}}</p>
@@ -86,9 +85,8 @@
                            <strong v-if="!searchMode">Search</strong>
                         </span>
                         <span class="badge badge-danger mr-2" v-if="isPhone" @click="reset">Remove number!</span>
-                        <span class="input_type_counter mr-2" style="color: lightgrey;" v-if="message"><small>{{message.length}}/255</small>
-                    </span>
-
+                        <span class="input_type_counter mr-2" style="color: lightgrey;" v-if="message"><small>{{message.length}}/255</small> </span>
+                        <span v-if="selected_user">{{selected_user.name}} <a href="#" @click="selected_user=null"><i class="fas fa-times"></i></a></span>
                     </div>
                     <div class="type_msg">
 
@@ -148,7 +146,7 @@
                 selected_message_id: null,
                 messages: [],
                 search: '',
-
+                selected_user: null,
             }
         },
 
@@ -210,6 +208,9 @@
             }
         },
         methods: {
+            selectUser(user){
+              this.selected_user = user
+            },
             reset() {
                 let tmp = this.message.split('')
 
@@ -274,7 +275,7 @@
                 axios.post("/listing/messages/send", {
                     "message": this.message,
                     "listing_id": this.listing.id,
-                    'recipient_id': this.listing.user_id,
+                    'recipient_id': this.selected_user? this.selected_user.id : this.listing.user_id,
                     'user_id': this.user.id
                 }).then(resp => {
 

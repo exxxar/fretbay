@@ -10,6 +10,7 @@ use App\Models\Notification;
 use App\User;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Kutia\Larafirebase\Facades\Larafirebase;
@@ -47,9 +48,8 @@ class NotificationListener
             "object_type"=>$event->object_type,
         ]);
 
-
-
         $FcmToken = User::whereNotNull('fcm_token')
+            ->whereIn("id",[$event->user_id, Auth::user()->id])
             ->pluck('fcm_token')->all();
 
         if (count($FcmToken)===0)

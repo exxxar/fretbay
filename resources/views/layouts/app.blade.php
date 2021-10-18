@@ -134,15 +134,15 @@
                     },
                     dataType: 'JSON',
                     success: function (response) {
-                        alert('Token stored.');
+                        //alert('Token stored.');
                     },
                     error: function (error) {
-                        alert(error);
+                        //alert(error);
                     },
                 });
 
             }).catch(function (error) {
-            alert(error);
+            //alert(error);
         });
 
 
@@ -152,7 +152,7 @@
                 body: payload.notification.body,
                 icon: payload.notification.icon,
             };
-            console.log("TTTTTTTTT")
+          //  console.log("TTTTTTTTT")
             new Notification(title, options);
         });
     </script>

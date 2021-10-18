@@ -91,7 +91,6 @@ Vue.component('review-item-component', require('../desktop/components/Reviews/Re
 //auth
 
 
-
 Vue.component('login-page', require('./pages/Auth/Login.vue').default);
 Vue.component('recovery-page', require('./pages/Auth/Recovery.vue').default);
 Vue.component('register-transporter-page', require('./pages/Auth/RegisterTransporter.vue').default);

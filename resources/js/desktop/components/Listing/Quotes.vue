@@ -47,7 +47,7 @@
                                 {{item.currency}}</p>
                         </div>
                         <div class="col-12 col-sm-4">
-                            <p class="text-center m-0"> {{preparedQuoteStatus(item.status)}}</p>
+                            <p class="text-center m-0"> <em><small>{{preparedQuoteStatus(item.status)}}</small></em></p>
                             <a href="#" class="w-100 btn btn-primary m-0 p-0 d-block"
                                v-if="user.id===item.user_id&&item.status===0"
                                @click="removeQuote(item.id)"
@@ -114,7 +114,7 @@
                             </div>
                         </div>
                         <hr>
-                        <h6 class="text-center">Quote validity</h6>
+                        <h6 class="text-center"> Quote validity</h6>
                         <div class="form-group row d-flex justify-content-center">
                             <button class="btn ml-2 mb-2"
                                     type="button"
@@ -134,7 +134,7 @@
                                 {{item.title}}
                             </button>
                         </div>
-                        <h6 class="text-center">What working service is this?</h6>
+                        <h6 class="text-center"><span class="badge badge-danger mr-2" v-if="selected_formula.length===0">Required</span>What working service is this?</h6>
                         <div class="form-group row d-flex justify-content-center">
 
                             <div class="col-12 col-sm-6 " :key="item.id" v-for="item in formula_list">
@@ -152,7 +152,7 @@
 
                         <div class="form-group row d-flex justify-content-center">
                             <div class="col-sm-6">
-                                <button class="btn btn-primary w-100" v-if="">
+                                <button class="btn btn-primary w-100" :disabled="selected_formula.length===0">
                                     Send a quote
                                 </button>
                             </div>

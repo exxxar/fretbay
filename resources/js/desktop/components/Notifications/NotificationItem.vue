@@ -11,8 +11,8 @@
                 <div class="col-10">
 
                     <div class="row">
-                        <div class="col-12"> <p>{{item.title}}</p></div>
-                        <div class="col-12">  <p>{{item.description}}</p></div>
+                        <div class="col-12"><p>{{item.title}}</p></div>
+                        <div class="col-12"><a :href="prepareLink">{{item.description}}</a></div>
                         <div class="col-12"><p class="mb-0">{{item.created_at | moment("from", "now", true) }}</p></div>
                     </div>
 
@@ -47,7 +47,23 @@
                 ]
             }
         },
+        computed: {
+            prepareLink: function () {
+                return ([
+                    '#',
+                    '/messages/',
+                    '/listings/',
+                    '/quotes/',
+                    '/orders/',
+                    '/customer/profile/',
+                    '/transporter/profile/',
+                    '/review/',
+
+                ][this.item.object_type] || '#') + this.item.object_id;
+            }
+        },
         methods: {
+
             getClassByType() {
                 let tmp = this.types.find(item => item.type === this.item.type)
 
