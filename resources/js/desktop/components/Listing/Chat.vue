@@ -90,10 +90,10 @@
                     </div>
                     <div class="type_msg">
 
-                        <div class="input_msg_write">
+                        <div class="input_msg_write" style="padding:10px;">
 
-                            <div class="row">
-                                <div class="col-10">
+                            <div class="row pb-2">
+                                <div class="col-12 col-md-10">
                                     <input type="text" class="write_msg p-2" placeholder="Type a message"
                                            v-model="message"
                                            v-if="!searchMode"
@@ -105,7 +105,7 @@
                                            v-model="search">
 
                                 </div>
-                                <div class="col-2">
+                                <div class="col-12 col-md-2">
                                     <div class="btn-group w-100">
 
                                         <button class="btn" type="button"
@@ -339,7 +339,7 @@
         position: fixed;
         bottom: 0px;
         width: 100%;
-        height: 105px;
+        height: 166px;
         left: 0;
         background: white;
         border-top: 2px #00a600 solid;
