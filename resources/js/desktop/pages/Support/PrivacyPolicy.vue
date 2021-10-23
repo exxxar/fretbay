@@ -277,7 +277,7 @@
                             <h5 class="mb-0">
                                 <button
                                     class="btn btn-link btn-block font-weight-medium d-flex justify-content-between card-collapse__btn"
-                                    data-toggle="collapse" data-target="#basicsHeadingSeven" aria-expanded="true"
+                                    data-toggle="collapse" data-target="#basicsHeadingSeven1" aria-expanded="true"
                                     aria-controls="basicsHeadingSeven">
                                     Security
 
@@ -287,7 +287,7 @@
                                 </button>
                             </h5>
                         </div>
-                        <div id="basicsHeadingSeven" class="collapse show" aria-labelledby="basicsHeadingSeven"
+                        <div id="basicsHeadingSeven1" class="collapse show" aria-labelledby="basicsHeadingSeven"
                              data-parent="#basicsAccordion">
                             <div class="card-body card-collapse__body px-0">
 
@@ -334,7 +334,7 @@
                             <h5 class="mb-0">
                                 <button
                                     class="btn btn-link btn-block font-weight-medium d-flex justify-content-between card-collapse__btn"
-                                    data-toggle="collapse" data-target="#basicsHeadingEigth" aria-expanded="true"
+                                    data-toggle="collapse" data-target="#basicsHeadingEigth1" aria-expanded="true"
                                     aria-controls="basicsHeadingEigth">
                                     Cookie
 
@@ -344,7 +344,7 @@
                                 </button>
                             </h5>
                         </div>
-                        <div id="basicsHeadingEigth" class="collapse show" aria-labelledby="basicsHeadingEigth"
+                        <div id="basicsHeadingEigth1" class="collapse show" aria-labelledby="basicsHeadingEigth"
                              data-parent="#basicsAccordion">
                             <div class="card-body card-collapse__body px-0">
                                 <p>In order to customize our service, we use cookies to notify us of your visit to
@@ -423,7 +423,7 @@
                             <h5 class="mb-0">
                                 <button
                                     class="btn btn-link btn-block font-weight-medium d-flex justify-content-between card-collapse__btn"
-                                    data-toggle="collapse" data-target="#basicsHeadingNine" aria-expanded="true"
+                                    data-toggle="collapse" data-target="#basicsHeadingNine1" aria-expanded="true"
                                     aria-controls="basicsHeadingNine">
                                     Consent
 
@@ -433,7 +433,7 @@
                                 </button>
                             </h5>
                         </div>
-                        <div id="basicsHeadingNine" class="collapse show" aria-labelledby="basicsHeadingNine"
+                        <div id="basicsHeadingNine1" class="collapse show" aria-labelledby="basicsHeadingNine"
                              data-parent="#basicsAccordion">
                             <div class="card-body card-collapse__body px-0">
                                 <p>By providing us with your personal data, you expressly and knowingly consent to
@@ -452,7 +452,7 @@
                             <h5 class="mb-0">
                                 <button
                                     class="btn btn-link btn-block font-weight-medium d-flex justify-content-between card-collapse__btn"
-                                    data-toggle="collapse" data-target="#basicsHeadingTen" aria-expanded="true"
+                                    data-toggle="collapse" data-target="#basicsHeadingTen1" aria-expanded="true"
                                     aria-controls="basicsHeadingTen">
                                     Storage duration
 
@@ -462,7 +462,7 @@
                                 </button>
                             </h5>
                         </div>
-                        <div id="basicsHeadingTen" class="collapse show" aria-labelledby="basicsHeadingTen"
+                        <div id="basicsHeadingTen1" class="collapse show" aria-labelledby="basicsHeadingTen"
                              data-parent="#basicsAccordion">
                             <div class="card-body card-collapse__body px-0">
 

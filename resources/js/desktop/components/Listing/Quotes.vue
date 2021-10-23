@@ -46,7 +46,7 @@
                             <p class="text-center m-0"><i class="fas fa-gavel ml-2"></i> {{item.price}}
                                 {{item.currency}}</p>
                         </div>
-                        <div class="col-12 col-sm-4">
+                        <div class="col-12 col-sm-4 pb-2">
                             <p class="text-center m-0"> <em><small>{{preparedQuoteStatus(item.status)}}</small></em></p>
                             <a href="#" class="w-100 btn btn-primary m-0 p-0 d-block"
                                v-if="user.id===item.user_id&&item.status===0"

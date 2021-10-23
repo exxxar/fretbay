@@ -238,7 +238,7 @@
                             <h5 class="mb-0">
                                 <button
                                     class="btn btn-link btn-block font-weight-medium d-flex justify-content-between card-collapse__btn"
-                                    data-toggle="collapse" data-target="#basicsHeadingTen" aria-expanded="true"
+                                    data-toggle="collapse" data-target="#basicsHeadingTen1" aria-expanded="true"
                                     aria-controls="basicsHeadingTen">
                                     In which geographical territory(ies) does FretBay operate?
 
@@ -248,7 +248,7 @@
                                 </button>
                             </h5>
                         </div>
-                        <div id="basicsHeadingTen" class="collapse show" aria-labelledby="basicsHeadingTen"
+                        <div id="basicsHeadingTen1" class="collapse show" aria-labelledby="basicsHeadingTen"
                              data-parent="#basicsAccordion">
                             <div class="card-body card-collapse__body px-0">
 

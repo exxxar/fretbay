@@ -42,8 +42,8 @@
                         <ul class="navbar-nav u-header__navbar-nav">
 
                             <!--  Request a quote -->
-                            <li class="nav-item hs-has-mega-menu u-header__nav-item">
-                                <a href="/find-transporter" class="nav-link u-header__nav-link btn-link w-100 ">
+                            <li class="nav-item  u-header__nav-item">
+                                <a href="/find-transporter" class="nav-link btn btn-link w-100 p-3 text-center">
                                     Request a quote
                                 </a>
                             </li>
@@ -61,7 +61,7 @@
 
 
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle w-100 " href="#" id="navbarDropdownMenuLink"
+                                <a class="nav-link btn btn-link p-3 dropdown-toggle w-100 " href="#" id="navbarDropdownMenuLink"
                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Helps
                                 </a>
@@ -78,6 +78,17 @@
                                 </div>
                             </li>
 
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle p-3 btn btn-link" href="#" id="navbarDropdownMenuLink2"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    {{currentLocale}}
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
+                                    <a class="dropdown-item" v-for="lang in langOptions"
+                                       @click="selectLang(lang.locale_name)">{{lang.name}}</a>
+
+                                </div>
+                            </li>
 
                             <li class="nav-item dropdown u-header__nav-item-btn p-0 mb-1 mb-sm-0 mr-0 mr-sm-1"
                                 v-if="!user">
@@ -104,17 +115,7 @@
                             </li>
                             <!-- End Button -->
 
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2"
-                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    {{currentLocale}}
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
-                                    <a class="dropdown-item" v-for="lang in langOptions"
-                                       @click="selectLang(lang.locale_name)">{{lang.name}}</a>
 
-                                </div>
-                            </li>
 
                             <!-- Search -->
                             <li class="nav-item u-header__navbar-icon u-header__navbar-v-divider">

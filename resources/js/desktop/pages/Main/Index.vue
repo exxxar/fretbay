@@ -293,7 +293,7 @@ Magasin d'applications</strong>
                     </button>
                     <!-- End Button -->
 
-                    <!-- Button -->
+                  <!--  &lt;!&ndash; Button &ndash;&gt;
                     <button type="button" class="btn btn-xs btn-dark text-left mb-2 mb-md-0">
             <span class="media align-items-center">
               <i class="fab fa-google-play fa-3x mr-3"></i>
@@ -303,7 +303,7 @@ Mettez-le sur</span>
                 <strong class="d-block font-size-14">jeu de Google</strong>
               </span>
             </span>
-                    </button>
+                    </button>-->
                     <!-- End Button -->
                 </div>
             </div>
