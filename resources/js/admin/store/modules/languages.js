@@ -38,7 +38,7 @@ export default {
             try {
                 await axios({
                     method: 'get',
-                    url: '/admin/languages/get',
+                    url: 'https://allotrans.com/admin/languages/get',
                     data: {},
                 })
                     .then((response) => {
@@ -51,11 +51,11 @@ export default {
             }
         },
         async getLanguage({commit}, payload) {
-            await axios.get('/admin/languages/'+ payload.id, payload);
+            await axios.get('https://allotrans.com/admin/languages/'+ payload.id, payload);
         },
         async addLanguage({commit}, payload) {
             try{
-                return await axios.post('/admin/languages/store', payload)
+                return await axios.post('https://allotrans.com/admin/languages/store', payload)
                     // .then((response) => {
                     //     commit('addLanguage', response.data.language)
                     // });
@@ -65,19 +65,19 @@ export default {
             }
         },
         async updateLanguage({commit}, payload) {
-            return await axios.post('/admin/languages/update', payload)
+            return await axios.post('https://allotrans.com/admin/languages/update', payload)
                 // .then((response) => {
                 //     commit('saveLanguage', response.data.language)
                 // });
         },
         async removeLanguage({commit}, payload) {
-            return await axios.post('/admin/languages/remove', payload)
+            return await axios.post('https://allotrans.com/admin/languages/remove', payload)
         },
         async getGroups({commit}) {
             try {
                 await axios({
                     method: 'get',
-                    url: '/admin/languages/groups',
+                    url: 'https://allotrans.com/admin/languages/groups',
                     data: {},
                 })
                     .then((response) => {
@@ -90,7 +90,7 @@ export default {
         },
         async syncLanguages() {
             try{
-                return await axios.post('/admin/languages/sync');
+                return await axios.post('https://allotrans.com/admin/languages/sync');
             } catch (error) {
                 console.log(error);
                 throw error

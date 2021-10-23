@@ -35,7 +35,7 @@ export default {
     actions: {
         async getTranslations({commit}) {
             try {
-                await axios.get('/admin/languages/translations/')
+                await axios.get('https://allotrans.com/admin/languages/translations/')
                     .then((response) => {
                         // commit('setTranslations', response.data.content)
                         commit('setTranslations', response.data.translations)
@@ -50,7 +50,7 @@ export default {
         // },
         async addTranslation({commit}, payload) {
             try{
-                return await axios.post('/admin/languages/translations/store', payload)
+                return await axios.post('https://allotrans.com/admin/languages/translations/store', payload)
                     // .then((response) => {
                     //     commit('addTranslation', payload)
                     // });
@@ -60,19 +60,19 @@ export default {
             }
         },
         async updateTranslation({commit}, payload) {
-            return await axios.post('/admin/languages/translations/update', payload)
+            return await axios.post('https://allotrans.com/admin/languages/translations/update', payload)
                 // .then((response) => {
                 //     commit('saveTranslation', payload)
                 // });
         },
         async removeTranslation({commit}, payload) {
-            return await axios.post('/admin/languages/translations/remove', payload);
+            return await axios.post('https://allotrans.com/admin/languages/translations/remove', payload);
                 // .then((response) => {
                 //     commit('removeTranslation', response.data)
                 // });
         },
         async syncTranslation({commit}) {
-            return await axios.post('/admin/languages/translations/sync')
+            return await axios.post('https://allotrans.com/admin/languages/translations/sync')
                 // .then((response) => {
                 //     // commit('saveTranslation', payload)
                 // });
