@@ -35,7 +35,7 @@ export default {
     actions: {
         async getTranslations({commit}) {
             try {
-                await axios.get('https://allotrans.com/admin/languages/translations/')
+                await axios.get('https://allotrans.com/admin/languages/translations')
                     .then((response) => {
                         // commit('setTranslations', response.data.content)
                         commit('setTranslations', response.data.translations)
