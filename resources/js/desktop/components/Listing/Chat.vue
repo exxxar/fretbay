@@ -36,11 +36,14 @@
 
                         <div class="incoming_msg"
                              style="padding:5px;"
+                             v-bind:class="{'bg-primary-soft':selected==message.id}"
                              v-else>
                             <div class="incoming_msg_img"><img v-if="message.sender"
                                                                v-lazy="message.sender.avatar" alt="sunil">
                             </div>
-                            <div class="received_msg cursor-pointer" @click="selectUser(message.sender)">
+                            <div class="received_msg cursor-pointer "
+
+                                 @click="selectUser(message.sender)">
                                 <div class="received_withd_msg w-100 w-md-55 ">
                                     <h6>#{{message.sender.id}} {{message.sender.name}}</h6>
                                     <p>{{message.message}}</p>
@@ -141,7 +144,7 @@
     import {parsePhoneNumber, findPhoneNumbersInText} from 'libphonenumber-js'
 
     export default {
-        props: ["listing"],
+        props: ["listing", "selected"],
         data() {
             return {
                 forMe: false,
@@ -180,6 +183,7 @@
 
                 if (!this.messages)
                     return []
+
 
                 if (this.forMe === true)
                     return this.messages.filter(item => item.message.toLowerCase().indexOf(this.search.toLowerCase()) != -1 && item.recipient_id === this.user.id)

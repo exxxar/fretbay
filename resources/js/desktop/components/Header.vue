@@ -43,20 +43,28 @@
 
                             <!--  Request a quote -->
                             <li class="nav-item  u-header__nav-item">
-                                <a href="/find-transporter" class="nav-link btn btn-link w-100 p-3 text-center">
+                                <a href="/find-transporter" class="nav-link btn btn-link w-100 p-3 text-center"
+                                   v-bind:class="{'btn-outline-primary':user.is_customer}"
+                                   v-if="!user||user.is_customer"
+                                >
                                     {{$trans('menu.item.request_a_quote')}}
                                 </a>
+
                             </li>
 
                             <!-- End  Request a quote -->
 
                             <!--  Find loads -->
-                            <li class="nav-item hs-has-mega-menu u-header__nav-item" v-if="user">
-                                <a href="/find-loads" class="nav-link u-header__nav-link w-100 "
+
+                            <li class="nav-item  u-header__nav-item " v-if="user">
+                                <a href="/find-loads" class="nav-link btn btn-link w-100 p-3 text-center"
+                                   v-bind:class="{'btn-outline-primary':user.is_transporter}"
                                    v-if="user.is_transporter">
                                     {{$trans('menu.item.find_loads')}}
                                 </a>
                             </li>
+
+
                             <!-- End  Find loads -->
 
 

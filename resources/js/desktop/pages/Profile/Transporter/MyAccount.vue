@@ -71,9 +71,11 @@
                             </div>
                         </div>
                         <hr>
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <button class="btn btn-outline-blue float-right" v-if="!editMode" @click="edit">{{$trans('profile.profile.button_3')}}</button>
+                        <div class="row d-flex justify-content-end">
+                            <div class="col-sm-12 col-md-4">
+                                <button class="btn btn-outline-blue w-100" v-if="!editMode" @click="edit">
+                                    {{$trans('profile.profile.button_3')}}
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -89,21 +91,29 @@
                                 <div class="col-sm-9 text-secondary">
                                     <upload-file v-model="edit_profile.new_avatar" ref="avatar">
                                         <template v-slot:uploadButton>
-                                            <button class="btn btn-primary w-100" @click="startUpload">{{$trans('profile.profile.button_4')}}</button>
+                                            <button class="btn btn-primary w-100" @click="startUpload">
+                                                {{$trans('profile.profile.button_4')}}
+                                            </button>
                                         </template>
                                         <template v-slot:filePlaceAdditional>
-                                            <div class="row w-100 mt-2 mx-auto" v-if="avatar_is_removed == false && edit_profile.avatar !== 'users/default.png' && edit_profile.new_avatar==''">
+                                            <div class="row w-100 mt-2 mx-auto"
+                                                 v-if="avatar_is_removed == false && edit_profile.avatar !== 'users/default.png' && edit_profile.new_avatar==''">
                                                 <div class="col-12 p-0">
-                                                    <img class="preview" :src="edit_profile.avatar" style="width:100%; max-height:300px; object-fit: cover;" alt="">
+                                                    <img class="preview" :src="edit_profile.avatar"
+                                                         style="width:100%; max-height:300px; object-fit: cover;"
+                                                         alt="">
                                                 </div>
                                                 <div class="col-12 p-0">
-                                                    <button class="btn btn-outline-blue mt-2 mx-auto w-100" v-on:click="removeFile">{{$trans('profile.profile.button_5')}}</button>
+                                                    <button class="btn btn-outline-blue mt-2 mx-auto w-100"
+                                                            v-on:click="removeFile">
+                                                        {{$trans('profile.profile.button_5')}}
+                                                    </button>
                                                 </div>
                                             </div>
                                         </template>
                                     </upload-file>
-<!--                                    <input type="file" name="avatar" class="form-control" :disabled="loading">-->
-<!--                                    <p class="small"><strong>Old:</strong> {{user.avatar}}</p>-->
+                                    <!--                                    <input type="file" name="avatar" class="form-control" :disabled="loading">-->
+                                    <!--                                    <p class="small"><strong>Old:</strong> {{user.avatar}}</p>-->
                                 </div>
                             </div>
 
@@ -207,8 +217,8 @@
                                 </div>
                                 <div class="col-sm-9 text-secondary">
                                     <ValidationProvider name="Country" rules="" v-slot="{ errors }">
-<!--                                        <input type="text" name="country" class="form-control"-->
-<!--                                               v-model="edit_profile.country" :disabled="loading">-->
+                                        <!--                                        <input type="text" name="country" class="form-control"-->
+                                        <!--                                               v-model="edit_profile.country" :disabled="loading">-->
                                         <multiselect
                                             :disabled="countries.length==0||loading"
                                             v-model="edit_profile.country"
@@ -236,8 +246,8 @@
                                 </div>
                                 <div class="col-sm-9 text-secondary">
                                     <ValidationProvider name="Region" rules="" v-slot="{ errors }">
-<!--                                        <input type="text" name="region" class="form-control"-->
-<!--                                               v-model="edit_profile.region" :disabled="loading">-->
+                                        <!--                                        <input type="text" name="region" class="form-control"-->
+                                        <!--                                               v-model="edit_profile.region" :disabled="loading">-->
                                         <input v-if="regionInputMode" type="text" class="form-control" name="region"
                                                placeholder="Your region" v-model="edit_profile.region.title" required>
                                         <multiselect
@@ -314,15 +324,23 @@
                                 </div>
                             </div>
 
-                            <div class="row mb-3">
-                                <div class="col-12 text-secondary">
-                                    <div class="row w-100 mx-auto justify-content-end">
-                                        <button class="btn btn-outline-blue mx-1" :disabled="loading" @click="editMode=false">{{$trans('profile.profile.button_2')}}</button>
-                                        <button class="btn btn-primary px-4 mx-1" :disabled="invalid||loading" @click="update">
-                                            <span v-if="loading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                                            {{$trans('profile.profile.button_6')}}
-                                        </button>
-                                    </div>
+                            <div class="row mb-3 justify-content-end">
+                                <div class="col-12 col-md-3 text-secondary mb-2 mb-md-0">
+
+                                    <button class="btn btn-outline-blue mx-1 w-100" :disabled="loading"
+                                            @click="editMode=false">{{$trans('profile.profile.button_2')}}
+                                    </button>
+
+                                </div>
+                                <div class="col-12 col-md-3 text-secondary ">
+
+                                    <button class="btn btn-primary px-4 mx-1 w-100" :disabled="invalid||loading"
+                                            @click="update">
+                                        <span v-if="loading" class="spinner-border spinner-border-sm" role="status"
+                                              aria-hidden="true"></span>
+                                        {{$trans('profile.profile.button_6')}}
+                                    </button>
+
                                 </div>
                             </div>
                         </div>
@@ -336,34 +354,35 @@
 <script>
     import StarRating from 'vue-star-rating'
     import UploadFile from "../../../components/UploadFile";
+
     export default {
         components: {UploadFile, StarRating},
-        data(){
-          return {
-              editMode:false,
-              edit_profile:{
-                  new_avatar:'',
-                  deleted_avatar:'',
-                  first_name:'',
-                  second_name:'',
-                  email:'',
-                  telephone_number_1:'',
-                  telephone_number_2:'',
-                  country:'',
-                  region:'',
-                  city:'',
-                  postal:'',
-              },
-              loading:false,
-              avatar_is_removed:false,
-              countries: [],
-              regions: [],
-              cities:[],
-              countries_loading: false,
-              regions_loading: false,
-              cities_loading: false,
-              regionInputMode: false
-          }
+        data() {
+            return {
+                editMode: false,
+                edit_profile: {
+                    new_avatar: '',
+                    deleted_avatar: '',
+                    first_name: '',
+                    second_name: '',
+                    email: '',
+                    telephone_number_1: '',
+                    telephone_number_2: '',
+                    country: '',
+                    region: '',
+                    city: '',
+                    postal: '',
+                },
+                loading: false,
+                avatar_is_removed: false,
+                countries: [],
+                regions: [],
+                cities: [],
+                countries_loading: false,
+                regions_loading: false,
+                cities_loading: false,
+                regionInputMode: false
+            }
         },
         computed: {
             user() {
@@ -373,8 +392,7 @@
                 return this.$store.getters.profile
             },
             fullAddress() {
-                if(!this.profile.country || this.profile.country==='' || this.profile.country.title==='')
-                {
+                if (!this.profile.country || this.profile.country === '' || this.profile.country.title === '') {
                     return ''
                 }
                 return this.profile.country.title + ","
@@ -457,48 +475,46 @@
                 this.edit_profile.city = null;
                 this.getCities()
             },
-            async getCities(query='null'){
-                if(typeof query === 'object') {
-                    query='null';
+            async getCities(query = 'null') {
+                if (typeof query === 'object') {
+                    query = 'null';
                 }
                 this.cities_loading = true;
                 let locale = localStorage.getItem('locale') || 'en';
-                if(query==='null')
-                {
-                    await axios.get("/api/locations/cities/"+this.edit_profile.country.id+'/'+this.edit_profile.region.id+'/'+locale+'/'+query).then(resp=>{
+                if (query === 'null') {
+                    await axios.get("/api/locations/cities/" + this.edit_profile.country.id + '/' + this.edit_profile.region.id + '/' + locale + '/' + query).then(resp => {
                         this.cities = resp.data;
                         this.cities_loading = false;
                     })
-                }
-                else {
-                    if(query!=='' && query.length>2){
-                        await axios.get("/api/locations/cities/"+this.edit_profile.country.id+'/'+this.edit_profile.region.id+'/'+locale+'/'+query).then(resp=>{
+                } else {
+                    if (query !== '' && query.length > 2) {
+                        await axios.get("/api/locations/cities/" + this.edit_profile.country.id + '/' + this.edit_profile.region.id + '/' + locale + '/' + query).then(resp => {
                             this.cities = resp.data;
                             this.cities_loading = false;
                         })
                     }
                 }
             },
-            async getRegions(){
+            async getRegions() {
                 this.regions_loading = true;
                 let locale = localStorage.getItem('locale') || 'en';
                 this.edit_profile.region = null;
                 this.edit_profile.city = null;
-                await axios.get("/api/locations/regions/"+this.edit_profile.country.id+'/'+locale).then(resp=>{
+                await axios.get("/api/locations/regions/" + this.edit_profile.country.id + '/' + locale).then(resp => {
                     this.regions = resp.data;
                     this.regionInputMode = false;
                     if (this.regions.length === 0) {
                         this.regionInputMode = true;
-                        this.edit_profile.region = {id:'null', title:''};
+                        this.edit_profile.region = {id: 'null', title: ''};
                         this.getCities('null');
                     }
                     this.regions_loading = false;
                 })
             },
-            async getCountries(){
+            async getCountries() {
                 this.countries_loading = true;
                 let locale = localStorage.getItem('locale') || 'en';
-                await axios.get("/api/locations/countries/"+locale).then(resp=>{
+                await axios.get("/api/locations/countries/" + locale).then(resp => {
                     this.countries = resp.data;
                     this.countries_loading = false;
                 })

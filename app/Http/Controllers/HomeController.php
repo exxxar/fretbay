@@ -39,9 +39,12 @@ class HomeController extends Controller
 
     public function loadData($part, $id){
         $item = null;
+        $payload = null;
         switch ($part){
             case "message":
                 $item = Message::find($id);
+                $payload = $id;
+                $item = Listing::with(['category', 'subcategory', 'thing', 'messages', 'quotes'])->find($item->listing_id);
                 break;
             case "quote":
                 $item = Quote::find($id);
@@ -61,7 +64,10 @@ class HomeController extends Controller
 
         }
 
-        return response()->json($item);
+        return response()->json([
+            "item"=>$item,
+            "payload"=>$payload
+        ]);
     }
 
     public function setLocale($lang)
