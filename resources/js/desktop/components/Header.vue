@@ -42,10 +42,18 @@
                         <ul class="navbar-nav u-header__navbar-nav">
 
                             <!--  Request a quote -->
-                            <li class="nav-item  u-header__nav-item">
+
+                            <li class="nav-item  u-header__nav-item" v-if="!user">
+                                <a href="/find-transporter" class="nav-link btn btn-link w-100 p-3 text-center">
+                                    {{$trans('menu.item.request_a_quote')}}
+                                </a>
+
+                            </li>
+
+                            <li class="nav-item  u-header__nav-item"  v-if="user">
                                 <a href="/find-transporter" class="nav-link btn btn-link w-100 p-3 text-center"
                                    v-bind:class="{'btn-outline-primary':user.is_customer}"
-                                   v-if="!user||user.is_customer"
+                                   v-if="user.is_customer"
                                 >
                                     {{$trans('menu.item.request_a_quote')}}
                                 </a>
