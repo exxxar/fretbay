@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'locale' => 'fr',
+    'locale' => 'en',
 
     'locales'=>['en','fr','ru'],
 
@@ -95,7 +95,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'fr',
+    'fallback_locale' => 'en',
 
     /*
     |--------------------------------------------------------------------------

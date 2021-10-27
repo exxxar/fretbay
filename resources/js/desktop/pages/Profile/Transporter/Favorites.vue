@@ -2,9 +2,9 @@
 
     <main id="content" style="padding-top: 30px;">
         <!-- Description Section -->
-        <div class="container">
+        <div class="container p-1">
             <div class="row d-flex">
-                <div class="col-12 mt-2 p-0">
+                <div class="col-12 mt-2 pr-3 pb-2 pl-3">
                     <a class="btn btn-link p-0" href="/find-loads"><i class="fas fa-dolly"></i>
                         <strong>{{$trans('profile.page.find_loads')}}!</strong></a>
                 </div>
@@ -13,13 +13,10 @@
                 class="fas fa-boxes"></i></p>
 
             <div class="row pb-5 pt-2" v-if="favorites.length>0">
-                <div class="col-lg-12  mb-9 mb-lg-0">
-
+                <div class="col-lg-12  mb-9 mb-lg-0 p-0">
 
                     <listing-item-component :listing="favorite.listing" :key="favorite.id" v-for="favorite in favorites"
                                             v-if="favorite"/>
-
-
                     <div class="mb-9"></div>
 
                     <favorites-paginate-component/>

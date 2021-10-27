@@ -41,7 +41,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-9 order-lg-2 mb-9 mb-lg-0" v-if="listings.length>0">
+                <div class="col-lg-9 order-lg-2 mb-9 mb-lg-0 p-2" v-if="listings.length>0">
 
                     <listing-item-component :key="index" v-for="(listing,index) in listings" :listing="listing"/>
 
