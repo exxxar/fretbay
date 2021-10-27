@@ -1,7 +1,7 @@
 <template>
     <div class="mt-2 item-moving-container">
 
-        <VueSlickCarousel class="p-1" v-bind="settings" >
+        <VueSlickCarousel class="p-1" v-bind="settings">
             <div class="card choose-card w-100 cursor-pointer"
                  @click="chooseMovingPackage('Truck with Driver package')"
                  :class="{'active': selected_package ==='Truck with Driver package'}">
@@ -11,30 +11,25 @@
                      src="https://fretbay.com/en/assets/images/shipper/postJob/formula-icon1-w.svg" alt="">
 
                 <vue-custom-scrollbar class="card-body" :settings="settingsScroll">
-                    <h3>Truck with Driver package</h3>
+                    <h3>{{$trans('request_a_quote.section_4.h3_1')}}</h3>
                     <p>
-                        No deposit to pay, no schedule to change for the trip, the driver drives for you!
+                        {{$trans('request_a_quote.section_4.p_1')}}
                     </p>
 
-                    <ul>
-                        <li> A truck adapted to your volume</li>
-                        <li> A professional driver who helps to secure the truck</li>
-                        <li> The protection of goods by special equipment (blankets, straps...)</li>
-                        <li> All road-related costs (fuel, possible tolls, insurance)</li>
-                    </ul>
+                    <ul v-html="$trans('request_a_quote.section_4.ul_1')"></ul>
 
                 </vue-custom-scrollbar>
 
 
-             <!--   <div class="card-footer d-flex justify-content-center">
-                    <button
+                <!--   <div class="card-footer d-flex justify-content-center">
+                       <button
 
-                        :class="{'active': selected_package ==='Truck with Driver package','btn btn-outline-primary w-100':true}"
-                        @click="chooseMovingPackage('Truck with Driver package')"
-                    >
-                        Choose
-                    </button>
-                </div>-->
+                           :class="{'active': selected_package ==='Truck with Driver package','btn btn-outline-primary w-100':true}"
+                           @click="chooseMovingPackage('Truck with Driver package')"
+                       >
+                           Choose
+                       </button>
+                   </div>-->
 
             </div>
             <div class="card choose-card w-100 cursor-pointer"
@@ -45,28 +40,25 @@
                      src="https://fretbay.com/en/assets/images/shipper/postJob/formula-icon2-w.svg" alt="">
 
                 <vue-custom-scrollbar class="card-body" :settings="settingsScroll">
-                    <h3>The Economic package</h3>
+                    <h3> {{$trans('request_a_quote.section_4.h3_2')}}</h3>
                     <p>
-                        Protection of property by special equipment (blankets, straps)
+                        {{$trans('request_a_quote.section_4.p_2')}}
                     </p>
 
 
-                    <ul>
-                        <li> A truck adapted to your volume</li>
-                        <li> The number of movers required to load and unload the truck</li>
-                        <li> Protection of property by special equipment (blankets, straps)</li>
-                        <li> All road-related costs (fuel, possible tolls, insurance)</li>
+                    <ul v-html="$trans('request_a_quote.section_4.ul_2')">
+
                     </ul>
 
                 </vue-custom-scrollbar>
 
-              <!--  <div class="card-footer d-flex justify-content-center">
-                    <button
-                        :class="{'active': selected_package ==='The Economic package','btn btn-outline-primary w-100':true}"
-                        @click="chooseMovingPackage('The Economic package')"
-                    >Choose
-                    </button>
-                </div>-->
+                <!--  <div class="card-footer d-flex justify-content-center">
+                      <button
+                          :class="{'active': selected_package ==='The Economic package','btn btn-outline-primary w-100':true}"
+                          @click="chooseMovingPackage('The Economic package')"
+                      >Choose
+                      </button>
+                  </div>-->
 
             </div>
             <div class="card choose-card w-100 cursor-pointer"
@@ -78,32 +70,24 @@
 
                 <vue-custom-scrollbar class="card-body" :settings="settingsScroll">
 
-                    <h3>The Standard package</h3>
+                    <h3> {{$trans('request_a_quote.section_4.h3_3')}}</h3>
                     <p>
-                        No fatigue, no waste of time, you're just packing!
+                        {{$trans('request_a_quote.section_4.p_3')}}
                     </p>
 
-                    <ul>
-                        <li> A truck adapted to your volume</li>
-                        <li> The number of movers required to load and unload the truck</li>
-                        <li> Disassembly and reassembly of certain furniture</li>
-                        <li> The packaging of the fragile</li>
-                        <li> The protection of goods by special equipment (blankets, straps...)</li>
-                        <li> All road-related costs (fuel, possible tolls, insurance)</li>
+                    <ul v-html="$trans('request_a_quote.section_4.ul_3')">
+
                     </ul>
 
 
-
-
-
                 </vue-custom-scrollbar>
-             <!--   <div class="card-footer d-flex justify-content-center">
-                    <button
-                        :class="{'active': selected_package ==='The Standard package','btn btn-outline-primary w-100':true}"
-                        @click="chooseMovingPackage('The Standard package')"
-                    >Choose
-                    </button>
-                </div>-->
+                <!--   <div class="card-footer d-flex justify-content-center">
+                       <button
+                           :class="{'active': selected_package ==='The Standard package','btn btn-outline-primary w-100':true}"
+                           @click="chooseMovingPackage('The Standard package')"
+                       >Choose
+                       </button>
+                   </div>-->
 
             </div>
             <div class="card choose-card w-100 cursor-pointer"
@@ -115,21 +99,14 @@
 
                 <vue-custom-scrollbar class="card-body" :settings="settingsScroll">
 
-                    <h3>The Complete package</h3>
+                    <h3> {{$trans('request_a_quote.section_4.h3_4')}}</h3>
                     <p>
-                        No fatigue, no stress: your move is 100% covered
+                        {{$trans('request_a_quote.section_4.p_4')}}
                     </p>
 
-                    <ul>
-                        <li> A truck adapted to your volume</li>
-                        <li> The number of movers required to load and unload the truck</li>
-                        <li> The cartoning and packaging of the fragil</li>
-                        <li> Disassembly and reassembly of certain furnitur</li>
-                        <li> The protection of goods by special equipment (blankets, straps...)</li>
-                        <li> All road-related costs (fuel, possible tolls, insurance)</li>
+                    <ul v-html="$trans('request_a_quote.section_4.ul_4')">
+
                     </ul>
-
-
 
 
                 </vue-custom-scrollbar>
@@ -164,7 +141,7 @@
                     suppressScrollX: true,
                     wheelPropagation: false
                 },
-                settings:{
+                settings: {
                     "dots": false,
                     "arrows": true,
                     "focusOnSelect": true,
@@ -172,7 +149,7 @@
                     "speed": 500,
                     "slidesToShow": 4,
                     "slidesToScroll": 3,
-                    "touchThreshold":4,
+                    "touchThreshold": 4,
                     responsive: [
                         {
                             breakpoint: 1200,
@@ -209,7 +186,7 @@
                 this.$store.commit('editNewListing', {key: 'moving_package', value: value})
             }
         },
-        components:{
+        components: {
             VueSlickCarousel, vueCustomScrollbar
         }
     }
@@ -233,15 +210,16 @@
         .card-body {
             height: 250px;
             overflow-y: auto;
-            padding:10px;
+            padding: 10px;
 
 
         }
+
         ul {
             line-height: 150%;
             list-style: decimal;
             padding: 15px;
-            font-size:12px;
+            font-size: 12px;
             font-style: italic;
         }
     }

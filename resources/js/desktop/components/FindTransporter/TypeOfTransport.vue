@@ -1,6 +1,6 @@
 <template>
     <div class="mt-5">
-        <h3 class="text-dark">TYPE OF TRANSPORT</h3>
+        <h3 class="text-dark">{{$trans('request_a_quote.section_6.h3_1')}}</h3>
 
         <vue-custom-scrollbar class="scroll-area list-types-of-transport" tagname="div">
             <ul>
@@ -12,10 +12,10 @@
 
         <div class="row d-flex justify-content-end mt-2 w-100">
             <div class="col-6 col-sm-6 col-lg-2">
-                <button class="btn btn-outline-blue">Back</button>
+                <button class="btn btn-outline-blue"> {{$trans('request_a_quote.global.button_prev')}}</button>
             </div>
             <div class="col-6 col-sm-6 col-lg-3">
-                <button class="btn btn-outline-primary">Next</button>
+                <button class="btn btn-outline-primary"> {{$trans('request_a_quote.global.button_next')}}</button>
             </div>
         </div>
     </div>

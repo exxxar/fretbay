@@ -33,7 +33,7 @@
             <div class="d-flex p-5 justify-content-center"  v-if="filteredReviews.length===0">
                 <img v-lazy="'/images/empty.png'" alt="" class="w-100 w-sm-auto" style="max-width:300px;">
             </div>
-            <h4 class="text-center">No reviews yet!</h4>
+            <h4 class="text-center">{{$trans('profile.page.no_reviews')}}</h4>
         </div>
 
 

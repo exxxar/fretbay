@@ -19,25 +19,26 @@
                         <div class="col-12 p-0">
                             <ValidationProvider name="Email" rules="required|email" v-slot="{ errors }">
                                 <input v-model="email" type="email" class="form-control mb-2" autocomplete="off"
-                                       name="email" placeholder="Your email" required>
+                                       name="email" :placeholder="$trans('request_a_quote.signup_customer_form.input_placeholder_1')" required>
                             </ValidationProvider>
                             <ValidationProvider name="Username" rules="required" v-slot="{ errors }">
                                 <input v-model="username" type="text" class="form-control mb-2" name="name" autocomplete="off"
-                                       placeholder="Your Username" required>
+                                       :placeholder="$trans('request_a_quote.signup_customer_form.input_placeholder_2')" required>
                             </ValidationProvider>
                             <ValidationProvider name="Phone" rules="required" v-slot="{ errors }">
                                 <input v-model="phone" type="tel" class="form-control mb-2" autocomplete="off"
-                                       v-mask="'+ ### ### #######'" name="telephone_number_1" placeholder="Your phone" required>
+                                       v-mask="'+ ### ### #######'" name="telephone_number_1" :placeholder="$trans('request_a_quote.signup_customer_form.input_placeholder_3')" required>
                             </ValidationProvider>
                             <ValidationProvider name="Password" rules="required" vid="password" v-slot="{ errors }">
                                 <input v-model="password" type="password" class="form-control mb-2" name="password" autocomplete="off"
-                                       placeholder="Your password" required>
+                                       :placeholder="$trans('request_a_quote.signup_customer_form.input_placeholder_4')" required>
                                 <span>{{ errors[0] }}</span>
                             </ValidationProvider>
                             <ValidationProvider name="Password confirmation" rules="required|confirmed:password" autocomplete="off"
                                                 v-slot="{ errors }">
                                 <input v-model="password_confirmation" type="password" class="form-control mb-2"
-                                       name="password_confirmation" placeholder="Confirm your password" required>
+                                       name="password_confirmation"
+                                       :placeholder="$trans('request_a_quote.signup_customer_form.input_placeholder_5')" required>
                                 <span>{{ errors[0] }}</span>
                             </ValidationProvider>
                         </div>
@@ -45,17 +46,17 @@
                             <button class="btn btn-primary w-100" type="submit">
                                  <span v-if="loading" class="spinner-border spinner-border-sm" role="status"
                                        aria-hidden="true"></span>
-                                Register
+                                {{$trans('request_a_quote.signup_customer_form.button_1')}}
                             </button>
                         </div>
-                        <button class="btn btn-warning w-100 mt-2" @click="login_mode=true"> I already have account
+                        <button class="btn btn-warning w-100 mt-2" @click="login_mode=true">  {{$trans('request_a_quote.signup_customer_form.button_2')}}
                         </button>
                     </div>
                 </ValidationObserver>
             </div>
             <div class="col-12 col-sm-6 p-0 mt-2">
 
-                <button class="btn btn-outline-primary w-100" @click="prevStep(2)">Back</button>
+                <button class="btn btn-outline-primary w-100" @click="prevStep(2)"> {{$trans('request_a_quote.global.button_prev')}}</button>
 
 
             </div>

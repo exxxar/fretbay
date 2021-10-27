@@ -3,13 +3,13 @@
         <div class="container space-2">
             <div class="row justify-content-md-between">
                 <div class="col-sm-6 col-12 col-md-3 col-lg-2 order-lg-3 mb-7 mb-lg-0">
-                    <h3 class="h6 text-white mb-3">About</h3>
+                    <h3 class="h6 text-white mb-3">   {{$trans('menu.section.about')}}</h3>
 
                     <!-- List Group -->
                     <div class="list-group list-group-flush list-group-transparent">
-                        <a class="list-group-item list-group-item-action" href="/who-we-are">Who we are</a>
-                        <a class="list-group-item list-group-item-action" href="/how-it-works">How does it work?</a>
-                        <a class="list-group-item list-group-item-action" href="/fequently-asked-questions">Frequently asked questions</a>
+                        <a class="list-group-item list-group-item-action" href="/who-we-are">{{$trans('menu.item.who_we_are')}}</a>
+                        <a class="list-group-item list-group-item-action" href="/how-it-works">{{$trans('menu.item.how_does_it_work')}}</a>
+                        <a class="list-group-item list-group-item-action" href="/fequently-asked-questions">{{$trans('menu.item.faq')}}</a>
         <!--                <a class="list-group-item list-group-item-action" href="/find-transporter">Search for a transporter</a>
                         <a class="list-group-item list-group-item-action" href="/find-loads">Search for a loads</a>
                         <a class="list-group-item list-group-item-action" href="/benefits-transporter-mover-carrier">I am a transporter</a>
@@ -19,13 +19,13 @@
                 </div>
 
                 <div class="col-sm-6 col-12 col-md-3 col-lg-2 order-lg-4 mb-7 mb-lg-0">
-                    <h3 class="h6 text-white mb-3"> Customer Service</h3>
+                    <h3 class="h6 text-white mb-3"> {{$trans('menu.section.custom_service')}}</h3>
 
                     <!-- List Group -->
                     <div class="list-group list-group-flush list-group-transparent">
              <!--           <a class="list-group-item list-group-item-action" href="/reviews">Customer testimonials</a>
                         <a class="list-group-item list-group-item-action" href="/quality-charte">Quality charter</a>-->
-                        <a class="list-group-item list-group-item-action" href="/privacy">Privacy</a>
+                        <a class="list-group-item list-group-item-action" href="/privacy">{{$trans('menu.item.privacy')}}</a>
                       <!--  <a class="list-group-item list-group-item-action" href="/contact-us">Contact us</a>-->
                     </div>
                     <!-- End List Group -->
@@ -46,7 +46,7 @@
                 </div>-->
 
                 <div class="col-sm-6 col-12 col-md-3 col-lg-2 order-lg-6 mb-7 mb-lg-0">
-                    <h3 class="h6 text-white mb-3">Social</h3>
+                    <h3 class="h6 text-white mb-3">{{$trans('menu.section.social')}}</h3>
 
                     <!-- List -->
                     <div class="list-group list-group-flush list-group-transparent">
@@ -86,14 +86,13 @@
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <a class="dropdown-item" v-for="lang in langOptions" :href="'/locale/'+lang.locale_name">{{lang.name}}</a>
-
                             </div>
                         </div>
 
                     </div>
                     <!-- End Language -->
 
-                    <p class="small text-muted">All rights reserved. © AlloTrans. 2021.</p>
+                    <p class="small text-muted">{{$trans('menu.text.all_rights_reserved')}}.</p>
                 </div>
             </div>
         </div>

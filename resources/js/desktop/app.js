@@ -87,7 +87,9 @@ Vue.component('how-it-work-slider-component', require('../desktop/components/Sli
 Vue.component('customer-reviews-component', require('../desktop/components/Reviews/CustomersReviews.vue').default);
 Vue.component('transporter-reviews-component', require('../desktop/components/Reviews/TransporterReviews.vue').default);
 Vue.component('review-item-component', require('../desktop/components/Reviews/ReviewItem.vue').default);
-
+Vue.component('message-item-component', require('../desktop/components/MessageItem.vue').default);
+Vue.component('quote-item-component', require('../desktop/components/QuoteItem.vue').default);
+Vue.component('single-page', require('../desktop/pages/Main/SinglePage.vue').default);
 //auth
 
 

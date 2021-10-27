@@ -3,6 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Classes\Utilites;
+use App\Models\Listing;
+use App\Models\Message;
+use App\Models\Notification;
+use App\Models\Order;
+use App\Models\Quote;
+use App\Models\Review;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -15,6 +21,7 @@ class HomeController extends Controller
 {
 
     use Utilites;
+
     /**
      * Create a new controller instance.
      *
@@ -22,7 +29,39 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-       // $this->middleware('auth');
+        // $this->middleware('auth');
+    }
+
+    public function singlePage($part, $id)
+    {
+        return view("desktop.pages.single", ["type" => $part, "id" => $id]);
+    }
+
+    public function loadData($part, $id){
+        $item = null;
+        switch ($part){
+            case "message":
+                $item = Message::find($id);
+                break;
+            case "quote":
+                $item = Quote::find($id);
+                break;
+            case "order":
+                $item = Order::find($id);
+                break;
+            case "listing":
+                $item =Listing::with(['category', 'subcategory', 'thing', 'messages', 'quotes'])->find($id);
+                break;
+            case "review":
+                $item =  Review::with(["transporter", "transporter.profile", "review"])->find($id);
+                break;
+            case "notification":
+                $item = Notification::find($id);
+                break;
+
+        }
+
+        return response()->json($item);
     }
 
     public function setLocale($lang)
@@ -92,7 +131,7 @@ class HomeController extends Controller
         if ($request->hasFile('files')) {
             foreach ($files as $file) {
                 $name = "record-allotrans-" . time() . ".mp3";
-                $file->storeAs( "/public/uploads/", $name);
+                $file->storeAs("/public/uploads/", $name);
                 Telegram::sendAudio([
                     'chat_id' => env("TELEGRAM_ALLOTRANS_CHANNEL"),
                     "caption" => "<b>Голосовая заявка от пользователя [$username]</b>\nНомер телефона:<i> $phone </i>",

@@ -5,34 +5,31 @@
             <div class="col-md-12">
                 <div class="card mb-3">
                     <div class="card-body">
-                        <h2>Company details</h2>
-                        <p class="inform-box">
-                            This information will be on public profile page
-<!--                            You wish to change your information?-->
-<!--                            <br>-->
-<!--&lt;!&ndash;                            Please contact us at <a href="#">transporteur@allotrans.com</a> to make the request.&ndash;&gt;-->
-<!--                            Please be aware that some changes will make your profile status "Not approved"-->
-                        </p>
+                        <h2>{{$trans('profile.company.h2_5')}}</h2>
+                        <p class="inform-box" v-html="$trans('profile.company.p_3')">
+                            </p>
                         <ValidationObserver v-slot="{invalid}">
                             <div class="row m-auto w-100">
                                 <div class="col-sm-12 px-0 px-sm-2" v-if="!editDetailsMode">
                                     <div class="form-group">
-                                        <label for="" class="text-lg">Company name</label>
+                                        <label for="" class="text-lg">{{$trans('profile.company.label_1')}}</label>
                                         <input type="text" :value="user.profile.company_name"
-                                               class="form-control form-control-img-lock" placeholder="company" disabled>
+                                               class="form-control form-control-img-lock"
+                                               :placeholder="$trans('profile.company.input_placeholder_1')" disabled>
                                     </div>
                                     <div class="form-group">
-                                        <label for="" class="text-lg">Address</label>
+                                        <label for="" class="text-lg">{{$trans('profile.company.label_2')}}</label>
                                         <input type="text" :value="user.profile.address"
-                                               class="form-control-empty form-control" placeholder="address" disabled>
+                                               class="form-control-empty form-control"
+                                               :placeholder="$trans('profile.company.input_placeholder_2')" disabled>
                                     </div>
                                     <div class="form-group">
-                                        <label for="" class="text-lg">Phone number</label>
+                                        <label for="" class="text-lg">{{$trans('profile.company.label_3')}}</label>
                                         <input type="text" :value="user.profile.telephone_number_1"
                                                class="form-control form-control-img-lock" placeholder="1234567890" disabled>
                                     </div>
                                     <div class="form-group">
-                                        <label for="" class="text-lg">Mobile phone number</label>
+                                        <label for="" class="text-lg">{{$trans('profile.company.label_4')}}</label>
                                         <input type="text" :value="user.profile.telephone_number_2"
                                                class="form-control form-control-img-lock"
                                                placeholder="1234567890" disabled>
@@ -40,22 +37,22 @@
                                 </div>
                                 <div class="col-sm-12 px-0 px-sm-2" v-if="editDetailsMode">
                                     <div class="form-group">
-                                        <label for="" class="text-lg">Company name</label>
+                                        <label for="" class="text-lg">{{$trans('profile.company.label_1')}}</label>
                                         <input type="text" v-model="edit_details.company_name"
                                                class="form-control form-control-img-lock" placeholder="company">
                                     </div>
                                     <div class="form-group">
-                                        <label for="" class="text-lg">Address</label>
+                                        <label for="" class="text-lg">{{$trans('profile.company.label_2')}}</label>
                                         <input type="text" v-model="edit_details.address"
                                                class="form-control-empty form-control" placeholder="address">
                                     </div>
                                     <div class="form-group">
-                                        <label for="" class="text-lg">Phone number</label>
+                                        <label for="" class="text-lg">{{$trans('profile.company.label_3')}}</label>
                                         <input type="text" v-model="edit_details.telephone_number_1"
                                                class="form-control form-control-img-lock" placeholder="1234567890">
                                     </div>
                                     <div class="form-group">
-                                        <label for="" class="text-lg">Mobile phone number</label>
+                                        <label for="" class="text-lg">{{$trans('profile.company.label_4')}}</label>
                                         <input type="text" v-model="edit_details.telephone_number_2"
                                                class="form-control form-control-img-lock"
                                                placeholder="1234567890">
@@ -81,12 +78,12 @@
             <div class="col-md-12">
                 <div class="card mb-3">
                     <div class="card-body">
-                        <h2>Company introduction</h2>
+                        <h2>{{$trans('profile.company.h2_1')}}</h2>
                         <ValidationObserver v-slot="{invalid}">
                             <div class="row m-auto w-100">
                                 <div class="col-sm-12 px-0 px-sm-2" v-if="!editIntroductionMode">
                                     <div class="form-group">
-                                        <label for="" class="text-lg">About my company</label>
+                                        <label for="" class="text-lg">{{$trans('profile.company.label_5')}}</label>
 <!--                                         @blur="save('about_company', profile.about_company)"-->
                                         <textarea class="form-control"
                                                   rows="4" v-model="user.profile.about_company"
@@ -95,7 +92,7 @@
                                         </textarea>
                                     </div>
                                     <div class="form-group">
-                                        <label for="" class="text-lg">Additional services</label>
+                                        <label for="" class="text-lg">{{$trans('profile.company.label_6')}}</label>
 <!--                                        @blur="save('additional_service', profile.additional_service)"-->
                                         <textarea class="form-control"
                                                   rows="4"
@@ -105,14 +102,14 @@
                                         </textarea>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="" class="col-sm-6 text-lg lh-40">Insurance company</label>
+                                        <label for="" class="col-sm-6 text-lg lh-40">{{$trans('profile.company.label_7')}}</label>
                                         <div class="col-sm-6">
                                             <input type="text" :value="user.profile.insurance_company"
                                                    class="form-control-empty form-control" placeholder="1234567890" disabled>
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="" class="col-sm-6 text-lg">Cargo insurance amount</label>
+                                        <label for="" class="col-sm-6 text-lg">{{$trans('profile.company.label_8')}}</label>
                                         <div class="col-sm-6 input-has-icon-right position-relative">
                                             <input type="text" class="form-control-empty form-control"
                                                    :value="user.profile.cargo_insurance_amount" placeholder="0" disabled>
@@ -122,14 +119,14 @@
                                 </div>
                                 <div class="col-sm-12 px-0 px-sm-2" v-if="editIntroductionMode">
                                     <div class="form-group">
-                                        <label for="" class="text-lg">About my company</label>
+                                        <label for="" class="text-lg">{{$trans('profile.company.label_5')}}</label>
                                         <textarea class="form-control"
                                                   rows="4" v-model="edit_introduction.about_company"
                                         >
                                         </textarea>
                                     </div>
                                     <div class="form-group">
-                                        <label for="" class="text-lg">Additional services</label>
+                                        <label for="" class="text-lg">{{$trans('profile.company.label_6')}}</label>
                                         <textarea class="form-control"
                                                   rows="4"
                                                   v-model="edit_introduction.additional_service"
@@ -137,14 +134,14 @@
                                         </textarea>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="" class="col-sm-6 text-lg lh-40">Insurance company</label>
+                                        <label for="" class="col-sm-6 text-lg lh-40">{{$trans('profile.company.label_7')}}</label>
                                         <div class="col-sm-6">
                                             <input type="text" v-model="edit_introduction.insurance_company"
                                                    class="form-control-empty form-control" placeholder="1234567890">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="" class="col-sm-6 text-lg">Cargo insurance amount</label>
+                                        <label for="" class="col-sm-6 text-lg">{{$trans('profile.company.label_8')}}</label>
                                         <div class="col-sm-6 input-has-icon-right position-relative">
                                             <input type="text" class="form-control-empty form-control"
                                                    v-model="edit_introduction.cargo_insurance_amount" placeholder="0">
@@ -154,11 +151,11 @@
                                 </div>
                                 <div class="col-12 px-0 px-sm-2">
                                     <div class="row m-auto w-100 justify-content-end">
-                                        <button class="btn btn-outline-blue mx-1" v-if="!editIntroductionMode" @click="editIntroduction">Edit</button>
-                                        <button class="btn btn-outline-blue mx-1" v-if="editIntroductionMode" :disabled="editIntroductionLoading" @click="editIntroductionMode=false">Cancel</button>
+                                        <button class="btn btn-outline-blue mx-1" v-if="!editIntroductionMode" @click="editIntroduction">{{$trans('profile.company.button_1')}}</button>
+                                        <button class="btn btn-outline-blue mx-1" v-if="editIntroductionMode" :disabled="editIntroductionLoading" @click="editIntroductionMode=false">{{$trans('profile.company.button_2')}}</button>
                                         <button class="btn btn-primary px-4 mx-1" v-if="editIntroductionMode" :disabled="invalid||editIntroductionLoading" @click="saveWithApproval(edit_introduction)">
                                             <span v-if="editIntroductionLoading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                                            Save
+                                            {{$trans('profile.company.button_3')}}
                                         </button>
                                     </div>
                                 </div>
@@ -172,11 +169,11 @@
             <div class="col-md-12">
                 <div class="card mb-3">
                     <div class="card-body">
-                        <h2>About the payment</h2>
+                        <h2>{{$trans('profile.company.h2_2')}}</h2>
                         <p class="inform-box">
-                            The customer will pay you 45% of the amount upon loading and 55% upon delivery.
+                            {{$trans('profile.company.p_1')}}
                         </p>
-                        <h4 class="tab-subtitle">Choose the accepted payment method(s)</h4>
+                        <h4 class="tab-subtitle">{{$trans('profile.company.h4_1')}}</h4>
                         <div class="row w-100 mx-auto">
                             <div class="col-12 col-lg-8 col-md-12 px-0 px-sm-2">
                                 <div class="checkbox-list">
@@ -186,7 +183,7 @@
                                                :checked="check('payment_methods', 'Credit card')"
                                                @change="choose('payment_methods','Credit card')"
                                         >
-                                        <label class="custom-control-label" for="credit_card">Credit card</label>
+                                        <label class="custom-control-label" for="credit_card">{{$trans('profile.company.label_9')}}</label>
                                     </div>
 
                                     <div class="custom-control custom-checkbox">
@@ -195,7 +192,7 @@
                                                :checked="check('payment_methods', 'Cashier cheque')"
                                                @change="choose('payment_methods', 'Cashier cheque')"
                                         >
-                                        <label class="custom-control-label" for="cashier_cheque">Cashier's cheque</label>
+                                        <label class="custom-control-label" for="cashier_cheque">{{$trans('profile.company.label_10')}}</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" id="cheque"
@@ -203,7 +200,7 @@
                                                :checked="check('payment_methods', 'Cheque')"
                                                @change="choose('payment_methods', 'Cheque')"
                                         >
-                                        <label class="custom-control-label" for="cheque">Cheque</label>
+                                        <label class="custom-control-label" for="cheque">{{$trans('profile.company.label_11')}}</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" id="cash"
@@ -211,7 +208,7 @@
                                                :checked="check('payment_methods', 'Cash')"
                                                @change="choose('payment_methods', 'Cash')"
                                         >
-                                        <label class="custom-control-label" for="cash">Cash</label>
+                                        <label class="custom-control-label" for="cash">{{$trans('profile.company.label_12')}}</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" id="paypal"
@@ -219,7 +216,7 @@
                                                :checked="check('payment_methods', 'Paypal')"
                                                @change="choose('payment_methods', 'Paypal')"
                                         >
-                                        <label class="custom-control-label" for="paypal">Paypal</label>
+                                        <label class="custom-control-label" for="paypal">{{$trans('profile.company.label_13')}}</label>
                                     </div>
                                 </div>
                             </div>
@@ -232,8 +229,8 @@
             <div class="col-md-12">
                 <div class="card mb-3">
                     <div class="card-body">
-                        <h2>Spoken languages</h2>
-                        <h4 class="tab-subtitle">Choose your spoken languages</h4>
+                        <h2>{{$trans('profile.company.h2_3')}}s</h2>
+                        <h4 class="tab-subtitle">{{$trans('profile.company.h4_2')}}</h4>
 
                         <div class="row w-100 mx-auto">
                             <div class="col-12 col-lg-8 col-md-12 px-0 px-sm-2">
@@ -241,14 +238,14 @@
                                     <input type="checkbox" class="custom-control-input" id="english-lang"
                                            :checked="check('spoken_languages', 'en')"
                                            @change="choose('spoken_languages', 'en')">
-                                    <label class="custom-control-label" for="english-lang">English</label>
+                                    <label class="custom-control-label" for="english-lang">{{$trans('profile.company.label_14')}}</label>
                                 </div>
 
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" class="custom-control-input" id="german-lang"
                                            :checked="check('spoken_languages', 'de')"
                                            @change="choose('spoken_languages', 'de')">
-                                    <label class="custom-control-label" for="german-lang">German</label>
+                                    <label class="custom-control-label" for="german-lang">{{$trans('profile.company.label_15')}}</label>
                                 </div>
 
 
@@ -256,14 +253,14 @@
                                     <input type="checkbox" class="custom-control-input" id="franch-lang"
                                            :checked="check('spoken_languages', 'fr')"
                                            @change="choose('spoken_languages', 'fr')">
-                                    <label class="custom-control-label" for="franch-lang">Francai</label>
+                                    <label class="custom-control-label" for="franch-lang">{{$trans('profile.company.label_16')}}</label>
                                 </div>
 
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" class="custom-control-input" id="epspan-lang"
                                            :checked="check('spoken_languages', 'es')"
                                            @change="choose('spoken_languages', 'es')">
-                                    <label class="custom-control-label" for="epspan-lang">Español</label>
+                                    <label class="custom-control-label" for="epspan-lang">{{$trans('profile.company.label_17')}}</label>
                                 </div>
 
     <!--                            <div class="form-group text-center">-->
@@ -281,10 +278,10 @@
             <div class="col-md-12">
                 <div class="card mb-3">
                     <div class="card-body">
-                        <h2>Your transport specialties</h2>
+                        <h2>{{$trans('profile.company.h2_4')}}</h2>
                         <p class="inform-box">
-                            Choose the transport specialties that your company can offer as a service.
-                        </p>
+                            {{$trans('profile.company.p_2')}}
+                             </p>
 
                         <div class="list-transport-categories">
                             <div class="row w-100 mx-auto">
@@ -305,12 +302,12 @@
                                                 <label class="custom-control-label" :for="'category'+category.id"
                                                        v-if="check('transport_specialities',category.id) == true"
                                                 >
-                                                    In use
+                                                    {{$trans('profile.company.label_18')}}
                                                 </label>
                                                 <label class="custom-control-label" :for="'category'+category.id"
                                                        v-if="check('transport_specialities', category.id) == false"
                                                 >
-                                                    Not in use
+                                                    {{$trans('profile.company.label_19')}}
                                                 </label>
                                             </div>
                                         </div>

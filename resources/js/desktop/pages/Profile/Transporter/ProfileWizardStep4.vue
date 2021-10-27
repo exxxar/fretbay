@@ -3,9 +3,11 @@
         <div class="container">
             <div class="row w-100 m-auto h-100 text-center justify-content-center">
                 <div class="col-12">
+
+
                     <img v-lazy="'/images/profile/profile1.png'" style="max-height: 350px; width: 100%; max-width:350px" alt="">
-                    <h2 class="step-title" style="color:#21c87a; font-weight: 700">Spoken languages</h2>
-                    <p class="info-box mb-1">Inform your future customers of your spoken languages</p>
+                    <h2 class="step-title" style="color:#21c87a; font-weight: 700"> {{$trans('profile.wizard.step_4.h2_1')}}</h2>
+                    <p class="info-box mb-1"></p>
                 </div>
                 <div class="col-12">
                     <div class="row w-100 mx-auto justify-content-center align-items-center my-4">
@@ -13,19 +15,19 @@
                             <input type="checkbox" class="custom-control-input" id="english-lang"
                                    :checked="check('spoken_languages', 'en')"
                                    @change="choose('spoken_languages', 'en')">
-                            <label class="custom-control-label" for="english-lang">English</label>
+                            <label class="custom-control-label" for="english-lang">{{$trans('profile.wizard.step_4.label_1')}}</label>
                         </div>
                         <div class="custom-control custom-checkbox mx-2">
                             <input type="checkbox" class="custom-control-input" id="german-lang"
                                    :checked="check('spoken_languages', 'de')"
                                    @change="choose('spoken_languages', 'de')">
-                            <label class="custom-control-label" for="german-lang">German</label>
+                            <label class="custom-control-label" for="german-lang">{{$trans('profile.wizard.step_4.label_2')}}</label>
                         </div>
                         <div class="custom-control custom-checkbox mx-2">
                             <input type="checkbox" class="custom-control-input" id="franch-lang"
                                    :checked="check('spoken_languages', 'fr')"
                                    @change="choose('spoken_languages', 'fr')">
-                            <label class="custom-control-label" for="franch-lang">Français</label>
+                            <label class="custom-control-label" for="franch-lang">{{$trans('profile.wizard.step_4.label_3')}}</label>
                         </div>
                     </div>
                 </div>
@@ -33,11 +35,11 @@
                     <div class="row w-100 mx-auto align-items-center justify-content-center mb-3">
                         <a href="/transporter/profile/transporter-wizard/step-5"
                            class="btn btn-success w-100 m-1" style="max-width: 300px;">
-                            Skip
+                            {{$trans('profile.wizard.step_4.button_1')}}
                         </a>
                         <button @click="nextStep" :disabled="profile.spoken_languages.length === 0"
                                 class="btn btn-success w-100 m-1" style="max-width: 300px;">
-                            Next step
+                            {{$trans('profile.wizard.step_4.button_2')}}
                         </button>
                     </div>
                 </div>

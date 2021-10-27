@@ -12,7 +12,7 @@
                         <ValidationProvider name="Email" rules="required|email" vid="email" v-slot="{ errors }">
                             <input type="email" class="form-control form__input" name="email"
                                    autocomplete="username"
-                                   placeholder="Email" v-model="recovery_form.email" required>
+                                   :placeholder="$trans('auth.recovery_form.input_placeholder_1')" v-model="recovery_form.email" required>
                             <p class="mb-0" style="color:red;font-size:11px">{{errors[0]}}</p>
                         </ValidationProvider>
                     </div>
@@ -49,21 +49,16 @@
                     <button type="submit" class="btn btn-block btn-primary">
                         <span v-if="loading" class="spinner-border spinner-border-sm" role="status"
                               aria-hidden="true"></span>
-                        Recovery</button>
+                        {{$trans('auth.recovery_form.button_1')}}</button>
                 </div>
 
                 <div class="text-center mb-3">
                     <p class="text-muted">
-                        Do not have an account?<br>
-                        <a class="js-animation-link" href="/register-customer">Signup
-                            as Customer</a> or <a class="js-animation-link" href="/register-transporter">Signup
-                        as Transporter </a>
+                       {{$trans('auth.recovery_form.p_1')}}<br>
+                        <a class="js-animation-link" href="/register-customer">{{$trans('auth.recovery_form.a_1')}}</a> or
+                        <a class="js-animation-link" href="/register-transporter">{{$trans('auth.recovery_form.a_2')}}</a>
                     </p>
                 </div>
-
-
-
-
             </div>
         </div>
     </ValidationObserver>

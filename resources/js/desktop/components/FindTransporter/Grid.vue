@@ -1,6 +1,6 @@
 <template>
     <div class="container mb-2">
-        <h2>Vehicles</h2>
+        <h2>{{$trans('request_a_quote.section_7.h2_1')}}</h2>
         <wizard :steps="2" ref="grid_wizard">
             <template v-slot:step_0>
                 <ul class="row m-0 p-0" v-if="subcategories">
@@ -45,10 +45,10 @@
             <template v-slot:footer>
                 <div class="row d-flex justify-content-end mt-2 w-100">
                     <div class="col-6 col-sm-2">
-                        <button class="btn btn-outline-blue w-100" @click="prevStep">Back</button>
+                        <button class="btn btn-outline-blue w-100" @click="prevStep">{{$trans('request_a_quote.global.button_prev')}}</button>
                     </div>
                     <div class="col-6 col-sm-3">
-                        <button class="btn btn-outline-primary w-100" @click="nextStep">Next</button>
+                        <button class="btn btn-outline-primary w-100" @click="nextStep">{{$trans('request_a_quote.global.button_next')}}</button>
                     </div>
                 </div>
             </template>

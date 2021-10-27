@@ -8,9 +8,8 @@
                 <div class="container space-sm-3 space-1 space-4-top--lg">
                     <!-- Title -->
                     <div class="w-md-50">
-                        <h1 class="display-4 font-size-48--md-down text-white">La façon la plus simple de gérer les
-                            affaires</h1>
-                        <p class="lead text-white">Développez votre entreprise avec AlloTrans {{$trans('cars-categories.type.7')}}</p>
+                        <h1 class="display-4 font-size-48--md-down text-white">{{$trans('index.section_1.h1_1')}}</h1>
+                        <p class="lead text-white">{{$trans('index.section_1.p_1')}}</p>
 
 
                     </div>
@@ -22,19 +21,18 @@
 
                             <div class="col-lg-2 align-self-lg-end">
                                 <button type="submit" class="btn btn-block btn-primary transition-3d-hover">
-                                    {{$trans('cars-categories.type.7')}}
+                                    {{$trans('index.section_1.button_1')}}
                                 </button>
                             </div>
                         </div>
 
-                        <p class="small text-white">ou appelez-nous simplement au +1 707 112 82 82</p>
+                        <p class="small text-white">{{$trans('index.section_1.p_2')}}</p>
                     </form>
                 </div>
             </div>
 
 
         </div>
-
 
 
         <div class="container text-center space-3--md">
@@ -62,18 +60,15 @@
                 </span>
 
                             <h3 class="text-lh-xs mb-3">
-                                Vous cherchez un transporteur ?<br class="d-none d-lg-inline-block">
-                                ou envie de bouger quelque chose ?</h3>
+                                {{$trans('index.section_2.h3_1')}}</h3>
                             <p class="text-muted mb-5">
-                                Nous vous garantissons tous les aspects que vous aimez sur<br
-                                class="d-none d-lg-inline-block">
-                                votre bien est disponible ici</p>
+                                {{$trans('index.section_2.p_1')}}</p>
 
                         </div>
 
                         <div class="card-footer">
                             <a class="btn btn-sm btn-primary w-100" href="/find-transporter">
-                                Essayez-le maintenant</a>
+                                {{$trans('index.section_2.a_1')}}</a>
                         </div>
                     </article>
                     <!-- End Card -->
@@ -99,18 +94,16 @@
                 </span>
 
                             <h3 class="text-lh-xs mb-3">
-                                La recherche d'un<br class="d-none d-lg-inline-block">
-                                charges?</h3>
+                                {{$trans('index.section_2.h3_2')}}</h3>
                             <p class="text-muted mb-5">
-                                Vendez votre propriété rapidement et<br
-                                class="d-none d-lg-inline-block"> moins d'efforts que jamais</p>
+                                {{$trans('index.section_2.p_2')}}</p>
 
                         </div>
 
 
                         <div class="card-footer">
                             <a class="btn btn-sm btn-primary w-100" href="/find-loads">
-                                Commençons</a>
+                                {{$trans('index.section_2.a_2')}}</a>
                         </div>
                     </article>
                     <!-- End Card -->
@@ -123,10 +116,9 @@
         <div class="container mt-5">
             <!-- Title -->
             <div class="w-md-80 w-lg-60 text-center mx-md-auto mb-9">
-                <span class="u-label u-label--sm u-label--purple mb-3">Our work</span>
-                <h2>Work we do and service we provide</h2>
-                <p>We put at your disposal a wide range of services that can solve the logistics needs of your company,
-                    regardless of the size and sector to which it belongs.</p>
+                <span class="u-label u-label--sm u-label--purple mb-3">{{$trans('index.section_3.span_1')}}</span>
+                <h2>{{$trans('index.section_3.h2_1')}}</h2>
+                <p>{{$trans('index.section_3.p_1')}}</p>
             </div>
             <!-- End Title -->
 
@@ -147,7 +139,7 @@
                 </div>
 
                 <div class="col-md-5 col-lg-4">
-                    <h3 class="h5">Self-service</h3>
+                    <h3 class="h5">{{$trans('index.section_3.h3_1')}}</h3>
 
                     <!-- Icon Blocks -->
                     <a class="media align-items-center mb-4" href="#">
@@ -155,7 +147,7 @@
               <img class="img-fluid" src="/assets/svg/components/location-dark-icon.svg" alt="Image Description">
             </span>
                         <div class="media-body">
-                            Track &amp; trace
+                            {{$trans('index.section_3.div_1')}}
                         </div>
                     </a>
                     <!-- End Icon Blocks -->
@@ -166,7 +158,7 @@
               <img class="img-fluid" src="/assets/svg/components/request-quote-dark-icon.svg" alt="Image Description">
             </span>
                         <div class="media-body">
-                            Get a quote
+                            {{$trans('index.section_3.div_2')}}
                         </div>
                     </a>
                     <!-- End Icon Blocks -->
@@ -177,7 +169,7 @@
               <img class="img-fluid" src="/assets/svg/components/file-dark-icon.svg" alt="Image Description">
             </span>
                         <div class="media-body">
-                            Purchase order management
+                            {{$trans('index.section_3.div_3')}}
                         </div>
                     </a>
                     <!-- End Icon Blocks -->
@@ -188,7 +180,7 @@
               <img class="img-fluid" src="/assets/svg/components/mouse-dark-icon.svg" alt="Image Description">
             </span>
                         <div class="media-body">
-                            Online booking
+                            {{$trans('index.section_3.div_4')}}
                         </div>
                     </a>
                     <!-- End Icon Blocks -->
@@ -199,7 +191,7 @@
               <img class="img-fluid" src="/assets/svg/components/box-dark-icon.svg" alt="Image Description">
             </span>
                         <div class="media-body">
-                            Warehouse management
+                            {{$trans('index.section_3.div_5')}}
                         </div>
                     </a>
                     <!-- End Icon Blocks -->
@@ -213,10 +205,9 @@
             <div class="border-top border-bottom space-2 space-3--md">
                 <!-- Title -->
                 <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-9">
-                    <span class="u-label u-label--sm u-label--purple mb-3">Step-by-step</span>
-                    <h2>How it works</h2>
-                    <p>Global services using any means of transport, with regular lines or customized projects, customs
-                        management and logistics.</p>
+                    <span class="u-label u-label--sm u-label--purple mb-3">  {{$trans('index.section_4.span_1')}}</span>
+                    <h2> {{$trans('index.section_4.h2_1')}}</h2>
+                    <p> {{$trans('index.section_4.p_1')}}.</p>
                 </div>
                 <!-- End Title -->
 
@@ -225,11 +216,11 @@
                     <div class="card shadow-sm overflow-hidden mb-3 mb-lg-0">
                         <div class="card-body p-5 pr-9">
                             <span class="h1 text-primary">01.</span>
-                            <h3 class="h5 font-weight-medium">Request Quote</h3>
-                            <p>Request quotes from our 10k+ rated transport providers.</p>
+                            <h3 class="h5 font-weight-medium"> {{$trans('index.section_4.h3_1')}}</h3>
+                            <p>{{$trans('index.section_4.p_2')}}</p>
                         </div>
                         <div class="card-footer border-top-0 p-5 pr-9">
-                            <a class="font-weight-medium" href="#">Explore more</a>
+                            <a class="font-weight-medium" href="#">{{$trans('index.section_4.a_1')}}</a>
                         </div>
                     </div>
                     <!-- End Card -->
@@ -238,12 +229,11 @@
                     <div class="card shadow-sm overflow-hidden mb-3 mb-lg-0">
                         <div class="card-body p-5 pr-9">
                             <span class="h1 text-primary">02.</span>
-                            <h3 class="h5 font-weight-medium">Compare price</h3>
-                            <p>Compare prices and read previous customer feedback to pick the right delivery quote for
-                                you.</p>
+                            <h3 class="h5 font-weight-medium">{{$trans('index.section_4.h3_2')}}</h3>
+                            <p>{{$trans('index.section_4.p_3')}}</p>
                         </div>
                         <div class="card-footer border-top-0 p-5 pr-9">
-                            <a class="font-weight-medium" href="#">Explore more</a>
+                            <a class="font-weight-medium" href="#">{{$trans('index.section_4.a_2')}}</a>
                         </div>
                     </div>
                     <!-- End Card -->
@@ -252,12 +242,11 @@
                     <div class="card shadow-sm overflow-hidden">
                         <div class="card-body p-5 pr-9">
                             <span class="h1 text-primary">03.</span>
-                            <h3 class="h5 font-weight-medium">Choose provider</h3>
-                            <p>Sit back and relax while your item is safely delivered by your chosen transport
-                                provider.</p>
+                            <h3 class="h5 font-weight-medium">{{$trans('index.section_4.h3_3')}}</h3>
+                            <p>{{$trans('index.section_4.p_4')}}</p>
                         </div>
                         <div class="card-footer border-top-0 p-5 pr-9">
-                            <a class="font-weight-medium" href="#">Explore more</a>
+                            <a class="font-weight-medium" href="#">{{$trans('index.section_4.a_3')}}</a>
                         </div>
                     </div>
                     <!-- End Card -->
@@ -275,8 +264,8 @@
                     <div class="mb-7">
                         <span class="u-label u-label--sm u-label--light mb-2">
 De l'espace en déplacement</span>
-                        <h2 class="text-white">Espace sur mobile</h2>
-                        <p class="text-white">Ne manquez rien parce que vous êtes en mouvement. Rester connecté.</p>
+                        <h2 class="text-white">{{$trans('index.section_5.h2_1')}}</h2>
+                        <p class="text-white">{{$trans('index.section_5.p_1')}}</p>
                     </div>
                     <!-- End Title -->
 
@@ -285,25 +274,25 @@ De l'espace en déplacement</span>
             <span class="media align-items-center">
               <i class="fab fa-apple fa-3x mr-3"></i>
               <span class="d-block">
-                <span class="d-block">Télécharger sur le</span>
+                <span class="d-block">{{$trans('index.section_5.span_1')}}</span>
                 <strong class="d-block font-size-14">
-Magasin d'applications</strong>
+{{$trans('index.section_5.strong_1')}}</strong>
               </span>
             </span>
                     </button>
                     <!-- End Button -->
 
-                  <!--  &lt;!&ndash; Button &ndash;&gt;
-                    <button type="button" class="btn btn-xs btn-dark text-left mb-2 mb-md-0">
-            <span class="media align-items-center">
-              <i class="fab fa-google-play fa-3x mr-3"></i>
-              <span class="d-block">
+                    <!--  &lt;!&ndash; Button &ndash;&gt;
+                      <button type="button" class="btn btn-xs btn-dark text-left mb-2 mb-md-0">
+              <span class="media align-items-center">
+                <i class="fab fa-google-play fa-3x mr-3"></i>
                 <span class="d-block">
-Mettez-le sur</span>
-                <strong class="d-block font-size-14">jeu de Google</strong>
+                  <span class="d-block">
+  Mettez-le sur</span>
+                  <strong class="d-block font-size-14">jeu de Google</strong>
+                </span>
               </span>
-            </span>
-                    </button>-->
+                      </button>-->
                     <!-- End Button -->
                 </div>
             </div>

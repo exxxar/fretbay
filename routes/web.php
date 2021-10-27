@@ -4,6 +4,7 @@ use App\Enums\NotificationType;
 use App\Events\NotificationEvent;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\HomeController;
 use App\Models\ObjectCategory;
 use App\User;
 use Illuminate\Http\Response;
@@ -27,6 +28,7 @@ use Laravel\Socialite\Facades\Socialite;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
 
@@ -53,7 +55,7 @@ Route::get("/event", function () {
     if (isset($distances["routes"][0]["distance"]))
         $tmp_sum = $distances["routes"][0]["distance"];
 
-    dd( $tmp_sum);
+    dd($tmp_sum);
 });
 
 Route::get('/locale/{lang}', function (\Illuminate\Http\Request $request, $lang) {
@@ -101,6 +103,14 @@ Route::get("/", function (\Illuminate\Http\Request $request) {
 })->name("desktop.index");
 
 
+Route::get("/single/{part}/{id}", [HomeController::class, "singlePage"])->where([
+    "part" => "[a-zA-Z]+", "id" => "[0-9]+"
+]);
+
+Route::get("/data/{part}/{id}", [HomeController::class, "loadData"])->where([
+    "part" => "[a-zA-Z]+", "id" => "[0-9]+"
+]);
+
 Route::view("/pricing", "desktop.pages.pricing")->name("desktop.pricing");
 Route::view("/find-transporter", "desktop.pages.find-transporter")->name("desktop.find-transporter");
 Route::view("/how-it-works", "desktop.pages.how-it-works")->name("desktop.how-it-works");
@@ -147,20 +157,20 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::view('/push-notificaiton', 'home')->name('push-notificaiton');
 Route::post('/fcm-token', [\App\Http\Controllers\NotificationController::class, 'updateToken'])->name('fcmToken');
-Route::post('/send-notification',[\App\Http\Controllers\NotificationController::class,'notification'])->name('send.web-notification');
+Route::post('/send-notification', [\App\Http\Controllers\NotificationController::class, 'notification'])->name('send.web-notification');
 
 Route::view("/find-loads", "desktop.pages.find-loads")
-    ->middleware(['auth' , 'role:transporter'])
+    ->middleware(['auth', 'role:transporter'])
     ->name("desktop.find-loads");
 
-Route::group(['middleware' => ['auth', 'verified','role:transporter'], "prefix" => "transporter"], function () {
+Route::group(['middleware' => ['auth', 'verified', 'role:transporter'], "prefix" => "transporter"], function () {
 
     Route::post('/listing/quotes/add', 'ListingController@sendQuote');
     Route::post('/listing/quotes/remove', 'ListingController@removeQuote');
 
     Route::group(["prefix" => "profile"], function () {
 
-        Route::get("/","TransporterController@profile")->name("transporter-account");
+        Route::get("/", "TransporterController@profile")->name("transporter-account");
         Route::view("/my-company", "desktop.pages.profile.transporter.my-company")->name("transporter-company");
         Route::view("/legal-documents", "desktop.pages.profile.transporter.legal-documents")->name("transporter-legal-documents");
         Route::view("/my-vehicles", "desktop.pages.profile.transporter.my-vehicles")->name("transporter-vehicles");
@@ -421,7 +431,7 @@ Route::group(['middleware' => ['auth', 'role:admin'], "prefix" => "admin"], func
 
         //actions
         Route::get('/get', 'LanguageController@getLanguages')
-                    ->name('languages.getLanguages');
+            ->name('languages.getLanguages');
         Route::post('/update', 'LanguageController@update')
             ->name('languages.update');
         Route::post('/store', 'LanguageController@store')
@@ -464,7 +474,6 @@ Route::get('/logout', \Auth\LoginController::class . '@logout')->name("logout");
 Route::post('/forgot-password', \Auth\ResetPasswordController::class . '@askForgotPassword')->middleware('guest')->name('password.email');
 
 /*Auth::routes(['verify' => true]);*/
-
 
 
 Route::get('/reset-password/{token}', function ($token) {

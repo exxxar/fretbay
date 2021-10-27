@@ -6,9 +6,10 @@
                 <div class="u-sidebar--panel__footer-offset">
                     <!-- Toggle Button -->
                     <div class="d-flex align-items-center border-bottom py-4 px-5">
-                        <img v-lazy="user.avatar" class="mr-5" style="width:50px;height:50px; border-radius: 50%; object-fit: cover;" alt="">
+                        <img v-lazy="user.avatar" class="mr-5"
+                             style="width:50px;height:50px; border-radius: 50%; object-fit: cover;" alt="">
 
-                        <h4 class="h5 mb-0">Account</h4>
+                        <h4 class="h5 mb-0">{{$trans('profile.sidebar.accounts')}}</h4>
 
                         <button type="button" class="close u-sidebar__close ml-auto" @click="close()">
                             <span aria-hidden="true">&times;</span>
@@ -18,12 +19,10 @@
                     <div class="border-bottom py-4 px-5">
                         <p><a v-if="user.is_transporter" :href="'/profile/'+user.id">{{user.name}} </a></p>
 
-                        <em class="text-uppercase text-muted font-size-13 mb-0 mt-0" v-if="user.is_admin">You are
-                            Admin</em>
-                        <em class="text-uppercase text-muted font-size-13 mb-0 mt-0" v-if="user.is_customer">You are
-                            Customer</em>
+                        <em class="text-uppercase text-muted font-size-13 mb-0 mt-0" v-if="user.is_admin">{{$trans('profile.sidebar.em_3')}}</em>
+                        <em class="text-uppercase text-muted font-size-13 mb-0 mt-0" v-if="user.is_customer">{{$trans('profile.sidebar.em_1')}}</em>
                         <em class="text-uppercase text-muted font-size-13 mb-0 mt-0" v-if="user.is_transporter">
-                            You are Transporter</em>
+                            {{$trans('profile.sidebar.em_2')}}</em>
                     </div>
 
 
@@ -66,7 +65,7 @@
                                         <img class="max-width-3 mr-3" src="/assets/svg/components/id-card-regular.svg"
                                              alt="Image Description">
                                         <div class="media-body">
-                                            <span>Find loads</span>
+                                            <span>{{$trans('profile.sidebar.find_loads')}}</span>
                                         </div>
                                     </a>
                                 </li>
@@ -80,7 +79,7 @@
                                         <img class="max-width-3 mr-3" src="/assets/svg/components/id-card-regular.svg"
                                              alt="Image Description">
                                         <div class="media-body">
-                                            <span>Find transporter</span>
+                                            <span>{{$trans('profile.sidebar.find_a_transporter')}}</span>
                                         </div>
                                     </a>
                                 </li>
@@ -94,7 +93,7 @@
                                         <img class="max-width-3 mr-3" src="/assets/svg/components/id-card-regular.svg"
                                              alt="Image Description">
                                         <div class="media-body">
-                                            <span>Profile</span>
+                                            <span>{{$trans('profile.sidebar.profile')}}</span>
                                         </div>
                                     </a>
                                 </li>
@@ -104,7 +103,7 @@
                                         <img class="max-width-3 mr-3" src="/assets/svg/components/bell-regular.svg"
                                              alt="Image Description">
                                         <div class="media-body">
-                                            <span>Notifications</span>
+                                            <span>{{$trans('profile.sidebar.notifications')}}</span>
                                         </div>
                                     </a>
                                 </li>
@@ -115,7 +114,7 @@
                                         <img class="max-width-3 mr-3" src="/assets/svg/components/thumbs-up-solid.svg"
                                              alt="Image Description">
                                         <div class="media-body">
-                                            <span>Favorites</span>
+                                            <span>{{$trans('profile.sidebar.favorites')}}</span>
                                         </div>
                                     </a>
                                 </li>
@@ -126,17 +125,11 @@
                                              src="/assets/svg/components/sign-out-alt-solid.svg"
                                              alt="Image Description">
                                         <div class="media-body">
-                                            <span>Logout</span>
+                                            <span>{{$trans('profile.sidebar.logout')}}</span>
                                         </div>
                                     </a>
                                 </li>
-
-
-
-
-
                             </ul>
-
                         </div>
                     </div>
                     <!-- End Content -->
@@ -147,10 +140,10 @@
                     <!-- List -->
                     <ul class="list-inline font-size-14 mb-0">
                         <li class="list-inline-item">
-                            <a class="u-sidebar--panel__link pr-2" href="../pages/privacy.html">Privacy</a>
+                            <a class="u-sidebar--panel__link pr-2" href="../pages/privacy.html">{{$trans('profile.sidebar.privacy')}}</a>
                         </li>
                         <li class="list-inline-item">
-                            <a class="u-sidebar--panel__link px-2" href="../pages/terms.html">Terms</a>
+                            <a class="u-sidebar--panel__link px-2" href="../pages/terms.html">{{$trans('profile.sidebar.terms')}}</a>
                         </li>
                         <li class="list-inline-item">
                             <a class="u-sidebar--panel__link pl-2" href="../pages/help.html">

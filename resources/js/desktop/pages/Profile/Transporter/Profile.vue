@@ -7,48 +7,48 @@
                 <li class="nav-item profile-nav-item">
                     <a class="btn btn-outline-primary d-block active " id="profile-tab" data-toggle="tab"
                        href="#profile" role="tab" aria-controls="profile" aria-selected="true"><i
-                        class="fas fa-user"></i> Profile</a>
+                        class="fas fa-user"></i>   {{$trans('profile.menu.profile')}}</a>
                 </li>
                 <li class="nav-item profile-nav-item">
                     <a class="btn btn-outline-primary d-block" id="company-tab" data-toggle="tab" href="#company"
-                       role="tab" aria-controls="company" aria-selected="false"><i class="far fa-building"></i> Company</a>
+                       role="tab" aria-controls="company" aria-selected="false"><i class="far fa-building"></i>   {{$trans('profile.menu.company')}}</a>
                 </li>
                 <li class="nav-item profile-nav-item">
                     <a class="btn btn-outline-primary d-block" id="documents-tab" data-toggle="tab" href="#documents"
                        role="tab" aria-controls="documents" aria-selected="false"><i class="far fa-file-word"></i>
-                        Documents</a>
+                        {{$trans('profile.menu.documents')}}</a>
                 </li>
                 <li class="nav-item profile-nav-item">
                     <a class="btn btn-outline-primary d-block" id="vehicle-tab" data-toggle="tab" href="#vehicles"
                        role="tab" aria-controls="vehicles" aria-selected="false"><i class="fas fa-truck"></i>
-                        Vehicles</a>
+                        {{$trans('profile.menu.vehicles')}}</a>
                 </li>
                 <li class="nav-item profile-nav-item">
                     <a class="btn btn-outline-primary d-block" id="favorites-tab" data-toggle="tab" href="#favorites"
                        role="tab" aria-controls="favorites" aria-selected="false"><i class="fas fa-thumbs-up"></i>
-                        Favorites</a>
+                        {{$trans('profile.menu.favorites')}}</a>
                 </li>
 
                 <li class="nav-item profile-nav-item" @click="loadOrders">
                     <a class="btn btn-outline-primary d-block" id="orders-tab" data-toggle="tab" href="#orders"
                        role="tab" aria-controls="orders" aria-selected="false"><i class="fas fa-truck"></i>
-                        Orders</a>
+                        {{$trans('profile.menu.orders')}}</a>
                 </li>
                 <li class="nav-item profile-nav-item" @click="loadNotifications">
                     <a class="btn btn-outline-primary d-block" id="notifications-tab" data-toggle="tab"
                        href="#notifications" role="tab" aria-controls="notifications" aria-selected="false"><i
-                        class="far fa-bell"></i> Notifications</a>
+                        class="far fa-bell"></i>   {{$trans('profile.menu.notifications')}}</a>
                 </li>
                 <li class="nav-item profile-nav-item">
                     <a class="btn btn-outline-primary d-block" id="settings-tab" data-toggle="tab" href="#settings"
                        role="tab" aria-controls="settings" aria-selected="false"><i class="fas fa-user-cog"></i>
-                        Settings</a>
+                        {{$trans('profile.menu.settings')}}</a>
                 </li>
 
                 <li class="nav-item profile-nav-item">
                     <a class="btn btn-outline-primary d-block" id="reviews-tab" data-toggle="tab" href="#reviews"
                        role="tab" aria-controls="reviews" aria-selected="false"><i class="far fa-comment"></i>
-                        Reviews</a>
+                        {{$trans('profile.menu.reviews')}}</a>
                 </li>
             </ul>
         </vue-custom-scrollbar>

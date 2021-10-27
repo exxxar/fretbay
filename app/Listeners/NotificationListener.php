@@ -48,8 +48,16 @@ class NotificationListener
             "object_type"=>$event->object_type,
         ]);
 
+        $tmp_ids = [];
+
+        if (!is_null($event->user_id))
+            array_push($tmp_ids,$event->user_id);
+
+        if (!is_null(Auth::user()))
+            array_push($tmp_ids,Auth::user()->id);
+
         $FcmToken = User::whereNotNull('fcm_token')
-            ->whereIn("id",[$event->user_id, Auth::user()->id])
+            ->whereIn("id",$tmp_ids)
             ->pluck('fcm_token')->all();
 
         if (count($FcmToken)===0)

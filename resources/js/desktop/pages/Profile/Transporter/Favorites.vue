@@ -5,18 +5,19 @@
         <div class="container">
             <div class="row d-flex">
                 <div class="col-12 mt-2 p-0">
-                    <a class="btn btn-link p-0" href="/find-loads"><i class="fas fa-dolly"></i> Try to
-                        <strong>find a loads!</strong></a>
+                    <a class="btn btn-link p-0" href="/find-loads"><i class="fas fa-dolly"></i>
+                        <strong>{{$trans('profile.page.find_loads')}}!</strong></a>
                 </div>
             </div>
-            <p v-if="favorites.length>0">Count results: {{favorites.length}} <i class="fas fa-boxes"></i></p>
+            <p v-if="favorites.length>0">{{$trans('profile.page.count_results')}}: {{favorites.length}} <i
+                class="fas fa-boxes"></i></p>
 
             <div class="row pb-5 pt-2" v-if="favorites.length>0">
                 <div class="col-lg-12  mb-9 mb-lg-0">
 
 
-
-                    <listing-item-component :listing="favorite.listing" :key="favorite.id" v-for="favorite in favorites" v-if="favorite"/>
+                    <listing-item-component :listing="favorite.listing" :key="favorite.id" v-for="favorite in favorites"
+                                            v-if="favorite"/>
 
 
                     <div class="mb-9"></div>
@@ -28,10 +29,11 @@
                      v-if="favorites.length===0">
                     <img v-lazy="'/images/tagBackgrounds.png'" style="width: 100%; height:300px; object-fit: contain;"
                          alt="">
-                    <h3 class="text-center">Nothing to display</h3>
+                    <h3 class="text-center">{{$trans('profile.page.no_favorites')}}</h3>
                     <div class="d-flex justify-content-center w-100 row">
                         <div class="col-12 col-sm-6">
-                            <a href="/find-transporter" class="btn btn-outline-success w-100 mb-1">Request a quote
+                            <a href="/find-transporter" class="btn btn-outline-success w-100 mb-1">
+                                {{$trans('profile.favorites.a_1')}}
                             </a>
 
 
@@ -41,10 +43,10 @@
                 </div>
             </div>
             <div class="d-flex flex-wrap justify-content-center pb-5 pt-5" v-else>
-                <div class="d-flex p-5 justify-content-center"  v-if="favorites.length===0">
+                <div class="d-flex p-5 justify-content-center" v-if="favorites.length===0">
                     <img v-lazy="'/images/empty.png'" alt="" class="w-100 w-sm-auto" style="max-width:300px;">
                 </div>
-                <h4 class="text-center" v-if="favorites.length===0">No favorites yet!</h4>
+                <h4 class="text-center" v-if="favorites.length===0"> {{$trans('profile.page.no_favorites')}}</h4>
             </div>
         </div>
     </main>
@@ -52,23 +54,15 @@
 <script>
     export default {
         computed: {
-
             favorites: function () {
                 return this.$store.getters.favorites;
             },
-
             user() {
                 return window.user
             },
-
-
         },
-
         mounted() {
             this.$store.dispatch("loadFavorites")
-            //this.goToPage(1)
         },
-
-
     }
 </script>

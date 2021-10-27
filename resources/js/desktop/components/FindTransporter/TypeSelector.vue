@@ -1,7 +1,8 @@
 <template>
 
     <div class="container">
-        <h3 class="mt-0 text-uppercase text-black content-box-title mb-0">Categories</h3>
+        <h3 class="mt-0 text-uppercase text-black content-box-title mb-0">
+            {{$trans('request_a_quote.section_1.h3_1')}}</h3>
         <div class="row pb-5">
 
             <div class="col-12 col-md-8 mt-2 p-0">
@@ -29,7 +30,7 @@
                                     class="btn btn-link btn-block font-weight-medium d-flex justify-content-between card-collapse__btn"
                                     data-toggle="collapse" data-target="#basicsCollapseOne" aria-expanded="true"
                                     aria-controls="basicsCollapseOne">
-                                    Publish your listing
+                                    {{$trans('request_a_quote.section_1.button_1')}}
 
                                     <span class="card-collapse__btn-arrow">
                       <i class="fa fa-arrow-down small"></i>
@@ -40,7 +41,7 @@
                         <div id="basicsCollapseOne" class="collapse show" aria-labelledby="basicsHeadingOne"
                              data-parent="#basicsAccordion">
                             <div class="card-body card-collapse__body px-0">
-                                Our system matches your move with those of our other Fretbay users.
+                                {{$trans('request_a_quote.section_1.div_1')}}
                             </div>
                         </div>
                     </div>
@@ -52,7 +53,7 @@
                                     class="btn btn-link btn-block font-weight-medium d-flex justify-content-between card-collapse__btn collapsed"
                                     data-toggle="collapse" data-target="#basicsCollapseTwo" aria-expanded="false"
                                     aria-controls="basicsCollapseTwo">
-                                    Compare the quotes
+                                    {{$trans('request_a_quote.section_1.button_2')}}
 
                                     <span class="card-collapse__btn-arrow">
                       <i class="fa fa-arrow-down small"></i>
@@ -63,7 +64,7 @@
                         <div id="basicsCollapseTwo" class="collapse" aria-labelledby="basicsHeadingTwo"
                              data-parent="#basicsAccordion">
                             <div class="card-body card-collapse__body px-0">
-                                Grouped quotes at low prices are offered by our network of professional carriers.
+                                {{$trans('request_a_quote.section_1.div_2')}}
                             </div>
                         </div>
                     </div>
@@ -75,7 +76,7 @@
                                     class="btn btn-link btn-block font-weight-medium d-flex justify-content-between card-collapse__btn collapsed"
                                     data-toggle="collapse" data-target="#basicsCollapseThree" aria-expanded="false"
                                     aria-controls="basicsCollapseThree">
-                                    Select a quote
+                                    {{$trans('request_a_quote.section_1.button_3')}}
 
                                     <span class="card-collapse__btn-arrow">
                       <i class="fa fa-arrow-down small"></i>
@@ -86,7 +87,7 @@
                         <div id="basicsCollapseThree" class="collapse" aria-labelledby="basicsHeadingThree"
                              data-parent="#basicsAccordion">
                             <div class="card-body card-collapse__body px-0">
-                                Establish your transportation terms by contacting the carrier of your choice.
+                                {{$trans('request_a_quote.section_1.div_3')}}
                             </div>
                         </div>
                     </div>
@@ -98,7 +99,8 @@
                                     class="btn btn-link btn-block font-weight-medium d-flex justify-content-between card-collapse__btn collapsed"
                                     data-toggle="collapse" data-target="#basicsCollapseFour" aria-expanded="false"
                                     aria-controls="basicsCollapseFour">
-                                    Evaluate the service
+
+                                    {{$trans('request_a_quote.section_1.button_4')}}
 
                                     <span class="card-collapse__btn-arrow">
                       <i class="fa fa-arrow-down small"></i>
@@ -109,8 +111,9 @@
                         <div id="basicsCollapseFour" class="collapse" aria-labelledby="basicsHeadingFour"
                              data-parent="#basicsAccordion">
                             <div class="card-body card-collapse__body px-0">
-                                Following the move, give your opinion on the mover's service and the quality of the
-                                grouped transport of your goods.
+
+
+                                {{$trans('request_a_quote.section_1.div_4')}}
                             </div>
                         </div>
                     </div>

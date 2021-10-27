@@ -1,21 +1,23 @@
 <template>
     <section id="profile-wizard3" style="min-height:90vh;display:flex; position:relative">
+
+
         <div class="row w-100 m-auto h-100 text-center justify-content-center">
             <div class="col-12 h-100" v-bind:class="[vehicles.length==0 ? 'col-md-12' : 'col-md-12 col-xl-6 sticky-post']">
                 <img v-lazy="'https://fretbay.com/fr/frv2/assets/images/common/icons/general/add-vehicle.svg'"
                      style="max-height: 350px; width: 100%; max-width:350px" alt=""
                      class="mt-3"
                 >
-                <h2 class="step-title" style="color:#21c87a; font-weight: 700">Your vehicles</h2>
-                <p class="info-box"><strong>Requires</strong> : Insurance certificate <strong>showing</strong> the name of your business</p>
+                <h2 class="step-title" style="color:#21c87a; font-weight: 700">  {{$trans('profile.wizard.step_3.h2_1')}}</h2>
+                <p class="info-box" v-html="$trans('profile.wizard.step_3.h2_1')"></p>
                 <div class="row mx-auto w-100 align-items-center justify-content-center">
                     <button data-toggle="modal" data-target="#add-vehicle"
                             class="text-center btn btn-primary w-100 mb-3 mx-1"
                             style="max-width: 300px;" v-if="vehicles.length==0"
                     >
-                        Add a vehicle
+                        {{$trans('profile.wizard.step_3.button_1')}}
                     </button>
-                    <a href="/transporter/profile/transporter-wizard/step-4" class="btn btn-success w-100 mb-3 mx-1" style="max-width: 300px;">Skip</a>
+                    <a href="/transporter/profile/transporter-wizard/step-4" class="btn btn-success w-100 mb-3 mx-1" style="max-width: 300px;">  {{$trans('profile.wizard.step_3.button_2')}}</a>
                 </div>
             </div>
             <div class="col-12 col-md-12 col-xl-6">
@@ -26,10 +28,10 @@
                                     class="text-center btn btn-primary w-100 m-1"
                                     style="max-width: 300px;"
                             >
-                                Add a vehicle
+                                {{$trans('profile.wizard.step_3.button_1')}}
                             </button>
                             <button class="btn btn-success w-100 m-1" style="max-width: 300px;" @click="nextStep">
-                                Next step
+                                {{$trans('profile.wizard.step_3.button_3')}}
                             </button>
                         </div>
                     </template>

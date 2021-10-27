@@ -10,7 +10,7 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="from-group">
-                                        <label class="text-lg">Type</label>
+                                        <label class="text-lg">{{$trans('profile.vehicles.label_1')}}</label>
                                         <div class="custom-select-menu">
                                             <div class="form-group">
                                                 <!--                                                <div class="dropdown">-->
@@ -51,11 +51,11 @@
                                                 <!--                                                    </ul>-->
                                                 <!--                                                </div>-->
                                                 <select class="form-select form-control form-control-empty input-lg" aria-label="Type select" v-model="new_vehicle.type">
-                                                    <option value="Car">Car</option>
-                                                    <option value="Van">Van</option>
-                                                    <option value="Truck without tailgate">Truck without tailgate</option>
-                                                    <option value="Truck with tailgate">Truck with tailgate</option>
-                                                    <option value="5T Truck">5T Truck</option>
+                                                    <option value="Car">{{$trans('profile.vehicles.select_option_1')}}</option>
+                                                    <option value="Van">{{$trans('profile.vehicles.select_option_2')}}</option>
+                                                    <option value="Truck without tailgate">{{$trans('profile.vehicles.select_option_3')}}</option>
+                                                    <option value="Truck with tailgate">{{$trans('profile.vehicles.select_option_4')}}</option>
+                                                    <option value="5T Truck">{{$trans('profile.vehicles.select_option_5')}}</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -63,7 +63,7 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="from-group">
-                                        <label for="brand" class="text-lg">Brand</label>
+                                        <label for="brand" class="text-lg">{{$trans('profile.vehicles.label_2')}}</label>
                                         <ValidationProvider name="Brand" rules="required" v-slot="{ errors }">
                                             <input id="brand" type="text"
                                                    v-model="new_vehicle.brand" class="form-control form-control-empty input-lg">
@@ -72,7 +72,7 @@
                                 </div>
                                 <div class="col-sm-12">
                                     <div class="from-group">
-                                        <label for="model" class="text-lg">Model</label>
+                                        <label for="model" class="text-lg">{{$trans('profile.vehicles.label_3')}}</label>
                                         <ValidationProvider name="Model" rules="required" v-slot="{ errors }">
                                             <input id="model" type="text"
                                                    v-model="new_vehicle.model" class="form-control form-control-empty input-lg">
@@ -83,7 +83,7 @@
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="from-group">
-                                        <label for="plate_number" class="text-lg">Plate number</label>
+                                        <label for="plate_number" class="text-lg">{{$trans('profile.vehicles.label_4')}}</label>
                                         <ValidationProvider name="Plate number" rules="required" v-slot="{ errors }">
                                             <input id="plate_number" type="text"
                                                    v-model="new_vehicle.plate_number" class="form-control form-control-empty input-lg">
@@ -92,7 +92,7 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="from-group">
-                                        <label for="cubing" class="text-lg">Cubing</label>
+                                        <label for="cubing" class="text-lg">{{$trans('profile.vehicles.label_5')}}</label>
                                         <ValidationProvider name="Cubing" rules="required|numeric" v-slot="{ errors }">
                                             <input id="cubing" type="text"
                                                    v-model="new_vehicle.cubing" class="form-control form-control-empty input-lg">
@@ -101,7 +101,7 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="from-group">
-                                        <label for="total_laden_weight" class="text-lg">Total laden weight</label>
+                                        <label for="total_laden_weight" class="text-lg">{{$trans('profile.vehicles.label_6')}}</label>
                                         <ValidationProvider name="Plate number" rules="required|numeric" v-slot="{ errors }">
                                             <input id="total_laden_weight" type="text"
                                                    v-model="new_vehicle.total_laden_weight" class="form-control form-control-empty input-lg">
@@ -112,22 +112,22 @@
                             <div class="row">
                                 <div class="col-12">
                                     <!--                                    <upload-file v-model="image"></upload-file>-->
-                                    <label class="text-lg">Upload images</label>
+                                    <label class="text-lg">{{$trans('profile.vehicles.label_7')}}</label>
                                     <!--                                    todo: rule to check number of files-->
                                     <ValidationProvider name="Images" rules="required" v-slot="{ errors }">
                                         <multi-upload-files ref="new_upload" :files="new_vehicle.images">
                                             <template v-slot:uploadButton>
-                                                <button class="btn btn-primary w-100" @click="startNewUpload">Click to upload</button>
+                                                <button class="btn btn-primary w-100" @click="startNewUpload">{{$trans('profile.vehicles.button_1')}}</button>
                                             </template>
                                         </multi-upload-files>
                                     </ValidationProvider>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-outline-blue" data-dismiss="modal" :disabled="loading">Close</button>
+                                <button type="button" class="btn btn-outline-blue" data-dismiss="modal" :disabled="loading">{{$trans('profile.vehicles.button_2')}}</button>
                                 <button class="btn btn-primary vehicle-save-button" :disabled="invalid||loading" @click="createVehicle">
                                     <span v-if="loading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                                    Save
+                                    {{$trans('profile.vehicles.button_3')}}
                                 </button>
                             </div>
                         </ValidationObserver>
@@ -144,15 +144,15 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="from-group">
-                                        <label class="text-lg">Type</label>
+                                        <label class="text-lg">{{$trans('profile.vehicles.label_1')}}</label>
                                         <div class="custom-select-menu">
                                             <div class="form-group">
                                                 <select class="form-select form-control form-control-empty input-lg" aria-label="Type select" v-model="edit_vehicle.type">
-                                                    <option value="Car">Car</option>
-                                                    <option value="Van">Van</option>
-                                                    <option value="Truck without tailgate">Truck without tailgate</option>
-                                                    <option value="Truck with tailgate">Truck with tailgate</option>
-                                                    <option value="5T Truck">5T Truck</option>
+                                                    <option value="Car">{{$trans('profile.vehicles.select_option_1')}}</option>
+                                                    <option value="Van">{{$trans('profile.vehicles.select_option_2')}}</option>
+                                                    <option value="Truck without tailgate">{{$trans('profile.vehicles.select_option_3')}}</option>
+                                                    <option value="Truck with tailgate">{{$trans('profile.vehicles.select_option_4')}}</option>
+                                                    <option value="5T Truck">{{$trans('profile.vehicles.select_option_5')}}</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -160,7 +160,7 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="from-group">
-                                        <label for="edit_brand" class="text-lg">Brand</label>
+                                        <label for="edit_brand" class="text-lg">{{$trans('profile.vehicles.label_2')}}</label>
                                         <ValidationProvider name="Brand" rules="required" v-slot="{ errors }">
                                             <input id="edit_brand" type="text"
                                                    v-model="edit_vehicle.brand" class="form-control form-control-empty input-lg">
@@ -169,7 +169,7 @@
                                 </div>
                                 <div class="col-sm-12">
                                     <div class="from-group">
-                                        <label for="edit_model" class="text-lg">Model</label>
+                                        <label for="edit_model" class="text-lg">{{$trans('profile.vehicles.label_3')}}</label>
                                         <ValidationProvider name="Model" rules="required" v-slot="{ errors }">
                                             <input id="edit_model" type="text"
                                                    v-model="edit_vehicle.model" class="form-control form-control-empty input-lg">
@@ -180,7 +180,7 @@
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="from-group">
-                                        <label for="edit_plate_number" class="text-lg">Plate number</label>
+                                        <label for="edit_plate_number" class="text-lg">{{$trans('profile.vehicles.label_4')}}</label>
                                         <ValidationProvider name="Plate number" rules="required" v-slot="{ errors }">
                                             <input id="edit_plate_number" type="text"
                                                    v-model="edit_vehicle.plate_number" class="form-control form-control-empty input-lg">
@@ -189,7 +189,7 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="from-group">
-                                        <label for="edit_cubing" class="text-lg">Cubing</label>
+                                        <label for="edit_cubing" class="text-lg">{{$trans('profile.vehicles.label_5')}}</label>
                                         <ValidationProvider name="Cubing" rules="required|numeric" v-slot="{ errors }">
                                             <input id="edit_cubing" type="text"
                                                    v-model="edit_vehicle.cubing" class="form-control form-control-empty input-lg">
@@ -198,7 +198,7 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="from-group">
-                                        <label for="edit_total_laden_weight" class="text-lg">Total laden weight</label>
+                                        <label for="edit_total_laden_weight" class="text-lg">{{$trans('profile.vehicles.label_6')}}</label>
                                         <ValidationProvider name="Plate number" rules="required|numeric" v-slot="{ errors }">
                                             <input id="edit_total_laden_weight" type="text"
                                                    v-model="edit_vehicle.total_laden_weight" class="form-control form-control-empty input-lg">
@@ -209,7 +209,7 @@
 
                             <div class="row">
                                 <div class="col-12">
-                                    <label class="text-lg">Upload images</label>
+                                    <label class="text-lg">{{$trans('profile.vehicles.label_7')}}</label>
                                     <ValidationProvider name="Images" rules="required" v-slot="{ errors }">
                                         <div class="row w-100 mx-auto mb-2">
 
@@ -224,7 +224,7 @@
 <!--                                            </div>-->
                                             <multi-upload-files ref="edit_upload" :files="new_images">
                                                 <template v-slot:uploadButton>
-                                                    <button class="btn btn-primary w-100" @click="startUpload">Click to upload</button>
+                                                    <button class="btn btn-primary w-100" @click="startUpload">{{$trans('profile.vehicles.button_1')}}</button>
                                                 </template>
                                                 <template v-slot:filesListAdditional>
                                                     <div v-for="(file, key) in edit_vehicle.images" class="col-md-4 col-sm-6 col-6 px-1 px-sm-2">
@@ -232,7 +232,7 @@
                                                             <img class="card-img-top preview mx-auto" v-lazy="file"
                                                                  style="width:100%; height:150px; object-fit: cover;" alt="">
                                                             <div class="card-body px-md-2 text-center">
-                                                                <button class="btn btn-outline-blue mt-2 mx-auto w-100" v-on:click="removeFile(key)">Remove</button>
+                                                                <button class="btn btn-outline-blue mt-2 mx-auto w-100" v-on:click="removeFile(key)">{{$trans('profile.vehicles.button_4')}}</button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -243,10 +243,10 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-outline-blue" data-dismiss="modal" :disabled="loading">Close</button>
+                                <button type="button" class="btn btn-outline-blue" data-dismiss="modal" :disabled="loading">{{$trans('profile.vehicles.button_2')}}</button>
                                 <button class="btn btn-primary vehicle-save-button" :disabled="invalid||loading" @click="saveVehicle">
                                     <span v-if="loading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                                    Save
+                                    {{$trans('profile.vehicles.button_3')}}
                                 </button>
                             </div>
                         </ValidationObserver>
@@ -257,13 +257,13 @@
 
         <div class="row pb-3 pt-3">
             <div class="col-12 d-flex justify-content-center flex-column align-items-center">
-                <h2>Your vehicles</h2>
+                <h2>{{$trans('profile.vehicles.h2_1')}}s</h2>
                 <a  data-toggle="modal" data-target="#add-vehicle" style="width: 200px;" href="#">
                     <img class="add-vehicle-icon"
                          src="https://fretbay.com/fr/frv2/assets/images/common/icons/general/add-vehicle.svg" alt="">
                 </a>
                 <button data-toggle="modal" data-target="#add-vehicle" class="text-center btn btn-primary mt-3">
-                    Add a vehicle
+                    {{$trans('profile.vehicles.button_5')}}
                 </button>
             </div>
             <div class="col-12 justify-content-center align-items-center">
@@ -276,23 +276,23 @@
                                     <img v-else v-lazy="" alt="Vehicle" class="rounded-circle" style="width: 100px; height: 100px; object-fit: cover">
                                 </div>
                                 <div class="col-12 col-sm-6 col-md-2 px-0 px-sm-1 px-md-2">
-                                    <p class="d-flex inform-box mb-0 justify-content-center">Brand</p>
+                                    <p class="d-flex inform-box mb-0 justify-content-center">{{$trans('profile.vehicles.label_1')}}</p>
                                     {{vehicle.brand}}
                                 </div>
                                 <div class="col-6 col-md-1 px-0 px-sm-1 px-md-2">
-                                    <p class="d-flex inform-box mb-0 justify-content-center">Model</p>
+                                    <p class="d-flex inform-box mb-0 justify-content-center">{{$trans('profile.vehicles.label_2')}}</p>
                                     {{vehicle.model}}
                                 </div>
                                 <div class="col-6 col-md-2 px-0 px-sm-1 px-md-2">
-                                    <p class="d-flex inform-box mb-0 justify-content-center">Plate number</p>
+                                    <p class="d-flex inform-box mb-0 justify-content-center">{{$trans('profile.vehicles.label_3')}}</p>
                                     {{vehicle.plate_number}}
                                 </div>
                                 <div class="col-6 col-md-2 px-0 px-sm-1 px-md-2">
-                                    <p class="d-flex inform-box mb-0 justify-content-center">Total laden weight</p>
+                                    <p class="d-flex inform-box mb-0 justify-content-center">{{$trans('profile.vehicles.label_4')}}</p>
                                     {{vehicle.total_laden_weight}}
                                 </div>
                                 <div class="col-6 col-md-1 px-0 px-sm-1 px-md-2">
-                                    <p class="d-flex inform-box mb-0 justify-content-center">Cubing</p>
+                                    <p class="d-flex inform-box mb-0 justify-content-center">{{$trans('profile.vehicles.label_5')}}</p>
                                     {{vehicle.cubing}}
                                 </div>
                                 <div class="col-12 col-md-2">

@@ -6,14 +6,11 @@
             <div class="col-12 col-lg-7 col-md-7">
                 <img src="/images/profile/profile2.jpg" style="max-height: 350px; width: 100%; max-width:350px" alt="">
 
-                <h2 class="step-title" style="color:#21c87a; font-weight: 700">Complete your profile</h2>
-                <p>AlloTrans allows you to post your quotes free of charge on the platform and
-                    <strong>increase your sales revenue</strong>.
-                    <strong>Create a profile here quickly and free of charge</strong> so that it can be validated by our
-                    team.
+                <h2 class="step-title" style="color:#21c87a; font-weight: 700">{{$trans('profile.wizard.start.h2_1')}}</h2>
+                <p v-html="$trans('profile.wizard.start.p_1')">
                 </p>
                 <a href="/transporter/profile/transporter-wizard/step-1" class="btn btn-success text-white w-100"
-                   style="max-width: 300px;">Start</a>
+                   style="max-width: 300px;">{{$trans('profile.wizard.start.a_1')}}</a>
             </div>
 
         </div>

@@ -15,8 +15,10 @@
             <div class="d-flex p-5 justify-content-center"  v-if="notifications.length===0">
                 <img v-lazy="'/images/empty.png'" alt="" class="w-100 w-sm-auto" style="max-width:300px;">
             </div>
-            <h4 class="text-center" v-if="notifications.length===0">No notifications yet!</h4>
+            <h4 class="text-center" v-if="notifications.length===0">{{$trans('profile.page.no_notifications')}}</h4>
         </div>
+
+    
     </main>
 </template>
 <script>

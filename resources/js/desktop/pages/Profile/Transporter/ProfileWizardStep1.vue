@@ -2,23 +2,25 @@
     <section id="profile-wizard2" style="min-height:90vh; display: flex;">
         <div class="row w-100 mx-auto mt-2 mt-sm-3 h-100 text-center justify-content-center">
             <div class="col-12 col-md-6">
+
+
                 <img src="/images/profile/profile1.png" style="max-height: 350px; width: 100%; max-width:350px" alt="">
-                <h2 class="step-title" style="color:#21c87a; font-weight: 700">Fill In Manager ID Card</h2>
-                <p class="info-box"><strong>Requires</strong> : Front / back of the identity document of the manager of the company</p>
-                <a href="/transporter/profile/transporter-wizard/step-2" class="btn btn-success w-100 mb-3" style="max-width: 300px;">Skip</a>
+                <h2 class="step-title" style="color:#21c87a; font-weight: 700">{{   $trans('profile.wizard.step_1.h2_1')}}</h2>
+                <p class="info-box" v-html=" $trans('profile.wizard.step_1.p_1')"> </p>
+                <a href="/transporter/profile/transporter-wizard/step-2" class="btn btn-success w-100 mb-3" style="max-width: 300px;">{{ $trans('profile.wizard.step_1.a_1')}}</a>
             </div>
             <div class="col-12 col-md-6">
                 <div class="card mb-3">
                     <div class="card-body">
-                        <h4 class="tab-subtitle tab-subtitle-left">Manager ID card</h4>
+                        <h4 class="tab-subtitle tab-subtitle-left">{{$trans('profile.wizard.step_1.h4_1')}}</h4>
                         <ValidationObserver v-slot="{invalid}">
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="form-group">
                                         <ValidationProvider name="ID card number" rules="required" v-slot="{ errors }">
-                                            <label for="" class="text-lg">ID card number</label>
+                                            <label for="" class="text-lg">{{$trans('profile.wizard.step_1.label_1')}}</label>
                                             <input type="text" class="form-control-empty form-control"
-                                                   v-model="edit_manager_card.id_card_number" placeholder="ID card number">
+                                                   v-model="edit_manager_card.id_card_number" :placeholder="$trans('profile.wizard.step_1.input_placeholder_1')">
                                             <span style="color:red; font-size:11px">{{errors[0]}}</span>
                                         </ValidationProvider>
                                     </div>
@@ -26,7 +28,7 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <ValidationProvider name="Issue date" rules="required" v-slot="{ errors }">
-                                            <label for="" class="text-lg">Issue date</label>
+                                            <label for="" class="text-lg">{{$trans('profile.wizard.step_1.label_2')}}</label>
                                             <input type="text" class="form-control-empty form-control"
                                                    v-model="edit_manager_card.issue_date" v-mask="'##/##/####'">
                                         </ValidationProvider>
@@ -35,17 +37,17 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <ValidationProvider name="Expiry date" rules="required" v-slot="{ errors }">
-                                            <label for="" class="text-lg">Expiry date</label>
+                                            <label for="" class="text-lg">{{$trans('profile.wizard.step_1.label_3')}}</label>
                                             <input type="text" class="form-control-empty form-control"
                                                    v-model="edit_manager_card.expiry_date" v-mask="'##/##/####'">
                                         </ValidationProvider>
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <h4>Document officiel de la pièce d'identité du gérant</h4>
+                                    <h4>{{$trans('profile.wizard.step_1.h4_2')}}</h4>
                                     <multi-upload-files ref="mn" :files="edit_manager_card.new_images">
                                         <template v-slot:uploadButton>
-                                            <button class="btn btn-primary w-100" @click="startUpload('mn')">Click to upload</button>
+                                            <button class="btn btn-primary w-100" @click="startUpload('mn')">{{$trans('profile.wizard.step_1.button_1')}}</button>
                                         </template>
                                         <template v-slot:filesListAdditional>
                                             <div v-for="(file, key) in edit_manager_card.document_images" class="col-md-4 col-sm-6 col-6 px-1 px-sm-2">
@@ -53,7 +55,7 @@
                                                     <img class="card-img-top preview mx-auto" v-lazy="file"
                                                          style="width:100%; height:150px; object-fit: cover;" alt="">
                                                     <div class="card-body px-md-2 text-center">
-                                                        <button class="btn btn-outline-blue mt-2 mx-auto w-100" v-on:click="removeFile(key, 2)">Remove</button>
+                                                        <button class="btn btn-outline-blue mt-2 mx-auto w-100" v-on:click="removeFile(key, 2)">{{$trans('profile.wizard.step_1.button_2')}}</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -76,7 +78,7 @@
                                     <span v-if="loadingManagerCard" class="spinner-border spinner-border-sm"
                                           role="status" aria-hidden="true">
                                     </span>
-                                    Next
+                                    {{$trans('profile.wizard.step_1.button_3')}}
                                 </button>
                             </div>
                         </ValidationObserver>

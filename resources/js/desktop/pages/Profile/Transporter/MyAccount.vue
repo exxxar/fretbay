@@ -28,7 +28,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-sm-3">
-                                <h6 class="mb-0">Full Name</h6>
+                                <h6 class="mb-0">{{$trans('profile.profile.full_name')}}</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
                                 {{fullName}}
@@ -37,7 +37,7 @@
                         <hr>
                         <div class="row">
                             <div class="col-sm-3">
-                                <h6 class="mb-0">Email</h6>
+                                <h6 class="mb-0">{{$trans('profile.profile.email')}}</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
                                 {{user.email}}
@@ -46,7 +46,7 @@
                         <hr>
                         <div class="row">
                             <div class="col-sm-3">
-                                <h6 class="mb-0">Phone number 1</h6>
+                                <h6 class="mb-0">{{$trans('profile.profile.phone_number_1')}}</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
                                 {{profile.telephone_number_1}}
@@ -55,7 +55,7 @@
                         <hr>
                         <div class="row">
                             <div class="col-sm-3">
-                                <h6 class="mb-0">Phone number 2</h6>
+                                <h6 class="mb-0">{{$trans('profile.profile.phone_number_1')}}</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
                                 {{profile.telephone_number_2}}
@@ -64,7 +64,7 @@
                         <hr>
                         <div class="row">
                             <div class="col-sm-3">
-                                <h6 class="mb-0">Address</h6>
+                                <h6 class="mb-0">{{$trans('profile.profile.address')}}</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
                                 {{fullAddress}}
@@ -73,7 +73,7 @@
                         <hr>
                         <div class="row">
                             <div class="col-sm-12">
-                                <button class="btn btn-outline-blue float-right" v-if="!editMode" @click="edit">Edit</button>
+                                <button class="btn btn-outline-blue float-right" v-if="!editMode" @click="edit">{{$trans('profile.profile.button_3')}}</button>
                             </div>
                         </div>
                     </div>
@@ -84,12 +84,12 @@
                         <div class="card-body">
                             <div class="row mb-3">
                                 <div class="col-sm-3">
-                                    <h6 class="mb-0">Avatar</h6>
+                                    <h6 class="mb-0">{{$trans('profile.profile.avatar')}}</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
                                     <upload-file v-model="edit_profile.new_avatar" ref="avatar">
                                         <template v-slot:uploadButton>
-                                            <button class="btn btn-primary w-100" @click="startUpload">Click to upload</button>
+                                            <button class="btn btn-primary w-100" @click="startUpload">{{$trans('profile.profile.button_4')}}</button>
                                         </template>
                                         <template v-slot:filePlaceAdditional>
                                             <div class="row w-100 mt-2 mx-auto" v-if="avatar_is_removed == false && edit_profile.avatar !== 'users/default.png' && edit_profile.new_avatar==''">
@@ -97,7 +97,7 @@
                                                     <img class="preview" :src="edit_profile.avatar" style="width:100%; max-height:300px; object-fit: cover;" alt="">
                                                 </div>
                                                 <div class="col-12 p-0">
-                                                    <button class="btn btn-outline-blue mt-2 mx-auto w-100" v-on:click="removeFile">Remove</button>
+                                                    <button class="btn btn-outline-blue mt-2 mx-auto w-100" v-on:click="removeFile">{{$trans('profile.profile.button_5')}}</button>
                                                 </div>
                                             </div>
                                         </template>
@@ -109,7 +109,7 @@
 
                             <div class="row mb-3">
                                 <div class="col-sm-3">
-                                    <h6 class="mb-0">First Name</h6>
+                                    <h6 class="mb-0">{{$trans('profile.profile.first_name')}}</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
                                     <ValidationProvider name="First name" rules="required|alpha" v-slot="{ errors }">
@@ -121,7 +121,7 @@
 
                             <div class="row mb-3">
                                 <div class="col-sm-3">
-                                    <h6 class="mb-0">Last name</h6>
+                                    <h6 class="mb-0">{{$trans('profile.profile.last_name')}}</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
                                     <ValidationProvider name="Last name" rules="required|alpha" v-slot="{ errors }">
@@ -133,7 +133,7 @@
 
                             <div class="row mb-3">
                                 <div class="col-sm-3">
-                                    <h6 class="mb-0">Email</h6>
+                                    <h6 class="mb-0">{{$trans('profile.profile.email')}}</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
                                     <ValidationProvider name="Email" rules="email" v-slot="{ errors }">
@@ -144,7 +144,7 @@
                             </div>
                             <div class="row mb-3">
                                 <div class="col-sm-3">
-                                    <h6 class="mb-0">Phone number 1</h6>
+                                    <h6 class="mb-0">{{$trans('profile.profile.phone_number_1')}}</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
                                     <ValidationProvider name="Phone number 1" rules="numeric" v-slot="{ errors }">
@@ -155,7 +155,7 @@
                             </div>
                             <div class="row mb-3">
                                 <div class="col-sm-3">
-                                    <h6 class="mb-0">Phone number 2</h6>
+                                    <h6 class="mb-0">{{$trans('profile.profile.phone_number_2')}}</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
                                     <ValidationProvider name="Phone number 2" rules="numeric" v-slot="{ errors }">
@@ -176,7 +176,7 @@
                                             v-model="edit_profile.city"
                                             :options="cities"
                                             :option-height="25"
-                                            placeholder="Your city"
+                                            :placeholder="$trans('profile.profile.input_placeholder_1')"
                                             :show-labels="false"
                                             :maxHeight="200"
                                             label="title"
@@ -203,7 +203,7 @@
                             </div>
                             <div class="row mb-3">
                                 <div class="col-sm-3">
-                                    <h6 class="mb-0">Country</h6>
+                                    <h6 class="mb-0">{{$trans('profile.profile.country')}}</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
                                     <ValidationProvider name="Country" rules="" v-slot="{ errors }">
@@ -214,7 +214,7 @@
                                             v-model="edit_profile.country"
                                             :options="countries"
                                             :option-height="25"
-                                            placeholder="Country"
+                                            :placeholder="$trans('profile.profile.input_placeholder_2')"
                                             :show-labels="false"
                                             :maxHeight="200"
                                             label="title"
@@ -232,7 +232,7 @@
 
                             <div class="row mb-3">
                                 <div class="col-sm-3">
-                                    <h6 class="mb-0">Region</h6>
+                                    <h6 class="mb-0">{{$trans('profile.profile.region')}}</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
                                     <ValidationProvider name="Region" rules="" v-slot="{ errors }">
@@ -246,7 +246,7 @@
                                             v-model="edit_profile.region"
                                             :options="regions"
                                             :option-height="25"
-                                            placeholder="Region"
+                                            :placeholder="$trans('profile.profile.input_placeholder_3')"
                                             :show-labels="false"
                                             :maxHeight="200"
                                             label="title"
@@ -264,7 +264,7 @@
 
                             <div class="row mb-3">
                                 <div class="col-sm-3">
-                                    <h6 class="mb-0">City</h6>
+                                    <h6 class="mb-0">{{$trans('profile.profile.city')}}</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
                                     <ValidationProvider name="City" rules="alpha" v-slot="{ errors }">
@@ -275,7 +275,7 @@
                                             v-model="edit_profile.city"
                                             :options="cities"
                                             :option-height="25"
-                                            placeholder="Your city"
+                                            :placeholder="$trans('profile.profile.input_placeholder_4')"
                                             :show-labels="false"
                                             :maxHeight="200"
                                             label="title"
@@ -303,7 +303,7 @@
 
                             <div class="row mb-3">
                                 <div class="col-sm-3">
-                                    <h6 class="mb-0">Postal</h6>
+                                    <h6 class="mb-0">{{$trans('profile.profile.postal')}}</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
                                     <ValidationProvider name="Postal" rules="" v-slot="{ errors }">
@@ -317,10 +317,10 @@
                             <div class="row mb-3">
                                 <div class="col-12 text-secondary">
                                     <div class="row w-100 mx-auto justify-content-end">
-                                        <button class="btn btn-outline-blue mx-1" :disabled="loading" @click="editMode=false">Cancel</button>
+                                        <button class="btn btn-outline-blue mx-1" :disabled="loading" @click="editMode=false">{{$trans('profile.profile.button_2')}}</button>
                                         <button class="btn btn-primary px-4 mx-1" :disabled="invalid||loading" @click="update">
                                             <span v-if="loading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                                            Save
+                                            {{$trans('profile.profile.button_6')}}
                                         </button>
                                     </div>
                                 </div>

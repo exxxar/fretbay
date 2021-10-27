@@ -37,7 +37,7 @@
 
                 <div class="col-12" v-if="item.review">
 
-                    <h6>Answer from Transporter:</h6>
+                    <h6> {{$trans('profile.reviews.h6_3')}}:</h6>
                     <p><em>{{item.review.text}}</em></p>
 
                 </div>
@@ -53,7 +53,7 @@
                 <div class="col-sm-4">
                     <div class="btn-group">
                         <button class="btn btn-outline-danger" v-if="user.is_customer"
-                                data-toggle="modal" :data-target="'#removeReviewModal-'+item.id"
+                                data-toggle="modal" :data-target="'#removeReviewModal-'+item.id+modalPrefix"
                                ><i
                             class="fas fa-trash-alt"></i>
                         </button>
@@ -69,7 +69,7 @@
                                placeholder="Short answer" aria-label="Recipient's username"
                                aria-describedby="basic-addon2">
                         <div class="input-group-append">
-                            <button class="btn btn-outline-primary" type="submit">Send</button>
+                            <button class="btn btn-outline-primary" type="submit">{{$trans('profile.reviews.button_2')}}</button>
                         </div>
                     </form>
 
@@ -80,19 +80,19 @@
 
         </div>
 
-        <div class="modal fade" :id="'removeReviewModal-'+item.id" data-backdrop="static" data-keyboard="false" tabindex="-1" :aria-labelledby="'removeReviewModal-'+item.id" aria-hidden="true">
+        <div class="modal fade" :id="'removeReviewModal-'+item.id+modalPrefix" data-backdrop="static" data-keyboard="false" tabindex="-1" :aria-labelledby="'removeReviewModal-'+item.id" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="quoteModalHeader">Remove Review?</h5>
+                        <h5 class="modal-title" id="quoteModalHeader">{{$trans('profile.reviews.h5_1')}}</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
                         <div class="row d-flex justify-content-center">
-                            <div class="col-6"><button class="btn btn-danger w-100" data-dismiss="modal"  @click="removeReview">Remove</button></div>
-                            <div class="col-6"><button data-dismiss="modal" aria-label="Close" class="btn btn-secondary w-100">Cancel</button></div>
+                            <div class="col-6"><button class="btn btn-danger w-100" data-dismiss="modal"  @click="removeReview">{{$trans('profile.reviews.button_3')}}</button></div>
+                            <div class="col-6"><button data-dismiss="modal" aria-label="Close" class="btn btn-secondary w-100">{{$trans('profile.reviews.button_4')}}</button></div>
                         </div>
                     </div>
                 </div>
@@ -102,6 +102,8 @@
     </div>
 </template>
 <script>
+    import { v4 as uuidv4 } from 'uuid';
+
     export default {
         props: ["item"],
         computed: {
@@ -110,9 +112,13 @@
                 return window.user;
             },
         },
+        created(){
+            this.modalPrefix = uuidv4()
+        },
         data() {
             return {
                 message: null,
+                modalPrefix: null,
                 review_types: [
                     {
                         id: 0,

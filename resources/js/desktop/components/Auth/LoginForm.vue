@@ -12,7 +12,7 @@
                         <ValidationProvider name="Email" rules="required|email" vid="email" v-slot="{ errors }">
                             <input type="email" class="form-control form__input" name="email"
                                    autocomplete="username"
-                                   placeholder="Email" v-model="login_form.email" required>
+                                   :placeholder="$trans('auth.signin_form.input_placeholder_1')" v-model="login_form.email" required>
                             <p class="mb-0" style="color:red;font-size:11px">{{errors[0]}}</p>
                         </ValidationProvider>
                     </div>
@@ -26,7 +26,7 @@
                                             v-slot="{ errors }">
                             <input type="password" class="form-control form__input"
                                    autocomplete="new-password"
-                                   name="password" placeholder="Password" required
+                                   name="password" :placeholder="$trans('auth.signin_form.input_placeholder_2')" required
                                    v-model="login_form.password">
                             <p class="mb-0" style="color: red;font-size:11px">{{errors[0]}}</p>
                         </ValidationProvider>
@@ -40,14 +40,14 @@
                         <div class="custom-control custom-checkbox d-flex align-items-center text-muted">
                             <input type="checkbox" name="remember" class="custom-control-input" id="rememberMeCheckbox" checked v-model="login_form.remember">
                             <label class="custom-control-label" for="rememberMeCheckbox">
-                                Remember Me
+                                {{$trans('auth.signin_form.label_1')}}
                             </label>
                         </div>
                         <!-- End Checkbox -->
                     </div>
 
                     <div class="col-6 text-right">
-                        <a class="js-animation-link float-right" href="/recovery-password">Forgot Password?</a>
+                        <a class="js-animation-link float-right" href="/recovery-password">{{$trans('auth.signin_form.a_1')}}</a>
                     </div>
                 </div>
 
@@ -68,22 +68,17 @@
                     <button type="submit" class="btn btn-block btn-primary">
                         <span v-if="loading" class="spinner-border spinner-border-sm" role="status"
                               aria-hidden="true"></span>
-                        Signin
+                        {{$trans('auth.signin_form.button_1')}}
                     </button>
                 </div>
 
                 <div class="text-center mb-3">
                     <p class="text-muted">
-                        Do not have an account?<br>
-                        <a class="js-animation-link" href="/register-customer">Signup
-                            as Customer</a> or <a class="js-animation-link" href="/register-transporter">Signup
-                        as Transporter </a>
+                        {{$trans('auth.signin_form.p_1')}}<br>
+                        <a class="js-animation-link" href="/register-customer">{{$trans('auth.signin_form.a_1')}}</a> or
+                        <a class="js-animation-link" href="/register-transporter">{{$trans('auth.signin_form.a_2')}}</a>
                     </p>
                 </div>
-
-
-
-
             </div>
         </div>
     </ValidationObserver>

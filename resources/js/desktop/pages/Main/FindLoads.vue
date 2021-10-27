@@ -7,7 +7,6 @@
             <div class="row">
                 <div class="col-12">
 
-
                     <VueSlickCarousel v-bind="settings" v-if="categories.length>0">
                         <div v-for="category in categories" @click="selectType(category.id)" class="p-2">
 
@@ -34,10 +33,10 @@
             <div class="row d-block d-sm-none mb-2">
                 <div class="col-12 mt-2">
 
-                    <small>Enter ref-number</small>
+                    <small> {{$trans('profile.find_loads.small_1')}}</small>
                     <input type="number" class="form-control w-100"
                            v-model="filter.reference"
-                           placeholder="Reference">
+                           :placeholder="$trans('profile.find_loads.input_placeholder_1')">
 
                 </div>
             </div>
@@ -53,12 +52,15 @@
 
                 <div class="col-lg-9 order-lg-2 mb-9 mb-lg-0" v-else>
                     <img v-lazy="'/images/tagBackgrounds.png'" style="width: 100%;" alt="">
-                    <h3 class="text-center">Empty list! Change filter!</h3>
+                    <h3 class="text-center">{{$trans('profile.find_loads.h3_1')}}</h3>
                     <div class="d-flex justify-content-center w-100 row">
                         <div class="col-12 col-sm-6">
-                            <button @click="applyFilter" class="btn btn-outline-success w-100 mb-1">Apply filter
+                            <button @click="applyFilter" class="btn btn-outline-success w-100 mb-1">
+                                {{$trans('profile.find_loads.button_1')}}
                             </button>
-                            <button @click="resetFilter" class="btn btn-outline-warning w-100">Reset filter</button>
+                            <button @click="resetFilter" class="btn btn-outline-warning w-100">
+                                {{$trans('profile.find_loads.button_2')}}
+                            </button>
 
                         </div>
 
@@ -74,13 +76,18 @@
                             <div class="row m-0">
 
                                 <div class="col-12 mt-2 mb-2">
-                                    <small style="color:lightgray;">Results {{listings.length}}</small>
+                                    <small style="color:lightgray;">{{$trans('profile.find_loads.small_2')}}
+                                        {{listings.length}}</small>
 
-                                    <button class="btn btn-link text-danger" style="margin: 0 !important; padding:0px 10px;" v-if="isFilter" @click="resetFilter">Reset filters</button>
+                                    <button class="btn btn-link text-danger"
+                                            style="margin: 0 !important; padding:0px 10px;"
+                                            v-if="isFilter" @click="resetFilter">
+                                        {{$trans('profile.find_loads.button_2')}}
+                                    </button>
                                 </div>
 
                                 <div class="col-12 mt-2 mb-2" v-if="isMovingActive">
-                                    <small>Volume, m<sup>3</sup></small>
+                                    <small>{{$trans('profile.find_loads.small_3')}}<sup>3</sup></small>
 
                                     <div class="row m-0">
                                         <div class="col-sm-6 mb-2 p-1">
@@ -88,14 +95,14 @@
                                                    v-model="filter.volume_range_value[0]"
                                                    min="0"
                                                    :max="filter.volume_range_value[1]"
-                                                   placeholder="From">
+                                                   :placeholder="$trans('profile.find_loads.input_placeholder_2')">
 
                                         </div>
                                         <div class="col-sm-6 mb-2 p-1">
                                             <input type="number" class="form-control"
                                                    v-model="filter.volume_range_value[1]"
                                                    :min="filter.volume_range_value[0]"
-                                                   placeholder="To">
+                                                   :placeholder="$trans('profile.find_loads.input_placeholder_3')">
                                         </div>
                                     </div>
 
@@ -118,21 +125,21 @@
                                 </div>
 
                                 <div class="col-12 mt-2">
-                                    <small>Distance, km</small>
+                                    <small>{{$trans('profile.find_loads.small_4')}}</small>
                                     <div class="row m-0">
                                         <div class="col-sm-6 mb-2 p-1">
                                             <input type="number" class="form-control"
                                                    v-model="filter.distance_range_value[0]"
                                                    min="0"
                                                    :max="filter.distance_range_value[1]"
-                                                   placeholder="From">
+                                                   :placeholder="$trans('profile.find_loads.input_placeholder_2')">
 
                                         </div>
                                         <div class="col-sm-6 mb-2 p-1">
                                             <input type="number" class="form-control"
                                                    v-model="filter.distance_range_value[1]"
                                                    :min="filter.distance_range_value[0]"
-                                                   placeholder="To">
+                                                   :placeholder="$trans('profile.find_loads.input_placeholder_3')">
                                         </div>
                                     </div>
 
@@ -146,7 +153,7 @@
 
                                 </div>
                                 <div class="col-12 mt-2">
-                                    <small>Publication time, days</small>
+                                    <small>{{$trans('profile.find_loads.small_5')}}</small>
 
                                     <div class="p-1 w-100">
                                         <vue-slider
@@ -161,31 +168,31 @@
 
                                 <div class="col-12 mt-2">
 
-                                    <small>Enter ref-number</small>
+                                    <small>{{$trans('profile.find_loads.small_1')}}</small>
                                     <input type="number" class="form-control w-100"
                                            v-model="filter.reference"
-                                           placeholder="Reference">
+                                           :placeholder="$trans('profile.find_loads.input_placeholder_1')">
 
                                 </div>
 
                                 <div class="col-12 mt-2">
 
-                                    <small>Enter Postal code</small>
+                                    <small>{{$trans('profile.find_loads.small_6')}}</small>
 
                                     <input type="text" class="form-control w-100"
-                                           placeholder="Postal code"
+                                           :placeholder="$trans('profile.find_loads.input_placeholder_7')"
                                            v-model="filter.postal">
 
                                 </div>
 
                                 <div class="col-12 mt-2">
 
-                                    <small>Choose region</small>
+                                    <small>{{$trans('profile.find_loads.small_7')}}</small>
 
                                     <small @click="clearAddress()" v-if="this.filter.region"><i
                                         class="fas fa-times"></i></small>
                                     <address-input v-model="region" v-on:selected="selectAddress"
-                                                   placeholder="City, Region, Country">
+                                                   :placeholder="$trans('profile.find_loads.input_placeholder_4')">
 
                                     </address-input>
 
@@ -193,27 +200,30 @@
 
 
                                 <div class="col-12 mt-2">
-                                    <small>Shipping or unshipping date</small>
+                                    <small>{{$trans('profile.find_loads.small_8')}}</small>
                                     <date-picker v-model="filter.date_from" @input="changeDate"
-                                                 placeholder="Date from"
+                                                 :placeholder="$trans('profile.find_loads.input_placeholder_5')"
                                                  class="mb-2 w-100"
                                                  :value-type="'timestamp'"
                                     />
-                                    <date-picker v-model="filter.date_to" @input="changeDate" placeholder="Date to"
+                                    <date-picker v-model="filter.date_to" @input="changeDate"
+                                                 :placeholder="$trans('profile.find_loads.input_placeholder_6')"
                                                  class="mb-2 w-100"
                                                  :value-type="'timestamp'"
                                     />
                                 </div>
-                                <!--    <div class="col-12 mt-2">
-                                        <button @click="applyFilter" class="btn btn-outline-success w-100 mb-1">Apply filter
-                                        </button>
-                                        <button @click="resetFilter" class="btn btn-outline-warning w-100">Reset filter
-                                        </button>
-                                    </div>-->
 
 
                             </div>
                         </vue-custom-scrollbar>
+
+                        <div class="row" style="position:sticky; bottom: 10px; z-index: 9;">
+                            <div class="col-12 p-5"  >
+                                <button @click="applyFilter" class="btn btn-success w-100 mb-1 ">
+                                    {{$trans('profile.find_loads.button_1')}}
+                                </button>
+                            </div>
+                        </div>
 
 
                     </div>
@@ -229,22 +239,22 @@
                 <div class="col-sm-4">
                     <div class="step">
                         <span class="step-num">1</span>
-                        <h5 class="text-uppercase">FIND CUSTOMERS</h5>
-                        <p>To optimize your tours.</p>
+                        <h5 class="text-uppercase">{{$trans('profile.listing.h5_1')}}</h5>
+                        <p>{{$trans('profile.listing.p_1')}}.</p>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="step">
                         <span class="step-num">2</span>
-                        <h5 class="text-uppercase">SUBMIT YOUR QUOTE</h5>
-                        <p>in just two minutes!</p>
+                        <h5 class="text-uppercase">{{$trans('profile.listing.h5_2')}}</h5>
+                        <p>{{$trans('profile.listing.p_2')}}</p>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="step">
                         <span class="step-num">3</span>
-                        <h5 class="text-uppercase">INCREASE YOUR SALES REVENUE</h5>
-                        <p>More than 20 Million in business volume</p>
+                        <h5 class="text-uppercase">{{$trans('profile.listing.h5_3')}}</h5>
+                        <p>{{$trans('profile.listing.p_3')}}</p>
                     </div>
                 </div>
 
@@ -479,12 +489,12 @@
         },
 
         watch: {
-            filter: {
-                handler: function (val, oldVal) {
-                    this.applyFilter()
-                },
-                deep: true
-            }
+            /* filter: {
+                 handler: function (val, oldVal) {
+                     this.applyFilter()
+                 },
+                 deep: true
+             }*/
         },
 
         computed: {
@@ -495,12 +505,12 @@
                     tmp.date_from != null || tmp.date_to != null ||
                     tmp.user_id != null || tmp.formula.length > 0 ||
                     tmp.region != null || tmp.reference != null || tmp.postal != null
-                  /*  tmp.distance_range_value[0]!= this.distanceRanger.options.min||
-                    tmp.distance_range_value[1]!= this.distanceRanger.options.max||
-                    tmp.volume_range_value[0]!= this.volumeRanger.options.min||
-                    tmp.volume_range_value[1]!= this.volumeRanger.options.max||
-                    tmp.publication_time_range_value[0]!= this.publicationTimeRanger.options.min||
-                    tmp.publication_time_range_value[1]!= this.publicationTimeRanger.options.max*/
+                /*  tmp.distance_range_value[0]!= this.distanceRanger.options.min||
+                  tmp.distance_range_value[1]!= this.distanceRanger.options.max||
+                  tmp.volume_range_value[0]!= this.volumeRanger.options.min||
+                  tmp.volume_range_value[1]!= this.volumeRanger.options.max||
+                  tmp.publication_time_range_value[0]!= this.publicationTimeRanger.options.min||
+                  tmp.publication_time_range_value[1]!= this.publicationTimeRanger.options.max*/
             },
             categories() {
                 return this.$store.getters.categories;
@@ -652,7 +662,7 @@
                 this.clearAddress()
                 this.clearDates()
 
-                this.$nextTick(()=>{
+                this.$nextTick(() => {
                     window.eventBus.$emit("preloader")
                     this.$store.dispatch('getListings');
                 })

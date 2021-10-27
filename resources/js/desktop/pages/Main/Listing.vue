@@ -8,34 +8,22 @@
                         <button type="button" class="btn btn-outline-primary w-100"
                                 v-if="user.is_transporter||user.id===listing.user_id"
                                 data-toggle="modal" data-target="#quoteModal">
-                            <span>Quotes <i class="fas fa-gavel"></i></span>
+                            <span> {{$trans('profile.listing.span_1')}} <i class="fas fa-gavel"></i></span>
                         </button>
 
 
                         <button type="button" class="btn btn-outline-primary w-100"
                                 v-if="user.is_transporter||user.id===listing.user_id"
                                 data-toggle="modal" data-target="#chatModal">
-                            <span>Messages <i class="far fa-comments"></i></span>
+                            <span> {{$trans('profile.listing.span_2')}} <i class="far fa-comments"></i></span>
                         </button>
 
-                       <!--  <button type="button" class="btn btn-outline-primary w-100"
-                             v-if="user.is_transporter||user.id===listing.user_id"
-                                 @click="initMap"
-                             data-toggle="modal" data-target="#mapModal">
-                         <i class="fas fa-route"></i>
-                     </button>-->
                     </div>
                 </div>
             </div>
             <div class="row ">
                 <div class="col-12">
-
-
                     <listing-item-component :listing="listing" :details="false" v-if="listing"/>
-
-
-
-
                 </div>
                 <div class="col-12 mt-2">
                     <div id="map" v-if="showMap" style="width:100%; height:300px;"></div>
@@ -49,7 +37,7 @@
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-between">
                     <li class="page-item col">
-                        <a class="page-link" :href="'/listing/direction/'+listing_id+'/0'" tabindex="-1">Previous</a>
+                        <a class="page-link" :href="'/listing/direction/'+listing_id+'/0'" tabindex="-1"> {{$trans('profile.listing.a_1')}}</a>
                     </li>
                     <li class="page-item col">
                         <a class="page-link" href="/find-loads">
@@ -57,7 +45,7 @@
                         </a>
                     </li>
                     <li class="page-item col">
-                        <a class="page-link" :href="'/listing/direction/'+listing_id+'/1'">Next</a>
+                        <a class="page-link" :href="'/listing/direction/'+listing_id+'/1'"> {{$trans('profile.listing.a_2')}}</a>
                     </li>
                 </ul>
             </nav>
@@ -65,12 +53,12 @@
         <!-- End Pagination -->
 
         <!-- Modal -->
-        <div class="modal modal-fullscreen fade" id="quoteModal" data-backdrop="static" data-keyboard="false"
+        <div class="modal  fade" id="quoteModal" data-backdrop="static" data-keyboard="false"
              tabindex="-1" aria-labelledby="quoteModal" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-xl">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="quoteModalHeader">Quotes</h5>
+                        <h5 class="modal-title" id="quoteModalHeader"> {{$trans('profile.listing.h5_3')}}</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -84,32 +72,13 @@
         </div>
 
 
-     <!--   <div class="modal modal-fullscreen fade" id="mapModal" data-backdrop="static" data-keyboard="false"
-             tabindex="-1" aria-labelledby="mapModal" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="mapModalHeader">Map</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-
-                    <div class="modal-body">
-                        <div id="map" v-if="showMap" style="width:100%; height:100vh;"></div>
-                    </div>
-                </div>
-            </div>
-        </div>-->
-
-
         <!-- Modal -->
-        <div class="modal modal-fullscreen fade" id="chatModal" data-backdrop="static" data-keyboard="false"
+        <div class="modal  fade" id="chatModal" data-backdrop="static" data-keyboard="false"
              tabindex="-1" aria-labelledby="chatModal" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-xl">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="chatModalHeader">Messenger</h5>
+                        <h5 class="modal-title" id="chatModalHeader"> {{$trans('profile.listing.h5_4')}}</h5>
 
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>

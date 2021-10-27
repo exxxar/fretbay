@@ -51,13 +51,14 @@
             prepareLink: function () {
                 return ([
                     '#',
-                    '/messages/',
-                    '/listings/',
-                    '/quotes/',
-                    '/orders/',
+                    '/single/message/',
+                    '/single/listing/',
+                    '/single/quote/',
+                    '/single/order/',
                     '/customer/profile/',
                     '/transporter/profile/',
-                    '/review/',
+                    '/single/review/',
+                    '/single/notification/',
 
                 ][this.item.object_type] || '#') + this.item.object_id;
             }

@@ -12,14 +12,14 @@
                                 <p
                                     v-bind:class="{'bg-danger':message.deleted_at||message.id==null}"
                                     class="d-flex justify-content-between">{{message.message}}
-                                 <!--   <a href="#remove" @click="selected_message_id=message.id">
-                                        <i class="fas fa-times"></i>
-                                    </a>-->
+                                    <!--   <a href="#remove" @click="selected_message_id=message.id">
+                                           <i class="fas fa-times"></i>
+                                       </a>-->
                                 </p>
 
                                 <span class="time_date"> {{message.created_at| moment("from", "now", true)}}</span>
 
-                                <div class="row d-flex justify-content-center" v-if="selected_message_id===message.id">
+                                <!--<div class="row d-flex justify-content-center" v-if="selected_message_id===message.id">
                                     <div class="col-6">
                                         <button class="btn btn-danger w-100" @click="removeMessage">
                                             Remove
@@ -30,7 +30,7 @@
                                                 class="btn btn-secondary w-100">Cancel
                                         </button>
                                     </div>
-                                </div>
+                                </div>-->
                             </div>
                         </div>
 
@@ -40,7 +40,7 @@
                             <div class="incoming_msg_img"><img v-if="message.sender"
                                                                v-lazy="message.sender.avatar" alt="sunil">
                             </div>
-                            <div class="received_msg " @click="selectUser(message.sender)">
+                            <div class="received_msg cursor-pointer" @click="selectUser(message.sender)">
                                 <div class="received_withd_msg w-100 w-md-55 ">
                                     <h6>#{{message.sender.id}} {{message.sender.name}}</h6>
                                     <p>{{message.message}}</p>
@@ -63,7 +63,6 @@
                     <div class="control_row mt-2 mb-2 d-flex align-items-end">
 
 
-
                         <!--<span class="badge badge-primary mr-2 ml-2 cursor-pointer" data-dismiss="modal" aria-label="Close">
                         <strong>Close</strong>
                     </span>-->
@@ -73,35 +72,40 @@
                               @click="forMe = !forMe"
                         >
 
-                        <strong v-if="forMe">Any</strong>
-                        <strong v-if="!forMe">Only for me</strong>
+                        <strong v-if="forMe">{{$trans('profile.chat.strong_1')}}</strong>
+                        <strong v-if="!forMe">{{$trans('profile.chat.strong_2')}}</strong>
                     </span>
 
                         <span class="badge mr-2 cursor-pointer"
                               v-bind:class="{'badge-secondary':!searchMode,'badge-purple':searchMode}"
                               @click="searchMode=!searchMode"
                         >
-                           <strong v-if="searchMode">Message</strong>
-                           <strong v-if="!searchMode">Search</strong>
+                           <strong v-if="searchMode">{{$trans('profile.chat.strong_3')}}</strong>
+                           <strong v-if="!searchMode">{{$trans('profile.chat.strong_4')}}</strong>
                         </span>
-                        <span class="badge badge-danger mr-2" v-if="isPhone" @click="reset">Remove number!</span>
+                        <span class="badge badge-danger mr-2" v-if="isPhone" @click="reset">{{$trans('profile.chat.span_1')}}</span>
                         <span class="input_type_counter mr-2" style="color: lightgrey;" v-if="message"><small>{{message.length}}/255</small> </span>
-                        <span v-if="selected_user">{{selected_user.name}} <a href="#" @click="selected_user=null"><i class="fas fa-times"></i></a></span>
+                        <span v-if="selected_user"><strong>Send to:</strong> <em>{{selected_user.name}}</em> <a href="#"
+                                                                                                                @click="selected_user=null"><i
+                            class="fas fa-times"></i></a></span>
                     </div>
                     <div class="type_msg">
 
                         <div class="input_msg_write" style="padding:10px;">
 
-                            <div class="row pb-2">
+                            <div class="row p-2">
                                 <div class="col-12 col-md-10">
-                                    <input type="text" class="write_msg p-2" placeholder="Type a message"
+                                    <input type="text" class="write_msg p-2"
+                                           :placeholder="$trans('profile.chat.input_placeholder_1')"
                                            v-model="message"
                                            v-if="!searchMode"
                                            maxlength="255"
                                            v-on:keypress.enter="sendMessage"
                                     />
 
-                                    <input type="search" class="write_msg p-2" placeholder="Search" v-if="searchMode"
+                                    <input type="search" class="write_msg p-2"
+                                           :placeholder="$trans('profile.chat.input_placeholder_2')"
+                                           v-if="searchMode"
                                            v-model="search">
 
                                 </div>
@@ -109,10 +113,11 @@
                                     <div class="btn-group w-100">
 
                                         <button class="btn" type="button"
-                                                :disabled="isPhone"
+                                                :disabled="isPhone||message.length==0 || timeout!= null"
                                                 v-bind:class="{'btn-danger':isPhone,'btn-primary':!isPhone}"
                                                 @click="sendMessage"
                                         >
+                                            <span v-if="timeout">{{timeout}}</span>
                                             <i class="far fa-envelope"></i>
                                         </button>
                                     </div>
@@ -140,6 +145,7 @@
         data() {
             return {
                 forMe: false,
+                timeout: null,
                 isPhone: false,
                 message: '',
                 searchMode: false,
@@ -157,9 +163,8 @@
             setInterval(() => {
                 this.loadMessages();
 
-                if (this.messages.length>length)
-                {
-                    length = this.messages.length
+                if (this.filteredMessages.length > length) {
+                    length = this.filteredMessages.length
 
                     this.$nextTick(() => {
                         document.querySelector('.msg_history').scrollTo(0, document.querySelector('.msg_history').scrollHeight);
@@ -172,6 +177,9 @@
             filteredMessages() {
                 if (!this.listing)
                     return [];
+
+                if (!this.messages)
+                    return []
 
                 if (this.forMe === true)
                     return this.messages.filter(item => item.message.toLowerCase().indexOf(this.search.toLowerCase()) != -1 && item.recipient_id === this.user.id)
@@ -199,17 +207,17 @@
                     if (!!parseInt(item))
                         counter++;
 
-                    if (counter >= 5)
+                    if (counter >= 7)
                         hasNum = true;
                 })
 
-                this.isPhone = findPhoneNumbersInText(this.message).length > 0 || parseInt(this.message) || hasNum
+                this.isPhone = findPhoneNumbersInText(this.message).length > 0 || hasNum
 
             }
         },
         methods: {
-            selectUser(user){
-              this.selected_user = user
+            selectUser(user) {
+                this.selected_user = user
             },
             reset() {
                 let tmp = this.message.split('')
@@ -253,9 +261,8 @@
             },
             sendMessage() {
 
-                if (this.isPhone)
+                if (this.isPhone || this.message.length == 0 || this.timeout != null)
                     return;
-
 
 
                 let messageIndex = (this.messages.push({
@@ -267,7 +274,6 @@
                 })) - 1;
 
 
-
                 this.$nextTick(() => {
                     document.querySelector('.msg_history').scrollTo(0, document.querySelector('.msg_history').scrollHeight);
                 })
@@ -275,17 +281,35 @@
                 axios.post("/listing/messages/send", {
                     "message": this.message,
                     "listing_id": this.listing.id,
-                    'recipient_id': this.selected_user? this.selected_user.id : this.listing.user_id,
+                    'recipient_id': this.selected_user ? this.selected_user.id : this.listing.user_id,
                     'user_id': this.user.id
                 }).then(resp => {
 
                     ///this.messages[messageIndex].temporary = false;
-                    this.messages[messageIndex].id = resp.data.id
+
                     this.loadMessages();
 
+                    this.messages[messageIndex].id = resp.data.id
+
+                }).catch(() => {
+                    localStorage.setItem("timeout", 30)
+                    let timer = setInterval(() => {
+                        let time = localStorage.getItem("timeout");
+                        time--;
+                        this.timeout = time + " s"
+                        localStorage.setItem("timeout", time)
+
+
+                        if (time == 0) {
+                            clearInterval(timer)
+
+                            this.timeout = null
+                        }
+
+                    }, 1000)
                 })
 
-                this.message = null
+                this.message = ''
             }
         }
     }
@@ -323,6 +347,7 @@
 
     .msg_history {
         height: 75vh !important;
+        padding-bottom: 250px !important;
 
     }
 
@@ -336,10 +361,10 @@
 
 
     .bottom-controls {
-        position: fixed;
+        position: absolute;
         bottom: 0px;
         width: 100%;
-        height: 166px;
+        min-height: 122px;
         left: 0;
         background: white;
         border-top: 2px #00a600 solid;

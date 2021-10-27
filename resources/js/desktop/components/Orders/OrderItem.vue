@@ -6,15 +6,15 @@
             <hr>
             <p class="text-primary">{{status}}</p>
             <hr>
-            <h5>Customer contact details:</h5>
+            <h5>{{$trans('profile.order.h5_1')}}</h5>
             <div class="row">
                 <div class="col-sm-6 col-12">
-                    <p>Name: <strong>{{order.user.name}}</strong></p>
-                    <p>Email: <strong>{{order.user.email}}</strong></p>
+                    <p>{{$trans('profile.order.p_1')}}: <strong>{{order.user.name}}</strong></p>
+                    <p>{{$trans('profile.order.p_2')}}: <strong>{{order.user.email}}</strong></p>
                 </div>
                 <div class="col-sm-6 col-12">
-                    <p>Phone 1: <strong>{{order.user.profile.telephone_number_1}}</strong></p>
-                    <p>Phone 2: <strong>{{order.user.profile.telephone_number_2}}</strong></p>
+                    <p>{{$trans('profile.order.p_3')}}: <strong>{{order.user.profile.telephone_number_1}}</strong></p>
+                    <p>{{$trans('profile.order.p_4')}}: <strong>{{order.user.profile.telephone_number_2}}</strong></p>
                 </div>
             </div>
 
@@ -22,7 +22,8 @@
         </div>
         <div class="card-body d-md-flex justify-content-between align-items-center py-4 px-0 flex-wrap">
             <md-steppers :md-active-step.sync="currentStep" md-vertical md-linear>
-                <md-step id="first" md-label="Begin mission & Loading" md-description="Optional" :md-editable="false"
+                <md-step id="first" :md-label="$trans('profile.order.label_1')"
+                         :md-description="$trans('profile.order.description_1')" :md-editable="false"
                          :md-done.sync="first">
 
                     <div class="row w-100 mt-1 m-0">
@@ -40,7 +41,7 @@
                                 </svg>
                             </i>
 
-                            <strong>Place of loading:</strong>
+                            <strong>{{$trans('profile.order.strong_1')}}:</strong>
                         </div>
                         <div class="col-sm-8 col-12 p-0">
                             <a class="d-flex align-items-center text-secondary" href="#">
@@ -51,7 +52,7 @@
 
                             </a>
 
-                            <small> Load between
+                            <small> {{$trans('profile.order.small_1')}}
                                 <strong style="color: #0fb15d">
                                     {{listing.shipping_date_from | moment('DD.MM')}}
                                 </strong>
@@ -79,7 +80,7 @@
                                 </svg>
                             </i>
 
-                            <strong>Place of delivery:</strong>
+                            <strong>{{$trans('profile.order.strong_2')}}:</strong>
                         </div>
                         <div class="col-sm-8 col-12 p-0">
                             <a class="d-flex align-items-center text-secondary" href="#">
@@ -89,7 +90,7 @@
                                 {{listing.place_of_delivery.place_name}}
                             </a>
 
-                            <small> Delivered between
+                            <small> {{$trans('profile.order.small_2')}}
                                 <strong style="color: #0fb15d">
                                     {{listing.unshipping_date_from | moment('DD.MM')}}
                                 </strong> and
@@ -100,7 +101,7 @@
                         </div>
 
                         <div class="col-sm-4 col-12 pl-0" v-if="listing.distance>0">
-                            <p class="ml-sm-5 ml-0 p-sm-2 p-0 mt-2 mt-sm-0">Distance
+                            <p class="ml-sm-5 ml-0 p-sm-2 p-0 mt-2 mt-sm-0">{{$trans('profile.order.p_5')}}
                                 <strong>{{listing.distance}}</strong> km
                             </p>
                         </div>
@@ -115,10 +116,13 @@
                     </div>
 
 
-                    <md-button class="md-raised md-primary" @click="setDone('first', 'second')">Continue</md-button>
+                    <md-button class="md-raised md-primary" @click="setDone('first', 'second')">
+                        {{$trans('profile.order.button_1')}}
+                    </md-button>
                 </md-step>
 
-                <md-step id="second" md-label="Shipping & Unloading & Complete" md-description="Optional"
+                <md-step id="second" :md-label="$trans('profile.order.label_2')"
+                         :md-description="$trans('profile.order.description_2')"
                          :md-error="secondStepError"
                          :md-editable="false" :md-done.sync="second">
 
@@ -138,7 +142,7 @@
                                 </svg>
                             </i>
 
-                            <strong>Place of delivery:</strong>
+                            <strong>{{$trans('profile.order.strong_2')}}:</strong>
                         </div>
                         <div class="col-sm-8 col-12 p-0">
                             <a class="d-flex align-items-center text-secondary" href="#">
@@ -148,7 +152,7 @@
                                 {{listing.place_of_delivery.place_name}}
                             </a>
 
-                            <small> Delivered between
+                            <small> {{$trans('profile.order.small_2')}}
                                 <strong style="color: #0fb15d">
                                     {{listing.unshipping_date_from | moment('DD.MM')}}
                                 </strong> and
@@ -160,17 +164,22 @@
                     </div>
 
 
-                    <md-button class="md-raised md-primary" @click="setDone('second', 'third')">Complete</md-button>
-                    <md-button class="md-raised md-primary" @click="setError()">Not delivered!</md-button>
+                    <md-button class="md-raised md-primary" @click="setDone('second', 'third')">
+                        {{$trans('profile.order.button_2')}}
+                    </md-button>
+                    <md-button class="md-raised md-primary" @click="setError()">{{$trans('profile.order.button_3')}}
+                    </md-button>
                 </md-step>
 
 
-                <md-step id="third" md-label="Complete" md-description="Optional" :md-editable="false"
+                <md-step id="third"
+                         :md-label="$trans('profile.order.label_3')"
+                         :md-description="$trans('profile.order.description_3')" :md-editable="false"
                          :md-done.sync="third">
 
                     <div class="row" v-if="order.review">
                         <div class="col-12">
-                            <h4>Customer review <span
+                            <h4>{{$trans('profile.order.h4_1')}} <span
                                 class="p-2 font-size-28"
                                 v-bind:class="{
                                             'text-danger':order.review.type===0,
@@ -178,23 +187,19 @@
                                             'text-primary':order.review.type===2,
                                         }"
                                 v-html="prepareReviewType(order.review.type).data">
-                                </span> </h4>
+                                </span></h4>
                             <hr>
                             <h5>{{order.review.title}}</h5>
                             <p>{{order.review.text}}</p>
-                            <h6>Customer reaction</h6>
+                            <h6>{{$trans('profile.order.h6_1')}}</h6>
 
 
-                            <p><em   v-html="prepareReviewType(order.review.type).description"></em></p>
+                            <p><em v-html="prepareReviewType(order.review.type).description"></em></p>
                             <hr>
                         </div>
                     </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias doloribus eveniet quaerat modi
-                        cumque quos sed, temporibus nemo eius amet aliquid, illo minus blanditiis tempore, dolores
-                        voluptas dolore placeat nulla.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias doloribus eveniet quaerat modi
-                        cumque quos sed, temporibus nemo eius amet aliquid, illo minus blanditiis tempore, dolores
-                        voluptas dolore placeat nulla.</p>
+                    <p v-html="$trans('profile.order.p_6')"></p>
+
                 </md-step>
 
             </md-steppers>

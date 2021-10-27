@@ -4,12 +4,13 @@
         <div style="position:sticky; top:30px;z-index:100;background:white;">
             <div class="row w-100 m-auto">
                 <div class="col-12 col-sm-7">
-                    <h4 class="text-sm-left text-center">Volume calculator </h4>
+                    <h4 class="text-sm-left text-center">{{$trans('request_a_quote.section_3.h4_1')}}</h4>
                 </div>
 
                 <div class="col-12 col-sm-5">
-                    <p class="mt-2 text-sm-right text-center" style="line-height: 200%;">Total volume {{volumeCartTotalVolume.toFixed(2)}} <em
-                        class="text-bold">m<sup>3</sup></em>  <a href="#reset" v-if="volumeCartTotalVolume>0" class="btn btn-link color-primary p-0 ml-2" @click="resetVolume"><i class="far fa-trash-alt"></i></a></p>
+                    <p class="mt-2 text-sm-right text-center" style="line-height: 200%;">{{$trans('request_a_quote.section_3.p_1')}} {{volumeCartTotalVolume.toFixed(2)}} <em
+                        class="text-bold">m<sup>3</sup></em>
+                        <a href="#reset" v-if="volumeCartTotalVolume>0" class="btn btn-link color-primary p-0 ml-2" @click="resetVolume"><i class="far fa-trash-alt"></i></a></p>
 
                 </div>
             </div>
@@ -37,7 +38,7 @@
                             <input v-model="search"
                                    type="search"
                                    class="form-control w-100"
-                                   placeholder="Search">
+                                   :placeholder="$trans('request_a_quote.section_3.input_placeholder_1')">
                         </div>
                     </div>
                 </div>

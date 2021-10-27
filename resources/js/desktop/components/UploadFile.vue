@@ -5,13 +5,14 @@
         >
             <input type="file" id="file" ref="upload" v-on:change="handleFile()"/>
             <p>
-                Drag and drop picture here <br> or click to search
+                {{$trans('request_a_quote.section_5.p_5')}}
+
             </p>
         </div>
         <div class="row w-100 m-auto" @dragenter="dragging=true" v-show="!dragging">
             <div class="col-12 px-0 mb-1">
                 <slot name="uploadButton">
-                    <button class="btn btn-primary w-100" @click="startUpload">Upload</button>
+                    <button class="btn btn-primary w-100" @click="startUpload">{{$trans('request_a_quote.section_5.button_upload')}}</button>
                 </slot>
             </div>
         </div>
@@ -21,7 +22,7 @@
                     <img class="preview" ref="file_preview" style="width:100%; max-height:300px; object-fit: cover;" alt="">
                 </div>
                 <div class="col-12 p-0">
-                    <button class="btn btn-outline-blue mt-2 mx-auto w-100" v-on:click="removeFile">Remove</button>
+                    <button class="btn btn-outline-blue mt-2 mx-auto w-100" v-on:click="removeFile">{{$trans('request_a_quote.section_5.button_remove')}}</button>
                 </div>
             </slot>
         </div>

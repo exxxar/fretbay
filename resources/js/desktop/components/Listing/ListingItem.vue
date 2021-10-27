@@ -29,8 +29,8 @@
             </div>
 
             <div class="counters">
-                <span class="badge badge-primary"><small>{{listing.status||"In progress"}}</small></span>
-                <span class="badge badge-purple" v-if="user&&listing.user_id==user.id"><small>Your</small></span>
+                <span class="badge badge-primary"><small>{{listing.status||$trans('profile.listing.in_progress')}}</small></span>
+                <span class="badge badge-purple" v-if="user&&listing.user_id==user.id"><small>{{$trans('profile.listing.your')}}</small></span>
             </div>
 
 
@@ -64,8 +64,8 @@
 
             <div
                 class="text-md-right text-left align-items-sm-end text-secondary d-flex flex-column justify-content-center align-items-start">
-                <p class="mb-0" style="font-size: 12px; color: #8e949a">Publication time</p>
-                Since {{listing.created_at | moment("from", "now", true)}}
+                <p class="mb-0" style="font-size: 12px; color: #8e949a">{{$trans('profile.listing.publication_at')}}</p>
+                 {{listing.created_at | moment('DD.MM.YYYY HH:mm') }}
 
 
             </div>
@@ -86,7 +86,7 @@
                         </svg>
                     </i>
 
-                    <strong>Place of loading:</strong>
+                    <strong>{{$trans('profile.listing.place_of_loading')}}:</strong>
                 </div>
                 <div class="col-sm-8 col-12 p-0">
                     <a class="d-flex align-items-center text-secondary" href="#">
@@ -97,7 +97,7 @@
 
                     </a>
 
-                    <small> Load between
+                    <small> {{$trans('profile.listing.load_between')}}
                         <strong style="color: #0fb15d">
                             {{listing.shipping_date_from | moment('DD.MM')}}
                         </strong>
@@ -125,7 +125,7 @@
                         </svg>
                     </i>
 
-                    <strong>Place of delivery:</strong>
+                    <strong>{{$trans('profile.listing.place_of_delivery')}}:</strong>
                 </div>
                 <div class="col-sm-8 col-12 p-0">
                     <a class="d-flex align-items-center text-secondary" href="#">
@@ -135,7 +135,7 @@
                         {{listing.place_of_delivery.place_name}}
                     </a>
 
-                    <small> Delivered between
+                    <small> {{$trans('profile.listing.delivered_between')}}
                         <strong style="color: #0fb15d">
                             {{listing.unshipping_date_from | moment('DD.MM')}}
                         </strong> and
@@ -146,9 +146,9 @@
                 </div>
 
                 <div class="col-sm-4 col-12 pl-0" v-if="listing.distance>0">
-                    <p class="ml-sm-5 ml-0 p-sm-2 p-0 mt-2 mt-sm-0">Distance <strong>{{listing.distance}}</strong> km
+                    <p class="ml-sm-5 ml-0 p-sm-2 p-0 mt-2 mt-sm-0">{{$trans('profile.listing.distance')}} <strong>{{listing.distance}}</strong> km
                     </p>
-                    <p class="ml-sm-5 ml-0 p-sm-2 p-0 mt-2 mt-sm-0" v-if="listing.additional_info">Description: <em>{{listing.additional_info}}</em>
+                    <p class="ml-sm-5 ml-0 p-sm-2 p-0 mt-2 mt-sm-0" v-if="listing.additional_info">{{$trans('profile.listing.description')}}: <em>{{listing.additional_info}}</em>
                     </p>
                 </div>
 
@@ -181,13 +181,13 @@
 
                     <div class="btn-group" v-if="listing.user_id===user.id">
                         <button class="btn btn-outline-danger" v-if="!listing.deleted_at"
-                                data-toggle="modal" :data-target="'#removeModal-'+listing.id"
+                                data-toggle="modal" :data-target="'#removeModal-'+listing.id+modalPrefix"
 
                         ><i
                             class="far fa-trash-alt"></i>
                         </button>
                         <button class="btn btn-outline-danger"
-                                data-toggle="modal" :data-target="'#archiveModal-'+listing.id"
+                                data-toggle="modal" :data-target="'#archiveModal-'+listing.id+modalPrefix"
 
                                 v-if="listing.is_active&&!listing.deleted_at">
                             <i class="fas fa-archive"></i>
@@ -202,35 +202,6 @@
 
                     </div>
 
-                  <!--  <div class="btn-group" >
-                        <button type="button" class="btn btn-outline-primary w-100"
-                                v-if="user.is_transporter||user.id===listing.user_id"
-                                data-toggle="modal" :data-target="'#quoteModal-'+listing.id">
-                            <i class="fas fa-gavel"></i>
-                        </button>
-
-
-                        <button type="button" class="btn btn-outline-primary w-100"
-                                v-if="user.is_transporter||user.id===listing.user_id"
-                                data-toggle="modal" :data-target="'#chatModal-'+listing.id">
-                            <i class="far fa-comments"></i>
-                        </button>
-
-                      &lt;!&ndash;  <button type="button" class="btn btn-outline-primary w-100"
-                                v-if="user.is_transporter||user.id===listing.user_id"
-                                data-toggle="modal" :data-target="'#chatModal-'+listing.id">
-                            <i class="fas fa-route"></i>
-                        </button>&ndash;&gt;
-
-
-&lt;!&ndash;
-                    <a class="btn btn-primary" v-if="(user.is_transporter||user.id===listing.user_id)&&details"
-                       :href="'/listing/'+listing.id"
-
-                    > <i
-                        class="fas fa-angle-double-right"></i>
-                    </a>&ndash;&gt;
-                    </div>-->
 
 
                 </div>
@@ -263,7 +234,7 @@
 
                     <strong class="w-100 mt-2 p-2"
                             v-if="listing.category.mode ==='article' && listing.articles.length>1">{{listing.articles.length}}
-                        articles:</strong>
+                        {{$trans('profile.listing.articles')}}:</strong>
 
 
                     <div class="d-flex space-between flex-wrap mt-2 w-100"
@@ -299,30 +270,30 @@
         </div>
 
         <!-- Modal -->
-        <div class="modal fade" :id="'removeModal-'+listing.id" data-backdrop="static" data-keyboard="false" tabindex="-1" :aria-labelledby="'removeModal-'+listing.id" aria-hidden="true">
+        <div class="modal fade" :id="'removeModal-'+listing.id+modalPrefix" data-backdrop="static" data-keyboard="false" tabindex="-1" :aria-labelledby="'removeModal-'+listing.id" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="quoteModalHeader">Remove listing?</h5>
+                        <h5 class="modal-title" id="quoteModalHeader">{{$trans('profile.listing.h5_1')}}</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
                         <div class="row d-flex justify-content-center">
-                            <div class="col-6"><button class="btn btn-danger w-100" data-dismiss="modal" @click="removeListing">Remove</button></div>
-                            <div class="col-6"><button data-dismiss="modal" aria-label="Close" class="btn btn-secondary w-100">Cancel</button></div>
+                            <div class="col-6"><button class="btn btn-danger w-100" data-dismiss="modal" @click="removeListing">{{$trans('profile.listing.button_1')}}</button></div>
+                            <div class="col-6"><button data-dismiss="modal" aria-label="Close" class="btn btn-secondary w-100">{{$trans('profile.listing.button_2')}}</button></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="modal fade" :id="'archiveModal-'+listing.id" data-backdrop="static" data-keyboard="false" tabindex="-1" :aria-labelledby="'archiveModal-'+listing.id" aria-hidden="true">
+        <div class="modal fade" :id="'archiveModal-'+listing.id+modalPrefix" data-backdrop="static" data-keyboard="false" tabindex="-1" :aria-labelledby="'archiveModal-'+listing.id" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="quoteModalHeader2">Add listing to Archive?</h5>
+                        <h5 class="modal-title" id="quoteModalHeader2">{{$trans('profile.listing.h5_2')}}</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -330,8 +301,8 @@
 
                     <div class="modal-body">
                         <div class="row d-flex justify-content-center">
-                            <div class="col-6"><button class="btn btn-danger w-100" data-dismiss="modal" @click="archiveListing">To Archive</button></div>
-                            <div class="col-6"><button data-dismiss="modal" aria-label="Close" class="btn btn-secondary w-100">Cancel</button></div>
+                            <div class="col-6"><button class="btn btn-danger w-100" data-dismiss="modal" @click="archiveListing">{{$trans('profile.listing.button_3')}}</button></div>
+                            <div class="col-6"><button data-dismiss="modal" aria-label="Close" class="btn btn-secondary w-100">{{$trans('profile.listing.button_2')}}</button></div>
                         </div>
                     </div>
                 </div>
@@ -346,7 +317,7 @@
     // optional style for arrows & dots
     import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
     import VueGallerySlideshow from 'vue-gallery-slideshow'
-
+    import { v4 as uuidv4 } from 'uuid';
     export default {
         props: {
             listing: Object,
@@ -363,6 +334,7 @@
         },
         data() {
             return {
+                modalPrefix: null,
                 imageIndex: null,
 
                 tmp_favorites: [],
@@ -445,6 +417,9 @@
                 return tmp;
             }
 
+        },
+        created(){
+          this.modalPrefix = uuidv4()
         },
         methods: {
             removeListing() {

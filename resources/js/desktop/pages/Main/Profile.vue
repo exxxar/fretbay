@@ -1,5 +1,8 @@
 <template>
 <!--    <div class="container">-->
+
+
+
     <div>
         <div class="container">
             <div class="row w-100 mx-auto my-5" style="min-height:100vh;">
@@ -13,24 +16,27 @@
                                         <div class="col-12 p-0 ">
                                             <div class="row w-100 mx-auto align-items-center d-flex justify-content-center justify-content-sm-start" v-if="info.is_approved">
                                                 <img src="/images/profile/approved.png" class="mr-1" style="width: 25px; height: 25px" alt="Approved">
-                                                <span class="text-uppercase" style="font-size:14px">Profile verified and certified by AlloTrans</span>
+                                                <span class="text-uppercase" style="font-size:14px">{{$trans('profile.public_profile.span_1')}}</span>
                                             </div>
                                             <div class="row w-100 mx-auto align-items-center d-flex justify-content-center justify-content-sm-start" v-if="!info.is_approved">
                                                 <img src="/images/profile/not_approved.png" class="mr-1" style="width: 25px; height: 25px" alt="Not approved">
-                                                <span class="text-uppercase" style="font-size:14px">Profile is not verified</span>
+                                                <span class="text-uppercase" style="font-size:14px">{{$trans('profile.public_profile.span_2')}}</span>
                                             </div>
                                         </div>
                                     </div>
-                                    <p class="text-secondary mb-1 text-uppercase letter-spacing-0_06 d-flex justify-content-center justify-content-sm-start" style="font-size: 10px"><strong>Member since</strong></p>
+                                    <p class="text-secondary mb-1 text-uppercase letter-spacing-0_06 d-flex justify-content-center justify-content-sm-start" style="font-size: 10px" v-html="$trans('profile.public_profile.p_1')"></p>
                                     <p class="mb-1 text-dark d-flex justify-content-center justify-content-sm-start">{{info.created_at | moment("DD.MM.YYYY")}}</p>
                                     <p class="mb-1 text-dark d-flex justify-content-center justify-content-sm-start">  <star-rating v-model="user.computed_rating" :show-rating="false" :read-only="true"/></p>
-                                    <p class="text-secondary mb-1 text-uppercase letter-spacing-0_06" style="font-size: 10px" v-if="info.payment_methods.length>0"><strong>Accepted payment methods</strong></p>
+                                    <p class="text-secondary mb-1 text-uppercase letter-spacing-0_06" style="font-size: 10px" v-if="info.payment_methods.length>0" v-html="$trans('profile.public_profile.p_2')"></p>
                                     <div class="row w-100 m-auto" v-if="info.payment_methods.length>0">
                                         <span class="u-label u-label--xs u-label--primary text-uppercase letter-spacing-0_06 mr-2 mb-2" v-for="pay in info.payment_methods">
                                             {{pay}}
                                         </span>
                                     </div>
-                                    <p class="text-secondary mb-1 text-uppercase letter-spacing-0_06" style="font-size: 10px" v-if="info.transport_specialities&&info.transport_specialities.length>0"><strong>Transport specialties</strong></p>
+                                    <p class="text-secondary mb-1 text-uppercase letter-spacing-0_06" style="font-size: 10px" v-if="info.transport_specialities&&info.transport_specialities.length>0"
+                                       v-html="$trans('profile.public_profile.p_3')">
+
+                                    </p>
                                     <div class="row w-100 m-auto" v-if="info.transport_specialities&&info.transport_specialities.length>0">
                                         <span class="u-label u-label--xs u-label--primary text-uppercase letter-spacing-0_06 mr-2 mb-2" v-for="category in info.transport_specialities">
                                             {{category.title}}
@@ -43,17 +49,17 @@
                                 </div>
                                 <div class="col-4 col-md-4 col-sm-4 text-center">
                                     <h2 class="mb-0 mt-2" style="line-height:1;"><strong>{{info.vehicles_count}}</strong></h2>
-                                    <p><small>Vehicles</small></p>
+                                    <p v-html="$trans('profile.public_profile.p_4')"></p>
 <!--                                    <button class="btn btn-primary btn-block btn-md"><span class="fa fa-facebook-square"></span> Like  </button>-->
                                 </div>
                                 <div class="col-4 col-md-4 col-sm-4 text-center">
                                     <h2 class="mb-0 mt-2" style="line-height:1;"><strong>1.4K</strong></h2>
-                                    <p><small>Reviews</small></p>
+                                    <p v-html="$trans('profile.public_profile.p_5')"></p>
 <!--                                    <button class="btn btn-success btn-block btn-md"><span class="fa fa-twitter-square"></span> Tweet </button>-->
                                 </div>
                                 <div class="col-4 col-md-4 col-sm-4 text-center">
                                     <h2 class="mb-0 mt-2" style="line-height:1;"><strong>3.8K</strong></h2>
-                                    <p><small>Orders</small></p>
+                                    <p v-html="$trans('profile.public_profile.p_6')"></p>
 <!--                                    <button type="button" class="btn btn-danger btn-block btn-md"><span class="fa fa-google-plus-square"></span> Follow </button>-->
                                 </div>
                                 <div class="col-12">
@@ -63,7 +69,7 @@
                                                     data-target="#pills-company" type="button" role="tab"
                                                     aria-controls="pills-company" aria-selected="true"
                                             >
-                                                Company
+                                                {{$trans('profile.public_profile.button_1')}}
                                             </button>
                                         </li>
                                         <li class="nav-item m-1" role="presentation">
@@ -71,7 +77,7 @@
                                                     data-target="#pills-vehicles" type="button" role="tab"
                                                     aria-controls="pills-vehicles" aria-selected="true"
                                             >
-                                                Vehicles
+                                                {{$trans('profile.public_profile.button_2')}}
                                             </button>
                                         </li>
                                         <li class="nav-item m-1" role="presentation">
@@ -79,7 +85,7 @@
                                                     data-target="#pills-reviews" type="button" role="tab"
                                                     aria-controls="pills-reviews" aria-selected="false"
                                             >
-                                                Reviews
+                                                {{$trans('profile.public_profile.button_3')}}
                                             </button>
                                         </li>
                                     </ul>
@@ -92,22 +98,22 @@
                                                     <div class="row m-auto w-100">
                                                         <div class="col-sm-12 px-0 px-sm-2">
                                                             <div class="form-group">
-                                                                <p class="text-secondary mb-1 text-uppercase letter-spacing-0_06" style="font-size: 10px"><strong>Company name</strong></p>
+                                                                <p class="text-secondary mb-1 text-uppercase letter-spacing-0_06" style="font-size: 10px" v-html="$trans('profile.public_profile.p_7')"></p>
                                                                 <span>{{info.company_name}}</span>
-                                                                <p class="mb-0" v-if="info.company_name===''">This user has not specified company name yet.</p>
+                                                                <p class="mb-0" v-if="info.company_name===''" v-html="$trans('profile.public_profile.p_8')"></p>
                                                             </div>
                                                             <div class="form-group">
-                                                                <p class="text-secondary mb-1 text-uppercase letter-spacing-0_06" style="font-size: 10px"><strong>About my company</strong></p>
+                                                                <p class="text-secondary mb-1 text-uppercase letter-spacing-0_06" style="font-size: 10px" v-html="$trans('profile.public_profile.p_9')"></p>
                                                                 <span> {{info.about_company}}</span>
-                                                                <p class="mb-0" v-if="info.about_company===''">This user has not specified information about the company yet.</p>
+                                                                <p class="mb-0" v-if="info.about_company===''" v-html="$trans('profile.public_profile.p_10')"></p>
                                                             </div>
                                                             <div class="form-group">
-                                                                <p class="text-secondary mb-1 text-uppercase letter-spacing-0_06" style="font-size: 10px"><strong>Additional services</strong></p>
+                                                                <p class="text-secondary mb-1 text-uppercase letter-spacing-0_06" style="font-size: 10px" v-html="$trans('profile.public_profile.p_11')"></p>
                                                                 <span>
                                                                     {{info.additional_service}}
                                                                 </span>
-                                                                <p class="mb-0" v-if="info.additional_service === ''">
-                                                                    This user has not specified additional services yet.
+                                                                <p class="mb-0" v-if="info.additional_service === ''" v-html="$trans('profile.public_profile.p_12')">
+
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -120,7 +126,7 @@
                                                  style="min-height: 100px"
                                                  v-if="info.vehicles.length===0"
                                             >
-                                                <p class="mb-0">This user has not specified vehicles yet.</p>
+                                                <p class="mb-0" v-html="$trans('profile.public_profile.p_13')"></p>
                                             </div>
                                             <div class="row mx-auto w-100" v-for="(vehicle, index) in info.vehicles" v-if="info.vehicles.length>0">
                                                 <div class="card w-100 h-100 my-2">
@@ -131,19 +137,19 @@
                                                                 <img v-else v-lazy="" alt="Vehicle" class="rounded-circle" style="width: 100px; height: 100px; object-fit: cover">
                                                             </div>
                                                             <div class="col-12 col-sm-6 col-md-3 px-0 px-sm-1 px-md-2">
-                                                                <p class="d-flex inform-box mb-0 justify-content-center">Brand</p>
+                                                                <p class="d-flex inform-box mb-0 justify-content-center">{{$trans('profile.public_profile.p_14')}}</p>
                                                                 {{vehicle.brand}}
                                                             </div>
                                                             <div class="col-6 col-md-2 px-0 px-sm-1 px-md-2">
-                                                                <p class="d-flex inform-box mb-0 justify-content-center">Model</p>
+                                                                <p class="d-flex inform-box mb-0 justify-content-center">{{$trans('profile.public_profile.p_15')}}</p>
                                                                 {{vehicle.model}}
                                                             </div>
                                                             <div class="col-6 col-md-2 px-0 px-sm-1 px-md-2">
-                                                                <p class="d-flex inform-box mb-0 justify-content-center">Cubing</p>
+                                                                <p class="d-flex inform-box mb-0 justify-content-center">{{$trans('profile.public_profile.p_15')}}</p>
                                                                 {{vehicle.cubing}}
                                                             </div>
                                                             <div class="col-12 col-md-3 px-0 px-sm-1 px-md-2">
-                                                                <p class="d-flex inform-box mb-0 justify-content-center">Total laden weight</p>
+                                                                <p class="d-flex inform-box mb-0 justify-content-center">{{$trans('profile.public_profile.p_16')}}</p>
                                                                 {{vehicle.total_laden_weight}}
                                                             </div>
                                                         </div>

@@ -44,7 +44,7 @@
                             <!--  Request a quote -->
                             <li class="nav-item  u-header__nav-item">
                                 <a href="/find-transporter" class="nav-link btn btn-link w-100 p-3 text-center">
-                                    Request a quote
+                                    {{$trans('menu.item.request_a_quote')}}
                                 </a>
                             </li>
 
@@ -54,7 +54,7 @@
                             <li class="nav-item hs-has-mega-menu u-header__nav-item" v-if="user">
                                 <a href="/find-loads" class="nav-link u-header__nav-link w-100 "
                                    v-if="user.is_transporter">
-                                    Find loads
+                                    {{$trans('menu.item.find_loads')}}
                                 </a>
                             </li>
                             <!-- End  Find loads -->
@@ -66,15 +66,13 @@
                                     Helps
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item cursor-pointer" href="/find-loads" v-if="!user">I am a
-                                        transporter</a>
-                                    <a class="dropdown-item cursor-pointer" href="/find-transporter">Search for a
-                                        transporter</a>
-                                    <a class="dropdown-item cursor-pointer" href="/how-it-works">How does it work?</a>
-                                    <a class="dropdown-item cursor-pointer" href="/fequently-asked-questions">F.A.Q.</a>
+                                    <a class="dropdown-item cursor-pointer" href="/find-loads" v-if="!user"> {{$trans('menu.item.i_am_a_transporter')}}</a>
+                                    <a class="dropdown-item cursor-pointer" href="/find-transporter"> {{$trans('menu.item.search_for_a_transporter')}}</a>
+                                    <a class="dropdown-item cursor-pointer" href="/how-it-works"> {{$trans('menu.item.how_does_it_work')}}</a>
+                                    <a class="dropdown-item cursor-pointer" href="/fequently-asked-questions"> {{$trans('menu.item.faq')}}.</a>
                                     <!--        <a class="dropdown-item" href="/recruitment">Recruitment</a>-->
                                     <!--   <a class="dropdown-item cursor-pointer" href="/contact-us">Contact Us</a>-->
-                                    <a class="dropdown-item cursor-pointer" href="/privacy">Privacy</a>
+                                    <a class="dropdown-item cursor-pointer" href="/privacy"> {{$trans('menu.item.privacy')}}</a>
                                 </div>
                             </li>
 
@@ -95,22 +93,20 @@
                                 <a class="btn btn-primary dropdown-toggle text-white w-100 " href="#"
                                    id="signupDropdown"
                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    SignUp
+                                    {{$trans('menu.item.sign_up')}}
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="signupDropdown">
                                     <a class="dropdown-item cursor-pointer" data-toggle="modal"
-                                       data-target="#signUp-transporter">I am
-                                        a transporter</a>
+                                       data-target="#signUp-transporter"> {{$trans('menu.item.sign_up_transporter')}}</a>
                                     <a class="dropdown-item cursor-pointer" data-toggle="modal"
-                                       data-target="#signUp-customer">I am
-                                        looking for transporter</a>
+                                       data-target="#signUp-customer"> {{$trans('menu.item.sign_up_customer')}}</a>
                                 </div>
                             </li>
 
                             <li class="nav-item u-header__nav-item-btn p-0" v-if="!user">
                                 <button type="button" class="btn btn-link w-100 btn-outline-primary" data-toggle="modal"
                                         data-target="#signIn">
-                                    Sign In
+                                    {{$trans('menu.item.sign_in')}}
                                 </button>
                             </li>
                             <!-- End Button -->
@@ -135,7 +131,7 @@
                                       class="js-focus-state input-group form u-header__search u-unfold--css-animation u-unfold--hidden fadeOut"
                                       style="animation-duration: 300ms;">
                                     <input class="form-control form__input" type="search" name="search"
-                                           placeholder="Search inventory">
+                                           :placeholder="$trans('menu.text.search')">
                                     <div class="input-group-addon u-header__search-addon p-0">
                                         <button class="btn btn-primary u-header__search-addon-btn" type="submit">
                                             <i class="fa fa-search"></i>
@@ -171,12 +167,10 @@
 </template>
 
 <script>
-    import MainMenu from "./MainMenu";
+
     import { localize, localeChanged } from "vee-validate";
     export default {
-        components: {
-            MainMenu
-        },
+
         data() {
             return {
                 loading: false,

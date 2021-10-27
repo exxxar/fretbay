@@ -2,20 +2,21 @@
     <section id="profile-wizard2" style="min-height:90vh; display: flex;">
         <div class="row w-100 m-auto mt-2 mt-sm-3 h-100 text-center justify-content-center">
             <div class="col-12 col-md-6">
+
                 <img src="/images/profile/profile1.png" style="max-height: 350px; width: 100%; max-width:350px" alt="">
-                <h2 class="step-title" style="color:#21c87a; font-weight: 700">Pro insurance certificate</h2>
-                <p class="info-box"><strong>Requires</strong> : Insurance certificate <strong>showing</strong> the name of your business</p>
-                <a href="/transporter/profile/transporter-wizard/step-3" class="btn btn-success w-100 mb-3" style="max-width: 300px;">Skip</a>
+                <h2 class="step-title" style="color:#21c87a; font-weight: 700"> {{$trans('profile.wizard.step_2.h2_1')}}</h2>
+                <p class="info-box" v-html="$trans('profile.wizard.step_2.h2_1')"></p>
+                <a href="/transporter/profile/transporter-wizard/step-3" class="btn btn-success w-100 mb-3" style="max-width: 300px;"> {{$trans('profile.wizard.step_2.a_1')}}</a>
             </div>
             <div class="col-12 col-md-6">
                 <div class="card mb-3">
                     <div class="card-body">
-                        <h4 class="tab-subtitle tab-subtitle-left">Certificate of pro. insurance</h4>
+                        <h4 class="tab-subtitle tab-subtitle-left"> {{$trans('profile.wizard.step_2.h4_1')}}</h4>
                         <ValidationObserver v-slot="{invalid}">
                             <div class="row w-100 mx-auto">
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label for="" class="text-lg">Insurance company</label>
+                                        <label for="" class="text-lg"> {{$trans('profile.wizard.step_2.label_1')}}</label>
                                         <ValidationProvider name="Insurance company" rules="required" v-slot="{ errors }">
                                             <input type="text" class="form-control-empty form-control"
                                                    v-model="edit_certificate_insurance.insurance_company" placeholder="">
@@ -24,7 +25,7 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label for="" class="text-lg">Amount insured</label>
+                                        <label for="" class="text-lg">{{$trans('profile.wizard.step_2.label_2')}}</label>
                                         <ValidationProvider name="Amount insured" rules="required" v-slot="{ errors }">
                                             <input type="text" class="form-control-empty form-control"
                                                    v-model="edit_certificate_insurance.amount_insured" placeholder="">
@@ -33,7 +34,7 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label for="" class="text-lg">Start date</label>
+                                        <label for="" class="text-lg">{{$trans('profile.wizard.step_2.label_3')}}</label>
                                         <ValidationProvider name="Start date" rules="required" v-slot="{ errors }">
                                             <input type="text" class="form-control-empty form-control"
                                                    v-model="edit_certificate_insurance.start_date"
@@ -43,7 +44,7 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label for="" class="text-lg">End date</label>
+                                        <label for="" class="text-lg">{{$trans('profile.wizard.step_2.label_4')}}</label>
                                         <ValidationProvider name="End date" rules="required" v-slot="{ errors }">
                                             <input type="text" class="form-control-empty form-control"
                                                    v-model="edit_certificate_insurance.end_date"
@@ -52,10 +53,10 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <h4>Document officiel de l'attestation d'assurance pro.</h4>
+                                    <h4>{{$trans('profile.wizard.step_2.h4_2')}}</h4>
                                     <multi-upload-files ref="ci" :files="edit_certificate_insurance.new_images">
                                         <template v-slot:uploadButton>
-                                            <button class="btn btn-primary w-100" @click="startUpload('ci')">Click to upload</button>
+                                            <button class="btn btn-primary w-100" @click="startUpload('ci')">{{$trans('profile.wizard.step_2.button_1')}}</button>
                                         </template>
                                         <template v-slot:filesListAdditional>
                                             <div v-for="(file, key) in edit_certificate_insurance.document_images" class="col-md-4 col-sm-6 col-6 px-1 px-sm-2">
@@ -63,7 +64,7 @@
                                                     <img class="card-img-top preview mx-auto" v-lazy="file"
                                                          style="width:100%; height:150px; object-fit: cover;" alt="">
                                                     <div class="card-body px-md-2 text-center">
-                                                        <button class="btn btn-outline-blue mt-2 mx-auto w-100" v-on:click="removeFile(key, 4)">Remove</button>
+                                                        <button class="btn btn-outline-blue mt-2 mx-auto w-100" v-on:click="removeFile(key, 4)">{{$trans('profile.wizard.step_2.button_2')}}</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -87,7 +88,7 @@
                                     <span v-if="loadingCertificateInsurance" class="spinner-border spinner-border-sm"
                                           role="status" aria-hidden="true">
                                     </span>
-                                    Confirm
+                                    {{$trans('profile.wizard.step_2.button_3')}}
                                 </button>
                             </div>
                         </ValidationObserver>

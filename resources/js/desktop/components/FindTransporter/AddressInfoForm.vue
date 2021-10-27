@@ -6,7 +6,7 @@
             <div class="card  mb-2">
                 <div class="card-header">
                     <h4>
-                        Information on loading and delivery addresses move
+                        {{$trans('request_a_quote.section_5.h4_1')}}
                     </h4>
                 </div>
                 <div class="card-body">
@@ -14,14 +14,13 @@
                         <div class="col-12 col-md-6">
                             <h6 class="mt-0 form-group section-title address-title title-loading"><img
                                 src="https://fretbay.com/en/assets/images/common/icons/general/icon-loading.svg" alt=""
-                                style="width: 20px;">Place of loading</h6>
+                                style="width: 20px;">   {{$trans('request_a_quote.section_5.h6_1')}}</h6>
                             <choose-place-form :date1="'shipping_date_from'" :date2="'shipping_date_to'"/>
                         </div>
                         <div class="col-12 col-md-6">
                             <h6 class="mt-0 form-group section-title address-title title-delivery"><img
                                 src="https://fretbay.com/en/assets/images/common/icons/general/icon-delivery.svg" alt=""
-                                style="width: 20px;">Place of
-                                delivery</h6>
+                                style="width: 20px;">   {{$trans('request_a_quote.section_5.h6_2')}}</h6>
                             <choose-place-form :date1="'unshipping_date_from'" :date2="'unshipping_date_to'"/>
                         </div>
                     </div>
@@ -32,7 +31,7 @@
 
             <div class="card mb-2">
                 <div class="card-header">
-                    <h4>Additional information <em>(recomended)</em></h4>
+                    <h4 v-html="$trans('request_a_quote.section_5.h4_2')"></h4>
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -42,7 +41,7 @@
                         </div>
                         <div class="col-12 col-md-6 mt-2" style="font-size: 14px">
                             <p class="alert-danger p-2">
-                                This information is public, NEVER give your contact details to preserve your privacy
+                                {{$trans('request_a_quote.section_5.p_1')}}
                             </p>
 
                             <div id="basicsAccordion">
@@ -54,7 +53,7 @@
                                                 data-toggle="collapse" data-target="#basicsCollapseOne"
                                                 aria-expanded="true"
                                                 aria-controls="basicsCollapseOne">
-                                                - Loading and delivery conditions.
+                                                {{$trans('request_a_quote.section_5.button_1')}}
 
                                                 <span class="card-collapse__btn-arrow">
                       <i class="fa fa-arrow-down small"></i>
@@ -65,7 +64,7 @@
                                     <div id="basicsCollapseOne" class="collapse show" aria-labelledby="basicsHeadingOne"
                                          data-parent="#basicsAccordion">
                                         <div class="card-body card-collapse__body px-0">
-                                            Ex: narrow street, window loading, 2 people to help at the start,...
+                                            {{$trans('request_a_quote.section_5.div_1')}}
                                         </div>
                                     </div>
                                 </div>
@@ -78,7 +77,7 @@
                                                 data-toggle="collapse" data-target="#basicsCollapseTwo"
                                                 aria-expanded="false"
                                                 aria-controls="basicsCollapseTwo">
-                                                - The list of elements to be dismantled.
+                                                {{$trans('request_a_quote.section_5.button_2')}}
 
                                                 <span class="card-collapse__btn-arrow">
                       <i class="fa fa-arrow-down small"></i>
@@ -89,7 +88,7 @@
                                     <div id="basicsCollapseTwo" class="collapse" aria-labelledby="basicsHeadingTwo"
                                          data-parent="#basicsAccordion">
                                         <div class="card-body card-collapse__body px-0">
-                                            Ex: 4-door cabinet, buffet,...
+                                            {{$trans('request_a_quote.section_5.div_2')}}
                                         </div>
                                     </div>
                                 </div>
@@ -102,7 +101,7 @@
                                                 data-toggle="collapse" data-target="#basicsCollapseThree"
                                                 aria-expanded="false"
                                                 aria-controls="basicsCollapseThree">
-                                                - The list of your main items to be transported.
+                                                {{$trans('request_a_quote.section_5.button_3')}}
 
                                                 <span class="card-collapse__btn-arrow">
                       <i class="fa fa-arrow-down small"></i>
@@ -113,7 +112,7 @@
                                     <div id="basicsCollapseThree" class="collapse" aria-labelledby="basicsHeadingThree"
                                          data-parent="#basicsAccordion">
                                         <div class="card-body card-collapse__body px-0">
-                                            Ex: 1 large table of 3mx2m, ...
+                                            {{$trans('request_a_quote.section_5.div_3')}}
                                         </div>
                                     </div>
                                 </div>
@@ -129,7 +128,7 @@
 
             <div class="card  mb-2">
                 <div class="card-header">
-                    <h4>Increase your chances of being solicited, insert a photo!</h4>
+                    <h4>   {{$trans('request_a_quote.section_5.h4_3')}}</h4>
                 </div>
                 <div class="card-body">
                     <upload-files/>
@@ -144,8 +143,7 @@
                             <div class="custom-control custom-switch">
                                 <ValidationProvider :name="commercial" rules="required" v-slot="{ errors }">
                                 <input type="checkbox" id="commercial" class="custom-control-input"  @change="isOffers=!isOffers" required>
-                                <label for="commercial" class="custom-control-label" >I agree to receive commercial offers from
-                                    AlloTrans and its partners</label>
+                                <label for="commercial" class="custom-control-label" >   {{$trans('request_a_quote.section_5.label_1')}}</label>
                                 </ValidationProvider>
                             </div>
                         </div>
@@ -154,15 +152,15 @@
                             <div class="custom-control custom-switch">
                                 <ValidationProvider :name="terms" rules="required" v-slot="{ errors }">
                                 <input type="checkbox" id="terms" class="custom-control-input" @change="isTerms=!isTerms" required>
-                                <label for="terms" class="custom-control-label" >I accept AlloTrans's Terms of Use </label>
+                                <label for="terms" class="custom-control-label" >   {{$trans('request_a_quote.section_5.label_2')}} </label>
                                 </ValidationProvider>
                             </div>
                         </div>
 
                     </div>
 
-                    <p>This information can often be found on the Internet. </p>
-                    <p>Approximate measures will already allow carriers to offer you a suitable offer.</p>
+                    <p>   {{$trans('request_a_quote.section_5.p_3')}}</p>
+                    <p>   {{$trans('request_a_quote.section_5.p_4')}}</p>
 
                 </div>
             </div>
@@ -170,13 +168,13 @@
 
             <div class="row d-flex justify-content-end mt-2 p-3 m-0">
                 <div class="col-12 mb-1 mb-sm-0 col-sm-2">
-                    <button class="btn btn-outline-blue  w-100" @click="prevStep">Back</button>
+                    <button class="btn btn-outline-blue  w-100" @click="prevStep">   {{$trans('request_a_quote.global.button_prev')}}</button>
                 </div>
                 <div class="col-12 col-sm-3">
                     <button class="btn  w-100"
                             type="submit"
                             v-bind:class="{'btn-danger':invalid||!isOffers||!isTerms, 'btn-outline-primary':!invalid&&isOffers&&isTerms}"
-                            >Send</button>
+                            >   {{$trans('request_a_quote.global.button_send')}}</button>
                 </div>
             </div>
         </ValidationObserver>

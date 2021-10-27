@@ -2,8 +2,7 @@
     <div class="row pb-5 d-flex justify-content-center">
 
 
-        <div class="col-lg-6 mb-2 mb-lg-0 " v-if="filteredReviews.length>0">
-
+        <div class="col-lg-6 mb-2 mb-lg-0 ">
             <div class="row">
                 <div class="col-12">
                     <div class="form-group row d-flex justify-content-center mb-0">
@@ -24,18 +23,20 @@
                 </div>
             </div>
 
-            <div class="comment-list p-2">
+            <div class="comment-list p-2" v-if="filteredReviews.length>0">
                 <review-item-component :key="index" v-for="(item,index) in filteredReviews" :item="item"/>
 
             </div>
+
+            <div v-else>
+                <div class="d-flex p-5 justify-content-center" v-if="filteredReviews.length===0">
+                    <img v-lazy="'/images/empty.png'" alt="" class="w-100 w-sm-auto" style="max-width:300px;">
+                </div>
+                <h4 class="text-center">{{$trans('profile.page.no_reviews')}}</h4>
+            </div>
+
         </div>
 
-        <div class="col-lg-6 mb-2 mb-lg-0" v-else>
-            <div class="d-flex p-5 justify-content-center" v-if="filteredReviews.length===0">
-                <img v-lazy="'/images/empty.png'" alt="" class="w-100 w-sm-auto" style="max-width:300px;">
-            </div>
-            <h4 class="text-center">No reviews yet!</h4>
-        </div>
 
         <div class="col-lg-6 mb-9 mb-lg-0" v-if="filteredReviews">
             <div class="card">
@@ -49,7 +50,7 @@
                                    v-model="title"
                                    maxlength="100" required>
                             <span class="text-gray-700" v-if="title.length>0"><small>
-                                Characters left {{100-title.length}}</small></span>
+                                {{$trans('profile.reviews.span_1')}} {{100-title.length}}</small></span>
                         </div>
 
                         <div class="form-group">
@@ -58,9 +59,9 @@
                                       v-model="text"
                                       maxlength="255" required></textarea>
                             <span class="text-gray-700" v-if="text.length>0"><small>
-                                Characters left {{255-text.length}}</small></span>
+                                {{$trans('profile.reviews.span_1')}} {{255-text.length}}</small></span>
                         </div>
-                        <h6 class="text-center">Choose your reaction (emoji)</h6>
+                        <h6 class="text-center">{{$trans('profile.reviews.h6_1')}}</h6>
                         <div class="form-group row d-flex justify-content-center mb-0">
                             <button class="btn ml-2 mb-2"
                                     type="button"
@@ -77,7 +78,7 @@
 
                         </div>
 
-                        <h6 class="text-center">Choose order to comment</h6>
+                        <h6 class="text-center">{{$trans('profile.reviews.h6_2')}}</h6>
                         <div class="form-group row d-flex justify-content-center"
                              v-if="completedOrdersWithoutComment.length>0">
 
@@ -95,7 +96,7 @@
 
                         <div class="row" v-else>
                             <div class="col-12">
-                                <p class="text-center text-primary">You have no orders without a review</p>
+                                <p class="text-center text-primary">{{$trans('profile.reviews.p_1')}}</p>
                             </div>
 
                         </div>
@@ -106,7 +107,7 @@
                                         v-bind:class="{'btn-custom-gray':completedOrdersWithoutComment.length===0,
                                         'btn-primary':completedOrdersWithoutComment.length>0}"
                                         :disbaled="completedOrdersWithoutComment.length===0">
-                                    Send review
+                                    {{$trans('profile.reviews.button_1')}}
                                 </button>
                             </div>
                         </div>
@@ -167,8 +168,8 @@
                 this.$store.dispatch("getOrdersWithoutReviews")
             },
             submit() {
-                console.log("this.selected_review_type=>",this.selected_review_type)
-                console.log("this.selected_order=>",this.selected_order)
+                console.log("this.selected_review_type=>", this.selected_review_type)
+                console.log("this.selected_order=>", this.selected_order)
                 this.$store.dispatch("addReview", {
                     title: this.title,
                     text: this.text,
