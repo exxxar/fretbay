@@ -9,13 +9,14 @@
                            href="#listings-active" role="tab"
                            aria-controls="listings-active" aria-selected="true"><i class="fas fa-boxes"></i>
                             {{$trans('profile.menu.active_listings')}}
-                            </a>
+                        </a>
                     </li>
 
                     <li class="nav-item profile-nav-item">
                         <a class="btn btn-outline-primary  d-block" id="profile-tab" data-toggle="tab" href="#profile"
                            role="tab"
-                           aria-controls="profile" aria-selected="true"><i class="fas fa-user"></i>   {{$trans('profile.menu.profile')}}</a>
+                           aria-controls="profile" aria-selected="true"><i class="fas fa-user"></i>
+                            {{$trans('profile.menu.profile')}}</a>
                     </li>
 
 
@@ -24,48 +25,55 @@
                            @click="loadReviews"
                            href="#reviews"
                            role="tab"
-                           aria-controls="reviews" aria-selected="true"><i class="far fa-comment-dots"></i>   {{$trans('profile.menu.reviews')}}</a>
+                           aria-controls="reviews" aria-selected="true"><i class="far fa-comment-dots"></i>
+                            {{$trans('profile.menu.reviews')}}</a>
                     </li>
 
 
                     <li class="nav-item profile-nav-item" @click="loadArchiveListing">
                         <a class="btn btn-outline-primary d-block" id="listings-archive-tab" data-toggle="tab"
                            href="#listings-archive" role="tab"
-                           aria-controls="listings-archive" aria-selected="true"><i class="fas fa-archive"></i>   {{$trans('profile.menu.archive_listings')}}</a>
+                           aria-controls="listings-archive" aria-selected="true"><i class="fas fa-archive"></i>
+                            {{$trans('profile.menu.archive_listings')}}</a>
                     </li>
 
                     <li class="nav-item profile-nav-item" @click="loadRemovedListing">
                         <a class="btn btn-outline-primary d-block" id="listings-removed-tab" data-toggle="tab"
                            href="#listings-removed" role="tab"
-                           aria-controls="listings-active" aria-selected="true"><i class="fas fa-trash-alt"></i>   {{$trans('profile.menu.removed_listings')}}</a>
+                           aria-controls="listings-active" aria-selected="true"><i class="fas fa-trash-alt"></i>
+                            {{$trans('profile.menu.removed_listings')}}</a>
                     </li>
 
                     <li class="nav-item profile-nav-item" @click="loadActiveOrders">
                         <a class="btn btn-outline-primary d-block" id="orders-active-tab" data-toggle="tab"
                            href="#orders-active"
                            role="tab"
-                           aria-controls="orders-active" aria-selected="true"><i class="far fa-handshake"></i>  {{$trans('profile.menu.active_orders')}}</a>
+                           aria-controls="orders-active" aria-selected="true"><i class="far fa-handshake"></i>
+                            {{$trans('profile.menu.active_orders')}}</a>
                     </li>
 
                     <li class="nav-item profile-nav-item" @click="loadArchiveOrders">
                         <a class="btn btn-outline-primary d-block" id="orders-archive-tab" data-toggle="tab"
                            href="#orders-archive"
                            role="tab"
-                           aria-controls="orders-archive" aria-selected="true"><i class="fas fa-archive"></i>  {{$trans('profile.menu.archive_orders')}}</a>
+                           aria-controls="orders-archive" aria-selected="true"><i class="fas fa-archive"></i>
+                            {{$trans('profile.menu.archive_orders')}}</a>
                     </li>
 
                     <li class="nav-item profile-nav-item"
                         @click="loadNotifications">
                         <a class="btn btn-outline-primary d-block" id="notifications-tab" data-toggle="tab"
                            href="#notifications" role="tab"
-                           aria-controls="notifications" aria-selected="true"><i class="far fa-flag"></i>   {{$trans('profile.menu.notifications')}}
+                           aria-controls="notifications" aria-selected="true"><i class="far fa-flag"></i>
+                            {{$trans('profile.menu.notifications')}}
                         </a>
                     </li>
 
                     <li class="nav-item profile-nav-item">
                         <a class="btn btn-outline-primary d-block" id="settings-tab" data-toggle="tab"
                            href="#settings" role="tab"
-                           aria-controls="settings" aria-selected="true"><i class="fas fa-user-cog"></i>   {{$trans('profile.menu.settings')}}
+                           aria-controls="settings" aria-selected="true"><i class="fas fa-user-cog"></i>
+                            {{$trans('profile.menu.settings')}}
                         </a>
                     </li>
                 </ul>
@@ -391,13 +399,10 @@
             }
         },
         mounted() {
+            if (window.location.hash) {
+                $("a[href='"+window.location.hash+"']").click()
+            }
 
-            /*
-
-                       setTimeout(()=>{
-                           this.loadActiveListing()
-                       }, 1500)
-            */
             this.loadActiveListing()
             $(document).on("click", ".nav-item", () => {
                 window.scroll(0, 0)

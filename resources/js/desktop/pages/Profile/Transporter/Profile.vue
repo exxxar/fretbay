@@ -7,15 +7,16 @@
                 <li class="nav-item profile-nav-item">
                     <a class="btn btn-outline-primary d-block active " id="profile-tab" data-toggle="tab"
                        href="#profile" role="tab" aria-controls="profile" aria-selected="true"><i
-                        class="fas fa-user"></i>   {{$trans('profile.menu.profile')}}</a>
+                        class="fas fa-user"></i> {{$trans('profile.menu.profile')}}</a>
                 </li>
                 <li class="nav-item profile-nav-item">
                     <a class="btn btn-outline-primary d-block" id="company-tab" data-toggle="tab" href="#company"
-                       role="tab" aria-controls="company" aria-selected="false"><i class="far fa-building"></i>   {{$trans('profile.menu.company')}}</a>
+                       role="tab" aria-controls="company" aria-selected="false"><i class="far fa-building"></i>
+                        {{$trans('profile.menu.company')}}</a>
                 </li>
                 <li class="nav-item profile-nav-item">
                     <a class="btn btn-outline-primary d-block" id="documents-tab" data-toggle="tab" href="#documents"
-                       role="tab" aria-controls="documents" aria-selected="false"><i class="far fa-file-word"></i>
+                       role="tab" aria-controls="documents" aria-selected="true"><i class="far fa-file-word"></i>
                         {{$trans('profile.menu.documents')}}</a>
                 </li>
                 <li class="nav-item profile-nav-item">
@@ -37,7 +38,7 @@
                 <li class="nav-item profile-nav-item" @click="loadNotifications">
                     <a class="btn btn-outline-primary d-block" id="notifications-tab" data-toggle="tab"
                        href="#notifications" role="tab" aria-controls="notifications" aria-selected="false"><i
-                        class="far fa-bell"></i>   {{$trans('profile.menu.notifications')}}</a>
+                        class="far fa-bell"></i> {{$trans('profile.menu.notifications')}}</a>
                 </li>
                 <li class="nav-item profile-nav-item">
                     <a class="btn btn-outline-primary d-block" id="settings-tab" data-toggle="tab" href="#settings"
@@ -145,17 +146,18 @@
         },
         mounted() {
 
-            $(".nav-item").click(()=>{
-                window.scrollTo(0,0)
+
+            $(".nav-item").click(() => {
+                window.scrollTo(0, 0)
             })
+
         },
         methods: {
-            loadOrders()
-            {
+            loadOrders() {
                 this.$store.dispatch('getOrders');
             },
 
-            loadNotifications(){
+            loadNotifications() {
                 this.$store.dispatch('loadNotifications')
             },
         }

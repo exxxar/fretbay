@@ -41,7 +41,7 @@ class ListingController extends Controller
      */
     public function index()
     {
-        $listings = Listing::with(['category', 'subcategory', 'thing', 'messages', 'quotes'])->orderByDesc('created_at')->paginate(15);
+        $listings = Listing::with(['category', 'subcategory', 'thing', 'messages', 'quotes'])->orderByDesc('created_at')->paginate(100);
         return response()->json([
             'listings' => $listings
         ]);
@@ -133,7 +133,7 @@ class ListingController extends Controller
         $region = $request->region ?? null;
         $postal = $request->postal ?? null;
 
-        $listings = Listing::with(['category', 'subcategory', 'thing']);
+        $listings = Listing::with(['category', 'subcategory', 'thing', 'messages', 'quotes']);
 
         if (count($distance_range_value) > 0)
             $listings = $listings->whereBetween("distance", $distance_range_value);
@@ -195,8 +195,8 @@ class ListingController extends Controller
             $listings = $listings->whereIn("category_id", $request->categories);
 
         $listings = $listings
-            // ->where("expiration_date", ">", Carbon::now())
-            ->orderByDesc('created_at')->paginate(15);
+             //->where("expiration_date", "<", Carbon::now())
+            ->orderByDesc('created_at')->paginate(100);
 
         return response()->json([
             'listings' => $listings
@@ -240,11 +240,11 @@ class ListingController extends Controller
             'images' => [],
             'status' => $request->get('status') ?? '',
             'distance' => round($this->mapbox->getAPI()->getDistanceOSM(
-                $place_of_loading->center[0] ?? 0,
-                $place_of_loading->center[1] ?? 0,
-                $place_of_delivery->center[0] ?? 0,
-                $place_of_delivery->center[1] ?? 0
-            )/1000),
+                    $place_of_loading->center[0] ?? 0,
+                    $place_of_loading->center[1] ?? 0,
+                    $place_of_delivery->center[0] ?? 0,
+                    $place_of_delivery->center[1] ?? 0
+                ) / 1000),
 
             'is_active' => true,
             'expiration_date' => Carbon::createFromTimestampUTC(intval($request->get('unshipping_date_to')) / 1000),
@@ -301,7 +301,7 @@ class ListingController extends Controller
     public function show(Request $request, $id)
     {
         if ($request->ajax())
-            return response()->json(Listing::with(['category', 'subcategory', 'thing', "quotes", "quotes.user", "quotes.user.profile", "messages", "messages.sender", "messages.sender.profile"])->where("id", $id)->first());
+            return response()->json(Listing::withTrashed()->with(['category', 'subcategory', 'thing', "quotes", "quotes.user", "quotes.user.profile", "messages", "messages.sender", "messages.sender.profile"])->where("id", $id)->first());
 
         return view("desktop.pages.listing", compact("id"));
     }
@@ -403,6 +403,8 @@ class ListingController extends Controller
             ->where("status", 0)
             ->orderBy("created_at", "desc")
             ->first();
+
+
 
         /*    if (!is_null($latestQuote)) // if ($latestQuote->price < $request->price)
             {
@@ -536,7 +538,6 @@ class ListingController extends Controller
 
         $latestQuote->status = 2;
         $latestQuote->save();
-
 
 
         event(new NotificationEvent(
@@ -712,5 +713,21 @@ class ListingController extends Controller
                 redirect()->route("desktop.listing", $listing[2]->id);
         }
 
+    }
+
+    public function getRouteForListing(Request $request, $id)
+    {
+        $listing = Listing::find($id);
+        if (is_null($listing))
+            return response()->json([
+                "message" => "Listing not found"
+            ], 404);
+
+        return response()->json($this->mapbox->getAPI()->route(
+            $listing->place_of_loading->center[0] ?? 0,
+            $listing->place_of_loading->center[1] ?? 0,
+            $listing->place_of_delivery->center[0] ?? 0,
+            $listing->place_of_delivery->center[1] ?? 0
+        ));
     }
 }

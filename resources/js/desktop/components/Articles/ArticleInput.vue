@@ -6,6 +6,7 @@
 
                 <div class="input-group mb-3">
                     <input v-model="props_data.value" :type="field.type"
+                           min="0"
                            class="form-control"
                            :placeholder="field.title">
                     <div class="input-group-append" v-if="field.icon && field.icon!=null && field.icon !==''">

@@ -30,20 +30,86 @@
 
         <!-- News Blog Content -->
         <div class="container space-3-bottom--lg">
-            <div class="row d-block d-sm-none mb-2">
-                <div class="col-12 mt-2">
 
-                    <small> {{$trans('profile.find_loads.small_1')}}</small>
-                    <input type="number" class="form-control w-100"
-                           v-model="filter.reference"
-                           :placeholder="$trans('profile.find_loads.input_placeholder_1')">
+            <div class="row">
+                <div class="col-12 col-md-4 d-flex flex-column">
+                    <small class="ml-3">Order by</small>
+                    <div class="d-flex justify-content-around ">
+                        <a href="#" class="btn btn-link pt-0 d-flex align-items-center " v-bind:class="{'text-primary':sort==='id'}"
+                           @click="changeSort('id')">Ref
 
+                            <p class="m-0 p-0 ml-1 " v-if="sort==='id'&&direction===false">
+                                    <span>
+                                         <i class="fas fa-sort-up"></i>
+                                    </span>
+                            </p>
+
+                            <p class="m-0 p-0 ml-1" v-if="sort==='id'&&direction===true">
+                                    <span>
+                                         <i class="fas fa-sort-down"></i>
+                                    </span>
+                            </p>
+
+                        </a>
+
+                        <a href="#" class="btn btn-link pt-0 d-flex align-items-center" v-bind:class="{'text-primary':sort==='message_count'}"
+                           @click="changeSort('message_count')">Messages
+                            <p class="m-0 p-0 ml-1 " v-if="sort==='message_count'&&direction===false">
+                                    <span>
+                                         <i class="fas fa-sort-up"></i>
+                                    </span>
+                            </p>
+
+                            <p class="m-0 p-0 ml-1" v-if="sort==='message_count'&&direction===true">
+                                    <span>
+                                         <i class="fas fa-sort-down"></i>
+                                    </span>
+                            </p>
+                        </a>
+                        <a href="#" class="btn btn-link pt-0 d-flex align-items-center" v-bind:class="{'text-primary':sort==='quote_count'}"
+                           @click="changeSort('quote_count')">Quotes
+                            <p class="m-0 p-0 ml-1 " v-if="sort==='quote_count'&&direction===false">
+                                    <span>
+                                         <i class="fas fa-sort-up"></i>
+                                    </span>
+                            </p>
+
+                            <p class="m-0 p-0 ml-1" v-if="sort==='quote_count'&&direction===true">
+                                    <span>
+                                         <i class="fas fa-sort-down"></i>
+                                    </span>
+                            </p>
+                        </a>
+
+                        <a href="#" class="btn btn-link pt-0 d-flex align-items-center"
+                           v-bind:class="{'text-primary':sort==='summary_volume'}"
+                           @click="changeSort('summary_volume')">Volume
+                            <p class="m-0 p-0 ml-1 " v-if="sort==='summary_volume'&&direction===false">
+                                    <span>
+                                         <i class="fas fa-sort-up"></i>
+                                    </span>
+                            </p>
+
+                            <p class="m-0 p-0 ml-1" v-if="sort==='summary_volume'&&direction===true">
+                                    <span>
+                                         <i class="fas fa-sort-down"></i>
+                                    </span>
+                            </p>
+                        </a>
+
+                    </div>
+                </div>
+                <div class="col-12 col-md-8 ">
+                    <input type="search" class="form-control mb-2" name="search"
+                           placeholder="Search..."
+                           autofocus="true" autocomplete="false" v-model="search">
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-lg-9 order-lg-2 mb-9 mb-lg-0 p-2" v-if="listings.length>0">
 
-                    <listing-item-component :key="index" v-for="(listing,index) in listings" :listing="listing"/>
+                    <listing-item-component :key="index" v-for="(listing,index) in filteredListings" :listing="listing"/>
 
                     <div class="mb-9"></div>
 
@@ -77,7 +143,7 @@
 
                                 <div class="col-12 mt-2 mb-2">
                                     <small style="color:lightgray;">{{$trans('profile.find_loads.small_2')}}
-                                        {{listings.length}}</small>
+                                        {{filteredListings.length}}</small>
 
                                     <button class="btn btn-link text-danger"
                                             style="margin: 0 !important; padding:0px 10px;"
@@ -289,6 +355,9 @@
         },
         data() {
             return {
+                search: '',
+                sort: '',
+                direction: false,
                 region: null,
                 formulaList: [
                     "The Economic package",
@@ -518,6 +587,32 @@
             user() {
                 return window.user
             },
+            sortListing() {
+                if (this.sort === '')
+                    return this.listings
+
+                return this.listings.sort((a, b) => {
+                    if (a[this.sort] > b[this.sort]) {
+                        return this.direction ? 1 : -1;
+                    }
+                    if (a[this.sort] < b[this.sort]) {
+                        return this.direction ? -1 : 1;
+                    }
+                    return 0;
+                })
+
+            },
+            filteredListings() {
+                if (this.search === '')
+                    return this.sortListing
+
+                let tmp = this.sortListing
+
+                return tmp.filter(item => item.additional_info.indexOf(this.search) !== -1
+                    || ("" + item.id).indexOf(this.search) !== -1
+                    || ("" + item.summary_volume).indexOf(this.search) !== -1
+                )
+            },
             listings: function () {
                 return this.$store.getters.listings;
             },
@@ -575,6 +670,10 @@
 
         },
         methods: {
+            changeSort(name) {
+                this.sort = name
+                this.direction = !this.direction
+            },
             selectAddress(region) {
                 console.log("region=>", region)
                 this.filter.region = region

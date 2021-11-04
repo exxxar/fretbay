@@ -43,22 +43,30 @@
                             </ValidationProvider>
                         </div>
                         <div class="row w-100 m-auto d-flex justify-content-center mb-2">
-                            <button class="btn btn-primary w-100" type="submit">
+                         <div class="col-12 col-md-6 p-0 pr-1">
+                             <button class="btn btn-primary w-100" type="submit">
                                  <span v-if="loading" class="spinner-border spinner-border-sm" role="status"
                                        aria-hidden="true"></span>
-                                {{$trans('request_a_quote.signup_customer_form.button_1')}}
-                            </button>
+                                 {{$trans('request_a_quote.signup_customer_form.button_1')}}
+                             </button>
+                         </div>
+                            <div class="col-12 col-md-6 p-0 pl-1">
+                                <button class="btn btn-outline-info w-100" @click="login_mode=true">  {{$trans('request_a_quote.signup_customer_form.button_2')}}
+                                </button>
+                            </div>
                         </div>
-                        <button class="btn btn-warning w-100 mt-2" @click="login_mode=true">  {{$trans('request_a_quote.signup_customer_form.button_2')}}
-                        </button>
+
                     </div>
                 </ValidationObserver>
             </div>
-            <div class="col-12 col-sm-6 p-0 mt-2">
 
+
+        </div>
+
+
+        <div class="row d-flex justify-content-center">
+            <div class="col-12 col-sm-6 col-md-4 p-0 mt-2">
                 <button class="btn btn-outline-primary w-100" @click="prevStep(2)"> {{$trans('request_a_quote.global.button_prev')}}</button>
-
-
             </div>
         </div>
     </div>

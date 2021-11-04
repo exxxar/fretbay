@@ -97,6 +97,7 @@ Vue.component('login-page', require('./pages/Auth/Login.vue').default);
 Vue.component('recovery-page', require('./pages/Auth/Recovery.vue').default);
 Vue.component('register-transporter-page', require('./pages/Auth/RegisterTransporter.vue').default);
 Vue.component('register-customer-page', require('../desktop/pages/Auth/RegisterCustomer.vue').default);
+Vue.component('checkout-page', require('../desktop/pages/Profile/Checkout.vue').default);
 
 Vue.component('reviews-page', require('../desktop/pages/Profile/Reviews.vue').default);
 
@@ -153,6 +154,7 @@ Vue.component('benefits-transporter-mover-carrier-page', require('./pages/Suppor
 Vue.component('search-transporter-mover-carrier-page', require('./pages/Support/SearchTransporterMoverCarrier.vue').default);
 Vue.component('fequently-asked-questions-page', require('./pages/Support/FrequentlyAskedQuestions.vue').default);
 Vue.component('privacy-policy-page', require('./pages/Support/PrivacyPolicy.vue').default);
+Vue.component('terms-page', require('./pages/Support/Terms.vue').default);
 
 Vue.component('quality-charter-page', require('./pages/Support/QualityCharter.vue').default);
 Vue.component('fraud-prevention-page', require('./pages/Support/FraudPrevention.vue').default);

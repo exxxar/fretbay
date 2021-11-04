@@ -10,7 +10,7 @@
                 > <span class="mr-5 text-bold">№{{preparedId}}</span>
                 </a>
                 <span class="mr-5 text-bold" v-else>№{{preparedId}}</span>
-                <span class="mr-2">  {{ this.listing.message_count}}
+                <span class="mr-2">  {{ listing.message_count}}
                 <i class="fas fa-envelope"></i></span>
 
                 <span>  {{ listing.quote_count}}<i class="fas fa-gavel"></i></span>
@@ -29,7 +29,8 @@
             </div>
 
             <div class="counters">
-                <span class="badge badge-primary"><small>{{listing.status||$trans('profile.listing.in_progress')}}</small></span>
+                <span
+                    class="badge badge-primary"><small>{{listing.status||$trans('profile.listing.in_progress')}}</small></span>
                 <span class="badge badge-purple" v-if="user&&listing.user_id==user.id"><small>{{$trans('profile.listing.your')}}</small></span>
             </div>
 
@@ -65,7 +66,7 @@
             <div
                 class="text-md-right text-left align-items-sm-end text-secondary d-flex flex-column justify-content-center align-items-start">
                 <p class="mb-0" style="font-size: 12px; color: #8e949a">{{$trans('profile.listing.publication_at')}}</p>
-                 {{listing.created_at | moment('DD.MM.YYYY HH:mm') }}
+                {{listing.created_at | moment('DD.MM.YYYY HH:mm') }}
 
 
             </div>
@@ -146,15 +147,18 @@
                 </div>
 
                 <div class="col-sm-4 col-12 pl-0" v-if="listing.distance>0">
-                    <p class="ml-sm-5 ml-0 p-sm-2 p-0 mt-2 mt-sm-0">{{$trans('profile.listing.distance')}} <strong>{{listing.distance}}</strong> km
+                    <p class="ml-sm-5 ml-0 p-sm-2 p-0 mt-2 mt-sm-0">{{$trans('profile.listing.distance')}} <strong>{{listing.distance}}</strong>
+                        km
                     </p>
-                    <p class="ml-sm-5 ml-0 p-sm-2 p-0 mt-2 mt-sm-0" v-if="listing.additional_info">{{$trans('profile.listing.description')}}: <em>{{listing.additional_info}}</em>
+                    <p class="ml-sm-5 ml-0 p-sm-2 p-0 mt-2 mt-sm-0" v-if="listing.additional_info">
+                        {{$trans('profile.listing.description')}}: <em>{{listing.additional_info}}</em>
                     </p>
                 </div>
 
 
                 <div class="col-12 pl-0" v-if="listing.moving_package">
-                    <p class="ml-sm-5 ml-0 p-sm-2 p-0 mt-2 mt-sm-0"><strong>{{listing.moving_package}}</strong></p>
+                    <p class="ml-sm-5 ml-0 p-sm-2 p-0 mt-2 mt-sm-0"><strong v-html="movingPackageTranslate"></strong>
+                    </p>
                 </div>
 
                 <div class="col-12 p-2" v-if="images.length>0">
@@ -199,9 +203,7 @@
                         </button>
 
 
-
                     </div>
-
 
 
                 </div>
@@ -270,7 +272,8 @@
         </div>
 
         <!-- Modal -->
-        <div class="modal fade" :id="'removeModal-'+listing.id+modalPrefix" data-backdrop="static" data-keyboard="false" tabindex="-1" :aria-labelledby="'removeModal-'+listing.id" aria-hidden="true">
+        <div class="modal fade" :id="'removeModal-'+listing.id+modalPrefix" data-backdrop="static" data-keyboard="false"
+             tabindex="-1" :aria-labelledby="'removeModal-'+listing.id" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -281,15 +284,24 @@
                     </div>
                     <div class="modal-body">
                         <div class="row d-flex justify-content-center">
-                            <div class="col-6"><button class="btn btn-danger w-100" data-dismiss="modal" @click="removeListing">{{$trans('profile.listing.button_1')}}</button></div>
-                            <div class="col-6"><button data-dismiss="modal" aria-label="Close" class="btn btn-secondary w-100">{{$trans('profile.listing.button_2')}}</button></div>
+                            <div class="col-6">
+                                <button class="btn btn-danger w-100" data-dismiss="modal" @click="removeListing">
+                                    {{$trans('profile.listing.button_1')}}
+                                </button>
+                            </div>
+                            <div class="col-6">
+                                <button data-dismiss="modal" aria-label="Close" class="btn btn-secondary w-100">
+                                    {{$trans('profile.listing.button_2')}}
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="modal fade" :id="'archiveModal-'+listing.id+modalPrefix" data-backdrop="static" data-keyboard="false" tabindex="-1" :aria-labelledby="'archiveModal-'+listing.id" aria-hidden="true">
+        <div class="modal fade" :id="'archiveModal-'+listing.id+modalPrefix" data-backdrop="static"
+             data-keyboard="false" tabindex="-1" :aria-labelledby="'archiveModal-'+listing.id" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -301,14 +313,22 @@
 
                     <div class="modal-body">
                         <div class="row d-flex justify-content-center">
-                            <div class="col-6"><button class="btn btn-danger w-100" data-dismiss="modal" @click="archiveListing">{{$trans('profile.listing.button_3')}}</button></div>
-                            <div class="col-6"><button data-dismiss="modal" aria-label="Close" class="btn btn-secondary w-100">{{$trans('profile.listing.button_2')}}</button></div>
+                            <div class="col-6">
+                                <button class="btn btn-danger w-100" data-dismiss="modal" @click="archiveListing">
+                                    {{$trans('profile.listing.button_3')}}
+                                </button>
+                            </div>
+                            <div class="col-6">
+                                <button data-dismiss="modal" aria-label="Close" class="btn btn-secondary w-100">
+                                    {{$trans('profile.listing.button_2')}}
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-   </div>
+    </div>
 </template>
 <script>
 
@@ -317,7 +337,8 @@
     // optional style for arrows & dots
     import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
     import VueGallerySlideshow from 'vue-gallery-slideshow'
-    import { v4 as uuidv4 } from 'uuid';
+    import {v4 as uuidv4} from 'uuid';
+
     export default {
         props: {
             listing: Object,
@@ -375,7 +396,18 @@
             }
         },
         computed: {
+            movingPackageTranslate:function() {
+                let arr = [
+                    {title: "Truck with Driver package", key: 'request_a_quote.section_4.h3_1'},
+                    {title: "The Economic package", key: 'request_a_quote.section_4.h3_2'},
+                    {title: "The Standard package", key: 'request_a_quote.section_4.h3_3'},
+                    {title: "The Complete package", key: 'request_a_quote.section_4.h3_4'},
+                    ];
 
+                let key = arr.find(item => item.title === this.listing.moving_package).key
+
+                return this.$trans(key)
+            },
             user: function () {
                 return window.user
             },
@@ -418,8 +450,8 @@
             }
 
         },
-        created(){
-          this.modalPrefix = uuidv4()
+        created() {
+            this.modalPrefix = uuidv4()
         },
         methods: {
             removeListing() {
@@ -452,7 +484,7 @@
                     "listing_id": this.listing.id
                 }).then(resp => {
 
-                }).catch(()=>{
+                }).catch(() => {
                     if (this.isLiked) {
                         this.user.favorites = this.user.favorites.filter((item) => {
                                 return item.listing_id !== this.listing.id

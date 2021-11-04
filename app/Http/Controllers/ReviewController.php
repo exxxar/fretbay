@@ -18,13 +18,30 @@ class ReviewController extends Controller
     {
     }
 
-    public function getReviews()
+    public function getReviewsById($id = null)
     {
 
+        $id = is_null($id) ? Auth::user()->id : $id;
         $reviews = Review::with(["transporter", "transporter.profile", "review"])
-            ->where(function ($quote){
-                $quote->where("user_id", Auth::user()->id)
-                    ->orWhere("transporter_id", Auth::user()->id);
+            ->where(function ($quote) use ($id) {
+                $quote->where("transporter_id", $id);
+            })
+            ->where("is_visible", true)
+            ->get();
+
+        return response()->json([
+            "reviews" => $reviews
+        ]);
+    }
+
+    public function getReviews($id = null)
+    {
+
+        $id = is_null($id) ? Auth::user()->id : $id;
+        $reviews = Review::with(["transporter", "transporter.profile", "review"])
+            ->where(function ($quote) use ($id) {
+                $quote->where("user_id", $id)
+                    ->orWhere("transporter_id", $id);
             })
             ->where("is_visible", true)
             ->get();

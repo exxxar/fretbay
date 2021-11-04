@@ -25,12 +25,25 @@
                             {{$trans('profile.sidebar.em_2')}}</em>
                     </div>
 
+                    <div class="border-bottom p-2">
+
+                        <div class="alert alert-primary" role="alert"
+                             v-if="user.profile.is_documents_approved&&user.is_transporter">
+                            You are approval to show Messages and do Qoutes
+                        </div>
+
+                        <div class="alert alert-warning w-100" role="alert" v-else-if="user.is_transporter">
+                            You are not approved to view Messages and make Quotes. Please add <a target="_blank" href="/transporter/profile#documents">Documents</a> in profile
+                        </div>
+
+
+                    </div>
 
                     <!-- End Toggle Button -->
 
                     <!-- Content -->
                     <div class="js-scrollbar u-sidebar__body">
-                        <div class="u-sidebar__content py-5">
+                        <div class="u-sidebar__content py-2">
 
 
                             <ul class="list-unstyled font-size-14 mb-5" v-if="user.is_admin">
@@ -140,13 +153,14 @@
                     <!-- List -->
                     <ul class="list-inline font-size-14 mb-0">
                         <li class="list-inline-item">
-                            <a class="u-sidebar--panel__link pr-2" href="../pages/privacy.html">{{$trans('profile.sidebar.privacy')}}</a>
+                            <a class="u-sidebar--panel__link pr-2"
+                               href="/privacy">{{$trans('profile.sidebar.privacy')}}</a>
                         </li>
                         <li class="list-inline-item">
-                            <a class="u-sidebar--panel__link px-2" href="../pages/terms.html">{{$trans('profile.sidebar.terms')}}</a>
+                            <a class="u-sidebar--panel__link px-2" href="/terms">{{$trans('profile.sidebar.terms')}}</a>
                         </li>
                         <li class="list-inline-item">
-                            <a class="u-sidebar--panel__link pl-2" href="../pages/help.html">
+                            <a class="u-sidebar--panel__link pl-2" href="/fequently-asked-questions">
                                 <i class="fa fa-info-circle"></i>
                             </a>
                         </li>

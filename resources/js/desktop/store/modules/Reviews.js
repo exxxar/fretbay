@@ -93,6 +93,14 @@ const actions = {
                 commit('setReviews', resp.data.reviews);
             })
     },
+    loadReviewsById({state, commit}, id){
+        return axios
+            .get('/reviews/'+id)
+            .then(resp => {
+                state.reviews = resp.data.reviews;
+                state.deleted_reviews = resp.data.deleted_reviews;
+            });
+    },
     loadReviews({state, commit}) {
         return axios
             .get('/reviews/list')

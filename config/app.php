@@ -181,7 +181,8 @@ return [
         App\Providers\PermissionServiceProvider::class,
         App\Providers\TranslationServiceProvider::class,
 
-        Yandex\Geocode\YandexGeocodeServiceProvider::class
+        Yandex\Geocode\YandexGeocodeServiceProvider::class,
+        Cartalyst\Stripe\Laravel\StripeServiceProvider::class,
 
     ],
 
@@ -235,7 +236,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
-        'YaGeo' => Yandex\Geocode\Facades\YandexGeocodeFacade::class
+        'YaGeo' => Yandex\Geocode\Facades\YandexGeocodeFacade::class,
+        'Stripe' => Cartalyst\Stripe\Laravel\Facades\Stripe::class,
 
     ],
 

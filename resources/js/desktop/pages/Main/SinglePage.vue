@@ -19,6 +19,7 @@
                  style="max-width:300px">
         </div>
         <h4 class="text-center" v-if="!item">{{$trans('profile.page.no_data')}}</h4>
+
     </section>
 </template>
 <script>

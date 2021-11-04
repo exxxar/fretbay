@@ -3,7 +3,7 @@
         <!-- Description Section -->
         <div class="container space-1 pt-5 pb-2">
             <div class="row mb-2">
-                <div class="col-md-4 col-12">
+                <div class="col-md-4 col-12" v-if="user.profile.is_documents_approved&&user.is_transporter||user.is_customer">
                     <div class="btn-group d-flex">
                         <button type="button" class="btn btn-outline-primary w-100"
                                 v-if="user.is_transporter||user.id===listing.user_id"
@@ -18,6 +18,11 @@
                             <span> {{$trans('profile.listing.span_2')}} <i class="far fa-comments"></i></span>
                         </button>
 
+                    </div>
+                </div>
+                <div class="col-12" v-else>
+                    <div class="alert alert-warning w-100" role="alert">
+                        You are not approved to view Messages and make Quotes. Please add <a target="_blank" href="/transporter/profile#documents">Documents</a> in profile
                     </div>
                 </div>
             </div>

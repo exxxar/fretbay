@@ -1,19 +1,19 @@
 <?php
 
 return array (
-  'breadcrumbs' => 
+  'breadcrumbs' =>
   array (
     'a_1' => 'Choice of Category',
     'a_2' => 'Add item / volume',
     'a_3' => 'Address, Information / Photo',
   ),
-  'global' => 
+  'global' =>
   array (
     'button_next' => 'Next',
     'button_prev' => 'Prev',
     'button_send' => 'Send',
   ),
-  'section_1' => 
+  'section_1' =>
   array (
     'button_1' => 'Publish your listing',
     'button_2' => 'Compare the quotes',
@@ -25,7 +25,7 @@ return array (
     'div_4' => 'Following the move, give your opinion on the mover\'s service and the quality of the grouped transport of your goods.',
     'h3_1' => 'Categories',
   ),
-  'section_2' => 
+  'section_2' =>
   array (
     'a_1' => 'Online inventory',
     'h2_1' => 'The volume of your move',
@@ -37,13 +37,13 @@ return array (
                                             online.',
     'input_placeholder_1' => 'Your volume',
   ),
-  'section_3' => 
+  'section_3' =>
   array (
     'h4_1' => 'Volume calculator',
     'input_placeholder_1' => 'Search item',
     'p_1' => 'Total volume',
   ),
-  'section_4' => 
+  'section_4' =>
   array (
     'h3_1' => 'Truck with Driver package',
     'h3_2' => 'The Economic package',
@@ -58,7 +58,7 @@ return array (
     'ul_3' => '<li> A truck adapted to your volume</li> <li> The number of movers required to load and unload the truck</li> <li> Disassembly and reassembly of certain furniture</li> <li> The packaging of the fragile</li> <li> The protection of goods by special equipment (blankets, straps...)</li> <li> All road-related costs (fuel, possible tolls, insurance)</li>',
     'ul_4' => '<li> A truck adapted to your volume</li> <li> The number of movers required to load and unload the truck</li> <li> The cartoning and packaging of the fragil</li> <li> Disassembly and reassembly of certain furnitur</li> <li> The protection of goods by special equipment (blankets, straps...)</li> <li> All road-related costs (fuel, possible tolls, insurance)</li>',
   ),
-  'section_5' => 
+  'section_5' =>
   array (
     'button_1' => '- Loading and delivery conditions.',
     'button_2' => '- The list of elements to be dismantled.',
@@ -92,18 +92,18 @@ return array (
     'p_5' => 'Drag and drop picture here or click to search',
     'метка_2' => '',
   ),
-  'section_6' => 
+  'section_6' =>
   array (
     'h3_1' => 'TYPE OF TRANSPORT',
   ),
-  'section_7' => 
+  'section_7' =>
   array (
     'h2_1' => 'Vehicles',
   ),
-  'signup_customer_form' => 
+  'signup_customer_form' =>
   array (
     'button_1' => 'Register',
-    'button_2' => 'I have already account!',
+    'button_2' => 'Login',
     'input_placeholder_1' => 'Email',
     'input_placeholder_2' => 'Your Username',
     'input_placeholder_3' => 'Your Phone',

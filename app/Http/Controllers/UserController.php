@@ -159,10 +159,10 @@ class UserController extends Controller
         if (is_null($user))
             return view("errors.404");
 
-        $profile = Profile::with(['vehicles'])->find($user->profile_id);
+        $profile = Profile::with(['vehicles', 'user.reviews', 'user.orders','user'])->find($user->profile_id);
 
         $categories = [];
-        if($profile->transport_specialities !== null) {
+        if ($profile->transport_specialities !== null) {
             $categories = ObjectCategory::whereIn('id', $profile->transport_specialities)->get();
         }
         $info = (object)[];
@@ -170,12 +170,12 @@ class UserController extends Controller
         $info->name = $user->name;
         $info->created_at = $user->created_at;
         $info->payment_methods = $profile->payment_methods;
-        if($profile->payment_methods === null) {
+        if ($profile->payment_methods === null) {
             $info->payment_methods = [];
         }
         $info->transport_specialities = $categories;
         $info->spoken_languages = $profile->spoken_languages;
-        if($profile->spoken_languages === null) {
+        if ($profile->spoken_languages === null) {
             $info->spoken_languages = [];
         }
         $info->country = $profile->country;
@@ -187,7 +187,11 @@ class UserController extends Controller
         $info->additional_service = $profile->additional_service;
         $info->vehicles = $profile->vehicles;
         $info->vehicles_count = $profile->vehicles->count();
-        $info->is_approved = $profile->is_approved;
+        $info->is_approved = $profile->is_documents_approved;
+
+        $info->reviews = is_null($profile->user->reviews) ? [] : $profile->user->reviews;
+        $info->orders = is_null($profile->user->orders) ? [] : $profile->user->orders;
+        $info->user = $profile->user;
 
         return view("desktop.pages.profile.profile-personal-info", compact("info"));
     }

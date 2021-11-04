@@ -147,4 +147,18 @@ class MapBoxAPI
         return $tmp_sum;
     }
 
+
+    public function route(float $fA,float $lA,float $fB,float $lB)
+    {
+        $content = null;
+        try {
+            $content = file_get_contents("http://router.project-osrm.org/trip/v1/driving/$fA,$lA;$fB,$lB?steps=true&geometries=geojson");
+        } catch (\Exception $e) {
+
+
+        }
+        return json_decode($content)->trips;
+
+    }
+
 }

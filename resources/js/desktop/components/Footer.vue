@@ -80,8 +80,8 @@
 
                     <!-- Language -->
                     <div class="btn-group d-block position-relative mb-4 mb-lg-auto">
-                        <div class="dropdown">
-                            <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="dropdown w-100">
+                            <button class="btn btn-outline-primary dropdown-toggle w-100" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 {{currentLocale}}
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -92,7 +92,7 @@
                     </div>
                     <!-- End Language -->
 
-                    <p class="small text-muted">{{$trans('menu.text.all_rights_reserved')}}.</p>
+                    <p class="small text-muted mt-5">{{$trans('menu.text.all_rights_reserved')}}.</p>
                 </div>
             </div>
         </div>

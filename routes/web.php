@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\HomeController;
 use App\Models\ObjectCategory;
 use App\User;
+use Cartalyst\Stripe\Stripe;
 use Illuminate\Http\Response;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\App;
@@ -32,6 +33,39 @@ use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
 
+Route::get("/stripe", function () {
+    $stripe = Stripe::make(env("STRIPE_SECRET_KEY"));
+
+    $customers = $stripe->customers()->all();
+
+    foreach ($customers['data'] as $customer) {
+        echo($customer['email']);
+    }
+
+    $paymentMethod = $stripe->paymentMethods()->create([
+        'type' => 'card',
+        'card' => [
+            'number' => '4242424242424242',
+            'exp_month' => 9,
+            'exp_year' => 2022,
+            'cvc' => '314'
+        ],
+    ]);
+
+    echo $paymentMethod['id'];
+
+    $paymentIntent = $stripe->paymentIntents()->create([
+        'amount' => 2000,
+        'currency' => 'usd',
+        'payment_method_types' => [
+            'card',
+        ],
+    ]);
+
+    echo $paymentIntent['id'];
+
+    echo dd($stripe->paymentIntents()->find($paymentIntent['id']));
+});
 
 Route::get("/event", function () {
     $client = new \GuzzleHttp\Client();
@@ -112,6 +146,7 @@ Route::get("/data/{part}/{id}", [HomeController::class, "loadData"])->where([
 ]);
 
 Route::view("/pricing", "desktop.pages.pricing")->name("desktop.pricing");
+Route::view("/checkout", "desktop.pages.profile.checkout")->name("desktop.checkout");
 Route::view("/find-transporter", "desktop.pages.find-transporter")->name("desktop.find-transporter");
 Route::view("/how-it-works", "desktop.pages.how-it-works")->name("desktop.how-it-works");
 Route::view("/who-we-are", "desktop.pages.who-we-are")->name("desktop.who-we-are");
@@ -125,6 +160,7 @@ Route::view("/reviews", "desktop.pages.reviews")->name("desktop.reviews");
 Route::view("/ebay-sellers", "desktop.pages.ebay-sellers")->name("desktop.ebay-sellers");
 Route::view("/quality-charter", "desktop.pages.quality-charter")->name("desktop.quality-charter");
 Route::view("/privacy", "desktop.pages.privacy")->name("desktop.privacy");
+Route::view("/terms", "desktop.pages.terms")->name("desktop.terms");
 Route::view("/contact-us", "desktop.pages.contact-us")->name("desktop.contact-us");
 Route::view("/fraud-prevention", "desktop.pages.fraud-prevention")->name("desktop.fraud-prevention");
 
@@ -215,6 +251,7 @@ Route::group(["prefix" => "reviews", "middleware" => ["auth"]], function () {
     Route::post('/add', 'ReviewController@store');
     Route::post('/attach', 'ReviewController@attach');
     Route::delete('/remove/{id}', 'ReviewController@destroy');
+    Route::get('/{id}', 'ReviewController@getReviewsById');
 
 
 });
@@ -245,6 +282,8 @@ Route::group(["prefix" => "listing", "middleware" => ["auth"]], function () {
     Route::delete('/{id}', 'ListingController@destroy');
     Route::get('/restore/{id}', 'ListingController@restore');
     Route::get('/archive/{id}', 'ListingController@addToArchive');
+    Route::get('/routes/{id}', 'ListingController@getRouteForListing');
+
 
     Route::get("/{id}", "ListingController@show")->where(["id" => "[0-9]+"])->name("desktop.listing");
     Route::get("/direction/{id}/{direction?}", "ListingController@goToListing")->name("desktop.direction");

@@ -7,6 +7,7 @@
                     <div v-for="message in filteredMessages">
                         <div class="outgoing_msg "
                              style="padding:5px;"
+                             v-bind:class="{'bg-primary-soft':selected==message.id}"
                              v-if="message.sender_id===user.id&&(user.is_transporter||user.is_customer)">
                             <div class="sent_msg w-100 w-md-45 ">
                                 <p
@@ -45,7 +46,7 @@
 
                                  @click="selectUser(message.sender)">
                                 <div class="received_withd_msg w-100 w-md-55 ">
-                                    <h6>#{{message.sender.id}} {{message.sender.name}}</h6>
+                                    <h6>#{{message.sender.id}} {{message.sender.name}} <a target="_blank" class="text-primary" :href="'/profile/'+message.sender.id"><i class="far fa-id-card"></i></a></h6>
                                     <p>{{message.message}}</p>
                                     <span
                                         class="time_date"> {{message.created_at| moment("from", "now", true)}}</span>

@@ -4,6 +4,7 @@ namespace App;
 
 use App\Models\Listing;
 use App\Models\Message;
+use App\Models\Order;
 use App\Models\Profile;
 use App\Models\Quote;
 use App\Models\Review;
@@ -26,7 +27,7 @@ class User extends \TCG\Voyager\Models\User /*implements MustVerifyEmail*/
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'phone', 'profile_id','fcm_token'
+        'name', 'email', 'password', 'phone', 'profile_id', 'fcm_token'
     ];
 
     /**
@@ -58,17 +59,6 @@ class User extends \TCG\Voyager\Models\User /*implements MustVerifyEmail*/
 
     public function profile()
     {
-
-        /* if (is_null($this->profile_id)) {
-
-             $profile = new Profile();
-
-             Log::info($this->name);
-             Log::info($this->email);
-             $this->name = $this->name ?? "New User";
-             $this->profile_id = $profile->id;
-             $this->save();
-         }*/
         return $this->hasOne(Profile::class, "id", "profile_id");
     }
 
@@ -171,5 +161,16 @@ class User extends \TCG\Voyager\Models\User /*implements MustVerifyEmail*/
 
         return $rating;
     }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class, "user_id", "id");
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class, "user_id","id");
+    }
+
 
 }

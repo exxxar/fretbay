@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 
@@ -37,7 +38,12 @@ class Profile extends Model
 
     protected $appends = [
         "address",
+        "is_documents_approved"
 //        'legal_documents'
+    ];
+
+    protected $hidden = [
+        'is_approved'
     ];
 
     protected $casts = [
@@ -54,11 +60,31 @@ class Profile extends Model
         "city" => "array",
     ];
 
+    public function getIsDocumentsApprovedAttribute()
+    {
+        if ($this->is_approved)
+            return true;
+
+        $docs = $this->documents()->get();
+
+        if (count($docs) <= 3)
+            return false;
+
+        $isApproval = true;
+
+        foreach ($docs as $doc)
+            $isApproval = $isApproval && (boolean)$doc->is_approved;
+
+        return $isApproval;
+
+
+    }
+
     public function getAddressAttribute()
     {
         try {
             return $this->country['title'] . ", " . $this->region['title'] . ", " . $this->city['title'];
-        }catch(\Exception $e){
+        } catch (\Exception $e) {
             return '';
         }
     }
@@ -72,6 +98,12 @@ class Profile extends Model
     {
         return $this->hasMany(VerificationApplication::class, "profile_id", "id");
     }
+
+    public function user()
+    {
+        return $this->hasOne(User::class, "profile_id", "id");
+    }
+
 
     public function documents()
     {

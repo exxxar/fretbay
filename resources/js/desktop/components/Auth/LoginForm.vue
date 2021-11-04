@@ -121,6 +121,7 @@
                 }).catch(error => {
                     this.error_message = 'Bad account!';
                     this.loading = false;
+                    //window.location.reload()
                 })
             }
         }

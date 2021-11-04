@@ -1,13 +1,14 @@
 <template>
 
     <section id="company-section">
-        <div id="header"></div>
-        <div class="page-topheader">
-            <h1 class="p-3">
-                What is AlloTrans.com?
-            </h1>
-        </div>
+
+
         <div class="content">
+            <div class="container">
+                <h1>
+                    What is AlloTrans.com?
+                </h1>
+            </div>
             <div class="container">
                 <div class="left-column">
                     <h2>The AlloTrans platform</h2>
