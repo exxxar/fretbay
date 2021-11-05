@@ -55,9 +55,7 @@ class Profile extends Model
         "is_first_activation" => "boolean",
         "payment_methods" => "array",
         "spoken_languages" => "array",
-        "country" => "array",
-        "region" => "array",
-        "city" => "array",
+
     ];
 
     public function getIsDocumentsApprovedAttribute()

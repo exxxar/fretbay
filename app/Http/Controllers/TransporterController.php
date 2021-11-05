@@ -48,6 +48,8 @@ class TransporterController extends Controller
         $profile->postal = $request->get('postal');
         $profile->save();
 
+        Log::info(print_r($request->all(), true));
+
 
         $user = User::with(["profile"])->where("id", Auth::id())->first();
         $user->avatar = $request->avatar;

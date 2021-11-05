@@ -98,7 +98,7 @@
                 </div>
 
                 <div class="card mb-3" v-if="editMode">
-                    <ValidationObserver v-slot="{invalid}">
+                    <ValidationObserver v-slot="{invalid}" tag="form" @submit.prevent="update">
                         <div class="card-body">
                             <div class="row mb-3">
                                 <div class="col-sm-3">
@@ -141,6 +141,7 @@
                                     <ValidationProvider name="First name" rules="required|alpha" v-slot="{ errors }">
                                         <input type="text" name="first_name" class="form-control"
                                                v-model="edit_profile.first_name" required>
+                                        <p class="mb-0" style="color:red;font-size:11px">{{errors[0]}}</p>
                                     </ValidationProvider>
                                 </div>
                             </div>
@@ -153,6 +154,7 @@
                                     <ValidationProvider name="Last name" rules="required|alpha" v-slot="{ errors }">
                                         <input type="text" name="second_name" class="form-control"
                                                v-model="edit_profile.second_name" required :disabled="loading">
+                                        <p class="mb-0" style="color:red;font-size:11px">{{errors[0]}}</p>
                                     </ValidationProvider>
                                 </div>
                             </div>
@@ -162,9 +164,10 @@
                                     <h6 class="mb-0">{{$trans('profile.profile.email')}}</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <ValidationProvider name="Email" rules="email" v-slot="{ errors }">
+                                    <ValidationProvider name="Email" rules="required|email" v-slot="{ errors }">
                                         <input type="email" name="email" class="form-control"
-                                               v-model="edit_profile.email" :disabled="loading">
+                                               v-model="edit_profile.email" :disabled="loading" required>
+                                        <p class="mb-0" style="color:red;font-size:11px">{{errors[0]}}</p>
                                     </ValidationProvider>
                                 </div>
                             </div>
@@ -176,6 +179,7 @@
                                     <ValidationProvider name="Phone number 1" rules="numeric" v-slot="{ errors }">
                                         <input type="tel" name="telephone_number_1" class="form-control"
                                                v-model="edit_profile.telephone_number_1" :disabled="loading">
+                                        <p class="mb-0" style="color:red;font-size:11px">{{errors[0]}}</p>
                                     </ValidationProvider>
                                 </div>
                             </div>
@@ -187,70 +191,21 @@
                                     <ValidationProvider name="Phone number 2" rules="numeric" v-slot="{ errors }">
                                         <input type="tel" name="telephone_number_2" class="form-control"
                                                v-model="edit_profile.telephone_number_2" :disabled="loading">
-                                    </ValidationProvider>
-                                </div>
-                            </div>
-
-                            <div class="js-form-message mb-3">
-                                <div class="js-focus-state form">
-                                    <!--                                <input type="text" class="form-control form__input" name="city"-->
-                                    <!--                                       placeholder="Your city" required>-->
-                                    <ValidationProvider name="City" rules="required" v-slot="{ errors }">
-                                        <multiselect
-                                            :disabled="cities.length===0"
-                                            id="city" name="city"
-                                            v-model="edit_profile.city"
-                                            :options="cities"
-                                            :option-height="25"
-                                            :placeholder="$trans('profile.profile.input_placeholder_1')"
-                                            :show-labels="false"
-                                            :maxHeight="200"
-                                            label="title"
-                                            track-by="id"
-                                            :allow-empty="false"
-                                            :searchable="true"
-                                            :show-no-results="false"
-                                            :internal-search="true"
-                                            @search-change="getCities"
-                                            :clear-on-select="false"
-                                        >
-                                            <template slot="option" slot-scope="props">
-                                                <span class="option__title">{{ props.option.title }}</span>
-                                                <div class="option__desc" style="font-size: 10px;">
-                                                    <span class="option__title" v-if="props.option.area">{{ props.option.area }}</span>
-                                                    <span v-if="props.option.area&&props.option.region">, </span>
-                                                    <span class="option__small" v-if="props.option.region">{{ props.option.region }}</span>
-                                                </div>
-                                            </template>
-                                        </multiselect>
                                         <p class="mb-0" style="color:red;font-size:11px">{{errors[0]}}</p>
                                     </ValidationProvider>
                                 </div>
                             </div>
+
+
                             <div class="row mb-3">
                                 <div class="col-sm-3">
                                     <h6 class="mb-0">{{$trans('profile.profile.country')}}</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <ValidationProvider name="Country" rules="" v-slot="{ errors }">
-                                        <!--                                        <input type="text" name="country" class="form-control"-->
-                                        <!--                                               v-model="edit_profile.country" :disabled="loading">-->
-                                        <multiselect
-                                            :disabled="countries.length==0||loading"
-                                            v-model="edit_profile.country"
-                                            :options="countries"
-                                            :option-height="25"
-                                            :placeholder="$trans('profile.profile.input_placeholder_2')"
-                                            :show-labels="false"
-                                            :maxHeight="200"
-                                            label="title"
-                                            track-by="id"
-                                            :allow-empty="false"
-                                            :searchable="true"
-                                            :loading="countries_loading"
-                                            @input="getRegions"
-                                        >
-                                        </multiselect>
+                                    <ValidationProvider name="Country" rules="required|alpha" v-slot="{ errors }">
+                                        <input type="text" name="country" class="form-control"
+                                               v-model="edit_profile.country">
+
                                         <p class="mb-0" style="color:red;font-size:11px">{{errors[0]}}</p>
                                     </ValidationProvider>
                                 </div>
@@ -261,28 +216,12 @@
                                     <h6 class="mb-0">{{$trans('profile.profile.region')}}</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <ValidationProvider name="Region" rules="" v-slot="{ errors }">
+                                    <ValidationProvider name="Region" rules="required|alpha" v-slot="{ errors }">
                                         <!--                                        <input type="text" name="region" class="form-control"-->
                                         <!--                                               v-model="edit_profile.region" :disabled="loading">-->
-                                        <input v-if="regionInputMode" type="text" class="form-control" name="region"
-                                               placeholder="Your region" v-model="edit_profile.region.title" required>
-                                        <multiselect
-                                            v-if="!regionInputMode"
-                                            :disabled="regions.length==0||loading"
-                                            v-model="edit_profile.region"
-                                            :options="regions"
-                                            :option-height="25"
-                                            :placeholder="$trans('profile.profile.input_placeholder_3')"
-                                            :show-labels="false"
-                                            :maxHeight="200"
-                                            label="title"
-                                            track-by="id"
-                                            :allow-empty="false"
-                                            :searchable="true"
-                                            :loading="regions_loading"
-                                            @input="chooseRegion"
-                                        >
-                                        </multiselect>
+                                        <input type="text" class="form-control" name="region"
+                                               placeholder="Your region" v-model="edit_profile.region" required>
+
                                         <p class="mb-0" style="color:red;font-size:11px">{{errors[0]}}</p>
                                     </ValidationProvider>
                                 </div>
@@ -293,35 +232,9 @@
                                     <h6 class="mb-0">{{$trans('profile.profile.city')}}</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <ValidationProvider name="City" rules="alpha" v-slot="{ errors }">
+                                    <ValidationProvider name="City" rules="required|alpha" v-slot="{ errors }">
                                         <input type="text" name="city" class="form-control"
-                                               v-model="edit_profile.city" :disabled="loading">
-                                        <multiselect
-                                            :disabled="cities.length===0"
-                                            v-model="edit_profile.city"
-                                            :options="cities"
-                                            :option-height="25"
-                                            :placeholder="$trans('profile.profile.input_placeholder_4')"
-                                            :show-labels="false"
-                                            :maxHeight="200"
-                                            label="title"
-                                            track-by="id"
-                                            :allow-empty="false"
-                                            :searchable="true"
-                                            :show-no-results="false"
-                                            :internal-search="true"
-                                            @search-change="getCities"
-                                            :clear-on-select="false"
-                                        >
-                                            <template slot="option" slot-scope="props">
-                                                <span class="option__title">{{ props.option.title }}</span>
-                                                <div class="option__desc" style="font-size: 10px;">
-                                                    <span class="option__title" v-if="props.option.area">{{ props.option.area }}</span>
-                                                    <span v-if="props.option.area&&props.option.region">, </span>
-                                                    <span class="option__small" v-if="props.option.region">{{ props.option.region }}</span>
-                                                </div>
-                                            </template>
-                                        </multiselect>
+                                               v-model="edit_profile.city">
                                         <p class="mb-0" style="color:red;font-size:11px">{{errors[0]}}</p>
                                     </ValidationProvider>
                                 </div>
@@ -332,9 +245,9 @@
                                     <h6 class="mb-0">{{$trans('profile.profile.postal')}}</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <ValidationProvider name="Postal" rules="" v-slot="{ errors }">
+                                    <ValidationProvider name="Postal" rules="required" v-slot="{ errors }">
                                         <input type="text" name="postal" class="form-control"
-                                               v-model="edit_profile.postal" :disabled="loading">
+                                               v-model="edit_profile.postal">
                                         <p class="mb-0" style="color:red;font-size:11px">{{errors[0]}}</p>
                                     </ValidationProvider>
                                 </div>
@@ -350,8 +263,9 @@
                                 </div>
                                 <div class="col-12 col-md-3 text-secondary ">
 
-                                    <button class="btn btn-primary px-4 mx-1 w-100" :disabled="invalid||loading"
-                                            @click="update">
+                                    <button class="btn btn-primary px-4 mx-1 w-100"
+                                            v-bind:class="{'btn-danger':invalid||loading}"
+                                    >
                                         <span v-if="loading" class="spinner-border spinner-border-sm" role="status"
                                               aria-hidden="true"></span>
                                         {{$trans('profile.profile.button_6')}}
@@ -411,9 +325,9 @@
                 if (!this.profile.country || this.profile.country === '' || this.profile.country.title === '') {
                     return ''
                 }
-                return this.profile.country.title + ","
-                    + this.profile.region.title + ","
-                    + this.profile.city.title + ","
+                return this.profile.country + ","
+                    + this.profile.region + ","
+                    + this.profile.city + ","
                     + this.profile.postal;
             },
             fullName() {

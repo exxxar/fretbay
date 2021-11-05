@@ -156,7 +156,8 @@
 
                                     <div class="row d-flex justify-content-end">
                                         <div class="col-sm-12 col-md-4">
-                                            <button class="btn btn-outline-blue w-100" v-if="!editMode" @click="editMode = true">
+                                            <button class="btn btn-outline-blue w-100" v-if="!editMode"
+                                                    @click="editMode = true">
                                                 {{$trans('profile.profile.button_3')}}
                                             </button>
                                         </div>
@@ -232,13 +233,26 @@
                                                    :value="profile.telephone_number_2">
                                         </div>
                                     </div>
+                                    <!-- <div class="row mb-3">
+                                         <div class="col-sm-3">
+                                             <h6 class="mb-0">Address</h6>
+                                         </div>
+                                         <div class="col-sm-9 text-secondary">
+                                             <input type="text" name="address" class="form-control"
+                                                    :value="profile.address">
+                                         </div>
+                                     </div>-->
+
                                     <div class="row mb-3">
                                         <div class="col-sm-3">
-                                            <h6 class="mb-0">Address</h6>
+                                            <h6 class="mb-0">{{$trans('profile.profile.country')}}</h6>
                                         </div>
                                         <div class="col-sm-9 text-secondary">
-                                            <input type="text" name="address" class="form-control"
-                                                   :value="profile.address">
+
+                                            <input type="text" name="country" class="form-control"
+                                                   v-model="profile.country" required>
+
+
                                         </div>
                                     </div>
 
@@ -248,7 +262,7 @@
                                         </div>
                                         <div class="col-sm-9 text-secondary">
                                             <input type="text" name="region" class="form-control"
-                                                   :value="profile.region">
+                                                   :value="profile.region" required>
                                         </div>
                                     </div>
 
@@ -257,7 +271,8 @@
                                             <h6 class="mb-0">City</h6>
                                         </div>
                                         <div class="col-sm-9 text-secondary">
-                                            <input type="text" name="city" class="form-control" :value="profile.city">
+                                            <input type="text" name="city" class="form-control" :value="profile.city"
+                                                   required>
                                         </div>
                                     </div>
 
@@ -267,7 +282,7 @@
                                         </div>
                                         <div class="col-sm-9 text-secondary">
                                             <input type="text" name="postal" class="form-control"
-                                                   :value="profile.postal">
+                                                   :value="profile.postal" required>
                                         </div>
                                     </div>
 
@@ -384,10 +399,10 @@
 
             fullAddress() {
 
-                return this.profile.postal + "," +
-                    +this.profile.country + "," +
-                    +this.profile.city;
-
+                return this.user.profile.postal + ","
+                    + this.user.profile.region + ","
+                    + this.profile.city + ","
+                    + this.profile.country;
             },
 
             fullName() {

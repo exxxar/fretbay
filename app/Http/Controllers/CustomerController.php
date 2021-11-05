@@ -8,7 +8,9 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
+use function Symfony\Component\String\s;
 
 class CustomerController extends Controller
 {
@@ -37,6 +39,8 @@ class CustomerController extends Controller
 
         $user->email = $request->email ?? $user->email;
         $user->profile->update($request->all());
+
+        Log::info(print_r($user->profile,true));
 
 
         event(new NotificationEvent(
