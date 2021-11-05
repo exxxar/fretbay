@@ -4,7 +4,7 @@
 
 
             <div class="counters">
-                <a target="_blank" class="btn btn-link m-0 p-0" v-if="(user.is_transporter||user.id===listing.user_id)&&details"
+                <a class="btn btn-link m-0 p-0" v-if="(user.is_transporter||user.id===listing.user_id)&&details"
                    :href="'/listing/'+listing.id"
 
                 > <span class="mr-5 text-bold">№{{preparedId}}</span>
@@ -47,7 +47,7 @@
                 </a>
                 <div class="media-body text-nowrap">
                     <h3 class="h5 mb-0">
-                        <a target="_blank" class="btn btn-link"
+                        <a class="btn btn-link"
                            v-if="(user.is_transporter||user.id===listing.user_id)&&details"
                            :href="'/listing/'+listing.id"
 
