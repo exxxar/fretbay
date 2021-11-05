@@ -110,7 +110,7 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-sm-3">
-                                            <h6 class="mb-0">Full Name</h6>
+                                            <h6 class="mb-0">{{$trans('profile.profile.full_name')}}</h6>
                                         </div>
                                         <div class="col-sm-9 text-secondary">
                                             {{fullName}}
@@ -119,7 +119,7 @@
                                     <hr>
                                     <div class="row">
                                         <div class="col-sm-3">
-                                            <h6 class="mb-0">Email</h6>
+                                            <h6 class="mb-0">{{$trans('profile.profile.email')}}</h6>
                                         </div>
                                         <div class="col-sm-9 text-secondary">
                                             {{user.email}}
@@ -128,7 +128,7 @@
                                     <hr>
                                     <div class="row">
                                         <div class="col-sm-3">
-                                            <h6 class="mb-0">Phone number 1</h6>
+                                            <h6 class="mb-0">{{$trans('profile.profile.phone_number_1')}}</h6>
                                         </div>
                                         <div class="col-sm-9 text-secondary">
                                             {{profile.telephone_number_1}}
@@ -137,7 +137,7 @@
                                     <hr>
                                     <div class="row">
                                         <div class="col-sm-3">
-                                            <h6 class="mb-0">Phone number 2</h6>
+                                            <h6 class="mb-0">{{$trans('profile.profile.phone_number_2')}}</h6>
                                         </div>
                                         <div class="col-sm-9 text-secondary">
                                             {{profile.telephone_number_2}}
@@ -146,18 +146,23 @@
                                     <hr>
                                     <div class="row">
                                         <div class="col-sm-3">
-                                            <h6 class="mb-0">Address</h6>
+                                            <h6 class="mb-0">{{$trans('profile.profile.address')}}</h6>
                                         </div>
                                         <div class="col-sm-9 text-secondary">
                                             {{fullAddress}}
                                         </div>
                                     </div>
                                     <hr>
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <a class="btn btn-info " v-if="!editMode" @click="editMode=true" href="#">Edit</a>
+
+                                    <div class="row d-flex justify-content-end">
+                                        <div class="col-sm-12 col-md-4">
+                                            <button class="btn btn-outline-blue w-100" v-if="!editMode" @click="editMode = true">
+                                                {{$trans('profile.profile.button_3')}}
+                                            </button>
                                         </div>
                                     </div>
+
+
                                 </div>
                             </div>
 
@@ -400,7 +405,7 @@
         },
         mounted() {
             if (window.location.hash) {
-                $("a[href='"+window.location.hash+"']").click()
+                $("a[href='" + window.location.hash + "']").click()
             }
 
             this.loadActiveListing()

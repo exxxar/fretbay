@@ -71,7 +71,7 @@
                         <hr>
                         <div class="row">
                             <div class="col-sm-3">
-                                <h6 class="mb-0">{{$trans('profile.profile.phone_number_1')}}</h6>
+                                <h6 class="mb-0">{{$trans('profile.profile.phone_number_2')}}</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
                                 {{profile.telephone_number_2}}

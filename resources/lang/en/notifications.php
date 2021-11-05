@@ -3,11 +3,11 @@
 return array(
     'listing' => array(
         "title"=>"Listings",
-        "add"=>"Add new listing #:listing by :user .",
-        "update"=>"Update #:listing listing by :user .",
-        "remove"=>"Remove #:listing listing by :user",
-        "restore"=>"Restore #:listing listing by :user",
-        "archive"=>"Archive #:listing listing by :user",
+        "add"=>"Add new listing #:listing by :user user.",
+        "update"=>"Update #:listing listing by :user user.",
+        "remove"=>"Remove #:listing listing by :user user.",
+        "restore"=>"Restore #:listing listing by :user user.",
+        "archive"=>"Archive #:listing listing by :user user.",
 
     ),
     "message" => array(
