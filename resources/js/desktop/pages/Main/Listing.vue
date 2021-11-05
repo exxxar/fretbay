@@ -217,31 +217,30 @@
                 let dist = this.listing.distance
 
                 if (dist > 0 && dist <= 50)
-                    dynamicZoom = 10
-
-                if (dist > 50 && dist <= 100)
                     dynamicZoom = 9
 
-                if (dist > 100 && dist <= 250)
-                    dynamicZoom = 7
+                if (dist > 50 && dist <= 100)
+                    dynamicZoom = 8
 
-                if (dist > 250 && dist <= 400)
+                if (dist > 100 && dist <= 250)
                     dynamicZoom = 6
 
-                if (dist > 500 && dist <= 700)
+                if (dist > 250 && dist <= 400)
                     dynamicZoom = 5
 
-                if (dist > 800)
+                if (dist > 500 && dist <= 700)
                     dynamicZoom = 4
 
-                console.log("dist=>", dist, " zoom=>", dynamicZoom)
+                if (dist > 800)
+                    dynamicZoom = 3
+
 
                 this.map = new mapboxgl.Map({
                     container: 'map',
                     style: 'mapbox://styles/mapbox/outdoors-v11',
                     center: dynamicCenter,
                     zoom: dynamicZoom,
-                    bearing: 45
+                    bearing: 0
                 });
 
 
