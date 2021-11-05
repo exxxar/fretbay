@@ -12,7 +12,7 @@
 
                     <div class="row">
                         <div class="col-12"><p>{{item.title}}</p></div>
-                        <div class="col-12"><a :href="prepareLink">{{item.description}}</a></div>
+                        <div class="col-12"><a :href="prepareLink" target="_blank">{{item.description}}</a></div>
                         <div class="col-12"><p class="mb-0">{{item.created_at | moment("from", "now", true) }}</p></div>
                     </div>
 

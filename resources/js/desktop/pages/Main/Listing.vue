@@ -3,7 +3,8 @@
         <!-- Description Section -->
         <div class="container space-1 pt-5 pb-2">
             <div class="row mb-2">
-                <div class="col-md-4 col-12" v-if="user.profile.is_documents_approved&&user.is_transporter||user.is_customer">
+                <div class="col-md-4 col-12"
+                     v-if="user.profile.is_documents_approved&&user.is_transporter||user.is_customer">
                     <div class="btn-group d-flex">
                         <button type="button" class="btn btn-outline-primary w-100"
                                 v-if="user.is_transporter||user.id===listing.user_id"
@@ -22,7 +23,9 @@
                 </div>
                 <div class="col-12" v-else>
                     <div class="alert alert-warning w-100" role="alert">
-                        You are not approved to view Messages and make Quotes. Please add <a target="_blank" href="/transporter/profile#documents">Documents</a> in profile
+                        You are not approved to view Messages and make Quotes. Please add <a target="_blank"
+                                                                                             href="/transporter/profile#documents">Documents</a>
+                        in profile
                     </div>
                 </div>
             </div>
@@ -31,7 +34,7 @@
                     <listing-item-component :listing="listing" :details="false" v-if="listing"/>
                 </div>
                 <div class="col-12 mt-2">
-                    <div id="map" v-if="showMap" style="width:100%; height:300px;"></div>
+                    <div id="map" v-if="showMap" style="width:100%; height:450px;"></div>
                 </div>
             </div>
         </div>
@@ -42,7 +45,8 @@
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-between">
                     <li class="page-item col">
-                        <a class="page-link" :href="'/listing/direction/'+listing_id+'/0'" tabindex="-1"> {{$trans('profile.listing.a_1')}}</a>
+                        <a class="page-link" :href="'/listing/direction/'+listing_id+'/0'" tabindex="-1">
+                            {{$trans('profile.listing.a_1')}}</a>
                     </li>
                     <li class="page-item col">
                         <a class="page-link" href="/find-loads">
@@ -50,7 +54,8 @@
                         </a>
                     </li>
                     <li class="page-item col">
-                        <a class="page-link" :href="'/listing/direction/'+listing_id+'/1'"> {{$trans('profile.listing.a_2')}}</a>
+                        <a class="page-link" :href="'/listing/direction/'+listing_id+'/1'">
+                            {{$trans('profile.listing.a_2')}}</a>
                     </li>
                 </ul>
             </nav>
@@ -211,26 +216,34 @@
                 let dynamicZoom = 3
                 let dist = this.listing.distance
 
+                if (dist > 0 && dist <= 50)
+                    dynamicZoom = 10
 
-                if (dist > 0 && dist <= 200)
+                if (dist > 50 && dist <= 100)
+                    dynamicZoom = 9
+
+                if (dist > 100 && dist <= 250)
                     dynamicZoom = 7
 
-                if (dist > 200 && dist <= 700)
+                if (dist > 250 && dist <= 400)
+                    dynamicZoom = 6
+
+                if (dist > 500 && dist <= 700)
                     dynamicZoom = 5
 
-                if (dist > 700 && dist <= 900)
-                    dynamicZoom = 2
+                if (dist > 800)
+                    dynamicZoom = 4
 
-                if (dist > 900)
-                    dynamicZoom = 1
-
+                console.log("dist=>", dist, " zoom=>", dynamicZoom)
 
                 this.map = new mapboxgl.Map({
                     container: 'map',
                     style: 'mapbox://styles/mapbox/outdoors-v11',
                     center: dynamicCenter,
-                    zoom: dynamicZoom
+                    zoom: dynamicZoom,
+                    bearing: 45
                 });
+
 
                 geojson.features.forEach((marker, index) => {
 
@@ -514,7 +527,7 @@
 
 
     #map {
-        height: 250px;
+        height: 450px;
         width: 100%;
         margin: 0 auto;
         border: none;
@@ -570,12 +583,12 @@
     }
 
     .mapboxgl-canvas-container {
-        height: 300px;
+        height: 450px;
     }
 
     .mapboxgl-canvas {
         width: 100% !important;
-        height: 300px !important;
+        height: 450px !important;
     }
 
     #chatModal {

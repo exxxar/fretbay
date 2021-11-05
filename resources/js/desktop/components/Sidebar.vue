@@ -33,7 +33,7 @@
                         </div>
 
                         <div class="alert alert-warning w-100" role="alert" v-else-if="user.is_transporter">
-                            You are not approved to view Messages and make Quotes. Please add <a target="_blank" href="/transporter/profile#documents">Documents</a> in profile
+                            You are not approved to view Messages and make Quotes. Please add <a target="_blank" href="/transporter/profile/transporter-wizard/start">Documents</a> in profile
                         </div>
 
 

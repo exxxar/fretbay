@@ -3,6 +3,16 @@
         <div class="row gutters-sm">
             <div class="col-12 col-lg-4 mb-3">
                 <div class="card">
+                    <div class="card-header" v-if="user.profile.is_documents_approved">
+                        <img src="/images/profile/approved.png" class="mx-1" style="width: 25px; height: 25px"
+                             alt="Approved">
+                        <span class="text-uppercase"> {{$trans('profile.documents.approved')}}</span>
+                    </div>
+                    <div class="card-header" v-else>
+                        <img src="/images/profile/not_approved.png" class="mx-1" style="width: 25px; height: 25px"
+                             alt="Not approved">
+                        <span class="text-uppercase">{{$trans('profile.documents.not_approved')}}</span>
+                    </div>
                     <div class="card-body">
                         <div class="d-flex flex-column align-items-center text-center">
                             <img v-lazy="user.avatar" alt="Admin" class="rounded-circle" width="150">
@@ -15,6 +25,12 @@
                                 </p>
                                 <div class="d-flex justify-content-center">
                                     <star-rating v-model="user.computed_rating" :show-rating="false" :read-only="true"/>
+                                </div>
+                                <div class="d-flex justify-content-center mt-3"
+                                     v-if="!user.profile.is_documents_approved">
+                                    <a href="/transporter/profile/transporter-wizard/start"
+                                       class="btn btn-outline-danger">Need Approved!</a>
+
                                 </div>
                             </div>
                         </div>

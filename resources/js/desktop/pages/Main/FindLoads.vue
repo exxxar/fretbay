@@ -35,7 +35,8 @@
                 <div class="col-12 col-md-4 d-flex flex-column">
                     <small class="ml-3">Order by</small>
                     <div class="d-flex justify-content-around ">
-                        <a href="#" class="btn btn-link pt-0 d-flex align-items-center " v-bind:class="{'text-primary':sort==='id'}"
+                        <a href="#" class="btn btn-link pt-0 d-flex align-items-center "
+                           v-bind:class="{'text-primary':sort==='id'}"
                            @click="changeSort('id')">Ref
 
                             <p class="m-0 p-0 ml-1 " v-if="sort==='id'&&direction===false">
@@ -52,7 +53,8 @@
 
                         </a>
 
-                        <a href="#" class="btn btn-link pt-0 d-flex align-items-center" v-bind:class="{'text-primary':sort==='message_count'}"
+                        <a href="#" class="btn btn-link pt-0 d-flex align-items-center"
+                           v-bind:class="{'text-primary':sort==='message_count'}"
                            @click="changeSort('message_count')">Messages
                             <p class="m-0 p-0 ml-1 " v-if="sort==='message_count'&&direction===false">
                                     <span>
@@ -66,7 +68,8 @@
                                     </span>
                             </p>
                         </a>
-                        <a href="#" class="btn btn-link pt-0 d-flex align-items-center" v-bind:class="{'text-primary':sort==='quote_count'}"
+                        <a href="#" class="btn btn-link pt-0 d-flex align-items-center"
+                           v-bind:class="{'text-primary':sort==='quote_count'}"
                            @click="changeSort('quote_count')">Quotes
                             <p class="m-0 p-0 ml-1 " v-if="sort==='quote_count'&&direction===false">
                                     <span>
@@ -109,7 +112,8 @@
             <div class="row">
                 <div class="col-lg-9 order-lg-2 mb-9 mb-lg-0 p-2" v-if="listings.length>0">
 
-                    <listing-item-component :key="index" v-for="(listing,index) in filteredListings" :listing="listing"/>
+                    <listing-item-component :key="index" v-for="(listing,index) in filteredListings"
+                                            :listing="listing"/>
 
                     <div class="mb-9"></div>
 
@@ -185,7 +189,7 @@
                                          v-for="(item,index) in formulaList">
                                         <input type="checkbox" class="custom-control-input" :id="'formula-'+index"
                                                v-model="filter.formula" :value="item">
-                                        <label :for="'formula-'+index" class="custom-control-label">{{item}}</label>
+                                        <label :for="'formula-'+index" class="custom-control-label">{{movingPackageTranslate(item)}}</label>
                                     </div>
 
                                 </div>
@@ -284,7 +288,7 @@
                         </vue-custom-scrollbar>
 
                         <div class="row" style="position:sticky; bottom: 10px; z-index: 9;">
-                            <div class="col-12 p-5"  >
+                            <div class="col-12 p-5">
                                 <button @click="applyFilter" class="btn btn-success w-100 mb-1 ">
                                     {{$trans('profile.find_loads.button_1')}}
                                 </button>
@@ -608,9 +612,12 @@
 
                 let tmp = this.sortListing
 
-                return tmp.filter(item => item.additional_info.indexOf(this.search) !== -1
-                    || ("" + item.id).indexOf(this.search) !== -1
-                    || ("" + item.summary_volume).indexOf(this.search) !== -1
+
+                return tmp.filter(item => (item.additional_info.indexOf(this.search) !== -1
+                        || ("" + item.id).indexOf(this.search) !== -1
+                        || ("" + item.summary_volume).indexOf(this.search) !== -1
+                        || ("" + item.distance).indexOf(this.search) !== -1
+                    ) //&& this.filter.categories.indexOf(item.category_id)
                 )
             },
             listings: function () {
@@ -741,6 +748,19 @@
                 console.log(this.filter.formula)
                 // window.eventBus.$emit("preloader")
                 this.$store.dispatch('getFilteredListings', this.filter);
+            },
+
+            movingPackageTranslate: function (title) {
+                let arr = [
+                    {title: "Truck with Driver package", key: 'request_a_quote.section_4.h3_1'},
+                    {title: "The Economic package", key: 'request_a_quote.section_4.h3_2'},
+                    {title: "The Standard package", key: 'request_a_quote.section_4.h3_3'},
+                    {title: "The Complete package", key: 'request_a_quote.section_4.h3_4'},
+                ];
+
+                let key = arr.find(item => item.title === title).key
+
+                return this.$trans(key)
             },
 
             resetFilter() {

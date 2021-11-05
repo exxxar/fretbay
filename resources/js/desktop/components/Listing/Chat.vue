@@ -64,7 +64,7 @@
 
                 </div>
                 <div class="bottom-controls">
-                    <div class="control_row mt-2 mb-2 d-flex align-items-end">
+                    <div class="control_row mt-2 mb-2 d-flex align-items-end p-2">
 
 
                         <!--<span class="badge badge-primary mr-2 ml-2 cursor-pointer" data-dismiss="modal" aria-label="Close">
