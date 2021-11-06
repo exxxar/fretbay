@@ -9,6 +9,7 @@ use Stripe\Charge;
 
 use Stripe\Event;
 use Stripe\Stripe;
+use Stripe\Webhook;
 
 class StripePaymentController extends Controller
 {
@@ -51,7 +52,7 @@ class StripePaymentController extends Controller
         $event = null;
 
         try {
-            $event = \Stripe\Webhook::constructEvent(
+            $event = Webhook::constructEvent(
                 $payload, $sig_header, $endpoint_secret
             );
         } catch(\UnexpectedValueException $e) {
