@@ -44,31 +44,30 @@ class StripePaymentController extends Controller
 
     public function callback(Request $request){
         Log::info("callback");
-        Stripe::setApiKey(env('STRIPE_SECRET'));
-        $events = Event::all([
-            'type' => 'checkout.session.async_payment_succeeded',
-            'created' => [
-                // Check for events created in the last 2 hours.
-                'gte' => time() - 7200,
-            ],
-        ]);
+        $endpoint_secret = 'whsec_sXm4SHND4GB3oEnSUMMMzXrDEF68m7J3';
 
+        $payload = @file_get_contents('php://input');
+        $sig_header = $_SERVER['HTTP_STRIPE_SIGNATURE'];
+        $event = null;
 
-        foreach ($events->autoPagingIterator() as $event) {
-            $pay = $event->data->object;
-
-            Log::info($event->data->object->client_reference_id);
-            Log::info($pay);
-/*
-            if (intval($event->data->object->client_reference_id) == $user->id) {
-
-                $user->premium = 1;
-                $user->save();
-
-                break;
-            }*/
+        try {
+            $event = \Stripe\Webhook::constructEvent(
+                $payload, $sig_header, $endpoint_secret
+            );
+        } catch(\UnexpectedValueException $e) {
+            // Invalid payload
+            http_response_code(400);
+            exit();
+        } catch(\Stripe\Exception\SignatureVerificationException $e) {
+            // Invalid signature
+            http_response_code(400);
+            exit();
         }
 
-        return response()->noContent();
+
+        echo 'Received unknown event type ' . $event->type;
+
+        http_response_code(200);
+
     }
 }
