@@ -45,15 +45,16 @@ class StripePaymentController extends Controller
 
     public function callback(Request $request){
         Log::info("callback");
-        $endpoint_secret = 'whsec_sXm4SHND4GB3oEnSUMMMzXrDEF68m7J3';
+
 
         $payload = @file_get_contents('php://input');
         $sig_header = $_SERVER['HTTP_STRIPE_SIGNATURE'];
         $event = null;
 
         try {
+            Stripe::setApiKey(env('STRIPE_SECRET'));
             $event = Webhook::constructEvent(
-                $payload, $sig_header, $endpoint_secret
+                $payload, $sig_header, env('STRIPE_SECRET')
             );
         } catch(\UnexpectedValueException $e) {
             // Invalid payload
