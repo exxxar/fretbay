@@ -44,6 +44,7 @@ class StripePaymentController extends Controller
 
     public function callback(Request $request){
         Log::info("callback");
+        Stripe::setApiKey(env('STRIPE_SECRET'));
         $events = Event::all([
             'type' => 'checkout.session.completed',
             'created' => [
