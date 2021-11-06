@@ -46,7 +46,7 @@ class StripePaymentController extends Controller
         Log::info("callback");
         Stripe::setApiKey(env('STRIPE_SECRET'));
         $events = Event::all([
-            'type' => 'checkout.session.completed',
+            'type' => 'checkout.session.async_payment_succeeded',
             'created' => [
                 // Check for events created in the last 2 hours.
                 'gte' => time() - 7200,
@@ -68,5 +68,7 @@ class StripePaymentController extends Controller
                 break;
             }*/
         }
+
+        return response()->noContent();
     }
 }
