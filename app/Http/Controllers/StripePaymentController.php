@@ -57,11 +57,13 @@ class StripePaymentController extends Controller
                 $payload, $sig_header, env('STRIPE_SECRET')
             );
         } catch(\UnexpectedValueException $e) {
-            // Invalid payload
+            Log::info("Invalid payload");
             http_response_code(400);
             exit();
         } catch(\Stripe\Exception\SignatureVerificationException $e) {
             // Invalid signature
+
+            Log::info("Invalid signature");
             http_response_code(400);
             exit();
         }
