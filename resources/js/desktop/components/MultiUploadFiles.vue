@@ -37,7 +37,7 @@
         <div class="row w-100 mt-2 mx-auto row-cols-2 row-cols-md-3" @dragenter="dragging=true" v-show="!dragging">
             <slot name="filesListAdditional">
             </slot>
-            <slot name="filesList">
+            <slot name="filesList" v-if="files.length>0">
                 <VueSlickCarousel class="p-1" v-bind="settings" >
                 <div v-for="(file, key) in files" class="px-1 px-sm-2">
                     <div class="card my-2">

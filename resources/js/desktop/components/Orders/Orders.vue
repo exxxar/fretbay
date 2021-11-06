@@ -1,14 +1,15 @@
 <template>
-    <div class="row">
-        <div class="col-lg-12 mb-2 mb-lg-0 " >
-            <div class="row d-flex">
-                <div class="col-md-4">
-                    <a class="btn btn-link p-0" href="/find-loads"><i class="fas fa-dolly"></i>
-                        <strong>{{$trans('profile.page.find_loads')}}</strong></a>
+    <div class="container p-0 pt-3">
+        <div class="row ">
+            <div class="col-lg-12 mb-2 mb-lg-0" >
+                <div class="row d-flex">
+                    <div class="col-md-4">
+                        <a class="btn btn-link p-0" href="/find-loads"><i class="fas fa-dolly"></i>
+                            <strong>{{$trans('profile.page.find_loads')}}</strong></a>
+                    </div>
                 </div>
-            </div>
 
-            <div class="row">
+                <div class="row">
                     <div class="col-12 col-md-4 d-flex flex-column">
                         <small class="ml-3">Order by</small>
                         <div class="d-flex justify-content-around ">
@@ -83,26 +84,28 @@
                 </div>
 
 
-            <p v-if="orders.length>0">{{$trans('profile.page.count_results')}}: {{filteredOrders.length}} <i class="fas fa-boxes"></i></p>
-            <hr>
-            <order-item-component :key="index" v-for="(order,index) in filteredOrders" :order="order" v-on:update="selfUpdate" v-if="orders.length>0"/>
+                <p v-if="orders.length>0">{{$trans('profile.page.count_results')}}: {{filteredOrders.length}} <i class="fas fa-boxes"></i></p>
+                <hr>
+                <order-item-component :key="index" v-for="(order,index) in filteredOrders" :order="order" v-on:update="selfUpdate" v-if="orders.length>0"/>
 
-            <div class="row" v-if="filteredOrders.length===0">
-                <div class="col-lg-12 mb-2 mb-lg-0" >
-                    <div class="d-flex p-5 justify-content-center" >
-                        <img v-lazy="'/images/empty.png'" alt="" class="w-100 w-sm-auto" style="max-width:300px;">
+                <div class="row" v-if="filteredOrders.length===0">
+                    <div class="col-lg-12 mb-2 mb-lg-0" >
+                        <div class="d-flex p-5 justify-content-center" >
+                            <img v-lazy="'/images/empty.png'" alt="" class="w-100 w-sm-auto" style="max-width:300px;">
+                        </div>
+                        <h4 class="text-center">{{$trans('profile.page.no_orders')}}</h4>
                     </div>
-                    <h4 class="text-center">{{$trans('profile.page.no_orders')}}</h4>
                 </div>
+
             </div>
 
+
+
+
+            <order-paginate-component v-if="orders.length>0"/>
         </div>
-
-
-
-
-        <order-paginate-component v-if="orders.length>0"/>
     </div>
+
 </template>
 <script>
     export default {

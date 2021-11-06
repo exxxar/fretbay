@@ -123,21 +123,9 @@
                 <div class="col-lg-9 order-lg-2 mb-9 mb-lg-0" v-else>
                     <img v-lazy="'/images/tagBackgrounds.png'" style="width: 100%;" alt="">
                     <h3 class="text-center">{{$trans('profile.find_loads.h3_1')}}</h3>
-                    <div class="d-flex justify-content-center w-100 row">
-                        <div class="col-12 col-sm-6">
-                            <button @click="applyFilter" class="btn btn-outline-success w-100 mb-1">
-                                {{$trans('profile.find_loads.button_1')}}
-                            </button>
-                            <button @click="resetFilter" class="btn btn-outline-warning w-100">
-                                {{$trans('profile.find_loads.button_2')}}
-                            </button>
-
-                        </div>
-
-                    </div>
                 </div>
 
-                <div class="col-lg-3 order-lg-1 p-0">
+                <div class="col-lg-3 order-lg-1 p-0 d-none d-md-block">
 
                     <div class="sticky-block">
 
@@ -330,7 +318,185 @@
 
             </div>
         </div>
-        <!-- End Hero Section -->
+
+        <div class="bottom-filter d-block d-md-none">
+            <button type="button" class="btn btn-primary rounded-circle" data-toggle="modal" data-target="#filterComponent">
+                <i class="fas fa-funnel-dollar"></i>
+            </button>
+        </div>
+
+        <div class="modal fade" id="filterComponent" tabindex="-1" role="dialog" aria-labelledby="filterComponentLable" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <vue-custom-scrollbar class="scroll-area" :settings="settingsScroll"
+                                              @ps-scroll-y="scrollHandler">
+                            <div class="row m-0">
+
+                                <div class="col-12 mt-2 mb-2">
+                                    <small style="color:lightgray;">{{$trans('profile.find_loads.small_2')}}
+                                        {{filteredListings.length}}</small>
+
+                                    <button class="btn btn-link text-danger"
+                                            style="margin: 0 !important; padding:0px 10px;"
+                                            v-if="isFilter" @click="resetFilter">
+                                        {{$trans('profile.find_loads.button_2')}}
+                                    </button>
+                                </div>
+
+                                <div class="col-12 mt-2 mb-2" v-if="isMovingActive">
+                                    <small>{{$trans('profile.find_loads.small_3')}}<sup>3</sup></small>
+
+                                    <div class="row m-0">
+                                        <div class="col-sm-6 mb-2 p-1">
+                                            <input type="number" class="form-control"
+                                                   v-model="filter.volume_range_value[0]"
+                                                   min="0"
+                                                   :max="filter.volume_range_value[1]"
+                                                   :placeholder="$trans('profile.find_loads.input_placeholder_2')">
+
+                                        </div>
+                                        <div class="col-sm-6 mb-2 p-1">
+                                            <input type="number" class="form-control"
+                                                   v-model="filter.volume_range_value[1]"
+                                                   :min="filter.volume_range_value[0]"
+                                                   :placeholder="$trans('profile.find_loads.input_placeholder_3')">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="p-1 w-100 mb-2">
+                                        <vue-slider
+                                            ref="volumeRanger"
+                                            v-model="filter.volume_range_value"
+                                            v-bind="volumeRanger.options"
+                                        ></vue-slider>
+                                    </div>
+
+                                    <div class="custom-control custom-switch " :key="index"
+                                         v-for="(item,index) in formulaList">
+                                        <input type="checkbox" class="custom-control-input" :id="'formula-'+index"
+                                               v-model="filter.formula" :value="item">
+                                        <label :for="'formula-'+index" class="custom-control-label">{{movingPackageTranslate(item)}}</label>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-12 mt-2">
+                                    <small>{{$trans('profile.find_loads.small_4')}}</small>
+                                    <div class="row m-0">
+                                        <div class="col-sm-6 mb-2 p-1">
+                                            <input type="number" class="form-control"
+                                                   v-model="filter.distance_range_value[0]"
+                                                   min="0"
+                                                   :max="filter.distance_range_value[1]"
+                                                   :placeholder="$trans('profile.find_loads.input_placeholder_2')">
+
+                                        </div>
+                                        <div class="col-sm-6 mb-2 p-1">
+                                            <input type="number" class="form-control"
+                                                   v-model="filter.distance_range_value[1]"
+                                                   :min="filter.distance_range_value[0]"
+                                                   :placeholder="$trans('profile.find_loads.input_placeholder_3')">
+                                        </div>
+                                    </div>
+
+                                    <div class="p-1 w-100">
+                                        <vue-slider
+                                            ref="distanceRanger"
+                                            v-model="filter.distance_range_value"
+                                            v-bind="distanceRanger.options"
+                                        ></vue-slider>
+                                    </div>
+
+                                </div>
+                                <div class="col-12 mt-2">
+                                    <small>{{$trans('profile.find_loads.small_5')}}</small>
+
+                                    <div class="p-1 w-100">
+                                        <vue-slider
+                                            ref="publicationRanger"
+                                            v-model="filter.publication_time_range_value"
+                                            v-bind="publicationTimeRanger.options"
+                                        ></vue-slider>
+
+                                    </div>
+                                </div>
+
+
+                                <div class="col-12 mt-2">
+
+                                    <small>{{$trans('profile.find_loads.small_1')}}</small>
+                                    <input type="number" class="form-control w-100"
+                                           v-model="filter.reference"
+                                           :placeholder="$trans('profile.find_loads.input_placeholder_1')">
+
+                                </div>
+
+                                <div class="col-12 mt-2">
+
+                                    <small>{{$trans('profile.find_loads.small_6')}}</small>
+
+                                    <input type="text" class="form-control w-100"
+                                           :placeholder="$trans('profile.find_loads.input_placeholder_7')"
+                                           v-model="filter.postal">
+
+                                </div>
+
+                                <div class="col-12 mt-2">
+
+                                    <small>{{$trans('profile.find_loads.small_7')}}</small>
+
+                                    <small @click="clearAddress()" v-if="this.filter.region"><i
+                                        class="fas fa-times"></i></small>
+                                    <address-input v-model="region" v-on:selected="selectAddress"
+                                                   :placeholder="$trans('profile.find_loads.input_placeholder_4')">
+
+                                    </address-input>
+
+                                </div>
+
+
+                                <div class="col-12 mt-2">
+                                    <small>{{$trans('profile.find_loads.small_8')}}</small>
+                                    <date-picker v-model="filter.date_from" @input="changeDate"
+                                                 :placeholder="$trans('profile.find_loads.input_placeholder_5')"
+                                                 class="mb-2 w-100"
+                                                 :value-type="'timestamp'"
+                                    />
+                                    <date-picker v-model="filter.date_to" @input="changeDate"
+                                                 :placeholder="$trans('profile.find_loads.input_placeholder_6')"
+                                                 class="mb-2 w-100"
+                                                 :value-type="'timestamp'"
+                                    />
+                                </div>
+
+
+                            </div>
+                        </vue-custom-scrollbar>
+
+                        <div class="row" style="position:sticky; bottom: 10px; z-index: 9;">
+                            <div class="col-12 p-5">
+                                <button @click="applyFilter" class="btn btn-success w-100 mb-1 ">
+                                    {{$trans('profile.find_loads.button_1')}}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </main>
 
 </template>
@@ -745,8 +911,7 @@
                 this.filter.categories.splice(index, 1);
             },
             applyFilter() {
-                console.log(this.filter.formula)
-                // window.eventBus.$emit("preloader")
+                window.eventBus.$emit("preloader")
                 this.$store.dispatch('getFilteredListings', this.filter);
             },
 
@@ -903,4 +1068,12 @@
 
     }
 
+    .bottom-filter {
+        position: fixed;
+        bottom: 10px;
+        left:0;
+        width: 100%;
+        padding: 10px;
+        z-index: 10;
+    }
 </style>

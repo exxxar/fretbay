@@ -115,7 +115,7 @@
                                     <label class="text-lg">{{$trans('profile.vehicles.label_7')}}</label>
                                     <!--                                    todo: rule to check number of files-->
                                     <ValidationProvider name="Images" rules="required" v-slot="{ errors }">
-                                        <multi-upload-files ref="new_upload" :files="new_vehicle.images">
+                                        <multi-upload-files ref="new_upload" :files="new_vehicle.images" >
                                             <template v-slot:uploadButton>
                                                 <button class="btn btn-primary w-100" @click="startNewUpload">{{$trans('profile.vehicles.button_1')}}</button>
                                             </template>
@@ -227,7 +227,7 @@
                                                     <button class="btn btn-primary w-100" @click="startUpload">{{$trans('profile.vehicles.button_1')}}</button>
                                                 </template>
                                                 <template v-slot:filesListAdditional>
-                                                    <div v-for="(file, key) in edit_vehicle.images" class="col-md-4 col-sm-6 col-6 px-1 px-sm-2">
+                                                    <div v-for="(file, key) in edit_vehicle.images" class="col-md-4 col-sm-6 col-6 px-1 px-sm-2" v-if="edit_vehicle.images.length>0">
                                                         <div class="card my-2">
                                                             <img class="card-img-top preview mx-auto" v-lazy="file"
                                                                  style="width:100%; height:150px; object-fit: cover;" alt="">

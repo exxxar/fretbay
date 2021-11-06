@@ -1,17 +1,21 @@
 <template>
     <div class="main-body mt-3">
-        <div class="row"  v-if="documents.company_info">
+        <div class="row" v-if="documents.company_info">
             <div class="col-md-12">
                 <div class="card mb-3">
                     <div class="card-body">
                         <div class="row w-100 mx-auto align-items-center">
                             <div class="col-12 p-0 d-block d-md-none">
-                                <div class="row w-100 mx-auto align-items-center justify-content-end" v-if="documents.company_info.is_approved">
-                                    <img src="/images/profile/approved.png" class="mx-1" style="width: 25px; height: 25px" alt="Approved">
+                                <div class="row w-100 mx-auto align-items-center justify-content-end"
+                                     v-if="documents.company_info.is_approved">
+                                    <img src="/images/profile/approved.png" class="mx-1"
+                                         style="width: 25px; height: 25px" alt="Approved">
                                     <span class="text-uppercase"> {{$trans('profile.documents.approved')}}</span>
                                 </div>
-                                <div class="row w-100 mx-auto align-items-center justify-content-end" v-if="!documents.company_info.is_approved">
-                                    <img src="/images/profile/not_approved.png" class="mx-1" style="width: 25px; height: 25px" alt="Not approved">
+                                <div class="row w-100 mx-auto align-items-center justify-content-end"
+                                     v-if="!documents.company_info.is_approved">
+                                    <img src="/images/profile/not_approved.png" class="mx-1"
+                                         style="width: 25px; height: 25px" alt="Not approved">
                                     <span class="text-uppercase">{{$trans('profile.documents.not_approved')}}</span>
                                 </div>
                             </div>
@@ -19,12 +23,16 @@
                                 <h2 class="tab-title">{{$trans('profile.documents.h2_1')}}</h2>
                             </div>
                             <div class="col-12 col-sm-4 p-0 d-none d-md-block">
-                                <div class="row w-100 mx-auto align-items-center justify-content-end" v-if="documents.company_info.is_approved">
-                                    <img src="/images/profile/approved.png" class="mx-1" style="width: 25px; height: 25px" alt="">
+                                <div class="row w-100 mx-auto align-items-center justify-content-end"
+                                     v-if="documents.company_info.is_approved">
+                                    <img src="/images/profile/approved.png" class="mx-1"
+                                         style="width: 25px; height: 25px" alt="">
                                     <span class="text-uppercase">{{$trans('profile.documents.approved')}}</span>
                                 </div>
-                                <div class="row w-100 mx-auto  align-items-center justify-content-end" v-if="!documents.company_info.is_approved">
-                                    <img src="/images/profile/not_approved.png" class="mx-1" style="width: 25px; height: 25px" alt="">
+                                <div class="row w-100 mx-auto  align-items-center justify-content-end"
+                                     v-if="!documents.company_info.is_approved">
+                                    <img src="/images/profile/not_approved.png" class="mx-1"
+                                         style="width: 25px; height: 25px" alt="">
                                     <span class="text-uppercase">{{$trans('profile.documents.not_approved')}}</span>
                                 </div>
                             </div>
@@ -97,8 +105,10 @@
                             </div>
                             <div class="col-12">
                                 <h4>{{$trans('profile.documents.h4_2')}}</h4>
-                                <div class="row w-100 m-auto row-cols-2 row-cols-md-3" v-if="documents.company_info.document_images.length>0">
-                                    <div v-for="(file, key) in documents.company_info.document_images" class="col-md-4 col-sm-6 col-6 px-1 px-sm-2">
+                                <div class="row w-100 m-auto row-cols-2 row-cols-md-3"
+                                     v-if="documents.company_info.document_images.length>0">
+                                    <div v-for="(file, key) in documents.company_info.document_images"
+                                         class="col-md-4 col-sm-6 col-6 px-1 px-sm-2">
                                         <div class="card">
                                             <div class="card-body px-md-2 text-center">
                                                 <img class="preview mx-auto" v-lazy="file"
@@ -110,11 +120,13 @@
                                 <div class="row w-100 m-auto" v-if="documents.company_info.document_images.length===0">
                                     <div class="col-6 p-1 text-center">
                                         <img class="mx-auto" v-lazy="'/images/profile/id_card_front.png'"
-                                             style="width: 100%; height: auto; object-fit: cover; max-width: 150px;" alt="">
+                                             style="width: 100%; height: auto; object-fit: cover; max-width: 150px;"
+                                             alt="">
                                     </div>
                                     <div class="col-6 p-1 text-center">
                                         <img class="mx-auto" v-lazy="'/images/profile/id_card_back.png'"
-                                             style="width: 100%; height: auto; object-fit: cover; max-width: 150px;" alt="">
+                                             style="width: 100%; height: auto; object-fit: cover; max-width: 150px;"
+                                             alt="">
                                     </div>
                                 </div>
                             </div>
@@ -124,7 +136,8 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="" class="text-lg">{{$trans('profile.documents.label_1')}}</label>
-                                        <ValidationProvider name="First name" rules="required|alpha" v-slot="{ errors }">
+                                        <ValidationProvider name="First name" rules="required|alpha"
+                                                            v-slot="{ errors }">
                                             <input type="text" class="form-control-empty form-control"
                                                    v-model="edit_company_info.manager_first_name">
                                         </ValidationProvider>
@@ -142,7 +155,8 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="" class="text-lg">{{$trans('profile.documents.label_3')}}</label>
-                                        <ValidationProvider name="Trade register ID number" rules="required" v-slot="{ errors }">
+                                        <ValidationProvider name="Trade register ID number" rules="required"
+                                                            v-slot="{ errors }">
                                             <input type="text" class="form-control-empty form-control"
                                                    v-model="edit_company_info.id_number">
                                         </ValidationProvider>
@@ -151,7 +165,8 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="" class="text-lg">{{$trans('profile.documents.label_4')}}</label>
-                                        <ValidationProvider name="Date of creation" rules="required" v-slot="{ errors }">
+                                        <ValidationProvider name="Date of creation" rules="required"
+                                                            v-slot="{ errors }">
                                             <input type="text" class="form-control-empty form-control"
                                                    v-model="edit_company_info.creation_date" v-mask="'##/##/####'">
                                         </ValidationProvider>
@@ -161,7 +176,8 @@
                                     <div class="form-group">
                                         <label for="" class="text-lg">{{$trans('profile.documents.label_5')}}</label>
                                         <ValidationProvider name="" rules="required" v-slot="{ errors }">
-                                            <input type="text" class="form-control-empty form-control" v-model="edit_company_info.company_name">
+                                            <input type="text" class="form-control-empty form-control"
+                                                   v-model="edit_company_info.company_name">
                                         </ValidationProvider>
                                     </div>
                                 </div>
@@ -169,7 +185,8 @@
                                     <div class="form-group">
                                         <label for="" class="text-lg">{{$trans('profile.documents.label_6')}}</label>
                                         <ValidationProvider name="" rules="required" v-slot="{ errors }">
-                                        <input type="text" class="form-control-empty form-control" v-model="edit_company_info.address">
+                                            <input type="text" class="form-control-empty form-control"
+                                                   v-model="edit_company_info.address">
                                         </ValidationProvider>
                                     </div>
                                 </div>
@@ -177,7 +194,8 @@
                                     <div class="form-group">
                                         <label for="" class="text-lg">{{$trans('profile.documents.label_7')}}</label>
                                         <ValidationProvider name="" rules="required" v-slot="{ errors }">
-                                        <input type="text" class="form-control-empty form-control" v-model="edit_company_info.city">
+                                            <input type="text" class="form-control-empty form-control"
+                                                   v-model="edit_company_info.city">
                                         </ValidationProvider>
                                     </div>
                                 </div>
@@ -185,7 +203,8 @@
                                     <div class="form-group">
                                         <label for="" class="text-lg">{{$trans('profile.documents.label_8')}}</label>
                                         <ValidationProvider name="" rules="required" v-slot="{ errors }">
-                                        <input type="text" class="form-control-empty form-control" v-model="edit_company_info.postal_code">
+                                            <input type="text" class="form-control-empty form-control"
+                                                   v-model="edit_company_info.postal_code">
                                         </ValidationProvider>
                                     </div>
                                 </div>
@@ -193,48 +212,54 @@
                                     <div class="form-group">
                                         <label for="" class="text-lg">{{$trans('profile.documents.label_9')}}</label>
                                         <ValidationProvider name="" rules="required" v-slot="{ errors }">
-                                            <input type="text" class="form-control-empty form-control" v-model="edit_company_info.country">
+                                            <input type="text" class="form-control-empty form-control"
+                                                   v-model="edit_company_info.country">
                                         </ValidationProvider>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <h4>{{$trans('profile.documents.h4_3')}}</h4>
-<!--                                    <div class="row w-100 m-auto">-->
-<!--                                        <div v-for="(file, key) in edit_company_info.document_images" class="col-md-4 col-sm-6 col-6 px-1 px-sm-2">-->
-<!--                                            <div class="card">-->
-<!--                                                <div class="card-body px-md-2 text-center">-->
-<!--                                                        <img class="preview mx-auto" v-lazy="file"-->
-<!--                                                            style="width:100%; height:150px; object-fit: cover;" alt="">-->
-<!--                                                    <button class="btn btn-outline-blue mt-2 mx-auto w-100" v-on:click="removeFile(key, 1)">Remove</button>-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
+                                    <!--                                    <div class="row w-100 m-auto">-->
+                                    <!--                                        <div v-for="(file, key) in edit_company_info.document_images" class="col-md-4 col-sm-6 col-6 px-1 px-sm-2">-->
+                                    <!--                                            <div class="card">-->
+                                    <!--                                                <div class="card-body px-md-2 text-center">-->
+                                    <!--                                                        <img class="preview mx-auto" v-lazy="file"-->
+                                    <!--                                                            style="width:100%; height:150px; object-fit: cover;" alt="">-->
+                                    <!--                                                    <button class="btn btn-outline-blue mt-2 mx-auto w-100" v-on:click="removeFile(key, 1)">Remove</button>-->
+                                    <!--                                                </div>-->
+                                    <!--                                            </div>-->
+                                    <!--                                        </div>-->
+                                    <!--                                    </div>-->
                                     <multi-upload-files ref="lg" :files="edit_company_info.new_images">
                                         <template v-slot:uploadButton>
-                                            <button class="btn btn-primary w-100" @click="startUpload('lg')">{{$trans('profile.documents.button_1')}}</button>
+                                            <button class="btn btn-primary w-100" @click="startUpload('lg')">
+                                                {{$trans('profile.documents.button_1')}}
+                                            </button>
                                         </template>
                                         <template v-slot:filesListAdditional>
-                                            <div v-for="(file, key) in edit_company_info.document_images" class="col-md-4 col-sm-6 col-6 px-1 px-sm-2">
+                                            <div v-for="(file, key) in edit_company_info.document_images"
+                                                 class="col-md-4 col-sm-6 col-6 px-1 px-sm-2">
                                                 <div class="card my-2">
                                                     <img class="card-img-top preview mx-auto" v-lazy="file"
                                                          style="width:100%; height:150px; object-fit: cover;" alt="">
                                                     <div class="card-body px-md-2 text-center">
-                                                        <button class="btn btn-outline-blue mt-2 mx-auto w-100" v-on:click="removeFile(key, 1)">Remove</button>
+                                                        <button class="btn btn-outline-blue mt-2 mx-auto w-100"
+                                                                v-on:click="removeFile(key, 1)">Remove
+                                                        </button>
                                                     </div>
                                                 </div>
                                             </div>
                                         </template>
                                     </multi-upload-files>
-<!--                                    <div class="row">-->
-<!--                                        <div class="col-6">-->
-<!--                                            <upload-file v-model="edit_company_info.front_image"></upload-file>-->
-<!--                                        </div>-->
-<!--                                        <div class="col-6">-->
-<!--                                            <upload-file v-model="edit_company_info.back_image"></upload-file>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                    <multi-upload-files :files="edit_company_info.document_images"></multi-upload-files>-->
+                                    <!--                                    <div class="row">-->
+                                    <!--                                        <div class="col-6">-->
+                                    <!--                                            <upload-file v-model="edit_company_info.front_image"></upload-file>-->
+                                    <!--                                        </div>-->
+                                    <!--                                        <div class="col-6">-->
+                                    <!--                                            <upload-file v-model="edit_company_info.back_image"></upload-file>-->
+                                    <!--                                        </div>-->
+                                    <!--                                    </div>-->
+                                    <!--                                    <multi-upload-files :files="edit_company_info.document_images"></multi-upload-files>-->
                                 </div>
                                 <div class="col-12">
                                     <h4>{{$trans('profile.documents.h4_4')}}</h4>
@@ -245,11 +270,17 @@
                                     </ValidationProvider>
                                 </div>
                             </div>
-    <!--                        <div class="col-12">-->
+                            <!--                        <div class="col-12">-->
                             <div class="row mx-auto mt-2 w-100 justify-content-end">
-                                <button class="btn btn-outline-blue mx-1" v-if="!editCompanyInfoMode" @click="editCompanyInfo">{{$trans('profile.documents.button_2')}}</button>
-                                <button class="btn btn-outline-blue mx-1" v-if="editCompanyInfoMode" :disabled="loadingCompanyInfo" @click="editCompanyInfoMode=false">{{$trans('profile.documents.button_3')}}</button>
-                                <button class="btn btn-primary px-4 mx-1" v-if="editCompanyInfoMode" :disabled="invalid||loadingCompanyInfo" @click="confirm(1)">
+                                <button class="btn btn-outline-blue mx-1" v-if="!editCompanyInfoMode"
+                                        @click="editCompanyInfo">{{$trans('profile.documents.button_2')}}
+                                </button>
+                                <button class="btn btn-outline-blue mx-1" v-if="editCompanyInfoMode"
+                                        :disabled="loadingCompanyInfo" @click="editCompanyInfoMode=false">
+                                    {{$trans('profile.documents.button_3')}}
+                                </button>
+                                <button class="btn btn-primary px-4 mx-1" v-if="editCompanyInfoMode"
+                                        :disabled="invalid||loadingCompanyInfo" @click="confirm(1)">
                                     <span v-if="loadingCompanyInfo" class="spinner-border spinner-border-sm"
                                           role="status" aria-hidden="true">
                                     </span>
@@ -257,10 +288,10 @@
                                 </button>
                             </div>
                         </ValidationObserver>
-<!--                        </div>-->
-<!--                        <div class="text-center">-->
-<!--                            <button class="btn btn-standard text-uppercase btn-success">confirm</button>-->
-<!--                        </div>-->
+                        <!--                        </div>-->
+                        <!--                        <div class="text-center">-->
+                        <!--                            <button class="btn btn-standard text-uppercase btn-success">confirm</button>-->
+                        <!--                        </div>-->
                     </div>
                 </div>
             </div>
@@ -272,12 +303,16 @@
                     <div class="card-body">
                         <div class="row w-100 mx-auto align-items-center">
                             <div class="col-12 p-0 d-block d-md-none">
-                                <div class="row w-100 mx-auto align-items-center justify-content-end" v-if="documents.manager_card.is_approved">
-                                    <img src="/images/profile/approved.png" class="mx-1" style="width: 25px; height: 25px" alt="Approved">
+                                <div class="row w-100 mx-auto align-items-center justify-content-end"
+                                     v-if="documents.manager_card.is_approved">
+                                    <img src="/images/profile/approved.png" class="mx-1"
+                                         style="width: 25px; height: 25px" alt="Approved">
                                     <span class="text-uppercase">{{$trans('profile.documents.approved')}}</span>
                                 </div>
-                                <div class="row w-100 mx-auto align-items-center justify-content-end" v-if="!documents.manager_card.is_approved">
-                                    <img src="/images/profile/not_approved.png" class="mx-1" style="width: 25px; height: 25px" alt="Not approved">
+                                <div class="row w-100 mx-auto align-items-center justify-content-end"
+                                     v-if="!documents.manager_card.is_approved">
+                                    <img src="/images/profile/not_approved.png" class="mx-1"
+                                         style="width: 25px; height: 25px" alt="Not approved">
                                     <span class="text-uppercase">{{$trans('profile.documents.not_approved')}}</span>
                                 </div>
                             </div>
@@ -285,12 +320,16 @@
                                 <h2 class="tab-title">{{$trans('profile.documents.h2_2')}}</h2>
                             </div>
                             <div class="col-12 col-sm-4 p-0 d-none d-md-block">
-                                <div class="row w-100 mx-auto align-items-center justify-content-end" v-if="documents.manager_card.is_approved">
-                                    <img src="/images/profile/approved.png" class="mx-1" style="width: 25px; height: 25px" alt="">
+                                <div class="row w-100 mx-auto align-items-center justify-content-end"
+                                     v-if="documents.manager_card.is_approved">
+                                    <img src="/images/profile/approved.png" class="mx-1"
+                                         style="width: 25px; height: 25px" alt="">
                                     <span class="text-uppercase">{{$trans('profile.documents.approved')}}</span>
                                 </div>
-                                <div class="row w-100 mx-auto  align-items-center justify-content-end" v-if="!documents.manager_card.is_approved">
-                                    <img src="/images/profile/not_approved.png" class="mx-1" style="width: 25px; height: 25px" alt="">
+                                <div class="row w-100 mx-auto  align-items-center justify-content-end"
+                                     v-if="!documents.manager_card.is_approved">
+                                    <img src="/images/profile/not_approved.png" class="mx-1"
+                                         style="width: 25px; height: 25px" alt="">
                                     <span class="text-uppercase">{{$trans('profile.documents.not_approved')}}</span>
                                 </div>
                             </div>
@@ -309,36 +348,43 @@
                                     <div class="form-group">
                                         <label for="" class="text-lg">{{$trans('profile.documents.label_11')}}</label>
                                         <input type="text" class="form-control-empty form-control"
-                                               v-model="documents.manager_card.issue_date" v-mask="'##/##/####'" disabled>
+                                               v-model="documents.manager_card.issue_date" v-mask="'##/##/####'"
+                                               disabled>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="" class="text-lg">{{$trans('profile.documents.label_12')}}</label>
                                         <input type="text" class="form-control-empty form-control"
-                                               v-model="documents.manager_card.expiry_date" v-mask="'##/##/####'" disabled>
+                                               v-model="documents.manager_card.expiry_date" v-mask="'##/##/####'"
+                                               disabled>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <h4>{{$trans('profile.documents.h4_5')}}</h4>
-                                    <div class="row w-100 m-auto row-cols-2 row-cols-md-3" v-if="documents.manager_card.document_images.length>0">
-                                        <div v-for="(file, key) in documents.manager_card.document_images" class="col-md-4 col-sm-6 col-6 px-1 px-sm-2">
+                                    <div class="row w-100 m-auto row-cols-2 row-cols-md-3"
+                                         v-if="documents.manager_card.document_images.length>0">
+                                        <div v-for="(file, key) in documents.manager_card.document_images"
+                                             class="col-md-4 col-sm-6 col-6 px-1 px-sm-2">
                                             <div class="card">
                                                 <div class="card-body px-md-2 text-center">
-                                                        <img class="preview mx-auto" v-lazy="file"
-                                                            style="width:100%; height:150px; object-fit: cover;" alt="">
+                                                    <img class="preview mx-auto" v-lazy="file"
+                                                         style="width:100%; height:150px; object-fit: cover;" alt="">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row w-100 m-auto" v-if="documents.manager_card.document_images.length===0">
+                                    <div class="row w-100 m-auto"
+                                         v-if="documents.manager_card.document_images.length===0">
                                         <div class="col-6 p-1 text-center">
                                             <img class="mx-auto" v-lazy="'/images/profile/id_card_front.png'"
-                                                 style="width: 100%; height: auto; object-fit: cover; max-width: 150px;" alt="">
+                                                 style="width: 100%; height: auto; object-fit: cover; max-width: 150px;"
+                                                 alt="">
                                         </div>
                                         <div class="col-6 p-1 text-center">
                                             <img class="mx-auto" v-lazy="'/images/profile/id_card_back.png'"
-                                                 style="width: 100%; height: auto; object-fit: cover; max-width: 150px;" alt="">
+                                                 style="width: 100%; height: auto; object-fit: cover; max-width: 150px;"
+                                                 alt="">
                                         </div>
                                     </div>
                                 </div>
@@ -347,16 +393,19 @@
                                 <div class="col-sm-12">
                                     <div class="form-group">
                                         <ValidationProvider name="ID card number" rules="required" v-slot="{ errors }">
-                                            <label for="" class="text-lg">{{$trans('profile.documents.label_10')}}</label>
+                                            <label for=""
+                                                   class="text-lg">{{$trans('profile.documents.label_10')}}</label>
                                             <input type="text" class="form-control-empty form-control"
-                                                   v-model="edit_manager_card.id_card_number" placeholder="ID card number">
+                                                   v-model="edit_manager_card.id_card_number"
+                                                   placeholder="ID card number">
                                         </ValidationProvider>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <ValidationProvider name="Issue date" rules="required" v-slot="{ errors }">
-                                            <label for="" class="text-lg">{{$trans('profile.documents.label_11')}}</label>
+                                            <label for=""
+                                                   class="text-lg">{{$trans('profile.documents.label_11')}}</label>
                                             <input type="text" class="form-control-empty form-control"
                                                    v-model="edit_manager_card.issue_date" v-mask="'##/##/####'">
                                         </ValidationProvider>
@@ -365,7 +414,8 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <ValidationProvider name="Expiry date" rules="required" v-slot="{ errors }">
-                                            <label for="" class="text-lg">{{$trans('profile.documents.label_12')}}</label>
+                                            <label for=""
+                                                   class="text-lg">{{$trans('profile.documents.label_12')}}</label>
                                             <input type="text" class="form-control-empty form-control"
                                                    v-model="edit_manager_card.expiry_date" v-mask="'##/##/####'">
                                         </ValidationProvider>
@@ -373,47 +423,60 @@
                                 </div>
                                 <div class="col-12">
                                     <h4>{{$trans('profile.documents.h4_6')}}</h4>
-<!--                                    <div class="row w-100 m-auto row-cols-2 row-cols-md-3">-->
-<!--                                        <div v-for="(file, key) in edit_manager_card.document_images" class="col-md-4 col-sm-6 col-6 px-1 px-sm-2">-->
-<!--                                            <div class="card">-->
-<!--                                                <div class="card-body px-md-2 text-center">-->
-<!--                                                        <img class="preview mx-auto" v-lazy="file"-->
-<!--                                                            style="width:100%; height:150px; object-fit: cover;" alt="">-->
-<!--                                                    <button class="btn btn-outline-blue mt-2 mx-auto w-100" v-on:click="removeFile(key, 2)">Remove</button>-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                    <multi-upload-files :files="edit_manager_card.new_images"></multi-upload-files>-->
+                                    <!--                                    <div class="row w-100 m-auto row-cols-2 row-cols-md-3">-->
+                                    <!--                                        <div v-for="(file, key) in edit_manager_card.document_images" class="col-md-4 col-sm-6 col-6 px-1 px-sm-2">-->
+                                    <!--                                            <div class="card">-->
+                                    <!--                                                <div class="card-body px-md-2 text-center">-->
+                                    <!--                                                        <img class="preview mx-auto" v-lazy="file"-->
+                                    <!--                                                            style="width:100%; height:150px; object-fit: cover;" alt="">-->
+                                    <!--                                                    <button class="btn btn-outline-blue mt-2 mx-auto w-100" v-on:click="removeFile(key, 2)">Remove</button>-->
+                                    <!--                                                </div>-->
+                                    <!--                                            </div>-->
+                                    <!--                                        </div>-->
+                                    <!--                                    </div>-->
+                                    <!--                                    <multi-upload-files :files="edit_manager_card.new_images"></multi-upload-files>-->
                                     <multi-upload-files ref="mn" :files="edit_manager_card.new_images">
                                         <template v-slot:uploadButton>
-                                            <button class="btn btn-primary w-100" @click="startUpload('mn')">{{$trans('profile.documents.button_1')}}</button>
+                                            <button class="btn btn-primary w-100" @click="startUpload('mn')">
+                                                {{$trans('profile.documents.button_1')}}
+                                            </button>
                                         </template>
                                         <template v-slot:filesListAdditional>
-                                            <div v-for="(file, key) in edit_manager_card.document_images" class="col-md-4 col-sm-6 col-6 px-1 px-sm-2">
+                                            <div v-for="(file, key) in edit_manager_card.document_images"
+                                                 class="col-md-4 col-sm-6 col-6 px-1 px-sm-2">
                                                 <div class="card my-2">
                                                     <img class="card-img-top preview mx-auto" v-lazy="file"
                                                          style="width:100%; height:150px; object-fit: cover;" alt="">
                                                     <div class="card-body px-md-2 text-center">
-                                                        <button class="btn btn-outline-blue mt-2 mx-auto w-100" v-on:click="removeFile(key, 2)">{{$trans('profile.documents.button_5')}}</button>
+                                                        <button class="btn btn-outline-blue mt-2 mx-auto w-100"
+                                                                v-on:click="removeFile(key, 2)">
+                                                            {{$trans('profile.documents.button_5')}}
+                                                        </button>
                                                     </div>
                                                 </div>
                                             </div>
                                         </template>
                                     </multi-upload-files>
-<!--                                    <multi-upload-files :files="edit_manager_card.document_images"></multi-upload-files>-->
+                                    <!--                                    <multi-upload-files :files="edit_manager_card.document_images"></multi-upload-files>-->
                                 </div>
                                 <div class="col-12">
                                     <h4>{{$trans('profile.documents.h4_7')}}</h4>
                                     <ValidationProvider name="Comment" rules="required" v-slot="{ errors }">
-                                        <textarea class="w-100 form-control-empty form-control" name="comment" cols="30" rows="6" v-model="edit_manager_card.comment"></textarea>
+                                        <textarea class="w-100 form-control-empty form-control" name="comment" cols="30"
+                                                  rows="6" v-model="edit_manager_card.comment"></textarea>
                                     </ValidationProvider>
                                 </div>
                             </div>
                             <div class="row mx-auto mt-2 w-100 justify-content-end">
-                                <button class="btn btn-outline-blue mx-1" v-if="!editManagerCardMode" @click="editManagerCard">{{$trans('profile.documents.button_2')}}</button>
-                                <button class="btn btn-outline-blue mx-1" v-if="editManagerCardMode" :disabled="loadingManagerCard" @click="editManagerCardMode=false">{{$trans('profile.documents.button_3')}}</button>
-                                <button class="btn btn-primary px-4 mx-1" v-if="editManagerCardMode" :disabled="invalid||loadingManagerCard" @click="confirm(2)">
+                                <button class="btn btn-outline-blue mx-1" v-if="!editManagerCardMode"
+                                        @click="editManagerCard">{{$trans('profile.documents.button_2')}}
+                                </button>
+                                <button class="btn btn-outline-blue mx-1" v-if="editManagerCardMode"
+                                        :disabled="loadingManagerCard" @click="editManagerCardMode=false">
+                                    {{$trans('profile.documents.button_3')}}
+                                </button>
+                                <button class="btn btn-primary px-4 mx-1" v-if="editManagerCardMode"
+                                        :disabled="invalid||loadingManagerCard" @click="confirm(2)">
                                     <span v-if="loadingManagerCard" class="spinner-border spinner-border-sm"
                                           role="status" aria-hidden="true">
                                     </span>
@@ -432,12 +495,16 @@
                     <div class="card-body">
                         <div class="row w-100 mx-auto align-items-center">
                             <div class="col-12 p-0 d-block d-md-none">
-                                <div class="row w-100 mx-auto align-items-center justify-content-end" v-if="documents.transport_license.is_approved">
-                                    <img src="/images/profile/approved.png" class="mx-1" style="width: 25px; height: 25px" alt="Approved">
+                                <div class="row w-100 mx-auto align-items-center justify-content-end"
+                                     v-if="documents.transport_license.is_approved">
+                                    <img src="/images/profile/approved.png" class="mx-1"
+                                         style="width: 25px; height: 25px" alt="Approved">
                                     <span class="text-uppercase">{{$trans('profile.documents.approved')}}</span>
                                 </div>
-                                <div class="row w-100 mx-auto align-items-center justify-content-end" v-if="!documents.transport_license.is_approved">
-                                    <img src="/images/profile/not_approved.png" class="mx-1" style="width: 25px; height: 25px" alt="Not approved">
+                                <div class="row w-100 mx-auto align-items-center justify-content-end"
+                                     v-if="!documents.transport_license.is_approved">
+                                    <img src="/images/profile/not_approved.png" class="mx-1"
+                                         style="width: 25px; height: 25px" alt="Not approved">
                                     <span class="text-uppercase">{{$trans('profile.documents.not_approved')}}</span>
                                 </div>
                             </div>
@@ -445,12 +512,16 @@
                                 <h2 class="tab-title">{{$trans('profile.documents.h2_3')}}</h2>
                             </div>
                             <div class="col-12 col-sm-4 p-0 d-none d-md-block">
-                                <div class="row w-100 mx-auto align-items-center justify-content-end" v-if="documents.transport_license.is_approved">
-                                    <img src="/images/profile/approved.png" class="mx-1" style="width: 25px; height: 25px" alt="">
+                                <div class="row w-100 mx-auto align-items-center justify-content-end"
+                                     v-if="documents.transport_license.is_approved">
+                                    <img src="/images/profile/approved.png" class="mx-1"
+                                         style="width: 25px; height: 25px" alt="">
                                     <span class="text-uppercase">{{$trans('profile.documents.approved')}}</span>
                                 </div>
-                                <div class="row w-100 mx-auto  align-items-center justify-content-end" v-if="!documents.transport_license.is_approved">
-                                    <img src="/images/profile/not_approved.png" class="mx-1" style="width: 25px; height: 25px" alt="">
+                                <div class="row w-100 mx-auto  align-items-center justify-content-end"
+                                     v-if="!documents.transport_license.is_approved">
+                                    <img src="/images/profile/not_approved.png" class="mx-1"
+                                         style="width: 25px; height: 25px" alt="">
                                     <span class="text-uppercase">{{$trans('profile.documents.not_approved')}}</span>
                                 </div>
                             </div>
@@ -483,24 +554,29 @@
                                 </div>
                                 <div class="col-12">
                                     <h4>{{$trans('profile.documents.h4_9')}}</h4>
-                                    <div class="row w-100 m-auto row-cols-2 row-cols-md-3" v-if="documents.transport_license.document_images.length>0">
-                                        <div v-for="(file, key) in documents.transport_license.document_images" class="col-md-4 col-sm-6 col-6 px-1 px-sm-2">
+                                    <div class="row w-100 m-auto row-cols-2 row-cols-md-3"
+                                         v-if="documents.transport_license.document_images.length>0">
+                                        <div v-for="(file, key) in documents.transport_license.document_images"
+                                             class="col-md-4 col-sm-6 col-6 px-1 px-sm-2">
                                             <div class="card">
                                                 <div class="card-body px-md-2 text-center">
-                                                        <img class="preview mx-auto" v-lazy="file"
-                                                            style="width:100%; height:150px; object-fit: cover;" alt="">
+                                                    <img class="preview mx-auto" v-lazy="file"
+                                                         style="width:100%; height:150px; object-fit: cover;" alt="">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row w-100 m-auto" v-if="documents.transport_license.document_images.length===0">
+                                    <div class="row w-100 m-auto"
+                                         v-if="documents.transport_license.document_images.length===0">
                                         <div class="col-6 p-1 text-center">
                                             <img class="mx-auto" v-lazy="'/images/profile/id_card_front.png'"
-                                                 style="width: 100%; height: auto; object-fit: cover; max-width: 150px;" alt="">
+                                                 style="width: 100%; height: auto; object-fit: cover; max-width: 150px;"
+                                                 alt="">
                                         </div>
                                         <div class="col-6 p-1 text-center">
                                             <img class="mx-auto" v-lazy="'/images/profile/id_card_back.png'"
-                                                 style="width: 100%; height: auto; object-fit: cover; max-width: 150px;" alt="">
+                                                 style="width: 100%; height: auto; object-fit: cover; max-width: 150px;"
+                                                 alt="">
                                         </div>
                                     </div>
                                 </div>
@@ -537,47 +613,60 @@
                                 </div>
                                 <div class="col-12">
                                     <h4>{{$trans('profile.documents.h4_10')}}</h4>
-<!--                                    <div class="row w-100 m-auto row-cols-2 row-cols-md-3">-->
-<!--                                        <div v-for="(file, key) in edit_transport_license.document_images" class="col-md-4 col-sm-6 col-6 px-1 px-sm-2">-->
-<!--                                            <div class="card">-->
-<!--                                                <div class="card-body px-md-2 text-center">-->
-<!--                                                        <img class="preview mx-auto" v-lazy="file"-->
-<!--                                                            style="width:100%; height:150px; object-fit: cover;" alt="">-->
-<!--                                                    <button class="btn btn-outline-blue mt-2 mx-auto w-100" v-on:click="removeFile(key, 3)">Remove</button>-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                    <multi-upload-files :files="edit_transport_license.new_images"></multi-upload-files>-->
+                                    <!--                                    <div class="row w-100 m-auto row-cols-2 row-cols-md-3">-->
+                                    <!--                                        <div v-for="(file, key) in edit_transport_license.document_images" class="col-md-4 col-sm-6 col-6 px-1 px-sm-2">-->
+                                    <!--                                            <div class="card">-->
+                                    <!--                                                <div class="card-body px-md-2 text-center">-->
+                                    <!--                                                        <img class="preview mx-auto" v-lazy="file"-->
+                                    <!--                                                            style="width:100%; height:150px; object-fit: cover;" alt="">-->
+                                    <!--                                                    <button class="btn btn-outline-blue mt-2 mx-auto w-100" v-on:click="removeFile(key, 3)">Remove</button>-->
+                                    <!--                                                </div>-->
+                                    <!--                                            </div>-->
+                                    <!--                                        </div>-->
+                                    <!--                                    </div>-->
+                                    <!--                                    <multi-upload-files :files="edit_transport_license.new_images"></multi-upload-files>-->
                                     <multi-upload-files ref="tl" :files="edit_transport_license.new_images">
                                         <template v-slot:uploadButton>
-                                            <button class="btn btn-primary w-100" @click="startUpload('tl')">{{$trans('profile.documents.button_1')}}</button>
+                                            <button class="btn btn-primary w-100" @click="startUpload('tl')">
+                                                {{$trans('profile.documents.button_1')}}
+                                            </button>
                                         </template>
                                         <template v-slot:filesListAdditional>
-                                            <div v-for="(file, key) in edit_transport_license.document_images" class="col-md-4 col-sm-6 col-6 px-1 px-sm-2">
+                                            <div v-for="(file, key) in edit_transport_license.document_images"
+                                                 class="col-md-4 col-sm-6 col-6 px-1 px-sm-2">
                                                 <div class="card my-2">
                                                     <img class="card-img-top preview mx-auto" v-lazy="file"
                                                          style="width:100%; height:150px; object-fit: cover;" alt="">
                                                     <div class="card-body px-md-2 text-center">
-                                                        <button class="btn btn-outline-blue mt-2 mx-auto w-100" v-on:click="removeFile(key, 3)">{{$trans('profile.documents.button_5')}}</button>
+                                                        <button class="btn btn-outline-blue mt-2 mx-auto w-100"
+                                                                v-on:click="removeFile(key, 3)">
+                                                            {{$trans('profile.documents.button_5')}}
+                                                        </button>
                                                     </div>
                                                 </div>
                                             </div>
                                         </template>
                                     </multi-upload-files>
-<!--                                    <multi-upload-files :files="edit_transport_license.document_images"></multi-upload-files>-->
+                                    <!--                                    <multi-upload-files :files="edit_transport_license.document_images"></multi-upload-files>-->
                                 </div>
                                 <div class="col-12">
                                     <h4>{{$trans('profile.documents.h4_11')}}</h4>
                                     <ValidationProvider name="Comment" rules="required" v-slot="{ errors }">
-                                        <textarea class="w-100 form-control-empty form-control" name="comment" cols="30" rows="6" v-model="edit_transport_license.comment"></textarea>
+                                        <textarea class="w-100 form-control-empty form-control" name="comment" cols="30"
+                                                  rows="6" v-model="edit_transport_license.comment"></textarea>
                                     </ValidationProvider>
                                 </div>
                             </div>
                             <div class="row mx-auto mt-2 w-100 justify-content-end">
-                                <button class="btn btn-outline-blue mx-1" v-if="!editTransportLicenseMode" @click="editTransportLicense">{{$trans('profile.documents.button_2')}}</button>
-                                <button class="btn btn-outline-blue mx-1" v-if="editTransportLicenseMode" :disabled="loadingTransportLicense" @click="editTransportLicenseMode=false">{{$trans('profile.documents.button_3')}}</button>
-                                <button class="btn btn-primary px-4 mx-1" v-if="editTransportLicenseMode" :disabled="invalid||loadingTransportLicense" @click="confirm(3)">
+                                <button class="btn btn-outline-blue mx-1" v-if="!editTransportLicenseMode"
+                                        @click="editTransportLicense">{{$trans('profile.documents.button_2')}}
+                                </button>
+                                <button class="btn btn-outline-blue mx-1" v-if="editTransportLicenseMode"
+                                        :disabled="loadingTransportLicense" @click="editTransportLicenseMode=false">
+                                    {{$trans('profile.documents.button_3')}}
+                                </button>
+                                <button class="btn btn-primary px-4 mx-1" v-if="editTransportLicenseMode"
+                                        :disabled="invalid||loadingTransportLicense" @click="confirm(3)">
                                      <span v-if="loadingTransportLicense" class="spinner-border spinner-border-sm"
                                            role="status" aria-hidden="true">
                                      </span>
@@ -592,16 +681,20 @@
 
         <div class="row">
             <div class="col-md-12">
-                <div class="card mb-3">
+                <div class="card mb-3" v-if="documents.certificate_insurance">
                     <div class="card-body">
                         <div class="row w-100 mx-auto align-items-center">
                             <div class="col-12 p-0 d-block d-md-none">
-                                <div class="row w-100 mx-auto align-items-center justify-content-end" v-if="documents.certificate_insurance.is_approved">
-                                    <img src="/images/profile/approved.png" class="mx-1" style="width: 25px; height: 25px" alt="Approved">
+                                <div class="row w-100 mx-auto align-items-center justify-content-end"
+                                     v-if="documents.certificate_insurance.is_approved">
+                                    <img src="/images/profile/approved.png" class="mx-1"
+                                         style="width: 25px; height: 25px" alt="Approved">
                                     <span class="text-uppercase">{{$trans('profile.documents.approved')}}</span>
                                 </div>
-                                <div class="row w-100 mx-auto align-items-center justify-content-end" v-if="!documents.certificate_insurance.is_approved">
-                                    <img src="/images/profile/not_approved.png" class="mx-1" style="width: 25px; height: 25px" alt="Not approved">
+                                <div class="row w-100 mx-auto align-items-center justify-content-end"
+                                     v-if="!documents.certificate_insurance.is_approved">
+                                    <img src="/images/profile/not_approved.png" class="mx-1"
+                                         style="width: 25px; height: 25px" alt="Not approved">
                                     <span class="text-uppercase">{{$trans('profile.documents.not_approved')}}</span>
                                 </div>
                             </div>
@@ -609,12 +702,16 @@
                                 <h2 class="tab-title">{{$trans('profile.documents.h2_4')}}</h2>
                             </div>
                             <div class="col-12 col-sm-4 p-0 d-none d-md-block">
-                                <div class="row w-100 mx-auto align-items-center justify-content-end" v-if="documents.certificate_insurance.is_approved">
-                                    <img src="/images/profile/approved.png" class="mx-1" style="width: 25px; height: 25px" alt="">
+                                <div class="row w-100 mx-auto align-items-center justify-content-end"
+                                     v-if="documents.certificate_insurance.is_approved">
+                                    <img src="/images/profile/approved.png" class="mx-1"
+                                         style="width: 25px; height: 25px" alt="">
                                     <span class="text-uppercase">{{$trans('profile.documents.approved')}}</span>
                                 </div>
-                                <div class="row w-100 mx-auto  align-items-center justify-content-end" v-if="!documents.certificate_insurance.is_approved">
-                                    <img src="/images/profile/not_approved.png" class="mx-1" style="width: 25px; height: 25px" alt="">
+                                <div class="row w-100 mx-auto  align-items-center justify-content-end"
+                                     v-if="!documents.certificate_insurance.is_approved">
+                                    <img src="/images/profile/not_approved.png" class="mx-1"
+                                         style="width: 25px; height: 25px" alt="">
                                     <span class="text-uppercase">{{$trans('profile.documents.not_approved')}}</span>
                                 </div>
                             </div>
@@ -640,36 +737,43 @@
                                     <div class="form-group">
                                         <label for="" class="text-lg">{{$trans('profile.documents.label_18')}}</label>
                                         <input type="text" class="form-control-empty form-control"
-                                               v-model="documents.certificate_insurance.start_date"  v-mask="'##/##/####'" placeholder="jj/mm/aaaa" disabled>
+                                               v-model="documents.certificate_insurance.start_date"
+                                               v-mask="'##/##/####'" placeholder="jj/mm/aaaa" disabled>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="" class="text-lg">{{$trans('profile.documents.label_19')}}</label>
                                         <input type="text" class="form-control-empty form-control"
-                                               v-model="documents.certificate_insurance.end_date" v-mask="'##/##/####'" placeholder="jj/mm/aaaa" disabled>
+                                               v-model="documents.certificate_insurance.end_date" v-mask="'##/##/####'"
+                                               placeholder="jj/mm/aaaa" disabled>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <h4>{{$trans('profile.documents.h4_13')}}</h4>
-                                    <div class="row w-100 m-auto row-cols-2 row-cols-md-3" v-if="documents.certificate_insurance.document_images.length>0">
-                                        <div v-for="(file, key) in documents.certificate_insurance.document_images" class="col-md-4 col-sm-6 col-6 px-1 px-sm-2">
+                                    <div class="row w-100 m-auto row-cols-2 row-cols-md-3"
+                                         v-if="documents.certificate_insurance.document_images.length>0">
+                                        <div v-for="(file, key) in documents.certificate_insurance.document_images"
+                                             class="col-md-4 col-sm-6 col-6 px-1 px-sm-2">
                                             <div class="card">
                                                 <div class="card-body px-md-2 text-center">
-                                                        <img class="preview mx-auto" v-lazy="file"
-                                                            style="width:100%; height:150px; object-fit: cover;" alt="">
+                                                    <img class="preview mx-auto" v-lazy="file"
+                                                         style="width:100%; height:150px; object-fit: cover;" alt="">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row w-100 m-auto" v-if="documents.certificate_insurance.document_images.length===0">
+                                    <div class="row w-100 m-auto"
+                                         v-if="documents.certificate_insurance.document_images.length===0">
                                         <div class="col-6 p-1 text-center">
                                             <img class="mx-auto" v-lazy="'/images/profile/id_card_front.png'"
-                                                 style="width: 100%; height: auto; object-fit: cover; max-width: 150px;" alt="">
+                                                 style="width: 100%; height: auto; object-fit: cover; max-width: 150px;"
+                                                 alt="">
                                         </div>
                                         <div class="col-6 p-1 text-center">
                                             <img class="mx-auto" v-lazy="'/images/profile/id_card_back.png'"
-                                                 style="width: 100%; height: auto; object-fit: cover; max-width: 150px;" alt="">
+                                                 style="width: 100%; height: auto; object-fit: cover; max-width: 150px;"
+                                                 alt="">
                                         </div>
                                     </div>
                                 </div>
@@ -678,9 +782,11 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="" class="text-lg">{{$trans('profile.documents.label_16')}}</label>
-                                        <ValidationProvider name="Insurance company" rules="required" v-slot="{ errors }">
+                                        <ValidationProvider name="Insurance company" rules="required"
+                                                            v-slot="{ errors }">
                                             <input type="text" class="form-control-empty form-control"
-                                                   v-model="edit_certificate_insurance.insurance_company" placeholder="">
+                                                   v-model="edit_certificate_insurance.insurance_company"
+                                                   placeholder="">
                                         </ValidationProvider>
                                     </div>
                                 </div>
@@ -715,40 +821,47 @@
                                 </div>
                                 <div class="col-12">
                                     <h4>{{$trans('profile.documents.h4_14')}}</h4>
-<!--                                    <div class="row w-100 m-auto row-cols-2 row-cols-md-3">-->
-<!--                                        <div v-for="(file, key) in edit_certificate_insurance.document_images" class="col-md-4 col-sm-6 col-6 px-1 px-sm-2">-->
-<!--                                            <div class="card">-->
-<!--                                                <div class="card-body px-md-2 text-center">-->
-<!--                                                        <img class="preview mx-auto" v-lazy="file"-->
-<!--                                                            style="width:100%; height:150px; object-fit: cover;" alt="">-->
-<!--                                                    <button class="btn btn-outline-blue mt-2 mx-auto w-100" v-on:click="removeFile(key, 4)">Remove</button>-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                    <multi-upload-files :files="edit_certificate_insurance.new_images"></multi-upload-files>-->
+                                    <!--                                    <div class="row w-100 m-auto row-cols-2 row-cols-md-3">-->
+                                    <!--                                        <div v-for="(file, key) in edit_certificate_insurance.document_images" class="col-md-4 col-sm-6 col-6 px-1 px-sm-2">-->
+                                    <!--                                            <div class="card">-->
+                                    <!--                                                <div class="card-body px-md-2 text-center">-->
+                                    <!--                                                        <img class="preview mx-auto" v-lazy="file"-->
+                                    <!--                                                            style="width:100%; height:150px; object-fit: cover;" alt="">-->
+                                    <!--                                                    <button class="btn btn-outline-blue mt-2 mx-auto w-100" v-on:click="removeFile(key, 4)">Remove</button>-->
+                                    <!--                                                </div>-->
+                                    <!--                                            </div>-->
+                                    <!--                                        </div>-->
+                                    <!--                                    </div>-->
+                                    <!--                                    <multi-upload-files :files="edit_certificate_insurance.new_images"></multi-upload-files>-->
                                     <multi-upload-files ref="ci" :files="edit_certificate_insurance.new_images">
                                         <template v-slot:uploadButton>
-                                            <button class="btn btn-primary w-100" @click="startUpload('ci')">{{$trans('profile.documents.button_1')}}</button>
+                                            <button class="btn btn-primary w-100" @click="startUpload('ci')">
+                                                {{$trans('profile.documents.button_1')}}
+                                            </button>
                                         </template>
                                         <template v-slot:filesListAdditional>
-                                            <div v-for="(file, key) in edit_certificate_insurance.document_images" class="col-md-4 col-sm-6 col-6 px-1 px-sm-2">
+                                            <div v-for="(file, key) in edit_certificate_insurance.document_images"
+                                                 class="col-md-4 col-sm-6 col-6 px-1 px-sm-2">
                                                 <div class="card my-2">
                                                     <img class="card-img-top preview mx-auto" v-lazy="file"
                                                          style="width:100%; height:150px; object-fit: cover;" alt="">
                                                     <div class="card-body px-md-2 text-center">
-                                                        <button class="btn btn-outline-blue mt-2 mx-auto w-100" v-on:click="removeFile(key, 4)">{{$trans('profile.documents.button_5')}}</button>
+                                                        <button class="btn btn-outline-blue mt-2 mx-auto w-100"
+                                                                v-on:click="removeFile(key, 4)">
+                                                            {{$trans('profile.documents.button_5')}}
+                                                        </button>
                                                     </div>
                                                 </div>
                                             </div>
                                         </template>
                                     </multi-upload-files>
-<!--                                    <multi-upload-files :files="edit_certificate_insurance.document_images"></multi-upload-files>-->
+                                    <!--                                    <multi-upload-files :files="edit_certificate_insurance.document_images"></multi-upload-files>-->
                                 </div>
                                 <div class="col-12">
                                     <h4>{{$trans('profile.documents.h4_15')}}</h4>
                                     <ValidationProvider name="Comment" rules="required" v-slot="{ errors }">
-                                       <textarea class="w-100 form-control-empty form-control" name="comment" cols="30" rows="6" v-model="edit_certificate_insurance.comment"></textarea>
+                                        <textarea class="w-100 form-control-empty form-control" name="comment" cols="30"
+                                                  rows="6" v-model="edit_certificate_insurance.comment"></textarea>
                                     </ValidationProvider>
                                 </div>
                             </div>
@@ -758,7 +871,8 @@
                                     {{$trans('profile.documents.button_2')}}
                                 </button>
                                 <button class="btn btn-outline-blue mx-1" v-if="editCertificateInsuranceMode"
-                                        :disabled="loadingCertificateInsurance" @click="editCertificateInsuranceMode=false">
+                                        :disabled="loadingCertificateInsurance"
+                                        @click="editCertificateInsuranceMode=false">
                                     {{$trans('profile.documents.button_3')}}
                                 </button>
                                 <button class="btn btn-primary px-4 mx-1" v-if="editCertificateInsuranceMode"
@@ -780,54 +894,61 @@
     import MultiUploadFiles from "../../../components/MultiUploadFiles";
     import {mask} from 'vue-the-mask';
     import UploadFile from "../../../components/UploadFile";
+
     export default {
+        props: {
+            reload: {
+                type: Boolean,
+                default: true,
+            }
+        },
         components: {UploadFile, MultiUploadFiles},
         data() {
             return {
                 edit_company_info: {
-                    manager_first_name:'',
-                    manager_last_name:'',
-                    id_number:'',
-                    creation_date:'',
-                    company_name:'',
-                    address:'',
-                    city:'',
-                    postal_code:'',
-                    country:'',
-                    document_images:[],
-                    comment:'',
-                    new_images:[],
-                    deleted_images:[],
-                    front_image:'',
-                    back_image:''
+                    manager_first_name: '',
+                    manager_last_name: '',
+                    id_number: '',
+                    creation_date: '',
+                    company_name: '',
+                    address: '',
+                    city: '',
+                    postal_code: '',
+                    country: '',
+                    document_images: [],
+                    comment: '',
+                    new_images: [],
+                    deleted_images: [],
+                    front_image: '',
+                    back_image: ''
                 },
                 edit_manager_card: {
-                    id_card_number:'',
-                    issue_date:'',
-                    expiry_date:'',
-                    document_images:[],
-                    comment:'',
-                    new_images:[],
-                    deleted_images:[],
+                    id_card_number: '',
+                    issue_date: '',
+                    expiry_date: '',
+                    document_images: [],
+                    comment: '',
+                    new_images: [],
+                    deleted_images: [],
                 },
-                edit_transport_license:{
-                    license_number:'',
-                    issue_date:'',
-                    expiry_date:'',
-                    document_images:[],
-                    comment:'',
-                    new_images:[],
-                    deleted_images:[],
+                edit_transport_license: {
+                    license_number: '',
+                    issue_date: '',
+                    expiry_date: '',
+                    document_images: [],
+                    comment: '',
+                    new_images: [],
+                    deleted_images: [],
                 },
                 edit_certificate_insurance: {
-                    insurance_company:'',
-                    amount_insured:'',
-                    start_date:'',
-                    end_date:'',
-                    document_images:[],
-                    comment:'',
-                    new_images:[],
-                    deleted_images:[],
+                    insurance_company: '',
+                    amount_insured: '',
+                    start_date: '',
+                    end_date: '',
+                    document_images: [],
+                    comment: '',
+                    new_images: [],
+                    deleted_images: [],
                 },
                 editCompanyInfoMode: false,
                 editManagerCardMode: false,
@@ -987,23 +1108,19 @@
                 //     profile_id: this.profile.id
                 // };
                 let document = '';
-                if(type == 1)
-                {
+                if (type == 1) {
                     this.loadingCompanyInfo = true;
                     document = this.edit_company_info;
                 }
-                if(type == 2)
-                {
+                if (type == 2) {
                     this.loadingManagerCard = true;
                     document = this.edit_manager_card;
                 }
-                if(type == 3)
-                {
+                if (type == 3) {
                     this.loadingTransportLicense = true;
                     document = this.edit_transport_license;
                 }
-                if(type == 4)
-                {
+                if (type == 4) {
                     this.loadingCertificateInsurance = true;
                     document = this.edit_certificate_insurance;
                 }
@@ -1012,57 +1129,77 @@
                 formData.append('profile_id', this.profile.id);
                 formData.append('is_approved', 0);
                 formData.append('type', type);
-                 for (var i = 0; i < document.new_images.length; i++) {
-                     let file = document.new_images[i];
-                     formData.append('new_files[' + i + ']', file);
-                 }
-                 formData.append('deleted_files', JSON.stringify(document.deleted_images));
-                 document.deleted_images = [];
-                 document.new_images = [];
+                for (var i = 0; i < document.new_images.length; i++) {
+                    let file = document.new_images[i];
+                    formData.append('new_files[' + i + ']', file);
+                }
+                formData.append('deleted_files', JSON.stringify(document.deleted_images));
+                document.deleted_images = [];
+                document.new_images = [];
                 formData.append('document', JSON.stringify(document));
-                 let path = '/transporter/profile/document/edit';
-                 if (document.is_created === false){
-                     path = '/transporter/profile/document/create'
-                 }
+                let path = '/transporter/profile/document/edit';
+                if (document.is_created === false) {
+                    path = '/transporter/profile/document/create'
+                }
 
-                 await axios.post( path, formData, {
-                     headers: {
-                         'Content-Type': 'multipart/form-data'
-                     }
-                 }).then(resp => {
-                     // this.profile.company_info = resp.data.documents;
-                     this.$store.commit('setProfile', resp.data.profile);
-                     this.$store.commit('setDocuments', resp.data.profile.documents);
-                     if(type == 1) {this.loadingCompanyInfo = false;this.editCompanyInfoMode = false;}
-                     if(type == 2) {this.loadingManagerCard = false;this.editManagerCardMode = false;}
-                     if(type == 3) {this.loadingTransportLicense = false;this.editTransportLicenseMode = false;}
-                     if(type == 4) {this.loadingCertificateInsurance = false; this.editCertificateInsuranceMode = false;}
-                 }).catch(error => {
-                     console.log(error);
-                     if(type == 1) {this.loadingCompanyInfo = false;this.editCompanyInfoMode = false;}
-                     if(type == 2) {this.loadingManagerCard = false;this.editManagerCardMode = false;}
-                     if(type == 3) {this.loadingTransportLicense = false;this.editTransportLicenseMode = false;}
-                     if(type == 4) {this.loadingCertificateInsurance = false; this.editCertificateInsuranceMode = false;}
-                 });
-             },
+                await axios.post(path, formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                }).then(resp => {
+                    // this.profile.company_info = resp.data.documents;
+                    this.$store.commit('setProfile', resp.data.profile);
+                    this.$store.commit('setDocuments', resp.data.profile.documents);
+                    if (type == 1) {
+                        this.loadingCompanyInfo = false;
+                        this.editCompanyInfoMode = false;
+                    }
+                    if (type == 2) {
+                        this.loadingManagerCard = false;
+                        this.editManagerCardMode = false;
+                    }
+                    if (type == 3) {
+                        this.loadingTransportLicense = false;
+                        this.editTransportLicenseMode = false;
+                    }
+                    if (type == 4) {
+                        this.loadingCertificateInsurance = false;
+                        this.editCertificateInsuranceMode = false;
+                    }
+                }).catch(error => {
+                    console.log(error);
+                    if (type == 1) {
+                        this.loadingCompanyInfo = false;
+                        this.editCompanyInfoMode = false;
+                    }
+                    if (type == 2) {
+                        this.loadingManagerCard = false;
+                        this.editManagerCardMode = false;
+                    }
+                    if (type == 3) {
+                        this.loadingTransportLicense = false;
+                        this.editTransportLicenseMode = false;
+                    }
+                    if (type == 4) {
+                        this.loadingCertificateInsurance = false;
+                        this.editCertificateInsuranceMode = false;
+                    }
+                });
+            },
             removeFile(key, type) {
-                if(type == 1)
-                {
+                if (type == 1) {
                     this.edit_company_info.deleted_images.push(this.edit_company_info.document_images[key]);
                     this.edit_company_info.splice(key, 1);
                 }
-                if(type == 2)
-                {
+                if (type == 2) {
                     this.edit_manager_card.deleted_images.push(this.edit_manager_card.document_images[key]);
                     this.edit_manager_card.splice(key, 1);
                 }
-                if(type == 3)
-                {
+                if (type == 3) {
                     this.edit_transport_license.deleted_images.push(this.edit_transport_license.document_images[key]);
                     this.edit_transport_license.splice(key, 1);
                 }
-                if(type == 4)
-                {
+                if (type == 4) {
                     this.edit_certificate_insurance.deleted_images.push(this.edit_certificate_insurance.document_images[key]);
                     this.edit_certificate_insurance.splice(key, 1);
                 }
@@ -1071,6 +1208,12 @@
                 this.$refs[ref].startUpload();
             },
         },
-        directives: {mask}
+        directives: {mask},
+        mounted() {
+
+
+                this.$store.dispatch('getUser');
+
+        }
     }
 </script>

@@ -240,6 +240,7 @@ Route::group(['middleware' => ['auth', 'verified', 'role:transporter'], "prefix"
             Route::view("/step-3", "desktop.pages.profile.transporter.profile-transporter-wizard-step-3")->name("desktop.profile-transporter-wizard-step-3");
             Route::view("/step-4", "desktop.pages.profile.transporter.profile-transporter-wizard-step-4")->name("desktop.profile-transporter-wizard-step-4");
             Route::view("/step-5", "desktop.pages.profile.transporter.profile-transporter-wizard-step-5")->name("desktop.profile-transporter-wizard-step-5");
+            Route::view("/step-6", "desktop.pages.profile.transporter.profile-transporter-wizard-step-6")->name("desktop.profile-transporter-wizard-step-6");
         });
     });
 });
