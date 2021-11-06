@@ -7,7 +7,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\HomeController;
 use App\Models\ObjectCategory;
 use App\User;
-use Cartalyst\Stripe\Stripe;
+
 use Illuminate\Http\Response;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\App;
@@ -33,39 +33,9 @@ use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
 
-Route::get("/stripe", function () {
-    $stripe = Stripe::make(env("STRIPE_SECRET_KEY"));
-
-    $customers = $stripe->customers()->all();
-
-    foreach ($customers['data'] as $customer) {
-        echo($customer['email']);
-    }
-
-    $paymentMethod = $stripe->paymentMethods()->create([
-        'type' => 'card',
-        'card' => [
-            'number' => '4242424242424242',
-            'exp_month' => 9,
-            'exp_year' => 2022,
-            'cvc' => '314'
-        ],
-    ]);
-
-    echo $paymentMethod['id'];
-
-    $paymentIntent = $stripe->paymentIntents()->create([
-        'amount' => 2000,
-        'currency' => 'usd',
-        'payment_method_types' => [
-            'card',
-        ],
-    ]);
-
-    echo $paymentIntent['id'];
-
-    echo dd($stripe->paymentIntents()->find($paymentIntent['id']));
-});
+Route::get('stripe', 'StripePaymentController@stripe');
+Route::post('stripe', 'StripePaymentController@stripePost')->name('stripe.post');
+Route::post('сheckout_callback', 'StripePaymentController@callback')->name('stripe.callback');
 
 Route::get("/event", function () {
     $client = new \GuzzleHttp\Client();
