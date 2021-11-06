@@ -54,7 +54,7 @@ class StripePaymentController extends Controller
         try {
             Stripe::setApiKey(env('STRIPE_SECRET'));
             $event = Webhook::constructEvent(
-                $payload, $sig_header, "we_1JqQD9E3GkYb2FVm17xxOuv2" //endpoint_secret
+                $payload, $sig_header, "whsec_N0q7eDZQtsSxyQWNbkrK6Rx3Vu4jnWL4" //endpoint_secret
             );
         } catch(\UnexpectedValueException $e) {
             Log::info("Invalid payload");
