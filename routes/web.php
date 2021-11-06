@@ -35,7 +35,7 @@ use Illuminate\Support\Facades\Password;
 
 Route::get('stripe', 'StripePaymentController@stripe');
 Route::post('stripe', 'StripePaymentController@stripePost')->name('stripe.post');
-Route::post('сheckout_callback', 'StripePaymentController@callback')->name('stripe.callback');
+Route::any('сheckout_callback', 'StripePaymentController@callback')->name('stripe.callback');
 
 Route::get("/event", function () {
     $client = new \GuzzleHttp\Client();
