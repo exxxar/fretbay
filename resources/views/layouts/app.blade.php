@@ -152,11 +152,12 @@
                 body: payload.notification.body,
                 icon: payload.notification.icon,
             };
-          //  console.log("TTTTTTTTT")
+
             new Notification(title, options);
         });
     </script>
 @endif
 
+@yield('scripts')
 </body>
 </html>

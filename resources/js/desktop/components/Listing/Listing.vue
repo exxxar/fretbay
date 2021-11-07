@@ -80,7 +80,7 @@
                     <div class="col-12 col-md-8 ">
                         <input type="search" class="form-control mb-2" name="search"
                                placeholder="Search..."
-                               autofocus="true" autocomplete="false" v-model="search">
+                               autofocus="off" autocomplete="search-listing" v-model="search">
                     </div>
                 </div>
 

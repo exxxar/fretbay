@@ -33,8 +33,7 @@ use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
 
-Route::get('stripe', 'StripePaymentController@stripe');
-Route::post('stripe', 'StripePaymentController@stripePost')->name('stripe.post');
+
 Route::any('/checkout-callback', 'StripePaymentController@callback')->name('stripe.callback');
 
 Route::get("/event", function () {
@@ -147,6 +146,10 @@ Route::view("/to-be-confirmed-empty", "desktop.pages.profile.customer.to-be-conf
 Route::view("/to-be-confirmed", "desktop.pages.profile.customer.to-be-confirmed")->name("desktop.customer-to-be-confirmed");
 
 Route::group(['middleware' => 'auth'], function () {
+
+    Route::get('stripe/{id}', 'StripePaymentController@stripe');
+    Route::post('stripe', 'StripePaymentController@stripePost')->name('stripe.post');
+
     Route::get('/auth/user', function () {
         $user = User::with(["profile", 'profile.vehicles', 'profile.documents', 'profile.verifications'])->where("id", Auth::id())->first();
         $profile = $user->profile;
@@ -269,6 +272,7 @@ Route::group(["prefix" => "listing", "middleware" => ["auth"]], function () {
 });
 
 Route::get('/notifications/get', 'NotificationController@index')->middleware(['auth']);
+Route::get('/payments/get', 'StripePaymentController@index')->middleware(['auth']);
 
 Route::group(['middleware' => ['auth', 'role:customer'], "prefix" => "customer"], function () {
 

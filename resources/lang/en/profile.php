@@ -170,6 +170,7 @@ return array (
     'reviews' => 'Reviews',
     'settings' => 'Settings',
     'vehicles' => 'Vehicles',
+    'payments' => 'Payments',
   ),
   'order' =>
   array (

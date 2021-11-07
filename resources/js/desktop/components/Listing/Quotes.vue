@@ -18,20 +18,22 @@
                     <div class="row">
                         <div class="col-sm-12 col-md-6">
                             <p class="text-left">
-                                <small>{{$trans('profile.quotes.p_1')}} {{item.created_at | moment("from", "now", true) }}</small>
+                                <small>{{$trans('profile.quotes.p_1')}} {{item.created_at | moment("from", "now", true)
+                                    }}</small>
                             </p>
                         </div>
                         <div class="col-sm-12 col-md-6">
                             <p class="text-right">
-                                <small>{{$trans('profile.quotes.p_2')}} {{item.valid_until_date | moment("from", "now", true) }}</small>
+                                <small>{{$trans('profile.quotes.p_2')}} {{item.valid_until_date | moment("from", "now",
+                                    true) }}</small>
                             </p>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-12 col-sm-4"><a class="w-100 text-center d-block"
-                                              target="_blank"
-                                              v-if="item.user"
-                                              :href="'/profile/'+item.user_id">
+                                                        target="_blank"
+                                                        v-if="item.user"
+                                                        :href="'/profile/'+item.user_id">
                             {{item.user.profile.company_name || "Company name"}}</a>
                             <p class="text-center text-uppercase m-0 p-0">
                                 <small><strong>{{preparedQuoteTypeOfTransport(item.type_of_transport)}}</strong></small>
@@ -47,7 +49,7 @@
                                 {{item.currency}}</p>
                         </div>
                         <div class="col-12 col-sm-4 pb-2">
-                            <p class="text-center m-0"> <em><small>{{preparedQuoteStatus(item.status)}}</small></em></p>
+                            <p class="text-center m-0"><em><small>{{preparedQuoteStatus(item.status)}}</small></em></p>
                             <a href="#" class="w-100 btn btn-primary m-0 p-0 d-block"
                                v-if="user.id===item.user_id&&item.status===0"
                                @click="removeQuote(item.id)"
@@ -59,8 +61,12 @@
 
                 </div>
                 <div class="card-footer" v-if="user.id===listing.user_id">
-                    <button class="btn btn-primary"   @click="acceptQuote(item.id)">{{$trans('profile.quotes.button_1')}}</button>
-                    <button class="btn btn-danger" data-toggle="modal" data-target="#declineMessage">{{$trans('profile.quotes.button_2')}}</button>
+                    <button class="btn btn-primary" @click="acceptQuote(item.id)">
+                        {{$trans('profile.quotes.button_1')}}
+                    </button>
+                    <button class="btn btn-danger" data-toggle="modal" data-target="#declineMessage">
+                        {{$trans('profile.quotes.button_2')}}
+                    </button>
                     <!--<button class="btn btn-outline-primary">Message to Transporter</button>-->
                     <hr>
 
@@ -111,7 +117,8 @@
                                 </div>
                             </div>
                             <div class="col-12">
-                                <p class="m-0"><small>{{$trans('profile.quotes.p_4')}}: {{getProfit()}} {{currentCurrency}}</small> <a
+                                <p class="m-0"><small>{{$trans('profile.quotes.p_4')}}: {{getProfit()}}
+                                    {{currentCurrency}}</small> <a
                                     href=""><i class="far fa-question-circle"></i></a></p>
                             </div>
                         </div>
@@ -136,7 +143,9 @@
                                 {{item.title}}
                             </button>
                         </div>
-                        <h6 class="text-center"><span class="badge badge-danger mr-2" v-if="selected_formula.length===0">Required</span>What working service is this?</h6>
+                        <h6 class="text-center"><span class="badge badge-danger mr-2"
+                                                      v-if="selected_formula.length===0">Required</span>What working
+                            service is this?</h6>
                         <div class="form-group row d-flex justify-content-center">
 
                             <div class="col-12 col-sm-6 " :key="item.id" v-for="item in formula_list">
@@ -182,8 +191,12 @@
                         </select>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{$trans('profile.quotes.button_5')}}</button>
-                        <button type="button" class="btn btn-primary" data-dismiss="modal" @click="declineQuote()">{{$trans('profile.quotes.button_6')}}</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            {{$trans('profile.quotes.button_5')}}
+                        </button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" @click="declineQuote()">
+                            {{$trans('profile.quotes.button_6')}}
+                        </button>
                     </div>
                 </div>
             </div>
@@ -241,7 +254,7 @@
         },
         data() {
             return {
-                declineMessage:'',
+                declineMessage: '',
                 declineMessages: [
                     "Message 1",
                     "Message 2",
@@ -390,26 +403,28 @@
                     this.form.message = null;
                 })
             },
-            acceptQuote(id){
+            acceptQuote(id) {
                 ///customer/listing/quotes/accept
                 axios.post('/orders/accept', {
                     listing_id: this.listing.id,
                     quote_id: id
                 }).then(resp => {
+                    window.location.href = '/stripe/' + resp.payment_id;
+                }).catch(() => {
                     setTimeout(() => {
-                        window.location.reload();
+
                     }, 1000)
                 })
             },
-            declineQuote(){
+            declineQuote() {
                 let id = this.form.quote.id
                 axios.post('/customer/listing/quotes/decline', {
                     listing_id: this.listing.id,
                     quote_id: id
                 }).then(resp => {
-         /*           setTimeout(() => {
-                        window.location.reload();
-                    }, 1000)*/
+                    /*           setTimeout(() => {
+                                   window.location.reload();
+                               }, 1000)*/
                 })
 
                 axios.post("/listing/messages/send", {
@@ -431,7 +446,7 @@
             },
             getProfit() {
                 //todo: коэффициент коррелирует со страной
-                return this.bidPrice - this.bidPrice * 0.15
+                return this.bidPrice - this.bidPrice * ((this.user.tax || 15) / 100)
             }
         }
 

@@ -11,6 +11,7 @@ use App\Http\Requests\OrderUpdateRequest;
 use App\Models\CategoryProperty;
 use App\Models\Listing;
 use App\Models\Order;
+use App\Models\PaymentHistory;
 use App\Models\Quote;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -53,7 +54,8 @@ class OrderController extends Controller
     {
 
         $request->validate([
-            "quote_id"
+            "quote_id"=>"required",
+
         ]);
 
         $user_id = Auth::user()->id;
@@ -62,20 +64,20 @@ class OrderController extends Controller
 
         if (is_null($quote))
             return response()->json([
-                "message" => "Error!"
+                "message" => "Error quote!"
             ], 404);
 
         $listing = Listing::where("id", $quote->listing_id)->first();
 
         if (is_null($listing))
             return response()->json([
-                "message" => "Error!"
+                "message" => "Error listing!"
             ], 404);
 
         $order = Order::where("listing_id", $listing->id)->first();
         if (!is_null($order))
             return response()->json([
-                "message" => "Error!"
+                "message" => "Error order!"
             ], 400);
 
 
@@ -92,6 +94,18 @@ class OrderController extends Controller
             "transporter_id" => $quote->user_id,
         ]);
 
+        $payment = PaymentHistory::create([
+            "title" => "Accept Quote",
+            "user_id" => $user_id,
+            "listing_id" => $listing->id,
+            "quote_id" => $request->quote_id,
+            "order_id" => $order->id,
+            "amount" => $quote->price,
+            "tax_amount" => $user->tax ?? 15,
+            "currency" => "EUR",
+            "type" => "card",
+        ]);
+
         event(new NotificationEvent(
             "#order-" . $order->id,
             "Create order",
@@ -99,7 +113,8 @@ class OrderController extends Controller
             Auth::user()->id));
 
         return response()->json([
-            "order" => $order
+            "order" => $order,
+            "payment_id"=>$payment->id
         ]);
 
     }

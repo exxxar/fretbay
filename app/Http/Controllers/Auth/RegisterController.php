@@ -95,7 +95,7 @@ class RegisterController extends Controller
 //        $payment_methods->paypal = false;
 
         $profile = Profile::create([
-            "company_name" => $request->company_name??$request->name??$request->first_name,
+            "company_name" => $request->company_name ?? $request->name ?? $request->first_name,
             "telephone_number_1" => $request->telephone_number_1,
             "telephone_number_2" => $request->telephone_number_2,
             "first_name" => $request->first_name,
@@ -105,10 +105,11 @@ class RegisterController extends Controller
 
 
         $user = new User();
-        $user->name = $request->company_name??$request->name??$request->first_name;
+        $user->name = $request->company_name ?? $request->name ?? $request->first_name;
         $user->email = $request->email;
+        $user->tax = 20;
         $user->password = bcrypt($request->password);
-       // $user->phone = $request->telephone_number_1 ?? $request->telephone_number_2;
+        // $user->phone = $request->telephone_number_1 ?? $request->telephone_number_2;
         $user->profile_id = $profile->id;
         $user->save();
         $user->roles()->attach($customer);
@@ -117,7 +118,7 @@ class RegisterController extends Controller
         if (!is_null($user->email))
             Mail::to($user->email)
                 ->send(new RegistrationMail(
-                    $user->name." ".
+                    $user->name . " " .
                     $user->email
                 ));
 
@@ -144,13 +145,14 @@ class RegisterController extends Controller
 //        $payment_methods->paypal = false;
 
         $profile = Profile::create([
-            "company_name" =>  $request->name,
+            "company_name" => $request->name,
 //            "payment_methods" => $payment_methods
         ]);
 
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
+        $user->tax = 15;
         $user->password = bcrypt($request->password);
         // $user->phone = $request->phone;
         $user->profile_id = $profile->id;
@@ -168,9 +170,9 @@ class RegisterController extends Controller
         if (!is_null($user->email))
             Mail::to($user->email)
                 ->send(new RegistrationMail(
-                $user->name." ".
-                $user->email
-            ));
+                    $user->name . " " .
+                    $user->email
+                ));
 
 //        return redirect()->route("login");
         return response()->json([
@@ -211,6 +213,7 @@ class RegisterController extends Controller
         $user = new User();
         $user->name = $request->username;
         $user->email = $request->email;
+        $user->tax = 15;
         $user->password = bcrypt($request->password);
         // $user->phone = $request->telephone_number_1??$request->telephone_number_2;
         $user->profile_id = $profile->id;
@@ -229,7 +232,7 @@ class RegisterController extends Controller
         if (!is_null($user->email))
             Mail::to($user->email)
                 ->send(new RegistrationMail(
-                    $user->name." ".
+                    $user->name . " " .
                     $user->email
                 ));
 

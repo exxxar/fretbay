@@ -13,6 +13,7 @@ import Listing from "./modules/Listing";
 import Order from "./modules/Order";
 import Reviews from "./modules/Reviews";
 import Notification from "./modules/Notification";
+import Payments from "./modules/Payments";
 import Favorite from "./modules/Favorite";
 import AuthUser from "./modules/AuthUser";
 
@@ -21,6 +22,18 @@ Vue.use(Vuex);
 export default new Vuex.Store({
     namespaced: true,
     modules: {
-        Reviews, ArticleCart, VolumeCart, Category, Subcategory, Thing, ListingModule, Listing, AuthUser,  Notification, Favorite, Order
+        Payments,
+        Reviews,
+        ArticleCart,
+        VolumeCart,
+        Category,
+        Subcategory,
+        Thing,
+        ListingModule,
+        Listing,
+        AuthUser,
+        Notification,
+        Favorite,
+        Order
     }
 })

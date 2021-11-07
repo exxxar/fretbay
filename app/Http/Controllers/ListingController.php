@@ -11,6 +11,7 @@ use App\Events\NotificationQuoteEventBroadcast;
 use App\Mail\NotifyMail;
 use App\Models\Message;
 use App\Models\Listing;
+use App\Models\PaymentHistory;
 use App\Models\Quote;
 use App\Notifications\SendPushNotification;
 use App\User;
@@ -42,6 +43,7 @@ class ListingController extends Controller
     public function index()
     {
         $listings = Listing::with(['category', 'subcategory', 'thing', 'messages', 'quotes'])
+            ->where("is_active", true)
             ->orderByDesc('created_at')
             ->paginate(100);
         return response()->json([
@@ -569,6 +571,16 @@ class ListingController extends Controller
         $latestQuote->status = 2;
         $latestQuote->save();
 
+        $payment = PaymentHistory::create([
+            "title" => "Accept Quote",
+            "user_id" => $user_id,
+            "listing_id" => $request->listing_id,
+            "quote_id" => $request->quote_id,
+            "amount" => $latestQuote->price,
+            "tax_amount" => $user->tax ?? 15,
+            "currency" => "EUR",
+            "type" => "card",
+        ]);
 
         event(new NotificationEvent(
             __('notifications.quote.title'),
@@ -595,7 +607,9 @@ class ListingController extends Controller
         ));
 
 
-        return response()->noContent();
+        return response()->json([
+            "payment_id"=>$payment->id
+        ]);
     }
 
     public function declineQuote(Request $request)

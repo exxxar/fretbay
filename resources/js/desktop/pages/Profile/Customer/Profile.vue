@@ -19,6 +19,14 @@
                             {{$trans('profile.menu.profile')}}</a>
                     </li>
 
+                    <li class="nav-item profile-nav-item">
+                        <a class="btn btn-outline-primary d-block" id="payments-tab" data-toggle="tab"
+                           @click="loadPayments"
+                           href="#payments"
+                           role="tab"
+                           aria-controls="reviews" aria-selected="true"><i class="far fa-credit-card"></i>
+                            {{$trans('profile.menu.payments')}}</a>
+                    </li>
 
                     <li class="nav-item profile-nav-item">
                         <a class="btn btn-outline-primary d-block" id="reviews-tab" data-toggle="tab"
@@ -310,6 +318,11 @@
                     <listing-component v-on:update="loadActiveListing"/>
                 </div>
 
+                <div class="tab-pane fade" id="payments" role="tabpanel"
+                     aria-labelledby="payments-tab">
+                    <payments-page/>
+                </div>
+
                 <div class="tab-pane fade" id="listings-archive" role="tabpanel" aria-labelledby="listings-archive-tab">
                     <listing-component v-on:update="loadArchiveListing"/>
                 </div>
@@ -429,7 +442,9 @@
             })
         },
         methods: {
-
+            loadPayments() {
+                this.$store.dispatch('loadPayments')
+            },
             loadNotifications() {
                 this.$store.dispatch('loadNotifications')
             },

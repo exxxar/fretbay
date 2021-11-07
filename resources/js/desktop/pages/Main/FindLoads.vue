@@ -1,12 +1,9 @@
 <template>
 
     <main id="content">
-
-
-        <div class="container mb-2 mt-2 pt-5">
+        <div class="container mb-2 mt-2 pt-5 d-none d-md-block">
             <div class="row">
                 <div class="col-12">
-
                     <VueSlickCarousel v-bind="settings" v-if="categories.length>0">
                         <div v-for="category in categories" @click="selectType(category.id)" class="p-2">
 
@@ -22,14 +19,12 @@
 
                         </div>
                     </VueSlickCarousel>
-
-
                 </div>
             </div>
         </div>
 
         <!-- News Blog Content -->
-        <div class="container space-3-bottom--lg">
+        <div class="container space-3-bottom--lg mt-5 mt-md-0">
 
             <div class="row">
                 <div class="col-12 col-md-4 d-flex flex-column">
@@ -320,12 +315,14 @@
         </div>
 
         <div class="bottom-filter d-block d-md-none">
-            <button type="button" class="btn btn-primary rounded-circle" data-toggle="modal" data-target="#filterComponent">
+            <button type="button" class="btn btn-primary rounded-circle" data-toggle="modal"
+                    data-target="#filterComponent">
                 <i class="fas fa-funnel-dollar"></i>
             </button>
         </div>
 
-        <div class="modal fade" id="filterComponent" tabindex="-1" role="dialog" aria-labelledby="filterComponentLable" aria-hidden="true">
+        <div class="modal fade" id="filterComponent" tabindex="-1" role="dialog" aria-labelledby="filterComponentLable"
+             aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -335,6 +332,22 @@
                         </button>
                     </div>
                     <div class="modal-body">
+                        <VueSlickCarousel v-bind="settings" v-if="categories.length>0">
+                            <div v-for="category in categories" @click="selectType(category.id)" class="p-2">
+
+                                <div class="card filter-card"
+                                     :class="{'text-primary font-weight-bold card-primary':inSelectedType(category.id),'text-secondary':!inSelectedType(category.id)}">
+
+                                    <div class="card-body p-2">
+                                        <img v-lazy="category.image" alt="" class="w-100">
+                                        <small class="text-center w-100">{{category.title}}</small>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </VueSlickCarousel>
+
                         <vue-custom-scrollbar class="scroll-area" :settings="settingsScroll"
                                               @ps-scroll-y="scrollHandler">
                             <div class="row m-0">
@@ -1067,7 +1080,7 @@
     .bottom-filter {
         position: fixed;
         bottom: 10px;
-        left:0;
+        left: 0;
         width: 100%;
         padding: 10px;
         z-index: 10;

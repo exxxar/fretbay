@@ -70,8 +70,10 @@ Vue.component('signup-customer-component', require('./components/Modals/SignUpCu
 Vue.component('chat-component', require('./components/Listing/Chat.vue').default);
 Vue.component('quotes-component', require('./components/Listing/Quotes.vue').default);
 Vue.component('notification-item-component', require('./components/Notifications/NotificationItem.vue').default);
+Vue.component('payment-item-component', require('./components/Payments/PaymentItem.vue').default);
 Vue.component('simple-notification-item-component', require('./components/Notifications/SimpleNotificationItem.vue').default);
 Vue.component('notification-paginate-component', require('./components/Notifications/NotificationPaginate.vue').default);
+Vue.component('payment-paginate-component', require('./components/Payments/PaymentPaginate.vue').default);
 Vue.component('favorites-paginate-component', require('./components/FavoritePaginate.vue').default);
 
 Vue.component('text-callback-form-component', require('./components/TextCallbackForm.vue').default);
@@ -97,13 +99,13 @@ Vue.component('login-page', require('./pages/Auth/Login.vue').default);
 Vue.component('recovery-page', require('./pages/Auth/Recovery.vue').default);
 Vue.component('register-transporter-page', require('./pages/Auth/RegisterTransporter.vue').default);
 Vue.component('register-customer-page', require('../desktop/pages/Auth/RegisterCustomer.vue').default);
-Vue.component('checkout-page', require('../desktop/pages/Profile/Checkout.vue').default);
 
 Vue.component('reviews-page', require('../desktop/pages/Profile/Reviews.vue').default);
 
 //main pages
 Vue.component('index-page', require('./pages/Main/Index.vue').default);
 Vue.component('notifications-page', require('./pages/Profile/Notifications.vue').default);
+Vue.component('payments-page', require('./pages/Profile/Payments.vue').default);
 Vue.component('favorites-page', require('./pages/Profile/Transporter/Favorites.vue').default);
 Vue.component('listing-page', require('./pages/Main/Listing.vue').default);
 Vue.component('find-loads-page', require('./pages/Main/FindLoads.vue').default);
@@ -160,6 +162,12 @@ Vue.component('quality-charter-page', require('./pages/Support/QualityCharter.vu
 Vue.component('fraud-prevention-page', require('./pages/Support/FraudPrevention.vue').default);
 Vue.component('tips-moving-page', require('./pages/Support/TipsMoving.vue').default);
 Vue.component('ebay-sellers-page', require('./pages/Support/EbaySellers.vue').default);
+
+//payments
+Vue.component('card-input-component', require('./components/Payments/CardInput').default);
+Vue.component('card-cvc-component', require('./components/Payments/CardCVC').default);
+Vue.component('card-month-component', require('./components/Payments/CardMonth').default);
+Vue.component('card-year-component', require('./components/Payments/CardYear').default);
 
 require('lang.js');
 import VueLang from '@eli5/vue-lang-js'
