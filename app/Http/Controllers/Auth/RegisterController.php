@@ -100,6 +100,7 @@ class RegisterController extends Controller
             "telephone_number_2" => $request->telephone_number_2,
             "first_name" => $request->first_name,
             "second_name" => $request->second_name,
+            "type" => "customer",
 //            "payment_methods" =>  $payment_methods
         ]);
 
@@ -118,14 +119,13 @@ class RegisterController extends Controller
         if (!is_null($user->email))
             Mail::to($user->email)
                 ->send(new RegistrationMail(
-                    $user->name . " " .
-                    $user->email
+                    $user
                 ));
 
         Auth::login($user, true);
 
         event(new NotificationEvent(
-            "#user-" . $user->id,
+            "Users",
             "Success registration for user  " . $user->id,
             NotificationType::Info,
             $user->id));
@@ -146,6 +146,7 @@ class RegisterController extends Controller
 
         $profile = Profile::create([
             "company_name" => $request->name,
+            "type" => "customer",
 //            "payment_methods" => $payment_methods
         ]);
 
@@ -162,7 +163,7 @@ class RegisterController extends Controller
         Auth::login($user, true);
 
         event(new NotificationEvent(
-            "#user-" . $user->id,
+            "Users",
             "Success registration for user  " . $user->id,
             NotificationType::Info,
             $user->id));
@@ -170,8 +171,7 @@ class RegisterController extends Controller
         if (!is_null($user->email))
             Mail::to($user->email)
                 ->send(new RegistrationMail(
-                    $user->name . " " .
-                    $user->email
+                    $user
                 ));
 
 //        return redirect()->route("login");
@@ -183,6 +183,7 @@ class RegisterController extends Controller
 
     public function registerTransporter(TransporterStoreRequest $request)
     {
+
         $transporter = Role::where('name', 'transporter')->first();
 
 //        $payment_methods = (object)[];
@@ -224,7 +225,7 @@ class RegisterController extends Controller
 
 
         event(new NotificationEvent(
-            "#user-" . $user->id,
+            "Users",
             "Success registration for user  " . $user->id,
             NotificationType::Info,
             $user->id));
@@ -232,8 +233,7 @@ class RegisterController extends Controller
         if (!is_null($user->email))
             Mail::to($user->email)
                 ->send(new RegistrationMail(
-                    $user->name . " " .
-                    $user->email
+                    $user
                 ));
 
         return redirect()->route("login");

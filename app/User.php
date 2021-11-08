@@ -27,7 +27,7 @@ class User extends \TCG\Voyager\Models\User /*implements MustVerifyEmail*/
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'phone', 'profile_id', 'fcm_token', 'tax'
+        'name', 'email', 'password', 'profile_id', 'fcm_token', 'tax'
     ];
 
     /**
@@ -51,6 +51,8 @@ class User extends \TCG\Voyager\Models\User /*implements MustVerifyEmail*/
     protected $appends = [
         'computed_rating'
     ];
+
+    protected $with = ["profile"];
 
     public function isAdmin()
     {
@@ -169,7 +171,7 @@ class User extends \TCG\Voyager\Models\User /*implements MustVerifyEmail*/
 
     public function reviews()
     {
-        return $this->hasMany(Review::class, "user_id","id");
+        return $this->hasMany(Review::class, "user_id", "id");
     }
 
 

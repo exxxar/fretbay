@@ -2,7 +2,7 @@
 
 return array (
   'failed' => 'These credentials do not match our records.',
-  'recovery_form' => 
+  'recovery_form' =>
   array (
     'a_2' => 'Signup as Customer',
     'a_3' => 'Signup as Transporter',
@@ -11,7 +11,7 @@ return array (
     'p_1' => 'Do not have an account?',
     'кнопка_1' => '',
   ),
-  'signin_form' => 
+  'signin_form' =>
   array (
     'a_1' => 'Forgot password',
     'a_2' => 'Signup as Customer',
@@ -23,11 +23,12 @@ return array (
     'p_1' => 'Do not have an account?',
     'а_2' => '',
   ),
-  'signup_customer_form' => 
+  'signup_customer_form' =>
   array (
     'a_1' => 'I read ang agree',
     'button_1' => 'Register',
     'button_2' => 'I am a Transporter',
+    'input_placeholder_0' => 'Company name',
     'input_placeholder_1' => 'First name',
     'input_placeholder_2' => 'Last name',
     'input_placeholder_3' => 'Email',
@@ -41,7 +42,7 @@ return array (
     'label_3' => 'I agree to receive commercial offers from AlloTrans and its partners.',
     'label_4' => 'with a privacy police',
   ),
-  'signup_transporter_form' => 
+  'signup_transporter_form' =>
   array (
     'a_1' => 'I read ang agree',
     'button_1' => 'Register',

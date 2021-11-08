@@ -5,3 +5,4 @@
 Login: {{ $data['login'] }}<br>
 Password: {{ $data['password'] }}
 @endcomponent
+

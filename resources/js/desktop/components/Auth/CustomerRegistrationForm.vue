@@ -37,7 +37,7 @@
                                 <ValidationProvider name="Account name" rules="required|alpha_num" v-slot="{ errors }">
                                     <input type="text" class="form-control form__input" name="company_name"
                                            v-model="new_user.company_name"
-                                           :placeholder="$trans('auth.signup_customer_form.input_placeholder_1')"
+                                           :placeholder="$trans('auth.signup_customer_form.input_placeholder_0')"
                                            required>
                                     <p class="mb-0" style="color:red;font-size:11px">{{errors[0]}}</p>
                                 </ValidationProvider>
@@ -55,7 +55,7 @@
                                 <ValidationProvider name="First name" rules="required|alpha|min:3" v-slot="{ errors }">
                                     <input type="text" class="form-control form__input" name="first_name"
                                            v-model="new_user.first_name"
-                                           :placeholder="$trans('auth.signup_customer_form.input_placeholder_2')" required>
+                                           :placeholder="$trans('auth.signup_customer_form.input_placeholder_1')" required>
                                     <p class="mb-0" style="color:red;font-size:11px">{{errors[0]}}</p>
                                 </ValidationProvider>
                             </div>
@@ -69,7 +69,7 @@
                                 <ValidationProvider name="Last name" rules="required|alpha|min:3" v-slot="{ errors }">
                                     <input type="text" class="form-control form__input" name="second_name"
                                            v-model="new_user.second_name"
-                                           :placeholder="$trans('auth.signup_customer_form.input_placeholder_3')" required>
+                                           :placeholder="$trans('auth.signup_customer_form.input_placeholder_2')" required>
                                     <p class="mb-0" style="color:red;font-size:11px">{{errors[0]}}</p>
                                 </ValidationProvider>
                             </div>
@@ -87,7 +87,7 @@
                                 <ValidationProvider name="Email" rules="required|email" vid="email" v-slot="{ errors }">
                                     <input type="email" class="form-control form__input" name="email"
                                            autocomplete="username"
-                                           :placeholder="$trans('auth.signup_customer_form.input_placeholder_4')" v-model="new_user.email" required>
+                                           :placeholder="$trans('auth.signup_customer_form.input_placeholder_3')" v-model="new_user.email" required>
                                     <p class="mb-0" style="color:red;font-size:11px">{{errors[0]}}</p>
                                 </ValidationProvider>
                             </div>
@@ -100,7 +100,7 @@
                                 <ValidationProvider name="Confirm email" rules="required|email|confirmed:email" v-slot="{ errors }">
                                     <input type="email" class="form-control form__input" name="email_confirmation"
                                            autocomplete="username"
-                                           :placeholder="$trans('auth.signup_customer_form.input_placeholder_5')" v-model="new_user.confirm_email" required>
+                                           :placeholder="$trans('auth.signup_customer_form.input_placeholder_4')" v-model="new_user.confirm_email" required>
                                     <p class="mb-0" style="color:red;font-size:11px">{{errors[0]}}</p>
                                 </ValidationProvider>
 
@@ -122,7 +122,7 @@
                                     <input type="password" class="form-control form__input"
                                            autocomplete="new-password"
                                            name="password"
-                                           :placeholder="$trans('auth.signup_customer_form.input_placeholder_6')" required
+                                           :placeholder="$trans('auth.signup_customer_form.input_placeholder_5')" required
                                            v-model="new_user.password">
                                     <p class="mb-0" style="color: red;font-size:11px">{{errors[0]}}</p>
                                 </ValidationProvider>
@@ -138,7 +138,7 @@
                                                     v-slot="{ errors }">
                                     <input type="password" class="form-control form__input" name="password_confirmation"
                                            autocomplete="current-password"
-                                           :placeholder="$trans('auth.signup_customer_form.input_placeholder_7')"
+                                           :placeholder="$trans('auth.signup_customer_form.input_placeholder_6')"
                                            required v-model="new_user.confirm_password">
                                     <p class="mb-0" style="color: red;font-size:11px">{{errors[0]}}</p>
                                 </ValidationProvider>
@@ -156,7 +156,7 @@
                                 <ValidationProvider name="Phone number 1" rules="required" v-slot="{ errors }">
                                     <input type="tel" class="form-control form__input" v-mask="'+ ### ### #######'"
                                            name="telephone_number_1" v-model="new_user.telephone_number_1"
-                                           :placeholder="$trans('auth.signup_customer_form.input_placeholder_8')"
+                                           :placeholder="$trans('auth.signup_customer_form.input_placeholder_7')"
                                            required>
                                     <p class="mb-0" style="color:red;font-size:11px">{{errors[0]}}</p>
                                 </ValidationProvider>
@@ -170,7 +170,7 @@
                                     <input type="tel" class="form-control form__input" v-mask="'+ ### ### #######'"
                                            name="telephone_number_2"
                                            v-model="new_user.telephone_number_2"
-                                           :placeholder="$trans('auth.signup_customer_form.input_placeholder_9')" required>
+                                           :placeholder="$trans('auth.signup_customer_form.input_placeholder_8')" required>
                                     <p class="mb-0" style="color:red;font-size:11px">{{errors[0]}}</p>
                                 </ValidationProvider>
                             </div>
@@ -187,7 +187,7 @@
                                     <input type="checkbox" class="custom-control-input"
                                            v-model="new_user.newsletter_notify" id="iAgree_customer" required>
                                     <label class="custom-control-label" for="iAgree_customer">
-                                        {{$trans('auth.signup_customer_form.label_1')}}
+                                        {{$trans('auth.signup_customer_form.label_3')}}
 
                                     </label>
                                 </div>
