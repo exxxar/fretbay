@@ -7,19 +7,19 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class NotifyMail extends Mailable
+class OrderHasShippedMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $text;
+    public $order;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(string $text)
+    public function __construct(object $order)
     {
-        $this->text = $text;
+        $this->order = $order;
     }
 
     /**
@@ -29,8 +29,9 @@ class NotifyMail extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.notify')->with([
-            "text"=>$this->text
-        ]);
+        return $this->view('emails.order-has-shipped')
+            ->with([
+                'order' => $this->order,
+            ]);
     }
 }

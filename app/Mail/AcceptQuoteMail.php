@@ -7,19 +7,19 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class NotifyMail extends Mailable
+class AcceptQuoteMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $text;
+    public $quote;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(string $text)
+    public function __construct(object $quote)
     {
-        $this->text = $text;
+        $this->quote = $quote;
     }
 
     /**
@@ -29,8 +29,9 @@ class NotifyMail extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.notify')->with([
-            "text"=>$this->text
-        ]);
+        return $this->view('emails.accept-quote')
+            ->with([
+                'quote' => $this->quote,
+            ]);
     }
 }
