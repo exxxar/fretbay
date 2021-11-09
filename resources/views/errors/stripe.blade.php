@@ -16,9 +16,9 @@
                         <!-- End SVG Mockup -->
 
                         <!-- Title -->
-                        <h1 class="display-3 font-size-48--md-down font-weight-medium mb-3">Payment not found</h1>
+                        <h4 class="display-3 mb-3">Payment error!</h4>
                         <p class="lead mb-0">Stripe error! </p>
-                        <p class="lead mb-0">If you think this is a problem with us, please <a href="contacts-agency.html">tell us</a>.</p>
+                        <p class="lead mb-0">{!! $message !!}</p>
                         <!-- End Title -->
                         <a href="/" class="btn btn-outline-primary mt-5 p-2 pr-5 pl-5">Main page</a>
                     </div>

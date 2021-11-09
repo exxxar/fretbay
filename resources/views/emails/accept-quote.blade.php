@@ -10,9 +10,48 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="free-text">
-                        There's one last step until your account is 100% ready. We need you to update your account
-                        details.
+                    <td>
+
+
+                        <h3>Quote info</h3>
+
+                        <p>Price <strong>{{$price}}</strong></p>
+                        <p>Valid until <strong>{{$valid_until_date}}</strong></p>
+                        <p>Additional info <strong>{{$additional_info}}</strong></p>
+                        <p>Type of transport <strong>{{$type_of_transport}}</strong></p>
+                        <p>Quote validity <strong>{{$quote_validity}}</strong></p>
+                        <p> Formula
+                            @isset($formula)
+                                @foreach ($formula as $f)
+                                    @switch($f)
+
+                                        @case(1)
+                                        Truck with Driver package<
+                                        @break
+
+                                        @case(2)
+                                        The Economic package
+                                        @break
+
+                                        @case(3)
+                                        The Standard package
+                                        @break
+
+                                        @case(4)
+                                        The Complete package
+                                        @break
+
+                                        @default
+                                        Minimum package
+                                    @endswitch
+                                @endforeach
+                            @endisset
+                        </p>
+                        <p>Status <strong>{{$status}}</strong></p>
+                        <p>Currency <strong>{{$currency}}</strong></p>
+                        <p>Listing id <strong>{{$listing_id}}</strong></p>
+                        <p>User id <strong>{{$user_id}}</strong></p>
+
                     </td>
                 </tr>
                 <tr>
@@ -32,7 +71,7 @@
                                                             <img
                                                                 src="http://s3.amazonaws.com/swu-filepicker/0oYLLViRBKv7a0Lzh6vC_v3_03.jpg"
                                                                 alt="step one"/><br/>
-                                                            Create Account
+                                                            Create Quote
                                                         </td>
 
                                                         <!-- STEP TWO -->
@@ -40,7 +79,7 @@
                                                             <img
                                                                 src="http://s3.amazonaws.com/swu-filepicker/YL3H3V5bRyGuy6pess9T_v33_04.jpg"
                                                                 alt="step two"/><br/>
-                                                            Update Info
+                                                            Accept Quote
                                                         </td>
 
                                                         <!-- STEP THREE -->
@@ -48,7 +87,7 @@
                                                             <img
                                                                 src="http://s3.amazonaws.com/swu-filepicker/YSTlgtgaTSa897tPTUhl_v3_05.jpg"
                                                                 alt="step three"/>
-                                                            Complete
+                                                            Order start
                                                         </td>
 
                                                     </tr>
@@ -60,19 +99,18 @@
                                                 <div><!--[if mso]>
                                                     <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml"
                                                                  xmlns:w="urn:schemas-microsoft-com:office:word"
-                                                                 href="http://"
+                                                                 href="https://allotrans.com"
                                                                  style="height:45px;v-text-anchor:middle;width:155px;"
                                                                  arcsize="15%" strokecolor="#ffffff"
                                                                  fillcolor="#ff6f6f">
                                                         <w:anchorlock/>
                                                         <center
                                                             style="color:#ffffff;font-family:Helvetica, Arial, sans-serif;font-size:14px;font-weight:regular;">
-                                                            Update Account
+                                                            You profile
                                                         </center>
                                                     </v:roundrect>
-                                                    <![endif]--><a href="http://"
-                                                                   style="background-color:#ff6f6f;border-radius:5px;color:#ffffff;display:inline-block;font-family:'Cabin', Helvetica, Arial, sans-serif;font-size:14px;font-weight:regular;line-height:45px;text-align:center;text-decoration:none;width:155px;-webkit-text-size-adjust:none;mso-hide:all;">Update
-                                                        Account</a></div>
+                                                    <![endif]--><a href="https://allotrans.com"
+                                                                   style="background-color:#ff6f6f;border-radius:5px;color:#ffffff;display:inline-block;font-family:'Cabin', Helvetica, Arial, sans-serif;font-size:14px;font-weight:regular;line-height:45px;text-align:center;text-decoration:none;width:155px;-webkit-text-size-adjust:none;mso-hide:all;"> You profile</a></div>
                                             </td>
                                         </tr>
                                     </table>

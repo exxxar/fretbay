@@ -8,13 +8,17 @@ use App\Http\Requests\CategoryProperyStoreRequest;
 use App\Http\Requests\CategoryProperyUpdateRequest;
 use App\Http\Requests\OrderStoreRequest;
 use App\Http\Requests\OrderUpdateRequest;
+use App\Mail\AcceptQuoteMail;
+use App\Mail\SendQuoteMail;
 use App\Models\CategoryProperty;
 use App\Models\Listing;
 use App\Models\Order;
 use App\Models\PaymentHistory;
 use App\Models\Quote;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class OrderController extends Controller
 {
@@ -84,6 +88,9 @@ class OrderController extends Controller
         $quote->status = 2;
         $quote->save();
 
+        $listing->is_active = false;
+        $listing->save();
+
         $order = Order::create([
             "title" => $listing->title,
             "description" => $listing->additional_info ?? "no description",//Описание заказа
@@ -93,6 +100,10 @@ class OrderController extends Controller
             "listing_id" => $listing->id,
             "transporter_id" => $quote->user_id,
         ]);
+
+        $user = User::find( $user_id);
+
+        Mail::to($user->email)->send(new AcceptQuoteMail($quote));
 
         $payment = PaymentHistory::create([
             "title" => "Accept Quote",

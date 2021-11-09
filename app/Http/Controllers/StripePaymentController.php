@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\RegistrationMail;
+use App\Mail\SuccessPayedMail;
 use App\Models\Listing;
 use App\Models\PaymentHistory;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Stripe\Charge;
 
@@ -35,7 +38,10 @@ class StripePaymentController extends Controller
         $payment = PaymentHistory::find($id);
 
         if (is_null($payment))
-            return view("errors.stripe");
+            return view("errors.stripe",["message"=>"Payment not found"]);
+
+        if ($payment->success == true)
+            return view("errors.stripe",["message"=>"Payment is already success"]);
 
 
         return view('stripe', ["payment" => $payment]);
@@ -78,6 +84,15 @@ class StripePaymentController extends Controller
         $listing->status = "payed";
         $listing->is_active = false;
         $listing->save();
+
+        $user = User::find($payment->user_id);
+
+
+        if (!is_null($user->email))
+            Mail::to($user->email)
+                ->send(new SuccessPayedMail(
+                    $payment
+                ));
 
         Session::flash('success', 'Payment successful!');
 

@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use Carbon\Carbon;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -12,6 +13,7 @@ class AcceptQuoteMail extends Mailable
     use Queueable, SerializesModels;
 
     public $quote;
+
     /**
      * Create a new message instance.
      *
@@ -31,7 +33,16 @@ class AcceptQuoteMail extends Mailable
     {
         return $this->view('emails.accept-quote')
             ->with([
-                'quote' => $this->quote,
+                'price' => $this->quote->price ?? "",
+                'valid_until_date' => $this->quote->valid_until_date ?? Carbon::now(),
+                'additional_info' => $this->quote->additional_info ?? "",
+                'type_of_transport' => $this->quote->type_of_transport ?? 0,
+                'quote_validity' => $this->quote->quote_validity ?? "",
+                'formula' => $this->quote->formula ?? [],
+                'status' => $this->quote->status ?? 0,
+                'currency' => $this->quote->currency ?? "EUR",
+                'listing_id' => $this->quote->listing_id ?? null,
+                'user_id' => $this->quote->user_id ?? null
             ]);
     }
 }

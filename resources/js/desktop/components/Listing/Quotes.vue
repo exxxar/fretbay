@@ -409,7 +409,7 @@
                     listing_id: this.listing.id,
                     quote_id: id
                 }).then(resp => {
-                    window.location.href = '/stripe/' + resp.payment_id;
+                    window.location.href = '/stripe/' + resp.data.payment_id;
                 }).catch(() => {
                     setTimeout(() => {
 

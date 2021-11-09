@@ -8,9 +8,12 @@ use App\Enums\NotificationType;
 use App\Events\NotificationEvent;
 use App\Events\NotificationEventBroadcast;
 use App\Events\NotificationQuoteEventBroadcast;
+use App\Mail\AcceptQuoteMail;
+use App\Mail\DeclineQuoteMail;
 use App\Mail\NewMessageMail;
 use App\Mail\NotifyMail;
 use App\Mail\RegistrationMail;
+use App\Mail\SendQuoteMail;
 use App\Models\Message;
 use App\Models\Listing;
 use App\Models\PaymentHistory;
@@ -474,6 +477,11 @@ class ListingController extends Controller
             NotificationObjectType::Quote
         ));
 
+        $user = User::find( Auth::user()->id);
+
+        Mail::to($user->email)->send(new SendQuoteMail($quote));
+
+
         event(new NotificationQuoteEventBroadcast(Auth::user()->id));
 
         $listing = Listing::where("id", $request->listing_id)->first();
@@ -607,6 +615,9 @@ class ListingController extends Controller
             NotificationObjectType::Quote
         ));
 
+        $user = User::find($user_id);
+
+        Mail::to($user->email)->send(new AcceptQuoteMail($latestQuote));
 
         return response()->json([
             "payment_id" => $payment->id
@@ -654,9 +665,9 @@ class ListingController extends Controller
             NotificationObjectType::Quote
         ));
 
-        $latest = User::find($latestQuote->user_id);
+        $user = User::find($latestQuote->user_id);
 
-        Mail::to($latest->email)->send(new NotifyMail("Decline for quote #$latestQuote->id"));
+        Mail::to($user->email)->send(new DeclineQuoteMail($latestQuote));
 
         return response()->noContent();
     }
@@ -754,7 +765,6 @@ class ListingController extends Controller
             $message->id,
             NotificationObjectType::Message
         ));
-
 
 
         $users = User::whereIn("id", [$listing->recipient_id, $sender_id])->get();
