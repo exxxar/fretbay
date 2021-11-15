@@ -1,9 +1,7 @@
 <template>
     <div class="row pb-5 d-flex justify-content-center">
 
-
-        <div class="col-lg-12 mb-9 mb-lg-0 " v-if="filteredReviews.length>0">
-
+        <div class="col-lg-12 mb-9 mb-lg-0 ">
             <div class="row">
                 <div class="col-12 p-2">
                     <div class="form-group row d-flex justify-content-center mb-0">
@@ -23,6 +21,10 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="col-lg-12 mb-9 mb-lg-0 " v-if="filteredReviews.length>0">
+
+
 
             <div class="p-2">
                 <review-item-component :key="index" v-for="(item,index) in filteredReviews" :item="item"/>

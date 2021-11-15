@@ -192,10 +192,7 @@
                 loading: false,
                 searchText: null,
                 langOptions: [
-                    {
-                        locale_name: "en",
-                        name: "English"
-                    },
+
                     {
                         locale_name: "fr",
                         name: "Français"
@@ -203,7 +200,11 @@
                     {
                         locale_name: "ru",
                         name: "Русский"
-                    }
+                    },
+                    {
+                        locale_name: "en",
+                        name: "English"
+                    },
                 ]
             }
         },
@@ -212,7 +213,8 @@
                 return window.user;
             },
             currentLocale: function () {
-                let index = this.langOptions.findIndex(item => item.locale_name === window.locale);
+                //item.locale_name === window.locale ||
+                let index = this.langOptions.findIndex(item =>  item.locale_name === localStorage.getItem('locale'));
                 if (index < 0) {
                     this.selectLang(this.langOptions[0].locale_name);
                     return this.langOptions[0].name;

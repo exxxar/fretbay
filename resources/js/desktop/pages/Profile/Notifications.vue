@@ -2,8 +2,8 @@
     <main id="content" style="padding-top: 30px;">
         <!-- Description Section -->
 
-        <div class="container p-0">
-            <div class="row p-0">
+        <div class="container p-2">
+            <div class="row p-0 m-0">
                 <div class="col-12 col-md-4 d-flex flex-column p-0">
                     <small class="ml-3">Order by</small>
                     <div class="d-flex justify-content-around ">
@@ -62,7 +62,7 @@
                 <div class="col-12 col-md-8 ">
                     <input type="search" class="form-control mb-2" name="search"
                            placeholder="Search..."
-                           autofocus="true" autocomplete="search-notifications" v-model="search">
+                           autofocus="true" autocomplete="new-notifications" v-model="search">
                 </div>
             </div>
 

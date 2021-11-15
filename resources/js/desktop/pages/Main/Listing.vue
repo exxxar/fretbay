@@ -87,6 +87,22 @@
             </div>
         </div>
 
+        <div class="modal fade" id="quoteInfoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Quotation Info</h5>
+                        <button type="button" class="close" @click="closeAndRestoreQuote">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        This block for quote info
+                    </div>
+
+                </div>
+            </div>
+        </div>
 
         <!-- Modal -->
         <div class="modal  fade" id="chatModal" data-backdrop="static" data-keyboard="false"
@@ -181,7 +197,13 @@
             })
         },
         methods: {
+            closeAndRestoreQuote(){
 
+                $("#quoteInfoModal").modal("hide");
+
+                $("#quoteModal").modal("show");
+
+            },
             initMap() {
                 this.showMap = false;
 

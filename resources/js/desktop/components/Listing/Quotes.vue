@@ -67,11 +67,13 @@
                     <button class="btn btn-danger" data-toggle="modal" data-target="#declineMessage">
                         {{$trans('profile.quotes.button_2')}}
                     </button>
-                    <!--<button class="btn btn-outline-primary">Message to Transporter</button>-->
+                    <button class="btn btn-outline-primary" @click="fastMessage = !fastMessage">
+                        <i class="fas fa-envelope"></i>
+                    </button>
                     <hr>
 
                     <form v-on:submit.prevent="sendMessage"
-                          v-if="form.quote">
+                          v-if="form.quote&&fastMessage">
                         <h6>{{$trans('profile.quotes.h6_1')}}</h6>
                         <div v-if="form.quote.id===item.id" class="row">
                             <div class="col-sm-8">
@@ -87,7 +89,8 @@
                         </div>
 
                     </form>
-                </div>
+
+                    </div>
             </div>
         </div>
 
@@ -118,9 +121,11 @@
                             </div>
                             <div class="col-12">
                                 <p class="m-0"><small>{{$trans('profile.quotes.p_4')}}: {{getProfit()}}
-                                    {{currentCurrency}}</small> <a
-                                    href=""><i class="far fa-question-circle"></i></a></p>
-                            </div>
+                                    {{currentCurrency}}</small> <a @click="openHelp"
+                                    href="#info"><i class="far fa-question-circle"></i></a>
+                                  </p>
+
+                                 </div>
                         </div>
                         <hr>
                         <h6 class="text-center">{{$trans('profile.quotes.h6_2')}}</h6>
@@ -202,6 +207,8 @@
             </div>
         </div>
 
+
+
     </div>
 </template>
 <script>
@@ -254,6 +261,7 @@
         },
         data() {
             return {
+                fastMessage: false,
                 declineMessage: '',
                 declineMessages: [
                     "Message 1",
@@ -350,6 +358,10 @@
         }
         ,
         methods: {
+            openHelp(){
+                $("#quoteModal").modal("hide");
+                $("#quoteInfoModal").modal("show");
+            },
             prepareFormula(formula) {
                 if (!formula)
                     return "";

@@ -192,8 +192,6 @@
                             <h5>{{order.review.title}}</h5>
                             <p>{{order.review.text}}</p>
                             <h6>{{$trans('profile.order.h6_1')}}</h6>
-
-
                             <p><em v-html="prepareReviewType(order.review.type).description"></em></p>
                             <hr>
                         </div>
