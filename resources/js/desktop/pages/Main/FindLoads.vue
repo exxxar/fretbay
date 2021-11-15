@@ -1081,8 +1081,8 @@ export default {
 
 .bottom-filter {
     position: fixed;
-    bottom: 83px;
-    right: 11px;
+    bottom: 76px;
+    right: 0px;
     width: auto;
     padding: 10px;
     z-index: 10;
