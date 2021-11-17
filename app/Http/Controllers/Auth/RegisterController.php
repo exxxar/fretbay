@@ -85,6 +85,10 @@ class RegisterController extends Controller
 
     public function registerCustomer(Request $request)
     {
+        $request->validate([
+            "email"=>"required|email|unique:users"
+        ]);
+
         $customer = Role::where('name', 'customer')->first();
 
 //        $payment_methods = (object)[];
@@ -135,6 +139,10 @@ class RegisterController extends Controller
 
     public function registerCustomerWithListing(Request $request)
     {
+        $request->validate([
+            "email"=>"required|email|unique:users"
+        ]);
+
         $customer = Role::where('name', 'customer')->first();
 
 //        $payment_methods = (object)[];
@@ -183,6 +191,9 @@ class RegisterController extends Controller
 
     public function registerTransporter(TransporterStoreRequest $request)
     {
+        $request->validate([
+            "email"=>"required|email|unique:users"
+        ]);
 
         $transporter = Role::where('name', 'transporter')->first();
 
