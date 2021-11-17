@@ -123,6 +123,7 @@
                                 <p class="m-0"><small>{{$trans('profile.quotes.p_4')}}: {{getProfit()}}
                                     {{currentCurrency}}</small> <a
                                     data-toggle="popover"
+                                    data-placement="left"
                                     title="Quote help" data-content="And here's some amazing content. It's very engaging. Right?"
                                     href="#info"><i class="far fa-question-circle"></i></a>
 
