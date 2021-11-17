@@ -13,6 +13,9 @@
             <div class="row">
                 <div class="col-2 d-flex justify-content-center align-item-center  font-size-32">
                     <span
+                        data-toggle="popover"
+                        title="Emoji help"
+                        data-content="And here's some amazing content. It's very engaging. Right?"
                         class="p-2 font-size-28"
                         v-bind:class="{
                                             'text-danger':item.type===0,
@@ -58,7 +61,11 @@
                             class="fas fa-trash-alt"></i>
                         </button>
                         <button class="btn btn-outline-primary"
-                                data-toggle="modal" :data-target="'#reviewInfo-'+item.id+modalPrefix"
+                                type="button"
+                                data-toggle="popover"
+                                title="Review help"
+                                data-trigger="focus"
+                                data-content="And here's some amazing content. It's very engaging. Right?"
                                 v-if="user.is_transporter"><i
                             class="fas fa-question"></i></button>
                     </div>
@@ -83,22 +90,6 @@
         </div>
 
 
-        <div class="modal fade" :id="'reviewInfo-'+item.id+modalPrefix" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-scrollable">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Review Info</h5>
-                        <button type="button" class="close" data-dismiss="modal">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        Review info
-                    </div>
-
-                </div>
-            </div>
-        </div>
 
         <div class="modal fade" :id="'removeReviewModal-'+item.id+modalPrefix" data-backdrop="static" data-keyboard="false" tabindex="-1" :aria-labelledby="'removeReviewModal-'+item.id" aria-hidden="true">
             <div class="modal-dialog">
@@ -132,8 +123,13 @@
                 return window.user;
             },
         },
+        mounted() {
+            $('[data-toggle="popover"]').popover()
+        },
         created(){
             this.modalPrefix = uuidv4()
+
+
         },
         data() {
             return {

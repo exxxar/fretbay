@@ -14,9 +14,13 @@
                                     <div class="row w-100 mx-auto mb-3 align-items-center">
                                         <div class="col-12 p-0 ">
                                             <div
+
                                                 class="row w-100 mx-auto align-items-center d-flex justify-content-center justify-content-sm-start"
                                                 v-if="info.is_approved">
                                                 <img src="/images/profile/approved.png" class="mr-1"
+                                                     role="button" data-toggle="popover"
+                                                     title="Apporoved help"
+                                                     data-content="And here's some amazing content. It's very engaging. Right?"
                                                      style="width: 25px; height: 25px" alt="Approved">
                                                 <span class="text-uppercase" style="font-size:14px">{{$trans('profile.public_profile.span_1')}}</span>
                                             </div>
@@ -24,6 +28,9 @@
                                                 class="row w-100 mx-auto align-items-center d-flex justify-content-center justify-content-sm-start"
                                                 v-if="!info.is_approved">
                                                 <img src="/images/profile/not_approved.png" class="mr-1"
+                                                     role="button" data-toggle="popover"
+                                                     title="Apporoved help"
+                                                     data-content="And here's some amazing content. It's very engaging. Right?"
                                                      style="width: 25px; height: 25px" alt="Not approved">
                                                 <span class="text-uppercase" style="font-size:14px">{{$trans('profile.public_profile.span_2')}}</span>
                                             </div>
@@ -245,6 +252,9 @@
 
             this.$store.dispatch("loadReviewsById", this.info.user.id)
 
+        },
+        mounted() {
+            $('[data-toggle="popover"]').popover()
         },
         computed: {
             user() {

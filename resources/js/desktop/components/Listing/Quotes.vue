@@ -121,8 +121,11 @@
                             </div>
                             <div class="col-12">
                                 <p class="m-0"><small>{{$trans('profile.quotes.p_4')}}: {{getProfit()}}
-                                    {{currentCurrency}}</small> <a @click="openHelp"
+                                    {{currentCurrency}}</small> <a
+                                    data-toggle="popover"
+                                    title="Quote help" data-content="And here's some amazing content. It's very engaging. Right?"
                                     href="#info"><i class="far fa-question-circle"></i></a>
+
                                   </p>
 
                                  </div>
@@ -347,6 +350,8 @@
         mounted() {
             this.bidPrice = Math.max(this.minBid, 0);
 
+            $('[data-toggle="popover"]').popover()
+
             if (this.user)
                 pusher.subscribe('notification-event-channel-' + this.user.id)
                     .bind('notification-quote-event', (data) => {
@@ -358,10 +363,7 @@
         }
         ,
         methods: {
-            openHelp(){
-                $("#quoteModal").modal("hide");
-                $("#quoteInfoModal").modal("show");
-            },
+
             prepareFormula(formula) {
                 if (!formula)
                     return "";
