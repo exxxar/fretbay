@@ -165,7 +165,7 @@
                 }
             },
             selectAddress(selection) {
-             
+
                 selection.postal = this.postal
                 if (this.date1 === 'unshipping_date_from') {
                     this.$store.dispatch('editNewListing', {key: 'place_of_delivery', value: selection});

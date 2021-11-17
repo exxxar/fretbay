@@ -20,4 +20,5 @@ final class NotificationObjectType extends Enum
     const Transporter = 6;
     const Review = 7;
     const Notification = 8;
+    const Payment = 9;
 }

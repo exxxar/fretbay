@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\NotificationObjectType;
+use App\Enums\NotificationType;
+use App\Events\NotificationEvent;
 use App\Mail\RegistrationMail;
 use App\Mail\SuccessPayedMail;
 use App\Models\Listing;
@@ -87,6 +90,14 @@ class StripePaymentController extends Controller
 
         $user = User::find($payment->user_id);
 
+        event(new NotificationEvent(
+            "Payment",
+            $description,
+            NotificationType::Info,
+            Auth::user()->id,
+            $payment->id,
+            NotificationObjectType::Payment
+        ));
 
         if (!is_null($user->email))
             Mail::to($user->email)
