@@ -10,29 +10,29 @@
                         <div class="card-body px-1 px-sm-3">
                             <div class="row w-100 mx-auto">
                                 <div class="col-md-8 col-sm-8">
-                                    <h2 class="card-title mb-2"><strong>{{fullName}}</strong></h2>
+                                    <h2 class="card-title mb-2 text-sm-left text-center"><strong>{{fullName}}</strong></h2>
                                     <div class="row w-100 mx-auto mb-3 align-items-center">
                                         <div class="col-12 p-0 ">
                                             <div
 
                                                 class="row w-100 mx-auto align-items-center d-flex justify-content-center justify-content-sm-start"
                                                 v-if="info.is_approved">
-                                                <img src="/images/profile/approved.png" class="mr-1"
+                                                <img src="/images/profile/approved.png" class="mr-1 mb-2"
                                                      role="button" data-toggle="popover"
                                                      title="Apporoved help"
                                                      data-content="And here's some amazing content. It's very engaging. Right?"
                                                      style="width: 25px; height: 25px" alt="Approved">
-                                                <span class="text-uppercase" style="font-size:14px">{{$trans('profile.public_profile.span_1')}}</span>
+                                                <span class="text-uppercase text-sm-left text-center" style="font-size:14px">{{$trans('profile.public_profile.span_1')}}</span>
                                             </div>
                                             <div
                                                 class="row w-100 mx-auto align-items-center d-flex justify-content-center justify-content-sm-start"
                                                 v-if="!info.is_approved">
-                                                <img src="/images/profile/not_approved.png" class="mr-1"
+                                                <img src="/images/profile/not_approved.png" class="mr-1 mb-2"
                                                      role="button" data-toggle="popover"
                                                      title="Apporoved help"
                                                      data-content="And here's some amazing content. It's very engaging. Right?"
                                                      style="width: 25px; height: 25px" alt="Not approved">
-                                                <span class="text-uppercase" style="font-size:14px">{{$trans('profile.public_profile.span_2')}}</span>
+                                                <span class="text-uppercase text-sm-left text-center" style="font-size:14px">{{$trans('profile.public_profile.span_2')}}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -254,7 +254,10 @@
 
         },
         mounted() {
-            $('[data-toggle="popover"]').popover()
+            $('[data-toggle="popover"]').popover({
+
+                placement:'bottom'
+            })
         },
         computed: {
             user() {

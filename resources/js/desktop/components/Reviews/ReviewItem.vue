@@ -11,7 +11,7 @@
 
 
             <div class="row">
-                <div class="col-2 d-flex justify-content-center align-item-center  font-size-32">
+                <div class="col-12 col-sm-2 d-flex justify-content-center align-item-center  font-size-32">
                     <span
                         data-toggle="popover"
                         title="Emoji help"
@@ -25,15 +25,15 @@
                         v-html="prepareReviewType(item.type).data">
                                 </span>
                 </div>
-                <div class="col-4 p-2">
+                <div class="col-12 col-sm-4 p-2  text-center">
                     <p class="m-0">{{item.title}}</p>
                     <small>{{item.transporter.profile.company_name}}</small>
                     <br>
                     <small>{{item.created_at | moment("DD-MM-yyyy H:mm") }}</small>
 
                 </div>
-                <div class="col-6 p-2">
-                    <p>{{item.text}}</p>
+                <div class="col-12 col-sm-6 p-2 ">
+                    <p class="text-center">{{item.text}}</p>
 
 
                 </div>
@@ -53,8 +53,8 @@
 
         <div class="card-footer">
             <div class="row">
-                <div class="col-sm-4">
-                    <div class="btn-group">
+                <div class="col-sm-2 col-12 mb-2">
+                    <div class="btn-group w-100">
                         <button class="btn btn-outline-danger" v-if="user.is_customer"
                                 data-toggle="modal" :data-target="'#removeReviewModal-'+item.id+modalPrefix"
                                ><i
@@ -70,7 +70,7 @@
                             class="fas fa-question"></i></button>
                     </div>
                 </div>
-                <div class="col-sm-8" v-if="!item.review&&user.is_transporter">
+                <div class="col-sm-10" v-if="!item.review&&user.is_transporter">
 
                     <form class="input-group" v-on:submit.prevent="attachReview">
                         <input type="text" class="form-control"
@@ -124,7 +124,10 @@
             },
         },
         mounted() {
-            $('[data-toggle="popover"]').popover()
+            $('[data-toggle="popover"]').popover({
+
+                placement:'bottom'
+            })
         },
         created(){
             this.modalPrefix = uuidv4()

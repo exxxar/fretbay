@@ -31,7 +31,6 @@
                     </div>
                     <div class="row">
                         <div class="col-12 col-sm-4"><a class="w-100 text-center d-block"
-                                                        target="_blank"
                                                         v-if="item.user"
                                                         :href="'/profile/'+item.user_id">
                             {{item.user.profile.company_name || "Company name"}}</a>
