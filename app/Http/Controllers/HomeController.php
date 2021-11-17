@@ -7,6 +7,7 @@ use App\Models\Listing;
 use App\Models\Message;
 use App\Models\Notification;
 use App\Models\Order;
+use App\Models\PaymentHistory;
 use App\Models\Quote;
 use App\Models\Review;
 use Illuminate\Contracts\Session\Session;
@@ -60,6 +61,9 @@ class HomeController extends Controller
                 break;
             case "notification":
                 $item = Notification::find($id);
+                break;
+            case "payment":
+                $item = PaymentHistory::find($id);
                 break;
 
         }

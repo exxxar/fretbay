@@ -17,7 +17,7 @@
                         <div class="d-flex flex-column align-items-center text-center">
                             <img v-lazy="user.avatar" alt="Admin" class="rounded-circle" width="150">
                             <div class="mt-3">
-                                <h4>{{user.name}}</h4>
+                                <h6>{{user.name}}</h6>
                                 <p class="text-secondary mb-1">{{user.created_at | moment("DD.MM.YYYY")}}</p>
                                 <p class="text-muted font-size-sm">{{fullAddress}}</p>
                                 <p class="text-muted font-size-sm" v-if="profile.company_name.length>0">
@@ -325,10 +325,10 @@
                 if (!this.profile.country || this.profile.country === '' || this.profile.country.title === '') {
                     return ''
                 }
-                return this.profile.country + ","
-                    + this.profile.region + ","
-                    + this.profile.city + ","
-                    + this.profile.postal;
+                return (this.profile.country? this.profile.country + "," : "")
+                    + (this.profile.region? this.profile.region + "," : "")
+                    + (this.profile.city?this.profile.city + "," : "")
+                    + (this.profile.postal?this.profile.postal+ "," : "")
             },
             fullName() {
                 return this.profile.first_name + " "

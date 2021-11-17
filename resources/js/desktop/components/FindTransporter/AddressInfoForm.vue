@@ -141,7 +141,7 @@
                     <div class="row w-100 m-auto">
                         <div class="col-12">
                             <div class="custom-control custom-switch">
-                                <ValidationProvider :name="commercial" rules="required" v-slot="{ errors }">
+                                <ValidationProvider name="isOffers" rules="required" v-slot="{ errors }">
                                 <input type="checkbox" id="commercial" class="custom-control-input"  @change="isOffers=!isOffers" required>
                                 <label for="commercial" class="custom-control-label" >   {{$trans('request_a_quote.section_5.label_1')}}</label>
                                 </ValidationProvider>
@@ -150,7 +150,7 @@
 
                         <div class="col-12">
                             <div class="custom-control custom-switch">
-                                <ValidationProvider :name="terms" rules="required" v-slot="{ errors }">
+                                <ValidationProvider name="isTerms" rules="required" v-slot="{ errors }">
                                 <input type="checkbox" id="terms" class="custom-control-input" @change="isTerms=!isTerms" required>
                                 <label for="terms" class="custom-control-label" >   {{$trans('request_a_quote.section_5.label_2')}} </label>
                                 </ValidationProvider>

@@ -12,6 +12,7 @@
         <notification-item-component :item="item" v-if="type=='notification'&&item"/>
         <transporter-reviews-component v-if="type=='review'&&item"/>
         <quote-item-component v-if="type=='quote'&&item"/>
+        <payment-item-component :item="item" v-if="type=='payment'&&item"/>
 
 
         <div class="d-flex p-5 justify-content-center" v-if="!item">

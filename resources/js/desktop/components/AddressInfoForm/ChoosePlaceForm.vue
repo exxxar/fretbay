@@ -3,7 +3,9 @@
         <div class="row">
             <div class="col-12">
                 <ValidationProvider :name="postal" rules="required" vid="postal" v-slot="{ errors }">
-                    <input type="text" v-model="postal" class="form-control mb-2" placeholder="Postal Code" required>
+                    <input type="text" v-model="postal"
+                           class="form-control mb-2"
+                           placeholder="Postal Code" required>
                     <p class="mb-0" style="color:red;font-size:11px">{{errors[0]}}</p>
                 </ValidationProvider>
             </div>
@@ -121,11 +123,12 @@
             // },
             changeDate(date) {
 
+
                 this.$store.dispatch('editNewListing', {key: this.date1, value: this.listing[this.date1]});
                 this.$store.dispatch('editNewListing', {key: this.date2, value: this.listing[this.date2]});
 
-                console.log('data1=>' + this.listing[this.date1])
-                console.log('data2=>' + this.listing[this.date2])
+
+              //this.postal = this.listing[this.address].postal;
 
                 if (this.listing[this.date1] === '' && this.listing[this.date2] !== '') {
                     this.listing[this.date1] = this.listing[this.date2];
@@ -162,6 +165,7 @@
                 }
             },
             selectAddress(selection) {
+             
                 selection.postal = this.postal
                 if (this.date1 === 'unshipping_date_from') {
                     this.$store.dispatch('editNewListing', {key: 'place_of_delivery', value: selection});

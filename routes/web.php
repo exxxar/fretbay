@@ -108,7 +108,7 @@ Route::get("/", function (\Illuminate\Http\Request $request) {
 
 Route::get("/single/{part}/{id}", [HomeController::class, "singlePage"])->where([
     "part" => "[a-zA-Z]+", "id" => "[0-9]+"
-]);
+])->name("single.page");
 
 Route::get("/data/{part}/{id}", [HomeController::class, "loadData"])->where([
     "part" => "[a-zA-Z]+", "id" => "[0-9]+"

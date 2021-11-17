@@ -38,10 +38,10 @@ class StripePaymentController extends Controller
         $payment = PaymentHistory::find($id);
 
         if (is_null($payment))
-            return view("errors.stripe",["message"=>"Payment not found"]);
+            return view("errors.stripe", ["message" => "Payment not found"]);
 
         if ($payment->success == true)
-            return view("errors.stripe",["message"=>"Payment is already success"]);
+            return redirect()->route("single.page", ["payment", $id]);
 
 
         return view('stripe', ["payment" => $payment]);
