@@ -125,7 +125,7 @@ class User extends \TCG\Voyager\Models\User /*implements MustVerifyEmail*/
 
         $rating = 0;
 
-        $sum = 0;
+        $sum = 1;
         $sum_0 = 0;
         $sum_1 = 0;
         $sum_2 = 0;
@@ -150,9 +150,6 @@ class User extends \TCG\Voyager\Models\User /*implements MustVerifyEmail*/
         }
 
 
-        Log::info("dev0=>" . ($sum_0 / $sum) * 100);
-        Log::info("dev1=>" . ($sum_1 / $sum) * 100);
-        Log::info("dev2=>" . ($sum_2 / $sum) * 100);
         if ($sum > 0) {
 
             if (($sum_0 / $sum) * 100 >= 75)
