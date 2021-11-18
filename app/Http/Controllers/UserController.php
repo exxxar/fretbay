@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\ObjectCategory;
 use App\Models\Profile;
+use App\Models\Review;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\App;
@@ -161,6 +162,12 @@ class UserController extends Controller
 
         $profile = Profile::with(['vehicles', 'user.reviews', 'user.orders','user'])->find($user->profile_id);
 
+        $reviews = Review::where("transporter_id",$user->id)
+            ->whereNotNull("order_id")
+            ->where("is_visible", true)
+            ->whereNull("deleted_at")
+            ->get();
+
         $categories = [];
         if ($profile->transport_specialities !== null) {
             $categories = ObjectCategory::whereIn('id', $profile->transport_specialities)->get();
@@ -189,7 +196,7 @@ class UserController extends Controller
         $info->vehicles_count = $profile->vehicles->count();
         $info->is_approved = $profile->is_documents_approved;
 
-        $info->reviews = is_null($profile->user->reviews) ? [] : $profile->user->reviews;
+        $info->reviews = is_null($reviews) ? [] : $reviews;
         $info->orders = is_null($profile->user->orders) ? [] : $profile->user->orders;
         $info->user = $profile->user;
 

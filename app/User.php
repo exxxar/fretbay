@@ -52,7 +52,7 @@ class User extends \TCG\Voyager\Models\User /*implements MustVerifyEmail*/
         'computed_rating'
     ];
 
-    protected $with = ["profile","incomingReviews"];
+    protected $with = ["profile", "incomingReviews"];
 
     public function isAdmin()
     {
@@ -115,7 +115,12 @@ class User extends \TCG\Voyager\Models\User /*implements MustVerifyEmail*/
     public function getComputedRatingAttribute()
     {
 
-        $tmp = $this->incomingReviews()->get();
+        $tmp = $this->incomingReviews()
+            ->where("transporter_id",$this->id)
+            ->whereNotNull("order_id")
+            ->where("is_visible", true)
+            ->whereNull("deleted_at")
+            ->get();
 
 
         $rating = 0;
@@ -145,27 +150,30 @@ class User extends \TCG\Voyager\Models\User /*implements MustVerifyEmail*/
         }
 
 
-        Log::info("dev0=>".($sum_0 / $sum)*100);
-        Log::info("dev1=>".($sum_1 / $sum)*100);
-        Log::info("dev2=>".($sum_2 / $sum)*100);
+        Log::info("dev0=>" . ($sum_0 / $sum) * 100);
+        Log::info("dev1=>" . ($sum_1 / $sum) * 100);
+        Log::info("dev2=>" . ($sum_2 / $sum) * 100);
         if ($sum > 0) {
 
-            if (($sum_0 / $sum)*100  >= 75)
+            if (($sum_0 / $sum) * 100 >= 75)
                 $rating = 1;
 
-            if ((($sum_0 / $sum)*100  >= 50 && ($sum_0 / $sum)*100 < 75) ||
-                (($sum_1 / $sum)*100  >= 50 && ($sum_1 / $sum)*100 < 75) )
-                $rating = 2;
+            if ((($sum_0 / $sum) * 100 >= 50 && ($sum_0 / $sum) * 100 < 75) ||
+                (($sum_1 / $sum) * 100 >= 50 && ($sum_1 / $sum) * 100 < 75))
+                $rating = max($rating, 2);
 
-            if ((($sum_0/ $sum)*100  >= 25 && ($sum_0 / $sum)*100 < 50) ||
-                (($sum_1/ $sum)*100  >= 25 && ($sum_1 / $sum)*100 < 50)
+            if ((($sum_0 / $sum) * 100 >= 25 && ($sum_0 / $sum) * 100 < 50) ||
+                (($sum_1 / $sum) * 100 >= 25 && ($sum_1 / $sum) * 100 < 50)
             )
-                $rating = 3;
+                $rating = max($rating, 3);
 
-            if (($sum_2 / $sum)*100  >= 50 && ($sum_2 / $sum)*100 < 75)
-                $rating = 4;
+            if ((($sum_2 / $sum) * 100 >= 25 && ($sum_2 / $sum) * 100 < 50))
+                $rating = max($rating, 3);
 
-            if (($sum_2 / $sum)*100 >= 75)
+            if (($sum_2 / $sum) * 100 >= 50 && ($sum_2 / $sum) * 100 < 75)
+                $rating = max($rating, 4);
+
+            if (($sum_2 / $sum) * 100 >= 75)
                 $rating = 5;
 
         }
