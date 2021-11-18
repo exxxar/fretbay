@@ -408,14 +408,11 @@
             }
         },
         computed: {
-
-
             fullAddress() {
-
-                return this.user.profile.postal + ","
-                    + this.user.profile.region + ","
-                    + this.profile.city + ","
-                    + this.profile.country;
+                return (this.profile.country? this.profile.country + "," : "")
+                    + (this.profile.region? this.profile.region + "," : "")
+                    + (this.profile.city?this.profile.city + "," : "")
+                    + (this.profile.postal?this.profile.postal+ "," : "")
             },
 
             fullName() {
