@@ -55,8 +55,8 @@
                 <div class="text-center mb-3">
                     <p class="text-muted">
                        {{$trans('auth.recovery_form.p_1')}}<br>
-                        <a class="js-animation-link" href="/register-customer">{{$trans('auth.recovery_form.a_1')}}</a> or
-                        <a class="js-animation-link" href="/register-transporter">{{$trans('auth.recovery_form.a_2')}}</a>
+                        <a class="js-animation-link" href="/register-customer">{{$trans('auth.recovery_form.a_2')}}</a> or
+                        <a class="js-animation-link" href="/register-transporter">{{$trans('auth.recovery_form.a_3')}}</a>
                     </p>
                 </div>
             </div>

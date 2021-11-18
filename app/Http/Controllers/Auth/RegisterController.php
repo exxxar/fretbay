@@ -204,6 +204,7 @@ class RegisterController extends Controller
 //        $payment_methods->cash = false;
 //        $payment_methods->paypal = false;
 
+
         $profile = Profile::create([
             "type" => $request->type ?? 'transporter',
             "company_name" => $request->company_name ?? '',
@@ -211,9 +212,9 @@ class RegisterController extends Controller
             "second_name" => $request->second_name ?? '',
             "telephone_number_1" => $request->telephone_number_1 ?? '',
             "telephone_number_2" => $request->telephone_number_2 ?? '',
-            "country" => $request->country ?? '',
-            "city" => $request->city ?? '',
-            "region" => $request->region ?? '',
+            "country" => $request->country->title ?? '',
+            "city" => $request->city->title ?? '',
+            "region" => $request->region->title ?? '',
             "postal" => $request->postal ?? '',
             "areas_of_expertise" => $request->transport_specialities ?? [],
             "transport_specialities" => $request->transport_specialities ?? [],

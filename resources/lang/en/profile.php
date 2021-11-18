@@ -209,6 +209,7 @@ return array (
     'no_quotes' => 'No quotes yet!',
     'no_reviews' => 'No reviews yet!',
     'no_data' => 'No data yet!',
+    'no_payments' => 'No payments yet!',
   ),
   'profile' =>
   array (

@@ -27,7 +27,7 @@ class StripePaymentController extends Controller
     public function index(Request $request)
     {
         return response()->json([
-            "payments" => PaymentHistory::paginate(30)
+            "payments" => PaymentHistory::where("user_id", Auth::user()->id)->paginate(30)
         ]);
     }
 
