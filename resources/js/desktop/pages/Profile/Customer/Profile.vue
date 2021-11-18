@@ -98,7 +98,7 @@
                                              style="border-radius: 5px;"
                                              width="150">
                                         <div class="mt-3">
-                                            <h4>{{user.name}}</h4>
+                                            <h6>{{user.name}}</h6>
                                             <p class="text-secondary mb-1">{{user.created_at}}</p>
                                             <p class="text-muted font-size-sm" v-if="fullAddress">{{fullAddress}}</p>
                                             <p class="text-muted font-size-sm" v-if="profile.company_name.length>0">
