@@ -106,38 +106,65 @@
             </div>
         </div>
 
-        <div class="container d-block d-md-none fixed-bottom bottom-menu" style="z-index: 1000" v-if="user">
-            <div class="row d-flex align-items-center h-100">
+        <div class="container d-block d-md-none fixed-bottom bottom-menu" style="z-index: 1000">
+            <div class="row d-flex align-items-center h-100" v-if="user">
                 <div class="col-3 bottom-menu-item">
                     <a href="/" class="d-flex flex-column justify-content-between align-items-center">
                         <span><i class="fas fa-home"></i></span>
                         <small class="text-uppercase font-weight-bold">Home</small>
                     </a>
                 </div>
+
+
                 <div class="col-3 bottom-menu-item" v-if="user.is_transporter">
                     <a href="/find-loads" class="d-flex flex-column justify-content-between align-items-center">
                         <span><i class="fas fa-truck-loading"></i></span>
                         <small class="text-uppercase font-weight-bold">Find loads</small>
                     </a>
                 </div>
-                <div class="col-3 bottom-menu-item"  v-if="user.is_customer">
-                    <a href="/find-transporter" class="d-flex flex-column justify-content-between align-items-center">
+                <div class="col-3 bottom-menu-item" v-if="user.is_customer">
+                    <a href="/find-transporter"
+                       class="d-flex flex-column justify-content-between align-items-center">
                         <span><i class="fas fa-truck"></i></span>
                         <small class="text-uppercase font-weight-bold">Find transporter</small>
                     </a>
                 </div>
 
                 <div class="col-3 bottom-menu-item">
-                    <a :href="(user.is_customer?'/customer':'/transporter')+'/profile/notifications'" class="d-flex flex-column justify-content-between align-items-center">
+                    <a :href="(user.is_customer?'/customer':'/transporter')+'/profile/notifications'"
+                       class="d-flex flex-column justify-content-between align-items-center">
                         <i class="fas fa-flag"></i>
                         <small class="text-uppercase font-weight-bold">Notifications</small>
                     </a>
                 </div>
 
 
-
-
                 <div class="col-3"></div>
+            </div>
+
+            <div class="row d-flex align-items-center h-100" v-else>
+                <div class="col-3 bottom-menu-item">
+                    <a href="/" class="d-flex flex-column justify-content-between align-items-center">
+                        <span><i class="fas fa-home"></i></span>
+                        <small class="text-uppercase font-weight-bold">Main</small>
+                    </a>
+                </div>
+
+                <div class="col-3 bottom-menu-item">
+                    <a href="/find-transporter"
+                       class="d-flex flex-column justify-content-between align-items-center">
+                        <span><i class="fas fa-truck"></i></span>
+                        <small class="text-uppercase font-weight-bold">Find transporter</small>
+                    </a>
+                </div>
+
+                <div class="col-3 bottom-menu-item">
+                    <a href="/fequently-asked-questions"
+                       class="d-flex flex-column justify-content-between align-items-center">
+                        <i class="far fa-question-circle"></i>
+                        <small class="text-uppercase font-weight-bold">F.A.Q.</small>
+                    </a>
+                </div>
             </div>
         </div>
     </footer>
@@ -210,12 +237,20 @@ export default {
     .bottom-menu-item {
         height: 100%;
         padding: 10px 0px;
+
         a {
-            height:100%;
+            height: 100%;
+
+            svg,
+            span {
+                color: green;
+                font-size: larger;
+            }
         }
     }
+
     i {
-        color:#21c87a;
+        color: #21c87a;
         margin-bottom: 5px;
     }
 

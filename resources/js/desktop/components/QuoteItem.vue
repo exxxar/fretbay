@@ -1,6 +1,11 @@
 <template>
     <div>
-Quote
+        Quote {{ item.id }}
     </div>
 
 </template>
+<script>
+export default {
+    props: ["item"]
+}
+</script>

@@ -52,7 +52,7 @@ class User extends \TCG\Voyager\Models\User /*implements MustVerifyEmail*/
         'computed_rating'
     ];
 
-    protected $with = ["profile"];
+    protected $with = ["profile","incomingReviews"];
 
     public function isAdmin()
     {
@@ -128,39 +128,49 @@ class User extends \TCG\Voyager\Models\User /*implements MustVerifyEmail*/
         foreach ($tmp as $r) {
             $sum++;
             switch ($r->type) {
+                default:
                 case 0:
                     $sum_0++;
+
                     break;
                 case 1:
                     $sum_1++;
+
                     break;
                 case 2:
                     $sum_2++;
+
                     break;
             }
         }
 
 
+        Log::info("dev0=>".($sum_0 / $sum)*100);
+        Log::info("dev1=>".($sum_1 / $sum)*100);
+        Log::info("dev2=>".($sum_2 / $sum)*100);
         if ($sum > 0) {
 
-            if (($sum_0 / $sum) * 100 >= 75)
+            if (($sum_0 / $sum)*100  >= 75)
                 $rating = 1;
 
-            if (($sum_0 / $sum) * 100 >= 50 && ($sum_0 / $sum) * 100 < 75)
+            if ((($sum_0 / $sum)*100  >= 50 && ($sum_0 / $sum)*100 < 75) ||
+                (($sum_1 / $sum)*100  >= 50 && ($sum_1 / $sum)*100 < 75) )
                 $rating = 2;
 
-            if ((($sum_0 / $sum) * 100 >= 25 && ($sum_0 / $sum) < 50) * 100)
+            if ((($sum_0/ $sum)*100  >= 25 && ($sum_0 / $sum)*100 < 50) ||
+                (($sum_1/ $sum)*100  >= 25 && ($sum_1 / $sum)*100 < 50)
+            )
                 $rating = 3;
 
-            if (($sum_2 / $sum) * 100 >= 50 && ($sum_2 / $sum) * 100 < 75)
+            if (($sum_2 / $sum)*100  >= 50 && ($sum_2 / $sum)*100 < 75)
                 $rating = 4;
 
-            if (($sum_2 / $sum) * 100 >= 75)
+            if (($sum_2 / $sum)*100 >= 75)
                 $rating = 5;
 
         }
 
-
+        Log::info("2 sum=>$sum raiting=>$rating");
         return $rating;
     }
 
