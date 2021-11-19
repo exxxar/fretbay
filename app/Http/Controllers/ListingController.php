@@ -477,7 +477,7 @@ class ListingController extends Controller
             NotificationObjectType::Quote
         ));
 
-        $user = User::find( Auth::user()->id);
+        $user = User::find(Auth::user()->id);
 
         Mail::to($user->email)->send(new SendQuoteMail($quote));
 
@@ -580,12 +580,14 @@ class ListingController extends Controller
         $latestQuote->status = 2;
         $latestQuote->save();
 
+        $user = User::find($user_id);
+
         $payment = PaymentHistory::create([
             "title" => "Accept Quote",
             "user_id" => $user_id,
             "listing_id" => $request->listing_id,
             "quote_id" => $request->quote_id,
-            "amount" => $latestQuote->price,
+            "amount" =>($latestQuote->price * (max($user->tax, 1) ?? 15)) / 100,
             "tax_amount" => $user->tax ?? 15,
             "currency" => "EUR",
             "type" => "card",

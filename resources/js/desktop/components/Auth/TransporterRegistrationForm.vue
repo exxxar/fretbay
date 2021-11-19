@@ -532,7 +532,7 @@
                     this.loading = false;
                     window.location = '/transporter/profile/transporter-wizard/start'
                 }).catch(error => {
-                    this.error_message = 'Account already in System!';
+                    this.error_message = error.response.data.message;
                     this.loading = false;
                 })
             }

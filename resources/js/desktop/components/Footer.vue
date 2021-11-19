@@ -159,10 +159,10 @@
                 </div>
 
                 <div class="col-3 bottom-menu-item">
-                    <a href="/fequently-asked-questions"
+                    <a href="/find-loads"
                        class="d-flex flex-column justify-content-between align-items-center">
-                        <i class="far fa-question-circle"></i>
-                        <small class="text-uppercase font-weight-bold">F.A.Q.</small>
+                        <i class="fas fa-shipping-fast"></i>
+                        <small class="text-uppercase font-weight-bold">Find loads</small>
                     </a>
                 </div>
             </div>

@@ -28,6 +28,7 @@ return array (
     'a_1' => 'Я прочитал и согласен',
     'button_1' => 'Регистрация',
     'button_2' => 'Я перевозчик',
+    'input_placeholder_0' => '',
     'input_placeholder_1' => 'Имя',
     'input_placeholder_2' => 'Фамилия',
     'input_placeholder_3' => 'Электронная почта',

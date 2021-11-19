@@ -11,7 +11,7 @@
         <order-item-component :order="item" v-if="type=='order'&&item"/>
         <notification-item-component :item="item" v-if="type=='notification'&&item"/>
         <transporter-reviews-component v-if="type=='review'&&item"/>
-        <quote-item-component v-if="type=='quote'&&item"/>
+        <quote-item-component :item="item" :is_owner="false" v-if="type=='quote'&&item"/>
         <payment-item-component :item="item" v-if="type=='payment'&&item"/>
 
 
@@ -20,6 +20,8 @@
                  style="max-width:300px">
         </div>
         <h4 class="text-center" v-if="!item">{{$trans('profile.page.no_data')}}</h4>
+
+        <a href="/" class="btn btn-outline-primary mt-5 p-2 pr-5 pl-5">Main page</a>
 
     </section>
 </template>

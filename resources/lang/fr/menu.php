@@ -1,7 +1,7 @@
 <?php
 
 return array (
-  'item' =>
+  'item' => 
   array (
     'faq' => 'Foire aux questions',
     'find_loads' => 'Rechercher des charges',
@@ -16,15 +16,15 @@ return array (
     'sign_up_transporter' => 'S\'inscrire en tant que transporteur',
     'who_we_are' => 'Qui nous sommes',
   ),
-  'section' =>
+  'section' => 
   array (
     'about' => 'À propos de',
-      'custom_service' => 'Custom Service',
-      'customer_service' => 'Service client',
+    'custom_service' => 'Custom Service',
+    'customer_service' => 'Service client',
     'help' => 'Aide',
     'social' => 'Social',
   ),
-  'text' =>
+  'text' => 
   array (
     'all_rights_reserved' => 'Tous droits réservés(c) AlloTrans',
     'search' => 'Rechercher dans l\'inventaire',

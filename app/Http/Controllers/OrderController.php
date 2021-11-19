@@ -18,6 +18,7 @@ use App\Models\Quote;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 
 class OrderController extends Controller
@@ -58,7 +59,7 @@ class OrderController extends Controller
     {
 
         $request->validate([
-            "quote_id"=>"required",
+            "quote_id" => "required",
 
         ]);
 
@@ -68,20 +69,22 @@ class OrderController extends Controller
 
         if (is_null($quote))
             return response()->json([
-                "message" => "Error quote!"
+                "message" => "Error! This quote not found!"
             ], 404);
 
-        $listing = Listing::where("id", $quote->listing_id)->first();
+        $listing = Listing::where("id", $quote->listing_id)
+            ->first();
 
         if (is_null($listing))
             return response()->json([
-                "message" => "Error listing!"
+                "message" => "Error! This listing not found!"
             ], 404);
 
+
         $order = Order::where("listing_id", $listing->id)->first();
-        if (!is_null($order))
+        if (!is_null($order) && $listing->status === "payed")
             return response()->json([
-                "message" => "Error order!"
+                "message" => "This order is Already payed!"
             ], 400);
 
 
@@ -91,17 +94,24 @@ class OrderController extends Controller
         $listing->is_active = false;
         $listing->save();
 
-        $order = Order::create([
-            "title" => $listing->title,
-            "description" => $listing->additional_info ?? "no description",//Описание заказа
-            "price" => $quote->price,//Сумма заказа
-            "status" => 0,
-            "user_id" => $user_id,
-            "listing_id" => $listing->id,
-            "transporter_id" => $quote->user_id,
-        ]);
+        if (is_null($order))
+            $order = Order::create([
+                "title" => $listing->title,
+                "description" => $listing->additional_info ?? "no description",//Описание заказа
+                "price" => $quote->price,//Сумма заказа
+                "status" => 0,
+                "user_id" => $user_id,
+                "listing_id" => $listing->id,
+                "transporter_id" => $quote->user_id,
+            ]);
+        else {
+            $order->price = $quote->price;
+            $order->transporter_id = $quote->user_id;
+            $order->user_id = $user_id;
+            $order->save();
+        }
 
-        $user = User::find( $user_id);
+        $user = User::find($user_id);
 
         Mail::to($user->email)->send(new AcceptQuoteMail($quote));
 
@@ -109,13 +119,17 @@ class OrderController extends Controller
             "title" => "Accept Quote",
             "user_id" => $user_id,
             "listing_id" => $listing->id,
-            "quote_id" => $request->quote_id,
+            "quote_id" => $quote->id,
             "order_id" => $order->id,
-            "amount" => $quote->price,
+            "amount" => ($quote->price * (($user->tax == 0 ? 15 : $user->tax) ?? 15) / 100),
             "tax_amount" => $user->tax ?? 15,
             "currency" => "EUR",
             "type" => "card",
         ]);
+
+        Log::info("TAX=>" . ($quote->price * (($user->tax == 0 ? 100 : $user->tax) ?? 15) / 100));
+        Log::info("Quote price=>" . $quote->price);
+        Log::info("User personal tax=>" . $user->tax);
 
         event(new NotificationEvent(
             "#order-" . $order->id,
@@ -125,7 +139,7 @@ class OrderController extends Controller
 
         return response()->json([
             "order" => $order,
-            "payment_id"=>$payment->id
+            "payment_id" => $payment->id
         ]);
 
     }

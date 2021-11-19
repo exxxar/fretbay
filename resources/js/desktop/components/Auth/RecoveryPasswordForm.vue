@@ -96,9 +96,10 @@
 
                 axios.post('/forgot-password', this.recovery_form).then(resp => {
                     this.loading = false;
-                    this.success_message = 'We sent reset link to your email!';
+
+                    this.success_message = resp.data.message;
                 }).catch(error => {
-                    this.error_message = 'Bad account!';
+                    this.error_message =  error.response.data.message || 'Bad account!';
                     this.loading = false;
                 })
             }

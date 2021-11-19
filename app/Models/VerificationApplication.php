@@ -37,9 +37,9 @@ class VerificationApplication extends Model
     protected $casts = [
         'id' => 'integer',
         'type' => 'integer',
-        'documents' => 'array',
-        'images' => 'array',
-        'additional_properties' => 'array',
+        //'documents' => 'array',
+        //'images' => 'array',
+        //'additional_properties' => 'array',
         'issue_date'=>"datetime",
         'expire_date'=>"datetime",
     ];

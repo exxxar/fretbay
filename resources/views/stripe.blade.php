@@ -31,6 +31,11 @@
                             @csrf
 
                             <div class='row mb-2'>
+                                <div class="col-12">
+                                    <div class="alert alert-info" role="alert">
+                                        By confirming the carrier's rate, you pay the price for the service!
+                                    </div>
+                                </div>
                                 <div class='col-12 required'>
                                     <label class='control-label'>Name on Card</label> <input
                                         class='form-control' size='4' type='text'>

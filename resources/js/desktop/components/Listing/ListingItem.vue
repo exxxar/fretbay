@@ -7,13 +7,13 @@
                 <a class="btn btn-link m-0 p-0" v-if="(user.is_transporter||user.id===listing.user_id)&&details"
                    :href="'/listing/'+listing.id"
 
-                > <span class="mr-5 text-bold">№{{preparedId}}</span>
+                > <span class="mr-5 text-bold">№{{ preparedId }}</span>
                 </a>
-                <span class="mr-5 text-bold" v-else>№{{preparedId}}</span>
-                <span class="mr-2">  {{ listing.message_count}}
+                <span class="mr-5 text-bold" v-else>№{{ preparedId }}</span>
+                <span class="mr-2">  {{ listing.message_count }}
                 <i class="fas fa-envelope"></i></span>
 
-                <span>  {{ listing.quote_count}}<i class="fas fa-gavel"></i></span>
+                <span>  {{ listing.quote_count }}<i class="fas fa-gavel"></i></span>
 
 
             </div>
@@ -30,8 +30,9 @@
 
             <div class="counters">
                 <span
-                    class="badge badge-primary"><small>{{listing.status||$trans('profile.listing.in_progress')}}</small></span>
-                <span class="badge badge-purple" v-if="user&&listing.user_id==user.id"><small>{{$trans('profile.listing.your')}}</small></span>
+                    class="badge badge-primary"><small>{{ listing.status || $trans('profile.listing.in_progress') }}</small></span>
+                <span class="badge badge-purple"
+                      v-if="user&&listing.user_id==user.id"><small>{{ $trans('profile.listing.your') }}</small></span>
                 <span class="badge badge-danger" v-if="user&&listing.user_id==user.id&&listing.status=='payed'"><small>Payed</small></span>
 
             </div>
@@ -48,16 +49,17 @@
                          :alt="listing.images[0].name">
                 </a>
                 <div class="media-body text-nowrap">
-                    <h3 class="h5 mb-0">
+                    <h3 class="h5 mb-0 selected-title">
                         <a class="btn btn-link"
                            v-if="(user.is_transporter||user.id===listing.user_id)&&details"
                            :href="'/listing/'+listing.id"
 
-                        > {{prepareLangTitle(listing.category.title)||"Empty"}}
+                        > <i class="fas fa-angle-double-right"></i>
+                            {{ prepareLangTitle(listing.category.title) || "Empty" }}
                         </a>
-                        <span v-else>      {{prepareLangTitle(listing.category.title)||"Empty"}}</span>
+                        <span class="pl-3"  v-else>      {{ prepareLangTitle(listing.category.title) || "Empty" }}</span>
                         <span v-if="listing.category.mode ==='calculator'">
-                                                  {{listing.summary_volume}}  <em
+                                                  {{ listing.summary_volume }}  <em
                             class="volume-unit text-bold">m<sup>3</sup></em>
                                             </span>
 
@@ -67,8 +69,9 @@
 
             <div
                 class="text-md-right text-left align-items-sm-end text-secondary d-flex flex-column justify-content-center align-items-start">
-                <p class="mb-0" style="font-size: 12px; color: #8e949a">{{$trans('profile.listing.publication_at')}}</p>
-                {{listing.created_at | moment('DD.MM.YYYY HH:mm') }}
+                <p class="mb-0" style="font-size: 12px; color: #8e949a">
+                    {{ $trans('profile.listing.publication_at') }}</p>
+                {{ listing.created_at | moment('DD.MM.YYYY HH:mm') }}
 
 
             </div>
@@ -89,26 +92,26 @@
                         </svg>
                     </i>
 
-                    <strong>{{$trans('profile.listing.place_of_loading')}}:</strong>
+                    <strong>{{ $trans('profile.listing.place_of_loading') }}:</strong>
                 </div>
                 <div class="col-sm-8 col-12 p-0">
-                    <a class="d-flex align-items-center text-secondary" href="#">
+                    <span class="d-flex align-items-center text-secondary">
 
 
-                        <strong class="mr-2">{{listing.place_of_loading.postal}},</strong>
-                        {{listing.place_of_loading.place_name}}
+                        <strong class="mr-2">{{ listing.place_of_loading.postal }},</strong>
+                        {{ listing.place_of_loading.place_name }}
 
-                    </a>
+                    </span>
 
-                    <small> {{$trans('profile.listing.load_between')}}
+                    <small> {{ $trans('profile.listing.load_between') }}
                         <strong style="color: #0fb15d">
-                            {{listing.shipping_date_from | moment('DD.MM')}}
+                            {{ listing.shipping_date_from | moment('DD.MM') }}
                         </strong>
 
                         and
 
                         <strong style="color: #0fb15d">
-                            {{listing.shipping_date_to | moment('DD.MM')}}
+                            {{ listing.shipping_date_to | moment('DD.MM') }}
                         </strong>
                     </small>
                 </div>
@@ -128,39 +131,40 @@
                         </svg>
                     </i>
 
-                    <strong>{{$trans('profile.listing.place_of_delivery')}}:</strong>
+                    <strong>{{ $trans('profile.listing.place_of_delivery') }}:</strong>
                 </div>
                 <div class="col-sm-8 col-12 p-0">
-                    <a class="d-flex align-items-center text-secondary" href="#">
+                    <span class="d-flex align-items-center text-secondary">
 
 
-                        <strong class="mr-2"> {{listing.place_of_delivery.postal}},</strong>
-                        {{listing.place_of_delivery.place_name}}
-                    </a>
+                        <strong class="mr-2"> {{ listing.place_of_delivery.postal }},</strong>
+                        {{ listing.place_of_delivery.place_name }}
+                    </span>
 
-                    <small> {{$trans('profile.listing.delivered_between')}}
+                    <small> {{ $trans('profile.listing.delivered_between') }}
                         <strong style="color: #0fb15d">
-                            {{listing.unshipping_date_from | moment('DD.MM')}}
+                            {{ listing.unshipping_date_from | moment('DD.MM') }}
                         </strong> and
                         <strong style="color: #0fb15d">
-                            {{listing.unshipping_date_to | moment('DD.MM')}}
+                            {{ listing.unshipping_date_to | moment('DD.MM') }}
                         </strong>
                     </small>
                 </div>
 
                 <div class="col-sm-4 col-12 pl-0" v-if="listing.distance>0">
-                    <p class="ml-sm-5 ml-0 p-sm-2 p-0 mt-2 mt-sm-0">{{$trans('profile.listing.distance')}} <strong>{{listing.distance}}</strong>
+                    <p class="ml-sm-5 ml-0 p-sm-2 p-0 mt-2 mt-sm-0">{{ $trans('profile.listing.distance') }}
+                        <strong>{{ listing.distance }}</strong>
                         km
                     </p>
                     <p class="ml-sm-5 ml-0 p-sm-2 p-0 mt-2 mt-sm-0" v-if="listing.additional_info">
-                        {{$trans('profile.listing.description')}}: <em>{{listing.additional_info}}</em>
+                        {{ $trans('profile.listing.description') }}: <em>{{ listing.additional_info }}</em>
                     </p>
                 </div>
 
 
                 <div class="col-12 pl-0" v-if="listing.moving_package">
-                    <p class="ml-sm-5 ml-0 p-sm-2 p-0 mt-2 mt-sm-0"><strong v-html="movingPackageTranslate"></strong>
-                    </p>
+                    <h5 class="ml-sm-5 ml-0 p-sm-2 p-0 mt-2 mt-sm-0"><i class="fas fa-shipping-fast text-primary"></i><strong v-html="movingPackageTranslate"></strong>
+                    </h5>
                 </div>
 
                 <div class="col-12 p-2" v-if="images.length>0">
@@ -216,29 +220,29 @@
         <div class="card-footer d-md-flex justify-content-between align-items-center px-0">
             <div class="mb-4 mb-md-0">
 
-                <a class="u-label u-label--xs u-label--primary text-uppercase letter-spacing-0_06 mr-2 mb-2"
+                <span class="u-label u-label--xs u-label--primary text-uppercase letter-spacing-0_06 mr-2 mb-2"
                    href="#"
                    v-if="listing.category.mode ==='article' && listing.articles.length===1"
                    v-for="property in listing.category.properties"
                 >
-                    {{prepareLangTitle(property.title)||"Empty"}}:
-                    {{listing.articles[0].properties[property.slug].value}}
-                </a>
+                    {{ prepareLangTitle(property.title) || "Empty" }}:
+                    {{ listing.articles[0].properties[property.slug].value }}
+                </span>
 
                 <div class="row w-100 mx-auto my-2">
                     <div class="badge rounded-pill px-3 py-2 mx-1" style="background:rgba(15,177,93,0.48);">
-                        {{prepareLangTitle(listing.category.title)||"Empty"}}
+                        {{ prepareLangTitle(listing.category.title) || "Empty" }}
                     </div>
 
                     <div class="badge rounded-pill px-3 py-2 mx-1" style="background:rgba(15,177,93,0.48);"
                          v-if="listing.category.mode ==='calculator'"
                     >
-                        {{listing.summary_volume}} <em class="volume-unit text-bold">m<sup>3</sup></em>
+                        {{ listing.summary_volume }} <em class="volume-unit text-bold">m<sup>3</sup></em>
                     </div>
 
                     <strong class="w-100 mt-2 p-2"
-                            v-if="listing.category.mode ==='article' && listing.articles.length>1">{{listing.articles.length}}
-                        {{$trans('profile.listing.articles')}}:</strong>
+                            v-if="listing.category.mode ==='article' && listing.articles.length>1">{{ listing.articles.length }}
+                        {{ $trans('profile.listing.articles') }}:</strong>
 
 
                     <div class="d-flex space-between flex-wrap mt-2 w-100"
@@ -247,25 +251,25 @@
                         <div
                             v-for="property in listing.category.properties"
                         >
-                            <a href="" class="badge badge-primary mr-2 mb-2" v-for="item in listing.articles">
-                                {{prepareLangTitle(item.title)||"Empty"}}:
-                                <strong>{{item.properties[property.slug].value}}</strong>
+                            <span href="" class="badge badge-primary mr-2 mb-2" v-for="item in listing.articles">
+                                {{ prepareLangTitle(item.title) || "Empty" }}:
+                                <strong>{{ item.properties[property.slug].value }}</strong>
                                 <small>
-                                    {{prepareLangTitle(property.title)||"Empty"}}
+                                    {{ prepareLangTitle(property.title) || "Empty" }}
                                 </small>
-                            </a>
+                            </span>
                         </div>
                     </div>
 
                     <div class="badge rounded-pill px-3 py-2 mx-1" style="background:rgba(15,177,93,0.48);"
                          v-if="listing.category.mode ==='grid'"
                     >
-                        {{prepareLangTitle(listing.subcategory.title)||"Empty"}}
+                        {{ prepareLangTitle(listing.subcategory.title) || "Empty" }}
                     </div>
                     <div class="badge rounded-pill px-3 py-2 mx-1" style="background:rgba(15,177,93,0.48);"
                          v-if="listing.category.mode ==='grid'&&listing.thing"
                     >
-                        {{prepareLangTitle(listing.thing.title)||"Empty"}}
+                        {{ prepareLangTitle(listing.thing.title) || "Empty" }}
                     </div>
                 </div>
             </div>
@@ -279,7 +283,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="quoteModalHeader">{{$trans('profile.listing.h5_1')}}</h5>
+                        <h5 class="modal-title" id="quoteModalHeader">{{ $trans('profile.listing.h5_1') }}</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -288,12 +292,12 @@
                         <div class="row d-flex justify-content-center">
                             <div class="col-6">
                                 <button class="btn btn-danger w-100" data-dismiss="modal" @click="removeListing">
-                                    {{$trans('profile.listing.button_1')}}
+                                    {{ $trans('profile.listing.button_1') }}
                                 </button>
                             </div>
                             <div class="col-6">
                                 <button data-dismiss="modal" aria-label="Close" class="btn btn-secondary w-100">
-                                    {{$trans('profile.listing.button_2')}}
+                                    {{ $trans('profile.listing.button_2') }}
                                 </button>
                             </div>
                         </div>
@@ -307,7 +311,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="quoteModalHeader2">{{$trans('profile.listing.h5_2')}}</h5>
+                        <h5 class="modal-title" id="quoteModalHeader2">{{ $trans('profile.listing.h5_2') }}</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -317,12 +321,12 @@
                         <div class="row d-flex justify-content-center">
                             <div class="col-6">
                                 <button class="btn btn-danger w-100" data-dismiss="modal" @click="archiveListing">
-                                    {{$trans('profile.listing.button_3')}}
+                                    {{ $trans('profile.listing.button_3') }}
                                 </button>
                             </div>
                             <div class="col-6">
                                 <button data-dismiss="modal" aria-label="Close" class="btn btn-secondary w-100">
-                                    {{$trans('profile.listing.button_2')}}
+                                    {{ $trans('profile.listing.button_2') }}
                                 </button>
                             </div>
                         </div>
@@ -336,174 +340,159 @@
 </template>
 <script>
 
-    import VueSlickCarousel from 'vue-slick-carousel'
-    import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-    // optional style for arrows & dots
-    import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
-    import VueGallerySlideshow from 'vue-gallery-slideshow'
-    import {v4 as uuidv4} from 'uuid';
+import VueSlickCarousel from 'vue-slick-carousel'
+import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+// optional style for arrows & dots
+import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+import VueGallerySlideshow from 'vue-gallery-slideshow'
+import {v4 as uuidv4} from 'uuid';
 
-    export default {
-        props: {
-            listing: Object,
-            details: {
-                type: Boolean,
-                required: false,
-                default: true
-            },
+export default {
+    props: {
+        listing: Object,
+        details: {
+            type: Boolean,
+            required: false,
+            default: true
         },
+    },
 
 
-        components: {
-            VueSlickCarousel, VueGallerySlideshow
-        },
-        data() {
-            return {
-                modalPrefix: null,
-                imageIndex: null,
+    components: {
+        VueSlickCarousel, VueGallerySlideshow
+    },
+    data() {
+        return {
+            modalPrefix: null,
+            imageIndex: null,
 
-                tmp_favorites: [],
-                settings: {
-                    "dots": false,
-                    "arrows": true,
-                    "focusOnSelect": false,
-                    "infinite": true,
-                    "speed": 500,
-                    "slidesToShow": 6,
-                    "slidesToScroll": 4,
-                    "touchThreshold": 5,
-                    responsive: [
-                        {
-                            breakpoint: 1200,
-                            settings: {
-                                slidesToShow: 5,
-                                slidesToScroll: 1
-                            }
-                        },
-                        {
-                            breakpoint: 1008,
-                            settings: {
-                                slidesToShow: 2,
-                                slidesToScroll: 1
-                            }
-                        },
-                        {
-                            breakpoint: 800,
-                            settings: {
-                                slidesToShow: 2,
-                                slidesToScroll: 1
-                            }
+            tmp_favorites: [],
+            settings: {
+                "dots": false,
+                "arrows": true,
+                "focusOnSelect": false,
+                "infinite": true,
+                "speed": 500,
+                "slidesToShow": 6,
+                "slidesToScroll": 4,
+                "touchThreshold": 5,
+                responsive: [
+                    {
+                        breakpoint: 1200,
+                        settings: {
+                            slidesToShow: 5,
+                            slidesToScroll: 1
                         }
-
-                    ]
-                },
-            }
-        },
-        computed: {
-            movingPackageTranslate:function() {
-                let arr = [
-                    {title: "Truck with Driver package", key: 'request_a_quote.section_4.h3_1'},
-                    {title: "The Economic package", key: 'request_a_quote.section_4.h3_2'},
-                    {title: "The Standard package", key: 'request_a_quote.section_4.h3_3'},
-                    {title: "The Complete package", key: 'request_a_quote.section_4.h3_4'},
-                    ];
-
-                let key = arr.find(item => item.title === this.listing.moving_package).key
-
-                return this.$trans(key)
-            },
-            user: function () {
-                return window.user
-            },
-            images() {
-                let tmp = []
-
-                if (!this.listing.images)
-                    return tmp;
-
-                this.listing.images.forEach(item => {
-                    tmp.push(item.path)
-                })
-
-                return tmp;
-            },
-            isLiked() {
-
-                let tmp = [...this.tmp_favorites, ...this.user.favorites]
-
-                if (tmp.length === 0)
-                    return false;
-
-                let t = tmp.filter(item => item.listing_id === this.listing.id);
-                return t.length > 0;
-
-            },
-            isTranspoter() {
-                if (!window.user)
-                    return false
-
-                return this.user.is_transporter || false;
-            },
-            preparedId: function () {
-                let tmp = "" + this.listing.id;
-
-                while (tmp.length < 6)
-                    tmp = "0" + tmp;
-
-                return tmp;
-            }
-
-        },
-        created() {
-            this.modalPrefix = uuidv4()
-        },
-        methods: {
-            removeListing() {
-                axios.delete("/listing/" + this.listing.id).then(resp => {
-                    this.$emit("update")
-                });
-            },
-            archiveListing() {
-                axios.get("/listing/archive/" + this.listing.id).then(resp => {
-                    this.$emit("update")
-                });
-            },
-            restoreListing() {
-                axios.get("/listing/restore/" + this.listing.id).then(resp => {
-                    this.$emit("update")
-                });
-            },
-            prepareLangTitle(title) {
-                return typeof title === 'object' ?
-                    Object.entries(title).find(item => item[0] === window.locale)[1] :
-                    title;
-            },
-            like() {
-                if (!this.isLiked)
-                    this.tmp_favorites.push({
-                        listing_id: this.listing.id
-                    })
-
-                axios.post("/listing/favorites/add", {
-                    "listing_id": this.listing.id
-                }).then(resp => {
-
-                }).catch(() => {
-                    if (this.isLiked) {
-                        this.user.favorites = this.user.favorites.filter((item) => {
-                                return item.listing_id !== this.listing.id
-                            }
-                        )
-
-                        this.tmp_favorites = this.tmp_favorites.filter((item) => {
-                                return item.listing_id !== this.listing.id
-                            }
-                        )
+                    },
+                    {
+                        breakpoint: 1008,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 800,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        }
                     }
-                })
-            },
-            dislike() {
 
+                ]
+            },
+        }
+    },
+    computed: {
+        movingPackageTranslate: function () {
+            let arr = [
+                {title: "Truck with Driver package", key: 'request_a_quote.section_4.h3_1'},
+                {title: "The Economic package", key: 'request_a_quote.section_4.h3_2'},
+                {title: "The Standard package", key: 'request_a_quote.section_4.h3_3'},
+                {title: "The Complete package", key: 'request_a_quote.section_4.h3_4'},
+            ];
+
+            let key = arr.find(item => item.title === this.listing.moving_package).key
+
+            return this.$trans(key)
+        },
+        user: function () {
+            return window.user
+        },
+        images() {
+            let tmp = []
+
+            if (!this.listing.images)
+                return tmp;
+
+            this.listing.images.forEach(item => {
+                tmp.push(item.path)
+            })
+
+            return tmp;
+        },
+        isLiked() {
+
+            let tmp = [...this.tmp_favorites, ...this.user.favorites]
+
+            if (tmp.length === 0)
+                return false;
+
+            let t = tmp.filter(item => item.listing_id === this.listing.id);
+            return t.length > 0;
+
+        },
+        isTranspoter() {
+            if (!window.user)
+                return false
+
+            return this.user.is_transporter || false;
+        },
+        preparedId: function () {
+            let tmp = "" + this.listing.id;
+
+            while (tmp.length < 6)
+                tmp = "0" + tmp;
+
+            return tmp;
+        }
+
+    },
+    created() {
+        this.modalPrefix = uuidv4()
+    },
+    methods: {
+        removeListing() {
+            axios.delete("/listing/" + this.listing.id).then(resp => {
+                this.$emit("update")
+            });
+        },
+        archiveListing() {
+            axios.get("/listing/archive/" + this.listing.id).then(resp => {
+                this.$emit("update")
+            });
+        },
+        restoreListing() {
+            axios.get("/listing/restore/" + this.listing.id).then(resp => {
+                this.$emit("update")
+            });
+        },
+        prepareLangTitle(title) {
+            return typeof title === 'object' ?
+                Object.entries(title).find(item => item[0] === window.locale)[1] :
+                title;
+        },
+        like() {
+            if (!this.isLiked)
+                this.tmp_favorites.push({
+                    listing_id: this.listing.id
+                })
+
+            axios.post("/listing/favorites/add", {
+                "listing_id": this.listing.id
+            }).then(resp => {
+
+            }).catch(() => {
                 if (this.isLiked) {
                     this.user.favorites = this.user.favorites.filter((item) => {
                             return item.listing_id !== this.listing.id
@@ -515,46 +504,103 @@
                         }
                     )
                 }
-
-                axios.post("/listing/favorites/remove", {
-                    "listing_id": this.listing.id
-                }).then(resp => {
-
-                })
-            }
+            })
         },
-    }
+        dislike() {
+
+            if (this.isLiked) {
+                this.user.favorites = this.user.favorites.filter((item) => {
+                        return item.listing_id !== this.listing.id
+                    }
+                )
+
+                this.tmp_favorites = this.tmp_favorites.filter((item) => {
+                        return item.listing_id !== this.listing.id
+                    }
+                )
+            }
+
+            axios.post("/listing/favorites/remove", {
+                "listing_id": this.listing.id
+            }).then(resp => {
+
+            })
+        }
+    },
+}
 
 
 </script>
 <style lang="scss">
 
-    .custom-avatar {
-        display: flex;
+.custom-avatar {
+    display: flex;
 
-        width: 70px;
-        height: 70px;
+    width: 70px;
+    height: 70px;
 
+    img {
+        border: 5px #3fca83 solid;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.vgs__container__img {
+    height: 100% !important;
+}
+
+.slick-slide {
+    .gallery-img {
         img {
-            border: 5px #3fca83 solid;
-            width: 100%;
-            height: 100%;
+            display: block;
+            max-height: 200px;
             object-fit: cover;
         }
     }
+}
 
-    .vgs__container__img {
-        height: 100% !important;
+
+.selected-title {
+    color: #21c87a;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 150%;
+    font-size: 20px;
+
+    & > a {
+        color: #21c87a !important;
+        font-weight: 700 !important;
+        text-transform: uppercase;
+        line-height: 150%;
+        font-size: 20px !important;
     }
 
-    .slick-slide {
-        .gallery-img {
-            img {
-                display: block;
-                max-height: 200px;
-                object-fit: cover;
-            }
+    svg {
+        animation: arrowAnim 1.5s linear infinite;
+        animation-direction: alternate-reverse;
+    }
+}
+
+.counters {
+    a {
+        span {
+            color: #21c87a;
+            font-weight: 700;
+            text-transform: uppercase;
+            line-height: 150%;
+            font-size: 20px;
         }
     }
+}
 
+@keyframes arrowAnim {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-13px);
+    }
+}
 </style>

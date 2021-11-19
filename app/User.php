@@ -17,7 +17,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 
-class User extends \TCG\Voyager\Models\User /*implements MustVerifyEmail*/
+class User extends \TCG\Voyager\Models\User implements MustVerifyEmail
 {
     use Notifiable, SoftDeletes;
 
@@ -175,7 +175,6 @@ class User extends \TCG\Voyager\Models\User /*implements MustVerifyEmail*/
 
         }
 
-        Log::info("2 sum=>$sum raiting=>$rating");
         return $rating;
     }
 

@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use App\User;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Str;
 
@@ -36,15 +38,27 @@ class ResetPasswordController extends Controller
 
     public function askForgotPassword(Request $request)
     {
+
         $request->validate(['email' => 'required|email']);
+
+
+        $user = User::where("email", $request->email)->first();
+
+        if (is_null($user))
+           return response()->json(['message' => "Email not found!"]);
 
         $status = Password::sendResetLink(
             $request->only('email')
         );
 
-        return $status === Password::RESET_LINK_SENT
+        return response()->json(
+            [
+                "message"=> __($status)
+            ]);
+
+       /*     $status === Password::RESET_LINK_SENT
             ? back()->with(['status' => __($status)])
-            : back()->withErrors(['email' => __($status)]);
+            : back()->withErrors(['email' => __($status)]);*/
     }
 
     public function storeResetPassword(Request $request)

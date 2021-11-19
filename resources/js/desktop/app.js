@@ -90,7 +90,7 @@ Vue.component('customer-reviews-component', require('../desktop/components/Revie
 Vue.component('transporter-reviews-component', require('../desktop/components/Reviews/TransporterReviews.vue').default);
 Vue.component('review-item-component', require('../desktop/components/Reviews/ReviewItem.vue').default);
 Vue.component('message-item-component', require('../desktop/components/MessageItem.vue').default);
-Vue.component('quote-item-component', require('../desktop/components/QuoteItem.vue').default);
+Vue.component('quote-item-component', require('../desktop/components/Listing/QuoteItem').default);
 Vue.component('single-page', require('../desktop/pages/Main/SinglePage.vue').default);
 //auth
 

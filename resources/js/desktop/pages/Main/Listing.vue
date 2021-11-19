@@ -8,6 +8,7 @@
                     <div class="btn-group d-flex">
                         <button type="button" class="btn btn-outline-primary w-100"
                                 v-if="user.is_transporter||user.id===listing.user_id"
+                                @click="loadListing()"
                                 data-toggle="modal" data-target="#quoteModal">
                             <span> {{$trans('profile.listing.span_1')}} <i class="fas fa-gavel"></i></span>
                         </button>

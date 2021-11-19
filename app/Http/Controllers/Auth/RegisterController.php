@@ -128,6 +128,8 @@ class RegisterController extends Controller
 
         Auth::login($user, true);
 
+        $user->sendEmailVerificationNotification();
+
         event(new NotificationEvent(
             "Users",
             "Success registration for user  " . $user->id,
@@ -169,6 +171,8 @@ class RegisterController extends Controller
         $user->roles()->attach($customer);
 
         Auth::login($user, true);
+
+        $user->sendEmailVerificationNotification();
 
         event(new NotificationEvent(
             "Users",
@@ -235,6 +239,7 @@ class RegisterController extends Controller
 
         Auth::login($user, true);
 
+        $user->sendEmailVerificationNotification();
 
         event(new NotificationEvent(
             "Users",

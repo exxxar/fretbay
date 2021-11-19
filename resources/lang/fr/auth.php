@@ -28,6 +28,7 @@ return array (
     'a_1' => 'J\'ai lu et suis d\'accord',
     'button_1' => 'Inscrivez-vous',
     'button_2' => 'Je suis un Transporteur',
+    'input_placeholder_0' => '',
     'input_placeholder_1' => 'Prénom',
     'input_placeholder_2' => 'Nom de famille',
     'input_placeholder_3' => 'E-mail',

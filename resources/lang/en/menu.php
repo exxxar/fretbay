@@ -1,7 +1,7 @@
 <?php
 
 return array (
-  'item' =>
+  'item' => 
   array (
     'faq' => 'Frequently Ask Questions',
     'find_loads' => 'Find loads',
@@ -16,7 +16,7 @@ return array (
     'sign_up_transporter' => 'SignUp as transporter',
     'who_we_are' => 'Who we are',
   ),
-  'section' =>
+  'section' => 
   array (
     'about' => 'About',
     'custom_service' => 'Custom Service',
@@ -24,7 +24,7 @@ return array (
     'help' => 'Help',
     'social' => 'Social',
   ),
-  'text' =>
+  'text' => 
   array (
     'all_rights_reserved' => 'All right reserved(c)ALLOTRANS',
     'search' => 'Search in Inventory',

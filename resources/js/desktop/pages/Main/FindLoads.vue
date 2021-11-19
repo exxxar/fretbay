@@ -4,6 +4,7 @@
         <div class="container mb-2 mt-2 pt-5 d-none d-md-block">
             <div class="row">
                 <div class="col-12">
+                    <small>Choose categories</small>
                     <VueSlickCarousel v-bind="settings" v-if="categories.length>0">
                         <div v-for="category in categories" @click="selectType(category.id)" class="p-2">
 
@@ -333,6 +334,8 @@
                         </button>
                     </div>
                     <div class="modal-body">
+                        <small>Choose categories</small>
+
                         <VueSlickCarousel v-bind="settings" v-if="categories.length>0">
                             <div v-for="category in categories" @click="selectType(category.id)" class="p-2">
 

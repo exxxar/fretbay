@@ -21,6 +21,6 @@ class Vehicle extends Model
     protected $casts = [
         "total_laden_weight" => "integer",
         "cubing" => "integer",
-        "images" => "array",
+        //"images" => "array",
     ];
 }

@@ -293,7 +293,7 @@
                     this.loading = false;
                     window.location = '/customer/profile'
                 }).catch(error => {
-                    this.error_message = 'Account already in System!';
+                    this.error_message = error.response.data.message;
                     this.loading = false;
                 })
             }

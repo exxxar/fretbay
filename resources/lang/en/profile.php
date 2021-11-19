@@ -1,7 +1,7 @@
 <?php
 
 return array (
-  'chat' =>
+  'chat' => 
   array (
     'input_placeholder_1' => 'Type a message',
     'input_placeholder_2' => 'Search',
@@ -11,7 +11,7 @@ return array (
     'strong_3' => 'Message',
     'strong_4' => 'Search',
   ),
-  'company' =>
+  'company' => 
   array (
     'button_1' => 'Edit',
     'button_2' => 'Cancel',
@@ -48,7 +48,7 @@ return array (
     'p_2' => ' Choose the transport specialties that your company can offer as a service.',
     'p_3' => 'Company details',
   ),
-  'documents' =>
+  'documents' => 
   array (
     'approved' => 'Approved',
     'button_1' => 'Click to upload',
@@ -96,11 +96,11 @@ return array (
     'label_9' => 'Country',
     'not_approved' => 'Not approved',
   ),
-  'favorites' =>
+  'favorites' => 
   array (
     'a_1' => 'Request a quote',
   ),
-  'find_loads' =>
+  'find_loads' => 
   array (
     0 => '',
     1 => '',
@@ -129,7 +129,7 @@ return array (
     'small_7' => 'Choose region',
     'small_8' => 'Shipping or unshipping date',
   ),
-  'listing' =>
+  'listing' => 
   array (
     'a_1' => 'Previous',
     'a_2' => 'Next',
@@ -154,7 +154,7 @@ return array (
     'your' => 'Your',
     'а_2' => '',
   ),
-  'menu' =>
+  'menu' => 
   array (
     'active_listings' => 'Active listings',
     'active_orders' => 'Active Orders',
@@ -165,14 +165,14 @@ return array (
     'favorites' => 'Favorites',
     'notifications' => 'Notifications',
     'orders' => 'Orders',
+    'payments' => 'Payments',
     'profile' => 'Profile',
     'removed_listings' => 'Removed listings',
     'reviews' => 'Reviews',
     'settings' => 'Settings',
     'vehicles' => 'Vehicles',
-    'payments' => 'Payments',
   ),
-  'order' =>
+  'order' => 
   array (
     'button_1' => 'Continue',
     'button_2' => 'Complete',
@@ -197,21 +197,21 @@ return array (
     'strong_1' => 'Place of loading',
     'strong_2' => 'Place of delivery',
   ),
-  'page' =>
+  'page' => 
   array (
     'count_results' => 'Count results',
     'find_a_transporter' => 'Try to find a transporter!',
     'find_loads' => 'Try to find loads!',
+    'no_data' => 'No data yet!',
     'no_favorites' => 'No favorites yet!',
     'no_listings' => 'No listings yet!',
     'no_notifications' => 'No notifications yet!',
     'no_orders' => 'No orders yet!',
+    'no_payments' => 'No payments yet!',
     'no_quotes' => 'No quotes yet!',
     'no_reviews' => 'No reviews yet!',
-    'no_data' => 'No data yet!',
-    'no_payments' => 'No payments yet!',
   ),
-  'profile' =>
+  'profile' => 
   array (
     'address' => 'Address',
     'avatar' => 'Avatar',
@@ -236,7 +236,7 @@ return array (
     'postal' => 'Postal',
     'region' => 'Region',
   ),
-  'public_profile' =>
+  'public_profile' => 
   array (
     'button_1' => 'Company',
     'button_2' => 'Vehicles',
@@ -261,7 +261,7 @@ return array (
     'span_1' => 'Profile verified and certified by AlloTrans',
     'span_2' => 'Profile is not verified',
   ),
-  'quotes' =>
+  'quotes' => 
   array (
     'a_1' => 'Remove a quote',
     'button_1' => 'Accept',
@@ -282,7 +282,7 @@ return array (
     'span_1' => 'Only actual bids',
     'span_2' => 'All bids',
   ),
-  'reviews' =>
+  'reviews' => 
   array (
     'button_1' => 'Send review',
     'button_2' => 'Send',
@@ -298,7 +298,7 @@ return array (
     'span_1' => 'Characters left',
     'textarea_placeholder_1' => 'Review title',
   ),
-  'settings' =>
+  'settings' => 
   array (
     'button_1' => 'Save',
     'h2_1' => 'Password',
@@ -310,7 +310,7 @@ return array (
     'label_5' => 'Push messages',
     'label_6' => 'Newsletters',
   ),
-  'sidebar' =>
+  'sidebar' => 
   array (
     'accounts' => 'Accounts',
     'em_1' => 'You are Customer',
@@ -325,7 +325,7 @@ return array (
     'profile' => 'Profile',
     'terms' => 'Terms',
   ),
-  'vehicles' =>
+  'vehicles' => 
   array (
     'button_1' => 'Click to upload',
     'button_2' => 'Close',
@@ -346,9 +346,9 @@ return array (
     'select_option_4' => 'Truck with tailgate',
     'select_option_5' => '5T Truck',
   ),
-  'wizard' =>
+  'wizard' => 
   array (
-    'start' =>
+    'start' => 
     array (
       'a_1' => 'Start',
       'h2_1' => 'Complete your profile',
@@ -357,7 +357,7 @@ return array (
                     <strong>Create a profile here quickly and free of charge</strong> so that it can be validated by our
                     team.',
     ),
-    'step_1' =>
+    'step_1' => 
     array (
       'a_1' => 'Skip',
       'button_1' => 'Click to upload',
@@ -372,7 +372,7 @@ return array (
       'label_3' => 'Expiry date',
       'p_1' => '<strong>Requires</strong> : Front / back of the identity document of the manager of the company',
     ),
-    'step_2' =>
+    'step_2' => 
     array (
       'a_1' => 'Skip',
       'button_1' => 'Click to upload',
@@ -387,7 +387,7 @@ return array (
       'label_4' => 'End date',
       'p_1' => '<strong>Requires</strong> : Insurance certificate <strong>showing</strong> the name of your business',
     ),
-    'step_3' =>
+    'step_3' => 
     array (
       'button_1' => 'Add a vehicle',
       'button_2' => 'Skip',
@@ -395,7 +395,7 @@ return array (
       'h2_1' => 'Your vehicles',
       'p_1' => '<strong>Requires</strong> : Insurance certificate <strong>showing</strong> the name of your business',
     ),
-    'step_4' =>
+    'step_4' => 
     array (
       'button_1' => 'Skip',
       'button_2' => 'Next step',
@@ -406,7 +406,7 @@ return array (
       'p' => 'Inform your future customers of your spoken languages',
       'п' => '',
     ),
-    'step_5' =>
+    'step_5' => 
     array (
       'a_1' => 'Skip',
       'button_1' => 'Save',
