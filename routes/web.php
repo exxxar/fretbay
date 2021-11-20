@@ -145,6 +145,10 @@ Route::view("/profile-customer", "desktop.pages.profile.customer.profile")->name
 Route::view("/to-be-confirmed-empty", "desktop.pages.profile.customer.to-be-confirmed-empty")->name("desktop.customer-to-be-confirmed-empty");
 Route::view("/to-be-confirmed", "desktop.pages.profile.customer.to-be-confirmed")->name("desktop.customer-to-be-confirmed");
 
+Route::view("/find-loads", "desktop.pages.find-loads")
+    ->name("desktop.find-loads");
+
+Route::get('/listing/guest', 'ListingController@index');
 
 Route::group(["middleware" => ['verified']], function () {
 
@@ -179,9 +183,7 @@ Route::group(["middleware" => ['verified']], function () {
     Route::post('/fcm-token', [\App\Http\Controllers\NotificationController::class, 'updateToken'])->name('fcmToken');
     Route::post('/send-notification', [\App\Http\Controllers\NotificationController::class, 'notification'])->name('send.web-notification');
 
-    Route::view("/find-loads", "desktop.pages.find-loads")
-        ->middleware(['auth', 'role:transporter'])
-        ->name("desktop.find-loads");
+
 
     Route::group(['middleware' => ['auth', 'role:transporter'], "prefix" => "transporter"], function () {
 
@@ -434,6 +436,15 @@ Route::group(["middleware" => ['verified']], function () {
             Route::get("/", "AdminController@getRoles")->name("admin.roles");
             Route::get("/show/{id}", "RoleController@show")->name("admin.roles.show");
         });
+
+        Route::group(["prefix" => "statistic"], function () {
+            Route::get("/", "AdminController@getStatistic")->name("admin.statistic");
+        });
+
+        Route::group(["prefix" => "mailing"], function () {
+            Route::get("/", "AdminController@getMailing")->name("admin.mailing");
+        });
+
 
         Route::group(["prefix" => "permissions"], function () {
             Route::get("/", "AdminController@getPermissions")->name("admin.permissions");

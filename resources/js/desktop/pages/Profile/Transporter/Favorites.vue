@@ -139,7 +139,7 @@
         },
         computed: {
             favorites: function () {
-                return this.$store.getters.favorites;
+                return this.$store.getters.favorites.filter(item=>item.status === true);
             },
             user() {
                 return window.user

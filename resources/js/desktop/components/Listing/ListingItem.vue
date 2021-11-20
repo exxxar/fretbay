@@ -33,7 +33,7 @@
                     class="badge badge-primary"><small>{{ listing.status || $trans('profile.listing.in_progress') }}</small></span>
                 <span class="badge badge-purple"
                       v-if="user&&listing.user_id==user.id"><small>{{ $trans('profile.listing.your') }}</small></span>
-                <span class="badge badge-danger" v-if="user&&listing.user_id==user.id&&listing.status=='payed'"><small>Payed</small></span>
+                <span class="badge badge-danger" v-if="user&&listing.user_id==user.id&&listing.status=='payed'"><small>Complete</small></span>
 
             </div>
 

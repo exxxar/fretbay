@@ -48,7 +48,7 @@ class HomeController extends Controller
                 $item = Listing::with(['category', 'subcategory', 'thing', 'messages', 'quotes'])->find($item->listing_id);
                 break;
             case "quote":
-                $item = Quote::find($id);
+                $item = Quote::with(["listing"])->find($id);
                 break;
             case "order":
                 $item = Order::find($id);

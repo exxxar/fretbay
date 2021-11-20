@@ -62,6 +62,13 @@ const actions = {
                 commit('setListings', resp.data.listings || []);
             })
     },
+    async getListingsForGuest({state, commit}) {
+        return axios
+            .get(`/listing/guest?page=${state.paginate.current_page || 1}`)
+            .then(resp => {
+                commit('setListings', resp.data.listings);
+            })
+    },
     async getListings({state, commit}) {
         return axios
             .get(`/api/listings?page=${state.paginate.current_page || 1}`)

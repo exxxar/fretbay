@@ -107,7 +107,7 @@
         </div>
 
         <div class="container d-block d-md-none fixed-bottom bottom-menu" style="z-index: 1000">
-            <div class="row d-flex align-items-center h-100" v-if="user">
+            <div class="row d-flex align-items-center h-100" v-if="!user.is_guest">
                 <div class="col-3 bottom-menu-item">
                     <a href="/" class="d-flex flex-column justify-content-between align-items-center">
                         <span><i class="fas fa-home"></i></span>

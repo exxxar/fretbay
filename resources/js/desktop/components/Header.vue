@@ -7,7 +7,7 @@
                     class="js-mega-menu navbar navbar-expand-lg u-header__navbar hs-menu-initialized hs-menu-horizontal justify-content-sm-center justify-content-between">
                     <!-- Logo -->
                     <div class="u-header__navbar-brand-wrapper d-flex d-sm-block justify-content-sm-center "
-                         v-bind:class="{'justify-content-end':!user,'justify-content-center':user}"
+                         v-bind:class="{'justify-content-end':user.is_guest,'justify-content-center':user}"
                     >
                         <a @click="loading=true" class="navbar-brand u-header__navbar-brand p-2" href="/"
                            aria-label="Space" style="max-width: 100px;">
@@ -43,7 +43,7 @@
 
                             <!--  Request a quote -->
 
-                            <li class="nav-item  u-header__nav-item" v-if="!user">
+                            <li class="nav-item  u-header__nav-item" v-if="user.is_guest">
                                 <a href="/find-transporter" class="nav-link btn btn-link w-100 p-3 text-center">
                                     {{$trans('menu.item.request_a_quote')}}
                                 </a>
@@ -64,10 +64,8 @@
 
                             <!--  Find loads -->
 
-                            <li class="nav-item  u-header__nav-item " v-if="user">
-                                <a href="/find-loads" class="nav-link btn btn-link w-100 p-3 text-center"
-                                   v-bind:class="{'btn-outline-primary':user.is_transporter}"
-                                   v-if="user.is_transporter">
+                            <li class="nav-item  u-header__nav-item ">
+                                <a href="/find-loads" class="nav-link btn btn-link w-100 p-3 text-center">
                                     {{$trans('menu.item.find_loads')}}
                                 </a>
                             </li>
@@ -82,7 +80,7 @@
                                     Helps
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item cursor-pointer" href="/find-loads" v-if="!user"> {{$trans('menu.item.i_am_a_transporter')}}</a>
+                                    <a class="dropdown-item cursor-pointer" href="/find-loads"> {{$trans('menu.item.i_am_a_transporter')}}</a>
                                     <a class="dropdown-item cursor-pointer" href="/find-transporter"> {{$trans('menu.item.search_for_a_transporter')}}</a>
                                     <a class="dropdown-item cursor-pointer" href="/how-it-works"> {{$trans('menu.item.how_does_it_work')}}</a>
                                     <a class="dropdown-item cursor-pointer" href="/fequently-asked-questions"> {{$trans('menu.item.faq')}}.</a>
@@ -105,7 +103,7 @@
                             </li>
 
                             <li class="nav-item dropdown u-header__nav-item-btn p-0 mb-1 mb-sm-0 mr-0 mr-sm-1"
-                                v-if="!user">
+                                v-if="user.is_guest">
                                 <a class="btn btn-primary dropdown-toggle text-white w-100 " href="#"
                                    id="signupDropdown"
                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -119,7 +117,7 @@
                                 </div>
                             </li>
 
-                            <li class="nav-item u-header__nav-item-btn p-0" v-if="!user">
+                            <li class="nav-item u-header__nav-item-btn p-0" v-if="user.is_guest">
                                 <button type="button" class="btn btn-link w-100 btn-outline-primary" data-toggle="modal"
                                         data-target="#signIn">
                                     {{$trans('menu.item.sign_in')}}
@@ -161,7 +159,7 @@
                     </div>
                     <!-- End Navigation -->
 
-                    <ul class="navbar-nav u-header__secondary-nav" v-if="user">
+                    <ul class="navbar-nav u-header__secondary-nav" v-if="user.is_guest===false">
 
                         <!-- Account Signin -->
                         <li class="nav-item u-header__navbar-icon text-center">

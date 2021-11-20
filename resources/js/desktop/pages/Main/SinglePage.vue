@@ -11,7 +11,7 @@
         <order-item-component :order="item" v-if="type=='order'&&item"/>
         <notification-item-component :item="item" v-if="type=='notification'&&item"/>
         <transporter-reviews-component v-if="type=='review'&&item"/>
-        <quote-item-component :item="item" :is_owner="false" v-if="type=='quote'&&item"/>
+        <quote-item-component :item="item" :is_owner="item.listing.user_id===user.id" v-if="type=='quote'&&item"/>
         <payment-item-component :item="item" v-if="type=='payment'&&item"/>
 
 
@@ -35,7 +35,6 @@
             }
         },
         mounted() {
-            console.log(this.type, this.index)
             this.loadItem()
         },
         methods: {

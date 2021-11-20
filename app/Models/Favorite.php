@@ -15,6 +15,21 @@ class Favorite extends Model
       'user_id',
     ];
 
+    protected $with = ["listing"];
+
+    protected $appends = ["status"];
+
+    public function getStatusAttribute(){
+        $tmp = $this->listing()->first();
+
+        if (is_null($tmp)){
+            return false;
+        }
+
+        if ($tmp->status == "payed")
+            return false;
+        return true;
+    }
     public function listing(){
         return $this->hasOne(Listing::class,"id","listing_id");
     }

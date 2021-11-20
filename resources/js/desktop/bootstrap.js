@@ -36,6 +36,14 @@ if (window.user) {
     window.user.is_transporter = window.user.roles.filter(item => item.name === "transporter").length > 0 || false;
     window.user.is_customer = window.user.roles.filter(item => item.name === "customer").length > 0 || false;
     window.user.is_admin = window.user.roles.filter(item => item.name === "admin").length > 0 || false;
+    window.user.is_guest = false
+} else {
+    window.user = {}
+    window.user.is_transporter = false;
+    window.user.is_customer = false
+    window.user.is_admin = false
+    window.user.is_guest = true
+
 }
 window.locale = document.documentElement.lang
 

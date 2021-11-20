@@ -69,6 +69,8 @@ Vue.component('users-permissions', require('./components/Users/Permissions.vue')
 
 
 //Section for Pages
+Vue.component('statistic-index-page', require('./pages/Statistic/index.vue').default);
+Vue.component('mailing-index-page', require('./pages/Mailing/index.vue').default);
 
 //Users
 Vue.component('users-index-page', require('./pages/Users/Index.vue').default);

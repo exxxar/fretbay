@@ -146,6 +146,16 @@ class AdminController extends Controller
         ]);
     }
 
+    public function getMailing(Request $request)
+    {
+        return view("admin.pages.mailing.index");
+    }
+
+    public function getStatistic(Request $request)
+    {
+        return view("admin.pages.statistic.index");
+    }
+
     public function getVerificationApplications(Request $request)
     {
         $verifications = VerificationApplication::paginate(50);

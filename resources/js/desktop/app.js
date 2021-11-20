@@ -109,6 +109,7 @@ Vue.component('payments-page', require('./pages/Profile/Payments.vue').default);
 Vue.component('favorites-page', require('./pages/Profile/Transporter/Favorites.vue').default);
 Vue.component('listing-page', require('./pages/Main/Listing.vue').default);
 Vue.component('find-loads-page', require('./pages/Main/FindLoads.vue').default);
+Vue.component('find-loads-for-guest-page', require('./pages/Main/FindLoadsForGuest.vue').default);
 Vue.component('find-transporter-page', require('./pages/Main/FindTransporter.vue').default);
 Vue.component('how-it-work-page', require('./pages/Support/HowItWork.vue').default);
 Vue.component('who-we-are-page', require('./pages/Support/WhoWeAre.vue').default);

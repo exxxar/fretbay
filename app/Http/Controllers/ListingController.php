@@ -49,6 +49,8 @@ class ListingController extends Controller
     {
         $listings = Listing::with(['category', 'subcategory', 'thing', 'messages', 'quotes'])
             ->where("is_active", true)
+            ->where("status", "")
+            ->where("expiration_date", "<", Carbon::now())
             ->orderByDesc('created_at')
             ->paginate(100);
         return response()->json([
@@ -68,6 +70,7 @@ class ListingController extends Controller
             'listings' => $listings
         ]);
     }
+
 
     public function loadArchive()
     {
@@ -208,7 +211,7 @@ class ListingController extends Controller
             $listings = $listings->whereIn("category_id", $request->categories);
 
         $listings = $listings
-            //->where("expiration_date", "<", Carbon::now())
+            ->where("expiration_date", "<", Carbon::now())
             ->orderByDesc('created_at')->paginate(100);
 
         return response()->json([
@@ -442,12 +445,13 @@ class ListingController extends Controller
             }*/
 
         $quote = Quote::create($request->all());
-        $quote->valid_until_date = Carbon::now()->addHour($hours[$request->quote_validity ?? 3]);
+        $quote->valid_until_date = Carbon::now()->addHours($hours[$request->quote_validity ?? 3]);
         $quote->save();
 
         if (!is_null($latestQuote)) {
 
             $latestQuote->status = 1;
+         //   $latestQuote->valid_until_date = Carbon::parse($latestQuote->created_at)->addHours($hours[$latestQuote->quote_validity ?? 3]);
             $latestQuote->save();
 
             event(new NotificationEvent(

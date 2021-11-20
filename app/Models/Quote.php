@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -50,11 +51,17 @@ class Quote extends Model
         'valid_until_date',
     ];
 
+    protected $appends = ["is_valid"];
 
-  /*  public function listing()
+    /*  public function listing()
+      {
+          return $this->belongsTo(Listing::class);
+      }*/
+
+    public function getIsValidAttribute()
     {
-        return $this->belongsTo(Listing::class);
-    }*/
+        return $this->valid_until_date >= Carbon::now();
+    }
 
     public function user()
     {

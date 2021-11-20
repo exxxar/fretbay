@@ -15,6 +15,23 @@
             </a>
         </li>
 
+        <li class="c-sidebar-nav-item">
+            <a class="c-sidebar-nav-link" href="/admin/statistic">
+                <span class="c-sidebar-nav-icon fas fa-globe"></span>
+                Statistic
+            </a>
+        </li>
+
+
+        <li class="c-sidebar-nav-item">
+            <a class="c-sidebar-nav-link" href="/admin/mailing">
+                <span class="c-sidebar-nav-icon fas fa-globe"></span>
+                Mailing
+            </a>
+        </li>
+
+
+
     </ul>
     <button class="c-sidebar-minimizer c-class-toggler" type="button" data-target="_parent"
             data-class="c-sidebar-minimized"></button>
