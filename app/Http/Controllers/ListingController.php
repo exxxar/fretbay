@@ -149,7 +149,8 @@ class ListingController extends Controller
         $region = $request->region ?? null;
         $postal = $request->postal ?? null;
 
-        $listings = Listing::with(['category', 'subcategory', 'thing', 'messages', 'quotes']);
+        $listings = Listing::with(['category', 'subcategory', 'thing', 'messages', 'quotes'])
+            ->where("status","");
 
         if (count($distance_range_value) > 0)
             $listings = $listings->whereBetween("distance", $distance_range_value);

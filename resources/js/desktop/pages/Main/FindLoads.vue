@@ -321,46 +321,81 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Filter </h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">
-                        <small>Choose categories</small>
+                    <div class="modal-body p-0">
 
-                        <VueSlickCarousel v-bind="settings" v-if="categories.length>0">
-                            <div v-for="category in categories" @click="selectType(category.id)" class="p-2">
 
-                                <div class="card filter-card"
-                                     :class="{'text-primary font-weight-bold card-primary':inSelectedType(category.id),'text-secondary':!inSelectedType(category.id)}">
+                        <div class="row p-0 m-0">
+                            <div class="col-6 p-1">
 
-                                    <div class="card-body p-2">
-                                        <img v-lazy="category.image" alt="" class="w-100">
-                                        <small class="text-center w-100">{{ category.title }}</small>
+                                <button class="btn btn-outline-primary w-100" @click="part_step=0"
+                                        v-bind:class="{'active':part_step===0}"
+                                >Criteria
+                                </button>
+                            </div>
+                            <div class="col-6 p-1">
+                                <button class="btn btn-outline-primary w-100"
+                                        v-bind:class="{'active':part_step===1}"
+                                        @click="part_step=1">Reference
+                                </button>
+
+                            </div>
+                        </div>
+
+                        <div class="col-12 mt-2 mb-2">
+                            <small style="color:lightgray;">{{ $trans('profile.find_loads.small_2') }}
+                                {{ filteredListings.length }}</small>
+
+                            <button class="btn btn-link text-danger"
+                                    style="margin: 0 !important; padding:0px 10px;"
+                                    @click="resetFilter">
+                                {{ $trans('profile.find_loads.button_2') }}
+                            </button>
+                        </div>
+
+                        <div class="col-12 mt-2 p-0" v-if="part_step===0">
+                            <div class="row m-0 p-1">
+                                <small class="col-12">Choose categories</small>
+                            </div>
+
+
+                            <div class="row m-0 p-1">
+                                <div v-for="category in categories" @click="selectType(category.id)" class="col-6 p-1">
+
+                                    <div class="card filter-card-2 w-100"
+                                         :class="{'text-primary font-weight-bold card-primary':inSelectedType(category.id),'text-secondary':!inSelectedType(category.id)}">
+
+                                        <div class="card-body p-1">
+                                            <img v-lazy="category.image" alt="" class="w-100">
+                                            <small class="text-center w-100">{{ category.title }}</small>
+                                        </div>
+
                                     </div>
 
                                 </div>
-
                             </div>
-                        </VueSlickCarousel>
 
-                        <vue-custom-scrollbar class="scroll-area" :settings="settingsScroll"
-                                              @ps-scroll-y="scrollHandler">
-                            <div class="row m-0">
+                            <div class="row m-0 p-1">
 
-                                <div class="col-12 mt-2 mb-2">
-                                    <small style="color:lightgray;">{{ $trans('profile.find_loads.small_2') }}
-                                        {{ filteredListings.length }}</small>
-
-                                    <button class="btn btn-link text-danger"
-                                            style="margin: 0 !important; padding:0px 10px;"
-                                            v-if="isFilter" @click="resetFilter">
-                                        {{ $trans('profile.find_loads.button_2') }}
-                                    </button>
+                                <div class="col-12 mt-2 p-1">
+                                    <small>{{ $trans('profile.find_loads.small_8') }}</small>
+                                    <date-picker v-model="filter.date_from" @input="changeDate"
+                                                 :placeholder="$trans('profile.find_loads.input_placeholder_5')"
+                                                 class="mb-2 w-100"
+                                                 :value-type="'timestamp'"
+                                    />
+                                    <date-picker v-model="filter.date_to" @input="changeDate"
+                                                 :placeholder="$trans('profile.find_loads.input_placeholder_6')"
+                                                 class="mb-2 w-100"
+                                                 :value-type="'timestamp'"
+                                    />
                                 </div>
 
-                                <div class="col-12 mt-2 mb-2" v-if="isMovingActive">
+                                <div class="col-12 mt-2 mb-2 p-1" v-if="isMovingActive">
                                     <small>{{ $trans('profile.find_loads.small_3') }}<sup>3</sup></small>
 
                                     <div class="row m-0">
@@ -399,7 +434,7 @@
 
                                 </div>
 
-                                <div class="col-12 mt-2">
+                                <div class="col-12 mt-2 p-1">
                                     <small>{{ $trans('profile.find_loads.small_4') }}</small>
                                     <div class="row m-0">
                                         <div class="col-sm-6 mb-2 p-1">
@@ -427,7 +462,8 @@
                                     </div>
 
                                 </div>
-                                <div class="col-12 mt-2">
+
+                                <div class="col-12 mt-2 p-1">
                                     <small>{{ $trans('profile.find_loads.small_5') }}</small>
 
                                     <div class="p-1 w-100">
@@ -440,17 +476,7 @@
                                     </div>
                                 </div>
 
-
-                                <div class="col-12 mt-2">
-
-                                    <small>{{ $trans('profile.find_loads.small_1') }}</small>
-                                    <input type="number" class="form-control w-100"
-                                           v-model="filter.reference"
-                                           :placeholder="$trans('profile.find_loads.input_placeholder_1')">
-
-                                </div>
-
-                                <div class="col-12 mt-2">
+                                <div class="col-12 mt-2 p-1">
 
                                     <small>{{ $trans('profile.find_loads.small_6') }}</small>
 
@@ -460,7 +486,7 @@
 
                                 </div>
 
-                                <div class="col-12 mt-2">
+                                <div class="col-12 mt-2 p-1">
 
                                     <small>{{ $trans('profile.find_loads.small_7') }}</small>
 
@@ -473,24 +499,22 @@
 
                                 </div>
 
-
-                                <div class="col-12 mt-2">
-                                    <small>{{ $trans('profile.find_loads.small_8') }}</small>
-                                    <date-picker v-model="filter.date_from" @input="changeDate"
-                                                 :placeholder="$trans('profile.find_loads.input_placeholder_5')"
-                                                 class="mb-2 w-100"
-                                                 :value-type="'timestamp'"
-                                    />
-                                    <date-picker v-model="filter.date_to" @input="changeDate"
-                                                 :placeholder="$trans('profile.find_loads.input_placeholder_6')"
-                                                 class="mb-2 w-100"
-                                                 :value-type="'timestamp'"
-                                    />
-                                </div>
-
-
                             </div>
-                        </vue-custom-scrollbar>
+
+
+                        </div>
+
+                        <div class="col-12 mt-2" v-if="part_step===1">
+
+
+                            <small>{{ $trans('profile.find_loads.small_1') }}</small>
+                            <input type="number" class="form-control w-100"
+                                   v-model="filter.reference"
+                                   :placeholder="$trans('profile.find_loads.input_placeholder_1')">
+
+
+                        </div>
+
 
                         <div class="row" style="position:sticky; bottom: 10px; z-index: 9;">
                             <div class="col-12 p-5">
@@ -532,6 +556,7 @@ export default {
     },
     data() {
         return {
+            part_step: 0,
             search: '',
             sort: '',
             direction: false,
@@ -1038,6 +1063,19 @@ export default {
     }
 }
 
+.filter-card-2 {
+    height: 80px;
+
+    img {
+        height: 50px;
+        object-fit: contain;
+    }
+
+    small {
+        display: block;
+        line-height: 100%;
+    }
+}
 
 .slick-arrow {
     padding: 5px;
