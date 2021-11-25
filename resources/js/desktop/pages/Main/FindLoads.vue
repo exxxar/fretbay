@@ -316,13 +316,6 @@
             </div>
         </div>
 
-        <div class="bottom-filter d-block d-md-none">
-            <button type="button" class="btn btn-primary rounded-circle" data-toggle="modal"
-                    data-target="#filterComponent">
-                <i class="fas fa-funnel-dollar"></i>
-            </button>
-        </div>
-
         <div class="modal fade" id="filterComponent" tabindex="-1" role="dialog" aria-labelledby="filterComponentLable"
              aria-hidden="true">
             <div class="modal-dialog" role="document">

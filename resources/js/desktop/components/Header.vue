@@ -159,12 +159,26 @@
                     </div>
                     <!-- End Navigation -->
 
-                    <ul class="navbar-nav u-header__secondary-nav" v-if="user.is_guest===false">
+
+
+                    <ul class="navbar-nav u-header__secondary-nav d-flex justify-content-center flex-row flex-nowrap" v-if="user.is_guest===false">
+
+
+
+                        <li class="nav-item u-header__navbar-icon text-center">
+                            <!-- Account Sidebar Toggle Button -->
+                            <a class="btn btn-xs btn-icon btn-text-dark target-of-invoker-has-unfolds p-2 text-primary"
+                               data-toggle="modal"
+                               data-target="#filterComponent">
+                                <i class="fas fa-funnel-dollar btn-icon__inner font-size-base"></i>
+                            </a>
+                            <!-- End Account Sidebar Toggle Button -->
+                        </li>
 
                         <!-- Account Signin -->
                         <li class="nav-item u-header__navbar-icon text-center">
                             <!-- Account Sidebar Toggle Button -->
-                            <a class="btn btn-xs btn-icon btn-text-dark target-of-invoker-has-unfolds"
+                            <a class="btn btn-xs btn-icon btn-text-dark target-of-invoker-has-unfolds p-2"
                                @click="toggleSidebar">
                                 <i class="far fa-user-circle btn-icon__inner font-size-base"></i>
 
@@ -184,7 +198,12 @@
 
     import { localize, localeChanged } from "vee-validate";
     export default {
-
+        props:{
+          filter:{
+              type:Boolean,
+              default:false,
+          }
+        },
         data() {
             return {
                 loading: false,
