@@ -9,6 +9,7 @@
 
     <title>{{ config('app.name', 'Fretbay') }}</title>
 
+    @yield("seo")
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -51,7 +52,7 @@
 
 <div id="app" style="padding-top: 50px;">
     <notifications :position="'top left'" :group="'info'"></notifications>
-    <preloader-component></preloader-component>
+<!--    <preloader-component></preloader-component>-->
     @yield('content')
     {{--    <system-notification-component></system-notification-component>--}}
 

@@ -32,6 +32,7 @@ use Laravel\Socialite\Facades\Socialite;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
+use TCG\Voyager\Models\Post;
 
 Route::get('/email/verify', 'VerificationController@show')->name('verification.notice');
 Route::get('/email/verify/{id}/{hash}', 'VerificationController@verify')->name('verification.verify')->middleware(['signed']);
@@ -95,8 +96,10 @@ Route::get("/storage/listings/{dir}/{name}", function ($dir, $name) {
 
 Route::get("/", function (\Illuminate\Http\Request $request) {
 
+    $posts = Post::with(["category"])->where("status","PUBLISHED")->paginate(4);
+
     if (is_null(Auth::user()))
-        return view("desktop.pages.index");
+        return view("desktop.pages.index", compact('posts'));
 
     $user = User::self();
 
@@ -111,7 +114,11 @@ Route::get("/", function (\Illuminate\Http\Request $request) {
 
 })->name("desktop.index");
 
-
+Route::get('post/{slug}', function($slug){
+    $post = Post::where("status","PUBLISHED")->where('slug', '=', $slug)->firstOrFail();
+    $posts = Post::where("status","PUBLISHED")->paginate(3);
+    return view('desktop.pages.post', compact('post','posts'));
+});
 
 
 Route::view("/pricing", "desktop.pages.pricing")->name("desktop.pricing");

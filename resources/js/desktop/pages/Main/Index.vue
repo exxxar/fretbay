@@ -256,7 +256,7 @@
         <!-- End Features -->
 
 
-        <div class="container space-2-bottom space-3--md">
+        <div class="container">
             <div class="gradient-overlay-half-dark-v1 bg-img-hero-center"
                  style="background-image: url(/assets/img/1200x600/img1.jpg);">
                 <div class="w-lg-50 p-9">

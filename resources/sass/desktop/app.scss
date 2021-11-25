@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
 @import 'theme-1';
+
 /*
 // Bootstrap
 @import '../../../node_modules/bootstrap/scss/bootstrap';*/
@@ -14,10 +15,17 @@
 }
 */
 
+.card-overflow {
+    text-overflow: ellipsis;
+    word-break: break-all;
+    overflow: hidden;
+    white-space: revert;
+    height: 100px;
+}
 
 #app {
-    min-height:100vh;
-    padding-bottom:350px;
+    min-height: 100vh;
+    padding-bottom: 350px;
 
     @media (max-width: 900px) {
         & {

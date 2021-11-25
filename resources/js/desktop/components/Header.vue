@@ -165,7 +165,7 @@
 
 
 
-                        <li class="nav-item u-header__navbar-icon text-center" v-if="filter">
+                        <li class="nav-item u-header__navbar-icon text-center d-block d-md-none" v-if="filter">
                             <!-- Account Sidebar Toggle Button -->
                             <a class="btn btn-xs btn-icon btn-text-dark target-of-invoker-has-unfolds p-2 text-primary"
                                data-toggle="modal"
