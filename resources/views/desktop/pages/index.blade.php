@@ -1,8 +1,16 @@
 @extends("layouts.app")
 
+@section("seo")
+    <meta name="description" content="{{$page->meta_description}}" />
+    <meta name="keyword" content="{{$page->meta_keywords}}" />
+@endsection
+
 @section("content")
     <header-component></header-component>
+    <preloader-component></preloader-component>
     <index-page></index-page>
+
+
 
     <div class="container">
         <div class="border-top border-bottom space-2 space-3--md">

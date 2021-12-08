@@ -17,7 +17,7 @@ class ObjectCategorySeeder extends Seeder
             'title' => [
                 "en" => "Household equipment",
                 "ru" => "Household equipment",
-                'fr' => "Household equipment",
+                'fr' => "Equipment de la maison",
             ],
             'min_price' => 0,
 
@@ -39,7 +39,7 @@ class ObjectCategorySeeder extends Seeder
             'title' => [
                 "en" => "Moving",
                 "ru" => "Moving",
-                'fr' => "Moving",
+                'fr' => "Déménagement",
             ],
             'min_price' => 0,
 
@@ -53,7 +53,7 @@ class ObjectCategorySeeder extends Seeder
             'title' => [
                 "en" => "Vehicle",
                 "ru" => "Vehicle",
-                'fr' => "Vehicle",
+                'fr' => "Véhicule",
             ],
             'min_price' => 0,
 
@@ -75,7 +75,7 @@ class ObjectCategorySeeder extends Seeder
             'title' => [
                 "en" => "Motorcycles and sports vehicles",
                 "ru" => "Motorcycles and sports vehicles",
-                'fr' => "Motorcycles and sports vehicles",
+                'fr' => "Motos et véhicules de sport",
             ],
             'min_price' => 0,
 
@@ -96,7 +96,7 @@ class ObjectCategorySeeder extends Seeder
             'title' => [
                 "en" => "Boats & voluminous",
                 "ru" => "Boats & voluminous",
-                'fr' => "Boats & voluminous",
+                'fr' => "Bateaux",
             ],
             'min_price' => 0,
 
@@ -121,7 +121,7 @@ class ObjectCategorySeeder extends Seeder
             'title' => [
                 "en" => "Fragile goods",
                 "ru" => "Fragile goods",
-                'fr' => "Fragile goods",
+                'fr' => "Bien fragiles",
             ],
             'min_price' => 0,
 
@@ -140,9 +140,9 @@ class ObjectCategorySeeder extends Seeder
 
         $category = ObjectCategory::create([
             'title' => [
-                "en" => "Package/Fold",
+                "en" => "Parcels, boxes",
                 "ru" => "Package/Fold",
-                'fr' => "Package/Fold",
+                'fr' => "Colis, cartons",
             ],
             'min_price' => 0,
 
@@ -185,7 +185,7 @@ class ObjectCategorySeeder extends Seeder
             'title' => [
                 "en" => "Animals",
                 "ru" => "Animals",
-                'fr' => "Animals",
+                'fr' => "Animaux",
             ],
             'min_price' => 0,
 
@@ -210,7 +210,7 @@ class ObjectCategorySeeder extends Seeder
             'title' => [
                 "en" => "Agri-food",
                 "ru" => "Agri-food",
-                'fr' => "Agri-food",
+                'fr' => "Agroalimentaire",
             ],
             'min_price' => 0,
 
@@ -228,7 +228,7 @@ class ObjectCategorySeeder extends Seeder
             'title' => [
                 "en" => "Commercial goods",
                 "ru" => "Commercial goods",
-                'fr' => "Commercial goods",
+                'fr' => "Bien commerciaux",
             ],
             'min_price' => 0,
 
@@ -250,7 +250,7 @@ class ObjectCategorySeeder extends Seeder
             'title' => [
                 "en" => "Miscellaneous",
                 "ru" => "Miscellaneous",
-                'fr' => "Miscellaneous",
+                'fr' => "Divers",
             ],
             'min_price' => 0,
 

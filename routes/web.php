@@ -1,5 +1,6 @@
 <?php
 
+use App\Classes\PageFactory;
 use App\Enums\NotificationType;
 use App\Events\NotificationEvent;
 use App\Http\Controllers\Auth\LoginController;
@@ -32,6 +33,7 @@ use Laravel\Socialite\Facades\Socialite;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
+use TCG\Voyager\Models\Page;
 use TCG\Voyager\Models\Post;
 
 Route::get('/email/verify', 'VerificationController@show')->name('verification.notice');
@@ -98,8 +100,10 @@ Route::get("/", function (\Illuminate\Http\Request $request) {
 
     $posts = Post::with(["category"])->where("status","PUBLISHED")->paginate(4);
 
+    $page = PageFactory::mainPage();
+
     if (is_null(Auth::user()))
-        return view("desktop.pages.index", compact('posts'));
+        return view("desktop.pages.index", compact('posts','page'));
 
     $user = User::self();
 
@@ -120,6 +124,10 @@ Route::get('post/{slug}', function($slug){
     return view('desktop.pages.post', compact('post','posts'));
 });
 
+Route::get('page/{slug}', function($slug){
+    $page = Page::where("status","ACTIVE")->where('slug', '=', $slug)->firstOrFail();
+    return view('desktop.pages.page', compact('page'));
+});
 
 Route::view("/pricing", "desktop.pages.pricing")->name("desktop.pricing");
 Route::view("/checkout", "desktop.pages.profile.checkout")->name("desktop.checkout");

@@ -123,79 +123,19 @@
             <!-- End Title -->
 
             <div class="row justify-content-lg-between">
-                <div class="col-md-7">
+                <div class="col-md-12">
                     <!-- Gallery -->
                     <div class="row mx-gutters-2 mb-9 mb-md-0">
                         <div class="col-12 mb-3">
                             <img class="img-fluid" src="/assets/img/700x700/img5.jpg" alt="Image Description">
                         </div>
 
-                        <div class="col-12 align-self-end mb-3">
-                            <img class="img-fluid" src="/assets/img/500x450/img4.jpg" alt="Image Description">
-                        </div>
+
 
                     </div>
                     <!-- End Gallery -->
                 </div>
 
-                <div class="col-md-5 col-lg-4">
-                    <h3 class="h5">{{$trans('index.section_3.h3_1')}}</h3>
-
-                    <!-- Icon Blocks -->
-                    <a class="media align-items-center mb-4" href="#">
-            <span class="u-icon u-icon--md u-icon--shadow rounded-circle p-2 mr-3">
-              <img class="img-fluid" src="/assets/svg/components/location-dark-icon.svg" alt="Image Description">
-            </span>
-                        <div class="media-body">
-                            {{$trans('index.section_3.div_1')}}
-                        </div>
-                    </a>
-                    <!-- End Icon Blocks -->
-
-                    <!-- Icon Blocks -->
-                    <a class="media align-items-center mb-4" href="#">
-            <span class="u-icon u-icon--md u-icon--shadow rounded-circle p-2 mr-3">
-              <img class="img-fluid" src="/assets/svg/components/request-quote-dark-icon.svg" alt="Image Description">
-            </span>
-                        <div class="media-body">
-                            {{$trans('index.section_3.div_2')}}
-                        </div>
-                    </a>
-                    <!-- End Icon Blocks -->
-
-                    <!-- Icon Blocks -->
-                    <a class="media align-items-center mb-4" href="#">
-            <span class="u-icon u-icon--md u-icon--shadow rounded-circle p-2 mr-3">
-              <img class="img-fluid" src="/assets/svg/components/file-dark-icon.svg" alt="Image Description">
-            </span>
-                        <div class="media-body">
-                            {{$trans('index.section_3.div_3')}}
-                        </div>
-                    </a>
-                    <!-- End Icon Blocks -->
-
-                    <!-- Icon Blocks -->
-                    <a class="media align-items-center mb-4" href="#">
-            <span class="u-icon u-icon--md u-icon--shadow rounded-circle p-2 mr-3">
-              <img class="img-fluid" src="/assets/svg/components/mouse-dark-icon.svg" alt="Image Description">
-            </span>
-                        <div class="media-body">
-                            {{$trans('index.section_3.div_4')}}
-                        </div>
-                    </a>
-                    <!-- End Icon Blocks -->
-
-                    <!-- Icon Blocks -->
-                    <a class="media align-items-center" href="#">
-            <span class="u-icon u-icon--md u-icon--shadow rounded-circle p-2 mr-3">
-              <img class="img-fluid" src="/assets/svg/components/box-dark-icon.svg" alt="Image Description">
-            </span>
-                        <div class="media-body">
-                            {{$trans('index.section_3.div_5')}}
-                        </div>
-                    </a>
-                    <!-- End Icon Blocks -->
-                </div>
             </div>
         </div>
         <!-- End Our Work Section -->
@@ -302,59 +242,9 @@ De l'espace en déplacement</span>
     </main>
 </template>
 <script>
-    import VueSlickCarousel from 'vue-slick-carousel'
-    import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-    // optional style for arrows & dots
-    import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 
     export default {
-        components: {
-            VueSlickCarousel
-        },
-        data() {
-            return {
 
-
-                slickOptions: {
-                    //options can be used from the plugin documentation
-                    slidesToShow: 2,
-                    infinite: true,
-                    accessibility: true,
-                    adaptiveHeight: true,
-                    arrows: true,
-                    dots: true,
-                    draggable: true,
-                    edgeFriction: 0.30,
-                    swipe: true,
-                    responsive: [
-                        {
-                            breakpoint: 1200,
-                            settings: {
-                                slidesToShow: 3,
-                                slidesToScroll: 1
-                            }
-                        },
-                        {
-                            breakpoint: 1008,
-                            settings: {
-                                slidesToShow: 1,
-                                slidesToScroll: 1
-                            }
-                        },
-                        {
-                            breakpoint: 800,
-                            settings: {
-                                slidesToShow: 1,
-                                slidesToScroll: 1
-                            }
-                        }
-
-                    ]
-                },
-
-
-            }
-        },
         computed: {
             user() {
                 return window.user
