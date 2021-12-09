@@ -1,8 +1,8 @@
 @extends("layouts.app")
 
 @section("seo")
-    <meta name="description" content="{{$page->meta_description}}" />
-    <meta name="keyword" content="{{$page->meta_keywords}}" />
+  {{--  <meta name="description" content="{{$page->meta_description}}" />
+    <meta name="keyword" content="{{$page->meta_keywords}}" />--}}
 @endsection
 
 @section("content")

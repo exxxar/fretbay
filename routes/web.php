@@ -98,12 +98,12 @@ Route::get("/storage/listings/{dir}/{name}", function ($dir, $name) {
 
 Route::get("/", function (\Illuminate\Http\Request $request) {
 
-    /*$posts = Post::with(["category"])->where("status","PUBLISHED")->paginate(4);
-
+    $posts = Post::with(["category"])->where("status","PUBLISHED")->paginate(4);
+/*
     $page = PageFactory::mainPage();*/
 
     if (is_null(Auth::user()))
-        return view("desktop.pages.index");
+        return view("desktop.pages.index", compact('posts'));
 
     $user = User::self();
 
