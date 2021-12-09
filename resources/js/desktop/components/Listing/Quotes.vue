@@ -164,7 +164,7 @@ export default {
                 this.quotes
         },
         quotes: function () {
-            return [...this.listing.quotes, ...this.quote_list].filter(item=>item.is_valid===true).sort((a, b) => {
+            return [...this.listing.quotes, ...this.quote_list]/*.filter(item=>item.is_valid===true)*/.sort((a, b) => {
                 if (a.quote_validity < b.quote_validity)
                     return 1;
                 if (a.quote_validity > b.quote_validity)

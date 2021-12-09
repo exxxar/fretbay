@@ -80,6 +80,7 @@
                                     Helps
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item cursor-pointer" href="/posts"> {{$trans('menu.item.posts')}}</a>
                                     <a class="dropdown-item cursor-pointer" href="/find-loads"> {{$trans('menu.item.i_am_a_transporter')}}</a>
                                     <a class="dropdown-item cursor-pointer" href="/find-transporter"> {{$trans('menu.item.search_for_a_transporter')}}</a>
                                     <a class="dropdown-item cursor-pointer" href="/how-it-works"> {{$trans('menu.item.how_does_it_work')}}</a>

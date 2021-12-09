@@ -30,7 +30,9 @@
 
             <div class="counters">
                 <span
-                    class="badge badge-primary"><small>{{ listing.status || $trans('profile.listing.in_progress') }}</small></span>
+                    class="badge badge-primary"><small>{{
+                        listing.status || $trans('profile.listing.in_progress')
+                    }}</small></span>
                 <span class="badge badge-purple"
                       v-if="user&&listing.user_id==user.id"><small>{{ $trans('profile.listing.your') }}</small></span>
                 <span class="badge badge-danger" v-if="user&&listing.user_id==user.id&&listing.status=='payed'"><small>Complete</small></span>
@@ -57,7 +59,7 @@
                         > <i class="fas fa-angle-double-right"></i>
                             {{ prepareLangTitle(listing.category.title) || "Empty" }}
                         </a>
-                        <span class="pl-3"  v-else>      {{ prepareLangTitle(listing.category.title) || "Empty" }}</span>
+                        <span class="pl-3" v-else>      {{ prepareLangTitle(listing.category.title) || "Empty" }}</span>
                         <span v-if="listing.category.mode ==='calculator'">
                                                   {{ listing.summary_volume }}  <em
                             class="volume-unit text-bold">m<sup>3</sup></em>
@@ -163,7 +165,8 @@
 
 
                 <div class="col-12 pl-0" v-if="listing.moving_package">
-                    <h5 class="ml-sm-5 ml-0 p-sm-2 p-0 mt-2 mt-sm-0"><i class="fas fa-shipping-fast text-primary"></i><strong v-html="movingPackageTranslate"></strong>
+                    <h5 class="ml-sm-5 ml-0 p-sm-2 p-0 mt-2 mt-sm-0"><i
+                        class="fas fa-shipping-fast text-primary"></i><strong v-html="movingPackageTranslate"></strong>
                     </h5>
                 </div>
 
@@ -217,17 +220,18 @@
             </div>
         </div>
 
-        <div class="card-footer d-md-flex justify-content-between align-items-center px-0">
-            <div class="mb-4 mb-md-0">
+        <div class="card-footer  px-0">
+
+
+            <div class="container">
 
                 <span class="u-label u-label--xs u-label--primary text-uppercase letter-spacing-0_06 mr-2 mb-2"
-                   href="#"
-                   v-if="listing.category.mode ==='article' && listing.articles.length===1"
-                   v-for="property in listing.category.properties"
+                      href="#"
+                      v-if="listing.category.mode ==='article' && listing.articles.length===1"
                 >
-                    {{ prepareLangTitle(property.title) || "Empty" }}:
-                    {{ listing.articles[0].properties[property.slug].value }}
+                    {{ prepareArticles(listing.category.properties) }}
                 </span>
+
 
                 <div class="row w-100 mx-auto my-2">
                     <div class="badge rounded-pill px-3 py-2 mx-1" style="background:rgba(15,177,93,0.48);">
@@ -241,25 +245,11 @@
                     </div>
 
                     <strong class="w-100 mt-2 p-2"
-                            v-if="listing.category.mode ==='article' && listing.articles.length>1">{{ listing.articles.length }}
+                            v-if="listing.category.mode ==='article' && listing.articles.length>1">{{
+                            listing.articles.length
+                        }}
                         {{ $trans('profile.listing.articles') }}:</strong>
 
-
-                    <div class="d-flex space-between flex-wrap mt-2 w-100"
-                         v-if="listing.category.mode ==='article' && listing.articles.length>=1">
-
-                        <div
-                            v-for="property in listing.category.properties"
-                        >
-                            <span href="" class="badge badge-primary mr-2 mb-2" v-for="item in listing.articles">
-                                {{ prepareLangTitle(item.title) || "Empty" }}:
-                                <strong>{{ item.properties[property.slug].value }}</strong>
-                                <small>
-                                    {{ prepareLangTitle(property.title) || "Empty" }}
-                                </small>
-                            </span>
-                        </div>
-                    </div>
 
                     <div class="badge rounded-pill px-3 py-2 mx-1" style="background:rgba(15,177,93,0.48);"
                          v-if="listing.category.mode ==='grid'"
@@ -275,6 +265,24 @@
             </div>
 
 
+            <div class="container">
+                <div class="row" v-if="listing.category.mode ==='article' && listing.articles.length>=1">
+                    <div class="col-md-3 m-0 p-1" v-for="item in listing.articles">
+                        <div class="card">
+                            <div class="card-body p-3">
+                                <h5> {{ prepareLangTitle(item.title) || "Empty" }}</h5>
+
+                                <p v-for="property in listing.category.properties" class="m-0 mb-2" >
+
+                                    {{ prepareLangTitle(property.title) || "Empty" }}:
+                                    <strong>{{ item.properties[property.slug].value }}</strong>
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Modal -->
@@ -462,6 +470,42 @@ export default {
         this.modalPrefix = uuidv4()
     },
     methods: {
+        /*   prepareCategoriesProperties(properties , articles){
+
+               let tmp = '';
+
+               let tmp2 = [];
+
+
+                   articles.forEach(item=>{
+
+                       let tmpItem = {
+                           title: (this.prepareLangTitle(item.title) || "Empty"),
+
+                       }
+                       console.log("article=>",(this.prepareLangTitle(item.title) || "Empty"),"value=>", item.properties[property.slug].value,"title=>",(this.prepareLangTitle(property.title) || "Empty"))
+                   })
+
+
+
+            /!*   <span href="" className="badge badge-primary mr-2 mb-2" v-for="item in listing.articles">
+                                   {{prepareLangTitle(item.title) || "Empty"}}:
+                                   <strong>{{item.properties[property.slug].value}}</strong>
+                                   <small>
+                                       {{prepareLangTitle(property.title) || "Empty"}}
+                                   </small>
+                               </span>*!/
+           },*/
+        prepareArticles(properties) {
+
+            let tmp = ''
+
+            properties.forEach(property => {
+                tmp += (this.prepareLangTitle(property.title) || "Empty") + this.listing.articles[0].properties[property.slug].value
+            })
+
+            return tmp
+        },
         removeListing() {
             axios.delete("/listing/" + this.listing.id).then(resp => {
                 this.$emit("update")

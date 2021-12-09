@@ -7,14 +7,17 @@
 
 @section("content")
     <header-component></header-component>
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+    <div class="container mt-5 p-0">
+        <div class="row p-0">
+            <div class="col-md-8 col-md-offset-2 p-0">
                 <div class="post w-100" style="position: sticky; top:70px;">
                     <h1>{{ $post->title }}</h1>
                     <img src="{{ Voyager::image( $post->image ) }}" style="width:100%">
                     <p>{!! $post->body !!}</p>
-
+                    <hr>
+                    <small><strong>Posted at {{$post->created_at}}</strong></small>
+                    <hr>
+                    <comments-component post-id="{{$post->id}}"></comments-component>
                 </div>
 
             </div>

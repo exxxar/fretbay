@@ -118,11 +118,30 @@ Route::get("/", function (\Illuminate\Http\Request $request) {
 
 })->name("desktop.index");
 
+Route::get('posts', function(Request $request){
+    $posts = Post::where("status","PUBLISHED")->paginate(20);
+    return view('desktop.pages.posts', compact('posts'));
+});
+
 Route::get('post/{slug}', function($slug){
     $post = Post::where("status","PUBLISHED")->where('slug', '=', $slug)->firstOrFail();
     $posts = Post::where("status","PUBLISHED")->paginate(3);
     return view('desktop.pages.post', compact('post','posts'));
 });
+
+Route::get("/comments/{postId}",[\App\Http\Controllers\BlogCommentController::class, "getCommentForPost"] );
+Route::post("/comments",[\App\Http\Controllers\BlogCommentController::class, "addComment"] );
+Route::delete("/comments/{commentId}",[\App\Http\Controllers\BlogCommentController::class, "removeComment"] );
+
+Route::get("/content/{pageId}",[\App\Http\Controllers\ModifiedContentController::class, "getContentByPage"] );
+Route::post("/content",[\App\Http\Controllers\ModifiedContentController::class, "addContentByPage"] );
+Route::put("/content/{pageId}",[\App\Http\Controllers\ModifiedContentController::class, "updateContentByPage"] );
+Route::delete("/content/{pageId}",[\App\Http\Controllers\ModifiedContentController::class, "updateContentByPage"] );
+
+Route::get("/statistic/current-day",[\App\Http\Controllers\StatisticController::class, "getCurrentDayStatistic"] );
+Route::post("/statistic/period",[\App\Http\Controllers\StatisticController::class, "getAnyPeriodStatistic"] );
+
+Route::post("/mailing",[\App\Http\Controllers\MailingController::class, "sendMails"] )->middleware(["auth"]);
 
 Route::get('page/{slug}', function($slug){
     $page = Page::where("status","ACTIVE")->where('slug', '=', $slug)->firstOrFail();

@@ -52,6 +52,10 @@ import "vue-select/dist/vue-select.css";
 
 Vue.component('listing-component', require('./components/Listing/Listing.vue').default);
 Vue.component('orders-component', require('./components/Orders/Orders.vue').default);
+Vue.component('comment-item-component', require('./components/Comments/CommentItem.vue').default);
+Vue.component('comments-component', require('./components/Comments/Comments.vue').default);
+
+Vue.component('add-comment-form-component', require('./components/Comments/AddCommentForm.vue').default);
 
 //components
 Vue.component('preloader-component', require('../desktop/components/Preloader.vue').default);
