@@ -185,13 +185,7 @@
                         this.active_category = this.categories[0];
                         this.things = this.active_category.subcategories;
 
-
-                        console.log("categories", this.categories)
-                        console.log("active_category", this.active_category)
-                        console.log("things", this.things)
-
-
-                        /*this.active_category = this.subcategories[0].id;*/
+                                                /*this.active_category = this.subcategories[0].id;*/
                     })
             },
             chooseSubcategory(id) {

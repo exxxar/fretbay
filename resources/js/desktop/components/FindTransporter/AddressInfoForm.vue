@@ -206,8 +206,9 @@
         },
         methods: {
             nextStep() {
-                if (window.user) {
+                if (!window.user.is_guest) {
                     let user = window.user
+                    console.log("USER",user)
                     this.$store.dispatch('editNewListing', {key: 'user_id', value: user.id});
                     // this.$store.dispatch('editNewListing', {key:'articles', value:this.articles});
                     let formData = new FormData();

@@ -468,6 +468,7 @@ export default {
     },
     created() {
         this.modalPrefix = uuidv4()
+        console.log("item=>",this.listing)
     },
     methods: {
         /*   prepareCategoriesProperties(properties , articles){

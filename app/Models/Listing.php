@@ -22,6 +22,7 @@ class Listing extends Model
         'place_of_delivery',
         'shipping_date_from',
         'shipping_date_to',
+        'volume_items',
         'unshipping_date_from',
         'unshipping_date_to',
         'additional_info',
@@ -48,6 +49,7 @@ class Listing extends Model
         'articles' => 'array',
         'place_of_loading' => 'array',
         'place_of_delivery' => 'array',
+        'volume_items' => 'array',
         'messages' => 'array',
         'images' => 'array',
     ];

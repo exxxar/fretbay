@@ -1,6 +1,6 @@
 <template>
     <div class="card w-100 mb-1 mt-1">
-        <div class="card-body">
+        <div class="card-body p-1">
             <div class="row p-0 m-0">
                 <div class="col-12 col-md-2" v-if="item.user">
                     <img v-lazy="item.user.profile.image" style="max-height:100px; object-fit: cover;" alt="">

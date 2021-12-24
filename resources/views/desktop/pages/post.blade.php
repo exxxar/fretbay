@@ -7,8 +7,8 @@
 
 @section("content")
     <header-component></header-component>
-    <div class="container mt-5 p-0">
-        <div class="row p-0">
+    <div class="container mt-5 p-1">
+        <div class="row p-0 m-0">
             <div class="col-md-8 col-md-offset-2 p-0">
                 <div class="post w-100" style="position: sticky; top:70px;">
                     <h1>{{ $post->title }}</h1>

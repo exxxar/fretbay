@@ -130,6 +130,7 @@ const actions = {
             });
     },
     async addListing({state, commit}, listing) {
+
         return await axios
             .post('/api/listing', listing, {
                 headers: {

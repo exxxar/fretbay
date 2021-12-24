@@ -50,7 +50,7 @@ class ListingController extends Controller
         $listings = Listing::with(['category', 'subcategory', 'thing', 'messages', 'quotes'])
             ->where("is_active", true)
             ->where("status", "")
-            ->where("expiration_date", "<", Carbon::now())
+            ->where("expiration_date", ">", Carbon::now())
             ->orderByDesc('created_at')
             ->paginate(100);
         return response()->json([
@@ -150,7 +150,7 @@ class ListingController extends Controller
         $postal = $request->postal ?? null;
 
         $listings = Listing::with(['category', 'subcategory', 'thing', 'messages', 'quotes'])
-            ->where("status","");
+            ->where("status", "");
 
         if (count($distance_range_value) > 0)
             $listings = $listings->whereBetween("distance", $distance_range_value);
@@ -212,7 +212,7 @@ class ListingController extends Controller
             $listings = $listings->whereIn("category_id", $request->categories);
 
         $listings = $listings
-            ->where("expiration_date", "<", Carbon::now())
+            ->where("expiration_date", ">", Carbon::now())
             ->orderByDesc('created_at')->paginate(100);
 
         return response()->json([
@@ -238,10 +238,14 @@ class ListingController extends Controller
      */
     public function store(Request $request)
     {
+
+
         $place_of_loading = json_decode($request->get('place_of_loading'));
         $place_of_delivery = json_decode($request->get('place_of_delivery'));
+        $volume_items = json_decode($request->get('volume_items'));
 
         $user_id = $request->get('user_id') ?? null;
+
 
         $listing = Listing::create([
             'title' => $request->get('title') ?? '',
@@ -264,12 +268,13 @@ class ListingController extends Controller
                 ) / 1000),
 
             'is_active' => true,
-            'expiration_date' => Carbon::createFromTimestampUTC(intval($request->get('unshipping_date_to')) / 1000),
+            'expiration_date' => Carbon::createFromTimestampMsUTC(intval($request->get('unshipping_date_to')) / 1000),
             'category_id' => $request->get('category_id') ?? null,
             'subcategory_id' => $request->get('subcategory_id') ?? null,
             'thing_id' => $request->get('thing_id') ?? null,
             'user_id' => $user_id,
             'summary_volume' => $request->get('summary_volume') ?? 0,
+            'volume_items' => $volume_items,
         ]);
 
         event(new NotificationEvent(
@@ -452,7 +457,7 @@ class ListingController extends Controller
         if (!is_null($latestQuote)) {
 
             $latestQuote->status = 1;
-         //   $latestQuote->valid_until_date = Carbon::parse($latestQuote->created_at)->addHours($hours[$latestQuote->quote_validity ?? 3]);
+            //   $latestQuote->valid_until_date = Carbon::parse($latestQuote->created_at)->addHours($hours[$latestQuote->quote_validity ?? 3]);
             $latestQuote->save();
 
             event(new NotificationEvent(
@@ -592,7 +597,7 @@ class ListingController extends Controller
             "user_id" => $user_id,
             "listing_id" => $request->listing_id,
             "quote_id" => $request->quote_id,
-            "amount" =>($latestQuote->price * (max($user->tax, 1) ?? 15)) / 100,
+            "amount" => ($latestQuote->price * (max($user->tax, 1) ?? 15)) / 100,
             "tax_amount" => $user->tax ?? 15,
             "currency" => "EUR",
             "type" => "card",

@@ -50,7 +50,13 @@ const mutations = {
         state.step = payload;
     },
     editNewListing(state, payload) {
-        state.listing[payload.key] = payload.value;
+
+        if (typeof payload.value == 'object')
+            state.listing[payload.key] = JSON.stringify(payload.value);
+        else
+            state.listing[payload.key] = payload.value;
+
+        console.log("push to listing",payload.key, " =>",payload.value )
     },
 };
 export default {
