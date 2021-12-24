@@ -221,8 +221,7 @@
         </div>
 
         <div class="card-footer  px-0">
-
-
+            
             <div class="container">
 
                 <span class="u-label u-label--xs u-label--primary text-uppercase letter-spacing-0_06 mr-2 mb-2"
@@ -264,7 +263,6 @@
                 </div>
             </div>
 
-
             <div class="container">
                 <div class="row" v-if="listing.category.mode ==='article' && listing.articles.length>=1">
                     <div class="col-md-3 m-0 p-1" v-for="item in listing.articles">
@@ -282,6 +280,24 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="container" v-if="listing.volume_items">
+                <h5>Inventor</h5>
+                <div class="d-flex flex-nowrap" style="overflow-x: auto;">
+                    <div class="p-1" v-for="item in listing.volume_items">
+                        <div class="card" style="width:200px;" >
+                            <img class="card-img inverted-img mt-7" v-lazy="item.item.image" alt="Card image">
+                            <div class="card-img-overlay">
+                                <h6 class="card-title text-dark"> {{item.item.title}}:{{item.quantity}}</h6>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
             </div>
         </div>
 
