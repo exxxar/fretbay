@@ -50,7 +50,7 @@ class ListingController extends Controller
         $listings = Listing::with(['category', 'subcategory', 'thing', 'messages', 'quotes'])
             ->where("is_active", true)
             ->where("status", "")
-            ->where("expiration_date", ">", Carbon::now())
+            ->whereDate("expiration_date", ">", Carbon::now())
             ->orderByDesc('created_at')
             ->paginate(100);
         return response()->json([
@@ -63,7 +63,8 @@ class ListingController extends Controller
         $listings = Listing::with(['category', 'subcategory', 'thing', 'messages', 'quotes'])
             ->where('is_active', true)
             ->where("user_id", Auth::user()->id)
-            ->orderByDesc('created_at')
+            ->whereDate("expiration_date", ">=", Carbon::now())
+            ->orderByDesc('expiration_date')
             ->paginate(15);
 
         return response()->json([
@@ -76,9 +77,13 @@ class ListingController extends Controller
     {
 
         $listings = Listing::with(['category', 'subcategory', 'thing', 'messages', 'quotes'])
-            ->where('is_active', false)
+            ->where(function ($q) {
+                $q->orWhereDate("expiration_date", "<", Carbon::now())
+                    ->orWhere('is_active', false);
+
+            })
             ->where("user_id", Auth::user()->id)
-            ->orderByDesc('created_at')
+            ->orderByDesc('expiration_date')
             ->paginate(15);
 
         return response()->json([
@@ -191,12 +196,12 @@ class ListingController extends Controller
                 ]);
 
         if (!is_null($date_from))
-            $listings = $listings->where("shipping_date_from", ">", $date_from)
-                ->orWhere("unshipping_date_from", ">", $date_from);
+            $listings = $listings->whereDate("shipping_date_from", ">", $date_from)
+                ->orWhereDate("unshipping_date_from", ">", $date_from);
 
         if (!is_null($date_to))
-            $listings = $listings->where("shipping_date_to", "<", $date_to)
-                ->orWhere("unshipping_date_to", "<", $date_to);
+            $listings = $listings->whereDate("shipping_date_to", "<", $date_to)
+                ->orWhereDate("unshipping_date_to", "<", $date_to);
 
         if (!is_null($address_from))
             $listings = $listings->where("place_of_loading->place_name", $address_from->place_name);
@@ -212,7 +217,7 @@ class ListingController extends Controller
             $listings = $listings->whereIn("category_id", $request->categories);
 
         $listings = $listings
-            ->where("expiration_date", ">", Carbon::now())
+            ->whereDate("expiration_date", ">", Carbon::now())
             ->orderByDesc('created_at')->paginate(100);
 
         return response()->json([
@@ -240,8 +245,8 @@ class ListingController extends Controller
     {
 
 
-        $place_of_loading = json_decode($request->get('place_of_loading'));
-        $place_of_delivery = json_decode($request->get('place_of_delivery'));
+        $place_of_loading = json_decode(json_decode($request->get('place_of_loading')));
+        $place_of_delivery = json_decode(json_decode( $request->get('place_of_delivery')));
         $volume_items = json_decode($request->get('volume_items'));
 
         $user_id = $request->get('user_id') ?? null;
@@ -268,7 +273,7 @@ class ListingController extends Controller
                 ) / 1000),
 
             'is_active' => true,
-            'expiration_date' => Carbon::createFromTimestampMsUTC(intval($request->get('unshipping_date_to')) / 1000),
+            'expiration_date' => Carbon::createFromTimestampUTC(intval($request->get('shipping_date_to')) / 1000),
             'category_id' => $request->get('category_id') ?? null,
             'subcategory_id' => $request->get('subcategory_id') ?? null,
             'thing_id' => $request->get('thing_id') ?? null,

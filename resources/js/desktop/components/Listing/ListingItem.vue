@@ -221,15 +221,15 @@
         </div>
 
         <div class="card-footer  px-0">
-            
-            <div class="container">
 
-                <span class="u-label u-label--xs u-label--primary text-uppercase letter-spacing-0_06 mr-2 mb-2"
+           <div class="container">
+
+<!--                <span class="u-label u-label&#45;&#45;xs u-label&#45;&#45;primary text-uppercase letter-spacing-0_06 mr-2 mb-2"
                       href="#"
                       v-if="listing.category.mode ==='article' && listing.articles.length===1"
                 >
                     {{ prepareArticles(listing.category.properties) }}
-                </span>
+                </span>-->
 
 
                 <div class="row w-100 mx-auto my-2">
@@ -283,8 +283,8 @@
             </div>
 
             <div class="container" v-if="listing.volume_items">
-                <h5>Inventor</h5>
-                <div class="d-flex flex-nowrap" style="overflow-x: auto;">
+
+                    <vue-custom-scrollbar  class="w-100 mt-2 d-flex flex-nowrap" :settings="settingsScroll">
                     <div class="p-1" v-for="item in listing.volume_items">
                         <div class="card" style="width:200px;" >
                             <img class="card-img inverted-img mt-7" v-lazy="item.item.image" alt="Card image">
@@ -294,9 +294,10 @@
                             </div>
                         </div>
                     </div>
+                    </vue-custom-scrollbar>
 
 
-                </div>
+
 
             </div>
         </div>
@@ -371,6 +372,9 @@ import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 import VueGallerySlideshow from 'vue-gallery-slideshow'
 import {v4 as uuidv4} from 'uuid';
 
+import vueCustomScrollbar from 'vue-custom-scrollbar'
+import "vue-custom-scrollbar/dist/vueScrollbar.css"
+
 export default {
     props: {
         listing: Object,
@@ -383,7 +387,7 @@ export default {
 
 
     components: {
-        VueSlickCarousel, VueGallerySlideshow
+        VueSlickCarousel, VueGallerySlideshow, vueCustomScrollbar
     },
     data() {
         return {
@@ -391,6 +395,11 @@ export default {
             imageIndex: null,
 
             tmp_favorites: [],
+            settingsScroll: {
+                suppressScrollY: false,
+                suppressScrollX: false,
+                wheelPropagation: false
+            },
             settings: {
                 "dots": false,
                 "arrows": true,
