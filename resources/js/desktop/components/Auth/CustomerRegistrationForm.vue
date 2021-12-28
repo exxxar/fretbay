@@ -10,6 +10,16 @@
                 <div class="row">
 
                     <div class="col-12">
+                        <p>
+                            <em>
+                            On Allotrans, you receive in a few clicks cheap quotes for all your transport and moving requests.
+                            All you have to do is publish a listing with a clear and precise title. For example "Searching carrier for 3 packages", "Moving 20m2 Paris-London", or "Searching carrier UK- Mover in Spain for piano"
+                            The interested carriers then make you offers, and it is up to you to choose the one that best suits your needs. And this without any management fees!
+                            </em>
+                        </p>
+                        <hr>
+                    </div>
+                    <div class="col-6 col-sm-6">
 
 
                         <input type="radio" name="type" class="suf1-radio" id="radioBox01"
@@ -20,7 +30,7 @@
 
 
                     </div>
-                    <div class="col-12">
+                    <div class="col-6 col-sm-6">
                         <input type="radio" name="type" class="suf1-radio" id="radioBox02"
                                v-model="userType"
                                value="professional" required>

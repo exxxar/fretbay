@@ -7,7 +7,19 @@
             <div id="signup-transpoter" data-target-group="idForm">
 
 
+
                 <div class="row">
+                    <div class="col-12">
+                        <p>
+                            <em>
+                            The process is simple.
+                            Every day, hundreds of people post a listing to request a move, special parcel transportor a vehicle or animal move. For example, "Looking for an independent carrier for an economical move" or "Looking for a cheap move in Wales"
+                            All you have to do is look at the ads that correspond to your travel locations to find loads and deliveries that will prevent you from returning empty. Then, you just have to propose a quote to the advertiser who will accept, or refuse, your offer. And all this for free!
+                            </em>
+                        </p>
+                        <hr>
+                    </div>
+
                     <div class="col-md-12 col-sm-12">
                         <div class="js-form-message mb-3">
                             <div class="js-focus-state form">

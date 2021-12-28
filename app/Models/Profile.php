@@ -47,14 +47,14 @@ class Profile extends Model
     ];
 
     protected $casts = [
-        //"transport_specialities" => "array",
-        //"areas_of_expertise" => "array",
+        "transport_specialities" => "array",
+        "areas_of_expertise" => "array",
         "number_of_drivers" => "integer",
         "cargo_insurance_amount" => "integer",
         "is_approved" => "boolean",
         "is_first_activation" => "boolean",
-       // "payment_methods" => "array",
-       // "spoken_languages" => "array",
+        "payment_methods" => "array",
+        "spoken_languages" => "array",
 
     ];
 
