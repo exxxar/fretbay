@@ -439,7 +439,7 @@
         @yield("content")
     </tr>
     <tr>
-        @yield("content-bottom")
+
     </tr>
     <tr>
         <td align="center" valign="top" width="100%" style="background-color: #f7f7f7; height: 100px;">
