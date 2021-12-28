@@ -19,7 +19,7 @@ class MailingMail extends Mailable
      *
      * @return void
      */
-    public function __construct(string $title,string $message)
+    public function __construct($title, $message)
     {
         $this->message = $message;
         $this->title  = $title;
@@ -33,11 +33,11 @@ class MailingMail extends Mailable
     public function build()
     {
         $tmp = [
-            "message"=>$this->message,
-            "title"=>$this->title,
+            "message"=>"test",
+            "title"=>"test",
         ];
 
-        Log::info(print_r($tmp, true));
+
         return $this->view('emails.mailing')->with($tmp);
     }
 }
