@@ -12,16 +12,16 @@ class MailingMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $message;
+    public $text;
     public $title;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($title, $message)
+    public function __construct($title, $text)
     {
-        $this->message = $message;
+        $this->text = $text;
         $this->title  = $title;
     }
 
@@ -33,8 +33,8 @@ class MailingMail extends Mailable
     public function build()
     {
         $tmp = [
-            "message"=>"test",
-            "title"=>"test",
+            "send_message"=>"test",
+            "send_title"=>"test",
         ];
 
 

@@ -7,12 +7,12 @@
                 <tbody>
                 <tr>
                     <td class="header-lg">
-                        {{$title}}
+                        {{$send_title}}
                     </td>
                 </tr>
                 <tr>
                     <td class="free-text">
-                        {{$message}}
+                        {{$send_message}}
                     </td>
                 </tr>
                 <tr>
