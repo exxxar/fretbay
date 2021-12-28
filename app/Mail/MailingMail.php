@@ -33,8 +33,8 @@ class MailingMail extends Mailable
     public function build()
     {
         $tmp = [
-            "send_message"=>"test",
-            "send_title"=>"test",
+            "send_message"=>$this->text,
+            "send_title"=>$this->title,
         ];
 
 

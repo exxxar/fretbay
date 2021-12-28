@@ -2,7 +2,9 @@
 
 namespace App\Mail;
 
+use App\User;
 use Carbon\Carbon;
+
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -31,6 +33,9 @@ class AcceptQuoteMail extends Mailable
      */
     public function build()
     {
+
+        $user = User::find($this->quote->user_id);
+
         return $this->view('emails.accept-quote')
             ->with([
                 'price' => $this->quote->price ?? "",
@@ -42,7 +47,7 @@ class AcceptQuoteMail extends Mailable
                 'status' => $this->quote->status ?? 0,
                 'currency' => $this->quote->currency ?? "EUR",
                 'listing_id' => $this->quote->listing_id ?? null,
-                'user_id' => $this->quote->user_id ?? null
+                'user_name' =>  $user->name?? null
             ]);
     }
 }

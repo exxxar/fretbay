@@ -33,11 +33,17 @@
                                         </tr>
                                         <tr>
                                             <td class="code-block">
-
-                                                <p>Listing id <strong>{{$listing_id}}</strong></p>
-                                                <p>Sender id <strong>{{$sender_id}}</strong></p>
-                                                <p>Recipient id <strong>{{$recipient_id}}</strong></p>
-                                                <p>Message <strong>{{$text}}</strong></p>
+                                                <p>Listing reference <a
+                                                        href="https://allotrans.com/single/listing/{{$listing_id}}"></a><strong>#{{$listing_id}}</strong>
+                                                </p>
+                                                @if ($sender->profile->type=="transporter")
+                                                    <p>Sender <a
+                                                            href="https://allotrans.com/profile/{{$sender_id}}"></a>
+                                                        <strong>{{$sender->name}}</strong></p>
+                                                @endif
+                                                <p>Message <strong>{{$text}}</strong> <a
+                                                        href="https://allotrans.com/single/message/{{$id}}">link to
+                                                        dialog</a></p>
                                                 <p>Sended at <strong>{{$created_at}}</strong></p>
 
                                             </td>
@@ -136,11 +142,11 @@
                                                                              style="height:45px;v-text-anchor:middle;width:228px;"
                                                                              arcsize="15%" strokecolor="#ffffff"
                                                                              fillcolor="#ff6f6f">
-                                                                    <w:anchorlock/>
-                                                                    <center
-                                                                        style="color:#ffffff;font-family:Helvetica, Arial, sans-serif;font-size:14px;font-weight:regular;">
-                                                                        My Account
-                                                                    </center>
+                                                                <w:anchorlock/>
+                                                                <center
+                                                                    style="color:#ffffff;font-family:Helvetica, Arial, sans-serif;font-size:14px;font-weight:regular;">
+                                                                    My Account
+                                                                </center>
                                                                 </v:roundrect>
                                                                 <![endif]--><a class="button-width" href="http://"
                                                                                style="background-color:#ff6f6f;border-radius:5px;color:#ffffff;display:inline-block;font-family:'Cabin', Helvetica, Arial, sans-serif;font-size:14px;font-weight:regular;line-height:45px;text-align:center;text-decoration:none;-webkit-text-size-adjust:none;mso-hide:all;">View
@@ -198,11 +204,11 @@
                                                                              style="height:45px;v-text-anchor:middle;width: 228px;"
                                                                              arcsize="15%" strokecolor="#ffffff"
                                                                              fillcolor="#ff6f6f">
-                                                                    <w:anchorlock/>
-                                                                    <center
-                                                                        style="color:#ffffff;font-family:Helvetica, Arial, sans-serif;font-size:14px;font-weight:regular;">
-                                                                        My Account
-                                                                    </center>
+                                                                <w:anchorlock/>
+                                                                <center
+                                                                    style="color:#ffffff;font-family:Helvetica, Arial, sans-serif;font-size:14px;font-weight:regular;">
+                                                                    My Account
+                                                                </center>
                                                                 </v:roundrect>
                                                                 <![endif]--><a class="button-width" href="http://"
                                                                                style="background-color:#ff6f6f;border-radius:5px;color:#ffffff;display:inline-block;font-family:'Cabin', Helvetica, Arial, sans-serif;font-size:14px;font-weight:regular;line-height:45px;text-align:center;text-decoration:none; -webkit-text-size-adjust:none;mso-hide:all;">View

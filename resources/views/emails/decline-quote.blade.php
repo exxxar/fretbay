@@ -48,8 +48,8 @@
                         </p>
                         <p>Status <strong>{{$status}}</strong></p>
                         <p>Currency <strong>{{$currency}}</strong></p>
-                        <p>Listing id <strong>{{$listing_id}}</strong></p>
-                        <p>User id <strong>{{$user_id}}</strong></p>
+                        <p>Listing reference <a href="https://allotrans.com/single/listing/{{$listing_id}}"></a><strong>#{{$listing_id}}</strong></p>
+                        <p>User account name <strong>{{$user_name}}</strong></p>
 
                     </td>
                 </tr>
