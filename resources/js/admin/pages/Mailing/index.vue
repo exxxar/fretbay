@@ -33,7 +33,7 @@
                 </div>
 
                 <div class="col-sm-12 mt-2">
-                    
+
                     <button class="btn btn-primary" :disabled="loading">
                      <span v-if="loading" class="spinner-border spinner-border-sm" role="status"
                            aria-hidden="true"></span>
@@ -69,11 +69,13 @@ export default {
                 this.title = null
                 this.message = null
 
-                this.loading = true
+                this.loading = false
 
                 this.result_message = "Успешно отправлено!"
             }).catch(() => {
                 this.result_message = "Ошибка отправки!"
+
+                this.loading = false
             })
         }
     }
