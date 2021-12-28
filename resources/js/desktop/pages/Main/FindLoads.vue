@@ -254,7 +254,7 @@
                                 </div>
 
 
-                                <div class="col-12 mt-2">
+                                <div class="col-12 mt-2 pb-5">
                                     <small>{{ $trans('profile.find_loads.small_8') }}</small>
                                     <date-picker v-model="filter.date_from" @input="changeDate"
                                                  :placeholder="$trans('profile.find_loads.input_placeholder_5')"
