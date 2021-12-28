@@ -91,6 +91,9 @@
             } else {
                 this.address = 'place_of_loading'
             }
+
+            this.listing[this.address] = null;
+
         },
         methods: {
             // changeDateFrom(date) {

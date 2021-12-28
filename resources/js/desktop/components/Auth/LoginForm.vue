@@ -59,7 +59,7 @@
                     <div class="js-focus-state form">
 
                         <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                            {{ error_message }}
+                            <div v-html="error_message"></div>
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -126,7 +126,23 @@ export default {
                 window.location = '/'
             }).catch(error => {
                 this.loading = false;
-                this.error_message = error.response.data.message;
+
+                let data = error.response.data;
+                let tmp = data.message;
+
+                let keys = Object.keys(data.errors)
+
+                keys.forEach(item=>{
+                    data.errors[item].forEach(subItem=>{
+                        tmp += "<br>"+subItem
+                    })
+                    //console.log("key",item);
+                })
+
+                //tmp += data.errors.email[0]
+
+                this.error_message = tmp;
+
 
 
                 if (error.response.status === 403)

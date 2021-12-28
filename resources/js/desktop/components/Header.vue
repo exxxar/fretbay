@@ -43,19 +43,12 @@
 
                             <!--  Request a quote -->
 
-                            <li class="nav-item  u-header__nav-item" v-if="user.is_guest">
-                                <a href="/find-transporter" class="nav-link btn btn-link w-100 p-3 text-center">
-                                    {{$trans('menu.item.request_a_quote')}}
-                                </a>
 
-                            </li>
-
-                            <li class="nav-item  u-header__nav-item"  v-if="user">
+                            <li class="nav-item  u-header__nav-item" v-if="user.is_guest||user.is_customer">
                                 <a href="/find-transporter" class="nav-link btn btn-link w-100 p-3 text-center"
                                    v-bind:class="{'btn-outline-primary':user.is_customer}"
-                                   v-if="user.is_customer"
                                 >
-                                    {{$trans('menu.item.request_a_quote')}}
+                                    {{ $trans('menu.item.request_a_quote') }}
                                 </a>
 
                             </li>
@@ -64,9 +57,9 @@
 
                             <!--  Find loads -->
 
-                            <li class="nav-item  u-header__nav-item ">
+                            <li class="nav-item  u-header__nav-item " v-if="user.is_guest||user.is_transporter">
                                 <a href="/find-loads" class="nav-link btn btn-link w-100 p-3 text-center">
-                                    {{$trans('menu.item.find_loads')}}
+                                    {{ $trans('menu.item.find_loads') }}
                                 </a>
                             </li>
 
@@ -75,30 +68,40 @@
 
 
                             <li class="nav-item dropdown">
-                                <a class="nav-link btn btn-link p-3 dropdown-toggle w-100 " href="#" id="navbarDropdownMenuLink"
+                                <a class="nav-link btn btn-link p-3 dropdown-toggle w-100 " href="#"
+                                   id="navbarDropdownMenuLink"
                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Helps
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item cursor-pointer" href="/posts"> {{$trans('menu.item.posts')}}</a>
-                                    <a class="dropdown-item cursor-pointer" href="/find-loads"> {{$trans('menu.item.i_am_a_transporter')}}</a>
-                                    <a class="dropdown-item cursor-pointer" href="/find-transporter"> {{$trans('menu.item.search_for_a_transporter')}}</a>
-                                    <a class="dropdown-item cursor-pointer" href="/how-it-works"> {{$trans('menu.item.how_does_it_work')}}</a>
-                                    <a class="dropdown-item cursor-pointer" href="/fequently-asked-questions"> {{$trans('menu.item.faq')}}.</a>
+                                    <a class="dropdown-item cursor-pointer" href="/posts">
+                                        {{ $trans('menu.item.posts') }}</a>
+                                    <a class="dropdown-item cursor-pointer" href="/find-loads"
+                                       v-if="user.is_guest||user.is_transporter">
+                                        {{ $trans('menu.item.i_am_a_transporter') }}</a>
+                                    <a class="dropdown-item cursor-pointer" href="/find-transporter"
+                                       v-if="user.is_guest||user.is_customer">
+                                        {{ $trans('menu.item.search_for_a_transporter') }}</a>
+                                    <a class="dropdown-item cursor-pointer" href="/how-it-works">
+                                        {{ $trans('menu.item.how_does_it_work') }}</a>
+                                    <a class="dropdown-item cursor-pointer" href="/fequently-asked-questions">
+                                        {{ $trans('menu.item.faq') }}.</a>
                                     <!--        <a class="dropdown-item" href="/recruitment">Recruitment</a>-->
                                     <!--   <a class="dropdown-item cursor-pointer" href="/contact-us">Contact Us</a>-->
-                                    <a class="dropdown-item cursor-pointer" href="/privacy"> {{$trans('menu.item.privacy')}}</a>
+                                    <a class="dropdown-item cursor-pointer" href="/privacy">
+                                        {{ $trans('menu.item.privacy') }}</a>
                                 </div>
                             </li>
 
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle p-3 btn btn-link" href="#" id="navbarDropdownMenuLink2"
+                                <a class="nav-link dropdown-toggle p-3 btn btn-link" href="#"
+                                   id="navbarDropdownMenuLink2"
                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    {{currentLocale}}
+                                    {{ currentLocale }}
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
                                     <a class="dropdown-item" v-for="lang in langOptions"
-                                       @click="selectLang(lang.locale_name)">{{lang.name}}</a>
+                                       @click="selectLang(lang.locale_name)">{{ lang.name }}</a>
 
                                 </div>
                             </li>
@@ -108,24 +111,24 @@
                                 <a class="btn btn-primary dropdown-toggle text-white w-100 " href="#"
                                    id="signupDropdown"
                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    {{$trans('menu.item.sign_up')}}
+                                    {{ $trans('menu.item.sign_up') }}
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="signupDropdown">
                                     <a class="dropdown-item cursor-pointer" data-toggle="modal"
-                                       data-target="#signUp-transporter"> {{$trans('menu.item.sign_up_transporter')}}</a>
+                                       data-target="#signUp-transporter">
+                                        {{ $trans('menu.item.sign_up_transporter') }}</a>
                                     <a class="dropdown-item cursor-pointer" data-toggle="modal"
-                                       data-target="#signUp-customer"> {{$trans('menu.item.sign_up_customer')}}</a>
+                                       data-target="#signUp-customer"> {{ $trans('menu.item.sign_up_customer') }}</a>
                                 </div>
                             </li>
 
                             <li class="nav-item u-header__nav-item-btn p-0" v-if="user.is_guest">
                                 <button type="button" class="btn btn-link w-100 btn-outline-primary" data-toggle="modal"
                                         data-target="#signIn">
-                                    {{$trans('menu.item.sign_in')}}
+                                    {{ $trans('menu.item.sign_in') }}
                                 </button>
                             </li>
                             <!-- End Button -->
-
 
 
                             <!-- Search -->
@@ -161,9 +164,8 @@
                     <!-- End Navigation -->
 
 
-
-                    <ul class="navbar-nav u-header__secondary-nav d-flex justify-content-center flex-row flex-nowrap" v-if="user.is_guest===false">
-
+                    <ul class="navbar-nav u-header__secondary-nav d-flex justify-content-center flex-row flex-nowrap"
+                        v-if="user.is_guest===false">
 
 
                         <li class="nav-item u-header__navbar-icon text-center d-block d-md-none" v-if="filter">
@@ -197,94 +199,95 @@
 
 <script>
 
-    import { localize, localeChanged } from "vee-validate";
-    export default {
-        props:{
-          filter:{
-              type:Boolean,
-              default:false,
-          }
-        },
-        data() {
-            return {
-                loading: false,
-                searchText: null,
-                langOptions: [
+import {localize, localeChanged} from "vee-validate";
 
-                    {
-                        locale_name: "fr",
-                        name: "Français"
-                    },
-                    {
-                        locale_name: "ru",
-                        name: "Русский"
-                    },
-                    {
-                        locale_name: "en",
-                        name: "English"
-                    },
-                ]
-            }
-        },
-        computed: {
-            user: function () {
-                return window.user;
-            },
-            currentLocale: function () {
-                //item.locale_name === window.locale ||
-                let index = this.langOptions.findIndex(item =>  item.locale_name === localStorage.getItem('locale'));
-                if (index < 0) {
-                    this.selectLang(this.langOptions[0].locale_name);
-                    return this.langOptions[0].name;
-                }
-                return this.langOptions[index].name
-            }
-        },
-        methods: {
-            toggleSearch() {
-                $("#search").toggleClass("u-unfold--hidden  ");
-            },
-            toggleSidebar() {
-                $("#sidebar").toggleClass("u-unfold--hidden");
-            },
-            selectLang(lang) {
-                localStorage.setItem('locale', lang)
-                this.$lang.setLocale(lang);
-                this.$moment.locale(lang);
-                localize(lang);
-                localeChanged();
-                window.location.href = `/locale/${lang}`
-            },
-            sendMessage(message, type = 'success') {
-                this.$notify({
-                    group: 'info',
-                    type: type,
-                    title: 'Оповещение',
-                    text: message
-                });
-            },
-
-        },
-        mounted() {
-            axios({
-                method: 'get',
-                url: '/locales',
-                data: {},
-            }).then((response) => {
-                    this.langOptions = response.data.languages;
-            });
-            if (this.user)
-                pusher.subscribe('notification-event-channel-' + this.user.id)
-                    .bind('notification-event', (data) => {
-                        this.sendMessage(data.event.description, ["success", "warning", "error"][data.event.type])
-                    })
-                    .bind('notification-quote-event', (data) => {
-                        this.sendMessage("Quote update")
-                    })
-
-
+export default {
+    props: {
+        filter: {
+            type: Boolean,
+            default: false,
         }
+    },
+    data() {
+        return {
+            loading: false,
+            searchText: null,
+            langOptions: [
+
+                {
+                    locale_name: "fr",
+                    name: "Français"
+                },
+                {
+                    locale_name: "ru",
+                    name: "Русский"
+                },
+                {
+                    locale_name: "en",
+                    name: "English"
+                },
+            ]
+        }
+    },
+    computed: {
+        user: function () {
+            return window.user;
+        },
+        currentLocale: function () {
+            //item.locale_name === window.locale ||
+            let index = this.langOptions.findIndex(item => item.locale_name === localStorage.getItem('locale'));
+            if (index < 0) {
+                this.selectLang(this.langOptions[0].locale_name);
+                return this.langOptions[0].name;
+            }
+            return this.langOptions[index].name
+        }
+    },
+    methods: {
+        toggleSearch() {
+            $("#search").toggleClass("u-unfold--hidden  ");
+        },
+        toggleSidebar() {
+            $("#sidebar").toggleClass("u-unfold--hidden");
+        },
+        selectLang(lang) {
+            localStorage.setItem('locale', lang)
+            this.$lang.setLocale(lang);
+            this.$moment.locale(lang);
+            localize(lang);
+            localeChanged();
+            window.location.href = `/locale/${lang}`
+        },
+        sendMessage(message, type = 'success') {
+            this.$notify({
+                group: 'info',
+                type: type,
+                title: 'Оповещение',
+                text: message
+            });
+        },
+
+    },
+    mounted() {
+        axios({
+            method: 'get',
+            url: '/locales',
+            data: {},
+        }).then((response) => {
+            this.langOptions = response.data.languages;
+        });
+        if (this.user)
+            pusher.subscribe('notification-event-channel-' + this.user.id)
+                .bind('notification-event', (data) => {
+                    this.sendMessage(data.event.description, ["success", "warning", "error"][data.event.type])
+                })
+                .bind('notification-quote-event', (data) => {
+                    this.sendMessage("Quote update")
+                })
+
+
     }
+}
 </script>
 
 

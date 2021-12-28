@@ -132,6 +132,10 @@
                                     </a>
                                 </li>
 
+
+                            </ul>
+
+                            <ul class="list-unstyled font-size-14 mb-5">
                                 <li>
                                     <a class="media align-items-center u-sidebar--panel__link py-2 px-5" href="/logout">
                                         <img class="max-width-4 mr-3"
