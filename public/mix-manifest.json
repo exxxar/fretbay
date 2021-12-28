@@ -1,10 +1,10 @@
 {
-    "/js/admin/app.js": "/js/admin/app.js?id=1d94f518487a9d361b9f",
+    "/js/admin/app.js": "/js/admin/app.js?id=9c4e68b029f59d834f4a",
     "/js/admin/media.js": "/js/admin/media.js?id=4b6a76952219ec3eea6d",
     "/js/admin/media-cropp.js": "/js/admin/media-cropp.js?id=49d142e5db4d56bfa952",
     "/js/admin/menu-create.js": "/js/admin/menu-create.js?id=5e7c981091d565cd2b18",
     "/js/admin/menu-edit.js": "/js/admin/menu-edit.js?id=875fb5ecaf18f66516f4",
-    "/js/desktop/app.js": "/js/desktop/app.js?id=0dcf83e8c5e0723abf10",
+    "/js/desktop/app.js": "/js/desktop/app.js?id=2c83cf47afddf231237b",
     "/css/desktop/app.css": "/css/desktop/app.css?id=b81be36da899a31af311",
     "/css/admin/app.css": "/css/admin/app.css?id=b489f4f3b4de2661080a",
     "/css/admin/coreui-chartjs.css": "/css/admin/coreui-chartjs.css?id=f2ae400edf860e4b91f1",
@@ -24,8 +24,8 @@
     "/css/admin/free.min.css": "/css/admin/free.min.css?id=6495e982dc49c7f4c54a",
     "/css/admin/brand.min.css": "/css/admin/brand.min.css?id=e4a94efa7ebb42374cb3",
     "/css/admin/flag.min.css": "/css/admin/flag.min.css?id=1ee7ebe2cec02dfc3495",
-    "/js/admin/app.min.js": "/js/admin/app.min.js?id=1d94f518487a9d361b9f",
+    "/js/admin/app.min.js": "/js/admin/app.min.js?id=9c4e68b029f59d834f4a",
     "/css/admin/app.min.css": "/css/admin/app.min.css?id=b489f4f3b4de2661080a",
-    "/js/desktop/app.min.js": "/js/desktop/app.min.js?id=0dcf83e8c5e0723abf10",
+    "/js/desktop/app.min.js": "/js/desktop/app.min.js?id=2c83cf47afddf231237b",
     "/css/desktop/app.min.css": "/css/desktop/app.min.css?id=b81be36da899a31af311"
 }

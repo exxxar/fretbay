@@ -128,7 +128,7 @@ export default {
                 this.loading = false;
 
                 let data = error.response.data;
-                let tmp = data.message;
+/*
 
                 let keys = Object.keys(data.errors)
 
@@ -141,9 +141,11 @@ export default {
 
                 //tmp += data.errors.email[0]
 
-                this.error_message = tmp;
 
 
+
+*/
+                this.error_message = data.message;
 
                 if (error.response.status === 403)
                     window.location = '/'
