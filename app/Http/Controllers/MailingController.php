@@ -13,6 +13,29 @@ use Illuminate\Support\Facades\Mail;
 class MailingController extends Controller
 {
 
+    public function getParams(Request $request){
+        $request->validate([
+            "title" => "required",
+            "message" => "required",
+            "for" => "required"
+        ]);
+
+        set_time_limit(3600);
+
+        if ($request->for == "all")
+            $users = User::all()->count();
+
+        if ($request->for == "verified")
+            $users = User::whereNotNull("email_verified_at")->get()->count();
+
+        if ($request->for == "notverified")
+            $users = User::whereNull("email_verified_at")->get()->count();
+
+        return response()->json([
+            "count"=>$users
+        ]);
+    }
+
     public function sendMails(Request $request)
     {
         $request->validate([
@@ -20,6 +43,8 @@ class MailingController extends Controller
             "message" => "required",
             "for" => "required"
         ]);
+
+        set_time_limit(3600);
 
         if ($request->for == "all")
             $users = User::all();

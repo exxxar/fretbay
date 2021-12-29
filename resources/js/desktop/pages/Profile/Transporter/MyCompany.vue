@@ -150,13 +150,22 @@
                                     </div>
                                 </div>
                                 <div class="col-12 px-0 px-sm-2">
-                                    <div class="row m-auto w-100 justify-content-end">
-                                        <button class="btn btn-outline-blue mx-1" v-if="!editIntroductionMode" @click="editIntroduction">{{$trans('profile.company.button_1')}}</button>
-                                        <button class="btn btn-outline-blue mx-1" v-if="editIntroductionMode" :disabled="editIntroductionLoading" @click="editIntroductionMode=false">{{$trans('profile.company.button_2')}}</button>
-                                        <button class="btn btn-primary px-4 mx-1" v-if="editIntroductionMode" :disabled="invalid||editIntroductionLoading" @click="saveWithApproval(edit_introduction)">
-                                            <span v-if="editIntroductionLoading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                                            {{$trans('profile.company.button_3')}}
-                                        </button>
+                                    <div class="row w-100 p-0 m-0 justify-content-end">
+                                        <div class="col-md-4 col-12 p-0">
+                                            <button class="btn btn-outline-blue w-100" v-if="!editIntroductionMode" @click="editIntroduction">{{$trans('profile.company.button_1')}}</button>
+                                        </div>
+
+                                        <div class="col-md-4 col-6 p-0 pr-1">
+                                            <button class="btn btn-outline-blue w-100" v-if="editIntroductionMode" :disabled="editIntroductionLoading" @click="editIntroductionMode=false">{{$trans('profile.company.button_2')}}</button>
+                                        </div>
+
+                                        <div class="col-md-4 col-6 p-0 pl-1">
+                                            <button class="btn btn-primary px-4 w-100" v-if="editIntroductionMode" :disabled="invalid||editIntroductionLoading" @click="saveWithApproval(edit_introduction)">
+                                                <span v-if="editIntroductionLoading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                                {{$trans('profile.company.button_3')}}
+                                            </button>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 
@@ -70,8 +71,34 @@ class Profile extends Model
 
         $isApproval = true;
 
-        foreach ($docs as $doc)
+        foreach ($docs as $doc) {
+            if (!is_null($doc->document)) {
+                $tmp = json_decode($doc->document);
+
+                if (isset($tmp["expiry_date"])) {
+
+                    $end = strtotime($tmp["expiry_date"]);
+
+                    if (Carbon::now()->timestamp > $end) {
+                        $doc->is_approved = false;
+                        $doc->save();
+                    }
+                }
+
+                if (isset($tmp["end_date"])) {
+                    $end = strtotime($tmp["end_date"]);
+
+                    if (Carbon::now()->timestamp > $end) {
+                        $doc->is_approved = false;
+                        $doc->save();
+                    }
+                }
+            }
+
             $isApproval = $isApproval && (boolean)$doc->is_approved;
+
+        }
+
 
         return $isApproval;
 

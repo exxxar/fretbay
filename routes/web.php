@@ -9,6 +9,7 @@ use App\Http\Controllers\HomeController;
 use App\Models\ObjectCategory;
 use App\User;
 
+use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Illuminate\Http\Response;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\App;
@@ -36,6 +37,15 @@ use Illuminate\Support\Facades\Password;
 use TCG\Voyager\Models\Page;
 use TCG\Voyager\Models\Post;
 
+Route::get('/storage/{path}',function ($path){
+    try {
+        $file = Storage::disk('local')->get("public/" . $path);
+        return (new Response($file, 200))
+            ->header('Content-Type', 'image/jpeg');
+    } catch (FileNotFoundException $e) {
+        return null;
+    }
+});
 Route::get('/email/verify', 'VerificationController@show')->name('verification.notice');
 Route::get('/email/verify/{id}/{hash}', 'VerificationController@verify')->name('verification.verify')->middleware(['signed']);
 Route::post('/email/resend', 'VerificationController@resend')->name('verification.resend');
@@ -141,6 +151,7 @@ Route::delete("/content/{pageId}",[\App\Http\Controllers\ModifiedContentControll
 Route::get("/statistic/current-day",[\App\Http\Controllers\StatisticController::class, "getCurrentDayStatistic"] );
 Route::post("/statistic/period",[\App\Http\Controllers\StatisticController::class, "getAnyPeriodStatistic"] );
 
+Route::post("/mailing/params",[\App\Http\Controllers\MailingController::class, "getParams"] )->middleware(["auth"]);
 Route::post("/mailing",[\App\Http\Controllers\MailingController::class, "sendMails"] )->middleware(["auth"]);
 
 Route::get('page/{slug}', function($slug){

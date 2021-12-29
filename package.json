@@ -91,6 +91,7 @@
         "vue-recaptcha-v3": "^1.9.0",
         "vue-select": "^3.11.2",
         "vue-select-image": "^1.9.0",
+        "vue-simple-progress": "^1.1.1",
         "vue-slick": "^1.1.16",
         "vue-slick-carousel": "^1.0.6",
         "vue-slider-component": "^3.2.13",

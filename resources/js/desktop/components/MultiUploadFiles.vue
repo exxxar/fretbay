@@ -44,7 +44,7 @@
                         <img class="card-img-top preview mx-auto" v-bind:ref="'preview'+parseInt( key )"
                              style="width:100%; height:150px; object-fit: cover;" alt="">
                         <div class="card-body px-md-2 text-center">
-                            <button class="btn btn-outline-blue mt-2 mx-auto w-100" v-on:click="removeFile( key )">Remove</button>
+                            <button class="btn btn-outline-blue mt-2 mx-auto w-100" v-on:click="removeFile( key )"><i class="fas fa-trash-alt"></i></button>
                         </div>
                     </div>
                 </div>

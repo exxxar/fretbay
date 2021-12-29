@@ -147,6 +147,7 @@
                                     </a>
                                 </li>
                             </ul>
+
                         </div>
                     </div>
                     <!-- End Content -->
@@ -200,3 +201,9 @@
         }
     }
 </script>
+
+<style lang="scss">
+.u-sidebar__footer {
+    position: sticky !important;
+}
+</style>

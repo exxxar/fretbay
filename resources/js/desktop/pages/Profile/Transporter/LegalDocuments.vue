@@ -1,8 +1,10 @@
 <template>
     <div class="main-body mt-3">
+
         <div class="row" v-if="documents.company_info">
             <div class="col-md-12">
                 <div class="card mb-3">
+
                     <div class="card-body">
                         <div class="row w-100 mx-auto align-items-center">
                             <div class="col-12 p-0 d-block d-md-none">
@@ -105,7 +107,7 @@
                             </div>
                             <div class="col-12">
                                 <h4>{{$trans('profile.documents.h4_2')}}</h4>
-                                <div class="row w-100 m-auto row-cols-2 row-cols-md-3"
+                                <div class="row w-100 m-auto "
                                      v-if="documents.company_info.document_images.length>0">
                                     <div v-for="(file, key) in documents.company_info.document_images"
                                          class="col-md-4 col-sm-6 col-6 px-1 px-sm-2">
@@ -136,7 +138,7 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="" class="text-lg">{{$trans('profile.documents.label_1')}}</label>
-                                        <ValidationProvider name="First name" rules="required|alpha"
+                                        <ValidationProvider name="First name" rules="required"
                                                             v-slot="{ errors }">
                                             <input type="text" class="form-control-empty form-control"
                                                    v-model="edit_company_info.manager_first_name">
@@ -146,7 +148,7 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="" class="text-lg">{{$trans('profile.documents.label_2')}}</label>
-                                        <ValidationProvider name="Last name" rules="required|alpha" v-slot="{ errors }">
+                                        <ValidationProvider name="Last name" rules="required" v-slot="{ errors }">
                                             <input type="text" class="form-control-empty form-control"
                                                    v-model="edit_company_info.manager_last_name">
                                         </ValidationProvider>
@@ -167,8 +169,8 @@
                                         <label for="" class="text-lg">{{$trans('profile.documents.label_4')}}</label>
                                         <ValidationProvider name="Date of creation" rules="required"
                                                             v-slot="{ errors }">
-                                            <input type="text" class="form-control-empty form-control"
-                                                   v-model="edit_company_info.creation_date" v-mask="'##/##/####'">
+                                            <input type="date" class="form-control-empty form-control"
+                                                   v-model="edit_company_info.creation_date">
                                         </ValidationProvider>
                                     </div>
                                 </div>
@@ -244,7 +246,7 @@
                                                          style="width:100%; height:150px; object-fit: cover;" alt="">
                                                     <div class="card-body px-md-2 text-center">
                                                         <button class="btn btn-outline-blue mt-2 mx-auto w-100"
-                                                                v-on:click="removeFile(key, 1)">Remove
+                                                                v-on:click="removeFile(key, 1)"><i class="fas fa-trash-alt"></i>
                                                         </button>
                                                     </div>
                                                 </div>
@@ -271,21 +273,32 @@
                                 </div>
                             </div>
                             <!--                        <div class="col-12">-->
-                            <div class="row mx-auto mt-2 w-100 justify-content-end">
-                                <button class="btn btn-outline-blue mx-1" v-if="!editCompanyInfoMode"
-                                        @click="editCompanyInfo">{{$trans('profile.documents.button_2')}}
-                                </button>
-                                <button class="btn btn-outline-blue mx-1" v-if="editCompanyInfoMode"
-                                        :disabled="loadingCompanyInfo" @click="editCompanyInfoMode=false">
-                                    {{$trans('profile.documents.button_3')}}
-                                </button>
-                                <button class="btn btn-primary px-4 mx-1" v-if="editCompanyInfoMode"
-                                        :disabled="invalid||loadingCompanyInfo" @click="confirm(1)">
+                            <div class="row m-0 p-0 mt-2 w-100 justify-content-end">
+                                <div class="col-md-4 col-12 p-0">
+                                    <button class="btn btn-outline-blue w-100" v-if="!editCompanyInfoMode"
+                                            @click="editCompanyInfo">{{$trans('profile.documents.button_2')}}
+                                    </button>
+                                </div>
+
+                                <div class="col-md-4 col-6 p-0 pr-1">
+                                    <button class="btn btn-outline-blue mx-1 w-100" v-if="editCompanyInfoMode"
+                                            :disabled="loadingCompanyInfo" @click="editCompanyInfoMode=false">
+                                        {{$trans('profile.documents.button_3')}}
+                                    </button>
+                                </div>
+
+                                <div class="col-md-4 col-6 p-0 pl-1">
+
+                                    <button class="btn btn-primary px-4 mx-1 w-100" v-if="editCompanyInfoMode"
+                                            :disabled="invalid||loadingCompanyInfo" @click="confirm(1)">
                                     <span v-if="loadingCompanyInfo" class="spinner-border spinner-border-sm"
                                           role="status" aria-hidden="true">
                                     </span>
-                                    {{$trans('profile.documents.button_4')}}
-                                </button>
+                                        {{$trans('profile.documents.button_4')}}
+                                    </button>
+                                </div>
+
+
                             </div>
                         </ValidationObserver>
                         <!--                        </div>-->
@@ -348,7 +361,7 @@
                                     <div class="form-group">
                                         <label for="" class="text-lg">{{$trans('profile.documents.label_11')}}</label>
                                         <input type="text" class="form-control-empty form-control"
-                                               v-model="documents.manager_card.issue_date" v-mask="'##/##/####'"
+                                               v-model="documents.manager_card.issue_date"
                                                disabled>
                                     </div>
                                 </div>
@@ -356,13 +369,13 @@
                                     <div class="form-group">
                                         <label for="" class="text-lg">{{$trans('profile.documents.label_12')}}</label>
                                         <input type="text" class="form-control-empty form-control"
-                                               v-model="documents.manager_card.expiry_date" v-mask="'##/##/####'"
+                                               v-model="documents.manager_card.expiry_date"
                                                disabled>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <h4>{{$trans('profile.documents.h4_5')}}</h4>
-                                    <div class="row w-100 m-auto row-cols-2 row-cols-md-3"
+                                    <div class="row w-100 m-auto "
                                          v-if="documents.manager_card.document_images.length>0">
                                         <div v-for="(file, key) in documents.manager_card.document_images"
                                              class="col-md-4 col-sm-6 col-6 px-1 px-sm-2">
@@ -406,8 +419,8 @@
                                         <ValidationProvider name="Issue date" rules="required" v-slot="{ errors }">
                                             <label for=""
                                                    class="text-lg">{{$trans('profile.documents.label_11')}}</label>
-                                            <input type="text" class="form-control-empty form-control"
-                                                   v-model="edit_manager_card.issue_date" v-mask="'##/##/####'">
+                                            <input type="date" class="form-control-empty form-control"
+                                                   v-model="edit_manager_card.issue_date" >
                                         </ValidationProvider>
                                     </div>
                                 </div>
@@ -416,14 +429,14 @@
                                         <ValidationProvider name="Expiry date" rules="required" v-slot="{ errors }">
                                             <label for=""
                                                    class="text-lg">{{$trans('profile.documents.label_12')}}</label>
-                                            <input type="text" class="form-control-empty form-control"
-                                                   v-model="edit_manager_card.expiry_date" v-mask="'##/##/####'">
+                                            <input type="date" class="form-control-empty form-control"
+                                                   v-model="edit_manager_card.expiry_date">
                                         </ValidationProvider>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <h4>{{$trans('profile.documents.h4_6')}}</h4>
-                                    <!--                                    <div class="row w-100 m-auto row-cols-2 row-cols-md-3">-->
+                                    <!--                                    <div class="row w-100 m-auto ">-->
                                     <!--                                        <div v-for="(file, key) in edit_manager_card.document_images" class="col-md-4 col-sm-6 col-6 px-1 px-sm-2">-->
                                     <!--                                            <div class="card">-->
                                     <!--                                                <div class="card-body px-md-2 text-center">-->
@@ -450,7 +463,7 @@
                                                     <div class="card-body px-md-2 text-center">
                                                         <button class="btn btn-outline-blue mt-2 mx-auto w-100"
                                                                 v-on:click="removeFile(key, 2)">
-                                                            {{$trans('profile.documents.button_5')}}
+                                                            <i class="fas fa-trash-alt"></i>
                                                         </button>
                                                     </div>
                                                 </div>
@@ -467,21 +480,33 @@
                                     </ValidationProvider>
                                 </div>
                             </div>
-                            <div class="row mx-auto mt-2 w-100 justify-content-end">
-                                <button class="btn btn-outline-blue mx-1" v-if="!editManagerCardMode"
-                                        @click="editManagerCard">{{$trans('profile.documents.button_2')}}
-                                </button>
-                                <button class="btn btn-outline-blue mx-1" v-if="editManagerCardMode"
-                                        :disabled="loadingManagerCard" @click="editManagerCardMode=false">
-                                    {{$trans('profile.documents.button_3')}}
-                                </button>
-                                <button class="btn btn-primary px-4 mx-1" v-if="editManagerCardMode"
-                                        :disabled="invalid||loadingManagerCard" @click="confirm(2)">
+                            <div class="row m-0 p-0 mt-2 w-100 justify-content-end">
+
+                                <div class="col-md-4 col-12 p-0">
+                                    <button class="btn btn-outline-blue w-100" v-if="!editManagerCardMode"
+                                            @click="editManagerCard">{{$trans('profile.documents.button_2')}}
+                                    </button>
+                                </div>
+
+                                <div class="col-md-4 col-6 p-0 pr-1">
+                                    <button class="btn btn-outline-blue w-100" v-if="editManagerCardMode"
+                                            :disabled="loadingManagerCard" @click="editManagerCardMode=false">
+                                        {{$trans('profile.documents.button_3')}}
+                                    </button>
+                                </div>
+                                <div class="col-md-4 col-6 p-0 pl-1">
+                                    <button class="btn btn-primary px-4 w-100" v-if="editManagerCardMode"
+                                            :disabled="invalid||loadingManagerCard" @click="confirm(2)">
                                     <span v-if="loadingManagerCard" class="spinner-border spinner-border-sm"
                                           role="status" aria-hidden="true">
                                     </span>
-                                    {{$trans('profile.documents.button_4')}}
-                                </button>
+                                        {{$trans('profile.documents.button_4')}}
+                                    </button>
+
+                                </div>
+
+
+
                             </div>
                         </ValidationObserver>
                     </div>
@@ -540,21 +565,21 @@
                                     <div class="form-group">
                                         <label for="" class="text-lg">{{$trans('profile.documents.label_14')}}</label>
                                         <input type="text" class="form-control-empty form-control"
-                                               v-model="documents.transport_license.issue_date" v-mask="'##/##/####'"
-                                               placeholder="jj/mm/aaaa" disabled>
+                                               v-model="documents.transport_license.issue_date"
+                                                disabled>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="" class="text-lg">{{$trans('profile.documents.label_15')}}</label>
                                         <input type="text" class="form-control-empty form-control"
-                                               v-model="documents.transport_license.expiry_date" v-mask="'##/##/####'"
-                                               placeholder="jj/mm/aaaa" disabled>
+                                               v-model="documents.transport_license.expiry_date"
+                                                disabled>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <h4>{{$trans('profile.documents.h4_9')}}</h4>
-                                    <div class="row w-100 m-auto row-cols-2 row-cols-md-3"
+                                    <div class="row w-100 m-auto "
                                          v-if="documents.transport_license.document_images.length>0">
                                         <div v-for="(file, key) in documents.transport_license.document_images"
                                              class="col-md-4 col-sm-6 col-6 px-1 px-sm-2">
@@ -595,9 +620,9 @@
                                     <div class="form-group">
                                         <label for="" class="text-lg">{{$trans('profile.documents.label_14')}}</label>
                                         <ValidationProvider name="Issue date" rules="required" v-slot="{ errors }">
-                                            <input type="text" class="form-control-empty form-control"
-                                                   v-model="edit_transport_license.issue_date" v-mask="'##/##/####'"
-                                                   placeholder="jj/mm/aaaa">
+                                            <input type="date" class="form-control-empty form-control"
+                                                   v-model="edit_transport_license.issue_date"
+                                                   >
                                         </ValidationProvider>
                                     </div>
                                 </div>
@@ -605,15 +630,14 @@
                                     <div class="form-group">
                                         <label for="" class="text-lg">{{$trans('profile.documents.label_15')}}</label>
                                         <ValidationProvider name="Expiry date" rules="required" v-slot="{ errors }">
-                                            <input type="text" class="form-control-empty form-control"
-                                                   v-model="edit_transport_license.expiry_date" v-mask="'##/##/####'"
-                                                   placeholder="jj/mm/aaaa">
+                                            <input type="date" class="form-control-empty form-control"
+                                                   v-model="edit_transport_license.expiry_date">
                                         </ValidationProvider>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <h4>{{$trans('profile.documents.h4_10')}}</h4>
-                                    <!--                                    <div class="row w-100 m-auto row-cols-2 row-cols-md-3">-->
+                                    <!--                                    <div class="row w-100 m-auto ">-->
                                     <!--                                        <div v-for="(file, key) in edit_transport_license.document_images" class="col-md-4 col-sm-6 col-6 px-1 px-sm-2">-->
                                     <!--                                            <div class="card">-->
                                     <!--                                                <div class="card-body px-md-2 text-center">-->
@@ -640,7 +664,7 @@
                                                     <div class="card-body px-md-2 text-center">
                                                         <button class="btn btn-outline-blue mt-2 mx-auto w-100"
                                                                 v-on:click="removeFile(key, 3)">
-                                                            {{$trans('profile.documents.button_5')}}
+                                                            <i class="fas fa-trash-alt"></i>
                                                         </button>
                                                     </div>
                                                 </div>
@@ -657,21 +681,33 @@
                                     </ValidationProvider>
                                 </div>
                             </div>
-                            <div class="row mx-auto mt-2 w-100 justify-content-end">
-                                <button class="btn btn-outline-blue mx-1" v-if="!editTransportLicenseMode"
-                                        @click="editTransportLicense">{{$trans('profile.documents.button_2')}}
-                                </button>
-                                <button class="btn btn-outline-blue mx-1" v-if="editTransportLicenseMode"
-                                        :disabled="loadingTransportLicense" @click="editTransportLicenseMode=false">
-                                    {{$trans('profile.documents.button_3')}}
-                                </button>
-                                <button class="btn btn-primary px-4 mx-1" v-if="editTransportLicenseMode"
-                                        :disabled="invalid||loadingTransportLicense" @click="confirm(3)">
+                            <div class="row m-0 p-0 mt-2 w-100 justify-content-end">
+                                <div class="col-md-4 col-12 p-0">
+                                    <button class="btn btn-outline-blue w-100" v-if="!editTransportLicenseMode"
+                                            @click="editTransportLicense">{{$trans('profile.documents.button_2')}}
+                                    </button>
+                                </div>
+
+                                <div class="col-md-4 col-6 p-0 pr-1">
+                                    <button class="btn btn-outline-blue w-100" v-if="editTransportLicenseMode"
+                                            :disabled="loadingTransportLicense" @click="editTransportLicenseMode=false">
+                                        {{$trans('profile.documents.button_3')}}
+                                    </button>
+                                </div>
+
+                                <div class="col-md-4 col-6 p-0 pl-1">
+
+                                    <button class="btn btn-primary px-4 w-100" v-if="editTransportLicenseMode"
+                                            :disabled="invalid||loadingTransportLicense" @click="confirm(3)">
                                      <span v-if="loadingTransportLicense" class="spinner-border spinner-border-sm"
                                            role="status" aria-hidden="true">
                                      </span>
-                                    {{$trans('profile.documents.button_4')}}
-                                </button>
+                                        {{$trans('profile.documents.button_4')}}
+                                    </button>
+
+                                </div>
+
+
                             </div>
                         </ValidationObserver>
                     </div>
@@ -679,9 +715,9 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row" v-if="documents.certificate_insurance">
             <div class="col-md-12">
-                <div class="card mb-3" v-if="documents.certificate_insurance">
+                <div class="card mb-3" >
                     <div class="card-body">
                         <div class="row w-100 mx-auto align-items-center">
                             <div class="col-12 p-0 d-block d-md-none">
@@ -738,20 +774,20 @@
                                         <label for="" class="text-lg">{{$trans('profile.documents.label_18')}}</label>
                                         <input type="text" class="form-control-empty form-control"
                                                v-model="documents.certificate_insurance.start_date"
-                                               v-mask="'##/##/####'" placeholder="jj/mm/aaaa" disabled>
+                                                 disabled>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="" class="text-lg">{{$trans('profile.documents.label_19')}}</label>
                                         <input type="text" class="form-control-empty form-control"
-                                               v-model="documents.certificate_insurance.end_date" v-mask="'##/##/####'"
-                                               placeholder="jj/mm/aaaa" disabled>
+                                               v-model="documents.certificate_insurance.end_date"
+                                                disabled>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <h4>{{$trans('profile.documents.h4_13')}}</h4>
-                                    <div class="row w-100 m-auto row-cols-2 row-cols-md-3"
+                                    <div class="row w-100 m-auto "
                                          v-if="documents.certificate_insurance.document_images.length>0">
                                         <div v-for="(file, key) in documents.certificate_insurance.document_images"
                                              class="col-md-4 col-sm-6 col-6 px-1 px-sm-2">
@@ -803,9 +839,8 @@
                                     <div class="form-group">
                                         <label for="" class="text-lg">{{$trans('profile.documents.label_18')}}</label>
                                         <ValidationProvider name="Start date" rules="required" v-slot="{ errors }">
-                                            <input type="text" class="form-control-empty form-control"
-                                                   v-model="edit_certificate_insurance.start_date"
-                                                   v-mask="'##/##/####'" placeholder="jj/mm/aaaa">
+                                            <input type="date" class="form-control-empty form-control"
+                                                   v-model="edit_certificate_insurance.start_date">
                                         </ValidationProvider>
                                     </div>
                                 </div>
@@ -813,15 +848,14 @@
                                     <div class="form-group">
                                         <label for="" class="text-lg">{{$trans('profile.documents.label_19')}}</label>
                                         <ValidationProvider name="End date" rules="required" v-slot="{ errors }">
-                                            <input type="text" class="form-control-empty form-control"
-                                                   v-model="edit_certificate_insurance.end_date"
-                                                   v-mask="'##/##/####'" placeholder="jj/mm/aaaa">
+                                            <input type="date" class="form-control-empty form-control"
+                                                   v-model="edit_certificate_insurance.end_date">
                                         </ValidationProvider>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <h4>{{$trans('profile.documents.h4_14')}}</h4>
-                                    <!--                                    <div class="row w-100 m-auto row-cols-2 row-cols-md-3">-->
+                                    <!--                                    <div class="row w-100 m-auto ">-->
                                     <!--                                        <div v-for="(file, key) in edit_certificate_insurance.document_images" class="col-md-4 col-sm-6 col-6 px-1 px-sm-2">-->
                                     <!--                                            <div class="card">-->
                                     <!--                                                <div class="card-body px-md-2 text-center">-->
@@ -848,7 +882,7 @@
                                                     <div class="card-body px-md-2 text-center">
                                                         <button class="btn btn-outline-blue mt-2 mx-auto w-100"
                                                                 v-on:click="removeFile(key, 4)">
-                                                            {{$trans('profile.documents.button_5')}}
+                                                            <i class="fas fa-trash-alt"></i>
                                                         </button>
                                                     </div>
                                                 </div>
@@ -865,23 +899,34 @@
                                     </ValidationProvider>
                                 </div>
                             </div>
-                            <div class="row mx-auto mt-2 w-100 justify-content-end">
-                                <button class="btn btn-outline-blue mx-1" v-if="!editCertificateInsuranceMode"
-                                        @click="editCertificateInsurance">
-                                    {{$trans('profile.documents.button_2')}}
-                                </button>
-                                <button class="btn btn-outline-blue mx-1" v-if="editCertificateInsuranceMode"
-                                        :disabled="loadingCertificateInsurance"
-                                        @click="editCertificateInsuranceMode=false">
-                                    {{$trans('profile.documents.button_3')}}
-                                </button>
-                                <button class="btn btn-primary px-4 mx-1" v-if="editCertificateInsuranceMode"
-                                        :disabled="invalid||loadingCertificateInsurance" @click="confirm(4)">
+                            <div class="row m-0 p-0 mt-2 w-100 justify-content-end">
+                                <div class="col-md-4 col-12 p-0">
+                                    <button class="btn btn-outline-blue w-100" v-if="!editCertificateInsuranceMode"
+                                            @click="editCertificateInsurance">
+                                        {{$trans('profile.documents.button_2')}}
+                                    </button>
+                                </div>
+
+                                <div class="col-md-4 col-6 p-0 pr-1">
+                                    <button class="btn btn-outline-blue w-100" v-if="editCertificateInsuranceMode"
+                                            :disabled="loadingCertificateInsurance"
+                                            @click="editCertificateInsuranceMode=false">
+                                        {{$trans('profile.documents.button_3')}}
+                                    </button>
+                                </div>
+                                <div class="col-md-4 col-6 p-0 pl-1">
+                                    <button class="btn btn-primary px-4 w-100" v-if="editCertificateInsuranceMode"
+                                            :disabled="invalid||loadingCertificateInsurance" @click="confirm(4)">
                                     <span v-if="loadingCertificateInsurance" class="spinner-border spinner-border-sm"
                                           role="status" aria-hidden="true">
                                     </span>
-                                    {{$trans('profile.documents.button_4')}}
-                                </button>
+                                        {{$trans('profile.documents.button_4')}}
+                                    </button>
+                                </div>
+
+
+
+
                             </div>
                         </ValidationObserver>
                     </div>
