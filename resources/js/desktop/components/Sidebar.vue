@@ -206,4 +206,8 @@
 .u-sidebar__footer {
     position: sticky !important;
 }
+
+.u-sidebar {
+    z-index: 9999 !important;
+}
 </style>
