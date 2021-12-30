@@ -53,6 +53,16 @@
 <div id="app" style="padding-top: 50px;">
     <notifications :position="'top left'" :group="'info'"></notifications>
 <!--    <preloader-component></preloader-component>-->
+
+    @if(Session::has('verified'))
+        <div class="alert alert-info alert-dismissible fade show" role="alert">
+            __('notifications.other.verified')
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    @endif
+
     @yield('content')
     {{--    <system-notification-component></system-notification-component>--}}
 
