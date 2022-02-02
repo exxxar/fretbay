@@ -495,6 +495,14 @@ export default {
     },
     created() {
         this.modalPrefix = uuidv4()
+        this.listing.articles = JSON.parse(this.listing.articles||[])
+        this.listing.place_of_loading = JSON.parse(this.listing.place_of_loading||[])
+        this.listing.place_of_delivery = JSON.parse(this.listing.place_of_delivery||[])
+        this.listing.volume_items = JSON.parse(this.listing.volume_items||[])
+        this.listing.messages = JSON.parse(this.listing.messages||[])
+        this.listing.images = JSON.parse(this.listing.images||[])
+
+
     },
     methods: {
         prepareListingArticles(){
