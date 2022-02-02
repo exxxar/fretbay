@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ChangePasswordMail;
 use App\Models\ObjectCategory;
 use App\Models\Profile;
 use App\Models\Review;
@@ -9,6 +10,7 @@ use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use TCG\Voyager\Models\Category;
 use VK\Actions\Auth;
 
@@ -138,11 +140,17 @@ class UserController extends Controller
 
     public function changePassword(Request $request)
     {
-        $user = User::withTrashed()->with(['profile', 'profile.documents', 'profile.verifications', 'profile.vehicles'])->find(Auth::id());
+        $user = User::withTrashed()->with(['profile', 'profile.documents', 'profile.verifications', 'profile.vehicles'])->find(Auth::user()->id);
         if (Hash::check($request->old_password, $user->password)) {
             $new_password = Hash::make($request->new_password);
             $user->password = $new_password;
             $user->save();
+
+            Mail::to($user->email)
+                ->send(new ChangePasswordMail(
+                    $new_password
+                ));
+
             return response()->json([
                 "message" => "Password was changed successfully"
             ], 200);
