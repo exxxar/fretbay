@@ -9,6 +9,7 @@ use App\Events\NotificationEvent;
 use App\Events\NotificationEventBroadcast;
 use App\Events\NotificationQuoteEventBroadcast;
 use App\Mail\AcceptQuoteMail;
+use App\Mail\CreateListingMail;
 use App\Mail\DeclineQuoteMail;
 use App\Mail\NewMessageMail;
 use App\Mail\NotifyMail;
@@ -283,6 +284,8 @@ class ListingController extends Controller
             'volume_items' => $volume_items??json_encode([]),
         ]);
 
+
+
         event(new NotificationEvent(
             __('notifications.listing.title'),
             __('notifications.listing.add', [
@@ -321,6 +324,8 @@ class ListingController extends Controller
                 'listing' => $listing
             ], 200);
         }
+
+        event(new CreateListingMail($listing));
     }
 
     /**
