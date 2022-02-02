@@ -28,6 +28,14 @@
                                     <p style="color: red;font-size:11px">{{errors[0]}}</p>
                                 </ValidationProvider>
                             </div>
+                            <div class="form-group" v-if="message">
+                                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                    {{message}}
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close" @click="message=null">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                            </div>
                             <div class="form-group text-center">
                                 <button class="btn btn-success btn-standard w-100" @click="savePassword" :disabled="invalid||loadingPassword">{{$trans('profile.settings.button_1')}}</button>
                             </div>
@@ -85,6 +93,7 @@
     export default {
         data(){
             return {
+                message: null,
                 loadingPassword:false,
                 old_password:'',
                 new_password:'',
@@ -101,12 +110,13 @@
         },
         methods: {
             async savePassword() {
+                this.message = null;
                 await axios.post('/auth/user/changePassword', {old_password: this.old_password, new_password: this.new_password})
                     .then( resp => {
-
+                        this.message = resp.data.message
                     })
                     .catch( error => {
-
+                        this.message = "Something went wrong"
                     })
             },
             async save(key, value) {
