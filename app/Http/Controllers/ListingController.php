@@ -255,7 +255,7 @@ class ListingController extends Controller
 
         $listing = Listing::create([
             'title' => $request->get('title') ?? '',
-            'articles' => json_decode($request->get('articles')) ?? [],
+            'articles' => ($request->get('articles')) ?? [],
             'place_of_loading' => $place_of_loading,
             'place_of_delivery' => $place_of_delivery,
             'shipping_date_from' => Carbon::createFromTimestampUTC(intval($request->get('shipping_date_from')) / 1000),
