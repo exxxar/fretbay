@@ -265,7 +265,7 @@
 
             <div class="container">
                 <div class="row" v-if="listing.category.mode ==='article' && prepareListingArticles().length>=1">
-                    <div class="col-md-3 m-0 p-1" v-for="item in prepareListingArticles" v-if="listing.articles">
+                    <div class="col-md-3 m-0 p-1" v-for="item in prepareListingArticles()">
                         <div class="card">
                             <div class="card-body p-3" v-if=" item.properties">
                                 <h5> {{ prepareLangTitle(item.title) || "Empty" }}</h5>
@@ -495,22 +495,22 @@ export default {
     },
     created() {
         this.modalPrefix = uuidv4()
-        this.listing.articles = JSON.parse(this.listing.articles||[])
-        this.listing.place_of_loading = JSON.parse(this.listing.place_of_loading||[])
-        this.listing.place_of_delivery = JSON.parse(this.listing.place_of_delivery||[])
-        this.listing.volume_items = JSON.parse(this.listing.volume_items||[])
-        this.listing.messages = JSON.parse(this.listing.messages||[])
-        this.listing.images = JSON.parse(this.listing.images||[])
+        console.log("parse before=>", this.listing)
+        this.listing.articles =  typeof this.listing.articles !== 'object'?JSON.parse(this.listing.articles):this.listing.articles
+        this.listing.place_of_loading =  typeof this.listing.place_of_loading !== 'object'?JSON.parse(this.listing.place_of_loading):this.listing.place_of_loading
+        this.listing.place_of_delivery =  typeof this.listing.place_of_delivery !== 'object'?JSON.parse(this.listing.place_of_delivery):this.listing.place_of_delivery
+        this.listing.volume_items =  typeof this.listing.volume_items !== 'object'?JSON.parse(this.listing.volume_items):this.listing.volume_items
+        this.listing.messages =  typeof this.listing.messages !== 'object'?JSON.parse(this.listing.messages):this.listing.messages
+        this.listing.images =  typeof this.listing.images !== 'object'?JSON.parse(this.listing.images):this.listing.images
 
+        console.log("parse after=>", this.listing)
 
     },
     methods: {
         prepareListingArticles(){
            if (!this.listing.articles)
                return [];
-
-
-           return JSON.parse(this.listing.articles)
+           return this.listing.articles
         },
         /*   prepareCategoriesProperties(properties , articles){
 
@@ -539,6 +539,8 @@ export default {
                                </span>*!/
            },*/
         prepareArticleContent(item, property){
+
+
             return item.properties[property.slug].value
 
          /*   console.log("slug=>",property.slug, "item.properties", item.properties)
