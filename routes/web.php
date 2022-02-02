@@ -600,3 +600,5 @@ Route::get('/auth/callback/{name}', function ($name) {
 Route::group(['prefix' => 'v-admin'], function () {
     Voyager::routes();
 });
+
+

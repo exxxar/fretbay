@@ -46,12 +46,12 @@ class Listing extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'articles' => 'array',
+       /* 'articles' => 'array',
         'place_of_loading' => 'array',
         'place_of_delivery' => 'array',
         'volume_items' => 'array',
         'messages' => 'array',
-        'images' => 'array',
+        'images' => 'array',*/
     ];
 
     /**

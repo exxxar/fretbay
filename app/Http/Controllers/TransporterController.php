@@ -154,15 +154,15 @@ class TransporterController extends Controller
         }
         $vehicle = Vehicle::create([
             'profile_id' => intval($request->profile_id),
-            'type' => $request->type,
-            'brand' => $request->brand,
-            'model' => $request->model,
+            'type' => $request->type??"Car",
+            'brand' => $request->brand??"No Brand",
+            'model' => $request->model??"No Model",
             'plate_number' => $request->plate_number,
             'total_laden_weight' => $request->total_laden_weight,
             'cubing' => $request->cubing,
-            'images' => $images,
+            'images' => json_encode($images),
         ]);
-        $vehicle->images = $images;
+       // $vehicle->images = json_encode($images);//??
         $vehicle->save();
         return response()->json([
             'vehicle' => $vehicle,

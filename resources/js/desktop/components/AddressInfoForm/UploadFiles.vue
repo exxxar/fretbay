@@ -10,7 +10,7 @@
         </div>
         <div class="row w-100 m-auto" @dragenter="dragging=true" v-show="!dragging">
             <div class="col-12 col-md-4">
-                <button class="btn btn-primary w-100 mb-1" @click="startUpload">Upload</button>
+                <button class="btn btn-primary w-100 mb-1" type="button" @click="startUpload">Upload</button>
             </div>
             <div class="col-12 col-md-8">
                 <p>This information can often be found on the Internet. Approximate measures will already allow carriers

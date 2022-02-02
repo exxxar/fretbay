@@ -245,7 +245,7 @@
 
                     <strong class="w-100 mt-2 p-2"
                             v-if="listing.category.mode ==='article' && listing.articles.length>1">{{
-                            listing.articles.length
+                            prepareListingArticles().length
                         }}
                         {{ $trans('profile.listing.articles') }}:</strong>
 
@@ -264,16 +264,18 @@
             </div>
 
             <div class="container">
-                <div class="row" v-if="listing.category.mode ==='article' && listing.articles.length>=1">
-                    <div class="col-md-3 m-0 p-1" v-for="item in listing.articles">
+                <div class="row" v-if="listing.category.mode ==='article' && prepareListingArticles().length>=1">
+                    <div class="col-md-3 m-0 p-1" v-for="item in prepareListingArticles" v-if="listing.articles">
                         <div class="card">
-                            <div class="card-body p-3">
+                            <div class="card-body p-3" v-if=" item.properties">
                                 <h5> {{ prepareLangTitle(item.title) || "Empty" }}</h5>
 
                                 <p v-for="property in listing.category.properties" class="m-0 mb-2" >
 
                                     {{ prepareLangTitle(property.title) || "Empty" }}:
-                                    <strong>{{ item.properties[property.slug].value }}</strong>
+
+                                    <strong>{{prepareArticleContent(item,property) }}</strong>
+
 
                                 </p>
                             </div>
@@ -493,9 +495,15 @@ export default {
     },
     created() {
         this.modalPrefix = uuidv4()
-        console.log("item=>",this.listing)
     },
     methods: {
+        prepareListingArticles(){
+           if (!this.listing.articles)
+               return [];
+
+
+           return JSON.parse(this.listing.articles)
+        },
         /*   prepareCategoriesProperties(properties , articles){
 
                let tmp = '';
@@ -522,11 +530,19 @@ export default {
                                    </small>
                                </span>*!/
            },*/
+        prepareArticleContent(item, property){
+            return item.properties[property.slug].value
+
+         /*   console.log("slug=>",property.slug, "item.properties", item.properties)
+          return "test";*/
+        },
         prepareArticles(properties) {
 
             let tmp = ''
 
             properties.forEach(property => {
+
+
                 tmp += (this.prepareLangTitle(property.title) || "Empty") + this.listing.articles[0].properties[property.slug].value
             })
 

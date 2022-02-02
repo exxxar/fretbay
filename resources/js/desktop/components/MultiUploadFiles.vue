@@ -38,8 +38,11 @@
             <slot name="filesListAdditional">
             </slot>
             <slot name="filesList" v-if="files.length>0">
-                <VueSlickCarousel class="p-1" v-bind="settings" >
-                <div v-for="(file, key) in files" class="px-1 px-sm-2">
+<!--                <VueSlickCarousel class="p-1" v-bind="settings" >
+
+                </VueSlickCarousel>-->
+
+                <div v-for="(file, key) in files" class="col-6">
                     <div class="card my-2">
                         <img class="card-img-top preview mx-auto" v-bind:ref="'preview'+parseInt( key )"
                              style="width:100%; height:150px; object-fit: cover;" alt="">
@@ -48,7 +51,6 @@
                         </div>
                     </div>
                 </div>
-                </VueSlickCarousel>
             </slot>
         </div>
     </div>
@@ -86,9 +88,9 @@
                     "focusOnSelect": true,
                     "infinite": true,
                     "speed": 500,
-                    "slidesToShow": 4,
-                    "slidesToScroll": 3,
-                    "touchThreshold":4,
+                    "slidesToShow": 2,
+                    "slidesToScroll": 2,
+                    "touchThreshold":2,
                     responsive: [
                         {
                             breakpoint: 1200,

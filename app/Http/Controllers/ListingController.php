@@ -50,7 +50,7 @@ class ListingController extends Controller
         $listings = Listing::with(['category', 'subcategory', 'thing', 'messages', 'quotes'])
             ->where("is_active", true)
             ->where("status", "")
-            ->whereDate("expiration_date", ">", Carbon::now())
+            ->whereDate("expiration_date", ">=", Carbon::now())
             ->orderByDesc('created_at')
             ->paginate(100);
         return response()->json([
@@ -217,7 +217,7 @@ class ListingController extends Controller
             $listings = $listings->whereIn("category_id", $request->categories);
 
         $listings = $listings
-            ->whereDate("expiration_date", ">", Carbon::now())
+            ->whereDate("expiration_date", ">=", Carbon::now())
             ->orderByDesc('created_at')->paginate(100);
 
         return response()->json([
@@ -250,6 +250,7 @@ class ListingController extends Controller
         $volume_items = json_decode($request->get('volume_items'));
 
         $user_id = $request->get('user_id') ?? null;
+
 
 
         $listing = Listing::create([

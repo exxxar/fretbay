@@ -106,7 +106,7 @@
                                         type="submit"
                                         v-bind:class="{'btn-custom-gray':completedOrdersWithoutComment.length===0,
                                         'btn-primary':completedOrdersWithoutComment.length>0}"
-                                        :disbaled="completedOrdersWithoutComment.length===0">
+                                        :disabled="completedOrdersWithoutComment.length===0">
                                     {{$trans('profile.reviews.button_1')}}
                                 </button>
                             </div>

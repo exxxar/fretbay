@@ -77,10 +77,14 @@
 
                         </div>
                     </div>
-                    <div class="col-12 col-md-8 ">
+                    <div class="col-12 col-md-7 ">
                         <input type="search" class="form-control mb-2" name="search"
                                placeholder="Search..."
-                               autofocus="off" autocomplete="search-listing" v-model="search">
+                               value="" autocomplete="off" v-model="preSearch" >
+                    </div>
+
+                    <div class="col-12 col-md-1 ">
+                        <button class="btn btn-outline-primary w-100" @click="find"><i class="fas fa-search"></i></button>
                     </div>
                 </div>
 
@@ -109,6 +113,7 @@
     export default {
         data() {
             return {
+                preSearch: '',
                 search: '',
                 sort: '',
                 direction: false,
@@ -147,6 +152,9 @@
             },
         },
         methods: {
+            find(){
+              this.search = this.preSearch
+            },
             selfUpdate() {
                 this.$emit("update")
             },

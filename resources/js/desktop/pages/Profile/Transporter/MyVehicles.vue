@@ -51,7 +51,7 @@
                                                 <!--                                                    </ul>-->
                                                 <!--                                                </div>-->
                                                 <select class="form-select form-control form-control-empty input-lg" aria-label="Type select" v-model="new_vehicle.type">
-                                                    <option value="Car">{{$trans('profile.vehicles.select_option_1')}}</option>
+                                                    <option value="Car" selected>{{$trans('profile.vehicles.select_option_1')}}</option>
                                                     <option value="Van">{{$trans('profile.vehicles.select_option_2')}}</option>
                                                     <option value="Truck without tailgate">{{$trans('profile.vehicles.select_option_3')}}</option>
                                                     <option value="Truck with tailgate">{{$trans('profile.vehicles.select_option_4')}}</option>
@@ -65,7 +65,7 @@
                                     <div class="from-group">
                                         <label for="brand" class="text-lg">{{$trans('profile.vehicles.label_2')}}</label>
                                         <ValidationProvider name="Brand" rules="required" v-slot="{ errors }">
-                                            <input id="brand" type="text"
+                                            <input id="brand" type="text" placeholder="Car brand"
                                                    v-model="new_vehicle.brand" class="form-control form-control-empty input-lg">
                                         </ValidationProvider>
                                     </div>
@@ -74,7 +74,7 @@
                                     <div class="from-group">
                                         <label for="model" class="text-lg">{{$trans('profile.vehicles.label_3')}}</label>
                                         <ValidationProvider name="Model" rules="required" v-slot="{ errors }">
-                                            <input id="model" type="text"
+                                            <input id="model" type="text" placeholder="Car model"
                                                    v-model="new_vehicle.model" class="form-control form-control-empty input-lg">
                                         </ValidationProvider>
                                     </div>
@@ -85,7 +85,7 @@
                                     <div class="from-group">
                                         <label for="plate_number" class="text-lg">{{$trans('profile.vehicles.label_4')}}</label>
                                         <ValidationProvider name="Plate number" rules="required" v-slot="{ errors }">
-                                            <input id="plate_number" type="text"
+                                            <input id="plate_number" type="text" placeholder="Car plate number"
                                                    v-model="new_vehicle.plate_number" class="form-control form-control-empty input-lg">
                                         </ValidationProvider>
                                     </div>
@@ -94,7 +94,7 @@
                                     <div class="from-group">
                                         <label for="cubing" class="text-lg">{{$trans('profile.vehicles.label_5')}}</label>
                                         <ValidationProvider name="Cubing" rules="required|numeric" v-slot="{ errors }">
-                                            <input id="cubing" type="text"
+                                            <input id="cubing" type="number"
                                                    v-model="new_vehicle.cubing" class="form-control form-control-empty input-lg">
                                         </ValidationProvider>
                                     </div>
@@ -103,7 +103,7 @@
                                     <div class="from-group">
                                         <label for="total_laden_weight" class="text-lg">{{$trans('profile.vehicles.label_6')}}</label>
                                         <ValidationProvider name="Plate number" rules="required|numeric" v-slot="{ errors }">
-                                            <input id="total_laden_weight" type="text"
+                                            <input id="total_laden_weight" type="number" placeholder="Car weight"
                                                    v-model="new_vehicle.total_laden_weight" class="form-control form-control-empty input-lg">
                                         </ValidationProvider>
                                     </div>
@@ -227,8 +227,8 @@
                                                     <button class="btn btn-primary w-100" @click="startUpload">{{$trans('profile.vehicles.button_1')}}</button>
                                                 </template>
                                                 <template v-slot:filesListAdditional>
-                                                    <div v-for="(file, key) in edit_vehicle.images" class="col-md-4 col-sm-6 col-6 px-1 px-sm-2" v-if="edit_vehicle.images.length>0">
-                                                        <div class="card my-2">
+                                                    <div v-for="(file, key) in edit_vehicle.images" class="col-12" v-if="edit_vehicle.images.length>0">
+                                                        <div class="card w-100">
                                                             <img class="card-img-top preview mx-auto" v-lazy="file"
                                                                  style="width:100%; height:150px; object-fit: cover;" alt="">
                                                             <div class="card-body px-md-2 text-center">
@@ -335,7 +335,7 @@
         data() {
             return {
                 new_vehicle : {
-                    type:'',
+                    type:'Car',
                     brand:'',
                     model:'',
                     plate_number:'',

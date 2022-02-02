@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Mail\ChangePasswordMail;
+use App\Mail\RegistrationMail;
 use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Auth\Events\PasswordReset;
@@ -10,6 +12,7 @@ use Illuminate\Foundation\Auth\ResetsPasswords;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Str;
 
@@ -79,8 +82,15 @@ class ResetPasswordController extends Controller
                 $user->save();
 
                 event(new PasswordReset($user));
+
+                Mail::to($user->email)
+                    ->send(new ChangePasswordMail(
+                        $password
+                    ));
             }
         );
+
+
 
         return $status === Password::PASSWORD_RESET
             ? redirect()->route('login')->with('status', __($status))
