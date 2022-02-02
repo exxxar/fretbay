@@ -255,7 +255,7 @@ class ListingController extends Controller
 
         $listing = Listing::create([
             'title' => $request->get('title') ?? '',
-            'articles' => ($request->get('articles')) ?? [],
+            'articles' => ($request->get('articles')) ?? json_encode([]),
             'place_of_loading' => $place_of_loading,
             'place_of_delivery' => $place_of_delivery,
             'shipping_date_from' => Carbon::createFromTimestampUTC(intval($request->get('shipping_date_from')) / 1000),
@@ -264,7 +264,7 @@ class ListingController extends Controller
             'unshipping_date_to' => Carbon::createFromTimestampUTC(intval($request->get('unshipping_date_to')) / 1000),
             'additional_info' => $request->get('additional_info') ?? '',
             'moving_package' => $request->get('moving_package') ?? '',
-            'images' => [],
+            'images' => json_encode([]),
             'status' => $request->get('status') ?? '',
             'distance' => round($this->mapbox->getAPI()->getDistanceOSM(
                     $place_of_loading->center[0] ?? 0,
@@ -280,7 +280,7 @@ class ListingController extends Controller
             'thing_id' => $request->get('thing_id') ?? null,
             'user_id' => $user_id,
             'summary_volume' => $request->get('summary_volume') ?? 0,
-            'volume_items' => $volume_items,
+            'volume_items' => $volume_items??json_encode([]),
         ]);
 
         event(new NotificationEvent(
