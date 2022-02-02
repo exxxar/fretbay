@@ -245,9 +245,9 @@ class ListingController extends Controller
     {
 
 
-        $place_of_loading = json_decode(json_decode($request->get('place_of_loading')));
-        $place_of_delivery = json_decode(json_decode( $request->get('place_of_delivery')));
-        $volume_items = json_decode($request->get('volume_items'));
+        $place_of_loading = $request->get('place_of_loading');
+        $place_of_delivery = $request->get('place_of_delivery');
+        $volume_items = $request->get('volume_items');
 
         $user_id = $request->get('user_id') ?? null;
 
