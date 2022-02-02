@@ -495,7 +495,7 @@ export default {
     },
     created() {
         this.modalPrefix = uuidv4()
-        console.log("parse before=>", this.listing)
+
         this.listing.articles =  typeof this.listing.articles !== 'object'?JSON.parse(this.listing.articles):this.listing.articles
         this.listing.place_of_loading =  typeof this.listing.place_of_loading !== 'object'?JSON.parse(this.listing.place_of_loading):this.listing.place_of_loading
         this.listing.place_of_delivery =  typeof this.listing.place_of_delivery !== 'object'?JSON.parse(this.listing.place_of_delivery):this.listing.place_of_delivery
@@ -503,7 +503,7 @@ export default {
         this.listing.messages =  typeof this.listing.messages !== 'object'?JSON.parse(this.listing.messages):this.listing.messages
         this.listing.images =  typeof this.listing.images !== 'object'?JSON.parse(this.listing.images):this.listing.images
 
-        console.log("parse after=>", this.listing)
+
 
     },
     methods: {
