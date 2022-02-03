@@ -6,6 +6,7 @@ use App\User;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class Profile extends Model
 {
@@ -73,23 +74,54 @@ class Profile extends Model
 
         foreach ($docs as $doc) {
             if (!is_null($doc->document)) {
-                $tmp = json_decode($doc->document);
+
+                $tmp = ($doc->document);
+
+                if (isset($tmp["creation_date"])) {
+
+                    $end = Carbon::parse($tmp["creation_date"])->timestamp;
+
+                    $current = Carbon::now()->timestamp;
+
+
+                    if ($current > $end) {
+                        $doc->is_approved = false;
+                        $doc->save();
+                    }
+                    else {
+                        $doc->is_approved = true;
+                        $doc->save();
+                    }
+                }
 
                 if (isset($tmp["expiry_date"])) {
 
-                    $end = strtotime($tmp["expiry_date"]);
+                    $end = Carbon::parse($tmp["expiry_date"])->timestamp;
 
-                    if (Carbon::now()->timestamp > $end) {
+                    $current = Carbon::now()->timestamp;
+
+
+                    if ($current > $end) {
                         $doc->is_approved = false;
+                        $doc->save();
+                    }
+                    else {
+                        $doc->is_approved = true;
                         $doc->save();
                     }
                 }
 
                 if (isset($tmp["end_date"])) {
-                    $end = strtotime($tmp["end_date"]);
+                    $end = Carbon::parse($tmp["end_date"])->timestamp;
 
-                    if (Carbon::now()->timestamp > $end) {
+                    $current = Carbon::now()->timestamp;
+
+                    if ($current > $end) {
                         $doc->is_approved = false;
+                        $doc->save();
+                    }
+                    else {
+                        $doc->is_approved = true;
                         $doc->save();
                     }
                 }

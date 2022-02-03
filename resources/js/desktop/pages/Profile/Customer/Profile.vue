@@ -8,7 +8,7 @@
                         <a class="btn btn-outline-primary d-block active" id="listings-active-tab" data-toggle="tab"
                            href="#listings-active" role="tab"
                            aria-controls="listings-active" aria-selected="true"><i class="fas fa-boxes"></i>
-                            {{$trans('profile.menu.active_listings')}}
+                            {{ $trans('profile.menu.active_listings') }}
                         </a>
                     </li>
 
@@ -16,7 +16,7 @@
                         <a class="btn btn-outline-primary  d-block" id="profile-tab" data-toggle="tab" href="#profile"
                            role="tab"
                            aria-controls="profile" aria-selected="true"><i class="fas fa-user"></i>
-                            {{$trans('profile.menu.profile')}}</a>
+                            {{ $trans('profile.menu.profile') }}</a>
                     </li>
 
                     <li class="nav-item profile-nav-item">
@@ -25,7 +25,7 @@
                            href="#payments"
                            role="tab"
                            aria-controls="reviews" aria-selected="true"><i class="far fa-credit-card"></i>
-                            {{$trans('profile.menu.payments')}}</a>
+                            {{ $trans('profile.menu.payments') }}</a>
                     </li>
 
                     <li class="nav-item profile-nav-item">
@@ -34,7 +34,7 @@
                            href="#reviews"
                            role="tab"
                            aria-controls="reviews" aria-selected="true"><i class="far fa-comment-dots"></i>
-                            {{$trans('profile.menu.reviews')}}</a>
+                            {{ $trans('profile.menu.reviews') }}</a>
                     </li>
 
 
@@ -42,14 +42,14 @@
                         <a class="btn btn-outline-primary d-block" id="listings-archive-tab" data-toggle="tab"
                            href="#listings-archive" role="tab"
                            aria-controls="listings-archive" aria-selected="true"><i class="fas fa-archive"></i>
-                            {{$trans('profile.menu.archive_listings')}}</a>
+                            {{ $trans('profile.menu.archive_listings') }}</a>
                     </li>
 
                     <li class="nav-item profile-nav-item" @click="loadRemovedListing">
                         <a class="btn btn-outline-primary d-block" id="listings-removed-tab" data-toggle="tab"
                            href="#listings-removed" role="tab"
                            aria-controls="listings-active" aria-selected="true"><i class="fas fa-trash-alt"></i>
-                            {{$trans('profile.menu.removed_listings')}}</a>
+                            {{ $trans('profile.menu.removed_listings') }}</a>
                     </li>
 
                     <li class="nav-item profile-nav-item" @click="loadActiveOrders">
@@ -57,7 +57,7 @@
                            href="#orders-active"
                            role="tab"
                            aria-controls="orders-active" aria-selected="true"><i class="far fa-handshake"></i>
-                            {{$trans('profile.menu.active_orders')}}</a>
+                            {{ $trans('profile.menu.active_orders') }}</a>
                     </li>
 
                     <li class="nav-item profile-nav-item" @click="loadArchiveOrders">
@@ -65,7 +65,7 @@
                            href="#orders-archive"
                            role="tab"
                            aria-controls="orders-archive" aria-selected="true"><i class="fas fa-archive"></i>
-                            {{$trans('profile.menu.archive_orders')}}</a>
+                            {{ $trans('profile.menu.archive_orders') }}</a>
                     </li>
 
                     <li class="nav-item profile-nav-item"
@@ -73,7 +73,7 @@
                         <a class="btn btn-outline-primary d-block" id="notifications-tab" data-toggle="tab"
                            href="#notifications" role="tab"
                            aria-controls="notifications" aria-selected="true"><i class="far fa-flag"></i>
-                            {{$trans('profile.menu.notifications')}}
+                            {{ $trans('profile.menu.notifications') }}
                         </a>
                     </li>
 
@@ -81,7 +81,7 @@
                         <a class="btn btn-outline-primary d-block" id="settings-tab" data-toggle="tab"
                            href="#settings" role="tab"
                            aria-controls="settings" aria-selected="true"><i class="fas fa-user-cog"></i>
-                            {{$trans('profile.menu.settings')}}
+                            {{ $trans('profile.menu.settings') }}
                         </a>
                     </li>
                 </ul>
@@ -98,11 +98,11 @@
                                              style="border-radius: 5px;"
                                              width="150">
                                         <div class="mt-3">
-                                            <h6>{{user.name}}</h6>
-                                            <p class="text-secondary mb-1">{{user.created_at}}</p>
-                                            <p class="text-muted font-size-sm" v-if="fullAddress">{{fullAddress}}</p>
+                                            <h6>{{ user.name }}</h6>
+                                            <p class="text-secondary mb-1">{{ user.created_at }}</p>
+                                            <p class="text-muted font-size-sm" v-if="fullAddress">{{ fullAddress }}</p>
                                             <p class="text-muted font-size-sm" v-if="profile.company_name.length>0">
-                                                {{profile.company_name}}</p>
+                                                {{ profile.company_name }}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -118,46 +118,46 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-sm-3">
-                                            <h6 class="mb-0">{{$trans('profile.profile.full_name')}}</h6>
+                                            <h6 class="mb-0">{{ $trans('profile.profile.full_name') }}</h6>
                                         </div>
                                         <div class="col-sm-9 text-secondary">
-                                            {{fullName}}
+                                            {{ fullName }}
                                         </div>
                                     </div>
                                     <hr>
                                     <div class="row">
                                         <div class="col-sm-3">
-                                            <h6 class="mb-0">{{$trans('profile.profile.email')}}</h6>
+                                            <h6 class="mb-0">{{ $trans('profile.profile.email') }}</h6>
                                         </div>
                                         <div class="col-sm-9 text-secondary">
-                                            {{user.email}}
+                                            {{ user.email }}
                                         </div>
                                     </div>
                                     <hr>
                                     <div class="row">
                                         <div class="col-sm-3">
-                                            <h6 class="mb-0">{{$trans('profile.profile.phone_number_1')}}</h6>
+                                            <h6 class="mb-0">{{ $trans('profile.profile.phone_number_1') }}</h6>
                                         </div>
                                         <div class="col-sm-9 text-secondary">
-                                            {{profile.telephone_number_1}}
+                                            {{ profile.telephone_number_1 }}
                                         </div>
                                     </div>
                                     <hr>
                                     <div class="row">
                                         <div class="col-sm-3">
-                                            <h6 class="mb-0">{{$trans('profile.profile.phone_number_2')}}</h6>
+                                            <h6 class="mb-0">{{ $trans('profile.profile.phone_number_2') }}</h6>
                                         </div>
                                         <div class="col-sm-9 text-secondary">
-                                            {{profile.telephone_number_2}}
+                                            {{ profile.telephone_number_2 }}
                                         </div>
                                     </div>
                                     <hr>
                                     <div class="row">
                                         <div class="col-sm-3">
-                                            <h6 class="mb-0">{{$trans('profile.profile.address')}}</h6>
+                                            <h6 class="mb-0">{{ $trans('profile.profile.address') }}</h6>
                                         </div>
                                         <div class="col-sm-9 text-secondary">
-                                            {{fullAddress}}
+                                            {{ fullAddress }}
                                         </div>
                                     </div>
                                     <hr>
@@ -166,7 +166,7 @@
                                         <div class="col-sm-12 col-md-4">
                                             <button class="btn btn-outline-blue w-100" v-if="!editMode"
                                                     @click="editMode = true">
-                                                {{$trans('profile.profile.button_3')}}
+                                                {{ $trans('profile.profile.button_3') }}
                                             </button>
                                         </div>
                                     </div>
@@ -190,10 +190,28 @@
                                         </div>
                                         <div class="col-sm-9 text-secondary">
                                             <input type="file" name="avatar" class="form-control">
-                                            <p class="small"><strong>Old:</strong> {{user.avatar}}</p>
+                                            <p class="small"><strong>Old:</strong> {{ user.avatar }}</p>
                                         </div>
                                     </div>
+                                    <div class="row">
+                                        <div class="col-sm-3"></div>
+                                        <div class="col-sm-9 text-secondary">
+                                            <input type="submit" class="btn btn-primary px-4" value="Save Changes">
+                                            <button class="btn btn-outline-blue" @click="editMode=false">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
 
+                            <form class="card  mb-3" v-if="editMode" action="/customer/profile/update" method="post"
+                                  enctype="multipart/form-data">
+
+                                <input name="_method" type="hidden" value="PUT">
+
+
+                                <slot name="csrf"></slot>
+
+                                <div class="card-body">
 
                                     <div class="row mb-3">
                                         <div class="col-sm-3">
@@ -253,7 +271,7 @@
 
                                     <div class="row mb-3">
                                         <div class="col-sm-3">
-                                            <h6 class="mb-0">{{$trans('profile.profile.country')}}</h6>
+                                            <h6 class="mb-0">{{ $trans('profile.profile.country') }}</h6>
                                         </div>
                                         <div class="col-sm-9 text-secondary">
 
@@ -354,153 +372,153 @@
 </template>
 
 <script>
-    import VueSlickCarousel from 'vue-slick-carousel'
-    import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-    // optional style for arrows & dots
-    import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+import VueSlickCarousel from 'vue-slick-carousel'
+import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+// optional style for arrows & dots
+import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 
-    import vueCustomScrollbar from 'vue-custom-scrollbar'
-    import "vue-custom-scrollbar/dist/vueScrollbar.css"
+import vueCustomScrollbar from 'vue-custom-scrollbar'
+import "vue-custom-scrollbar/dist/vueScrollbar.css"
 
-    export default {
-        data() {
-            return {
-                editMode: false,
-                settingsScroll: {
-                    suppressScrollY: false,
-                    suppressScrollX: false,
-                    wheelPropagation: false
-                },
-                settings: {
-                    "dots": false,
-                    "arrows": true,
-                    "focusOnSelect": true,
-                    "infinite": true,
-                    "speed": 500,
-                    "slidesToShow": 5,
-                    "slidesToScroll": 3,
-                    "touchThreshold": 5,
-                    responsive: [
-                        {
-                            breakpoint: 1200,
-                            settings: {
-                                slidesToShow: 5,
-                                slidesToScroll: 1
-                            }
-                        },
-                        {
-                            breakpoint: 1008,
-                            settings: {
-                                slidesToShow: 2,
-                                slidesToScroll: 1
-                            }
-                        },
-                        {
-                            breakpoint: 800,
-                            settings: {
-                                slidesToShow: 1,
-                                slidesToScroll: 1
-                            }
+export default {
+    data() {
+        return {
+            editMode: false,
+            settingsScroll: {
+                suppressScrollY: false,
+                suppressScrollX: false,
+                wheelPropagation: false
+            },
+            settings: {
+                "dots": false,
+                "arrows": true,
+                "focusOnSelect": true,
+                "infinite": true,
+                "speed": 500,
+                "slidesToShow": 5,
+                "slidesToScroll": 3,
+                "touchThreshold": 5,
+                responsive: [
+                    {
+                        breakpoint: 1200,
+                        settings: {
+                            slidesToShow: 5,
+                            slidesToScroll: 1
                         }
+                    },
+                    {
+                        breakpoint: 1008,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 800,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
 
-                    ]
-                },
-            }
-        },
-        computed: {
-            fullAddress() {
-                return (this.profile.country? this.profile.country + "," : "")
-                    + (this.profile.region? this.profile.region + "," : "")
-                    + (this.profile.city?this.profile.city + "," : "")
-                    + (this.profile.postal?this.profile.postal+ "," : "")
+                ]
             },
-
-            fullName() {
-                return this.profile.first_name + " "
-                    + this.profile.second_name;
-
-            },
-
-            profile() {
-                return this.user.profile
-            },
-            user() {
-                return window.user
-            }
-        },
-        mounted() {
-            if (window.location.hash) {
-                $("a[href='" + window.location.hash + "']").click()
-            }
-
-            this.loadActiveListing()
-            $(document).on("click", ".nav-item", () => {
-                window.scroll(0, 0)
-            })
-        },
-        methods: {
-            loadPayments() {
-                this.$store.dispatch('loadPayments')
-            },
-            loadNotifications() {
-                this.$store.dispatch('loadNotifications')
-            },
-            loadActiveOrders() {
-                this.$store.dispatch('getActiveOrders');
-            },
-            loadArchiveOrders() {
-                this.$store.dispatch('getArchiveOrders');
-            },
-            loadReviews() {
-                this.$store.dispatch('loadReviews');
-            },
-            loadRemovedListing() {
-                this.$store.dispatch('clearListing')
-                this.$store.dispatch('getRemovedListings');
-            },
-            loadActiveListing() {
-                this.$store.dispatch('clearListing')
-                this.$store.dispatch('getActiveListings');
-            },
-            loadArchiveListing() {
-                this.$store.dispatch('clearListing')
-                this.$store.dispatch('getArchiveListings');
-            }
-        },
-        components: {
-            VueSlickCarousel, vueCustomScrollbar
         }
+    },
+    computed: {
+        fullAddress() {
+            return (this.profile.country ? this.profile.country + "," : "")
+                + (this.profile.region ? this.profile.region + "," : "")
+                + (this.profile.city ? this.profile.city + "," : "")
+                + (this.profile.postal ? this.profile.postal + "," : "")
+        },
+
+        fullName() {
+            return this.profile.first_name + " "
+                + this.profile.second_name;
+
+        },
+
+        profile() {
+            return this.user.profile
+        },
+        user() {
+            return window.user
+        }
+    },
+    mounted() {
+        if (window.location.hash) {
+            $("a[href='" + window.location.hash + "']").click()
+        }
+
+        this.loadActiveListing()
+        $(document).on("click", ".nav-item", () => {
+            window.scroll(0, 0)
+        })
+    },
+    methods: {
+        loadPayments() {
+            this.$store.dispatch('loadPayments')
+        },
+        loadNotifications() {
+            this.$store.dispatch('loadNotifications')
+        },
+        loadActiveOrders() {
+            this.$store.dispatch('getActiveOrders');
+        },
+        loadArchiveOrders() {
+            this.$store.dispatch('getArchiveOrders');
+        },
+        loadReviews() {
+            this.$store.dispatch('loadReviews');
+        },
+        loadRemovedListing() {
+            this.$store.dispatch('clearListing')
+            this.$store.dispatch('getRemovedListings');
+        },
+        loadActiveListing() {
+            this.$store.dispatch('clearListing')
+            this.$store.dispatch('getActiveListings');
+        },
+        loadArchiveListing() {
+            this.$store.dispatch('clearListing')
+            this.$store.dispatch('getArchiveListings');
+        }
+    },
+    components: {
+        VueSlickCarousel, vueCustomScrollbar
     }
+}
 </script>
 
 <style lang="scss" scoped>
-    .avatar-img {
-        min-height: 200px;
-        object-fit: contain;
-    }
+.avatar-img {
+    min-height: 200px;
+    object-fit: contain;
+}
 
-    .profile-nav-item {
-        min-width: 159px;
-        text-align: center;
-        /* width: auto; */
-        margin-bottom: 0;
-        padding: 3px;
+.profile-nav-item {
+    min-width: 159px;
+    text-align: center;
+    /* width: auto; */
+    margin-bottom: 0;
+    padding: 3px;
 
-        a {
-            font-size: 12px;
-        }
+    a {
+        font-size: 12px;
     }
+}
 
-    .customer-menu {
-        overflow-x: auto;
-        position: sticky;
-        top: 65px;
-        background: white;
-        z-index: 100;
-        padding: 8px 0px;
-    }
+.customer-menu {
+    overflow-x: auto;
+    position: sticky;
+    top: 65px;
+    background: white;
+    z-index: 100;
+    padding: 8px 0px;
+}
 
-    .nav-link.active {
-        color: #21c87a !important;
-    }
+.nav-link.active {
+    color: #21c87a !important;
+}
 </style>

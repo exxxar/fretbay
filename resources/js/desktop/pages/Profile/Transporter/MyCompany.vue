@@ -104,7 +104,7 @@
                                     <div class="form-group row">
                                         <label for="" class="col-sm-6 text-lg lh-40">{{$trans('profile.company.label_7')}}</label>
                                         <div class="col-sm-6">
-                                            <input type="text" :value="user.profile.insurance_company"
+                                            <input type="text" v-model="user.profile.insurance_company"
                                                    class="form-control-empty form-control" placeholder="1234567890" disabled>
                                         </div>
                                     </div>
@@ -112,7 +112,7 @@
                                         <label for="" class="col-sm-6 text-lg">{{$trans('profile.company.label_8')}}</label>
                                         <div class="col-sm-6 input-has-icon-right position-relative">
                                             <input type="text" class="form-control-empty form-control"
-                                                   :value="user.profile.cargo_insurance_amount" placeholder="0" disabled>
+                                                   v-model="user.profile.cargo_insurance_amount" placeholder="0" disabled>
                                             <span class="price-symbol position-absolute" style="top: 25%;right: 5%;">€</span>
                                         </div>
                                     </div>
@@ -137,13 +137,14 @@
                                         <label for="" class="col-sm-6 text-lg lh-40">{{$trans('profile.company.label_7')}}</label>
                                         <div class="col-sm-6">
                                             <input type="text" v-model="edit_introduction.insurance_company"
+                                                   required
                                                    class="form-control-empty form-control" placeholder="1234567890">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="" class="col-sm-6 text-lg">{{$trans('profile.company.label_8')}}</label>
                                         <div class="col-sm-6 input-has-icon-right position-relative">
-                                            <input type="text" class="form-control-empty form-control"
+                                            <input type="text" class="form-control-empty form-control" required
                                                    v-model="edit_introduction.cargo_insurance_amount" placeholder="0">
                                             <span class="price-symbol position-absolute" style="top: 25%;right: 5%;">€</span>
                                         </div>

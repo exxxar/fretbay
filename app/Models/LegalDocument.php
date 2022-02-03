@@ -30,7 +30,7 @@ class LegalDocument extends Model
     protected $casts = [
         'id' => 'integer',
         'type' => 'integer',
-        'document' => 'object',
+        'document' => 'array',
         'is_approved' => 'boolean',
     ];
 }

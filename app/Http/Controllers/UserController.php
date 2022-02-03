@@ -149,7 +149,7 @@ class UserController extends Controller
 
             Mail::to($user->email)
                 ->send(new ChangePasswordMail(
-                    $new_password
+                    $request->new_password
                 ));
 
             return response()->json([

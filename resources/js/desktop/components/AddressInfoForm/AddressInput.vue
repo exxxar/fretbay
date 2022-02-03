@@ -12,6 +12,7 @@
                       :placeholder="placeholder"
                       type="text" debounce="600"
                       autocomplete="off"
+                      required
         >
         </b-form-input>
 
