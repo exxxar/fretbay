@@ -114,7 +114,7 @@
                 await axios.post('/auth/user/changePassword', {old_password: this.old_password, new_password: this.new_password})
                     .then( resp => {
                         this.message = resp.data.message
-                        
+
                     })
                     .catch( error => {
                         this.message = "Something went wrong"

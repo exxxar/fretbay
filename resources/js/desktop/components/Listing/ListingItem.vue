@@ -510,7 +510,7 @@ export default {
         prepareListingArticles(){
            if (!this.listing.articles)
                return [];
-           return this.listing.articles
+           return JSON.parse(this.listing.articles)
         },
         /*   prepareCategoriesProperties(properties , articles){
 
