@@ -114,10 +114,15 @@
                 await axios.post('/auth/user/changePassword', {old_password: this.old_password, new_password: this.new_password})
                     .then( resp => {
                         this.message = resp.data.message
+                        
                     })
                     .catch( error => {
                         this.message = "Something went wrong"
                     })
+
+                this.old_password = '';
+                this.new_password = '';
+                this.confirm_password = '';
             },
             async save(key, value) {
                 await axios.post("/transporter/profile/save", {id:this.profile.id, key: key, value: value})
