@@ -62,8 +62,8 @@ class Profile extends Model
 
     public function getIsDocumentsApprovedAttribute()
     {
-        if ($this->is_approved)
-            return true;
+        /*if ($this->is_approved)
+            return true;*/
 
         $docs = $this->documents()->get();
 
