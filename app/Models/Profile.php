@@ -129,6 +129,9 @@ class Profile extends Model
 
             $isApproval = $isApproval && (boolean)$doc->is_approved;
 
+            $this->is_approved = $isApproval;
+            $this->save();
+
         }
 
 
