@@ -47,7 +47,10 @@ Route::get('/storage/{path}',function ($path){
     }
 });
 Route::get('/email/verify', 'VerificationController@show')->name('verification.notice');
-Route::get('/email/verify/{id}/{hash}', 'VerificationController@verify')->name('verification.verify')->middleware(['signed']);
+Route::get('/email/verify/{id}/{hash}', 'VerificationController@verify')->name('verification.verify')->middleware
+(['signed']);
+
+
 Route::post('/email/resend', 'VerificationController@resend')->name('verification.resend');
 
 
@@ -107,18 +110,16 @@ Route::get("/storage/listings/{dir}/{name}", function ($dir, $name) {
 
 
 Route::get("/", function (\Illuminate\Http\Request $request) {
-
-    $posts = Post::with(["category"])->where("status","PUBLISHED")->paginate(4);
-/*
-    $page = PageFactory::mainPage();*/
-
-    if (is_null(Auth::user()))
+    if (is_null(Auth::user())) {
+        $posts = Post::with(["category"])->where("status","PUBLISHED")->paginate(4);
         return view("desktop.pages.index", compact('posts'));
+    }
 
     $user = User::self();
 
-    if ($user->hasRole("admin"))
+    if ($user->hasRole("admin")) {
         return redirect()->route("admin.index");
+    }
 
     if ($user->hasRole("transporter")) {
         return redirect()->route("transporter-account");

@@ -2,20 +2,33 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+use Illuminate\Auth\Access\AuthorizationException;
+use Illuminate\Auth\Events\Verified;
 use Illuminate\Foundation\Auth\RedirectsUsers;
 use Illuminate\Foundation\Auth\VerifiesEmails;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+
+use Symfony\Component\HttpFoundation\Session\Session;
 
 class VerificationController extends Controller
 {
     use VerifiesEmails;
+    public function redirectPath()
+    {
+        $user = User::self();
 
-    /**
-     * Where to redirect users after verification.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/';
+        if ($user->hasRole("admin")) {
+            return route("admin.index");
+        }
+
+        if ($user->hasRole("transporter")) {
+            return route("transporter-account");
+        }
+
+        return route("customer-account");
+    }
 
     /**
      * Create a new controller instance.
@@ -43,5 +56,22 @@ class VerificationController extends Controller
             : view('verification.notice', [
                 'pageTitle' => __('Account Verification')
             ]);
+    }
+
+    /**
+     * The user has been verified.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return mixed
+     */
+    protected function verified(Request $request)
+    {
+//       $request->session()->flash('alert', [
+//            'status' => 'success',
+//            'body' => 'Your email has been verified. Thanks!'
+//        ]);
+
+        //return redirect()->route('customer-account')->with('verified', true);
+        return redirect($this->redirectPath())->with('verified', true);
     }
 }
