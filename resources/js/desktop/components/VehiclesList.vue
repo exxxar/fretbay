@@ -435,7 +435,7 @@
                 this.edit_vehicle.images = [];
                 this.new_images=[];
                 this.deleted_images=[];
-                this.vehicles[index].images.forEach( item =>{
+                this.vehicles[index].images.forEach(item =>{
                     this.edit_vehicle.images.push(item);
                 })
                 $("#edit-vehicle").modal("show");

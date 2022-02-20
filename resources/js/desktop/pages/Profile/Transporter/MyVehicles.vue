@@ -494,10 +494,10 @@
                 this.edit_vehicle.images = [];
                 this.new_images=[];
                 this.deleted_images=[];
-                this.vehicles[index].images.forEach( item =>{
+                this.vehicles[index].images.forEach(item =>{
                     this.edit_vehicle.images.push(item);
-                })
-                console.log('this.edit_vehicle', this.edit_vehicle)
+                });
+                console.log('this.edit_vehicle', this.edit_vehicle);
                 $("#edit-vehicle").modal("show");
                 // this.edit_vehicle.images = this.vehicles[index].images;
             },

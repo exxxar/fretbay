@@ -3,7 +3,7 @@
         <div class="main-body">
 
             <vue-custom-scrollbar class="w-100 customer-menu mt-2" :settings="settingsScroll">
-                <ul class="nav nav-tabs mb-2 w-100 d-flex flex-nowrap ">
+                <ul class="nav nav-tabs mb-2 w-100 d-flex flex-nowrap " id="tabMenu">
                     <li class="nav-item profile-nav-item" @click="loadActiveListing">
                         <a class="btn btn-outline-primary d-block active" id="listings-active-tab" data-toggle="tab"
                            href="#listings-active" role="tab"

@@ -1,7 +1,7 @@
 <?php
 
 return array (
-  'chat' => 
+  'chat' =>
   array (
     'input_placeholder_1' => 'Tapez un message',
     'input_placeholder_2' => 'Rechercher',
@@ -11,7 +11,7 @@ return array (
     'strong_3' => 'Message',
     'strong_4' => 'Rechercher',
   ),
-  'company' => 
+  'company' =>
   array (
     'button_1' => 'Modifier',
     'button_2' => 'Annuler',
@@ -48,7 +48,7 @@ return array (
     'p_2' => 'Choisissez les spécialités de transport que votre entreprise peut offrir en tant que service.',
     'p_3' => 'Détails de l\'entreprise',
   ),
-  'documents' => 
+  'documents' =>
   array (
     'approved' => 'Approuvé',
     'button_1' => 'Cliquez pour télécharger',
@@ -96,11 +96,11 @@ return array (
     'label_9' => 'Pays',
     'not_approved' => 'Non approuvé',
   ),
-  'favorites' => 
+  'favorites' =>
   array (
     'a_1' => 'Demander un devis',
   ),
-  'find_loads' => 
+  'find_loads' =>
   array (
     0 => '',
     1 => '',
@@ -129,7 +129,7 @@ return array (
     'small_7' => 'Choisir une région',
     'small_8' => 'Date d\'expédition ou de désexpédition',
   ),
-  'listing' => 
+  'listing' =>
   array (
     'a_1' => 'Précédent',
     'a_2' => 'Suivant',
@@ -154,7 +154,7 @@ return array (
     'your' => 'Votre',
     'а_2' => '',
   ),
-  'menu' => 
+  'menu' =>
   array (
     'active_listings' => 'Listes actives',
     'active_orders' => 'Commandes actives',
@@ -172,7 +172,7 @@ return array (
     'settings' => 'Paramètres',
     'vehicles' => 'Véhicules',
   ),
-  'order' => 
+  'order' =>
   array (
     'button_1' => 'Continuer',
     'button_2' => 'Complet',
@@ -197,7 +197,7 @@ return array (
     'strong_1' => 'Lieu de chargement',
     'strong_2' => 'Lieu de livraison',
   ),
-  'page' => 
+  'page' =>
   array (
     'count_results' => 'Compter les résultats',
     'find_a_transporter' => 'Essayez de trouver un transporteur!',
@@ -211,7 +211,7 @@ return array (
     'no_quotes' => 'Pas encore de guillemets!',
     'no_reviews' => 'Pas encore d\'avis!',
   ),
-  'profile' => 
+  'profile' =>
   array (
     'address' => 'Adresse',
     'avatar' => 'Avatar',
@@ -236,7 +236,7 @@ return array (
     'postal' => 'Postal',
     'region' => 'Région',
   ),
-  'public_profile' => 
+  'public_profile' =>
   array (
     'button_1' => 'Société',
     'button_2' => 'Véhicules',
@@ -261,7 +261,7 @@ return array (
     'span_1' => 'Profil vérifié et certifié par AlloTrans',
     'span_2' => 'Le profil n\'est pas vérifié',
   ),
-  'quotes' => 
+  'quotes' =>
   array (
     'a_1' => 'Supprimer une citation',
     'button_1' => 'Accepter',
@@ -282,7 +282,7 @@ return array (
     'span_1' => 'Uniquement les offres réelles',
     'span_2' => 'Toutes les offres',
   ),
-  'reviews' => 
+  'reviews' =>
   array (
     'button_1' => 'Envoyer un avis',
     'button_2' => 'Envoyer',
@@ -298,7 +298,7 @@ return array (
     'span_1' => 'Caractères laissés',
     'textarea_placeholder_1' => 'Titre de la revue',
   ),
-  'settings' => 
+  'settings' =>
   array (
     'button_1' => 'Enregistrer',
     'h2_1' => 'Mot de passe',
@@ -310,7 +310,7 @@ return array (
     'label_5' => 'Messages push',
     'label_6' => 'Newsletters',
   ),
-  'sidebar' => 
+  'sidebar' =>
   array (
     'accounts' => 'Comptes',
     'em_1' => 'Vous êtes client',
@@ -325,7 +325,7 @@ return array (
     'profile' => 'Profil',
     'terms' => 'Termes',
   ),
-  'vehicles' => 
+  'vehicles' =>
   array (
     'button_1' => 'Cliquez pour télécharger',
     'button_2' => 'Fermer',
@@ -346,9 +346,9 @@ return array (
     'select_option_4' => 'Camion avec hayon',
     'select_option_5' => 'Camion 5T',
   ),
-  'wizard' => 
+  'wizard' =>
   array (
-    'start' => 
+    'start' =>
     array (
       'a_1' => 'Démarrer',
       'h2_1' => 'Complétez votre profil',
@@ -357,7 +357,7 @@ return array (
                     <strong>Créez un profil ici rapidement et gratuitement</strong>afin qu\'il puisse être validé par notre
                     Equipe.',
     ),
-    'step_1' => 
+    'step_1' =>
     array (
       'a_1' => 'Ignorer',
       'button_1' => 'Cliquez pour télécharger',
@@ -372,7 +372,7 @@ return array (
       'label_3' => 'Date d\'expiration',
       'p_1' => '<strong>Nécessite </strong> : Recto/verso de la pièce d\'identité du dirigeant de l\'entreprise',
     ),
-    'step_2' => 
+    'step_2' =>
     array (
       'a_1' => 'Ignorer',
       'button_1' => 'Cliquez pour télécharger',
@@ -387,7 +387,7 @@ return array (
       'label_4' => 'Date de fin',
       'p_1' => '<strong>Nécessite </strong> : Certificat d\'assurance <strong> indiquant </strong>le nom de votre entreprise',
     ),
-    'step_3' => 
+    'step_3' =>
     array (
       'button_1' => 'Ajouter un véhicule',
       'button_2' => 'Sauter',
@@ -395,7 +395,7 @@ return array (
       'h2_1' => 'Vos véhicules',
       'p_1' => '<strong>Nécessite </strong> : Certificat d\'assurance <strong> indiquant </strong>le nom de votre entreprise',
     ),
-    'step_4' => 
+    'step_4' =>
     array (
       'button_1' => 'Sauter',
       'button_2' => 'Étape suivante',
@@ -406,7 +406,7 @@ return array (
       'p' => 'Informez vos futurs clients de vos langues parlées',
       'п' => '',
     ),
-    'step_5' => 
+    'step_5' =>
     array (
       'a_1' => 'Ignorer',
       'button_1' => 'Enregistrer',

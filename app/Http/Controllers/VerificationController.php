@@ -15,6 +15,11 @@ use Symfony\Component\HttpFoundation\Session\Session;
 class VerificationController extends Controller
 {
     use VerifiesEmails;
+
+    /**
+     * Route for user depending on his role
+     * @return string
+     */
     public function redirectPath()
     {
         $user = User::self();
@@ -66,12 +71,7 @@ class VerificationController extends Controller
      */
     protected function verified(Request $request)
     {
-//       $request->session()->flash('alert', [
-//            'status' => 'success',
-//            'body' => 'Your email has been verified. Thanks!'
-//        ]);
 
-        //return redirect()->route('customer-account')->with('verified', true);
         return redirect($this->redirectPath())->with('verified', true);
     }
 }

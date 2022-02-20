@@ -12,10 +12,10 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use function Symfony\Component\String\s;
 
+
 class CustomerController extends Controller
 {
     //
-
     public function update(Request $request)
     {
         $user = User::with(["profile"])->where("id", Auth::id())->first();
@@ -45,11 +45,12 @@ class CustomerController extends Controller
 
         event(new NotificationEvent(
             "#account-" . $user->id,
-            "Update user account",
+            "Update user accounts",
             NotificationType::Info,
             Auth::user()->id));
 
-        return redirect()->back()->withErrors(["success"]);
+
+        return redirect('/customer/profile#profile')->withErrors(["success"]);
 
     }
 
